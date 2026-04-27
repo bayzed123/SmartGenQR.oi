@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,15 @@
     <meta name="author" content="Sayad Md Bayezid Hosan">
     <meta name="copyright" content="Copyright 2026 SmartGen. All Rights Reserved. Developed by Sayad Md Bayezid Hosan">
     <title>SmartGen - Premium QR Code Generator</title>
+    
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HT0MXH61M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HT0MXH61M');
+    </script>
     
     <style>
         * {
@@ -33,9 +42,68 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            background-color: var(--background);
+            background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 50%, #f0f4f8 100%);
             color: var(--text-primary);
             line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
         }
 
         .container {
@@ -140,24 +208,62 @@
         }
 
         .btn-primary {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: left 0.4s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
         }
 
         .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1e40af 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: white;
             color: var(--primary);
-            border: 1px solid var(--primary);
+            border: 2px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(37, 99, 235, 0.05);
+            transition: left 0.4s ease;
+        }
+
+        .btn-secondary:hover::before {
+            left: 100%;
         }
 
         .btn-secondary:hover {
-            background: var(--card-bg);
+            background: #f0f4f8;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.2);
         }
 
         /* Hero Section */
@@ -225,17 +331,18 @@
         }
 
         .feature-card {
-            background: white;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%);
             padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            border-radius: 16px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
         }
 
         .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
         }
 
         .feature-icon {
@@ -441,11 +548,19 @@
         }
 
         .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%);
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
             text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
         }
 
         .stars {
@@ -542,25 +657,32 @@
 
         .faq-item {
             margin-bottom: 1rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
             overflow: hidden;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
-        .faq-question {
+        .faq-item:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.1);
+        }
+
+        .faq        .faq-question {
             padding: 1.5rem;
-            background: white;
+            background: linear-gradient(135deg, rgba(240,245,250,0.5) 0%, rgba(248,250,252,0.5) 100%);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: all 0.3s ease;
-            font-weight: 500;
-            color: var(--text-primary);
+            font-weight: 600;
         }
 
         .faq-question:hover {
-            background: var(--card-bg);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0.03) 100%);
         }
 
         .faq-toggle {
@@ -576,7 +698,9 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            background: var(--card-bg);
+            background: rgba(255,255,255,0.5);
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+            animation: fadeIn 0.3s ease;
         }
 
         .faq-item.active .faq-answer {
@@ -590,10 +714,11 @@
 
         /* Footer */
         footer {
-            background: var(--text-primary);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
             color: white;
             padding: 3rem 0 1rem;
             margin-top: 4rem;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
         }
 
         .footer-content {
