@@ -284,7 +284,7 @@ pnpm format
 pnpm build
 ```
 
-https://manus.im/beta/LICENSE  
+
 https://github.com/bayzed123/SmartGenQR.oi  
 http://www.connectwithbayezid.it.com/  
 http://www.genzfrontir.com/  
@@ -358,8 +358,9 @@ Sayad Md Bayezid Hosan
 
 **Social Media**
 
-* LinkedIn  
-* Facebook  
+* LinkedIn  https://www.linkedin.com/in/sayadbayezid
+* Facebook
+  https://www.facebook.com/bayezidhosan
 
 **Support**
 
@@ -431,17 +432,7 @@ If you find SmartGen useful, please:
 
 * Star this repository  
 
-https://en.wikipedia.org/wiki/QR_code  
-https://manus.im/beta/docs/GETTING_STARTED.md  
-https://manus.im/beta/docs/CUSTOMIZATION.md  
-https://manus.im/beta/docs/API.md  
-https://manus.im/beta/docs/ARCHITECTURE.md  
-https://manus.im/beta/CONTRIBUTING.md  
-https://davidshimjs.github.io/qrcodejs/  
-https://github.com/kozakdenys/qr-code-styling  
-https://react.dev/  
-https://tailwindcss.com/  
-https://lucide.dev/  
+
 
 * Fork the project  
 * Share with others  
