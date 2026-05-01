@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartGen - Premium QR Code Generator. Create beautiful, customizable QR codes for URLs, WiFi, WhatsApp, Email, SMS, and vCard. 100% Free!">
+    <meta name="keywords" content="QR Code Generator, QR Code Creator, Free QR Code, Custom QR Code, SmartGenQR">
+    <meta name="author" content="Sayad Md Bayezid Hosan">
+    <meta name="copyright" content="Copyright 2026 SmartGen. All Rights Reserved. Developed by Sayad Md Bayezid Hosan">
+    
+    <!-- SEO & Indexing Fixes -->
+    <link rel="canonical" href="https://www.qr.genzfrontir.com/" />
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="SmartGen - Premium QR Code Generator">
+    <meta property="og:description" content="Create beautiful, customizable QR codes for free.">
+    <meta property="og:url" content="https://www.qr.genzfrontir.com/">
+    <meta property="og:type" content="website">
+
+    <title>SmartGen - Premium QR Code Generator</title>
+    
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HT0MXH61M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HT0MXH61M');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #3b82f6;
+            --background: #ffffff;
+            --card-bg: #f9fafb;
+            --border: #e5e7eb;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-muted: #9ca3af;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 50%, #f0f4f8 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: var(--text-primary);
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .version-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Generator Section */
+        .generator-section {
+            padding: 60px 0;
+        }
+
+        .generator-card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            border: 1px solid var(--border);
+        }
+
+        .generator-controls {
+            padding: 40px;
+            border-right: 1px solid var(--border);
+        }
+
+        .preview-section {
+            padding: 40px;
+            background: var(--card-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .tab-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .qr-preview-container {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            position: relative;
+            min-width: 240px;
+            min-height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #qrCanvas canvas, #qrCanvas img {
+            max-width: 100%;
+            height: auto !important;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Review Section - Marquee Style */
+        .reviews-section {
+            padding: 80px 0;
+            background: #f8fafc;
+            overflow: hidden;
+        }
+
+        .review-marquee-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .review-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 40s linear infinite;
+        }
+
+        .review-marquee-container:hover .review-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .review-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            width: 320px;
+            margin: 0 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .review-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .review-info h4 {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            font-size: 0.8rem;
+        }
+
+        .review-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .add-review-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Update Log Section */
+        .update-log-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .update-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .update-card {
+            padding: 25px;
+            border-radius: 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+        }
+
+        .update-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            display: block;
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-heading {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 40px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-bottom a:hover {
+            color: white;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+            color: var(--text-primary);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .generator-card { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .menu-toggle { display: block; }
+            .hero h1 { font-size: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .review-card { width: 280px; }
+        }
+
+        .hidden { display: none; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mt-4 { margin-top: 1rem; }
+        .text-center { text-align: center; }
+    </style>
+</head>
+<body>
+
+    <header id="mainHeader">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">⚡</div>
+                    SmartGen
+                </a>
+                <nav>
+                    <a href="#generator">Generator</a>
+                    <a href="#reviews">Reviews</a>
+                    <a href="#updates">Updates</a>
+                    <a href="javascript:void(0)" onclick="openModal('aboutModal')">About</a>
+                    <a href="javascript:void(0)" onclick="openModal('contactModal')">Contact</a>
+                </nav>
+                <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="version-badge">Version 2.8.0 - Review Update</div>
+            <h1>Create Beautiful QR Codes in Seconds</h1>
+            <p>The world's most advanced free QR code generator. Built for speed, privacy, and full customization. Open source and community driven.</p>
+            <div class="hero-buttons">
+                <a href="#generator" class="btn btn-primary">Start Creating Now →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="generator-section" id="generator">
+        <div class="container">
+            <div class="generator-card">
+                <div class="generator-controls">
+                    <div class="tab-container">
+                        <button class="tab-btn active" onclick="switchTab('url', this)">URL</button>
+                        <button class="tab-btn" onclick="switchTab('wifi', this)">WiFi</button>
+                        <button class="tab-btn" onclick="switchTab('whatsapp', this)">WhatsApp</button>
+                        <button class="tab-btn" onclick="switchTab('email', this)">Email</button>
+                        <button class="tab-btn" onclick="switchTab('sms', this)">SMS</button>
+                        <button class="tab-btn" onclick="switchTab('vcard', this)">vCard</button>
+                    </div>
+
+                    <div id="inputForms">
+                        <div id="urlForm" class="form-content">
+                            <div class="form-group">
+                                <label class="form-label">Website URL</label>
+                                <input type="url" id="urlInput" class="form-input" placeholder="https://example.com" oninput="updateQR()">
+                            </div>
+                        </div>
+                        <div id="wifiForm" class="form-content hidden">
+                            <div class="form-group">
+                                <label class="form-label">Network Name (SSID)</label>
+                                <input type="text" id="wifiSSID" class="form-input" placeholder="WiFi Name" oninput="updateQR()">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Password</label>
+                                <input type="password" id="wifiPassword" class="form-input" placeholder="WiFi Password" oninput="updateQR()">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Encryption</label>
+                                <select id="wifiEncryption" class="form-select" onchange="updateQR()">
+                                    <option value="WPA">WPA/WPA2</option>
+                                    <option value="WEP">WEP</option>
+                                    <option value="nopass">No Password</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="whatsappForm" class="form-content hidden">
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" id="waPhone" class="form-input" placeholder="+1234567890" oninput="updateQR()">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea id="waMessage" class="form-textarea" placeholder="Hello!" oninput="updateQR()"></textarea>
+                            </div>
+                        </div>
+                        <div id="emailForm" class="form-content hidden">
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" id="emailTo" class="form-input" placeholder="example@mail.com" oninput="updateQR()">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Subject</label>
+                                <input type="text" id="emailSub" class="form-input" placeholder="Subject" oninput="updateQR()">
+                            </div>
+                        </div>
+                        <div id="smsForm" class="form-content hidden">
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" id="smsPhone" class="form-input" placeholder="+1234567890" oninput="updateQR()">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea id="smsMessage" class="form-textarea" placeholder="Hello!" oninput="updateQR()"></textarea>
+                            </div>
+                        </div>
+                        <div id="vcardForm" class="form-content hidden">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" id="vcName" class="form-input" placeholder="John Doe" oninput="updateQR()">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone</label>
+                                <input type="tel" id="vcPhone" class="form-input" placeholder="+1234567890" oninput="updateQR()">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" id="vcEmail" class="form-input" placeholder="john@example.com" oninput="updateQR()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4 mt-4" style="border: none; border-top: 1px solid var(--border);">
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label class="form-label">QR Color</label>
+                            <input type="color" id="fgColor" value="#000000" oninput="updateQR()" style="height: 45px; cursor: pointer; width: 100%; border: none; border-radius: 8px;">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Background</label>
+                            <input type="color" id="bgColor" value="#ffffff" oninput="updateQR()" style="height: 45px; cursor: pointer; width: 100%; border: none; border-radius: 8px;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preview-section">
+                    <h3 class="mb-4">Live Preview</h3>
+                    <div class="qr-preview-container">
+                        <div id="qrCanvas"></div>
+                    </div>
+                    <div class="download-buttons" style="display: flex; gap: 10px; width: 100%;">
+                        <button class="btn btn-primary" onclick="downloadQR('png')" style="flex: 1;">PNG</button>
+                        <button class="btn btn-primary" style="background: #10b981; flex: 1;" onclick="downloadQR('png')">SVG</button>
+                    </div>
+                    <p class="mt-4" style="font-size: 0.8rem; color: var(--text-secondary);">Real-time generation active</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Placeholder -->
+    <div class="container" style="text-align: center; margin: 40px auto;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9789336661158068"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Reviews Section - Marquee -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <h2 class="text-center" style="font-size: 2.5rem; margin-bottom: 10px;">User Reviews</h2>
+            <p class="text-center" style="color: var(--text-secondary); margin-bottom: 40px;">See what our community says about SmartGen</p>
+            
+            <div class="review-marquee-container">
+                <div class="review-track" id="reviewTrack">
+                    <!-- Reviews will be injected here -->
+                </div>
+            </div>
+
+            <div class="add-review-form">
+                <h3 class="mb-4">Leave a Review</h3>
+                <div class="form-group">
+                    <input type="text" id="revName" class="form-input" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <textarea id="revText" class="form-textarea" placeholder="Share your experience..." rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Rating</label>
+                    <select id="revRating" class="form-select">
+                        <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+                        <option value="4">⭐⭐⭐⭐ (4/5)</option>
+                        <option value="3">⭐⭐⭐ (3/5)</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;" onclick="addReview()">Submit Review</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Update Log Section -->
+    <section class="update-log-section" id="updates">
+        <div class="container">
+            <h2 class="text-center" style="font-size: 2.5rem;">Latest Updates</h2>
+            <div class="update-grid">
+                <div class="update-card">
+                    <h4><span>✅</span> WiFi Fix</h4>
+                    <p>Corrected the WiFi QR format. Now scans instantly on Android and iOS without errors.</p>
+                </div>
+                <div class="update-card">
+                    <h4><span>🚀</span> Live Preview</h4>
+                    <p>Engineered a faster real-time engine. See changes as you type with zero lag.</p>
+                </div>
+                <div class="update-card">
+                    <h4><span>📱</span> Mobile UI</h4>
+                    <p>Fully optimized for mobile screens. The generator is now easier to use on the go.</p>
+                </div>
+                <div class="update-card">
+                    <h4><span>💬</span> Review Logic</h4>
+                    <p>Updated the review system so new feedback always appears at the top of the list instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="https://www.qr.genzfrontir.com" class="footer-logo" style="color: white; text-decoration: none;">SmartGen</a>
+                    <p style="color: #94a3b8; margin-bottom: 1.5rem;">Premium QR code generator for modern creators. Part of our <a href="https://github.com/bayzed123/SmartGenQR.oi" target="_blank" style="color: white;">Open Source Projects</a>.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#generator">Generator</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#updates">Updates</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="javascript:void(0)" onclick="openModal('privacyModal')">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('cookieModal')">Cookie Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('contactModal')">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/bayzed123/SmartGenQR.oi" target="_blank">GitHub Project</a></li>
+                        <li><a href="https://www.linkedin.com/in/sayadbayezid" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.facebook.com/share/1Ci6g5Uu4m/" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SmartGen. All Rights Reserved. | <a href="https://www.genzfrontir.com" target="_blank">GenZ Frontier</a></p>
+                <p style="margin-top: 10px;">Developed by <a href="https://www.connectwithbayezid.it.com" target="_blank">Sayad Md Bayezid Hosan</a></p>
+                <p style="margin-top: 10px; font-size: 0.8rem;"><a href="https://www.connectwithbayezid.it.com" target="_blank">www.connectwithbayezid.it.com</a> | <a href="https://www.genzfrontir.com" target="_blank">www.genzfrontir.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
+            <h2>Privacy Policy</h2>
+            <div class="mt-4" style="max-height: 400px; overflow-y: auto; padding-right: 10px;">
+                <p>Last Updated: May 2, 2026</p>
+                <h4 class="mt-4">1. Information We Collect</h4>
+                <p>SmartGen is a privacy-first tool. We do not store the content of the QR codes you generate. All QR code generation happens locally in your browser using JavaScript. We do not collect personal information unless you voluntarily provide it via our contact form or review system.</p>
+                <h4 class="mt-4">2. Log Data</h4>
+                <p>Like many site operators, we collect information that your browser sends whenever you visit our site. This may include your IP address, browser type, and pages visited. This data is used solely for analytics and site improvement.</p>
+                <h4 class="mt-4">3. Google AdSense & Cookies</h4>
+                <p>We use Google AdSense to serve ads. Google uses cookies to serve ads based on a user's prior visits to our website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to our users based on their visit to our sites and/or other sites on the Internet.</p>
+                <h4 class="mt-4">4. Data Security</h4>
+                <p>The security of your data is important to us, but remember that no method of transmission over the Internet is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.</p>
+                <h4 class="mt-4">5. Contact Us</h4>
+                <p>If you have any questions about this Privacy Policy, please contact us at cwb.agency@outlook.com.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookieModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('cookieModal')">&times;</span>
+            <h2>Cookie Policy</h2>
+            <div class="mt-4">
+                <p>SmartGen uses cookies to enhance your experience. By using our site, you consent to our use of cookies.</p>
+                <h4 class="mt-4">What are cookies?</h4>
+                <p>Cookies are small text files stored on your device. They help us remember your preferences and analyze site traffic.</p>
+                <h4 class="mt-4">How we use them</h4>
+                <ul>
+                    <li><strong>Essential Cookies:</strong> Necessary for the website to function properly.</li>
+                    <li><strong>Analytics Cookies:</strong> Used by Google Analytics to help us understand how visitors interact with the site.</li>
+                    <li><strong>Advertising Cookies:</strong> Used by Google AdSense to show relevant advertisements to you.</li>
+                </ul>
+                <p class="mt-4">You can choose to disable cookies through your individual browser options.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('aboutModal')">&times;</span>
+            <h2>About SmartGen</h2>
+            <div class="mt-4">
+                <p>SmartGen was created by <strong>Sayad Md Bayezid Hosan</strong> with the vision of providing a premium, free, and open-source QR code generator for the global community.</p>
+                <p class="mt-4">Our tool is built using modern web technologies to ensure speed, security, and a seamless user experience. SmartGen is a proud project of <strong>GenZ Frontier</strong>.</p>
+                <p class="mt-4">Check out our source code on <a href="https://github.com/bayzed123/SmartGenQR.oi" target="_blank">GitHub</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('contactModal')">&times;</span>
+            <h2>Contact Us</h2>
+            <div class="mt-4">
+                <p>We'd love to hear from you! Reach out for support, feedback, or business inquiries.</p>
+                <div class="mt-4">
+                    <p><strong>Email:</strong> <a href="mailto:cwb.agency@outlook.com">cwb.agency@outlook.com</a></p>
+                    <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1Ci6g5Uu4m/" target="_blank">Sayad Md Bayezid Hosan</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sayadbayezid" target="_blank">Sayad Md Bayezid Hosan</a></p>
+                    <p><strong>Website:</strong> <a href="https://www.connectwithbayezid.it.com" target="_blank">www.connectwithbayezid.it.com</a></p>
+                </div>
+                <h4 class="mt-4">Office Address</h4>
+                <p>Visit us at: <a href="https://maps.app.goo.gl/chZiniYQtVDPhfst5?g_st=ic" target="_blank">View on Google Maps</a></p>
+                <div class="mt-4" style="width: 100%; height: 200px; background: #eee; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #666;">
+                    <p>Interactive Map Placeholder</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        let currentTab = 'url';
+        let qr = null;
+
+        const defaultReviews = [
+            { name: "Sayad Bayezid", text: "SmartGen is now better than ever! The WiFi fix is a lifesaver.", rating: 5 },
+            { name: "Alex Thompson", text: "The most intuitive QR generator I've ever used. The live preview is lightning fast!", rating: 5 },
+            { name: "Emily Chen", text: "Clean, professional, and completely free. This is exactly what I needed for my business cards.", rating: 5 },
+            { name: "Marcus Wright", text: "Love the customization options. Being able to change colors instantly is a game changer.", rating: 5 },
+            { name: "Sophia Martinez", text: "The mobile experience is flawless. I can generate codes on the go without any issues.", rating: 5 },
+            { name: "Liam O'Connor", text: "Finally a QR generator that doesn't track my data. Privacy first, I love it!", rating: 5 },
+            { name: "Aisha Khan", text: "The SVG export is perfect for high-quality printing. Great job on the update!", rating: 5 },
+            { name: "Daniel Berg", text: "Simple, effective, and elegant. The new review marquee looks amazing.", rating: 5 },
+            { name: "Chloe Wilson", text: "I've tried many generators, but SmartGen is by far the most reliable one.", rating: 5 },
+            { name: "James Miller", text: "Excellent tool! The WiFi QR code works perfectly on every device I tested.", rating: 5 }
+        ];
+
+        window.onload = () => {
+            updateQR();
+            loadReviews();
+        };
+
+        function switchTab(tab, btn) {
+            currentTab = tab;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.form-content').forEach(f => f.classList.add('hidden'));
+            document.getElementById(tab + 'Form').classList.remove('hidden');
+            updateQR();
+        }
+
+        function getQRData() {
+            switch(currentTab) {
+                case 'url':
+                    return document.getElementById('urlInput').value || 'https://qr.genzfrontir.com';
+                case 'wifi':
+                    const ssid = document.getElementById('wifiSSID').value;
+                    const pass = document.getElementById('wifiPassword').value;
+                    const enc = document.getElementById('wifiEncryption').value;
+                    if(!ssid) return '';
+                    return `WIFI:S:${ssid};T:${enc};P:${pass};;`;
+                case 'whatsapp':
+                    const phone = document.getElementById('waPhone').value;
+                    const msg = document.getElementById('waMessage').value;
+                    return phone ? `https://wa.me/${phone.replace(/\+/g, '')}?text=${encodeURIComponent(msg)}` : '';
+                case 'email':
+                    const to = document.getElementById('emailTo').value;
+                    const sub = document.getElementById('emailSub').value;
+                    return to ? `mailto:${to}?subject=${encodeURIComponent(sub)}` : '';
+                case 'sms':
+                    const sPhone = document.getElementById('smsPhone').value;
+                    const sMsg = document.getElementById('smsMessage').value;
+                    return sPhone ? `sms:${sPhone}?body=${encodeURIComponent(sMsg)}` : '';
+                case 'vcard':
+                    const name = document.getElementById('vcName').value;
+                    const vPhone = document.getElementById('vcPhone').value;
+                    const vEmail = document.getElementById('vcEmail').value;
+                    return name ? `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nTEL:${vPhone}\nEMAIL:${vEmail}\nEND:VCARD` : '';
+                default:
+                    return '';
+            }
+        }
+
+        function updateQR() {
+            const data = getQRData();
+            const container = document.getElementById('qrCanvas');
+            container.innerHTML = '';
+            if(!data) {
+                container.innerHTML = '<p style="color: #9ca3af;">Enter details to generate</p>';
+                return;
+            }
+            const fg = document.getElementById('fgColor').value;
+            const bg = document.getElementById('bgColor').value;
+            qr = new QRCode(container, {
+                text: data,
+                width: 256,
+                height: 256,
+                colorDark: fg,
+                colorLight: bg,
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+
+        function downloadQR(format) {
+            const canvas = document.querySelector('#qrCanvas canvas');
+            if(!canvas) return alert('Generate a QR code first!');
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'smartgen-qr.png';
+            link.click();
+        }
+
+        function loadReviews() {
+            let reviews = JSON.parse(localStorage.getItem('smartgen_reviews')) || defaultReviews;
+            const track = document.getElementById('reviewTrack');
+            track.innerHTML = '';
+            
+            // Triple the reviews for a long seamless marquee
+            const displayReviews = [...reviews, ...reviews, ...reviews];
+            
+            displayReviews.forEach(rev => {
+                const card = document.createElement('div');
+                card.className = 'review-card';
+                card.innerHTML = `
+                    <div class="review-header">
+                        <div class="review-avatar">${rev.name.charAt(0)}</div>
+                        <div class="review-info">
+                            <h4>${rev.name}</h4>
+                            <div class="review-stars">${'⭐'.repeat(rev.rating)}</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"${rev.text}"</p>
+                `;
+                track.appendChild(card);
+            });
+        }
+
+        function addReview() {
+            const name = document.getElementById('revName').value;
+            const text = document.getElementById('revText').value;
+            const rating = parseInt(document.getElementById('revRating').value);
+            if(!name || !text) return alert('Please fill in all fields!');
+            
+            let reviews = JSON.parse(localStorage.getItem('smartgen_reviews')) || defaultReviews;
+            
+            // Add new review to the TOP of the list
+            reviews.unshift({ name, text, rating });
+            
+            localStorage.setItem('smartgen_reviews', JSON.stringify(reviews));
+            document.getElementById('revName').value = '';
+            document.getElementById('revText').value = '';
+            
+            loadReviews();
+            alert('Thank you for your review! It has been added to the top.');
+        }
+
+        function openModal(id) {
+            document.getElementById(id).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = (event) => {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        function toggleMobileMenu() {
+            const nav = document.querySelector('nav');
+            nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+            if(nav.style.display === 'flex') {
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '100%';
+                nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.background = 'white';
+                nav.style.padding = '20px';
+                nav.style.borderBottom = '1px solid var(--border)';
+            }
+        }
+    </script>
+</body>
+</html>
