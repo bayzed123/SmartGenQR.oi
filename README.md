@@ -107,12 +107,81 @@ pnpm build
 ---
 
 ## 🧑‍💻 Developer Usage
-
-### Embed in Website
-
+### For End Users
+1. Select QR Type - Choose from URL, WiFi, WhatsApp, Email, SMS, or vCard 
+ 2. Enter Data - Fill in the required information 
+ 3. Customize Design - Choose colors, patterns, and styles 
+ 4. Preview - See your QR code in real-time 
+ 5. Download - Export as PNG or SVG  
+### For Developers
+**HTML/JavaScript**
 ```html
-<iframe src="smartgen-standalone.html"></iframe>
+ <!-- Include the standalone file -->
+ <iframe src="smartgen-standalone.html"></iframe>
+ ```
+**React Integration**
+```jsx
+ import Generator from './pages/Generator';
+export default function App( ) {
+   return <Generator />;
+ }
+ ```
+**QR Code Generation**
+```javascript
+ // Using the QRCode library
+ const qrCode = new QRCode(element, {
+   text: "https://example.com",
+   width: 300,
+   height: 300,
+   colorDark: "#000000",
+   colorLight: "#ffffff"
+ } );
+ ```
+---
+## 🛠️ Technology Stack
+### Frontend
+* React 19 - UI Framework 
+ * TypeScript - Type Safety 
+ * Tailwind CSS 4 - Styling 
+ * QR Code Styling - Advanced QR customization 
+ * Vite - Build Tool  
+### Backend
+* Express 4 - Server Framework 
+ * tRPC 11 - Type-safe APIs 
+ * Drizzle ORM - Database Management 
+ * MySQL/TiDB - Database  
+### Libraries
+* qrcode.js - QR Code Generation 
+ * qr-code-styling - Advanced Styling 
+ * Lucide React - Icons 
+ * Shadcn/UI - UI Components  
+
+### Project Structure 
 ```
+ smartgen-qr-generator/
+ ├── client/
+ │   ├── src/
+ │   │   ├── pages/
+ │   │   │   ├── Home.tsx          # Landing page
+ │   │   │   ├── Generator.tsx     # QR generator
+ │   │   │   └── NotFound.tsx      # 404 page
+ │   │   ├── components/           # Reusable components
+ │   │   ├── contexts/             # React contexts
+ │   │   ├── App.tsx               # Main app
+ │   │   └── index.css             # Global styles
+ │   └── index.html                # HTML template
+ ├── server/
+ │   ├── routers.ts                # tRPC routes
+ │   ├── db.ts                     # Database queries
+ │   └── _core/                    # Core infrastructure
+ ├── drizzle/
+ │   ├── schema.ts                 # Database schema
+ │   └── migrations/               # Database migrations
+ ├── smartgen-standalone.html      # Standalone version
+ ├── LICENSE                       # MIT License
+ ├── README.md                     # This file
+ └── package.json                  # Dependencies
+ ```
 
 ---
 
@@ -273,13 +342,20 @@ If you like SmartGen:
 ---
 
 ## ⚖️ Legal
-
-© 2026 SmartGen — All Rights Reserved  
-
-**Disclaimer:**  
-This software is provided "as is" without warranty of any kind.
-
+ © 2026 SmartGen. All Rights Reserved.  
+Developed by Sayad Md Bayezid Hosan  
+**Disclaimer** 
+ This software is provided "as is" without warranty. The author is not liable for any damages 
+ or issues arising from the use of this software.  
+**Trademark** 
+ "SmartGen" is a trademark of Sayad Md Bayezid Hosan. You may not use the SmartGen 
+ name for derivative works without permission.  
+Made with ❤️ by Sayad Md Bayezid Hosan  
+Visit: www.connectwithbayezid.it.com | www.genzfrontir.com  
+ https://www.connectwithbayezid.it.com/ 
+ https://www.genzfrontir.com/ 
+  
 ---
 
-### ❤️ Built with passion by Bayezid  
+### ❤️ Built with passion by Sayad Md Bayezid Hosan
 **A GenZ Frontier Project**
