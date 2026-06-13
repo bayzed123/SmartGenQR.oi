@@ -20,12 +20,9 @@
 
 <!-- START_LINK_CHECKER -->
 
-### ⚠️ Link Status Report
+### ✅ All Systems Operational
 
-| Broken URL | Error Code |
-|---|---|
-| https://smartgentools.com/app-legal/ | 404 |
-| https://smartgentools.com/trust-center/ | 404 |
+**Status:** All tools and pages in the sitemap are working perfectly! No broken links found.
 
 <!-- END_LINK_CHECKER -->
 
