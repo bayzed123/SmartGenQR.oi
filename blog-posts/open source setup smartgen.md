@@ -388,7 +388,7 @@ Feature Request Template
 
 ## Additional Context
 [span_133](start_span)[Any additional information][span_133](end_span)
-
+---
 Documentation
 When to Update Docs
 • New features  
@@ -879,7 +879,9 @@ For our mobile applications, we adhere to strict data safety guidelines:
 | Device Info | Limited (Analytics Only) |
 
 We ensure no sale of personal data, minimal technical data collection, and full disclosure regarding Firebase crash analytics and AdMob advertising. There is no user profiling beyond what is required by the ads SDK.
-
+---
+# our Goal 
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
