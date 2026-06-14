@@ -1,5 +1,5 @@
 ---
-title: "SmartGen Launches HTML Marquee Generator: Create Scrolling Text in Seconds"
+title: "SmartGen Now Open source project"
 date: 2026-06-15
 image: "https://i.ibb.co/Y7FCcNqP/962-F6-E99-D77-F-4-A13-BC23-B9-F465-ADC8-EA.png"
 author: "SmartGen"
