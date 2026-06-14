@@ -4,16 +4,30 @@ authors = ["Sayad Md Bayezid Hosan"]
 description = "Official documentation, guides, and API references for the SmartGen QR Code Generator."
 language = "en"
 multilingual = false
+
+# Source folder (must match repo)
 src = "src"
 
 [build]
 build-dir = "book"
-create-missing = false
+create-missing = true
 
 [output.html]
 mathjax-support = false
-# SmartGen Repository Link
+search = true
+default-theme = "light"
+preferred-dark-theme = "navy"
+
+# GitHub integration
 git-repository-url = "https://github.com/bayzed123/SmartGenQR.oi"
-git-repository-icon = "fa-github"
-# Connects the edit button directly to the SmartGen src folder
+git-repository-icon = "github"
+
+# Edit button (important for docs workflow)
 edit-url-template = "https://github.com/bayzed123/SmartGenQR.oi/edit/main/src/{path}"
+
+[output.html.print]
+enable = true
+
+[output.html.fold]
+enable = true
+level = 1
