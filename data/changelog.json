@@ -1,5 +1,10 @@
 [
   {
+    "title": "Delete src directory",
+    "date": "2026-06-14T18:47:44Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Delete book.toml",
     "date": "2026-06-14T17:39:39Z",
     "description": "Platform improvement and optimization."
