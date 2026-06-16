@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix: Auto-update sitemap.xml with blog posts, add Developer Guidelines, and update footer",
+    "date": "2026-06-16T17:51:56Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Create schema-generator.md",
     "date": "2026-06-15T19:17:22Z",
     "description": "Platform improvement and optimization."
