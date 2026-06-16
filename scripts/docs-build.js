@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
@@ -6,18 +8,14 @@ const slugify = require('slugify');
 
 const DOCS_POSTS_DIR = path.join(__dirname, '../docs-posts');
 const DOCS_OUTPUT_DIR = path.join(__dirname, '../docs');
-const SITE_URL = 'https://smartgentools.com'; // Replace with your actual site URL
+const SITE_URL = 'https://smartgentools.com';
 
-// Ensure docs output directory exists
 if (!fs.existsSync(DOCS_OUTPUT_DIR)) {
     fs.mkdirSync(DOCS_OUTPUT_DIR, { recursive: true });
 }
 
-/**
- * Reads all Markdown files from the docs-posts directory
- * and parses their front-matter and content.
- * @returns {Array} An array of doc post objects.
- */
+marked.setOptions({ breaks: true, gfm: true });
+
 function readDocPosts() {
     if (!fs.existsSync(DOCS_POSTS_DIR)) {
         console.log('⚠️  docs-posts directory not found. Creating it...');
@@ -33,37 +31,39 @@ function readDocPosts() {
         const fileContent = fs.readFileSync(filePath, 'utf8');
         const { data: attributes, content: body } = matter(fileContent);
 
-
-        const slug = slugify(attributes.title || file.replace('.md', ''), {
-            lower: true,
-            strict: true,
-        });
+        const slug = slugify(attributes.title || file.replace('.md', ''), { lower: true, strict: true });
 
         docs.push({
             slug,
             title: attributes.title || 'Untitled',
-            description: attributes.description || '',
+            description: attributes.description || 'SmartGen Developer Documentation',
             content: body,
-            order: attributes.order || 999, // Default order for sorting
+            order: attributes.order || 999,
+            category: attributes.category || 'Guides' // Added category for Expo-style grouping
         });
     });
 
-    // Sort docs by the 'order' property
     return docs.sort((a, b) => a.order - b.order);
 }
 
-/**
- * Generates the HTML content for a single documentation page.
- * @param {Object} doc - The doc post object.
- * @param {Array} allDocs - All doc post objects for sidebar generation.
- * @returns {string} The full HTML content for the doc page.
- */
 function generateDocHTML(doc, allDocs) {
     const htmlContent = marked(doc.content);
 
-    const sidebarNav = allDocs.map(d => `
-        <a href="/docs/${d.slug}/" class="nav-link ${d.slug === doc.slug ? 'active' : ''}">${d.title}</a>
-    `).join('');
+    // Group links by category for Expo-style sidebar
+    const categories = [...new Set(allDocs.map(d => d.category))];
+    let sidebarNav = '';
+    
+    categories.forEach(cat => {
+        sidebarNav += `<div class="sidebar-category">${cat}</div>`;
+        allDocs.filter(d => d.category === cat).forEach(d => {
+            const isActive = d.slug === doc.slug ? 'active' : '';
+            sidebarNav += `
+                <a href="/docs/${d.slug}/" class="nav-link ${isActive}">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    ${d.title}
+                </a>`;
+        });
+    });
 
     return `<!DOCTYPE html>
 <html lang="en">
@@ -72,480 +72,104 @@ function generateDocHTML(doc, allDocs) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${doc.title} - SmartGen Docs</title>
     <meta name="description" content="${doc.description}">
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="${doc.title} - SmartGen Docs">
-    <meta property="og:description" content="${doc.description}">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="${SITE_URL}/docs/${doc.slug}/">
-    
-    <!-- Canonical URL -->
     <link rel="canonical" href="${SITE_URL}/docs/${doc.slug}/">
     
-    <!-- Styles -->
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f6f8fa;
-            --bg-tertiary: #eaeef2;
-            --text-primary: #24292f;
-            --text-secondary: #57606a;
-            --text-tertiary: #8c959f;
-            --border-color: #d0d7de;
-            --code-bg: #f6f8fa;
-            --code-text: #24292f;
-        }
-
-        [data-theme="dark"] {
-            --bg-primary: #0d1117;
-            --bg-secondary: #161b22;
-            --bg-tertiary: #21262d;
-            --text-primary: #e6edf3;
-            --text-secondary: #8b949e;
-            --text-tertiary: #6e7681;
-            --border-color: #30363d;
-            --code-bg: #161b22;
-            --code-text: #e6edf3;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        header {
-            border-bottom: 1px solid var(--border-color);
-            background-color: var(--bg-secondary);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-icon {
-            font-size: 1.8rem;
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            font-size: 1.2rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 6px;
-            transition: background-color 0.2s;
-        }
-
-        .theme-toggle:hover {
-            background-color: var(--bg-tertiary);
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .docs-layout {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 2rem;
-            padding: 2rem 0;
-            min-height: calc(100vh - 60px);
-        }
-
-        .sidebar {
-            background-color: var(--bg-secondary);
-            border-radius: 8px;
-            padding: 1.5rem;
-            height: fit-content;
-            position: sticky;
-            top: 80px;
-            border: 1px solid var(--border-color);
-        }
-
-        .sidebar-title {
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: var(--text-tertiary);
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .sidebar-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .sidebar-nav a {
-            padding: 0.5rem 0.75rem;
-            border-radius: 6px;
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            border-left: 2px solid transparent;
-        }
-
-        .sidebar-nav a:hover {
-            background-color: var(--bg-tertiary);
-            color: var(--text-primary);
-        }
-
-        .sidebar-nav a.active {
-            background-color: rgba(37, 99, 235, 0.1);
-            color: var(--primary);
-            border-left-color: var(--primary);
-        }
-
-        .main-content {
-            background-color: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2rem;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
-
-        h3 {
-            font-size: 1.1rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-        }
-
-        a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        code {
-            background-color: var(--code-bg);
-            color: var(--code-text);
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9em;
-        }
-
-        pre {
-            background-color: var(--code-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 1rem;
-            overflow-x: auto;
-            margin: 1rem 0;
-        }
-
-        pre code {
-            background: none;
-            padding: 0;
-            color: var(--code-text);
-        }
-
-        ul, ol {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-
-        th, td {
-            border: 1px solid var(--border-color);
-            padding: 0.75rem;
-            text-align: left;
-        }
-
-        th {
-            background-color: var(--bg-secondary);
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        tr:nth-child(even) {
-            background-color: var(--bg-secondary);
-        }
-
-        .alert {
-            padding: 1rem;
-            border-radius: 6px;
-            margin: 1rem 0;
-            border-left: 4px solid;
-        }
-
-        .alert-info {
-            background-color: rgba(37, 99, 235, 0.1);
-            border-left-color: var(--primary);
-            color: var(--text-primary);
-        }
-
-        .alert-warning {
-            background-color: rgba(255, 193, 7, 0.1);
-            border-left-color: #ffc107;
-            color: var(--text-primary);
-        }
-
-        .alert-success {
-            background-color: rgba(76, 175, 80, 0.1);
-            border-left-color: #4caf50;
-            color: var(--text-primary);
-        }
-
-        .breadcrumb {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            color: var(--text-tertiary);
-        }
-
-        .breadcrumb a {
-            color: var(--primary);
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .feature-card {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: all 0.2s;
-        }
-
-        .feature-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
-        }
-
-        .feature-card h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        .feature-card p {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            .docs-layout {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .sidebar {
-                position: static;
-                padding: 1rem;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.25rem;
-            }
-
-            .main-content {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-content">
+    <header class="docs-header">
+        <div class="header-left">
+            <button id="mobile-menu-btn" class="icon-btn mobile-only" aria-label="Menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
             <a href="/" class="logo">
-                <div class="logo-icon">⚡</div>
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="color: var(--primary);"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                 SmartGen Docs
             </a>
-            <div class="header-actions">
-                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">🌓</button>
+        </div>
+        <div class="header-right">
+            <div class="search-bar desktop-only">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" placeholder="Search or Ask AI..." readonly>
             </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <a href="https://github.com/Sayadbayezid" target="_blank" class="icon-btn" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
         </div>
     </header>
 
-    <div class="container">
-        <div class="docs-layout">
-            <aside class="sidebar">
-                <div class="sidebar-title">Documentation</div>
-                <nav class="sidebar-nav">
-                    ${sidebarNav}
-                </nav>
-            </aside>
+    <div class="docs-layout">
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+        
+        <aside id="sidebar" class="sidebar">
+            <nav class="sidebar-nav">
+                ${sidebarNav}
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="https://smartgentools.com" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                    Home
+                </a>
+                <a href="https://smartgentools.com/blog" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    Blog
+                </a>
+                <a href="https://smartgentools.com/about" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    About Us
+                </a>
+                <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions/1" target="_blank" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    Discussions <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+                <a href="https://smartgentools.com/privacy" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    Privacy & Legal
+                </a>
+            </div>
+        </aside>
 
-            <main class="main-content">
+        <main class="main-content">
+            <article class="doc-article">
                 <div class="breadcrumb">
-                    <a href="/">Home</a>
-                    <span>/</span>
-                    <a href="/docs/">Documentation</a>
-                    <span>/</span>
-                    <span>${doc.title}</span>
+                    <span>Docs</span> <span class="separator">/</span> <span>${doc.category || 'Guides'}</span>
                 </div>
-
-                <h1>${doc.title}</h1>
-                <p class="doc-description">${doc.description}</p>
-
-                <div class="doc-content">
+                <h1 class="doc-title">${doc.title}</h1>
+                <div class="doc-body">
                     ${htmlContent}
                 </div>
-            </main>
-        </div>
+            </article>
+        </main>
     </div>
 
-    <script>
-        // Theme toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const theme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', theme);
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-
-        // Smooth scroll for navigation links (optional, can be added later if needed)
-        document.querySelectorAll('.sidebar-nav a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                // e.preventDefault(); // Prevent default if using client-side routing
-                // For static pages, default behavior is fine, but we can add active class logic
-                document.querySelectorAll('.sidebar-nav a').forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-            });
-        });
-
-        // Set active class on load based on current URL
-        const currentPath = window.location.pathname;
-        document.querySelectorAll('.sidebar-nav a').forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-            }
-        });
-    </script>
+    <script src="../../assets/js/docs.js"></script>
 </body>
 </html>`;
 }
 
-/**
- * Main build function for documentation.
- */
 function buildDocs() {
-    console.log('🚀 Starting SmartGen Docs Build...\n');
-
+    console.log('🚀 Starting SmartGen Premium Docs Build...\n');
     const docs = readDocPosts();
-    console.log(`✅ Found ${docs.length} documentation page(s)\n`);
 
-    if (docs.length === 0) {
-        console.log('⚠️  No documentation files found. Create .md files in docs-posts/ directory.');
-        console.log('📝 Example: docs-posts/getting-started.md\n');
-        return;
-    }
+    if (docs.length === 0) return;
 
-    // Generate individual doc pages
     docs.forEach(doc => {
         const docDir = path.join(DOCS_OUTPUT_DIR, doc.slug);
-        if (!fs.existsSync(docDir)) {
-            fs.mkdirSync(docDir, { recursive: true });
-        }
-
-        const docHTML = generateDocHTML(doc, docs); // Pass all docs for sidebar
-        fs.writeFileSync(path.join(docDir, 'index.html'), docHTML);
-        console.log(`✅ Generated: /docs/${doc.slug}/index.html`);
+        if (!fs.existsSync(docDir)) fs.mkdirSync(docDir, { recursive: true });
+        fs.writeFileSync(path.join(docDir, 'index.html'), generateDocHTML(doc, docs));
     });
 
-    // Generate main docs index.html (optional, can be a redirect or a landing page)
-    // For now, let's create a simple redirect to the first doc post
     if (docs.length > 0) {
         const firstDocSlug = docs[0].slug;
-        const indexHtmlContent = `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/docs/${firstDocSlug}/">
-    <link rel="canonical" href="${SITE_URL}/docs/${firstDocSlug}/">
-    <title>Redirecting to ${docs[0].title}</title>
-</head>
-<body>
-    <p>Redirecting to <a href="/docs/${firstDocSlug}/">${docs[0].title}</a></p>
-</body>
-</html>`;
+        const indexHtmlContent = `<meta http-equiv="refresh" content="0; url=/docs/${firstDocSlug}/">`;
         fs.writeFileSync(path.join(DOCS_OUTPUT_DIR, 'index.html'), indexHtmlContent);
-        console.log(`✅ Generated: /docs/index.html (redirect to /docs/${firstDocSlug}/)`);
     }
-
-    console.log('\n🎉 Docs build completed successfully!');
-    console.log(`📊 Total docs: ${docs.length}`);
-    console.log(`🌐 Docs URL: ${SITE_URL}/docs/\n`);
+    console.log('🎉 Expo-Style Docs build completed successfully!');
 }
 
-// Run the build
 buildDocs();
