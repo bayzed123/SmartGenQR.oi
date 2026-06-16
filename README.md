@@ -20,9 +20,11 @@
 
 <!-- START_LINK_CHECKER -->
 
-### ✅ All Systems Operational
+### ⚠️ Link Status Report
 
-**Status:** All tools and pages in the sitemap are working perfectly! No broken links found.
+| Broken URL | Error Code |
+|---|---|
+| https://smartgentools.com/node_modules/sprintf-js/demo/angular/ | 404 |
 
 <!-- END_LINK_CHECKER -->
 
