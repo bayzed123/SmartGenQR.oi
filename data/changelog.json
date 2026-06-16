@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update coding-guidelines.md",
+    "date": "2026-06-16T21:07:28Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Delete node_modules directory",
     "date": "2026-06-16T20:59:30Z",
     "description": "Platform improvement and optimization."
