@@ -56,6 +56,55 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/blog.css">
     
+    <!-- Print Styles -->
+    <style>
+        @media print {
+            header, footer, .newsletter-section, .blog-related-posts, #print-button, #share-button, #main-header, #main-footer {
+                display: none !important;
+            }
+            body {
+                background: white;
+                color: black;
+            }
+            .blog-post-container {
+                max-width: 100%;
+                padding: 0;
+            }
+            .blog-post-article {
+                box-shadow: none;
+                border: none;
+            }
+            .blog-post-title {
+                page-break-after: avoid;
+            }
+            .blog-post-content {
+                color: black;
+            }
+            .blog-post-content a {
+                color: #0066cc;
+                text-decoration: underline;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                page-break-inside: avoid;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+            p {
+                orphans: 3;
+                widows: 3;
+            }
+            pre {
+                background: #f5f5f5 !important;
+                border: 1px solid #ddd !important;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+    
     <!-- Scripts -->
     <script src="../../assets/js/app.js" defer></script>
     <script src="../../assets/js/blog.js" defer></script>
@@ -142,6 +191,16 @@
                 <div class="blog-post-tags">
                     <span class="blog-tag">schema generator</span><span class="blog-tag">json-ld creator</span><span class="blog-tag">seo tools</span><span class="blog-tag">structured data</span><span class="blog-tag">rich snippets</span>
                 </div>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button id="print-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #2563eb; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" title="Print or download this article as PDF">
+                        <span>🖨️</span>
+                        <span>Print / Download</span>
+                    </button>
+                    <button id="share-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #6b7280; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" title="Share this article">
+                        <span>📤</span>
+                        <span>Share</span>
+                    </button>
+                </div>
             </footer>
         </article>
 
@@ -165,5 +224,34 @@
     </main>
 
     <footer id="main-footer"></footer>
+    
+    <script>
+        // Print button functionality
+        document.getElementById('print-button').addEventListener('click', function() {
+            window.print();
+        });
+        
+        // Share button functionality
+        document.getElementById('share-button').addEventListener('click', function() {
+            const title = document.querySelector('.blog-post-title').textContent;
+            const url = window.location.href;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: 'Easily generate valid JSON-LD schema markup for your website. A complete guide to using the SmartGen online schema creator for SEO rich snippets.',
+                    url: url
+                }).catch(err => console.log('Share failed:', err));
+            } else {
+                const shareText = title + '
+' + url;
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Article link copied to clipboard!');
+                }).catch(err => {
+                    alert('Share URL: ' + url);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
