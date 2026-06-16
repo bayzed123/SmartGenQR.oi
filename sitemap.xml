@@ -151,6 +151,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smartgentools.com/docs/coding-guidelines/</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/docs/getting-started/</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smartgentools.com/emi-calculator/</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
