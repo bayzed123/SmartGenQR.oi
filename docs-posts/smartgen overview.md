@@ -1,4 +1,13 @@
-⚡ SmartGen Wiki
+---
+title: "Quick Setup Guide"
+description: "Learn how to quickly set up SmartGen tools."
+category: "overview"
+order: 2
+---
+
+# Quick Setup Guide
+
+# SmartGen 
 
 Welcome to the official documentation for **SmartGen**, an all-in-one digital and web utility platform designed for developers, marketers, and everyday users. This wiki provides a deep dive into our architecture, development philosophy, and the tools we offer.
 
