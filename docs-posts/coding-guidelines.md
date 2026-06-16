@@ -1,4 +1,10 @@
-# Developer Guidelines for SmartGenQR.oi
+---
+title: "developer Guidelines"
+description: "Learn how to quickly set up SmartGen tools."
+category: "overview"
+order: 3
+---
+# Developer Guidelines for SmartGen
 
 This document outlines the coding guidelines and best practices for contributing to the SmartGenQR.oi project. Adhering to these guidelines ensures code consistency, maintainability, and collaboration efficiency.
 
