@@ -241,6 +241,7 @@ function injectFooter() {
                             <li><a href="/disclaimer/">Disclaimer</a></li>
                             <li><a href="/cookies/">Cookie Policy</a></li>
                             <li><a href="/updates/">Updates & Changelog</a></li>
+                            <li><a href="/WIKI_Developer_Guidelines.md">Developer Guidelines</a></li>
                         </ul>
                     </div>
                 </div>

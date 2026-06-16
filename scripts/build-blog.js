@@ -306,6 +306,62 @@ function generateBlogJSON(posts) {
 }
 
 /**
+ * Update sitemap.xml with blog posts
+ */
+function updateSitemap(posts) {
+  const sitemapPath = path.join(__dirname, '../sitemap.xml');
+  if (!fs.existsSync(sitemapPath)) {
+    console.log('⚠️  sitemap.xml not found at root. Skipping sitemap update.');
+    return;
+  }
+
+  let sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+  const today = new Date().toISOString().split('T')[0];
+
+  // Remove existing blog entries to avoid duplicates
+  // This regex finds <url> blocks that contain /blog/ in the <loc> tag
+  const urlRegex = /<url>[\s\S]*?<loc>https:\/\/smartgentools\.com\/blog\/[\s\S]*?<\/url>/g;
+  sitemapContent = sitemapContent.replace(urlRegex, '');
+
+  // Clean up any double newlines caused by replacement
+  sitemapContent = sitemapContent.replace(/\n\s*\n/g, '\n');
+
+  // Prepare new blog entries
+  let blogEntries = '';
+  
+  // Add main blog page if not present
+  if (!sitemapContent.includes('https://smartgentools.com/blog/')) {
+    blogEntries += `  <url>
+    <loc>${SITE_URL}/blog/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>\n`;
+  }
+
+  // Add individual posts
+  posts.forEach(post => {
+    blogEntries += `  <url>
+    <loc>${SITE_URL}/blog/${post.slug}/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>\n`;
+  });
+
+  // Insert before the closing </urlset> tag
+  if (sitemapContent.includes('</urlset>')) {
+    sitemapContent = sitemapContent.replace('</urlset>', `${blogEntries}</urlset>`);
+    // Final cleanup to ensure proper formatting
+    sitemapContent = sitemapContent.replace(/<\/url>\s*<url>/g, '</url>\n  <url>');
+    fs.writeFileSync(sitemapPath, sitemapContent);
+    console.log(`✅ Updated: sitemap.xml with ${posts.length} blog posts\n`);
+  } else {
+    console.log('⚠️  Could not find </urlset> in sitemap.xml. Sitemap update failed.');
+  }
+}
+
+/**
  * Main build function
  */
 function buildBlog() {
@@ -341,6 +397,9 @@ function buildBlog() {
   const blogJSON = generateBlogJSON(posts);
   fs.writeFileSync(path.join(BLOG_OUTPUT_DIR, 'blog.json'), blogJSON);
   console.log(`✅ Generated: /blog/blog.json\n`);
+
+  // Update sitemap.xml
+  updateSitemap(posts);
 
   console.log('🎉 Blog build completed successfully!');
   console.log(`📊 Total posts: ${posts.length}`);
