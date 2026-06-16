@@ -253,12 +253,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smartgentools.com/node_modules/sprintf-js/demo/angular/</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://smartgentools.com/password-generator/</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
