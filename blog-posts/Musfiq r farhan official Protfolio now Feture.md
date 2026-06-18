@@ -1,3 +1,9 @@
+---
+title: "Musfiq R. Farhan - Blog & Portfolio Website"
+description: "A modern, professional blog and portfolio website for **Musfiq R. Farhan**, a multi-talented entertainer, radio jockey, actor, and content creator from Bangladesh.
+"
+image: "https://i.postimg.cc/c1K0NDHT/IMG-2742.jpg"
+---
 # Musfiq R. Farhan - Blog & Portfolio Website
 
 A modern, professional blog and portfolio website for **Musfiq R. Farhan**, a multi-talented entertainer, radio jockey, actor, and content creator from Bangladesh.
@@ -484,6 +490,6 @@ MIT License - See LICENSE file for details
 **Status:** ✅ Production Ready
 
 ---
-
+See live view [musfiq r farhan](www.musfiqrfarhan.blog)
 **Made with ❤️ for Musfiq R. Farhan**
 deploy: sayad Md Bayezid Hosan 
