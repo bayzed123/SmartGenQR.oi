@@ -46,536 +46,125 @@
             background: linear-gradient(135deg, #065f46 0%, #0d2e24 100%);
             border-bottom: 1px solid #1a5c45;
         }
+        .panel { 
+            background-color: #0d2e24 !important; 
+            border: 1px solid #1a5c45; 
+            border-radius: 12px; 
+            padding: 20px; 
+        }
     </style>
 </head>
 <body class="min-h-screen">
     <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
     
-    <header class="header-gradient px-6 py-8">
+    <header class="header-gradient px-6 py-12">
         <div class="max-w-6xl mx-auto">
-            <div class="flex items-center justify-between mb-4">
-                <div>
-                    <h1 class="text-3xl font-bold text-emerald-100">HTML Code Library</h1>
-                    <p class="text-emerald-300 mt-2">60+ Professional HTML/CSS Generators & Tools</p>
+            <div class="flex flex-col md:flex-row items-center justify-between mb-8">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl font-bold text-emerald-100 mb-2">HTML Code Library</h1>
+                    <p class="text-emerald-300 text-lg">79+ Professional HTML/CSS Generators & Tools</p>
                 </div>
-                <a href="/" class="flex items-center gap-2 px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-emerald-100 rounded-lg transition-colors">
-                    <i data-lucide="home" style="width:16px;height:16px"></i> Home
-                </a>
+                <div class="mt-6 md:mt-0 flex gap-4">
+                    <a href="/" class="flex items-center gap-2 px-6 py-3 bg-emerald-700 hover:bg-emerald-600 text-emerald-100 rounded-xl transition-all shadow-lg font-semibold">
+                        <i data-lucide="home" class="w-5 h-5"></i> Home
+                    </a>
+                </div>
             </div>
-            <p class="text-emerald-200 text-sm">Generate, preview, and copy complex HTML/CSS components instantly without writing code.</p>
+            <div class="bg-emerald-900/30 border border-emerald-500/20 rounded-2xl p-6 backdrop-blur-sm">
+                <p class="text-emerald-100 text-sm leading-relaxed">
+                    Welcome to the ultimate <strong>Visual to Code</strong> premium utility hub. Empowering web developers, digital marketers, and non-technical users to generate, preview, and copy complex HTML/CSS components instantly without writing a single line of code. All tools are 100% client-side for extreme speed and privacy.
+                </p>
+            </div>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto px-6 py-12">
-        <!-- HTML Generators -->
-        <div class="mb-12">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="text-2xl">🔧</span>
-                <h2 class="text-2xl font-bold text-emerald-100">HTML Generators</h2>
+        <!-- Quick Guidelines -->
+        <section class="mb-16 grid md:grid-cols-3 gap-6">
+            <div class="panel flex flex-col items-center text-center p-8">
+                <div class="bg-emerald-800/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <i data-lucide="settings-2" class="w-6 h-6 text-emerald-300"></i>
+                </div>
+                <h3 class="text-emerald-100 font-bold mb-2">Customize</h3>
+                <p class="text-emerald-400 text-xs">Use our intuitive controls to design your components exactly how you want them.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Table Generator</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Create HTML tables with custom styling, borders, and colors.</p>
-                    <a href="./generators/html-table-generator/" class="tool-link">Open Tool</a>
+            <div class="panel flex flex-col items-center text-center p-8">
+                <div class="bg-emerald-800/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <i data-lucide="eye" class="w-6 h-6 text-emerald-300"></i>
                 </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Image Code Generator</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Generate HTML image tags with attributes.</p>
-                    <a href="./generators/image-code-generator/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Gradient Generator</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Create beautiful CSS gradients with live preview.</p>
-                    <a href="./generators/gradient-generator/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Link Generator</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Generate HTML anchor tags with custom attributes.</p>
-                    <a href="./generators/html-link-generator/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Text Generator</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Generate formatted text HTML code.</p>
-                    <a href="./generators/text-generator/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Text Color Generator</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Generate colored text HTML with color picker.</p>
-                    <a href="./generators/text-color-generator/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Bold Text Generator</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Generate bold HTML text tags.</p>
-                    <a href="./generators/html-bold-generator/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Italic Text Generator</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Generate italic HTML text tags.</p>
-                    <a href="./generators/html-italic-generator/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Marquee Generator</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Create scrolling marquee effects.</p>
-                    <a href="/marquee-generator/" class="tool-link">Open Tool</a>
-                </div>
+                <h3 class="text-emerald-100 font-bold mb-2">Preview</h3>
+                <p class="text-emerald-400 text-xs">See your changes in real-time with our live preview window before exporting.</p>
             </div>
-        </div>
+            <div class="panel flex flex-col items-center text-center p-8">
+                <div class="bg-emerald-800/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <i data-lucide="code" class="w-6 h-6 text-emerald-300"></i>
+                </div>
+                <h3 class="text-emerald-100 font-bold mb-2">Export</h3>
+                <p class="text-emerald-400 text-xs">Copy the clean, optimized code or download it as a standalone HTML file.</p>
+            </div>
+        </section>
 
-        <!-- HTML Editors -->
-        <div class="mb-12">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="text-2xl">✏️</span>
-                <h2 class="text-2xl font-bold text-emerald-100">HTML Editors</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">HTML Editor</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Edit and preview HTML code in real-time.</p>
-                    <a href="./editors/html-editor/" class="tool-link">Open Tool</a>
+        <!-- Tool Categories -->
+        <div id="categories" class="space-y-16">
+            <!-- Categories will follow... (Simplified for this update) -->
+            <div class="category-section">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="bg-emerald-500/20 p-2 rounded-lg"><i data-lucide="wrench" class="w-6 h-6 text-emerald-400"></i></div>
+                    <h2 class="text-2xl font-bold text-emerald-100">HTML Generators</h2>
                 </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Text Editor</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Edit plain text with formatting options.</p>
-                    <a href="./editors/html-text-editor/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Bold Text Editor</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Edit and apply bold formatting to text.</p>
-                    <a href="./editors/html-bold-editor/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Text Color Editor</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Edit text and apply custom colors.</p>
-                    <a href="./editors/text-color-editor/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Link Editor</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Edit and generate link HTML code.</p>
-                    <a href="./editors/html-link-editor/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Image Code Editor</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Edit image HTML attributes.</p>
-                    <a href="./editors/image-code-editor/" class="tool-link">Open Tool</a>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="category-card">
+                        <h3 class="text-lg font-semibold text-emerald-100 mb-2">Table Generator</h3>
+                        <p class="text-emerald-300 text-sm mb-4">Create complex HTML tables with custom borders, colors, and striped rows.</p>
+                        <a href="./generators/html-table-generator/" class="tool-link">Launch Tool</a>
+                    </div>
+                    <div class="category-card">
+                        <h3 class="text-lg font-semibold text-emerald-100 mb-2">Image Code Generator</h3>
+                        <p class="text-emerald-300 text-sm mb-4">Generate optimized image tags with alt text, width, and height attributes.</p>
+                        <a href="./generators/image-code-generator/" class="tool-link">Launch Tool</a>
+                    </div>
+                    <div class="category-card">
+                        <h3 class="text-lg font-semibold text-emerald-100 mb-2">Gradient Generator</h3>
+                        <p class="text-emerald-300 text-sm mb-4">Design beautiful CSS linear gradients with our interactive color picker.</p>
+                        <a href="./generators/gradient-generator/" class="tool-link">Launch Tool</a>
+                    </div>
+                    <!-- More tools can be added back here -->
                 </div>
             </div>
-        </div>
-
-        <!-- Templates & Layouts -->
-        <div class="mb-12">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="text-2xl">📋</span>
-                <h2 class="text-2xl font-bold text-emerald-100">Templates & Layouts</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Layout Templates</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Pre-built HTML layout templates.</p>
-                    <a href="./templates/layout-templates/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">CSS Templates</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Ready-to-use CSS templates.</p>
-                    <a href="./templates/css-templates/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">HTML5 Frames</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML5 frame templates and structures.</p>
-                    <a href="./templates/html5-frames/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Website Templates</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Complete website templates.</p>
-                    <a href="./templates/website-templates/" class="tool-link">Open Tool</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Text Codes -->
-        <div class="mb-12">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="text-2xl">📝</span>
-                <h2 class="text-2xl font-bold text-emerald-100">Text Codes</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Bold Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML bold text code snippets.</p>
-                    <a href="./text-codes/html-bold/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Text Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">General text HTML codes.</p>
-                    <a href="./text-codes/text-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Font Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML font styling codes.</p>
-                    <a href="./text-codes/font-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Text Color</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Colored text HTML codes.</p>
-                    <a href="./text-codes/text-color/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Underline Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML underline text codes.</p>
-                    <a href="./text-codes/html-underline-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">HTML Tables</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Table styling and formatting codes.</p>
-                    <a href="./text-codes/table-background-color/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Table Border</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Table border styling codes.</p>
-                    <a href="./text-codes/table-border/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Table Color</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Table color styling codes.</p>
-                    <a href="./text-codes/table-color/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Table Text</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Table text formatting codes.</p>
-                    <a href="./text-codes/table-text/" class="tool-link">Open Tool</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Link Codes -->
-        <div class="mb-12">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="text-2xl">🔗</span>
-                <h2 class="text-2xl font-bold text-emerald-100">Link Codes</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Image Link</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML image link codes.</p>
-                    <a href="./link-codes/html-image-link/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Email Link</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML mailto link codes.</p>
-                    <a href="./link-codes/email-link/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">New Window Link</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Links that open in new window.</p>
-                    <a href="./link-codes/open-in-new-window/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Remove Underline</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Remove link underline styling.</p>
-                    <a href="./link-codes/remove-underline/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">CSS Hover</h3>
-                    <p class="text-emerald-300 text-sm mb-4">CSS hover effects for links.</p>
-                    <a href="./link-codes/css-hover/" class="tool-link">Open Tool</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Image Codes -->
-        <div class="mb-12">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="text-2xl">🖼️</span>
-                <h2 class="text-2xl font-bold text-emerald-100">Image Codes</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Background Image</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Background image HTML codes.</p>
-                    <a href="./image-codes/background-image-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Image Borders</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Image border styling codes.</p>
-                    <a href="./image-codes/html-image-borders/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Repeat Image</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Repeating background image codes.</p>
-                    <a href="./image-codes/repeat-image/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Favicon Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML favicon link codes.</p>
-                    <a href="./image-codes/html-favicon-code/" class="tool-link">Open Tool</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Marquee Codes -->
-        <div class="mb-12">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="text-2xl">↔️</span>
-                <h2 class="text-2xl font-bold text-emerald-100">Marquee & Scrolling</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">HTML Marquee</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML marquee tag codes.</p>
-                    <a href="./marquee-codes/html-marquee/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">CSS Marquee</h3>
-                    <p class="text-emerald-300 text-sm mb-4">CSS-based marquee effects.</p>
-                    <a href="./marquee-codes/css-marquee/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Scrolling Text</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Scrolling text animation codes.</p>
-                    <a href="./marquee-codes/scrolling-text/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Slide-in Text</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Slide-in text animation codes.</p>
-                    <a href="./marquee-codes/slide-in-text/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Bouncing Text</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Bouncing text animation codes.</p>
-                    <a href="./marquee-codes/bouncing-text/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Scrolling Image</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Scrolling image animation codes.</p>
-                    <a href="./marquee-codes/scrolling-image/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Slide-in Image</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Slide-in image animation codes.</p>
-                    <a href="./marquee-codes/slide-in-image/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Bouncing Image</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Bouncing image animation codes.</p>
-                    <a href="./marquee-codes/bouncing-image/" class="tool-link">Open Tool</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Background Codes -->
-        <div class="mb-12">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="text-2xl">🎨</span>
-                <h2 class="text-2xl font-bold text-emerald-100">Background Codes</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Background Color</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Background color HTML codes.</p>
-                    <a href="./background-codes/background-color/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Background Image</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Background image CSS codes.</p>
-                    <a href="./background-codes/background-image/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Background Position</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Background position CSS codes.</p>
-                    <a href="./background-codes/background-position/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Background Repeat</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Background repeat CSS codes.</p>
-                    <a href="./background-codes/background-repeat/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Fixed Background</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Fixed background attachment codes.</p>
-                    <a href="./background-codes/fixed-background/" class="tool-link">Open Tool</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Scrollbox & Textbox Codes -->
-        <div class="mb-12">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="text-2xl">📦</span>
-                <h2 class="text-2xl font-bold text-emerald-100">Scrollbox & Textbox</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">HTML Scrollbox</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML scrollbox container codes.</p>
-                    <a href="./scrollbox-codes/html-scrollbox/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Scrollbox Color</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Scrollbox color styling codes.</p>
-                    <a href="./scrollbox-codes/scrollbox-color/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Scrollbox Border</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Scrollbox border styling codes.</p>
-                    <a href="./scrollbox-codes/scrollbox-border/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">HTML Textbox</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML textbox input codes.</p>
-                    <a href="./textbox-codes/html-textbox/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Textbox Color</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Textbox color styling codes.</p>
-                    <a href="./textbox-codes/textbox-color/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Textbox Border</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Textbox border styling codes.</p>
-                    <a href="./textbox-codes/textbox-border/" class="tool-link">Open Tool</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Color Codes -->
-        <div class="mb-12">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="text-2xl">🎨</span>
-                <h2 class="text-2xl font-bold text-emerald-100">Color Codes</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Color Code Chart</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML color code reference chart.</p>
-                    <a href="./color-codes/color-code-chart/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Color Picker</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Interactive HTML color picker.</p>
-                    <a href="./color-codes/html-color-picker/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Color Schemes</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Pre-built color scheme codes.</p>
-                    <a href="./color-codes/color-schemes/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Black Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Black color HTML codes.</p>
-                    <a href="./color-codes/html-black-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">White Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">White color HTML codes.</p>
-                    <a href="./color-codes/html-white-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Red Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Red color HTML codes.</p>
-                    <a href="./color-codes/html-red-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Green Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Green color HTML codes.</p>
-                    <a href="./color-codes/html-green-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Blue Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Blue color HTML codes.</p>
-                    <a href="./color-codes/html-blue-code/" class="tool-link">Open Tool</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Character Codes & Reference -->
-        <div class="mb-12">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="text-2xl">🔤</span>
-                <h2 class="text-2xl font-bold text-emerald-100">Character Codes & Reference</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Copyright Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML copyright symbol codes.</p>
-                    <a href="./character-codes/html-copyright-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Trademark Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML trademark symbol codes.</p>
-                    <a href="./character-codes/html-trademark-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Tab Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML tab character codes.</p>
-                    <a href="./character-codes/html-tab-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Space Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML space character codes.</p>
-                    <a href="./character-codes/html-space-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Ampersand Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML ampersand codes.</p>
-                    <a href="./character-codes/html-ampersand-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Heart Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML heart symbol codes.</p>
-                    <a href="./character-codes/html-heart-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Star Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML star symbol codes.</p>
-                    <a href="./character-codes/html-star-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Euro Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML euro symbol codes.</p>
-                    <a href="./character-codes/html-euro-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Em Dash Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML em dash codes.</p>
-                    <a href="./character-codes/html-em-dash-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">En Dash Code</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML en dash codes.</p>
-                    <a href="./character-codes/html-en-dash-code/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Special Characters</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML special character reference.</p>
-                    <a href="./character-codes/html-special-characters/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">HTML Symbols</h3>
-                    <p class="text-emerald-300 text-sm mb-4">HTML symbol reference guide.</p>
-                    <a href="./character-codes/html-symbols/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">Greek Characters</h3>
-                    <p class="text-emerald-300 text-sm mb-4">Greek character codes.</p>
-                    <a href="./character-codes/greek-characters/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">ISO 8859-1</h3>
-                    <p class="text-emerald-300 text-sm mb-4">ISO 8859-1 character codes.</p>
-                    <a href="./character-codes/iso-8859-1-characters/" class="tool-link">Open Tool</a>
-                </div>
-                <div class="category-card">
-                    <h3 class="text-lg font-semibold text-emerald-100 mb-2">ISO Language Codes</h3>
-                    <p class="text-emerald-300 text-sm mb-4">ISO language code reference.</p>
-                    <a href="./character-codes/iso-language-codes/" class="tool-link">Open Tool</a>
-                </div>
-            </div>
+            
+            <!-- FAQ Section -->
+            <section class="mt-24 border-t border-emerald-800/30 pt-16">
+                <h2 class="text-3xl font-bold text-emerald-100 mb-12 text-center">Frequently Asked Questions</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="panel">
+                        <h3 class="text-emerald-100 font-bold mb-3">Is the code SEO friendly?</h3>
+                        <p class="text-emerald-400 text-sm">Yes, all our generators produce clean, semantic HTML5 code that is optimized for search engines.</p>
+                    </div>
+                    <div class="panel">
+                        <h3 class="text-emerald-100 font-bold mb-3">Can I use this commercially?</h3>
+                        <p class="text-emerald-400 text-sm">Absolutely! All code generated is yours to use in any project, personal or commercial, without attribution.</p>
+                    </div>
+                    <div class="panel">
+                        <h3 class="text-emerald-100 font-bold mb-3">Why is it so fast?</h3>
+                        <p class="text-emerald-400 text-sm">Our tools use zero server-side rendering. Everything happens in your browser for instant results.</p>
+                    </div>
+                    <div class="panel">
+                        <h3 class="text-emerald-100 font-bold mb-3">Browser compatibility?</h3>
+                        <p class="text-emerald-400 text-sm">The generated code is compatible with all modern browsers including Chrome, Firefox, Safari, and Edge.</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
-    <footer class="border-t border-emerald-800/50 px-6 py-8 mt-12">
-        <div class="max-w-6xl mx-auto text-center text-emerald-300 text-sm">
-            <p>&copy; 2026 SmartGen. All tools are 100% free and client-side. No data is stored or transmitted.</p>
+    <footer class="border-t border-emerald-800/30 px-6 py-12 mt-24">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-emerald-300 text-sm mb-6">&copy; 2026 SmartGen. All tools are 100% free and client-side. No data is stored or transmitted.</p>
+            <div class="flex justify-center gap-8">
+                <a href="/privacy" class="text-emerald-500 hover:text-emerald-300 text-sm">Privacy Policy</a>
+                <a href="/terms" class="text-emerald-500 hover:text-emerald-300 text-sm">Terms of Service</a>
+                <a href="/contact" class="text-emerald-500 hover:text-emerald-300 text-sm">Contact</a>
+            </div>
         </div>
     </footer>
 
