@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image - SmartGen</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'DM Sans', sans-serif; 
+            background-color: #0a1f1a !important; 
+            color: #d1fae5 !important; 
+        }
+        .code-output { font-family: 'Space Mono', monospace; font-size: 12px; }
+        .panel { 
+            background-color: #0d2e24 !important; 
+            border: 1px solid #1a5c45; 
+            border-radius: 12px; 
+            padding: 20px; 
+        }
+        .field-input { 
+            width: 100%; 
+            background-color: #071a14 !important; 
+            border: 1px solid #1a5c45 !important; 
+            border-radius: 8px; 
+            padding: 8px 12px; 
+            color: #ffffff !important; 
+            font-size: 14px; 
+            outline: none;
+        }
+        .field-input:focus { border-color: #34d399 !important; }
+        .field-label { 
+            display: block; 
+            font-size: 13px; 
+            font-weight: 500;
+            color: #6ee7b7 !important; 
+            margin-bottom: 6px; 
+        }
+    </style>
+</head>
+<body class="min-h-screen w-full">
+    <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
+    <header class="border-b border-emerald-800/50 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <h1 class="font-bold text-lg text-emerald-200">Background Image</h1>
+            <button id="reset-btn" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-800 text-emerald-100 hover:bg-emerald-700 transition-colors text-sm font-medium"> 
+                <i data-lucide="rotate-ccw" style="width:14px;height:14px"></i> Reset 
+            </button>
+        </div>
+    </header>
+    <main class="max-w-6xl mx-auto p-6">
+        <div class="grid lg:grid-cols-2 gap-6">
+            <div class="space-y-4">
+                <section class="panel">
+                    <h2 class="font-semibold text-emerald-100 mb-3">Settings</h2>
+                    <div class="space-y-3">
+                        <div><label class="field-label">Image URL</label><input id="bg-img-code" type="text" value="bg.jpg" class="field-input"></div>
+                    </div>
+                </section>
+            </div>
+            <div class="space-y-4">
+                <section class="panel">
+                    <h2 class="font-semibold text-emerald-100 mb-3">Preview</h2>
+                    <div id="preview-box" class="bg-black/30 rounded-lg p-4 overflow-auto border border-emerald-800/50 min-h-[100px]"></div>
+                </section>
+                <section class="panel">
+                    <h2 class="font-semibold text-emerald-100 mb-3">Generated Code</h2>
+                    <pre id="code-output" class="code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-emerald-200 border border-emerald-800/50 min-h-[150px] whitespace-pre-wrap text-xs"></pre>
+                    <div class="flex gap-3 mt-3">
+                        <button id="copy-btn" class="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-sm font-medium transition-colors"> 
+                            <i data-lucide="copy" style="width:14px;height:14px"></i> Copy 
+                        </button> 
+                        <button id="download-btn" class="flex items-center gap-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-700 text-emerald-100 rounded-lg text-sm font-medium transition-colors border border-emerald-700"> 
+                            <i data-lucide="download" style="width:14px;height:14px"></i> Download 
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        lucide.createIcons();
+        const $ = id => document.getElementById(id);
+
+        document.querySelectorAll('input, select, textarea').forEach(el => {
+            el.addEventListener('input', update);
+            el.addEventListener('change', update);
+        });
+
+        function update() {
+            const url = $("bg-img-code").value; const code = `<body style="background-image: url('${url}');"></body>`; $("code-output").textContent = code; $("preview-box").style.backgroundImage = `url(${url})`;
+        }
+
+        $('copy-btn').addEventListener('click', () => {
+            navigator.clipboard.writeText($('code-output').textContent).then(() => showToast('Copied!'));
+        });
+
+        $('download-btn').addEventListener('click', () => {
+            const blob = new Blob([`<!DOCTYPE html>\n<html><head><meta charset="UTF-8"></head><body>\n${$('code-output').textContent}\n</body></html>`], { type: 'text/html' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'bg-img-code.html';
+            a.click();
+        });
+
+        $('reset-btn').addEventListener('click', () => {
+            $("bg-img-code").value = "bg.jpg";
+            update();
+        });
+
+        function showToast(msg) {
+            const t = document.createElement('div');
+            t.className = 'toast bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg';
+            t.textContent = msg;
+            $('toast-container').appendChild(t);
+            setTimeout(() => t.remove(), 2500);
+        }
+
+        update();
+    </script>
+</body>
+</html>
