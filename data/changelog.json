@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add complete HTML Code Library with 60+ tools",
+    "date": "2026-06-19T07:45:36Z",
+    "description": "- HTML Generators: 9 tools (table, image, gradient, link, text, color, bold, italic, marquee)- HTML Editors: 6 tools (HTML, text, bold, color, link, image editors)- Templates: 4 tools (layout, CSS, HTML5 frames, website templates)- Text Codes: 9 tools (bold, text, font, color, underline, table styles)- Link Codes: 5 tools (image link, email, new window, no underline, hover)- Image Codes: 4 tools (background image, borders, repeat, favicon)- Marquee Codes: 8 tools (HTML marquee, CSS, scrolling, slide-in, bouncing)- Background Codes: 5 tools (color, image, position, repeat, fixed)- Scrollbox Codes: 3 tools (scrollbox, color, border)- Textbox Codes: 3 tools (textbox, color, border)- Color Codes: 8 tools (chart, picker, schemes, black, white, red, green, blue)- Character Codes: 15 tools (copyright, trademark, symbols, Greek, ISO codes)Features:- Dark-themed split-screen layout (controls left, preview + code right)- Real-time live preview- One-click copy to clipboard- Download as HTML file- Reset button for each tool- Responsive design with Tailwind CSS- Client-side execution only (no server needed)"
+  },
+  {
     "title": "Update TESTING_AND_REVIEW.md",
     "date": "2026-06-18T21:54:07Z",
     "description": "Platform improvement and optimization."
