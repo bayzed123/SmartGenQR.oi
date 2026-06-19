@@ -65,9 +65,21 @@
                     <h2 class="font-semibold text-emerald-100 mb-3">Preview</h2>
                     <div id="preview-box" class="bg-black/30 rounded-lg p-4 overflow-auto border border-emerald-800/50 min-h-[100px]"></div>
                 </section>
+                
                 <section class="panel">
-                    <h2 class="font-semibold text-emerald-100 mb-3">Generated Code</h2>
-                    <pre id="code-output" class="code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-emerald-200 border border-emerald-800/50 min-h-[150px] whitespace-pre-wrap text-xs"></pre>
+                    <div class="flex items-center justify-between mb-3">
+                        <h2 class="font-semibold text-emerald-100">Generated Code</h2>
+                        <div class="flex gap-2">
+                            <button id="view-code-btn" class="tab-btn active" onclick="setMode('view')">View</button>
+                            <button id="edit-code-btn" class="tab-btn" onclick="setMode('edit')">Edit</button>
+                        </div>
+                    </div>
+                    <div id="view-container">
+                        <pre id="code-output" class="code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-emerald-200 border border-emerald-800/50 min-h-[150px] whitespace-pre-wrap text-xs"></pre>
+                    </div>
+                    <div id="edit-container" class="hidden">
+                        <textarea id="code-edit" class="field-input code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-emerald-200 border border-emerald-800/50 min-h-[150px] whitespace-pre-wrap text-xs" style="width: 100%; resize: vertical;"></textarea>
+                    </div>
                     <div class="flex gap-3 mt-3">
                         <button id="copy-btn" class="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-sm font-medium transition-colors"> 
                             <i data-lucide="copy" style="width:14px;height:14px"></i> Copy 
@@ -77,6 +89,7 @@
                         </button>
                     </div>
                 </section>
+        
             </div>
         </div>
     </main>
@@ -194,6 +207,29 @@
         $('reset-btn').addEventListener('click', () => {
             $("img-link-url").value = "img.jpg"; $("img-link-href").value = "https://example.com";
             update();
+
+        function setMode(mode) {
+            if (mode === 'view') {
+                $('view-code-btn').classList.add('active');
+                $('edit-code-btn').classList.remove('active');
+                $('view-container').classList.remove('hidden');
+                $('edit-container').classList.add('hidden');
+                update(); // Refresh from controls
+            } else {
+                $('view-code-btn').classList.remove('active');
+                $('edit-code-btn').classList.add('active');
+                $('view-container').classList.add('hidden');
+                $('edit-container').classList.remove('hidden');
+                $('code-edit').value = $('code-output').textContent;
+            }
+        }
+
+        $('code-edit').addEventListener('input', () => {
+            const code = $('code-edit').value;
+            $('preview-box').innerHTML = code;
+            $('code-output').textContent = code;
+        });
+        
         });
 
         function showToast(msg) {
@@ -205,6 +241,29 @@
         }
 
         update();
+
+        function setMode(mode) {
+            if (mode === 'view') {
+                $('view-code-btn').classList.add('active');
+                $('edit-code-btn').classList.remove('active');
+                $('view-container').classList.remove('hidden');
+                $('edit-container').classList.add('hidden');
+                update(); // Refresh from controls
+            } else {
+                $('view-code-btn').classList.remove('active');
+                $('edit-code-btn').classList.add('active');
+                $('view-container').classList.add('hidden');
+                $('edit-container').classList.remove('hidden');
+                $('code-edit').value = $('code-output').textContent;
+            }
+        }
+
+        $('code-edit').addEventListener('input', () => {
+            const code = $('code-edit').value;
+            $('preview-box').innerHTML = code;
+            $('code-output').textContent = code;
+        });
+        
     </script>
 </body>
 </html>
