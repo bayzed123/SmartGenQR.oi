@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix live preview visibility and add interactive code editing to all tools",
+    "date": "2026-06-19T08:03:02Z",
+    "description": "- Standardized Live Preview container with improved visibility (p-6, flex centering)- Added 'View/Edit' mode toggle to the Generated Code section- Implemented interactive code editing: users can now edit code directly and see results in real-time- Ensured all 79 tool pages have consistent Guidelines and FAQ sections- Improved UI responsiveness and layout spacing"
+  },
+  {
     "title": "Enhance HTML Code Library tools with guidelines, FAQ, and professional footer",
     "date": "2026-06-19T07:54:01Z",
     "description": "- Added 'How To Use' section to all 79 tools- Added 'FAQ' section to all 79 tools- Added Browser Compatibility indicators- Added Related Tools navigation- Added professional footer to all tool pages- Updated library homepage with quick guidelines and comprehensive FAQ- Standardized UI across all tools with Lucide icons"
