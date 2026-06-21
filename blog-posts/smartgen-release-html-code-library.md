@@ -4,6 +4,7 @@ date: 2026-06-22
 time: "02:12 AM +06"
 meta_description: "Release notes for SmartGen Tools v3.3.1. Explore the newly integrated HTML Code Library featuring 80+ modular utilities, generators, and templates for front-end web development."
 e_eta: "Immediate Deployment / Live"
+image: "https://i.ibb.co/hJrgn52m/IMG-5451.jpg"
 ---
 
 # Release v3.3.1: HTML Code Library Integration
@@ -1698,8 +1699,6 @@ The Textbox Color tool helps apply background and text colors to input fields.
 - Avoid harsh colors.
 - Test accessibility.
 - Keep UI consistent.
-```
----
 <!-- Frequently Asked Questions (FAQ) Section -->
 
 <section class="faq-section">
@@ -1794,6 +1793,8 @@ The Textbox Color tool helps apply background and text colors to input fields.
   </div>
 
 </section>
+```
+---
 # Stay Connected with SmartGen Tools 🚀
 
 At **SmartGen HTML Code Library**, we believe web development should always feel fast, simple, and powerful. Our mission is to bring every essential HTML, CSS, and UI utility into one unified ecosystem where developers, designers, students, and creators can build without limits.
