@@ -55,6 +55,7 @@ function injectNavbar() {
                     <a href="/#all-tools">Top Tools</a>
                     <a href="/contact/">Request a Tool</a>
                     <a href="/about/">About</a>
+                    <a href="https://smartgentools.com/html-code-library/" class="nav-item-highlight" style="color: #ffffff; background: #2563EB; padding: 8px 16px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; margin-left: 10px;">HTML Library</a>
                 </nav>
             </div>
         </div>
@@ -71,6 +72,7 @@ function injectNavbar() {
             <div class="sidebar-nav-links" style="display: flex; flex-direction: column; padding: 20px; overflow-y: auto;">
                 <a href="/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🏠 Home</a>
                 <a href="/blog/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">📝 Blog</a>
+                <a href="https://smartgentools.com/html-code-library/" class="nav-item" style="color: #2563EB; padding: 10px 0; text-decoration: none; font-weight: 700; font-size: 1rem;">📚 HTML Library</a>
                 <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
                 
                 <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 10px; font-size: 0.85rem; text-transform: uppercase;">🧑‍💻 Developer Tools</div>
