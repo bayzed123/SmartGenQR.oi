@@ -56,6 +56,7 @@ Here is our curated list of the top 10 essential free SEO tools that every digit
 **Why you need it:** SEO doesn't happen in a vacuum. Tracking how your social and email traffic interacts with your SEO efforts is vital for a holistic strategy.
 **Key Feature:** Instant link generation with saved presets for common campaigns.
 [SmartGen UTM Link Builder](https://smartgentools.com/utm-builder/)
+
 ---
 
 ## Conclusion
