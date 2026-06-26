@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-AdSense Placeholder Remover for SmartGen Tools
+AdSense Placeholder Remover for SmartGen Tools (Improved)
 Removes all 'AdSense Banner Space' divs and related lazy-loading logic 
 to ensure a clean user experience for AdSense review.
 """
@@ -17,26 +17,24 @@ def remove_adsense_placeholders(file_path):
     original_content = content
     
     # 1. Remove AdSense Banner Space divs
-    # Handles both <div class="ad-banner-space">...</div> and the ones with text
     content = re.sub(r'<div class="ad-banner-space">.*?</div>', '', content, flags=re.DOTALL)
     content = re.sub(r'<!-- End Related Tools Section --><div class="ad-banner-space">.*?</div>', '<!-- End Related Tools Section -->', content)
+    content = re.sub(r'<div class="ad-banner-space">.*?</div>', '', content, flags=re.DOTALL)
+    content = re.sub(r'<div class="ad-banner-space">', '', content)
     
-    # 2. Remove the lazy-loading script for AdSense if it exists
-    # This usually looks like:
-    # let adsense_loaded = false;
-    # window.addEventListener('scroll', function() {
-    #     if (adsense_loaded) return;
-    #     adsense_loaded = true;
-    #     ...
-    # });
+    # 2. Remove the lazy-loading script for AdSense
+    # Pattern to match the specific lazy load block found in the files
+    lazy_load_pattern = r'\s*let adsense_loaded = false;.*?window\.addEventListener\(\'(?:scroll|touchstart|mousemove|click)\', function\(\) \{.*?if \(adsense_loaded\) return;.*?adsense_loaded = true;.*?\}\);'
+    content = re.sub(lazy_load_pattern, '', content, flags=re.DOTALL)
     
-    adsense_script_pattern = r'\s*let adsense_loaded = false;.*?window\.addEventListener\(\'scroll\', function\(\) \{.*?if \(adsense_loaded\) return;.*?adsense_loaded = true;.*?\}\);'
-    content = re.sub(adsense_script_pattern, '', content, flags=re.DOTALL)
-    
-    # Also catch variations of the script
-    content = re.sub(r'\s*// Lazy load AdSense.*?let adsense_loaded = false;.*?\n\s*\}\);', '', content, flags=re.DOTALL)
+    # Another common pattern seen in the grep output
+    script_block_pattern = r'\s*<script>\s*let adsense_loaded = false;.*?adsense_loaded = true;.*?\n\s*\}\);?\s*</script>'
+    content = re.sub(script_block_pattern, '', content, flags=re.DOTALL)
 
-    # 3. Remove CSS for ad-banner-space if present in <style>
+    # 3. Remove any remaining adsense_loaded variables and their associated logic
+    content = re.sub(r'\s*let adsense_loaded = false;.*?\n\s*\}\);', '', content, flags=re.DOTALL)
+
+    # 4. Remove CSS for ad-banner-space if present in <style>
     content = re.sub(r'\s*\.ad-banner-space\s*\{[^}]*\}', '', content, flags=re.DOTALL)
 
     if content != original_content:
@@ -47,7 +45,7 @@ def remove_adsense_placeholders(file_path):
 
 def main():
     """Main function to clean all tool pages"""
-    print("🚀 Starting AdSense Placeholder Removal for SmartGen Tools...\n")
+    print("🚀 Starting Improved AdSense Placeholder Removal...\n")
     
     root_dir = Path('.')
     updated_count = 0

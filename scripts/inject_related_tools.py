@@ -21,12 +21,12 @@ def inject_related_tools(file_path):
     # 3. Find the exact insertion point
     insertion_point = None
     if '<div class="tool-container">' in content:
-        match = re.search(r'</div>\s*(?=<div class="ad-banner-space"|<article|<section class="seo-content")', content)
+        match = re.search(r'</div>\s*(?=<article|<section class="seo-content")', content)
         if match:
             insertion_point = match.end()
 
     if not insertion_point:
-        match = re.search(r'</section>\s*(?=<div class="ad-banner-space"|<article)', content)
+        match = re.search(r'</section>\s*(?=<article)', content)
         if match:
             insertion_point = match.end()
 

@@ -68,35 +68,7 @@ def optimize_html_file(filepath, is_root=False):
         
         content = re.sub(r'</body>', lazy_gtag + '\n</body>', content)
     
-    # 1.3 Lazy load AdSense
-    adsense_pattern = r'<script async src="https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js\?client=[^"]*" crossorigin="anonymous"><\/script>'
-    
-    if re.search(adsense_pattern, content):
-        content = re.sub(adsense_pattern, '', content)
-        
-        lazy_adsense = '''<script>
-    // Lazy load Google AdSense on user interaction
-    (function() {
-        let adsense_loaded = false;
-        function loadAdSense() {
-            if (adsense_loaded) return;
-            adsense_loaded = true;
-            
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068';
-            script.crossOrigin = 'anonymous';
-            document.head.appendChild(script);
-        }
-        
-        // Trigger on first user interaction
-        ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
-            document.addEventListener(event, loadAdSense, { once: true });
-        });
-    })();
-</script>'''
-        
-        content = re.sub(r'</body>', lazy_adsense + '\n</body>', content)
+    # 1.3 Removed AdSense lazy loading until approval to avoid 'Low Value Content' issues
     
     # ===== PHASE 2: ACCESSIBILITY IMPROVEMENTS =====
     
@@ -169,7 +141,7 @@ def optimize_html_file(filepath, is_root=False):
 def process_all_files():
     """Process all HTML files in the repository"""
     
-    repo_path = Path('/home/ubuntu/SmartGenQR.oi')
+    repo_path = Path('/home/ubuntu/smartgentools')
     html_files = list(repo_path.glob('**/index.html'))
     
     print(f"Found {len(html_files)} HTML files to optimize")
