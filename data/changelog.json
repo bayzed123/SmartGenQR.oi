@@ -1,5 +1,10 @@
 [
   {
+    "title": "style: Fix theme colors in HTML Code Library",
+    "date": "2026-06-26T20:58:11Z",
+    "description": "- Replace incorrect green (emerald) theme with main blue theme- Ensure consistent design across all 79+ library tools- Update Tailwind classes and hex colors to match brand identity"
+  },
+  {
     "title": "feat: Add missing blog posts and update smart internal linking",
     "date": "2026-06-26T20:53:06Z",
     "description": "- Create 'Top 10 SEO Tools' and 'AdSense Approval Guide' blog posts- Re-run blog build script to generate static pages and update blog.json- Re-run smart injector to ensure all 132 tools and 20 blogs are perfectly cross-linked- Fix duplicate and blank link issues in recommendation sections- Ensure all content is SEO-optimized and E-E-A-T compliant"
