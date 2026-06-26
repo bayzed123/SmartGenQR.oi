@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update README.md",
+    "date": "2026-06-26T23:17:41Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Create bmi-bmr-calculator-guide.md",
     "date": "2026-06-26T22:57:33Z",
     "description": "write blog for guidelines to use Our tools more better like \r1. [What Is BMI? — Complete Definition](#what-is-bmi)\r2. [What Is BMR? — Complete Definition](#what-is-bmr)\r3. [Why BMI and BMR Are the Two Most Important Health Numbers to Know](#why-they-matter)\r4. [Introducing SmartGen's Free BMI & BMR Calculator](#introducing-tool)\r5. [How to Use the Tool — Step-by-Step](#how-to-use)\r6. [BMI Formula: How It Is Calculated](#bmi-formula)\r7. [BMI Categories Explained in Depth](#bmi-categories)\r8. [BMR Formula: The Mifflin-St Jeor Equation](#bmr-formula)\r9. [TDEE: From BMR to Your Daily Calorie Target](#tdee)\r10. [How to Use Your BMR for Weight Loss](#bmi-weight-loss)\r11. [How to Use Your BMR for Muscle Gain](#bmi-muscle-gain)\r12. [BMI Limitations: What It Does Not Tell You](#bmi-limitations)\r13. [Ideal Body Weight Charts by Height](#ideal-body-weight)\r14. [Common Mistakes When Interpreting BMI & BMR](#common-mistakes)\r15. [FAQ — BMI & BMR Calculator](#faq)\r16. [Final Health Checklist](#checklist)"
