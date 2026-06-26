@@ -1,5 +1,10 @@
 [
   {
+    "title": "Create YOUR_REPO_STRUCTURE.md",
+    "date": "2026-06-26T23:53:54Z",
+    "description": "How your project builds (client/ + server/)\rYOUR_REPO_STRUCTURE.md (10 min)\r\rHow your project builds\rWhat happens in CI/CD\rUnderstand the flow"
+  },
+  {
     "title": "Create IMPLEMENTATION_GUIDE.md",
     "date": "2026-06-26T23:51:29Z",
     "description": "IMPLEMENTATION_GUIDE.md (10 min) ⭐\r\rYour exact next steps\rStep-by-step setup\rChoose between Railway or SSH"
