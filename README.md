@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/bayzed123/SmartGenQR.oi)
 
-**SmartGen** is a premier, open-source web utility ecosystem featuring over **45+ high-performance tools**. Designed for developers, marketers, and SEO experts, it operates on a **100% Client-Side** architecture, ensuring absolute privacy and lightning-fast execution without any server-side data storage.
+**SmartGen** is a premier, open-source web utility ecosystem featuring over **131+ high-performance tools**. Designed for developers, marketers, and SEO experts, it operates on a **100% Client-Side** architecture, ensuring absolute privacy and lightning-fast execution without any server-side data storage.
 
 ---
 
