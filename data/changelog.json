@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: Implement hard-coded internal links and UX guides",
+    "date": "2026-06-26T20:29:30Z",
+    "description": "- Replace dynamic 'Related Tools' with static hard-coded links for better SEO- Add 'Recommended Blog Posts' section directly into tool pages- Implement 'User Experience & Resource Guide' with resource buttons- Ensure all internal links are crawlable by search engines without JavaScript- Improve E-E-A-T signals through comprehensive resource linking- Maintain 100% SEO and Performance scores"
+  },
+  {
     "title": "fix: Final cleanup of AdSense placeholders and scripts",
     "date": "2026-06-26T20:21:23Z",
     "description": "- Remove all remaining 'adsense_loaded' logic from HTML files- Update optimize_lighthouse.py to remove AdSense lazy loading- Ensure 100% clean layout for AdSense review- Maintain all SEO, Performance, and Accessibility optimizations"
