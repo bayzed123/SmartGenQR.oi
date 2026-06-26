@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: Final cleanup of AdSense placeholders and scripts",
+    "date": "2026-06-26T20:21:23Z",
+    "description": "- Remove all remaining 'adsense_loaded' logic from HTML files- Update optimize_lighthouse.py to remove AdSense lazy loading- Ensure 100% clean layout for AdSense review- Maintain all SEO, Performance, and Accessibility optimizations"
+  },
+  {
     "title": "fix: Remove all AdSense placeholders and lazy-loading logic",
     "date": "2026-06-26T20:20:31Z",
     "description": "- Remove 'AdSense Banner Space' placeholders from all tool pages- Delete lazy-loading JavaScript for AdSense- Clean up CSS styles related to ad banners- Remove internal AdSense setup documentation- Ensure clean layout for AdSense review to avoid 'Low Value Content' issues- Maintain 100% SEO, Performance, and Accessibility scores"
