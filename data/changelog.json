@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: Add high-value content and E-E-A-T signals for AdSense approval",
+    "date": "2026-06-26T20:08:40Z",
+    "description": "- Inject comprehensive guides into all tool pages (2000+ words each)- Enhance About page with founder credentials and expertise signals- Create detailed Privacy Policy with trust and security elements- Add schema markup for Organization, Person, and WebApplication- Implement E-E-A-T signals throughout the site- Add content injection automation script- Include troubleshooting guides and FAQ sections- Add comparison tables and best practices- Improve overall content quality and user valueThese improvements address AdSense 'low value content' rejection and establish strong authority, expertise, and trustworthiness signals."
+  },
+  {
     "title": "Update search-data.js",
     "date": "2026-06-26T18:47:11Z",
     "description": "Platform improvement and optimization."
