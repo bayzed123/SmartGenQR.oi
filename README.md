@@ -51,6 +51,7 @@
 [![Lorem Ipsum](https://img.shields.io/badge/Lorem_Ipsum-4CAF50?style=for-the-badge&logo=google&logoColor=white)](https://smartgentools.com/lorem-ipsum-generator/)
 
 > 💡 **View the Full Catalog:** For a complete list of all 45+ utilities, visit the [**Master Tool Directory**](WIKI_Master_Tool_Directory.md).
+[**Master HTML Code library Tool Directory80+**](https://smartgentools.com/html-code-library/)
 
 ---
 
