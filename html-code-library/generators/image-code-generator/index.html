@@ -19,11 +19,11 @@
         @keyframes fadeOut { to { opacity: 0; } }
         
         .tab-btn { padding: 6px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; background: transparent; color: #86efac; border: 1px solid transparent; }
-        .tab-btn.active { background: #065f46; color: #86efac; border-color: #10b981; }
+        .tab-btn.active { background: #1e3a8a; color: #86efac; border-color: #2563eb; }
         .tab-btn:not(.active):hover { color: #bbf7d0; }
         
         .panel { 
-            background-color: #0d2e24 !important; 
+            background-color: #1e293b !important; 
             border: 1px solid #1a5c45; 
             border-radius: 12px; 
             padding: 20px; 
@@ -57,10 +57,10 @@
 </head>
 <body class="min-h-screen w-full">
     <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
-    <header class="border-b border-emerald-800/50 px-6 py-4">
+    <header class="border-b border-blue-800/50 px-6 py-4">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <h1 class="font-bold text-lg text-emerald-200">Image Code Generator</h1>
-            <button id="reset-btn" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-800 text-emerald-100 hover:bg-emerald-700 transition-colors text-sm font-medium"> 
+            <h1 class="font-bold text-lg text-blue-200">Image Code Generator</h1>
+            <button id="reset-btn" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-800 text-blue-100 hover:bg-blue-700 transition-colors text-sm font-medium"> 
                 <i data-lucide="rotate-ccw" style="width:14px;height:14px"></i> Reset 
             </button>
         </div>
@@ -69,7 +69,7 @@
         <div class="grid lg:grid-cols-2 gap-6">
             <div class="space-y-4">
                 <section class="panel">
-                    <h2 class="font-semibold text-emerald-100 mb-3">Settings</h2>
+                    <h2 class="font-semibold text-blue-100 mb-3">Settings</h2>
                     <div class="space-y-3">
                         <div>
                             <label class="field-label">Image URL</label>
@@ -92,29 +92,29 @@
             </div>
             <div class="space-y-4">
                 <section class="panel">
-                    <h2 class="font-semibold text-emerald-100 mb-3">Preview</h2>
-                    <div id="preview-box" class="bg-black/30 rounded-lg p-4 overflow-x-auto border border-emerald-800/50 min-h-[100px]"></div>
+                    <h2 class="font-semibold text-blue-100 mb-3">Preview</h2>
+                    <div id="preview-box" class="bg-black/30 rounded-lg p-4 overflow-x-auto border border-blue-800/50 min-h-[100px]"></div>
                 </section>
                 
                 <section class="panel">
                     <div class="flex items-center justify-between mb-3">
-                        <h2 class="font-semibold text-emerald-100">Generated Code</h2>
+                        <h2 class="font-semibold text-blue-100">Generated Code</h2>
                         <div class="flex gap-2">
                             <button id="view-code-btn" class="tab-btn active" onclick="setMode('view')">View</button>
                             <button id="edit-code-btn" class="tab-btn" onclick="setMode('edit')">Edit</button>
                         </div>
                     </div>
                     <div id="view-container">
-                        <pre id="code-output" class="code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-emerald-200 border border-emerald-800/50 min-h-[150px] whitespace-pre-wrap text-xs"></pre>
+                        <pre id="code-output" class="code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-blue-200 border border-blue-800/50 min-h-[150px] whitespace-pre-wrap text-xs"></pre>
                     </div>
                     <div id="edit-container" class="hidden">
-                        <textarea id="code-edit" class="field-input code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-emerald-200 border border-emerald-800/50 min-h-[150px] whitespace-pre-wrap text-xs" style="width: 100%; resize: vertical;"></textarea>
+                        <textarea id="code-edit" class="field-input code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-blue-200 border border-blue-800/50 min-h-[150px] whitespace-pre-wrap text-xs" style="width: 100%; resize: vertical;"></textarea>
                     </div>
                     <div class="flex gap-3 mt-3">
-                        <button id="copy-btn" class="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-sm font-medium transition-colors"> 
+                        <button id="copy-btn" class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm font-medium transition-colors"> 
                             <i data-lucide="copy" style="width:14px;height:14px"></i> Copy 
                         </button> 
-                        <button id="download-btn" class="flex items-center gap-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-700 text-emerald-100 rounded-lg text-sm font-medium transition-colors border border-emerald-700"> 
+                        <button id="download-btn" class="flex items-center gap-2 px-4 py-2 bg-blue-800 hover:bg-blue-700 text-blue-100 rounded-lg text-sm font-medium transition-colors border border-blue-700"> 
                             <i data-lucide="download" style="width:14px;height:14px"></i> Download 
                         </button>
                     </div>
@@ -291,45 +291,45 @@
     <section class="max-w-6xl mx-auto p-6 mt-8 space-y-8">
         <div class="grid md:grid-cols-2 gap-8">
             <div class="panel">
-                <h2 class="text-xl font-bold text-emerald-100 mb-4 flex items-center gap-2">
+                <h2 class="text-xl font-bold text-blue-100 mb-4 flex items-center gap-2">
                     <i data-lucide="book-open" class="w-5 h-5"></i> How To Use
                 </h2>
-                <ul class="space-y-3 text-emerald-200 text-sm">
+                <ul class="space-y-3 text-blue-200 text-sm">
                     <li class="flex gap-2">
-                        <span class="bg-emerald-800 text-emerald-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">1</span>
+                        <span class="bg-blue-800 text-blue-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">1</span>
                         <span>Adjust the settings in the left panel to customize your component.</span>
                     </li>
                     <li class="flex gap-2">
-                        <span class="bg-emerald-800 text-emerald-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">2</span>
+                        <span class="bg-blue-800 text-blue-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">2</span>
                         <span>View the real-time changes in the "Live Preview" window.</span>
                     </li>
                     <li class="flex gap-2">
-                        <span class="bg-emerald-800 text-emerald-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">3</span>
+                        <span class="bg-blue-800 text-blue-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">3</span>
                         <span>Click "Copy" to copy the generated code or "Download" to save as HTML.</span>
                     </li>
                     <li class="flex gap-2">
-                        <span class="bg-emerald-800 text-emerald-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">4</span>
+                        <span class="bg-blue-800 text-blue-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">4</span>
                         <span>Paste the code into your project's HTML file.</span>
                     </li>
                 </ul>
             </div>
             
             <div class="panel">
-                <h2 class="text-xl font-bold text-emerald-100 mb-4 flex items-center gap-2">
+                <h2 class="text-xl font-bold text-blue-100 mb-4 flex items-center gap-2">
                     <i data-lucide="help-circle" class="w-5 h-5"></i> FAQ
                 </h2>
                 <div class="space-y-4">
                     <div>
-                        <h3 class="text-emerald-100 font-semibold text-sm mb-1">Is this tool free?</h3>
-                        <p class="text-emerald-300 text-xs">Yes, all tools in our HTML Code Library are 100% free to use for personal and commercial projects.</p>
+                        <h3 class="text-blue-100 font-semibold text-sm mb-1">Is this tool free?</h3>
+                        <p class="text-blue-300 text-xs">Yes, all tools in our HTML Code Library are 100% free to use for personal and commercial projects.</p>
                     </div>
                     <div>
-                        <h3 class="text-emerald-100 font-semibold text-sm mb-1">Do I need to install anything?</h3>
-                        <p class="text-emerald-300 text-xs">No installation is required. Everything runs directly in your browser.</p>
+                        <h3 class="text-blue-100 font-semibold text-sm mb-1">Do I need to install anything?</h3>
+                        <p class="text-blue-300 text-xs">No installation is required. Everything runs directly in your browser.</p>
                     </div>
                     <div>
-                        <h3 class="text-emerald-100 font-semibold text-sm mb-1">Is my data secure?</h3>
-                        <p class="text-emerald-300 text-xs">Absolutely. All processing is done client-side. We never store or transmit your data.</p>
+                        <h3 class="text-blue-100 font-semibold text-sm mb-1">Is my data secure?</h3>
+                        <p class="text-blue-300 text-xs">Absolutely. All processing is done client-side. We never store or transmit your data.</p>
                     </div>
                 </div>
             </div>
@@ -337,38 +337,38 @@
 
         <div class="grid md:grid-cols-3 gap-6">
             <div class="panel">
-                <h2 class="font-semibold text-emerald-100 mb-3 flex items-center gap-2">
+                <h2 class="font-semibold text-blue-100 mb-3 flex items-center gap-2">
                     <i data-lucide="monitor" class="w-4 h-4"></i> Compatibility
                 </h2>
                 <div class="flex gap-4">
-                    <i data-lucide="chrome" class="w-5 h-5 text-emerald-400" title="Chrome"></i>
-                    <i data-lucide="framer" class="w-5 h-5 text-emerald-400" title="Firefox"></i>
-                    <i data-lucide="safari" class="w-5 h-5 text-emerald-400" title="Safari"></i>
-                    <i data-lucide="edge" class="w-5 h-5 text-emerald-400" title="Edge"></i>
+                    <i data-lucide="chrome" class="w-5 h-5 text-blue-400" title="Chrome"></i>
+                    <i data-lucide="framer" class="w-5 h-5 text-blue-400" title="Firefox"></i>
+                    <i data-lucide="safari" class="w-5 h-5 text-blue-400" title="Safari"></i>
+                    <i data-lucide="edge" class="w-5 h-5 text-blue-400" title="Edge"></i>
                 </div>
-                <p class="text-emerald-400 text-[10px] mt-2">Compatible with all modern browsers.</p>
+                <p class="text-blue-400 text-[10px] mt-2">Compatible with all modern browsers.</p>
             </div>
             
             <div class="panel md:col-span-2">
-                <h2 class="font-semibold text-emerald-100 mb-3 flex items-center gap-2">
+                <h2 class="font-semibold text-blue-100 mb-3 flex items-center gap-2">
                     <i data-lucide="link" class="w-4 h-4"></i> Related Tools
                 </h2>
                 <div class="flex flex-wrap gap-2">
-                    <a href="../../generators/html-table-generator/" class="text-xs bg-emerald-900/50 hover:bg-emerald-800 text-emerald-200 px-3 py-1 rounded-full transition-colors border border-emerald-700/50">Table Generator</a>
-                    <a href="../../generators/html-link-generator/" class="text-xs bg-emerald-900/50 hover:bg-emerald-800 text-emerald-200 px-3 py-1 rounded-full transition-colors border border-emerald-700/50">Link Generator</a>
-                    <a href="../../generators/text-color-generator/" class="text-xs bg-emerald-900/50 hover:bg-emerald-800 text-emerald-200 px-3 py-1 rounded-full transition-colors border border-emerald-700/50">Color Generator</a>
-                    <a href="../../editors/html-editor/" class="text-xs bg-emerald-900/50 hover:bg-emerald-800 text-emerald-200 px-3 py-1 rounded-full transition-colors border border-emerald-700/50">HTML Editor</a>
+                    <a href="../../generators/html-table-generator/" class="text-xs bg-blue-900/50 hover:bg-blue-800 text-blue-200 px-3 py-1 rounded-full transition-colors border border-blue-700/50">Table Generator</a>
+                    <a href="../../generators/html-link-generator/" class="text-xs bg-blue-900/50 hover:bg-blue-800 text-blue-200 px-3 py-1 rounded-full transition-colors border border-blue-700/50">Link Generator</a>
+                    <a href="../../generators/text-color-generator/" class="text-xs bg-blue-900/50 hover:bg-blue-800 text-blue-200 px-3 py-1 rounded-full transition-colors border border-blue-700/50">Color Generator</a>
+                    <a href="../../editors/html-editor/" class="text-xs bg-blue-900/50 hover:bg-blue-800 text-blue-200 px-3 py-1 rounded-full transition-colors border border-blue-700/50">HTML Editor</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="border-t border-emerald-800/30 mt-12 py-8 px-6 text-center">
-        <p class="text-emerald-400 text-sm">&copy; 2026 SmartGen. Built with passion for web developers.</p>
+    <footer class="border-t border-blue-800/30 mt-12 py-8 px-6 text-center">
+        <p class="text-blue-400 text-sm">&copy; 2026 SmartGen. Built with passion for web developers.</p>
         <div class="flex justify-center gap-6 mt-4">
-            <a href="/privacy" class="text-xs text-emerald-500 hover:text-emerald-300">Privacy Policy</a>
-            <a href="/terms" class="text-xs text-emerald-500 hover:text-emerald-300">Terms of Use</a>
-            <a href="/contact" class="text-xs text-emerald-500 hover:text-emerald-300">Contact Us</a>
+            <a href="/privacy" class="text-xs text-blue-500 hover:text-blue-300">Privacy Policy</a>
+            <a href="/terms" class="text-xs text-blue-500 hover:text-blue-300">Terms of Use</a>
+            <a href="/contact" class="text-xs text-blue-500 hover:text-blue-300">Contact Us</a>
         </div>
     </footer>
 
@@ -447,7 +447,7 @@
 
         function showToast(msg) {
             const t = document.createElement('div');
-            t.className = 'toast bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg';
+            t.className = 'toast bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg';
             t.textContent = msg;
             $('toast-container').appendChild(t);
             setTimeout(() => t.remove(), 2500);
