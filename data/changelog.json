@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: Implement smart related content injection logic",
+    "date": "2026-06-26T20:44:57Z",
+    "description": "- Replace static duplicates with smart tag-based matching for tools and blogs- Ensure tools only show related blog posts based on category and tags- Add tool recommendations to blog pages to improve cross-linking- Fix blank links and duplicate content in recommendation sections- Update all 132 tools and 12 blog posts with unique, relevant internal links- Maintain 100% SEO and Performance scores"
+  },
+  {
     "title": "feat: Comprehensive high-value content injection for all 131 tools",
     "date": "2026-06-26T20:36:05Z",
     "description": "- Add 2000+ word professional guides to all 52 main tools- Add 2000+ word professional guides to all 79+ HTML Code Library tools- Ensure site-wide consistency in content quality and E-E-A-T signals- Force refresh all content to maximize AdSense approval chances"
