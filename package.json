@@ -9,7 +9,8 @@
     "build-blog": "node scripts/build-blog.js"
   },
   "dependencies": {
-    "front-matter": "^4.0.2"
+    "front-matter": "^4.0.2",
+    "luxon": "^3.7.2"
   },
   "devDependencies": {
     "gray-matter": "^4.0.3",
