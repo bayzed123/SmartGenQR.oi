@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update: Added HTML Library card to homepage, updated global nav header, and integrated search assets into all library tools",
+    "date": "2026-06-26T18:18:21Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Update smartgen-release-html-code-library.md",
     "date": "2026-06-21T20:58:32Z",
     "description": "fixed frequently asked question section"
