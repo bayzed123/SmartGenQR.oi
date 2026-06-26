@@ -154,22 +154,42 @@ def main():
     root_dir = Path('.')
     updated_count = 0
     
-    # Get all tool directories
-    tool_dirs = [d for d in root_dir.iterdir() if d.is_dir() and (d / 'index.html').exists()]
+    # 1. Process Main Tools
+    main_tool_dirs = [d for d in root_dir.iterdir() if d.is_dir() and (d / 'index.html').exists()]
     exclude_dirs = {'assets', 'scripts', 'html-code-library', 'blog', 'updates', 'docs', 'trust-center', '.git'}
-    tool_dirs = [d for d in tool_dirs if d.name not in exclude_dirs]
+    main_tool_dirs = [d for d in main_tool_dirs if d.name not in exclude_dirs]
     
-    for tool_dir in sorted(tool_dirs):
+    for tool_dir in sorted(main_tool_dirs):
         tool_id = tool_dir.name
         tool_name = tool_id.replace('-', ' ').title()
         index_path = tool_dir / 'index.html'
-        
         try:
             if inject_content(index_path, tool_id, tool_name):
-                print(f"✅ Injected Massive Content: {tool_id}")
+                print(f"✅ Injected Main Tool: {tool_id}")
                 updated_count += 1
         except Exception as e:
             print(f"❌ Error updating {tool_id}: {str(e)}")
+
+    # 2. Process HTML Code Library Sub-tools
+    library_path = root_dir / 'html-code-library'
+    if library_path.exists():
+        library_tools = list(library_path.glob('**/index.html'))
+        for index_path in library_tools:
+            # Skip the main library index if needed, or process all
+            relative_path = index_path.relative_to(library_path)
+            if str(relative_path) == 'index.html':
+                tool_id = 'html-code-library'
+                tool_name = 'HTML Code Library'
+            else:
+                tool_id = index_path.parent.name
+                tool_name = tool_id.replace('-', ' ').title()
+            
+            try:
+                if inject_content(index_path, tool_id, tool_name):
+                    print(f"✅ Injected Library Tool: {tool_id} ({relative_path})")
+                    updated_count += 1
+            except Exception as e:
+                print(f"❌ Error updating library tool {tool_id}: {str(e)}")
     
     print(f"\n{'='*60}")
     print(f"✅ Massive Content Injection Complete!")
