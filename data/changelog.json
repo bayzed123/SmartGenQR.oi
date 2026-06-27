@@ -1,5 +1,10 @@
 [
   {
+    "title": "Delete SETUP_GUIDE.md",
+    "date": "2026-06-27T00:13:20Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Update GITHUB_ACTIONS_SETUP.md",
     "date": "2026-06-27T00:11:38Z",
     "description": "Platform improvement and optimization."
