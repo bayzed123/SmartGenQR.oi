@@ -1,3 +1,8 @@
+---
+title: "Railway Deployment Guide"
+description: "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions"
+order: 5
+---
 # 🚂 Railway Deployment Guide (Alternative to SSH)
 
 Your repo has `railway.json`, so you can deploy to Railway instead of manual SSH!
