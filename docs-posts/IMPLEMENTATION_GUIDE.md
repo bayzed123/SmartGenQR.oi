@@ -3,6 +3,7 @@ title: "complete guide Protfolio"
 description: "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions"
 order: starting
 ---
+
 # 🎯 Complete Implementation Guide - Your Repository
 
 Based on your actual folder structure, here's everything you need to do to get workflows running.
@@ -105,7 +106,7 @@ git push origin main
 
 #### Option B: Manual SSH (More Control)
 
-Follow: `GITHUB_ACTIONS_SETUP.md`
+Follow: `GITHUB_ACTIONS_SETUP.md`[see](https://smartgentools.com/docs/github-actions-configuration-guide/)
 
 **Time to deploy**: 20 minutes setup + 2 minutes deploy
 
@@ -215,24 +216,27 @@ Based on your repository structure, read in this order:
    - Overview of what to do
    - Step-by-step guide
 
-2. **`YOUR_REPO_STRUCTURE.md`** (10 min)
+2. **`YOUR_REPO_STRUCTURE.md`** (10 min)[see](https://smartgentools.com/docs/directory-structure-for-protfolio/)
    - How your project builds
    - What happens in CI/CD
    - Build process breakdown
 
-3. **`RAILWAY_DEPLOYMENT_GUIDE.md`** (5 min) OR **`GITHUB_ACTIONS_SETUP.md`** (20 min)
+3. **`RAILWAY_DEPLOYMENT_GUIDE.md`** (5 min)
+[see](https://smartgentools.com/docs/railway-deployment-guide/)
+    OR **`GITHUB_ACTIONS_SETUP.md`** (20 min) [see](https://smartgentools.com/docs/github-actions-configuration-guide/)
    - If Railway: Quick Railway setup
    - If SSH: Detailed server setup
 
-4. **`VITE_QUICK_REFERENCE.md`** (10 min)
+5. **`VITE_QUICK_REFERENCE.md`** (10 min)[see](https://smartgentools.com/docs/vite-config-quick-reference/)
    - Build-specific details
    - Troubleshooting tips
 
-5. **`CUSTOMIZATION_SUMMARY.md`** (5 min)
+6. **`CUSTOMIZATION_SUMMARY.md`** (5 min)
+   [see](https://smartgentools.com/docs/workflow-customization-summary/)
    - What was customized for you
    - Feature overview
 
-6. **`COMPLETE_WORKFLOWS_GUIDE.md`** (Reference)
+8. **`COMPLETE_WORKFLOWS_GUIDE.md`** [Reference](https://smartgentools.com/docs/advanced-workflow-configuration/)
    - Full documentation
    - All features explained
 
@@ -248,7 +252,7 @@ Based on your repository structure, read in this order:
 5. Done!
 ```
 
-Read: `RAILWAY_DEPLOYMENT_GUIDE.md`
+Read: [RAILWAY_DEPLOYMENT_GUIDE.md](https://smartgentools.com/docs/railway-deployment-guide/)
 
 ### Path 2: SSH (More Control - 30 minutes)
 
@@ -262,7 +266,7 @@ Read: `RAILWAY_DEPLOYMENT_GUIDE.md`
 7. Done!
 ```
 
-Read: `GITHUB_ACTIONS_SETUP.md`
+Read: [GITHUB_ACTIONS_SETUP.md](https://smartgentools.com/docs/github-actions-configuration-guide/)
 
 ### Path 3: Docker Hub (Advanced - 20 minutes)
 
@@ -273,7 +277,7 @@ Read: `GITHUB_ACTIONS_SETUP.md`
 4. Done!
 ```
 
-Read: `ADVANCED_CONFIGURATION.md`
+Read:[see Github](ADVANCED_CONFIGURATION.md)
 
 ## 📝 Pre-Deployment Checklist
 
@@ -503,7 +507,7 @@ Everything is prepared. All you need to do:
 6. **Watch**: Magic happen! ✨
 
 **Questions?** Check the specific documentation file for your choice:
-- Railway → `RAILWAY_DEPLOYMENT_GUIDE.md`
-- SSH → `GITHUB_ACTIONS_SETUP.md`
+- Railway → [RAILWAY_DEPLOYMENT_GUIDE.md](RAILWAY_DEPLOYMENT_GUIDE.md)
+- SSH → [see Github](GITHUB_ACTIONS_SETUP.md)
 
 **Let's deploy your portfolio!** 🚀
