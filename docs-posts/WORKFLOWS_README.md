@@ -1,3 +1,8 @@
+---
+title: "Directory Structure for Protfolio"
+description: "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions"
+order: 1
+---
 # 🚀 Quick Start Guide - Bayezid Portfolio Workflows
 
 ## Directory Structure
