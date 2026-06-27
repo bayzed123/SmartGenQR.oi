@@ -1,3 +1,8 @@
+---
+title: "GitHub Actions Configuration Guide"
+description: "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions"
+order: 6
+---
 # GitHub Actions Configuration Guide
 
 ## 🔐 Required Secrets
