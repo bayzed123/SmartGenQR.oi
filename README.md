@@ -24,7 +24,6 @@
 
 | Broken URL | Error Code |
 |---|---|
-| https://smartgentools.com/about-eeat-enhanced/ | 404 |
 | https://smartgentools.com/privacy-eeat-enhanced/ | 404 |
 | https://smartgentools.com/tool-content-template/ | 404 |
 
