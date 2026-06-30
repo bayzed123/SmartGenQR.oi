@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add primary SmartGen logo to assets⁠",
+    "date": "2026-06-30T00:58:24Z",
+    "description": "Uploaded the main brand logo (S-G Flow) to the assets/image/ logo.png directory. This asset will be used for the website header, global branding, and UI integration across the ecosystem."
+  },
+  {
     "title": "Delete assets/images/.gitkeep",
     "date": "2026-06-30T00:54:42Z",
     "description": "Platform improvement and optimization."
