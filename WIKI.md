@@ -1,4 +1,5 @@
-# ⚡ SmartGen Wiki
+ [!logo](assets/images/logo.png)
+ # SmartGen Wiki
 
 Welcome to the official documentation for **SmartGen**, an all-in-one digital and web utility platform designed for developers, marketers, and everyday users. This wiki provides a deep dive into our architecture, development philosophy, and the tools we offer.
 
