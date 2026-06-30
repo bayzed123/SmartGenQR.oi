@@ -1,0 +1,56 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <text x="60" y="80" font-family="Georgia, serif" font-size="40" fill="#F8FAFC" font-weight="bold">Social Media Optimization (SMO)</text>
+  <text x="60" y="115" font-family="Arial, sans-serif" font-size="18" fill="#94A3B8">Module 2 — A Visual Overview</text>
+
+  <!-- 5 platform nodes -->
+  <g font-family="Arial, sans-serif">
+    <!-- Facebook -->
+    <circle cx="180" cy="260" r="70" fill="#1877F2" opacity="0.15" stroke="#1877F2" stroke-width="2"/>
+    <text x="180" y="255" text-anchor="middle" font-size="22" fill="#F8FAFC" font-weight="bold">Facebook</text>
+    <text x="180" y="280" text-anchor="middle" font-size="14" fill="#94A3B8">Community</text>
+
+    <!-- Instagram -->
+    <circle cx="420" cy="260" r="70" fill="#E1306C" opacity="0.15" stroke="#E1306C" stroke-width="2"/>
+    <text x="420" y="255" text-anchor="middle" font-size="22" fill="#F8FAFC" font-weight="bold">Instagram</text>
+    <text x="420" y="280" text-anchor="middle" font-size="14" fill="#94A3B8">Visual Brand</text>
+
+    <!-- LinkedIn -->
+    <circle cx="660" cy="260" r="70" fill="#0A66C2" opacity="0.15" stroke="#0A66C2" stroke-width="2"/>
+    <text x="660" y="255" text-anchor="middle" font-size="22" fill="#F8FAFC" font-weight="bold">LinkedIn</text>
+    <text x="660" y="280" text-anchor="middle" font-size="14" fill="#94A3B8">B2B / Authority</text>
+
+    <!-- X -->
+    <circle cx="900" cy="260" r="70" fill="#FFFFFF" opacity="0.08" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="900" y="255" text-anchor="middle" font-size="22" fill="#F8FAFC" font-weight="bold">X</text>
+    <text x="900" y="280" text-anchor="middle" font-size="14" fill="#94A3B8">Real-Time</text>
+
+    <!-- Pinterest -->
+    <circle cx="1080" cy="380" r="70" fill="#E60023" opacity="0.15" stroke="#E60023" stroke-width="2"/>
+    <text x="1080" y="375" text-anchor="middle" font-size="20" fill="#F8FAFC" font-weight="bold">Pinterest</text>
+    <text x="1080" y="400" text-anchor="middle" font-size="14" fill="#94A3B8">Discovery</text>
+  </g>
+
+  <!-- center hub -->
+  <circle cx="600" cy="460" r="85" fill="#22C55E" opacity="0.15" stroke="#22C55E" stroke-width="2"/>
+  <text x="600" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#F8FAFC" font-weight="bold">Your Brand</text>
+  <text x="600" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#94A3B8">Consistent Profile</text>
+
+  <!-- connecting lines -->
+  <g stroke="#475569" stroke-width="1.5" opacity="0.6">
+    <line x1="180" y1="330" x2="540" y2="430"/>
+    <line x1="420" y1="330" x2="570" y2="390"/>
+    <line x1="660" y1="330" x2="630" y2="390"/>
+    <line x1="900" y1="330" x2="660" y2="430"/>
+    <line x1="1080" y1="310" x2="680" y2="460"/>
+  </g>
+
+  <text x="60" y="600" font-family="Arial, sans-serif" font-size="14" fill="#64748B">Original graphic created for SmartGen Blog — free to use, no copyright restrictions.</text>
+</svg>
