@@ -1,5 +1,10 @@
 [
   {
+    "title": "Delete assets/images/.gitkeep",
+    "date": "2026-06-30T00:54:42Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Add default fallback image for blog posts",
     "date": "2026-06-30T00:54:06Z",
     "description": "Uploaded default.jpg to the assets/images/ directory. This image will serve as the standard thumbnail and Open Graph (OG) fallback for SmartGen blog articles that do not have a specific cover image, ensuring UI consistency.⁠"
