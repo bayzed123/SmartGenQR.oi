@@ -1,23 +1,20 @@
 ---
-meta-article:author: Sayad Md Bayezid Hosan
-meta-article:published_time: Tue Jun 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)
-meta-author: Sayad Md Bayezid Hosan
-meta-description: A complete, practical guide to LinkedIn marketing and profile optimization: choosing between an individual profile and a Company Page, building a profile that actually gets found, creating content the algorithm wants to spread, growing a real professional network, running an effective Company Page, using LinkedIn Ads, and reading your analytics.
-meta-keywords: SmartGen, Digital Marketing, Digital Marketing Course, Module 7, LinkedIn Marketing, LinkedIn Optimization, LinkedIn Ads, B2B Marketing
-meta-og:description: A complete, practical guide to LinkedIn marketing and profile optimization for beginners — profiles, content, network growth, company pages, ads, and analytics.
-meta-og:image: assets/images/module7-linkedin-marketing-infographic.svg
-meta-og:title: MODULE 7: LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners
-meta-og:type: article
-meta-og:url: https://smartgentools.com/blog/module-7-linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners/
-meta-twitter:card: summary_large_image
-meta-twitter:description: A complete, practical guide to LinkedIn marketing and profile optimization for beginners — profiles, content, network growth, company pages, ads, and analytics.
-meta-twitter:image: assets/images/module7-linkedin-marketing-infographic.svg
-meta-twitter:title: MODULE 7: LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners
-meta-viewport: width=device-width, initial-scale=1.0
-title: MODULE 7: LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners - SmartGen Blog
+title: "LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners - SmartGen Blog"
+description: "A complete, practical guide to LinkedIn marketing and profile optimization for beginners — profiles, content, network growth, company pages, ads, and analytics"
+keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 7, LinkedIn Marketing, LinkedIn Optimization, LinkedIn Ads, B2B Marketing,smartgen"
+date: 2026-06-30
+image: "assets/images/module7-linkedin-marketing-infographic.svg"
+author: "Sayad Md Bayezid Hosan"
+tags:
+  - SmartGen
+  - Digital Marketing
+  - Digital Marketing Course
+  - Module 7
+  - LinkedIn Optimization
+  - LinkedIn Marketing
+  - LinkedIn Ads
 ---
-
-June 30, 2026 • General • By Sayad Md Bayezid Hosan
+June 30, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 # MODULE 7: LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners
 
