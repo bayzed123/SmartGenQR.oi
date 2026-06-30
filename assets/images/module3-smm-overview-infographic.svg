@@ -1,0 +1,60 @@
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#1B2538"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg2)"/>
+
+  <text x="60" y="80" font-family="Georgia, serif" font-size="38" fill="#F8FAFC" font-weight="bold">Choosing the Right Platform for Your Audience</text>
+  <text x="60" y="112" font-family="Arial, sans-serif" font-size="17" fill="#94A3B8">Module 3 — Social Media Marketing (SMM)</text>
+
+  <!-- Table headers -->
+  <g font-family="Arial, sans-serif" font-size="16" fill="#CBD5E1">
+    <text x="80" y="180" font-weight="bold" fill="#F8FAFC">Platform</text>
+    <text x="320" y="180" font-weight="bold" fill="#F8FAFC">Best Audience</text>
+    <text x="650" y="180" font-weight="bold" fill="#F8FAFC">Ad Strength</text>
+    <text x="930" y="180" font-weight="bold" fill="#F8FAFC">Content Type</text>
+  </g>
+  <line x1="60" y1="195" x2="1140" y2="195" stroke="#334155" stroke-width="1"/>
+
+  <g font-family="Arial, sans-serif" font-size="15" fill="#E2E8F0">
+    <text x="80" y="235">Facebook</text>
+    <text x="320" y="235">Broad, 25-55+ age range</text>
+    <text x="650" y="235">Detailed targeting, retargeting</text>
+    <text x="930" y="235">Mixed: image, video, link</text>
+
+    <text x="80" y="280">Instagram</text>
+    <text x="320" y="280">18-34, visual interests</text>
+    <text x="650" y="280">Strong visual/story ads</text>
+    <text x="930" y="280">Photos, Reels, Stories</text>
+
+    <text x="80" y="325">LinkedIn</text>
+    <text x="320" y="325">Professionals, B2B buyers</text>
+    <text x="650" y="325">High CPC, high B2B intent</text>
+    <text x="930" y="325">Articles, case studies</text>
+
+    <text x="80" y="370">X (Twitter)</text>
+    <text x="320" y="370">News-driven, real-time users</text>
+    <text x="650" y="370">Trend &amp; conversation ads</text>
+    <text x="930" y="370">Short text, live updates</text>
+
+    <text x="80" y="415">Pinterest</text>
+    <text x="320" y="415">Planners, mostly women 25-44</text>
+    <text x="650" y="415">Long ad shelf-life</text>
+    <text x="930" y="415">Pins, idea boards</text>
+
+    <text x="80" y="460">TikTok</text>
+    <text x="320" y="460">Gen Z &amp; younger millennials</text>
+    <text x="650" y="460">High organic + ad reach</text>
+    <text x="930" y="460">Short-form video</text>
+  </g>
+
+  <line x1="60" y1="490" x2="1140" y2="490" stroke="#334155" stroke-width="1"/>
+
+  <text x="60" y="560" font-family="Arial, sans-serif" font-size="15" fill="#94A3B8" font-style="italic">Rule of thumb: go where your specific audience already spends time —</text>
+  <text x="60" y="585" font-family="Arial, sans-serif" font-size="15" fill="#94A3B8" font-style="italic">not where every brand defaults to.</text>
+
+  <text x="60" y="650" font-family="Arial, sans-serif" font-size="13" fill="#64748B">Original graphic created for SmartGen Blog — free to use, no copyright restrictions.</text>
+</svg>
