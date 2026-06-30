@@ -1,0 +1,43 @@
+<svg viewBox="0 0 1200 650" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="650" fill="#0A0A0A"/>
+
+  <text x="60" y="70" font-family="Georgia, serif" font-size="34" fill="#F8FAFC" font-weight="bold">The X Growth Loop</text>
+  <text x="60" y="100" font-family="Arial, sans-serif" font-size="16" fill="#94A3B8">Module 6 — X (Formerly Twitter) Marketing</text>
+
+  <!-- circular flow: 4 nodes -->
+  <circle cx="280" cy="300" r="100" fill="#1D9BF0" opacity="0.12" stroke="#1D9BF0" stroke-width="2"/>
+  <text x="280" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#F8FAFC" font-weight="bold">Follow Niche</text>
+  <text x="280" y="312" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#F8FAFC" font-weight="bold">Users</text>
+  <text x="280" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">Find your real community</text>
+
+  <circle cx="560" cy="190" r="100" fill="#22C55E" opacity="0.12" stroke="#22C55E" stroke-width="2"/>
+  <text x="560" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#F8FAFC" font-weight="bold">Engage Genuinely</text>
+  <text x="560" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">Thoughtful replies,</text>
+  <text x="560" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">real conversation</text>
+
+  <circle cx="840" cy="300" r="100" fill="#F59E0B" opacity="0.12" stroke="#F59E0B" stroke-width="2"/>
+  <text x="840" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#F8FAFC" font-weight="bold">Post Strong</text>
+  <text x="840" y="312" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#F8FAFC" font-weight="bold">Content</text>
+  <text x="840" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">Hook, value, visuals</text>
+
+  <circle cx="560" cy="410" r="100" fill="#EC4899" opacity="0.12" stroke="#EC4899" stroke-width="2"/>
+  <text x="560" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#F8FAFC" font-weight="bold">Drive Real</text>
+  <text x="560" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#F8FAFC" font-weight="bold">Conversions</text>
+  <text x="560" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8">Clicks, sign-ups, sales</text>
+
+  <!-- arrows -->
+  <path d="M 350 240 Q 450 200 460 200" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 650 220 Q 760 260 770 270" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 800 380 Q 700 410 660 410" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 470 390 Q 360 360 350 350" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="560" font-family="Arial, sans-serif" font-size="15" fill="#94A3B8" font-style="italic">Metrics to watch at each stage: Followers, Retweets, Clicks, Conversions.</text>
+
+  <text x="60" y="610" font-family="Arial, sans-serif" font-size="13" fill="#64748B">Original graphic created for SmartGen Blog — free to use, no copyright restrictions.</text>
+</svg>
