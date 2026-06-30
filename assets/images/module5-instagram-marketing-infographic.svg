@@ -1,0 +1,57 @@
+<svg viewBox="0 0 1200 650" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0B2E"/>
+      <stop offset="100%" stop-color="#2D1B4E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="650" fill="url(#bg5)"/>
+
+  <text x="60" y="70" font-family="Georgia, serif" font-size="34" fill="#F8FAFC" font-weight="bold">Instagram Content Formats &amp; Their Role</text>
+  <text x="60" y="100" font-family="Arial, sans-serif" font-size="16" fill="#C4B5FD">Module 5 — Instagram Marketing</text>
+
+  <!-- Feed -->
+  <rect x="60" y="150" width="250" height="160" rx="12" fill="#E1306C" opacity="0.15" stroke="#E1306C" stroke-width="2"/>
+  <text x="185" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#F8FAFC" font-weight="bold">Feed Post</text>
+  <text x="185" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">Builds brand identity</text>
+  <text x="185" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">First impression for</text>
+  <text x="185" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">new visitors</text>
+  <text x="185" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">Best for: portfolio,</text>
+  <text x="185" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">product showcase</text>
+
+  <!-- Stories -->
+  <rect x="335" y="150" width="250" height="160" rx="12" fill="#F59E0B" opacity="0.15" stroke="#F59E0B" stroke-width="2"/>
+  <text x="460" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#F8FAFC" font-weight="bold">Stories</text>
+  <text x="460" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">Builds daily connection</text>
+  <text x="460" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">Casual, time-sensitive,</text>
+  <text x="460" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">interactive stickers</text>
+  <text x="460" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">Best for: updates,</text>
+  <text x="460" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">polls, behind-the-scenes</text>
+
+  <!-- Reels -->
+  <rect x="610" y="150" width="250" height="160" rx="12" fill="#22C55E" opacity="0.15" stroke="#22C55E" stroke-width="2"/>
+  <text x="735" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#F8FAFC" font-weight="bold">Reels</text>
+  <text x="735" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">Builds new reach</text>
+  <text x="735" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">Short, entertaining,</text>
+  <text x="735" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">trend-aware video</text>
+  <text x="735" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">Best for: discovery,</text>
+  <text x="735" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">new audience growth</text>
+
+  <!-- Long-form video -->
+  <rect x="885" y="150" width="250" height="160" rx="12" fill="#3B82F6" opacity="0.15" stroke="#3B82F6" stroke-width="2"/>
+  <text x="1010" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#F8FAFC" font-weight="bold">Long-form Video</text>
+  <text x="1010" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">Builds deep trust</text>
+  <text x="1010" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">Tutorials, demos,</text>
+  <text x="1010" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">deeper storytelling</text>
+  <text x="1010" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">Best for: education,</text>
+  <text x="1010" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E2D9F3">in-depth content</text>
+
+  <!-- arrow flow -->
+  <line x1="60" y1="370" x2="1135" y2="370" stroke="#7C3AED" stroke-width="2"/>
+  <text x="80" y="400" font-family="Arial, sans-serif" font-size="15" fill="#C4B5FD">Discover (Reels) → Connect (Stories) → Trust (Feed) → Convert (Long-form + Link)</text>
+
+  <text x="60" y="470" font-family="Arial, sans-serif" font-size="15" fill="#94A3B8" font-style="italic">Use each format for what it does best —</text>
+  <text x="60" y="495" font-family="Arial, sans-serif" font-size="15" fill="#94A3B8" font-style="italic">don't post the same content everywhere the same way.</text>
+
+  <text x="60" y="600" font-family="Arial, sans-serif" font-size="13" fill="#64748B">Original graphic created for SmartGen Blog — free to use, no copyright restrictions.</text>
+</svg>
