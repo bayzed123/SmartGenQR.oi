@@ -220,7 +220,7 @@ None of the work in this guide means much if you never check whether it's actual
 
 Below is an original infographic mapping out the eight building blocks covered in this guide — from your first decision about individual versus company presence, through profile optimization, content, network growth, Company Pages, advertising, and finally analytics. This graphic was created specifically for this guide and is free to use with attribution back to this article.
 
-![LinkedIn Marketing Framework — 8 building blocks covering profile strategy, content, network growth, company pages, ads, and analytics](https://smartgentools.com/blog/module-7-linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners/assets/images/module7-linkedin-marketing-infographic.svg)
+![LinkedIn Marketing Framework — 8 building blocks covering profile strategy, content, network growth, company pages, ads, and analytics](https://github.com/bayzed123/SmartGenQR.oi/blob/main/assets/images/module7-linkedin-marketing-infographic.svg)
 
 ---
 
