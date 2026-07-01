@@ -1,0 +1,118 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101728"/>
+      <stop offset="100%" stop-color="#1C2C4D"/>
+    </linearGradient>
+    <filter id="glow2" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#bgGrad2)"/>
+
+  <!-- title -->
+  <text x="600" y="62" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" fill="#F6F1E4">The A &#8594; Z Content Marketing Journey</text>
+  <text x="600" y="94" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" fill="#93A0C2">Six stops from foundational strategy all the way to measurable results</text>
+
+  <!-- road -->
+  <path d="M60,420 C250,340 400,470 600,405 C800,340 960,470 1140,405" fill="none" stroke="#233256" stroke-width="34" stroke-linecap="round"/>
+  <path d="M60,420 C250,340 400,470 600,405 C800,340 960,470 1140,405" fill="none" stroke="#F6F1E4" stroke-width="2" stroke-dasharray="14 14" opacity="0.35"/>
+
+  <!-- start flag -->
+  <g transform="translate(46,405)">
+    <rect x="-2" y="-40" width="4" height="60" fill="#F6F1E4"/>
+    <polygon points="2,-40 34,-32 2,-24" fill="#F2A93B"/>
+  </g>
+  <text x="46" y="452" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2" fill="#F2A93B" font-weight="700">START</text>
+
+  <!-- finish checkered flag -->
+  <g transform="translate(1150,405)">
+    <rect x="-2" y="-40" width="4" height="60" fill="#F6F1E4"/>
+    <rect x="2" y="-40" width="14" height="7" fill="#F6F1E4"/>
+    <rect x="16" y="-33" width="14" height="7" fill="#101728"/>
+    <rect x="2" y="-26" width="14" height="7" fill="#101728"/>
+    <rect x="16" y="-40" width="14" height="7" fill="#101728"/>
+    <rect x="2" y="-33" width="14" height="7" fill="#F6F1E4"/>
+    <rect x="16" y="-26" width="14" height="7" fill="#F6F1E4"/>
+  </g>
+  <text x="1150" y="452" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2" fill="#F2A93B" font-weight="700">FINISH</text>
+
+  <!-- ===================== STOP A (above) ===================== -->
+  <line x1="150" y1="300" x2="150" y2="392" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="150" cy="270" r="34" fill="#1B2540" stroke="#F2A93B" stroke-width="3"/>
+  <text x="150" y="281" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#F6F1E4">A</text>
+  <!-- lightbulb icon -->
+  <g transform="translate(150,222)" stroke="#F2A93B" stroke-width="2" fill="none">
+    <circle cx="0" cy="0" r="10"/>
+    <line x1="-4" y1="9" x2="4" y2="9"/>
+  </g>
+  <text x="150" y="150" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1" fill="#F6F1E4">INTRODUCTION</text>
+  <text x="150" y="170" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">What content marketing</text>
+  <text x="150" y="185" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">actually is &amp; why it works</text>
+
+  <!-- ===================== STOP B (below) ===================== -->
+  <line x1="340" y1="450" x2="340" y2="540" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="340" cy="570" r="34" fill="#1B2540" stroke="#4ED9AE" stroke-width="3"/>
+  <text x="340" y="581" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#F6F1E4">B</text>
+  <!-- compass icon -->
+  <g transform="translate(340,628)" stroke="#4ED9AE" stroke-width="2" fill="none">
+    <circle cx="0" cy="0" r="11"/>
+    <polygon points="-3,3 0,-6 3,3 0,0" fill="#4ED9AE" stroke="none"/>
+  </g>
+  <text x="340" y="666" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1" fill="#F6F1E4">STRATEGY</text>
+  <text x="340" y="684" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">Goals, audience &amp; pillars</text>
+
+  <!-- ===================== STOP C (above) ===================== -->
+  <line x1="530" y1="290" x2="530" y2="382" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="530" cy="260" r="34" fill="#1B2540" stroke="#F1633C" stroke-width="3"/>
+  <text x="530" y="271" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#F6F1E4">C</text>
+  <!-- blueprint icon -->
+  <g transform="translate(530,212)" stroke="#F1633C" stroke-width="2" fill="none">
+    <rect x="-10" y="-8" width="20" height="16" rx="2"/>
+    <line x1="-6" y1="-3" x2="6" y2="-3"/>
+    <line x1="-6" y1="3" x2="2" y2="3"/>
+  </g>
+  <text x="530" y="140" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1" fill="#F6F1E4">FORMULA</text>
+  <text x="530" y="160" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">Proven content structures</text>
+  <text x="530" y="175" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">that make ideas land</text>
+
+  <!-- ===================== STOP D (below) ===================== -->
+  <line x1="720" y1="440" x2="720" y2="530" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="720" cy="560" r="34" fill="#1B2540" stroke="#4ED9AE" stroke-width="3"/>
+  <text x="720" y="571" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#F6F1E4">D</text>
+  <!-- pen icon -->
+  <g transform="translate(720,618)">
+    <polygon points="0,-10 7,7 -7,7" fill="#4ED9AE"/>
+    <rect x="-2" y="-20" width="4" height="11" fill="#4ED9AE"/>
+  </g>
+  <text x="720" y="656" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1" fill="#F6F1E4">WRITING</text>
+  <text x="720" y="674" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">Optimized &amp; genuinely engaging</text>
+
+  <!-- ===================== STOP E (above) ===================== -->
+  <line x1="910" y1="300" x2="910" y2="392" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="910" cy="270" r="34" fill="#1B2540" stroke="#F1633C" stroke-width="3"/>
+  <text x="910" y="281" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#F6F1E4">E</text>
+  <!-- basket icon -->
+  <g transform="translate(910,222)" stroke="#F1633C" stroke-width="2" fill="none">
+    <path d="M-11,-4 L-8,8 L8,8 L11,-4 Z"/>
+    <path d="M-6,-4 C-6,-11 6,-11 6,-4"/>
+  </g>
+  <text x="910" y="150" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1" fill="#F6F1E4">BUCKETING</text>
+  <text x="910" y="170" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">Organizing your content</text>
+  <text x="910" y="185" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">library so nothing drifts</text>
+
+  <!-- ===================== STOP Z (below, finish) ===================== -->
+  <line x1="1080" y1="450" x2="1080" y2="540" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="1080" cy="570" r="36" fill="#1B2540" stroke="#F2A93B" stroke-width="3.5"/>
+  <text x="1080" y="582" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#F6F1E4">Z</text>
+  <!-- chart icon -->
+  <g transform="translate(1080,628)" fill="#F2A93B">
+    <rect x="-14" y="-2" width="6" height="14"/>
+    <rect x="-4" y="-10" width="6" height="22"/>
+    <rect x="6" y="-16" width="6" height="28"/>
+  </g>
+  <text x="1080" y="666" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1" fill="#F6F1E4">MEASUREMENT</text>
+  <text x="1080" y="684" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">Proving what's really working</text>
+
+</svg>
