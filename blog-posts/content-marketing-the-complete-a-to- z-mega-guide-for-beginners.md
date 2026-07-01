@@ -57,7 +57,7 @@ Real content marketing is closer to publishing than to posting. A serious public
 
 Before going section by section, here's the whole route this module covers, laid out as one continuous journey — six stops from foundational understanding all the way to measurable, provable results.
 
-![The A to Z Content Marketing Journey — six stops from Introduction through Strategy, Formula, Writing, and Bucketing to Measurement](https://smartgentools.com/blog/module-12-content-marketing-the-complete-a-to-z-mega-guide-for-beginners/assets/images/module12-content-marketing-a-to-z.svg)
+![The A to Z Content Marketing Journey — six stops from Introduction through Strategy, Formula, Writing, and Bucketing to Measurement](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module12-content-marketing-a-to-z.svg)
 
 ---
 
