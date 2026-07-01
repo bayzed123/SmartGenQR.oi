@@ -1,0 +1,147 @@
+<svg width="1500" height="820" viewBox="0 0 1500 820" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradT" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101728"/>
+      <stop offset="100%" stop-color="#1C2C4D"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="820" fill="url(#bgGradT)"/>
+
+  <!-- title -->
+  <text x="750" y="58" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700" fill="#F6F1E4">The Google Algorithm Timeline</text>
+  <text x="750" y="90" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" fill="#93A0C2">Ten major updates that reshaped modern SEO, in the order they happened</text>
+
+  <!-- road -->
+  <path d="M50,412 C400,350 700,480 1050,405 C1250,365 1350,440 1450,410" fill="none" stroke="#233256" stroke-width="30" stroke-linecap="round"/>
+  <path d="M50,412 C400,350 700,480 1050,405 C1250,365 1350,440 1450,410" fill="none" stroke="#F6F1E4" stroke-width="2" stroke-dasharray="12 12" opacity="0.3"/>
+
+  <!-- start marker -->
+  <g transform="translate(40,410)">
+    <rect x="-2" y="-36" width="4" height="52" fill="#F6F1E4"/>
+    <polygon points="2,-36 28,-29 2,-22" fill="#F2A93B"/>
+  </g>
+  <text x="40" y="448" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11" letter-spacing="1.5" fill="#F2A93B" font-weight="700">2011</text>
+
+  <!-- ongoing marker -->
+  <g transform="translate(1460,410)">
+    <circle r="6" fill="#F2A93B"/>
+    <circle r="12" fill="none" stroke="#F2A93B" stroke-width="1.5" opacity="0.6"/>
+    <circle r="18" fill="none" stroke="#F2A93B" stroke-width="1" opacity="0.35"/>
+  </g>
+  <text x="1460" y="448" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11" letter-spacing="1.5" fill="#F2A93B" font-weight="700">ONGOING</text>
+
+  <!-- ============ NODE TEMPLATE REPEATED ============ -->
+
+  <!-- 1: PANDA 2011 (above) gold -->
+  <line x1="120" y1="290" x2="120" y2="422" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="120" cy="262" r="29" fill="#1B2540" stroke="#F2A93B" stroke-width="3"/>
+  <text x="120" y="270" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E4">'11</text>
+  <g transform="translate(120,213)" fill="#F2A93B">
+    <ellipse cx="0" cy="4" rx="9" ry="7"/>
+    <circle cx="-8" cy="-7" r="3.2"/><circle cx="0" cy="-11" r="3.2"/><circle cx="8" cy="-7" r="3.2"/>
+  </g>
+  <text x="120" y="168" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F6F1E4">PANDA</text>
+  <text x="120" y="185" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">Thin &amp; low-value</text>
+  <text x="120" y="198" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">content crackdown</text>
+
+  <!-- 2: PENGUIN 2012 (below) mint -->
+  <line x1="270" y1="400" x2="270" y2="522" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="270" cy="552" r="29" fill="#1B2540" stroke="#4ED9AE" stroke-width="3"/>
+  <text x="270" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E4">'12</text>
+  <g transform="translate(270,603)" stroke="#4ED9AE" stroke-width="2.2" fill="none">
+    <rect x="-9" y="-5" width="10" height="10" rx="4"/><rect x="0" y="-5" width="10" height="10" rx="4"/>
+  </g>
+  <text x="270" y="638" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F6F1E4">PENGUIN</text>
+  <text x="270" y="655" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">Manipulative link</text>
+  <text x="270" y="668" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">schemes &amp; spam</text>
+
+  <!-- 3: PIRATE 2012 (above) coral -->
+  <line x1="420" y1="330" x2="420" y2="405" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="420" cy="300" r="29" fill="#1B2540" stroke="#F1633C" stroke-width="3"/>
+  <text x="420" y="308" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E4">'12</text>
+  <g transform="translate(420,251)" stroke="#F1633C" stroke-width="2.2" fill="none">
+    <circle r="11"/><line x1="-7.5" y1="-7.5" x2="7.5" y2="7.5"/>
+  </g>
+  <text x="420" y="206" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F6F1E4">PIRATE</text>
+  <text x="420" y="223" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">Repeated copyright</text>
+  <text x="420" y="236" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">infringement</text>
+
+  <!-- 4: HUMMINGBIRD 2013 (below) gold -->
+  <line x1="570" y1="470" x2="570" y2="522" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="570" cy="552" r="29" fill="#1B2540" stroke="#F2A93B" stroke-width="3"/>
+  <text x="570" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E4">'13</text>
+  <g transform="translate(570,603)" stroke="#F2A93B" stroke-width="2.2" fill="none">
+    <path d="M-11,-6 h18 a4,4 0 0 1 4,4 v5 a4,4 0 0 1 -4,4 h-11 l-5,5 v-5 h-2 a4,4 0 0 1 -4,-4 v-5 a4,4 0 0 1 4,-4 z"/>
+  </g>
+  <text x="570" y="638" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F6F1E4">HUMMINGBIRD</text>
+  <text x="570" y="655" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">Understanding full</text>
+  <text x="570" y="668" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">query meaning</text>
+
+  <!-- 5: PIGEON 2014 (above) mint -->
+  <line x1="720" y1="300" x2="720" y2="392" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="720" cy="270" r="29" fill="#1B2540" stroke="#4ED9AE" stroke-width="3"/>
+  <text x="720" y="278" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E4">'14</text>
+  <g transform="translate(720,220)" fill="none" stroke="#4ED9AE" stroke-width="2.2">
+    <path d="M0,-11 C6,-11 10,-7 10,-2 C10,5 0,13 0,13 C0,13 -10,5 -10,-2 C-10,-7 -6,-11 0,-11 Z"/>
+    <circle cx="0" cy="-2" r="3" fill="#4ED9AE" stroke="none"/>
+  </g>
+  <text x="720" y="176" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F6F1E4">PIGEON</text>
+  <text x="720" y="193" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">Local results tied to</text>
+  <text x="720" y="206" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">core ranking signals</text>
+
+  <!-- 6: RANKBRAIN 2015 (below) coral -->
+  <line x1="870" y1="440" x2="870" y2="522" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="870" cy="552" r="29" fill="#1B2540" stroke="#F1633C" stroke-width="3"/>
+  <text x="870" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E4">'15</text>
+  <g transform="translate(870,603)" stroke="#F1633C" stroke-width="2" fill="#F1633C">
+    <circle cx="-9" cy="5" r="2.6"/><circle cx="9" cy="5" r="2.6"/><circle cx="0" cy="-8" r="2.6"/>
+    <line x1="-9" y1="5" x2="0" y2="-8"/><line x1="9" y1="5" x2="0" y2="-8"/><line x1="-9" y1="5" x2="9" y2="5"/>
+  </g>
+  <text x="870" y="638" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F6F1E4">RANKBRAIN</text>
+  <text x="870" y="655" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">Machine learning for</text>
+  <text x="870" y="668" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">new &amp; unclear queries</text>
+
+  <!-- 7: POSSUM 2016 (above) gold -->
+  <line x1="1020" y1="320" x2="1020" y2="392" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="1020" cy="292" r="29" fill="#1B2540" stroke="#F2A93B" stroke-width="3"/>
+  <text x="1020" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E4">'16</text>
+  <g transform="translate(1020,243)" fill="none" stroke="#F2A93B" stroke-width="2.2">
+    <path d="M-10,-9 h20 l-7,18 h-6 z"/>
+  </g>
+  <text x="1020" y="198" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F6F1E4">POSSUM</text>
+  <text x="1020" y="215" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">Diversified &amp; filtered</text>
+  <text x="1020" y="228" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">local pack results</text>
+
+  <!-- 8: FRED 2017 (below) mint -->
+  <line x1="1170" y1="450" x2="1170" y2="522" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="1170" cy="552" r="29" fill="#1B2540" stroke="#4ED9AE" stroke-width="3"/>
+  <text x="1170" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E4">'17</text>
+  <text x="1170" y="610" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#4ED9AE">$</text>
+  <text x="1170" y="638" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F6F1E4">FRED</text>
+  <text x="1170" y="655" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">Aggressive ads over</text>
+  <text x="1170" y="668" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">genuine reader value</text>
+
+  <!-- 9: MEDIC 2018 (above) coral -->
+  <line x1="1320" y1="300" x2="1320" y2="392" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="1320" cy="270" r="29" fill="#1B2540" stroke="#F1633C" stroke-width="3"/>
+  <text x="1320" y="278" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#F6F1E4">'18</text>
+  <g transform="translate(1320,220)" fill="#F1633C">
+    <rect x="-3" y="-11" width="6" height="22"/><rect x="-11" y="-3" width="22" height="6"/>
+  </g>
+  <text x="1320" y="176" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F6F1E4">MEDIC</text>
+  <text x="1320" y="193" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">E-E-A-T &amp; trust for</text>
+  <text x="1320" y="206" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">health &amp; money sites</text>
+
+  <!-- 10: BERT 2019 (below) gold, finish -->
+  <line x1="1440" y1="440" x2="1440" y2="522" stroke="#3A4A72" stroke-width="2"/>
+  <circle cx="1440" cy="554" r="32" fill="#1B2540" stroke="#F2A93B" stroke-width="3.5"/>
+  <text x="1440" y="562" text-anchor="middle" font-family="Georgia, serif" font-size="17" font-weight="700" fill="#F6F1E4">'19</text>
+  <text x="1440" y="612" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#F2A93B">&#8220;&#8221;</text>
+  <text x="1440" y="642" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#F6F1E4">BERT</text>
+  <text x="1440" y="659" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">Reading language</text>
+  <text x="1440" y="672" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="10.5" fill="#93A0C2">the way people do</text>
+
+  <!-- footer -->
+  <text x="750" y="785" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN DIGITAL MARKETING COURSE &#183; MODULE 13</text>
+</svg>
