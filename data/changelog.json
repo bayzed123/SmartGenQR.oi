@@ -1,5 +1,10 @@
 [
   {
+    "title": "add picture for blog post",
+    "date": "2026-07-01T19:00:25Z",
+    "description": "assets/images/module7-linkedin-marketing-infographic.svg"
+  },
+  {
     "title": "Delete assets/images/module7-linkedin-marketing-infographic.svg",
     "date": "2026-07-01T18:59:29Z",
     "description": "Platform improvement and optimization."
