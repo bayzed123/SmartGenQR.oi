@@ -1,5 +1,10 @@
 [
   {
+    "title": "Create tool content template for user guidance",
+    "date": "2026-07-01T21:21:56Z",
+    "description": "Added a comprehensive content template for tool pages to enhance user understanding and SEO. This includes sections on usage, features, troubleshooting, and FAQs."
+  },
+  {
     "title": "Create blog-post-guideline.md",
     "date": "2026-07-01T19:44:12Z",
     "description": "Platform improvement and optimization."
