@@ -20,7 +20,7 @@ June 30, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, practical guide to LinkedIn marketing and profile optimization: choosing between an individual profile and a company page, building a profile that actually gets found, creating content the algorithm wants to spread, growing a real professional network, running an effective Company Page, using LinkedIn Ads, and reading your analytics so you know what's actually working.
 
-![MODULE 7: LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners](https://github.com/bayzed123/SmartGenQR.oi/blob/main/assets/images/module7-linkedin-marketing-infographic.svg)
+![LinkedIn Marketing The Complete A to Z Mega Guide for Beginners](https://github.com/bayzed123/SmartGenQR.oi/blob/main/assets/images/module7-linkedin-marketing-infographic.svg)
 
 ## Welcome to Module 7: LinkedIn Marketing
 
