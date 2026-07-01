@@ -1,9 +1,9 @@
 ---
 title: "LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners - SmartGen Blog"
+image: "https://github.com/bayzed123/SmartGenQR.oi/blob/main/assets/images/module7-linkedin-marketing-infographic.svg"
 description: "A complete, practical guide to LinkedIn marketing and profile optimization for beginners — profiles, content, network growth, company pages, ads, and analytics"
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 7, LinkedIn Marketing, LinkedIn Optimization, LinkedIn Ads, B2B Marketing,smartgen"
 date: 2026-06-30
-image: "https://github.com/bayzed123/SmartGenQR.oi/blob/main/assets/images/module7-linkedin-marketing-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
