@@ -3,7 +3,7 @@ title: "Content Marketing — The Complete A to Z Mega Guide for Beginners - Sma
 description: "A complete, practical A to Z guide to content marketing for beginners — what content marketing actually is and how it differs from advertising, how to build a real content marketing strategy, the proven strategies and formulas that structure genuinely effective content, how to write content that is both optimized and actually engaging, how to organize your content using content bucketing, and how to measure whether any of it is truly working."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 12, Content Marketing, Content Strategy, Content Bucketing, Content Performance, Content Writing, SEO Content"
 date: 2026-07-02
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-content-marketing-infographic.svg"
+image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module12-content-marketing-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -267,7 +267,7 @@ Not every piece of content will perform well, and that's a normal, expected part
 
 Below is an original infographic built specifically for this guide, mapping out the content marketing system from strategy and formula through writing, bucketing, and performance measurement.
 
-![Content Marketing System — from strategy and formula through optimized writing, content bucketing, and performance measurement](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module12-content-marketing-infographic.svg)
+![Content Marketing System — from strategy and formula through optimized writing, content bucketing, and performance measurement](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-content-marketing-infographic.svg)
 
 ---
 
