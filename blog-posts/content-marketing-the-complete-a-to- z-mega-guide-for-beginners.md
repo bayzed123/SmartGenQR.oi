@@ -3,7 +3,7 @@ title: "Content Marketing — The Complete A to Z Mega Guide for Beginners - Sma
 description: "A complete, practical A to Z guide to content marketing for beginners — what content marketing actually is and how it differs from advertising, how to build a real content marketing strategy, the proven strategies and formulas that structure genuinely effective content, how to write content that is both optimized and actually engaging, how to organize your content using content bucketing, and how to measure whether any of it is truly working."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 12, Content Marketing, Content Strategy, Content Bucketing, Content Performance, Content Writing, SEO Content"
 date: 2026-07-02
-image: "assets/images/module12-content-marketing-infographic.svg"
+image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-content-marketing-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -19,7 +19,7 @@ July 02, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, practical A to Z guide to content marketing for beginners — what content marketing actually is and how it differs from advertising, how to build a real content marketing strategy, the proven strategies and formulas that structure genuinely effective content, how to write content that is both optimized and actually engaging, how to organize your content using content bucketing, and how to measure whether any of it is truly working.
 
-![MODULE 12: Content Marketing — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/module-12-content-marketing-the-complete-a-to-z-mega-guide-for-beginners/assets/images/module12-content-marketing-cover.svg)
+![MODULE 12: Content Marketing — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module12-content-marketing-cover.svg)
 
 ---
 
@@ -263,109 +263,11 @@ Not every piece of content will perform well, and that's a normal, expected part
 
 ---
 
-#### Visual Summary
+## Visual Summary
 
 Below is an original infographic built specifically for this guide, mapping out the content marketing system from strategy and formula through writing, bucketing, and performance measurement.
 
-<div class="svg-image-container" style="text-align: center; margin: 2rem 0;">
-<svg width="100%" height="auto" viewBox="0 0 1100 1180" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F1526"/>
-      <stop offset="100%" stop-color="#1B2A4A"/>
-    </linearGradient>
-    <path id="hubPath" d="M494,620 A56,56 0 1,1 606,620"/>
-  </defs>
-
-  <rect width="1100" height="1180" fill="url(#bgGrad3)"/>
-
-  <!-- title -->
-  <text x="550" y="66" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700" fill="#F6F1E4">The Content Marketing System</text>
-  <text x="550" y="98" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" fill="#93A0C2">A repeatable cycle from strategy to measurable results</text>
-
-  <!-- entry arrow from foundations -->
-  <path d="M235,150 Q400,170 495,215" fill="none" stroke="#4ED9AE" stroke-width="2.5" stroke-dasharray="2 7"/>
-  <polygon points="495,215 481,204 480,220" fill="#4ED9AE" transform="rotate(10,495,215)"/>
-  <g transform="translate(190,128)" stroke="#4ED9AE" stroke-width="2" fill="none">
-    <circle cx="0" cy="0" r="12"/>
-    <line x1="-4" y1="11" x2="4" y2="11"/>
-  </g>
-  <text x="210" y="122" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#4ED9AE">CONTENT MARKETING FOUNDATIONS</text>
-  <text x="210" y="141" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">Why it works &amp; who it's genuinely for</text>
-
-  <!-- ===================== FLOW ARROWS ===================== -->
-  <!-- Top -> Right -->
-  <path d="M612,320 Q860,340 822,558" fill="none" stroke="#F2A93B" stroke-width="3.5"/>
-  <polygon points="822,558 808,532 833,540" fill="#F2A93B"/>
-
-  <!-- Right -> Bottom -->
-  <path d="M822,682 Q878,900 612,922" fill="none" stroke="#4ED9AE" stroke-width="3.5"/>
-  <polygon points="612,922 638,912 630,936" fill="#4ED9AE"/>
-
-  <!-- Bottom -> Left -->
-  <path d="M488,922 Q222,900 278,682" fill="none" stroke="#F1633C" stroke-width="3.5"/>
-  <polygon points="278,682 268,708 292,698" fill="#F1633C"/>
-
-  <!-- Left -> Top (iterate & refine loop) -->
-  <path d="M278,558 Q222,340 488,320" fill="none" stroke="#F2A93B" stroke-width="3" stroke-dasharray="10 8"/>
-  <polygon points="488,320 462,326 470,302" fill="#F2A93B"/>
-  <text x="290" y="435" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#F2A93B" transform="rotate(-71,290,435)">ITERATE &amp; REFINE</text>
-
-  <!-- ===================== CENTER HUB ===================== -->
-  <circle cx="550" cy="620" r="58" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
-  <g transform="translate(550,608)" stroke="#F6F1E4" stroke-width="2" fill="none">
-    <path d="M-14,4 A14,14 0 1,1 12,10"/>
-    <polygon points="12,10 20,2 22,14" fill="#F6F1E4" stroke="none"/>
-  </g>
-  <text text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11.5" letter-spacing="2" fill="#93A0C2" font-weight="700">
-    <textPath href="#hubPath" startOffset="2">REPEAT &amp; REFINE</textPath>
-  </text>
-
-  <!-- ===================== TOP NODE: STRATEGY & FORMULA ===================== -->
-  <circle cx="550" cy="260" r="80" fill="#1B2540" stroke="#F2A93B" stroke-width="3"/>
-  <g transform="translate(550,260)" stroke="#F6F1E4" stroke-width="2" fill="none">
-    <circle r="26"/>
-    <line x1="0" y1="-26" x2="0" y2="-18"/>
-    <line x1="0" y1="26" x2="0" y2="18"/>
-    <line x1="-26" y1="0" x2="-18" y2="0"/>
-    <line x1="26" y1="0" x2="18" y2="0"/>
-    <polygon points="0,-10 6,6 0,2 -6,6" fill="#F6F1E4" stroke="none"/>
-  </g>
-  <text x="550" y="150" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1" fill="#F6F1E4">STRATEGY &amp; FORMULA</text>
-  <text x="550" y="172" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">Goals, pillars &amp; proven structures</text>
-
-  <!-- ===================== RIGHT NODE: OPTIMIZED WRITING ===================== -->
-  <circle cx="880" cy="620" r="80" fill="#1B2540" stroke="#4ED9AE" stroke-width="3"/>
-  <g transform="translate(880,620)">
-    <polygon points="0,-22 15,16 -15,16" fill="#4ED9AE"/>
-    <rect x="-4" y="-40" width="8" height="22" fill="#4ED9AE"/>
-  </g>
-  <text x="880" y="732" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1" fill="#F6F1E4">OPTIMIZED WRITING</text>
-  <text x="880" y="754" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">Content that ranks &amp; resonates</text>
-
-  <!-- ===================== BOTTOM NODE: CONTENT BUCKETING ===================== -->
-  <circle cx="550" cy="980" r="80" fill="#1B2540" stroke="#F1633C" stroke-width="3"/>
-  <g transform="translate(550,980)" stroke="#F1633C" stroke-width="2.5" fill="none">
-    <path d="M-26,-10 L-20,20 L20,20 L26,-10 Z"/>
-    <path d="M-14,-10 C-14,-26 14,-26 14,-10"/>
-  </g>
-  <text x="550" y="1092" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1" fill="#F6F1E4">CONTENT BUCKETING</text>
-  <text x="550" y="1114" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">Keeping your library balanced</text>
-
-  <!-- ===================== LEFT NODE: PERFORMANCE MEASUREMENT ===================== -->
-  <circle cx="220" cy="620" r="80" fill="#1B2540" stroke="#F2A93B" stroke-width="3"/>
-  <g transform="translate(196,632)" fill="#F2A93B">
-    <rect x="0" y="0" width="11" height="22"/>
-    <rect x="16" y="-14" width="11" height="36"/>
-    <rect x="32" y="-26" width="11" height="48"/>
-  </g>
-  <text x="220" y="732" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1" fill="#F6F1E4">PERFORMANCE MEASUREMENT</text>
-  <text x="220" y="754" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">Real metrics, honest results</text>
-
-  <!-- footer -->
-  <text x="550" y="1150" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN DIGITAL MARKETING COURSE &#183; MODULE 12</text>
-</svg>
-</div>
+![Content Marketing System — from strategy and formula through optimized writing, content bucketing, and performance measurement](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module12-content-marketing-infographic.svg)
 
 ---
 
@@ -412,4 +314,4 @@ In the next module, we'll continue building on this content foundation. Take a m
 
 ---
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, including our [CPM & ROI Calculator](https://smartgentools.com/cpm-roi-calculator/), visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, including our [CPM & ROI Calculator](https://smartgentools.com/cpm-roi-calculator/), visit [SmartGen](https://www.smartgentools.com).*
