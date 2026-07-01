@@ -3,7 +3,7 @@ title: "LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners - Sm
 description: "A complete, practical guide to LinkedIn marketing and profile optimization: choosing between an individual profile and a Company Page, building a profile that actually gets found, creating content the algorithm wants to spread, growing a real professional network, running an effective Company Page, using LinkedIn Ads, and reading your analytics."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 7, LinkedIn Marketing, LinkedIn Optimization, LinkedIn Ads, B2B Marketing"
 date: 2026-07-01
-image: "https://github.com/bayzed123/SmartGenQR.oi/blob/main/assets/images/module7-linkedin-marketing-infographic.svg"
+image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module7-linkedin-marketing-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -17,32 +17,12 @@ tags:
 July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 ---
-canonical: https://smartgentools.com/blog/module7-linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners/
-meta-article:author: Sayad Md Bayezid Hosan
-meta-article:published_time: Tue Jun 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)
-meta-author: Sayad Md Bayezid Hosan
-meta-description: A complete, practical guide to LinkedIn marketing and profile optimization: choosing between an individual profile and a Company Page, building a profile that actually gets found, creating content the algorithm wants to spread, growing a real professional network, running an effective Company Page, using LinkedIn Ads, and reading your analytics.
-meta-keywords: SmartGen, Digital Marketing, Digital Marketing Course, Module 7, LinkedIn Marketing, LinkedIn Optimization, LinkedIn Ads, B2B Marketing
-meta-og:description: A complete, practical guide to LinkedIn marketing and profile optimization for beginners — profiles, content, network growth, company pages, ads, and analytics.
-meta-og:image: assets/images/module7-linkedin-marketing-infographic.svg
-meta-og:title: MODULE 7: LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners
-meta-og:type: article
-meta-og:url: https://smartgentools.com/blog/module7-linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners/
-meta-twitter:card: summary_large_image
-meta-twitter:description: A complete, practical guide to LinkedIn marketing and profile optimization for beginners — profiles, content, network growth, company pages, ads, and analytics.
-meta-twitter:image: assets/images/module7-linkedin-marketing-infographic.svg
-meta-twitter:title: MODULE 7: LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners
-meta-viewport: width=device-width, initial-scale=1.0
-title: MODULE 7: LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners - SmartGen Blog
----
-
-June 30, 2026 • General • By Sayad Md Bayezid Hosan
 
 # MODULE 7: LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners
 
 A complete, practical guide to LinkedIn marketing and profile optimization: choosing between an individual profile and a company page, building a profile that actually gets found, creating content the algorithm wants to spread, growing a real professional network, running an effective Company Page, using LinkedIn Ads, and reading your analytics so you know what's actually working.
 
-![MODULE 7: LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners](https://github.com/bayzed123/SmartGenQR.oi/blob/main/assets/images/module7-linkedin-marketing-infographic.svg)
+![MODULE 7: LinkedIn Marketing](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module7-linkedin-marketing-infographic.svg)
 
 ## Welcome to Module 7: LinkedIn Marketing
 
