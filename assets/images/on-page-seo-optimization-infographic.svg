@@ -1,0 +1,266 @@
+<svg viewBox="0 0 800 975" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+
+  <defs>
+    <filter id="card-shadow" x="-4%" y="-4%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="rgba(0,0,0,0.08)"/>
+    </filter>
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1B7A3E;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#14532D;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="stats-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#14532D;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0F3B21;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="800" height="975" fill="#F0FFF4"/>
+
+  <!-- ================================================ -->
+  <!-- HEADER                                           -->
+  <!-- ================================================ -->
+  <rect width="800" height="118" fill="url(#header-grad)"/>
+  <circle cx="748" cy="20" r="90" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="762" cy="112" r="55" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="28" cy="92" r="64" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- Search / SEO Badge -->
+  <rect x="20" y="20" width="68" height="68" rx="10" fill="rgba(255,255,255,0.18)"/>
+  <circle cx="50" cy="50" r="16" fill="none" stroke="white" stroke-width="5"/>
+  <line x1="62" y1="62" x2="74" y2="74" stroke="white" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Header Titles -->
+  <text x="106" y="46" fill="white" font-size="22" font-weight="700" letter-spacing="-0.3">On-Page SEO Optimization Framework</text>
+  <text x="106" y="72" fill="rgba(255,255,255,0.88)" font-size="13">The Complete A to Z Mega Guide for Beginners</text>
+  <text x="106" y="96" fill="rgba(255,255,255,0.62)" font-size="11">SmartGen Digital Marketing Course  ·  smartgentools.com  ·  By Sayad Md Bayezid Hosan</text>
+
+  <!-- ================================================ -->
+  <!-- STATS STRIP                                      -->
+  <!-- ================================================ -->
+  <rect y="118" width="800" height="56" fill="url(#stats-grad)"/>
+
+  <text x="133" y="143" text-anchor="middle" fill="white" font-size="16" font-weight="700">Title Tag</text>
+  <text x="133" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">#1 On-Page Ranking Signal</text>
+
+  <line x1="266" y1="127" x2="266" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="400" y="143" text-anchor="middle" fill="white" font-size="16" font-weight="700">2.5 Seconds</text>
+  <text x="400" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">Google LCP Target (Core Web Vitals)</text>
+
+  <line x1="533" y1="127" x2="533" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="667" y="143" text-anchor="middle" fill="white" font-size="16" font-weight="700">~30% Higher</text>
+  <text x="667" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">CTR with Schema Rich Results</text>
+
+  <!-- ================================================ -->
+  <!-- SECTION LABEL                                    -->
+  <!-- ================================================ -->
+  <text x="400" y="196" text-anchor="middle" fill="#2D6A4F" font-size="9.5" letter-spacing="2.5" font-weight="700">7 PILLARS OF ON-PAGE SEO OPTIMIZATION</text>
+
+  <!--
+    GRID: 2 columns × 3 rows + 1 full-width row
+    Left  col: x=20,  width=372
+    Right col: x=408, width=372
+    Row Y: 204 | 362 | 520
+    Card height: 148px   Gap: 10px
+    Full-width Card 7: x=20, y=682, width=760, height=100
+  -->
+
+  <!-- ================================================ -->
+  <!-- ROW 1                                            -->
+  <!-- ================================================ -->
+
+  <!-- CARD 1: On-Page Audit -->
+  <rect x="20" y="204" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="204" width="5" height="148" rx="2.5" fill="#1B7A3E"/>
+  <circle cx="63" cy="228" r="18" fill="#1B7A3E"/>
+  <text x="63" y="234" text-anchor="middle" fill="white" font-size="14" font-weight="700">1</text>
+  <text x="89" y="224" fill="#1A1A1A" font-size="13" font-weight="700">Conducting an On-Page Audit</text>
+  <text x="89" y="240" fill="#1B7A3E" font-size="8.5" font-weight="700" letter-spacing="0.6">FIND WHAT TO FIX BEFORE YOU FIX IT</text>
+  <line x1="32" y1="252" x2="381" y2="252" stroke="#C8EFD8" stroke-width="1"/>
+  <circle cx="40" cy="268" r="3.5" fill="#1B7A3E"/>
+  <text x="50" y="272" fill="#333" font-size="10" font-weight="600">Crawl with Google Search Console + Screaming Frog</text>
+  <circle cx="40" cy="286" r="3.5" fill="#1B7A3E"/>
+  <text x="50" y="290" fill="#333" font-size="10" font-weight="600">Flag: missing titles, broken links, no alt text, slow pages</text>
+  <circle cx="40" cy="304" r="3.5" fill="#1B7A3E"/>
+  <text x="50" y="308" fill="#333" font-size="10" font-weight="600">Priority: fix broken → optimize mediocre → scale winners</text>
+  <rect x="32" y="322" width="348" height="22" rx="6" fill="#EDFFF5"/>
+  <text x="206" y="337" text-anchor="middle" fill="#1B7A3E" font-size="9.5" font-weight="700">GSC Coverage report reveals exactly what Google cannot index</text>
+
+  <!-- CARD 2: Title, Meta, Canonical, Headers -->
+  <rect x="408" y="204" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="204" width="5" height="148" rx="2.5" fill="#228F4A"/>
+  <circle cx="451" cy="228" r="18" fill="#228F4A"/>
+  <text x="451" y="234" text-anchor="middle" fill="white" font-size="14" font-weight="700">2</text>
+  <text x="477" y="224" fill="#1A1A1A" font-size="13" font-weight="700">Title, Meta, Canonical &amp; Headers</text>
+  <text x="477" y="240" fill="#228F4A" font-size="8.5" font-weight="700" letter-spacing="0.6">HTML ELEMENTS THAT CONTROL HOW YOU RANK</text>
+  <line x1="420" y1="252" x2="769" y2="252" stroke="#C8EFD8" stroke-width="1"/>
+  <circle cx="428" cy="268" r="3.5" fill="#228F4A"/>
+  <text x="438" y="272" fill="#333" font-size="10" font-weight="600">Title tag: 50–60 chars, primary keyword first, brand last</text>
+  <circle cx="428" cy="286" r="3.5" fill="#228F4A"/>
+  <text x="438" y="290" fill="#333" font-size="10" font-weight="600">Meta desc: 150–160 chars, include keyword + clear CTA</text>
+  <circle cx="428" cy="304" r="3.5" fill="#228F4A"/>
+  <text x="438" y="308" fill="#333" font-size="10" font-weight="600">H1: one per page · H2–H6: logical hierarchy, never skip levels</text>
+  <rect x="420" y="322" width="348" height="22" rx="6" fill="#EDFFF5"/>
+  <text x="594" y="337" text-anchor="middle" fill="#228F4A" font-size="9.5" font-weight="700">Canonical tag: prevents duplicate content across similar URLs</text>
+
+  <!-- ================================================ -->
+  <!-- ROW 2                                            -->
+  <!-- ================================================ -->
+
+  <!-- CARD 3: Multimedia Optimization -->
+  <rect x="20" y="362" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="362" width="5" height="148" rx="2.5" fill="#2D9E5B"/>
+  <circle cx="63" cy="386" r="18" fill="#2D9E5B"/>
+  <text x="63" y="392" text-anchor="middle" fill="white" font-size="14" font-weight="700">3</text>
+  <text x="89" y="382" fill="#1A1A1A" font-size="13" font-weight="700">Multimedia File Optimization</text>
+  <text x="89" y="398" fill="#2D9E5B" font-size="8.5" font-weight="700" letter-spacing="0.6">IMAGES, VIDEOS &amp; MEDIA FOR SEO</text>
+  <line x1="32" y1="410" x2="381" y2="410" stroke="#C8EFD8" stroke-width="1"/>
+  <circle cx="40" cy="426" r="3.5" fill="#2D9E5B"/>
+  <text x="50" y="430" fill="#333" font-size="10" font-weight="600">Images: descriptive filenames, alt text, WebP, compressed</text>
+  <circle cx="40" cy="444" r="3.5" fill="#2D9E5B"/>
+  <text x="50" y="448" fill="#333" font-size="10" font-weight="600">Add loading="lazy" to every image below the page fold</text>
+  <circle cx="40" cy="462" r="3.5" fill="#2D9E5B"/>
+  <text x="50" y="466" fill="#333" font-size="10" font-weight="600">Videos: embed YouTube, add captions, add VideoObject schema</text>
+  <rect x="32" y="480" width="348" height="22" rx="6" fill="#EDFFF5"/>
+  <text x="206" y="495" text-anchor="middle" fill="#2D9E5B" font-size="9.5" font-weight="700">WebP images are 25–34% smaller than JPEG at same quality</text>
+
+  <!-- CARD 4: URL Structure & Links -->
+  <rect x="408" y="362" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="362" width="5" height="148" rx="2.5" fill="#1B7A3E"/>
+  <circle cx="451" cy="386" r="18" fill="#1B7A3E"/>
+  <text x="451" y="392" text-anchor="middle" fill="white" font-size="14" font-weight="700">4</text>
+  <text x="477" y="382" fill="#1A1A1A" font-size="13" font-weight="700">URL Structure &amp; Link Strategy</text>
+  <text x="477" y="398" fill="#1B7A3E" font-size="8.5" font-weight="700" letter-spacing="0.6">URLS, INTERNAL LINKS &amp; FOLLOW TAGS</text>
+  <line x1="420" y1="410" x2="769" y2="410" stroke="#C8EFD8" stroke-width="1"/>
+  <circle cx="428" cy="426" r="3.5" fill="#1B7A3E"/>
+  <text x="438" y="430" fill="#333" font-size="10" font-weight="600">URLs: short, lowercase, hyphens, keyword-included, no dates</text>
+  <circle cx="428" cy="444" r="3.5" fill="#1B7A3E"/>
+  <text x="438" y="448" fill="#333" font-size="10" font-weight="600">Internal links: descriptive anchor text, max 3 clicks from home</text>
+  <circle cx="428" cy="462" r="3.5" fill="#1B7A3E"/>
+  <text x="438" y="466" fill="#333" font-size="10" font-weight="600">Dofollow = default · Nofollow for paid, UGC, unvetted links</text>
+  <rect x="420" y="480" width="348" height="22" rx="6" fill="#EDFFF5"/>
+  <text x="594" y="495" text-anchor="middle" fill="#1B7A3E" font-size="9.5" font-weight="700">Orphan pages (no internal links pointing to them) rarely rank</text>
+
+  <!-- ================================================ -->
+  <!-- ROW 3                                            -->
+  <!-- ================================================ -->
+
+  <!-- CARD 5: 301 Redirects & 404 Pages -->
+  <rect x="20" y="520" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="520" width="5" height="148" rx="2.5" fill="#228F4A"/>
+  <circle cx="63" cy="544" r="18" fill="#228F4A"/>
+  <text x="63" y="550" text-anchor="middle" fill="white" font-size="14" font-weight="700">5</text>
+  <text x="89" y="540" fill="#1A1A1A" font-size="13" font-weight="700">301 Redirects &amp; 404 Error Pages</text>
+  <text x="89" y="556" fill="#228F4A" font-size="8.5" font-weight="700" letter-spacing="0.6">HANDLE URL CHANGES WITHOUT LOSING RANKINGS</text>
+  <line x1="32" y1="568" x2="381" y2="568" stroke="#C8EFD8" stroke-width="1"/>
+  <circle cx="40" cy="584" r="3.5" fill="#228F4A"/>
+  <text x="50" y="588" fill="#333" font-size="10" font-weight="600">301 = permanent (passes authority) · 302 = temporary (holds it)</text>
+  <circle cx="40" cy="602" r="3.5" fill="#228F4A"/>
+  <text x="50" y="606" fill="#333" font-size="10" font-weight="600">Redirect chains (A→B→C→D): collapse all to direct A→D hops</text>
+  <circle cx="40" cy="620" r="3.5" fill="#228F4A"/>
+  <text x="50" y="624" fill="#333" font-size="10" font-weight="600">Custom 404: navigation + search box + popular page links</text>
+  <rect x="32" y="638" width="348" height="22" rx="6" fill="#EDFFF5"/>
+  <text x="206" y="653" text-anchor="middle" fill="#228F4A" font-size="9.5" font-weight="700">Never change a page URL without redirecting the old one</text>
+
+  <!-- CARD 6: XML Sitemap & Robots.txt -->
+  <rect x="408" y="520" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="520" width="5" height="148" rx="2.5" fill="#2D9E5B"/>
+  <circle cx="451" cy="544" r="18" fill="#2D9E5B"/>
+  <text x="451" y="550" text-anchor="middle" fill="white" font-size="14" font-weight="700">6</text>
+  <text x="477" y="540" fill="#1A1A1A" font-size="13" font-weight="700">XML Sitemap &amp; Robots.txt</text>
+  <text x="477" y="556" fill="#2D9E5B" font-size="8.5" font-weight="700" letter-spacing="0.6">GUIDE GOOGLE TO YOUR BEST PAGES</text>
+  <line x1="420" y1="568" x2="769" y2="568" stroke="#C8EFD8" stroke-width="1"/>
+  <circle cx="428" cy="584" r="3.5" fill="#2D9E5B"/>
+  <text x="438" y="588" fill="#333" font-size="10" font-weight="600">Sitemap: include canonical quality URLs — exclude noindex pages</text>
+  <circle cx="428" cy="602" r="3.5" fill="#2D9E5B"/>
+  <text x="438" y="606" fill="#333" font-size="10" font-weight="600">Submit to Google Search Console + Bing Webmaster Tools</text>
+  <circle cx="428" cy="620" r="3.5" fill="#2D9E5B"/>
+  <text x="438" y="624" fill="#333" font-size="10" font-weight="600">Robots.txt: disallow admin/login · never block CSS or JS files</text>
+  <rect x="420" y="638" width="348" height="22" rx="6" fill="#EDFFF5"/>
+  <text x="594" y="653" text-anchor="middle" fill="#2D9E5B" font-size="9.5" font-weight="700">Robots.txt = crawl control · Noindex tag = index control</text>
+
+  <!-- ================================================ -->
+  <!-- ROW 4 — FULL WIDTH: CARD 7                       -->
+  <!-- ================================================ -->
+  <rect x="20" y="682" width="760" height="104" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="682" width="5" height="104" rx="2.5" fill="#14532D"/>
+
+  <circle cx="63" cy="702" r="18" fill="#14532D"/>
+  <text x="63" y="708" text-anchor="middle" fill="white" font-size="14" font-weight="700">7</text>
+  <text x="89" y="700" fill="#1A1A1A" font-size="13" font-weight="700">Page Performance Monitoring &amp; Updating</text>
+  <text x="89" y="716" fill="#14532D" font-size="8.5" font-weight="700" letter-spacing="0.6">MEASURE RESULTS AND KEEP RANKINGS COMPOUNDING OVER TIME</text>
+
+  <line x1="32" y1="728" x2="769" y2="728" stroke="#C8EFD8" stroke-width="1"/>
+
+  <!-- Three parallel bullet columns -->
+  <circle cx="46" cy="746" r="3.5" fill="#14532D"/>
+  <text x="56" y="750" fill="#333" font-size="10" font-weight="600">Core Web Vitals: LCP &lt;2.5s · INP &lt;200ms · CLS &lt;0.1</text>
+  <text x="56" y="764" fill="#666" font-size="9.5">Check PageSpeed Insights + GSC Experience report</text>
+
+  <circle cx="296" cy="746" r="3.5" fill="#14532D"/>
+  <text x="306" y="750" fill="#333" font-size="10" font-weight="600">GSC Performance: find high impressions + low CTR pages</text>
+  <text x="306" y="764" fill="#666" font-size="9.5">Low CTR = weak title or meta desc — rewrite and retest</text>
+
+  <circle cx="546" cy="746" r="3.5" fill="#14532D"/>
+  <text x="556" y="750" fill="#333" font-size="10" font-weight="600">Quarterly content refresh: update data, refresh examples</text>
+  <text x="556" y="764" fill="#666" font-size="9.5">Stale evergreen content loses rankings — keep it current</text>
+
+  <!-- ================================================ -->
+  <!-- SMARTGEN TOOLS BAR                               -->
+  <!-- ================================================ -->
+  <rect x="20" y="804" width="760" height="64" rx="10" fill="#14532D"/>
+  <text x="400" y="824" text-anchor="middle" fill="white" font-size="10.5" font-weight="700" letter-spacing="0.8">🔧 FREE SMARTGEN TOOLS — NO LOGIN · NO REGISTRATION REQUIRED</text>
+
+  <rect x="32" y="832" width="174" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="119" y="849" text-anchor="middle" fill="white" font-size="9.5" font-weight="600">Meta Tag Generator →</text>
+
+  <rect x="216" y="832" width="174" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="303" y="849" text-anchor="middle" fill="white" font-size="9.5" font-weight="600">Robots.txt Generator →</text>
+
+  <rect x="400" y="832" width="174" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="487" y="849" text-anchor="middle" fill="white" font-size="9.5" font-weight="600">Sitemap Finder →</text>
+
+  <rect x="584" y="832" width="174" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="671" y="849" text-anchor="middle" fill="white" font-size="9.5" font-weight="600">Schema Generator →</text>
+
+  <!-- ================================================ -->
+  <!-- FOOTER: SEO Workflow Loop                        -->
+  <!-- ================================================ -->
+  <rect y="886" width="800" height="80" fill="#0F3B21"/>
+
+  <text x="400" y="906" text-anchor="middle" fill="white" font-size="11.5" font-weight="700" letter-spacing="1.5">THE ON-PAGE SEO WORKFLOW</text>
+
+  <!-- Step 1 -->
+  <text x="40" y="926" text-anchor="middle" fill="#5BC08A" font-size="9" font-weight="700">AUDIT</text>
+  <text x="40" y="939" text-anchor="middle" fill="#4A7A60" font-size="8">Crawl + Find</text>
+  <text x="97" y="933" text-anchor="middle" fill="#3A6A50" font-size="14">›</text>
+  <!-- Step 2 -->
+  <text x="152" y="926" text-anchor="middle" fill="#5BC08A" font-size="9" font-weight="700">OPTIMIZE</text>
+  <text x="152" y="939" text-anchor="middle" fill="#4A7A60" font-size="8">Tags + Headers</text>
+  <text x="213" y="933" text-anchor="middle" fill="#3A6A50" font-size="14">›</text>
+  <!-- Step 3 -->
+  <text x="265" y="926" text-anchor="middle" fill="#5BC08A" font-size="9" font-weight="700">COMPRESS</text>
+  <text x="265" y="939" text-anchor="middle" fill="#4A7A60" font-size="8">Media + Speed</text>
+  <text x="328" y="933" text-anchor="middle" fill="#3A6A50" font-size="14">›</text>
+  <!-- Step 4 -->
+  <text x="380" y="926" text-anchor="middle" fill="#5BC08A" font-size="9" font-weight="700">STRUCTURE</text>
+  <text x="380" y="939" text-anchor="middle" fill="#4A7A60" font-size="8">URLs + Links</text>
+  <text x="444" y="933" text-anchor="middle" fill="#3A6A50" font-size="14">›</text>
+  <!-- Step 5 -->
+  <text x="500" y="926" text-anchor="middle" fill="#5BC08A" font-size="9" font-weight="700">REDIRECT</text>
+  <text x="500" y="939" text-anchor="middle" fill="#4A7A60" font-size="8">301s + 404s</text>
+  <text x="558" y="933" text-anchor="middle" fill="#3A6A50" font-size="14">›</text>
+  <!-- Step 6 -->
+  <text x="618" y="926" text-anchor="middle" fill="#5BC08A" font-size="9" font-weight="700">COMMUNICATE</text>
+  <text x="618" y="939" text-anchor="middle" fill="#4A7A60" font-size="8">Sitemap + Robots</text>
+  <text x="686" y="933" text-anchor="middle" fill="#3A6A50" font-size="14">›</text>
+  <!-- Step 7 -->
+  <text x="745" y="926" text-anchor="middle" fill="#5BC08A" font-size="9" font-weight="700">MONITOR</text>
+  <text x="745" y="939" text-anchor="middle" fill="#4A7A60" font-size="8">GSC + Refresh</text>
+
+  <!-- Copyright -->
+  <text x="400" y="960" text-anchor="middle" fill="#3A6A50" font-size="9">© 2026 SmartGen Digital Marketing Course  ·  smartgentools.com  ·  On-Page SEO Guide by Sayad Md Bayezid Hosan</text>
+
+</svg>
