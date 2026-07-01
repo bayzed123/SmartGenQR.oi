@@ -1,0 +1,259 @@
+<svg viewBox="0 0 800 950" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+
+  <defs>
+    <filter id="card-shadow" x="-4%" y="-4%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="rgba(0,0,0,0.08)"/>
+    </filter>
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0A66C2;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#004182;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="stats-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#004182;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#003366;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="800" height="950" fill="#F0F5FF"/>
+
+  <!-- ================================================ -->
+  <!-- HEADER                                           -->
+  <!-- ================================================ -->
+  <rect width="800" height="118" fill="url(#header-grad)"/>
+  <circle cx="748" cy="20" r="90" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="762" cy="112" r="55" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="28" cy="92" r="64" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- "in" Badge -->
+  <rect x="22" y="22" width="68" height="68" rx="10" fill="rgba(255,255,255,0.18)"/>
+  <text x="56" y="70" text-anchor="middle" fill="white" font-size="36" font-weight="900">in</text>
+
+  <!-- Header Titles -->
+  <text x="106" y="46" fill="white" font-size="22" font-weight="700" letter-spacing="-0.3">LinkedIn Marketing Framework</text>
+  <text x="106" y="72" fill="rgba(255,255,255,0.88)" font-size="13">Module 7: The Complete A to Z Mega Guide for Beginners</text>
+  <text x="106" y="96" fill="rgba(255,255,255,0.62)" font-size="11">SmartGen Digital Marketing Course  ·  smartgentools.com  ·  By Sayad Md Bayezid Hosan</text>
+
+  <!-- ================================================ -->
+  <!-- STATS STRIP                                      -->
+  <!-- ================================================ -->
+  <rect y="118" width="800" height="56" fill="url(#stats-grad)"/>
+
+  <text x="133" y="144" text-anchor="middle" fill="white" font-size="19" font-weight="700">1B+</text>
+  <text x="133" y="163" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">Members Worldwide</text>
+
+  <line x1="266" y1="127" x2="266" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="400" y="144" text-anchor="middle" fill="white" font-size="19" font-weight="700">4 of 5</text>
+  <text x="400" y="163" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">Members Drive Business Decisions</text>
+
+  <line x1="533" y1="127" x2="533" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="667" y="144" text-anchor="middle" fill="white" font-size="19" font-weight="700">80%</text>
+  <text x="667" y="163" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">of B2B Social Media Leads</text>
+
+  <!-- ================================================ -->
+  <!-- SECTION LABEL                                    -->
+  <!-- ================================================ -->
+  <text x="400" y="196" text-anchor="middle" fill="#4A6A9C" font-size="9.5" letter-spacing="2.5" font-weight="700">8 PILLARS OF LINKEDIN MARKETING SUCCESS</text>
+
+  <!--
+    CARD GRID — 2 columns × 4 rows
+    Left  col: x=20,  width=372
+    Right col: x=408, width=372
+    Row Y starts: 204 | 362 | 520 | 678
+    Card height: 148px   Row gap: 10px
+  -->
+
+  <!-- ================================================ -->
+  <!-- ROW 1                                            -->
+  <!-- ================================================ -->
+
+  <!-- CARD 1: Introduction to LinkedIn Marketing -->
+  <rect x="20" y="204" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="204" width="5" height="148" rx="2.5" fill="#0A66C2"/>
+  <circle cx="63" cy="228" r="18" fill="#0A66C2"/>
+  <text x="63" y="234" text-anchor="middle" fill="white" font-size="14" font-weight="700">1</text>
+  <text x="89" y="224" fill="#1A1A1A" font-size="13" font-weight="700">Introduction to LinkedIn Marketing</text>
+  <text x="89" y="240" fill="#0A66C2" font-size="8.5" font-weight="700" letter-spacing="0.6">PLATFORM OVERVIEW &amp; WHY IT MATTERS</text>
+  <line x1="32" y1="252" x2="381" y2="252" stroke="#DDEAFF" stroke-width="1"/>
+  <circle cx="40" cy="268" r="3.5" fill="#0A66C2"/>
+  <text x="50" y="272" fill="#333" font-size="10" font-weight="600">Professional intent platform — users come to do business</text>
+  <circle cx="40" cy="286" r="3.5" fill="#0A66C2"/>
+  <text x="50" y="290" fill="#333" font-size="10" font-weight="600">1B+ members in 200+ countries — world's largest pro network</text>
+  <circle cx="40" cy="304" r="3.5" fill="#0A66C2"/>
+  <text x="50" y="308" fill="#333" font-size="10" font-weight="600">Best for: B2B, recruiting, personal branding, consulting</text>
+  <rect x="32" y="322" width="348" height="22" rx="6" fill="#EEF4FF"/>
+  <text x="206" y="337" text-anchor="middle" fill="#0A66C2" font-size="9.5" font-weight="700">Personal profiles reach 5–6× more people than Company Pages</text>
+
+  <!-- CARD 2: Individual vs. Company Profile -->
+  <rect x="408" y="204" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="204" width="5" height="148" rx="2.5" fill="#0C5CAC"/>
+  <circle cx="451" cy="228" r="18" fill="#0C5CAC"/>
+  <text x="451" y="234" text-anchor="middle" fill="white" font-size="14" font-weight="700">2</text>
+  <text x="477" y="224" fill="#1A1A1A" font-size="13" font-weight="700">Individual vs. Company Profile</text>
+  <text x="477" y="240" fill="#0C5CAC" font-size="8.5" font-weight="700" letter-spacing="0.6">CHOOSING THE RIGHT PRESENCE</text>
+  <line x1="420" y1="252" x2="769" y2="252" stroke="#DDEAFF" stroke-width="1"/>
+  <circle cx="428" cy="268" r="3.5" fill="#0C5CAC"/>
+  <text x="438" y="272" fill="#333" font-size="10" font-weight="600">Individual: personal voice, up to 30,000 connections</text>
+  <circle cx="428" cy="286" r="3.5" fill="#0C5CAC"/>
+  <text x="438" y="290" fill="#333" font-size="10" font-weight="600">Company Page: brand home base, jobs, ads — less organic reach</text>
+  <circle cx="428" cy="304" r="3.5" fill="#0C5CAC"/>
+  <text x="438" y="308" fill="#333" font-size="10" font-weight="600">Strategy: Page = credibility · Personal profiles = reach engine</text>
+  <rect x="420" y="322" width="348" height="22" rx="6" fill="#EDF3FF"/>
+  <text x="594" y="337" text-anchor="middle" fill="#0C5CAC" font-size="9.5" font-weight="700">Company Page = legitimacy · People = organic reach engine</text>
+
+  <!-- ================================================ -->
+  <!-- ROW 2                                            -->
+  <!-- ================================================ -->
+
+  <!-- CARD 3: Building a Strong LinkedIn Profile -->
+  <rect x="20" y="362" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="362" width="5" height="148" rx="2.5" fill="#0E5296"/>
+  <circle cx="63" cy="386" r="18" fill="#0E5296"/>
+  <text x="63" y="392" text-anchor="middle" fill="white" font-size="14" font-weight="700">3</text>
+  <text x="89" y="382" fill="#1A1A1A" font-size="13" font-weight="700">Building a Strong LinkedIn Profile</text>
+  <text x="89" y="398" fill="#0E5296" font-size="8.5" font-weight="700" letter-spacing="0.6">PROFILE OPTIMIZATION A TO Z</text>
+  <line x1="32" y1="410" x2="381" y2="410" stroke="#DDEAFF" stroke-width="1"/>
+  <circle cx="40" cy="426" r="3.5" fill="#0E5296"/>
+  <text x="50" y="430" fill="#333" font-size="10" font-weight="600">Headline: What you do + who you help + the outcome created</text>
+  <circle cx="40" cy="444" r="3.5" fill="#0E5296"/>
+  <text x="50" y="448" fill="#333" font-size="10" font-weight="600">About: First person, hook opening + clear CTA at the close</text>
+  <circle cx="40" cy="462" r="3.5" fill="#0E5296"/>
+  <text x="50" y="466" fill="#333" font-size="10" font-weight="600">Featured section: Pin your strongest post, article, or case study</text>
+  <rect x="32" y="480" width="348" height="22" rx="6" fill="#EEF2FF"/>
+  <text x="206" y="495" text-anchor="middle" fill="#0E5296" font-size="9.5" font-weight="700">Recommendations from others outweigh any self-written claim</text>
+
+  <!-- CARD 4: Content Marketing on LinkedIn -->
+  <rect x="408" y="362" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="362" width="5" height="148" rx="2.5" fill="#104880"/>
+  <circle cx="451" cy="386" r="18" fill="#104880"/>
+  <text x="451" y="392" text-anchor="middle" fill="white" font-size="14" font-weight="700">4</text>
+  <text x="477" y="382" fill="#1A1A1A" font-size="13" font-weight="700">Content Marketing on LinkedIn</text>
+  <text x="477" y="398" fill="#104880" font-size="8.5" font-weight="700" letter-spacing="0.6">FORMATS, ALGORITHM &amp; STRATEGY</text>
+  <line x1="420" y1="410" x2="769" y2="410" stroke="#DDEAFF" stroke-width="1"/>
+  <circle cx="428" cy="426" r="3.5" fill="#104880"/>
+  <text x="438" y="430" fill="#333" font-size="10" font-weight="600">Document carousels = consistently highest organic reach format</text>
+  <circle cx="428" cy="444" r="3.5" fill="#104880"/>
+  <text x="438" y="448" fill="#333" font-size="10" font-weight="600">Dwell time + first-hour comments signal quality to algorithm</text>
+  <circle cx="428" cy="462" r="3.5" fill="#104880"/>
+  <text x="438" y="466" fill="#333" font-size="10" font-weight="600">3–4 content pillars and rotate — consistency beats volume</text>
+  <rect x="420" y="480" width="348" height="22" rx="6" fill="#EBF0FF"/>
+  <text x="594" y="495" text-anchor="middle" fill="#104880" font-size="9.5" font-weight="700">3–5 hashtags · Reply every comment in the first hour</text>
+
+  <!-- ================================================ -->
+  <!-- ROW 3                                            -->
+  <!-- ================================================ -->
+
+  <!-- CARD 5: Building and Engaging Your Network -->
+  <rect x="20" y="520" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="520" width="5" height="148" rx="2.5" fill="#0A66C2"/>
+  <circle cx="63" cy="544" r="18" fill="#0A66C2"/>
+  <text x="63" y="550" text-anchor="middle" fill="white" font-size="14" font-weight="700">5</text>
+  <text x="89" y="540" fill="#1A1A1A" font-size="13" font-weight="700">Building &amp; Engaging Your Network</text>
+  <text x="89" y="556" fill="#0A66C2" font-size="8.5" font-weight="700" letter-spacing="0.6">CONNECTIONS, REACH &amp; RELATIONSHIPS</text>
+  <line x1="32" y1="568" x2="381" y2="568" stroke="#DDEAFF" stroke-width="1"/>
+  <circle cx="40" cy="584" r="3.5" fill="#0A66C2"/>
+  <text x="50" y="588" fill="#333" font-size="10" font-weight="600">Personalize every request — blank requests get ignored or declined</text>
+  <circle cx="40" cy="602" r="3.5" fill="#0A66C2"/>
+  <text x="50" y="606" fill="#333" font-size="10" font-weight="600">500 relevant connections beats 5,000 random ones every time</text>
+  <circle cx="40" cy="620" r="3.5" fill="#0A66C2"/>
+  <text x="50" y="624" fill="#333" font-size="10" font-weight="600">Engage first, then connect — comment before you ever cold pitch</text>
+  <rect x="32" y="638" width="348" height="22" rx="6" fill="#EEF4FF"/>
+  <text x="206" y="653" text-anchor="middle" fill="#0A66C2" font-size="9.5" font-weight="700">Never pitch immediately after a connection request is accepted</text>
+
+  <!-- CARD 6: LinkedIn for Company Pages -->
+  <rect x="408" y="520" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="520" width="5" height="148" rx="2.5" fill="#0C5CAC"/>
+  <circle cx="451" cy="544" r="18" fill="#0C5CAC"/>
+  <text x="451" y="550" text-anchor="middle" fill="white" font-size="14" font-weight="700">6</text>
+  <text x="477" y="540" fill="#1A1A1A" font-size="13" font-weight="700">LinkedIn for Company Pages</text>
+  <text x="477" y="556" fill="#0C5CAC" font-size="8.5" font-weight="700" letter-spacing="0.6">BRAND PRESENCE &amp; EMPLOYEE ADVOCACY</text>
+  <line x1="420" y1="568" x2="769" y2="568" stroke="#DDEAFF" stroke-width="1"/>
+  <circle cx="428" cy="584" r="3.5" fill="#0C5CAC"/>
+  <text x="438" y="588" fill="#333" font-size="10" font-weight="600">Complete all fields: logo, banner, about, specialties, URL</text>
+  <circle cx="428" cy="602" r="3.5" fill="#0C5CAC"/>
+  <text x="438" y="606" fill="#333" font-size="10" font-weight="600">Employee advocacy = highest-leverage tactic for any Page</text>
+  <circle cx="428" cy="620" r="3.5" fill="#0C5CAC"/>
+  <text x="438" y="624" fill="#333" font-size="10" font-weight="600">Page organic reach is limited — people must amplify it</text>
+  <rect x="420" y="638" width="348" height="22" rx="6" fill="#EDF3FF"/>
+  <text x="594" y="653" text-anchor="middle" fill="#0C5CAC" font-size="9.5" font-weight="700">Jobs/Careers section current = signals active growth to prospects</text>
+
+  <!-- ================================================ -->
+  <!-- ROW 4                                            -->
+  <!-- ================================================ -->
+
+  <!-- CARD 7: Advertising and Sponsored Content -->
+  <rect x="20" y="678" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="678" width="5" height="148" rx="2.5" fill="#0E5296"/>
+  <circle cx="63" cy="702" r="18" fill="#0E5296"/>
+  <text x="63" y="708" text-anchor="middle" fill="white" font-size="14" font-weight="700">7</text>
+  <text x="89" y="698" fill="#1A1A1A" font-size="13" font-weight="700">Advertising &amp; Sponsored Content</text>
+  <text x="89" y="714" fill="#0E5296" font-size="8.5" font-weight="700" letter-spacing="0.6">LINKEDIN ADS &amp; CAMPAIGN MANAGER</text>
+  <line x1="32" y1="726" x2="381" y2="726" stroke="#DDEAFF" stroke-width="1"/>
+  <circle cx="40" cy="742" r="3.5" fill="#0E5296"/>
+  <text x="50" y="746" fill="#333" font-size="10" font-weight="600">Formats: Sponsored Content, Message Ads, Dynamic Ads</text>
+  <circle cx="40" cy="760" r="3.5" fill="#0E5296"/>
+  <text x="50" y="764" fill="#333" font-size="10" font-weight="600">Target by job title, company, seniority, skills — B2B precision</text>
+  <circle cx="40" cy="778" r="3.5" fill="#0E5296"/>
+  <text x="50" y="782" fill="#333" font-size="10" font-weight="600">Lead Gen Forms convert better than external landing pages</text>
+  <rect x="32" y="796" width="348" height="22" rx="6" fill="#EEF2FF"/>
+  <text x="206" y="811" text-anchor="middle" fill="#0E5296" font-size="9.5" font-weight="700">Start small: one clear objective + a modest test budget first</text>
+
+  <!-- CARD 8: Analytics and Reporting -->
+  <rect x="408" y="678" width="372" height="148" rx="10" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="678" width="5" height="148" rx="2.5" fill="#104880"/>
+  <circle cx="451" cy="702" r="18" fill="#104880"/>
+  <text x="451" y="708" text-anchor="middle" fill="white" font-size="14" font-weight="700">8</text>
+  <text x="477" y="698" fill="#1A1A1A" font-size="13" font-weight="700">Analytics &amp; Reporting</text>
+  <text x="477" y="714" fill="#104880" font-size="8.5" font-weight="700" letter-spacing="0.6">METRICS THAT ACTUALLY MATTER</text>
+  <line x1="420" y1="726" x2="769" y2="726" stroke="#DDEAFF" stroke-width="1"/>
+  <circle cx="428" cy="742" r="3.5" fill="#104880"/>
+  <text x="438" y="746" fill="#333" font-size="10" font-weight="600">Post demographics: which job titles actually saw your content</text>
+  <circle cx="428" cy="760" r="3.5" fill="#104880"/>
+  <text x="438" y="764" fill="#333" font-size="10" font-weight="600">Track inbound messages + relevant connections, not just likes</text>
+  <circle cx="428" cy="778" r="3.5" fill="#104880"/>
+  <text x="438" y="782" fill="#333" font-size="10" font-weight="600">Ads: cost per qualified lead — not just cost per click</text>
+  <rect x="420" y="796" width="348" height="22" rx="6" fill="#EBF0FF"/>
+  <text x="594" y="811" text-anchor="middle" fill="#104880" font-size="9.5" font-weight="700">Monthly review beats daily vanity stat checking every time</text>
+
+  <!-- ================================================ -->
+  <!-- FOOTER: LinkedIn Marketing Loop                  -->
+  <!-- ================================================ -->
+  <rect y="844" width="800" height="82" fill="#0A2540"/>
+
+  <text x="400" y="864" text-anchor="middle" fill="white" font-size="11.5" font-weight="700" letter-spacing="1.5">THE LINKEDIN MARKETING LOOP</text>
+
+  <!-- Stage 1 -->
+  <text x="67" y="883" text-anchor="middle" fill="#5BA8FF" font-size="9" font-weight="700">PROFILE</text>
+  <text x="67" y="896" text-anchor="middle" fill="#7A90A6" font-size="8">Optimize + Brand</text>
+  <!-- Arrow -->
+  <text x="134" y="890" text-anchor="middle" fill="#3A5A78" font-size="15">›</text>
+  <!-- Stage 2 -->
+  <text x="200" y="883" text-anchor="middle" fill="#5BA8FF" font-size="9" font-weight="700">CREATE</text>
+  <text x="200" y="896" text-anchor="middle" fill="#7A90A6" font-size="8">Content + Posts</text>
+  <!-- Arrow -->
+  <text x="267" y="890" text-anchor="middle" fill="#3A5A78" font-size="15">›</text>
+  <!-- Stage 3 -->
+  <text x="334" y="883" text-anchor="middle" fill="#5BA8FF" font-size="9" font-weight="700">NETWORK</text>
+  <text x="334" y="896" text-anchor="middle" fill="#7A90A6" font-size="8">Build Connections</text>
+  <!-- Arrow -->
+  <text x="401" y="890" text-anchor="middle" fill="#3A5A78" font-size="15">›</text>
+  <!-- Stage 4 -->
+  <text x="467" y="883" text-anchor="middle" fill="#5BA8FF" font-size="9" font-weight="700">COMPANY</text>
+  <text x="467" y="896" text-anchor="middle" fill="#7A90A6" font-size="8">Page + Advocacy</text>
+  <!-- Arrow -->
+  <text x="534" y="890" text-anchor="middle" fill="#3A5A78" font-size="15">›</text>
+  <!-- Stage 5 -->
+  <text x="601" y="883" text-anchor="middle" fill="#5BA8FF" font-size="9" font-weight="700">ADVERTISE</text>
+  <text x="601" y="896" text-anchor="middle" fill="#7A90A6" font-size="8">Paid Campaigns</text>
+  <!-- Arrow -->
+  <text x="668" y="890" text-anchor="middle" fill="#3A5A78" font-size="15">›</text>
+  <!-- Stage 6 -->
+  <text x="735" y="883" text-anchor="middle" fill="#5BA8FF" font-size="9" font-weight="700">MEASURE</text>
+  <text x="735" y="896" text-anchor="middle" fill="#7A90A6" font-size="8">Analytics + Refine</text>
+
+  <!-- Copyright -->
+  <text x="400" y="920" text-anchor="middle" fill="#4A6070" font-size="9">© 2026 SmartGen Digital Marketing Course  ·  smartgentools.com  ·  Module 7 by Sayad Md Bayezid Hosan</text>
+
+</svg>
