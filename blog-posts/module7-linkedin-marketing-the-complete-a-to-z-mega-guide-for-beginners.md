@@ -222,7 +222,7 @@ None of the work in this guide means much if you never check whether it's actual
 
 Below is an original infographic mapping out the eight building blocks covered in this guide — from your first decision about individual versus company presence, through profile optimization, content, network growth, Company Pages, advertising, and finally analytics. This graphic was created specifically for this guide and is free to use with attribution back to this article.
 
-![LinkedIn Marketing Framework — 8 building blocks covering profile strategy, content, network growth, company pages, ads, and analytics](https://github.com/bayzed123/SmartGenQR.oi/blob/main/assets/images/module7-linkedin-marketing-infographic.svg)
+![LinkedIn Marketing Framework — 8 building blocks covering profile strategy, content, network growth, company pages, ads, and analytics](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module7-linkedin-marketing-infographic.svg)
 
 ---
 
@@ -262,7 +262,7 @@ In Module 8, we'll continue building your platform-specific marketing skills. Ta
 - [Module 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 5: Instagram Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-
+- [Search Engine Optimization (SEO) — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 ---
 
 *This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
