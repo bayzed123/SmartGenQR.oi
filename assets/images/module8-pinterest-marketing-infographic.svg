@@ -1,0 +1,277 @@
+<svg viewBox="0 0 800 910" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+
+  <defs>
+    <filter id="card-shadow" x="-4%" y="-4%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="rgba(0,0,0,0.08)"/>
+    </filter>
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#E60023;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#C0001E;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="stats-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C0001E;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#A50018;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- =========================================== -->
+  <!-- BACKGROUND                                  -->
+  <!-- =========================================== -->
+  <rect width="800" height="910" fill="#FFF4F4"/>
+
+  <!-- =========================================== -->
+  <!-- HEADER                                      -->
+  <!-- =========================================== -->
+  <rect width="800" height="118" fill="url(#header-grad)"/>
+  <!-- Decorative circles -->
+  <circle cx="752" cy="18" r="92" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="770" cy="115" r="50" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="28" cy="95" r="68" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- Pinterest P Badge -->
+  <circle cx="56" cy="59" r="34" fill="rgba(255,255,255,0.16)"/>
+  <text x="56" y="72" text-anchor="middle" fill="white" font-size="36" font-weight="900" font-family="Georgia, 'Times New Roman', serif">P</text>
+
+  <!-- Header Titles -->
+  <text x="104" y="45" fill="white" font-size="23" font-weight="700" letter-spacing="-0.3">Pinterest Marketing Framework</text>
+  <text x="104" y="72" fill="rgba(255,255,255,0.88)" font-size="13">Module 8: The Complete A to Z Mega Guide for Beginners</text>
+  <text x="104" y="96" fill="rgba(255,255,255,0.62)" font-size="11">SmartGen Digital Marketing Course  ·  smartgentools.com  ·  By Sayad Md Bayezid Hosan</text>
+
+  <!-- =========================================== -->
+  <!-- STATS STRIP                                 -->
+  <!-- =========================================== -->
+  <rect y="118" width="800" height="56" fill="url(#stats-grad)"/>
+
+  <text x="133" y="144" text-anchor="middle" fill="white" font-size="19" font-weight="700">619M+</text>
+  <text x="133" y="163" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">Monthly Active Users</text>
+
+  <line x1="266" y1="127" x2="266" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="400" y="144" text-anchor="middle" fill="white" font-size="19" font-weight="700">85%</text>
+  <text x="400" y="163" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">Pinners Make Purchases</text>
+
+  <line x1="533" y1="127" x2="533" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="667" y="144" text-anchor="middle" fill="white" font-size="19" font-weight="700">97%</text>
+  <text x="667" y="163" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">Searches Are Unbranded</text>
+
+  <!-- =========================================== -->
+  <!-- SECTION LABEL                               -->
+  <!-- =========================================== -->
+  <text x="400" y="198" text-anchor="middle" fill="#B0666C" font-size="9.5" letter-spacing="2.5" font-weight="700">THE 4 PILLARS OF PINTEREST MARKETING</text>
+
+  <!-- =========================================== -->
+  <!-- CARD 1: What Is Pinterest                   -->
+  <!-- =========================================== -->
+  <rect x="20" y="208" width="372" height="268" rx="12" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="208" width="5" height="268" rx="2.5" fill="#E60023"/>
+
+  <!-- Card 1 Icon -->
+  <circle cx="65" cy="234" r="20" fill="#E60023"/>
+  <text x="65" y="240" text-anchor="middle" fill="white" font-size="16" font-weight="700">1</text>
+
+  <text x="94" y="229" fill="#1A1A1A" font-size="15" font-weight="700">What Is Pinterest?</text>
+  <text x="94" y="247" fill="#E60023" font-size="9.5" font-weight="700" letter-spacing="0.8">PLATFORM OVERVIEW &amp; BUSINESS CASE</text>
+
+  <line x1="32" y1="260" x2="381" y2="260" stroke="#FFE8E8" stroke-width="1"/>
+
+  <!-- Bullet 1 -->
+  <circle cx="41" cy="280" r="4" fill="#E60023"/>
+  <text x="52" y="277" fill="#222" font-size="11.5" font-weight="600">Visual Search Engine, Not a Social Feed</text>
+  <text x="52" y="291" fill="#666" font-size="10.5">Users arrive with real intent — they search for ideas,</text>
+  <text x="52" y="304" fill="#666" font-size="10.5">products, and solutions rather than passively scrolling.</text>
+
+  <!-- Bullet 2 -->
+  <circle cx="41" cy="323" r="4" fill="#E60023"/>
+  <text x="52" y="320" fill="#222" font-size="11.5" font-weight="600">Pins Live for Months — Not Hours</text>
+  <text x="52" y="334" fill="#666" font-size="10.5">Average Pin lifespan exceeds 3.5 months. Content you</text>
+  <text x="52" y="347" fill="#666" font-size="10.5">create today drives traffic 12–18 months from now.</text>
+
+  <!-- Bullet 3 -->
+  <circle cx="41" cy="366" r="4" fill="#E60023"/>
+  <text x="52" y="363" fill="#222" font-size="11.5" font-weight="600">70% Female · 42% Gen Z · High Purchase Power</text>
+  <text x="52" y="377" fill="#666" font-size="10.5">Pinterest shoppers spend 80% more per month than</text>
+  <text x="52" y="390" fill="#666" font-size="10.5">users on comparable social media platforms.</text>
+
+  <!-- Stat badge -->
+  <rect x="32" y="408" width="348" height="52" rx="8" fill="#FFF0F0"/>
+  <text x="206" y="430" text-anchor="middle" fill="#E60023" font-size="10.5" font-weight="700">Best For: Food · Home · Fashion · Beauty</text>
+  <text x="206" y="448" text-anchor="middle" fill="#777" font-size="10">Travel · Health · Education · Finance · DIY · Wedding</text>
+
+  <!-- =========================================== -->
+  <!-- CARD 2: Profile and Boards                  -->
+  <!-- =========================================== -->
+  <rect x="408" y="208" width="372" height="268" rx="12" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="208" width="5" height="268" rx="2.5" fill="#FF4D6D"/>
+
+  <!-- Card 2 Icon -->
+  <circle cx="453" cy="234" r="20" fill="#FF4D6D"/>
+  <text x="453" y="240" text-anchor="middle" fill="white" font-size="16" font-weight="700">2</text>
+
+  <text x="482" y="229" fill="#1A1A1A" font-size="15" font-weight="700">Profile &amp; Boards</text>
+  <text x="482" y="247" fill="#FF4D6D" font-size="9.5" font-weight="700" letter-spacing="0.8">SETUP &amp; OPTIMIZATION</text>
+
+  <line x1="420" y1="260" x2="769" y2="260" stroke="#FFE0EA" stroke-width="1"/>
+
+  <!-- Bullet 1 -->
+  <circle cx="429" cy="280" r="4" fill="#FF4D6D"/>
+  <text x="440" y="277" fill="#222" font-size="11.5" font-weight="600">Always Use a Business Account (Free)</text>
+  <text x="440" y="291" fill="#666" font-size="10.5">Unlocks Analytics, Ads, Rich Pins, Pinterest Tag,</text>
+  <text x="440" y="304" fill="#666" font-size="10.5">and website claiming. Non-negotiable first step.</text>
+
+  <!-- Bullet 2 -->
+  <circle cx="429" cy="323" r="4" fill="#FF4D6D"/>
+  <text x="440" y="320" fill="#222" font-size="11.5" font-weight="600">Board Names = Your Search Keywords</text>
+  <text x="440" y="334" fill="#666" font-size="10.5">"Inspiration" ✗  →  "Healthy Meal Prep Recipes" ✓</text>
+  <text x="440" y="347" fill="#666" font-size="10.5">Write 2–4 sentence keyword-rich board descriptions.</text>
+
+  <!-- Bullet 3 -->
+  <circle cx="429" cy="366" r="4" fill="#FF4D6D"/>
+  <text x="440" y="363" fill="#222" font-size="11.5" font-weight="600">Claim Your Website First</text>
+  <text x="440" y="377" fill="#666" font-size="10.5">Links your brand to every saved Pin, enables full</text>
+  <text x="440" y="390" fill="#666" font-size="10.5">analytics, and signals deep trust to the algorithm.</text>
+
+  <!-- Stat badge -->
+  <rect x="420" y="408" width="348" height="52" rx="8" fill="#FFF5F8"/>
+  <text x="594" y="430" text-anchor="middle" fill="#FF4D6D" font-size="10.5" font-weight="700">Start With 8–15 Focused Boards</text>
+  <text x="594" y="448" text-anchor="middle" fill="#777" font-size="10">Keyword-named · Fully described · Featured on profile</text>
+
+  <!-- =========================================== -->
+  <!-- CARD 3: Driving Website Traffic             -->
+  <!-- =========================================== -->
+  <rect x="20" y="498" width="372" height="300" rx="12" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="498" width="5" height="300" rx="2.5" fill="#B8001A"/>
+
+  <!-- Card 3 Icon -->
+  <circle cx="65" cy="523" r="20" fill="#B8001A"/>
+  <text x="65" y="529" text-anchor="middle" fill="white" font-size="16" font-weight="700">3</text>
+
+  <text x="94" y="518" fill="#1A1A1A" font-size="15" font-weight="700">Driving Website Traffic</text>
+  <text x="94" y="536" fill="#B8001A" font-size="9.5" font-weight="700" letter-spacing="0.8">CONTENT STRATEGY &amp; PINTEREST SEO</text>
+
+  <line x1="32" y1="550" x2="381" y2="550" stroke="#FFE0E0" stroke-width="1"/>
+
+  <!-- Bullet 1 -->
+  <circle cx="41" cy="570" r="4" fill="#B8001A"/>
+  <text x="52" y="567" fill="#222" font-size="11.5" font-weight="600">Descriptions Are SEO Copy (150–300 Words)</text>
+  <text x="52" y="581" fill="#666" font-size="10.5">Lead with your keyword. End with a clear CTA that</text>
+  <text x="52" y="594" fill="#666" font-size="10.5">links to a specific page — never just your homepage.</text>
+
+  <!-- Bullet 2 -->
+  <circle cx="41" cy="614" r="4" fill="#B8001A"/>
+  <text x="52" y="611" fill="#222" font-size="11.5" font-weight="600">Vertical Pins Win (1000×1500px, 2:3 Ratio)</text>
+  <text x="52" y="625" fill="#666" font-size="10.5">Add text overlay with keyword headline on the image.</text>
+  <text x="52" y="638" fill="#666" font-size="10.5">Tall format occupies more feed space → more clicks.</text>
+
+  <!-- Bullet 3 -->
+  <circle cx="41" cy="658" r="4" fill="#B8001A"/>
+  <text x="52" y="655" fill="#222" font-size="11.5" font-weight="600">Enable Rich Pins (One-Time Setup)</text>
+  <text x="52" y="669" fill="#666" font-size="10.5">Product Pins auto-update pricing and stock levels.</text>
+  <text x="52" y="682" fill="#666" font-size="10.5">Article Pins pull your headline + author automatically.</text>
+
+  <!-- Bullet 4 -->
+  <circle cx="41" cy="701" r="4" fill="#B8001A"/>
+  <text x="52" y="698" fill="#222" font-size="11.5" font-weight="600">Use Pinterest Trends (Free Keyword Research)</text>
+  <text x="52" y="712" fill="#666" font-size="10.5">trends.pinterest.com — discover what your audience</text>
+  <text x="52" y="725" fill="#666" font-size="10.5">will search before they search it. Plan 4–6 weeks ahead.</text>
+
+  <!-- Stat badge -->
+  <rect x="32" y="744" width="348" height="38" rx="8" fill="#FFF0EE"/>
+  <text x="206" y="760" text-anchor="middle" fill="#B8001A" font-size="10.5" font-weight="700">5–10 quality Pins/week for months &gt; 100 Pins in one day</text>
+  <text x="206" y="776" text-anchor="middle" fill="#777" font-size="10">78% of impressions reach non-followers via search</text>
+
+  <!-- =========================================== -->
+  <!-- CARD 4: Analytics and Reporting             -->
+  <!-- =========================================== -->
+  <rect x="408" y="498" width="372" height="300" rx="12" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="498" width="5" height="300" rx="2.5" fill="#7A0015"/>
+
+  <!-- Card 4 Icon -->
+  <circle cx="453" cy="523" r="20" fill="#7A0015"/>
+  <text x="453" y="529" text-anchor="middle" fill="white" font-size="16" font-weight="700">4</text>
+
+  <text x="482" y="518" fill="#1A1A1A" font-size="15" font-weight="700">Analytics &amp; Reporting</text>
+  <text x="482" y="536" fill="#7A0015" font-size="9.5" font-weight="700" letter-spacing="0.8">METRICS THAT DRIVE REAL DECISIONS</text>
+
+  <line x1="420" y1="550" x2="769" y2="550" stroke="#FFE0E0" stroke-width="1"/>
+
+  <!-- Table Header -->
+  <rect x="422" y="558" width="348" height="21" rx="4" fill="#FFF0EE"/>
+  <text x="506" y="573" text-anchor="middle" fill="#7A0015" font-size="9.5" font-weight="700">METRIC</text>
+  <text x="676" y="573" text-anchor="middle" fill="#7A0015" font-size="9.5" font-weight="700">WHAT IT TELLS YOU</text>
+
+  <!-- Row 1 -->
+  <circle cx="433" cy="591" r="3.5" fill="#7A0015"/>
+  <text x="443" y="595" fill="#222" font-size="11" font-weight="600">Outbound Clicks</text>
+  <text x="578" y="595" fill="#555" font-size="10">Real traffic to your website  ★★★</text>
+  <line x1="422" y1="604" x2="769" y2="604" stroke="#FFE8E8" stroke-width="1"/>
+
+  <!-- Row 2 -->
+  <circle cx="433" cy="617" r="3.5" fill="#7A0015"/>
+  <text x="443" y="621" fill="#222" font-size="11" font-weight="600">Saves (Repins)</text>
+  <text x="578" y="621" fill="#555" font-size="10">Content quality signal — extends reach  ★★★</text>
+  <line x1="422" y1="630" x2="769" y2="630" stroke="#FFE8E8" stroke-width="1"/>
+
+  <!-- Row 3 -->
+  <circle cx="433" cy="643" r="3.5" fill="#7A0015"/>
+  <text x="443" y="647" fill="#222" font-size="11" font-weight="600">Impressions</text>
+  <text x="578" y="647" fill="#555" font-size="10">Algorithm reach — rising = content trusted  ★★</text>
+  <line x1="422" y1="656" x2="769" y2="656" stroke="#FFE8E8" stroke-width="1"/>
+
+  <!-- Row 4 -->
+  <circle cx="433" cy="669" r="3.5" fill="#7A0015"/>
+  <text x="443" y="673" fill="#222" font-size="11" font-weight="600">Engagement Rate</text>
+  <text x="578" y="673" fill="#555" font-size="10">(Saves + Clicks) ÷ Impressions  ★★</text>
+  <line x1="422" y1="682" x2="769" y2="682" stroke="#FFE8E8" stroke-width="1"/>
+
+  <!-- Row 5 -->
+  <circle cx="433" cy="695" r="3.5" fill="#7A0015"/>
+  <text x="443" y="699" fill="#222" font-size="11" font-weight="600">Audience Demographics</text>
+  <text x="578" y="699" fill="#555" font-size="10">Are you reaching YOUR target audience?  ★★</text>
+  <line x1="422" y1="708" x2="769" y2="708" stroke="#FFE8E8" stroke-width="1"/>
+
+  <!-- Row 6 -->
+  <circle cx="433" cy="721" r="3.5" fill="#7A0015"/>
+  <text x="443" y="725" fill="#222" font-size="11" font-weight="600">Video Watch Time</text>
+  <text x="578" y="725" fill="#555" font-size="10">Quality signal — low = hook needs rework  ★</text>
+
+  <!-- Stat badge -->
+  <rect x="420" y="744" width="348" height="38" rx="8" fill="#FFF0EE"/>
+  <text x="594" y="760" text-anchor="middle" fill="#7A0015" font-size="10.5" font-weight="700">Review analytics monthly — not daily</text>
+  <text x="594" y="776" text-anchor="middle" fill="#777" font-size="10">30–90 day trends reveal patterns; daily numbers mislead</text>
+
+  <!-- =========================================== -->
+  <!-- FOOTER: Marketing Loop                      -->
+  <!-- =========================================== -->
+  <rect y="822" width="800" height="82" fill="#1C1C1C"/>
+
+  <text x="400" y="844" text-anchor="middle" fill="white" font-size="11.5" font-weight="700" letter-spacing="1.5">THE PINTEREST MARKETING LOOP</text>
+
+  <!-- Stage 1 -->
+  <text x="55" y="866" text-anchor="middle" fill="#FF7070" font-size="9.5" font-weight="700">SETUP</text>
+  <text x="55" y="880" text-anchor="middle" fill="#888" font-size="8.5">Business Acct</text>
+  <!-- Arrow -->
+  <text x="140" y="874" text-anchor="middle" fill="#666" font-size="18" font-weight="300">›</text>
+  <!-- Stage 2 -->
+  <text x="218" y="866" text-anchor="middle" fill="#FF7070" font-size="9.5" font-weight="700">OPTIMIZE</text>
+  <text x="218" y="880" text-anchor="middle" fill="#888" font-size="8.5">Profile + Boards</text>
+  <!-- Arrow -->
+  <text x="304" y="874" text-anchor="middle" fill="#666" font-size="18" font-weight="300">›</text>
+  <!-- Stage 3 -->
+  <text x="382" y="866" text-anchor="middle" fill="#FF7070" font-size="9.5" font-weight="700">CREATE</text>
+  <text x="382" y="880" text-anchor="middle" fill="#888" font-size="8.5">SEO-First Pins</text>
+  <!-- Arrow -->
+  <text x="462" y="874" text-anchor="middle" fill="#666" font-size="18" font-weight="300">›</text>
+  <!-- Stage 4 -->
+  <text x="547" y="866" text-anchor="middle" fill="#FF7070" font-size="9.5" font-weight="700">DRIVE TRAFFIC</text>
+  <text x="547" y="880" text-anchor="middle" fill="#888" font-size="8.5">Website Visits</text>
+  <!-- Arrow -->
+  <text x="634" y="874" text-anchor="middle" fill="#666" font-size="18" font-weight="300">›</text>
+  <!-- Stage 5 -->
+  <text x="714" y="866" text-anchor="middle" fill="#FF7070" font-size="9.5" font-weight="700">MEASURE</text>
+  <text x="714" y="880" text-anchor="middle" fill="#888" font-size="8.5">Analytics + Iterate</text>
+
+  <!-- Copyright -->
+  <text x="400" y="902" text-anchor="middle" fill="#555" font-size="9">© 2026 SmartGen Digital Marketing Course  ·  smartgentools.com  ·  Module 8 by Sayad Md Bayezid Hosan</text>
+
+</svg>
