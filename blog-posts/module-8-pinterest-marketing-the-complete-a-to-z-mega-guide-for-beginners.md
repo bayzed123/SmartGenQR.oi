@@ -3,7 +3,7 @@ title: "Pinterest Marketing — The Complete A to Z Mega Guide for Beginners - S
 description: "complete, practical A to Z guide to Pinterest marketing for beginners — what Pinterest really is and why it works differently from every other platform in this course, how to set up and fully optimize your business profile and boards, how to drive consistent website traffic using Pins and Pinterest SEO, and how to read your analytics so you always know what is genuinely working versus what only looks like it is."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 8, Pinterest Marketing, Pinterest for Business, Pinterest SEO, Pinterest Analytics, Pinterest Optimization, Drive Traffic with Pinterest"
 date: 2026-06-30
-image: "assets/images/module8-pinterest-marketing-infographic.svg"
+image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module8-pinterest-marketing-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -20,7 +20,7 @@ July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, practical A to Z guide to Pinterest marketing for beginners — what Pinterest really is and why it works differently from every other platform in this course, how to set up and fully optimize your business profile and boards, how to drive consistent website traffic using Pins and Pinterest SEO, and how to read your analytics so you always know what is genuinely working versus what only looks like it is.
 
-![MODULE 8: Pinterest Marketing — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/module-8-pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners/assets/images/module8-pinterest-marketing-infographic.svg)
+![MODULE 8: Pinterest Marketing — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module8-pinterest-marketing-infographic.svg)
 
 ---
 
@@ -45,7 +45,7 @@ Before diving in, if you haven't already gone through the earlier modules in thi
 - [Module 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 5: Instagram Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-7-linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 
 ---
 
@@ -275,7 +275,7 @@ The answers to these four questions each month will tell you almost everything y
 
 Below is an original infographic built specifically for this guide, mapping out the Pinterest marketing system from initial setup all the way through analytics and iteration. It was created for this article and is completely free of copyright restrictions.
 
-![Pinterest Marketing System — from business account and profile setup through boards, pins, traffic, and analytics](https://smartgentools.com/blog/module-8-pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners/assets/images/module8-pinterest-marketing-infographic.svg)
+![Pinterest Marketing System — from business account and profile setup through boards, pins, traffic, and analytics](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module8-pinterest-marketing-infographic.svg)
 
 ---
 
@@ -318,7 +318,7 @@ In Module 9, we'll continue building your platform-specific marketing skills. Ta
 - [Module 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 5: Instagram Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-7-linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 
 ---
 
