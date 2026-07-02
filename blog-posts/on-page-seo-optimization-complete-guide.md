@@ -23,7 +23,7 @@ July 02, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayez
 
 A complete, practical A to Z guide to on-page SEO optimization — conducting audits that reveal exactly what needs fixing, optimizing every HTML element from title tags to header structure, handling images and video correctly so they help rather than hurt your rankings, building a clean URL and internal link architecture, managing 301 redirects and 404 error pages, creating XML sitemaps and robots.txt files, and monitoring page performance so your results compound over time.
 
-![On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/on-page-seo-optimization-complete-guide/assets/images/on-page-seo-optimization-infographic.svg)
+![On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/on-page-seo-optimization-infographic.svg)
 
 ---
 
