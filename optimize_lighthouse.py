@@ -68,7 +68,35 @@ def optimize_html_file(filepath, is_root=False):
         
         content = re.sub(r'</body>', lazy_gtag + '\n</body>', content)
     
-    # 1.3 Removed AdSense lazy loading until approval to avoid 'Low Value Content' issues
+    # 1.3 Lazy load AdSense
+    adsense_pattern = r'<script async src="https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js\?client=[^"]*" crossorigin="anonymous"><\/script>'
+    
+    if re.search(adsense_pattern, content):
+        content = re.sub(adsense_pattern, '', content)
+        
+        lazy_adsense = '''<script>
+    // Lazy load Google AdSense on user interaction
+    (function() {
+        let adsense_loaded = false;
+        function loadAdSense() {
+            if (adsense_loaded) return;
+            adsense_loaded = true;
+            
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068';
+            script.crossOrigin = 'anonymous';
+            document.head.appendChild(script);
+        }
+        
+        // Trigger on first user interaction
+        ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
+            document.addEventListener(event, loadAdSense, { once: true });
+        });
+    })();
+</script>'''
+        
+        content = re.sub(r'</body>', lazy_adsense + '\n</body>', content)
     
     # ===== PHASE 2: ACCESSIBILITY IMPROVEMENTS =====
     
@@ -141,7 +169,7 @@ def optimize_html_file(filepath, is_root=False):
 def process_all_files():
     """Process all HTML files in the repository"""
     
-    repo_path = Path('/home/ubuntu/smartgentools')
+    repo_path = Path('/home/ubuntu/SmartGenQR.oi')
     html_files = list(repo_path.glob('**/index.html'))
     
     print(f"Found {len(html_files)} HTML files to optimize")
@@ -154,7 +182,7 @@ def process_all_files():
         try:
             is_root = html_file.name == 'index.html' and html_file.parent == repo_path
             
-            print(f"\n📄 Processing: {html_file.relative_to(repo_path)}")
+            print(f"\nð Processing: {html_file.relative_to(repo_path)}")
             
             original_size = html_file.stat().st_size
             optimized_content = optimize_html_file(str(html_file), is_root=is_root)
@@ -167,29 +195,29 @@ def process_all_files():
             size_change = original_size - optimized_size
             size_percent = (size_change / original_size * 100) if original_size > 0 else 0
             
-            print(f"   ✅ Optimized")
-            print(f"   Size: {original_size} → {optimized_size} bytes ({size_percent:+.1f}%)")
+            print(f"   â Optimized")
+            print(f"   Size: {original_size} â {optimized_size} bytes ({size_percent:+.1f}%)")
             
             optimized_count += 1
             
         except Exception as e:
-            print(f"   ❌ Error: {str(e)}")
+            print(f"   â Error: {str(e)}")
             error_count += 1
     
     print("\n" + "=" * 60)
-    print(f"✅ Optimization Complete!")
+    print(f"â Optimization Complete!")
     print(f"   Successfully optimized: {optimized_count} files")
     print(f"   Errors: {error_count} files")
     print("\nOptimizations applied:")
-    print("   ✓ Lazy-load Google Analytics (gtag.js)")
-    print("   ✓ Lazy-load Google AdSense")
-    print("   ✓ Added preconnect hints for third-party domains")
-    print("   ✓ Added preload for critical CSS")
-    print("   ✓ Fixed cookie banner contrast (WCAG AA)")
-    print("   ✓ Improved cookie banner SEO text")
-    print("   ✓ Added aria-labels to social icons")
-    print("   ✓ Added security meta tags (CSP, X-Frame-Options, etc.)")
-    print("   ✓ Added rel=noopener noreferrer to external links")
+    print("   â Lazy-load Google Analytics (gtag.js)")
+    print("   â Lazy-load Google AdSense")
+    print("   â Added preconnect hints for third-party domains")
+    print("   â Added preload for critical CSS")
+    print("   â Fixed cookie banner contrast (WCAG AA)")
+    print("   â Improved cookie banner SEO text")
+    print("   â Added aria-labels to social icons")
+    print("   â Added security meta tags (CSP, X-Frame-Options, etc.)")
+    print("   â Added rel=noopener noreferrer to external links")
 
 if __name__ == '__main__':
     process_all_files()
