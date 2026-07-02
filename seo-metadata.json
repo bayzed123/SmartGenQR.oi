@@ -495,6 +495,1140 @@
         "Instant results",
         "Copy to clipboard"
       ]
-    }
+    },
+    
+  "background-color": {
+    "title": "HTML Background Color Code Generator - Set Page Background Colors",
+    "description": "Generate HTML background color code instantly using HEX, RGB, or CSS color values. Perfect for customizing webpage backgrounds with clean HTML and CSS.",
+    "keywords": "background color, html background color, css background color, html color code, page background",
+    "ogTitle": "HTML Background Color Code Generator - Set Page Background Colors",
+    "ogDescription": "Generate HTML background color code instantly using HEX, RGB, or CSS color values for webpages.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Background color generator",
+      "HEX and RGB support",
+      "CSS compatible",
+      "Copy code instantly"
+    ]
+  },
+  "background-image": {
+    "title": "HTML Background Image Code Generator",
+    "description": "Generate HTML and CSS background image code instantly for websites. Add images as page backgrounds with customizable settings.",
+    "keywords": "background image html, css background image, html background generator, webpage background image",
+    "ogTitle": "HTML Background Image Code Generator",
+    "ogDescription": "Generate HTML and CSS background image code instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Background image code",
+      "CSS support",
+      "Responsive backgrounds",
+      "Instant copy"
+    ]
+  },
+  "background-position": {
+    "title": "CSS Background Position Generator",
+    "description": "Generate CSS background-position values visually. Position background images accurately for responsive web design.",
+    "keywords": "background position, css background-position, image position css, background alignment",
+    "ogTitle": "CSS Background Position Generator",
+    "ogDescription": "Generate CSS background-position values instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Background positioning",
+      "Visual alignment",
+      "Responsive CSS",
+      "Copy code"
+    ]
+  },
+  "background-repeat": {
+    "title": "CSS Background Repeat Generator",
+    "description": "Generate CSS background-repeat code to control image tiling with repeat, no-repeat, repeat-x and repeat-y options.",
+    "keywords": "background repeat, css repeat, no-repeat css, background tiling",
+    "ogTitle": "CSS Background Repeat Generator",
+    "ogDescription": "Create CSS background-repeat code instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Repeat controls",
+      "No-repeat support",
+      "CSS generator",
+      "Instant preview"
+    ]
+  },
+  "fixed-background": {
+    "title": "Fixed Background CSS Generator",
+    "description": "Generate CSS fixed background effects with background-attachment fixed for stunning scrolling webpages.",
+    "keywords": "fixed background, css fixed background, parallax background, background attachment",
+    "ogTitle": "Fixed Background CSS Generator",
+    "ogDescription": "Generate fixed background CSS effects instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Fixed backgrounds",
+      "Parallax effect",
+      "CSS generator",
+      "Copy ready code"
+    ]
+  },
+  "greek-characters": {
+    "title": "HTML Greek Characters Reference",
+    "description": "Browse HTML Greek letters and entities with ready-to-use code snippets for websites, mathematics and scientific content.",
+    "keywords": "greek characters html, greek letters, html entities, alpha beta gamma",
+    "ogTitle": "HTML Greek Characters Reference",
+    "ogDescription": "Copy HTML Greek character entities instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Greek letters",
+      "HTML entities",
+      "Copy symbols",
+      "Developer friendly"
+    ]
+  },
+  "html-ampersand-code": {
+    "title": "HTML Ampersand Code (&amp;) Generator",
+    "description": "Find and copy the correct HTML ampersand entity code (&amp;) for webpages, forms and HTML documents.",
+    "keywords": "ampersand html code, &amp;, html entity, ampersand symbol",
+    "ogTitle": "HTML Ampersand Code Generator",
+    "ogDescription": "Copy the HTML ampersand entity instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "HTML entity",
+      "Ampersand code",
+      "Copy instantly",
+      "Developer reference"
+    ]
+  },
+  "html-copyright-code": {
+    "title": "HTML Copyright Symbol Code Generator",
+    "description": "Generate and copy HTML copyright symbol code (&copy;) for websites, footers and legal notices.",
+    "keywords": "copyright html code, copyright symbol, html entity, &copy;",
+    "ogTitle": "HTML Copyright Symbol Code Generator",
+    "ogDescription": "Copy HTML copyright symbol instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Copyright entity",
+      "HTML symbol",
+      "Footer ready",
+      "Instant copy"
+    ]
+  },
+  "html-em-dash-code": {
+    "title": "HTML Em Dash Code Generator",
+    "description": "Generate HTML em dash character entities quickly for professional typography and web content.",
+    "keywords": "em dash html, em dash entity, html punctuation, typography",
+    "ogTitle": "HTML Em Dash Code Generator",
+    "ogDescription": "Generate HTML em dash entities instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Em dash entity",
+      "Typography",
+      "Copy symbol",
+      "HTML reference"
+    ]
+  },
+  "html-en-dash-code": {
+    "title": "HTML En Dash Code Generator",
+    "description": "Generate HTML en dash entities for professional web typography and formatted content.",
+    "keywords": "en dash html, en dash entity, html punctuation, typography",
+    "ogTitle": "HTML En Dash Code Generator",
+    "ogDescription": "Generate HTML en dash code instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "En dash entity",
+      "Typography",
+      "HTML symbols",
+      "Copy code"
+    ]
+  },
+  "html-euro-code": {
+    "title": "HTML Euro Symbol Code Generator",
+    "description": "Generate HTML Euro (€) symbol entities for ecommerce websites, pricing tables and online stores.",
+    "keywords": "euro html code, euro symbol, euro entity, html currency",
+    "ogTitle": "HTML Euro Symbol Code Generator",
+    "ogDescription": "Copy HTML Euro symbol instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Euro symbol",
+      "Currency entity",
+      "HTML reference",
+      "Instant copy"
+    ]
+  },
+  "html-heart-code": {
+    "title": "HTML Heart Symbol Code Generator",
+    "description": "Generate HTML heart symbol entities for websites, blogs, greetings and social content.",
+    "keywords": "heart html code, html heart symbol, heart entity, love symbol",
+    "ogTitle": "HTML Heart Symbol Code Generator",
+    "ogDescription": "Generate HTML heart symbols instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Heart symbol",
+      "HTML entity",
+      "Copy code",
+      "Web compatible"
+    ]
+  },
+  "html-space-code": {
+    "title": "HTML Space Code Generator",
+    "description": "Generate non-breaking spaces and HTML spacing entities for precise webpage formatting.",
+    "keywords": "html space code, nbsp, non breaking space, html spacing",
+    "ogTitle": "HTML Space Code Generator",
+    "ogDescription": "Generate HTML space entities instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "NBSP support",
+      "Spacing entities",
+      "HTML formatting",
+      "Instant copy"
+    ]
+  },
+  "html-special-characters": {
+    "title": "HTML Special Characters Reference",
+    "description": "Browse and copy HTML special characters and entities for web development and content creation.",
+    "keywords": "html special characters, html entities, special symbols, html codes",
+    "ogTitle": "HTML Special Characters Reference",
+    "ogDescription": "Find HTML special characters quickly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Special symbols",
+      "HTML entities",
+      "Search reference",
+      "Copy instantly"
+    ]
+  },
+  "html-star-code": {
+    "title": "HTML Star Symbol Code Generator",
+    "description": "Generate HTML star symbol codes and entities instantly for websites, ratings, lists, and decorative content.",
+    "keywords": "html star code, star symbol html, html star entity, star character",
+    "ogTitle": "HTML Star Symbol Code Generator",
+    "ogDescription": "Generate HTML star symbol entities instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Star symbol",
+      "HTML entity",
+      "Copy instantly",
+      "Web compatible"
+    ]
+  },
+
+  "html-symbols": {
+    "title": "HTML Symbols Reference & Generator",
+    "description": "Browse and copy hundreds of HTML symbols, entities, and special characters for web development.",
+    "keywords": "html symbols, html entities, html character codes, special symbols",
+    "ogTitle": "HTML Symbols Reference & Generator",
+    "ogDescription": "Find and copy HTML symbols instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Large symbol library",
+      "HTML entities",
+      "Instant search",
+      "Copy code"
+    ]
+  },
+
+  "html-tab-code": {
+    "title": "HTML Tab Space Code Generator",
+    "description": "Generate HTML tab spacing alternatives and whitespace entities for better webpage formatting.",
+    "keywords": "html tab code, html tab space, html whitespace, tab entity",
+    "ogTitle": "HTML Tab Space Code Generator",
+    "ogDescription": "Generate HTML tab spacing code instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Tab spacing",
+      "Whitespace entities",
+      "HTML formatting",
+      "Copy instantly"
+    ]
+  },
+
+  "html-trademark-code": {
+    "title": "HTML Trademark Symbol Code Generator",
+    "description": "Generate HTML trademark (™) symbol entities for websites, products, and branding pages.",
+    "keywords": "html trademark code, trademark symbol html, tm html entity",
+    "ogTitle": "HTML Trademark Symbol Code Generator",
+    "ogDescription": "Generate HTML trademark symbol instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Trademark symbol",
+      "HTML entity",
+      "Instant copy",
+      "Brand ready"
+    ]
+  },
+
+  "iso-8859-1-characters": {
+    "title": "ISO 8859-1 Characters Reference",
+    "description": "Browse ISO 8859-1 Latin-1 character codes with HTML entities and Unicode references.",
+    "keywords": "ISO 8859-1, latin1 characters, html character set, html entities",
+    "ogTitle": "ISO 8859-1 Characters Reference",
+    "ogDescription": "Browse ISO 8859-1 HTML character codes.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Latin-1 characters",
+      "HTML entities",
+      "Unicode reference",
+      "Developer friendly"
+    ]
+  },
+
+  "iso-language-codes": {
+    "title": "ISO Language Codes Reference",
+    "description": "Find ISO language codes for HTML lang attributes, localization, accessibility, and multilingual websites.",
+    "keywords": "ISO language codes, html lang, language codes, localization",
+    "ogTitle": "ISO Language Codes Reference",
+    "ogDescription": "Browse ISO language codes instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Language codes",
+      "HTML lang support",
+      "Localization",
+      "Developer reference"
+    ]
+  },
+
+  "color-code-chart": {
+    "title": "HTML Color Code Chart",
+    "description": "Explore a complete HTML color code chart with HEX, RGB, and color names for web development.",
+    "keywords": "html color chart, color codes, css colors, hex colors",
+    "ogTitle": "HTML Color Code Chart",
+    "ogDescription": "Browse HTML color codes instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "HEX colors",
+      "RGB values",
+      "Named colors",
+      "Copy color code"
+    ]
+  },
+
+  "color-schemes": {
+    "title": "Color Scheme Generator",
+    "description": "Generate beautiful color schemes and palettes for websites, UI design, branding, and graphics.",
+    "keywords": "color scheme generator, color palette, ui colors, web colors",
+    "ogTitle": "Color Scheme Generator",
+    "ogDescription": "Generate professional color schemes instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Color palettes",
+      "Complementary colors",
+      "UI friendly",
+      "Instant copy"
+    ]
+  },
+
+  "html-black-code": {
+    "title": "HTML Black Color Code",
+    "description": "Find HTML black color codes including HEX, RGB, HSL, and CSS values.",
+    "keywords": "black html color, black hex code, css black color",
+    "ogTitle": "HTML Black Color Code",
+    "ogDescription": "Find HTML black color values instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "HEX value",
+      "RGB value",
+      "CSS ready",
+      "Instant copy"
+    ]
+  },
+
+  "html-blue-code": {
+    "title": "HTML Blue Color Code",
+    "description": "Find HTML blue color values with HEX, RGB, HSL, and CSS formats.",
+    "keywords": "blue html color, blue hex code, css blue color",
+    "ogTitle": "HTML Blue Color Code",
+    "ogDescription": "Find HTML blue color values instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "HEX values",
+      "RGB support",
+      "CSS compatible",
+      "Copy color"
+    ]
+  },
+
+  "html-color-picker": {
+    "title": "HTML Color Picker Tool",
+    "description": "Pick colors visually and generate HEX, RGB, HSL, and CSS color values instantly.",
+    "keywords": "html color picker, css color picker, hex picker, rgb picker",
+    "ogTitle": "HTML Color Picker Tool",
+    "ogDescription": "Choose colors visually and copy CSS values instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Visual picker",
+      "HEX & RGB",
+      "CSS output",
+      "One-click copy"
+    ]
+  },
+
+  "html-green-code": {
+    "title": "HTML Green Color Code",
+    "description": "Find HTML green color values with HEX, RGB, HSL, and CSS code examples.",
+    "keywords": "green html color, green hex code, css green",
+    "ogTitle": "HTML Green Color Code",
+    "ogDescription": "Generate HTML green color values instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "Green color values",
+      "HEX support",
+      "CSS ready",
+      "Instant copy"
+    ]
+  },
+
+  "html-red-code": {
+    "title": "HTML Red Color Code",
+    "description": "Find HTML red color codes including HEX, RGB, and CSS values for web projects.",
+    "keywords": "red html color, red hex code, css red",
+    "ogTitle": "HTML Red Color Code",
+    "ogDescription": "Generate HTML red color values instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "HEX values",
+      "RGB support",
+      "CSS compatible",
+      "Copy instantly"
+    ]
+  },
+
+  "html-white-code": {
+    "title": "HTML White Color Code",
+    "description": "Find HTML white color values with HEX, RGB, HSL, and CSS formats for web development.",
+    "keywords": "white html color, white hex code, css white",
+    "ogTitle": "HTML White Color Code",
+    "ogDescription": "Generate HTML white color values instantly.",
+    "ogImage": "https://smartgentools.com/assets/og-image.png",
+    "applicationCategory": "HTML Code Library",
+    "features": [
+      "White color values",
+      "HEX support",
+      "CSS compatible",
+      "Instant copy"
+    ]
+    
+  } 
+     "gradient-generator": {
+      "title": "CSS Gradient Generator - Create Beautiful Background Gradients",
+      "description": "Generate stunning CSS linear and radial gradients instantly. Customize colors, angles, and export production-ready CSS code for your websites.",
+      "keywords": "CSS gradient generator, linear gradient, radial gradient, gradient maker, CSS background generator",
+      "ogTitle": "CSS Gradient Generator - Create Beautiful Background Gradients",
+      "ogDescription": "Generate stunning CSS linear and radial gradients instantly with live preview and ready-to-use CSS code.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Linear gradients",
+        "Radial gradients",
+        "Live preview",
+        "Export CSS"
+      ]
+    },
+
+    "html-bold-generator": {
+      "title": "HTML Bold Generator - Generate Bold Text HTML Code",
+      "description": "Create HTML bold text instantly using semantic HTML tags. Generate clean, valid code with live preview for websites and blogs.",
+      "keywords": "HTML bold generator, bold text HTML, strong tag generator, b tag generator",
+      "ogTitle": "HTML Bold Generator - Generate Bold Text HTML Code",
+      "ogDescription": "Generate HTML bold text code instantly with live preview and copy-ready output.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Bold text generator",
+        "Strong tag support",
+        "Live preview",
+        "Copy HTML"
+      ]
+    },
+
+    "html-italic-generator": {
+      "title": "HTML Italic Generator - Create Italic HTML Text",
+      "description": "Generate HTML italic text using proper semantic tags. Quickly create italicized content for websites with instant preview.",
+      "keywords": "HTML italic generator, italic HTML, em tag generator, i tag generator",
+      "ogTitle": "HTML Italic Generator - Create Italic HTML Text",
+      "ogDescription": "Generate clean HTML italic code instantly with preview and one-click copy.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Italic text",
+        "Semantic HTML",
+        "Live preview",
+        "Copy code"
+      ]
+    },
+
+    "html-link-generator": {
+      "title": "HTML Link Generator - Create Hyperlink HTML Code",
+      "description": "Generate clickable HTML links with target, title, rel attributes, and custom settings. Copy production-ready anchor tag code instantly.",
+      "keywords": "HTML link generator, anchor tag generator, hyperlink generator, HTML a tag",
+      "ogTitle": "HTML Link Generator - Create Hyperlink HTML Code",
+      "ogDescription": "Generate professional HTML hyperlinks with customizable attributes and live preview.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Anchor tag generator",
+        "Target options",
+        "Rel attributes",
+        "Copy HTML"
+      ]
+    },
+
+    "html-table-generator": {
+      "title": "HTML Table Generator - Build Responsive HTML Tables",
+      "description": "Create HTML tables visually with customizable rows, columns, borders, colors, and styling. Export clean HTML instantly.",
+      "keywords": "HTML table generator, table creator, HTML table builder, responsive table",
+      "ogTitle": "HTML Table Generator - Build Responsive HTML Tables",
+      "ogDescription": "Create responsive HTML tables visually and export clean HTML code instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Visual builder",
+        "Responsive tables",
+        "Custom styling",
+        "Export HTML"
+      ]
+    },
+
+    "image-code-generator": {
+      "title": "HTML Image Code Generator - Generate Image HTML",
+      "description": "Generate HTML image code with alt text, dimensions, lazy loading, responsive attributes, and accessibility best practices.",
+      "keywords": "HTML image generator, img tag generator, image HTML code, responsive image",
+      "ogTitle": "HTML Image Code Generator - Generate Image HTML",
+      "ogDescription": "Create optimized HTML image code with accessibility and SEO-friendly attributes.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Image HTML",
+        "Alt text support",
+        "Lazy loading",
+        "Responsive images"
+      ]
+    },
+
+    "text-color-generator": {
+      "title": "HTML Text Color Generator - Generate Colored Text Code",
+      "description": "Create colorful HTML text using CSS styles and color values. Preview changes instantly and copy optimized HTML code.",
+      "keywords": "text color generator, HTML color text, CSS color generator, colored text HTML",
+      "ogTitle": "HTML Text Color Generator - Generate Colored Text Code",
+      "ogDescription": "Generate HTML colored text instantly with customizable CSS color styles.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Color picker",
+        "CSS styling",
+        "Live preview",
+        "Copy HTML"
+      ]
+    },
+
+    "text-generator": {
+      "title": "HTML Text Generator - Generate Custom HTML Text",
+      "description": "Create formatted HTML text with custom styles, headings, paragraphs, and formatting. Generate clean HTML instantly.",
+      "keywords": "HTML text generator, text HTML creator, formatted text generator, HTML formatter",
+      "ogTitle": "HTML Text Generator - Generate Custom HTML Text",
+      "ogDescription": "Generate formatted HTML text with customizable styles and instant preview.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Formatted text",
+        "Heading support",
+        "Live preview",
+        "Copy HTML"
+      ]
+    },
+}    "background-image-code": {
+      "title": "HTML Background Image Code - Generate CSS Background Images",
+      "description": "Create HTML and CSS background image code with custom positioning, sizing, repeat options, and responsive settings for modern websites.",
+      "keywords": "background image code, CSS background image, HTML background generator, background CSS",
+      "ogTitle": "HTML Background Image Code - Generate CSS Background Images",
+      "ogDescription": "Generate responsive CSS background image code instantly with customizable options.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Background image CSS",
+        "Responsive layout",
+        "Custom positioning",
+        "Copy code"
+      ]
+    },
+
+    "html-favicon-code": {
+      "title": "HTML Favicon Code Generator - Add Website Icons Easily",
+      "description": "Generate favicon HTML code for websites with support for modern browsers, Apple Touch Icons, and multiple icon sizes.",
+      "keywords": "favicon generator, HTML favicon code, website icon, favicon HTML",
+      "ogTitle": "HTML Favicon Code Generator - Add Website Icons Easily",
+      "ogDescription": "Create complete favicon HTML code for websites with cross-browser compatibility.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Favicon HTML",
+        "Apple touch icons",
+        "Browser compatibility",
+        "Copy code"
+      ]
+    },
+
+    "html-image-borders": {
+      "title": "HTML Image Border Generator - Create Stylish Image Borders",
+      "description": "Generate HTML and CSS code for custom image borders with colors, widths, rounded corners, and modern styling.",
+      "keywords": "image border generator, HTML image border, CSS border generator, image styling",
+      "ogTitle": "HTML Image Border Generator - Create Stylish Image Borders",
+      "ogDescription": "Generate beautiful CSS image border code instantly with live customization.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Border styles",
+        "Rounded corners",
+        "Custom colors",
+        "CSS export"
+      ]
+    },
+
+    "repeat-image": {
+      "title": "CSS Repeat Background Image Generator",
+      "description": "Generate CSS background-repeat code with repeat, repeat-x, repeat-y, and no-repeat options for responsive web design.",
+      "keywords": "background repeat CSS, repeat image, CSS background repeat, image repeat generator",
+      "ogTitle": "CSS Repeat Background Image Generator",
+      "ogDescription": "Create CSS background-repeat code with customizable repeat settings instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Repeat options",
+        "CSS output",
+        "Responsive backgrounds",
+        "Live preview"
+      ]
+    },
+
+    "css-hover": {
+      "title": "CSS Hover Effect Generator - Create Hover Animations",
+      "description": "Generate beautiful CSS hover effects for buttons, links, images, and other website elements with ready-to-use code.",
+      "keywords": "CSS hover generator, hover effect, button hover, link hover, CSS animation",
+      "ogTitle": "CSS Hover Effect Generator - Create Hover Animations",
+      "ogDescription": "Generate professional CSS hover effects instantly with customizable animations.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Hover effects",
+        "Animation styles",
+        "Live preview",
+        "Copy CSS"
+      ]
+    },
+
+    "email-link": {
+      "title": "HTML Email Link Generator - Create Mailto Links",
+      "description": "Generate HTML mailto links with subject, CC, BCC, and predefined message support for websites and landing pages.",
+      "keywords": "mailto generator, email link generator, HTML mailto, email hyperlink",
+      "ogTitle": "HTML Email Link Generator - Create Mailto Links",
+      "ogDescription": "Generate complete HTML mailto links with advanced email options instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Mailto links",
+        "Subject support",
+        "CC & BCC",
+        "Copy HTML"
+      ]
+    },
+
+    "html-image-link": {
+      "title": "HTML Image Link Generator - Clickable Image Code",
+      "description": "Create clickable HTML image links with alt text, target options, responsive settings, and SEO-friendly markup.",
+      "keywords": "image link generator, clickable image HTML, image hyperlink, HTML image anchor",
+      "ogTitle": "HTML Image Link Generator - Clickable Image Code",
+      "ogDescription": "Generate HTML clickable image links with responsive and SEO-friendly attributes.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Clickable images",
+        "Responsive HTML",
+        "SEO-friendly",
+        "Copy code"
+      ]
+    },
+
+    "open-in-new-window": {
+      "title": "Open Link in New Window Generator",
+      "description": "Generate HTML links that safely open in a new browser tab using target and rel attributes following modern web standards.",
+      "keywords": "open link new tab, target blank generator, HTML target blank, external links",
+      "ogTitle": "Open Link in New Window Generator",
+      "ogDescription": "Generate secure HTML links that open in a new tab using best practices.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Target blank",
+        "Rel noopener",
+        "Secure links",
+        "Copy HTML"
+      ]
+    },
+
+    "remove-underline": {
+      "title": "CSS Remove Link Underline Generator",
+      "description": "Generate CSS code to remove link underlines while maintaining accessibility and modern styling for websites.",
+      "keywords": "remove underline CSS, text decoration none, link style generator, CSS links",
+      "ogTitle": "CSS Remove Link Underline Generator",
+      "ogDescription": "Generate CSS code to remove link underlines with modern styling best practices.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Text decoration",
+        "CSS styling",
+        "Accessible links",
+        "Copy CSS"
+      ]
+    },    "bouncing-image": {
+      "title": "HTML Bouncing Image Generator - Create Animated Images",
+      "description": "Generate HTML bouncing image animations instantly using marquee and CSS techniques. Create engaging animated image effects with live preview.",
+      "keywords": "bouncing image, HTML animation, marquee image, animated image generator",
+      "ogTitle": "HTML Bouncing Image Generator - Create Animated Images",
+      "ogDescription": "Create animated bouncing images with ready-to-use HTML code.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Bouncing animation",
+        "Image effects",
+        "Live preview",
+        "Copy HTML"
+      ]
+    },
+
+    "bouncing-text": {
+      "title": "HTML Bouncing Text Generator",
+      "description": "Generate animated bouncing text for websites with customizable speed, direction, and styling.",
+      "keywords": "bouncing text, HTML marquee text, animated text, text animation",
+      "ogTitle": "HTML Bouncing Text Generator",
+      "ogDescription": "Create bouncing text effects instantly with ready-to-use HTML.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Animated text",
+        "Custom speed",
+        "Live preview",
+        "Copy HTML"
+      ]
+    },
+
+    "css-marquee": {
+      "title": "CSS Marquee Generator - Modern Scrolling Text",
+      "description": "Generate modern CSS marquee animations without deprecated HTML tags using smooth CSS keyframes.",
+      "keywords": "CSS marquee, scrolling text CSS, marquee animation, CSS animation",
+      "ogTitle": "CSS Marquee Generator - Modern Scrolling Text",
+      "ogDescription": "Generate smooth CSS marquee effects with modern animation techniques.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "CSS animation",
+        "Responsive marquee",
+        "Live preview",
+        "Export CSS"
+      ]
+    },
+
+    "html-marquee": {
+      "title": "HTML Marquee Generator",
+      "description": "Create scrolling HTML marquee text and images instantly with customizable direction, speed, and behavior.",
+      "keywords": "HTML marquee, scrolling text, marquee generator, moving text",
+      "ogTitle": "HTML Marquee Generator",
+      "ogDescription": "Generate classic HTML marquee code instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Scrolling text",
+        "Direction control",
+        "Speed adjustment",
+        "Copy HTML"
+      ]
+    },
+
+    "scrolling-image": {
+      "title": "Scrolling Image Generator",
+      "description": "Generate HTML scrolling image effects with customizable speed and direction for websites.",
+      "keywords": "scrolling image, marquee image, animated image, HTML image animation",
+      "ogTitle": "Scrolling Image Generator",
+      "ogDescription": "Create scrolling image effects instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Scrolling images",
+        "Animation control",
+        "Live preview",
+        "Copy HTML"
+      ]
+    },
+
+    "scrolling-text": {
+      "title": "Scrolling Text Generator",
+      "description": "Create animated scrolling text with customizable speed, colors, and direction using HTML and CSS.",
+      "keywords": "scrolling text, moving text, HTML marquee, animated text",
+      "ogTitle": "Scrolling Text Generator",
+      "ogDescription": "Generate scrolling text HTML instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Scrolling animation",
+        "Custom styling",
+        "Preview",
+        "Copy HTML"
+      ]
+    },
+
+    "slide-in-image": {
+      "title": "Slide In Image Generator",
+      "description": "Generate HTML and CSS slide-in image animations with smooth entrance effects.",
+      "keywords": "slide image animation, image entrance effect, CSS image animation",
+      "ogTitle": "Slide In Image Generator",
+      "ogDescription": "Create professional slide-in image effects instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Slide animation",
+        "Image effects",
+        "CSS animation",
+        "Copy code"
+      ]
+    },
+
+    "slide-in-text": {
+      "title": "Slide In Text Generator",
+      "description": "Generate animated slide-in text effects using HTML and CSS with customizable directions and timing.",
+      "keywords": "slide text animation, animated text, CSS slide text, HTML animation",
+      "ogTitle": "Slide In Text Generator",
+      "ogDescription": "Create beautiful slide-in text effects instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Slide animation",
+        "Text effects",
+        "Responsive",
+        "Copy code"
+      ]
+    },
+
+    "html-scrollbox": {
+      "title": "HTML Scroll Box Generator",
+      "description": "Create customizable HTML scroll boxes with adjustable dimensions, colors, and scrolling behavior.",
+      "keywords": "HTML scrollbox, scroll box generator, scrollable div, HTML scrolling box",
+      "ogTitle": "HTML Scroll Box Generator",
+      "ogDescription": "Generate responsive HTML scroll boxes instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Scrollable container",
+        "Custom size",
+        "Responsive",
+        "Copy HTML"
+      ]
+    },
+
+    "scrollbox-border": {
+      "title": "Scroll Box Border Generator",
+      "description": "Generate CSS borders for HTML scroll boxes with customizable styles, colors, and radius.",
+      "keywords": "scrollbox border, CSS border generator, scroll box style",
+      "ogTitle": "Scroll Box Border Generator",
+      "ogDescription": "Create stylish borders for HTML scroll boxes.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Border styles",
+        "Rounded corners",
+        "CSS export",
+        "Preview"
+      ]
+    },
+
+    "scrollbox-color": {
+      "title": "Scroll Box Color Generator",
+      "description": "Customize HTML scroll boxes with background colors, text colors, and CSS styling instantly.",
+      "keywords": "scrollbox color, HTML scrollbox CSS, background color generator",
+      "ogTitle": "Scroll Box Color Generator",
+      "ogDescription": "Generate colorful HTML scroll boxes with CSS.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Color customization",
+        "Background styling",
+        "Live preview",
+        "Copy CSS"
+      ]
+    },
+
+    "css-templates": {
+      "title": "CSS Templates Library",
+      "description": "Browse ready-to-use CSS templates for responsive websites, layouts, buttons, cards, and UI components.",
+      "keywords": "CSS templates, website templates, CSS layouts, UI templates",
+      "ogTitle": "CSS Templates Library",
+      "ogDescription": "Explore responsive CSS templates ready for production.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Responsive templates",
+        "Production ready",
+        "Easy customization",
+        "Copy code"
+      ]
+    },
+
+    "html5-frames": {
+      "title": "HTML5 Frame Templates",
+      "description": "Generate HTML5 frame layouts and modern page structures for responsive web development.",
+      "keywords": "HTML5 frames, frame templates, HTML layouts",
+      "ogTitle": "HTML5 Frame Templates",
+      "ogDescription": "Generate responsive HTML5 frame layouts instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Modern layouts",
+        "Responsive",
+        "HTML5",
+        "Copy code"
+      ]
+    },
+
+    "layout-templates": {
+      "title": "Website Layout Templates",
+      "description": "Explore responsive HTML layout templates for landing pages, blogs, dashboards, and business websites.",
+      "keywords": "layout templates, HTML layouts, responsive website templates",
+      "ogTitle": "Website Layout Templates",
+      "ogDescription": "Responsive HTML layout templates for modern websites.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Responsive layouts",
+        "Modern design",
+        "Production ready",
+        "Copy HTML"
+      ]
+    },
+
+    "website-templates": {
+      "title": "Website Templates Collection",
+      "description": "Browse professionally designed HTML website templates for portfolios, businesses, blogs, and landing pages.",
+      "keywords": "website templates, HTML templates, responsive websites",
+      "ogTitle": "Website Templates Collection",
+      "ogDescription": "Professional responsive website templates ready to customize.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Responsive templates",
+        "Professional layouts",
+        "Modern design",
+        "Easy customization"
+      ]
+    },    "font-code": {
+      "title": "HTML Font Code Generator - Customize Text Fonts",
+      "description": "Generate HTML font styling code with custom font families, sizes, colors, and typography settings for modern web pages.",
+      "keywords": "HTML font code, font generator, CSS fonts, typography generator",
+      "ogTitle": "HTML Font Code Generator - Customize Text Fonts",
+      "ogDescription": "Create HTML font styling code instantly with customizable typography options.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Custom fonts",
+        "Typography styling",
+        "Live preview",
+        "Copy HTML"
+      ]
+    },
+
+    "html-bold": {
+      "title": "HTML Bold Text Code",
+      "description": "Generate HTML bold text using semantic <strong> and <b> tags with clean, standards-compliant markup.",
+      "keywords": "HTML bold, bold text HTML, strong tag, b tag",
+      "ogTitle": "HTML Bold Text Code",
+      "ogDescription": "Generate semantic HTML bold text instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Strong tag",
+        "Bold formatting",
+        "HTML output",
+        "Copy code"
+      ]
+    },
+
+    "html-underline-code": {
+      "title": "HTML Underline Code Generator",
+      "description": "Generate HTML underline text using semantic HTML and CSS techniques with instant preview.",
+      "keywords": "HTML underline, underline generator, underlined text HTML",
+      "ogTitle": "HTML Underline Code Generator",
+      "ogDescription": "Create underlined HTML text instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Underline text",
+        "CSS support",
+        "Preview",
+        "Copy HTML"
+      ]
+    },
+
+    "table-background-color": {
+      "title": "HTML Table Background Color Generator",
+      "description": "Generate HTML table background colors using CSS with customizable themes and responsive styling.",
+      "keywords": "table background color, HTML table CSS, table color generator",
+      "ogTitle": "HTML Table Background Color Generator",
+      "ogDescription": "Customize HTML table background colors instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Background colors",
+        "Responsive tables",
+        "CSS export",
+        "Preview"
+      ]
+    },
+
+    "table-border": {
+      "title": "HTML Table Border Generator",
+      "description": "Generate HTML and CSS table borders with custom widths, colors, styles, and rounded corners.",
+      "keywords": "table border generator, HTML table border, CSS table border",
+      "ogTitle": "HTML Table Border Generator",
+      "ogDescription": "Create stylish HTML table borders instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Border styles",
+        "Rounded corners",
+        "Custom colors",
+        "Copy CSS"
+      ]
+    },
+
+    "table-color": {
+      "title": "HTML Table Color Generator",
+      "description": "Customize HTML table colors including headers, rows, borders, and backgrounds with ready-to-use CSS.",
+      "keywords": "HTML table color, table CSS generator, colored tables",
+      "ogTitle": "HTML Table Color Generator",
+      "ogDescription": "Generate colorful HTML table styles instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Table colors",
+        "Header styling",
+        "CSS output",
+        "Live preview"
+      ]
+    },
+
+    "table-text": {
+      "title": "HTML Table Text Generator",
+      "description": "Generate properly formatted HTML table text with alignment, typography, spacing, and styling options.",
+      "keywords": "HTML table text, table typography, table formatting",
+      "ogTitle": "HTML Table Text Generator",
+      "ogDescription": "Customize table text formatting for HTML tables instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Text alignment",
+        "Typography",
+        "Responsive",
+        "Copy HTML"
+      ]
+    },
+
+    "text-code": {
+      "title": "HTML Text Code Generator",
+      "description": "Generate formatted HTML text with headings, paragraphs, inline styles, and semantic markup for websites.",
+      "keywords": "HTML text code, text generator, HTML formatting",
+      "ogTitle": "HTML Text Code Generator",
+      "ogDescription": "Generate clean HTML text code instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Formatted text",
+        "Semantic HTML",
+        "Preview",
+        "Copy HTML"
+      ]
+    },
+
+    "text-color": {
+      "title": "HTML Text Color Generator",
+      "description": "Generate HTML text with custom colors using CSS and modern styling techniques for responsive websites.",
+      "keywords": "HTML text color, colored text generator, CSS color text",
+      "ogTitle": "HTML Text Color Generator",
+      "ogDescription": "Generate colorful HTML text with CSS instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Color picker",
+        "CSS styling",
+        "Preview",
+        "Copy HTML"
+      ]
+    },
+
+    "html-textbox": {
+      "title": "HTML Textbox Generator",
+      "description": "Generate customizable HTML textboxes with CSS styling, placeholders, borders, sizes, and responsive layouts.",
+      "keywords": "HTML textbox, input generator, text input HTML, form textbox",
+      "ogTitle": "HTML Textbox Generator",
+      "ogDescription": "Create responsive HTML textboxes instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Responsive textbox",
+        "Placeholder support",
+        "Custom styling",
+        "Copy HTML"
+      ]
+    },
+
+    "textbox-border": {
+      "title": "Textbox Border Generator",
+      "description": "Generate CSS borders for HTML textboxes with custom colors, widths, radius, and focus effects.",
+      "keywords": "textbox border, input border CSS, textbox styling",
+      "ogTitle": "Textbox Border Generator",
+      "ogDescription": "Create beautiful textbox borders with CSS instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Border styling",
+        "Focus effects",
+        "Rounded corners",
+        "Copy CSS"
+      ]
+    },
+
+    "textbox-color": {
+      "title": "Textbox Color Generator",
+      "description": "Customize HTML textbox colors including background, text, placeholder, and border styles with live preview.",
+      "keywords": "textbox color, input color generator, HTML textbox CSS",
+      "ogTitle": "Textbox Color Generator",
+      "ogDescription": "Generate custom textbox color styles instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "DeveloperApplication",
+      "features": [
+        "Background color",
+        "Text color",
+        "Border customization",
+        "Live preview"
+      ]
+    },
+}
   }
 }
