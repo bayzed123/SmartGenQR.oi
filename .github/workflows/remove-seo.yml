@@ -1,0 +1,50 @@
+name: Remove SEO Sections
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: remove-seo
+  cancel-in-progress: false
+
+jobs:
+  remove-seo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run Python Script
+        run: |
+          python remove_seo_sections.py
+
+      - name: Show Git Status
+        run: |
+          git status
+
+      - name: Commit & Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No files were modified."
+            exit 0
+          fi
+
+          git commit -m "Remove duplicated SEO sections from tool pages"
+
+          git push origin HEAD
