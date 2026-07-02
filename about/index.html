@@ -1,537 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-<meta http-equiv="X-XSS-Protection" content="1; mode=block">
-
-<title>About SmartGen: Privacy-First, Free Web Tools</title>
-<meta name="description" content="SmartGen builds 40+ free, privacy-first web tools that run entirely in your browser. Meet our founder and see how we handle your data.">
-<meta name="author" content="Sayad Md Bayezid Hosan">
-<link rel="canonical" href="https://smartgentools.com/about/">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="SmartGen">
-<meta property="og:title" content="About SmartGen: Privacy-First, Free Web Tools">
-<meta property="og:description" content="40+ free, privacy-first web tools for developers, marketers, and everyday users — no accounts, no uploads, no paywalls. Meet the team behind SmartGen.">
-<meta property="og:url" content="https://smartgentools.com/about/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About SmartGen: Privacy-First, Free Web Tools">
-<meta name="twitter:description" content="40+ free, privacy-first web tools for developers, marketers, and everyday users. Meet the team behind SmartGen.">
-
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preconnect" href="https://pagead2.googlesyndication.com">
-<link rel="preconnect" href="https://fundingchoicesmessages.google.com">
-
-<link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
-<link rel="stylesheet" href="../assets/css/style.css">
-<script src="../assets/js/app.js" defer></script>
-
-<style>
-/* Preserved: typography for long-form content inside .content-body */
-.content-body h2, .content-body h3, .content-body h4 {
-  margin-top: 1.5rem;
-  margin-bottom: 0.8rem;
-  color: var(--text-primary);
-}
-.content-body p {
-  margin-bottom: 1rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-}
-.content-body ul, .content-body ol {
-  margin-left: 20px;
-  margin-bottom: 1rem;
-  color: var(--text-secondary);
-}
-.content-body ul { list-style-type: disc; }
-.content-body ol { list-style-type: decimal; }
-.content-body ul li, .content-body ol li {
-  margin-bottom: 0.5rem;
-}
-.content-body strong { color: var(--text-primary); }
-.content-body a { color: var(--primary); text-decoration: none; }
-.content-body a:hover { text-decoration: underline; }
-
-/* Preserved: tool ecosystem table */
-.tool-category-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
-}
-.tool-category-table th,
-.tool-category-table td {
-  border: 1px solid var(--border);
-  padding: 12px 15px;
-  text-align: left;
-  vertical-align: top;
-}
-.tool-category-table th {
-  background-color: var(--card-bg);
-  color: var(--text-primary);
-  font-weight: 600;
-}
-.tool-category-table tr:nth-child(even) { background-color: var(--card-bg); }
-.tool-category-table td { color: var(--text-secondary); }
-.table-scroll { overflow-x: auto; margin-bottom: 1.5rem; }
-.table-scroll .tool-category-table { margin-bottom: 0; }
-
-/* New: hero */
-.about-hero {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border, #e2e8f0);
-}
-.about-eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--primary, #2563eb);
-  margin: 0 0 0.75rem;
-}
-.about-hero h1 {
-  margin: 0 0 1rem;
-  line-height: 1.2;
-}
-.about-lede {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  max-width: 65ch;
-  margin: 0 0 1.25rem;
-}
-.trust-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.trust-badges li {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  background: var(--card-bg, #f1f5f9);
-  border: 1px solid var(--border, #e2e8f0);
-  border-radius: 999px;
-  padding: 0.4rem 0.9rem;
-}
-
-/* New: core values grid */
-.value-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-  margin: 1.5rem 0;
-}
-.value-card {
-  padding: 1.25rem;
-  border: 1px solid var(--border, #e2e8f0);
-  border-radius: 12px;
-  background: var(--card-bg, #f8fafc);
-}
-.value-card h3 { margin-top: 0 !important; font-size: 1.05rem; }
-.value-card p { margin-bottom: 0 !important; font-size: 0.95rem; }
-
-/* New: founder credentials card */
-.founder-card {
-  padding: 1.25rem 1.5rem;
-  border: 1px solid var(--border, #e2e8f0);
-  border-left: 4px solid var(--primary, #2563eb);
-  border-radius: 12px;
-  background: var(--card-bg, #f8fafc);
-  margin-top: 1.5rem;
-}
-.founder-card p:last-child { margin-bottom: 0 !important; }
-
-/* Preserved (re-themed with CSS variables for dark-mode compatibility): FAQ */
-.faq-accordion { margin-top: 1rem; }
-.faq-item {
-  margin-bottom: 1rem;
-  padding: 1rem 1.25rem;
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--border, #e2e8f0);
-  border-radius: 8px;
-  border-left: 4px solid var(--primary, #2563eb);
-}
-.faq-question {
-  font-weight: 600;
-  color: var(--text-primary, #1e293b);
-  margin: 0 0 0.5rem;
-}
-.faq-answer { color: var(--text-secondary, #475569); margin: 0; }
-
-/* New: founder closing */
-.founder-closing {
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border, #e2e8f0);
-}
-.founder-closing blockquote {
-  margin: 0 0 1rem;
-  padding: 0;
-  font-size: 1.1rem;
-  font-style: italic;
-  line-height: 1.6;
-  color: var(--text-primary);
-  border: none;
-}
-.founder-signature { font-weight: 700; color: var(--primary, #2563eb); margin: 0 !important; }
-
-@media (max-width: 640px) {
-  .about-lede { font-size: 1.05rem; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <title>About SmartGen: Empowering Your Digital Journey</title>
+    <meta name="description" content="Discover SmartGen's mission to provide free, fast, and privacy-focused online utility tools. Learn about our commitment to user experience, data security, and AdSense policy compliance.">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
+    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+    <style>
+        /* Basic styling for content within the .content-body to ensure readability and structure */
+        .content-body h2, .content-body h3, .content-body h4 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+        .content-body p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        .content-body ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        .content-body ul li {
+            margin-bottom: 0.5rem;
+        }
+        .content-body strong {
+            color: var(--text-primary);
+        }
+        .content-body a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .content-body a:hover {
+            text-decoration: underline;
+        }
+        .tool-category-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .tool-category-table th,
+        .tool-category-table td {
+            border: 1px solid var(--border);
+            padding: 12px 15px;
+            text-align: left;
+        }
+        .tool-category-table th {
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        .tool-category-table tr:nth-child(even) {
+            background-color: var(--card-bg);
+        }
+        .tool-category-table td {
+            color: var(--text-secondary);
+        }
+    </style>
 </head>
 <body>
-<header id="main-header"></header>
+    <header id="main-header"></header>
+    <main class="container">
+        <section class="tool-container" style="margin-top: 2rem;">
+            <h1 style="margin-bottom: 1.5rem;">About SmartGen: Empowering Your Digital Journey with Precision, Privacy, and Performance</h1>
+            <div class="content-body">
+                <p>Welcome to <strong>SmartGen</strong>, the webÃ¢ÂÂs premier destination for fast, secure, and completely free digital utility tools. In an era where the internet is increasingly cluttered with aggressive paywalls, mandatory account registrations, and intrusive data harvesting, SmartGen was built to be a breath of fresh air. We are a comprehensive digital ecosystem offering over 40 meticulously engineered web utilities designed to solve everyday problems for full-stack developers, digital marketers, SEO specialists, content creators, and everyday internet users.</p>
+                <p>Our philosophy is simple: high-quality digital tools should be universally accessible, instantly responsive, and fundamentally respectful of user privacy. This comprehensive About page outlines our origin story, our technical infrastructure, our commitment to transparency, and the detailed suite of utilities we provide to our global user base.</p>
 
-<main class="container">
-<section class="tool-container about-page" style="margin-top: 2rem;">
+                <h2>1. The Genesis of SmartGen: Solving Modern Web Challenges</h2>
+                <p>The concept for SmartGen was born out of profound frustration with the current state of online utility platforms. As digital professionals, we rely on dozens of micro-tools every single day. Whether it is decoding a Base64 string, generating a secure password, formatting a JSON file, or creating a UTM tracking link for an ad campaign, these small tasks are the invisible gears that keep the digital economy turning.</p>
+                <p>However, over the past decade, the platforms providing these tools have deteriorated in user experience. We noticed several critical issues plaguing the landscape:</p>
+                <ul>
+                    <li><strong>The Paywall Epidemic:</strong> Essential tools that used to be free are now hidden behind restrictive "freemium" models that limit your usage or force you to enter credit card details just to download your processed file.</li>
+                    <li><strong>Data Mining and Privacy Risks:</strong> Many utility sites require you to upload your sensitive code, private images, or proprietary text to their external servers for processing. This creates massive security vulnerabilities and often results in user data being harvested and sold to third-party data brokers.</li>
+                    <li><strong>Intrusive User Interfaces:</strong> Finding a simple word counter or CSS gradient generator often means navigating a labyrinth of deceptive download buttons, pop-up overlays, and layout-shifting advertisements that ruin the user experience.</li>
+                    <li><strong>Server-Side Latency:</strong> Waiting for a simple HTML preview or an image conversion to process on an overloaded, distant server slows down workflow and breaks concentration.</li>
+                </ul>
+                <p>SmartGen was built to solve every single one of these problems. We envisioned a centralized, SaaS-grade platform where professionals could access a massive suite of tools instantly. We stripped away the bloat, removed the mandatory sign-ups, and engineered a platform where the vast majority of processing happens directly in your browser.</p>
 
-<header class="about-hero">
-<p class="about-eyebrow">About SmartGen</p>
-<h1>Free, privacy-first web tools, built in the open</h1>
-<p class="about-lede">SmartGen is a growing library of 40+ browser-based utilities for developers, marketers, creators, and anyone who needs a task done without an account, an upload, or a paywall getting in the way.</p>
-<ul class="trust-badges" role="list">
-<li>No sign-up</li>
-<li>No file uploads</li>
-<li>No cost</li>
-<li>Runs in your browser</li>
-</ul>
-</header>
+                <h2>2. Meet the Architect: Sayad Md Bayezid Hosan</h2>
+                <p>The vision, architecture, and continuous development of SmartGen are spearheaded by <strong>Sayad Md Bayezid Hosan</strong>, a seasoned digital marketing specialist, technical consultant, and agency founder based in the Tangail region of Bangladesh.</p>
+                <p>As the founder and lead consultant of <strong>Connect With Bayezid (CWB Agency)</strong>, Sayad has spent years navigating the complex intersections of full-stack web development, digital business asset management, and technical platform troubleshooting. Operating as a Meta Verified Tech Provider, he specializes in high-level account security, monetization troubleshooting, and ecosystem management.</p>
+                <p>This deep, hands-on experience in the trenches of the digital marketing and web development industries is exactly what inspired SmartGen. Sayad understood that an agency scaling ad campaigns needs instant, reliable UTM builders and Facebook ID extractors. He understood that developers building Android apps using Flutter and Kotlin need instantaneous JSON validators and Base64 decoders.</p>
+                <p>Furthermore, as a final-year undergraduate student in the Department of English at Northern University Bangladesh, Sayad brings a unique perspective to software development: the importance of professional communication, linguistics, and semantic clarity. This intersection of technical code and linguistic precision ensures that SmartGen is not just a collection of scripts, but a highly readable, user-friendly platform featuring clear documentation, precise tool instructions, and intuitive user interfaces.</p>
+                <p>SmartGen is the culmination of years of professional agency experience, technical coding expertise, and a fundamental belief in the open, accessible web.</p>
 
-<div class="content-body">
+                <h2>3. Our Core Pillars and Philosophy</h2>
+                <p>To maintain the highest standards of quality and ensure compliance with global web policies (including strict adherence to Google AdSense publisher guidelines), SmartGen operates on four unshakeable pillars:</p>
+                <h3>A. Privacy-First, Client-Side Architecture</h3>
+                <p>We fundamentally believe that your data belongs to you. To ensure absolute data security, SmartGen utilizes modern JavaScript frameworks and advanced web APIs to perform processing <strong>client-side</strong>. This means that when you paste code into our JSON Formatter, upload an image to our Color Palette Extractor, or calculate sensitive financial data in our EMI Calculator, the processing happens locally within your web browser. Your data is not uploaded to our servers, we do not store your proprietary code in our databases, and we have zero access to your private inputs.</p>
+                <h3>B. Uncompromising Speed and SaaS-Grade UI</h3>
+                <p>Time is money. Our platform is hosted on premium, high-speed infrastructure ensuring 99.9% uptime. The user interface of every single tool on SmartGen has been designed to mimic premium Software-as-a-Service (SaaS) products. We utilize clean typography, minimalist layouts, dark/light mode compatibility, and mobile-responsive grids. Whether you are accessing SmartGen from a multi-monitor desktop setup or a smartphone on a 4G connection, the tools load instantly and execute flawlessly.</p>
+                <h3>C. 100% Free Accessibility</h3>
+                <p>There are no "pro tiers," no hidden subscription fees, and no gated features on SmartGen. We are committed to keeping this platform entirely free for all users globally. We believe that a student learning to code in Bangladesh deserves access to the exact same high-quality utilities as a senior software engineer in Silicon Valley.</p>
+                <h3>D. Honest, Transparent Monetization</h3>
+                <p>To keep our servers running, our domain secured, and our 40+ tools entirely free, SmartGen is monetized through responsible, high-quality display advertising via networks like Google AdSense. We strictly adhere to the Better Ads Standards. You will never see deceptive "fake download" buttons, malicious pop-unders, or auto-playing audio ads on our site. Our advertising integration is designed to be seamless, non-intrusive, and respectful of your screen space, ensuring that our monetization strategy never interferes with your productivity.</p>
 
-<section id="who-we-are" aria-labelledby="who-we-are-h">
-<h2 id="who-we-are-h">Who We Are</h2>
-<p>SmartGen is a free, browser-based platform offering more than 40 utilities for developers, SEO professionals, digital marketers, content creators, students, business owners, and everyday internet users. Every tool — from a JSON formatter to a UTM link builder — is designed to open instantly, run without an account, and keep your data on your own device rather than a remote server.</p>
-<p>SmartGen isn't a venture-funded startup working toward a future subscription model. It's an independent, founder-led project, built and maintained because the small utilities professionals rely on every day deserve to be fast, honest, and free of friction.</p>
-</section>
+                <h2>4. The SmartGen Ecosystem: A Deep Dive into Our Utility Suites</h2>
+                <p>SmartGen is not just a single tool; it is a massive, interconnected ecosystem containing over 40 specialized utilities. To help you understand the scale and utility of our platform, we have categorized our tools into four primary suites:</p>
 
-<section id="our-story" aria-labelledby="our-story-h">
-<h2 id="our-story-h">Our Story</h2>
-<p>SmartGen started as a personal frustration. Everyday tasks — decoding a Base64 string, validating a JSON payload, building a tracking link, compressing an image before uploading it — kept leading to the same dead ends: tools locked behind account walls, files uploaded to servers with no clear privacy policy, and interfaces cluttered with ads styled to look like download buttons.</p>
-<p>Rather than accept that as the standard, SmartGen was built as a client-side alternative from the start: a single platform where each tool processes data locally in the browser, loads without waiting on a distant server, and stays free because there was never a plan to charge for it.</p>
-<p>What began as a small set of utilities built to support a digital marketing agency's own workflow has grown into a broader suite spanning development, SEO, marketing, and everyday calculations — added one tool at a time, and maintained the same way.</p>
-</section>
+                <table class="tool-category-table">
+                    <thead>
+                        <tr>
+                            <th>Suite</th>
+                            <th>Description</th>
+                            <th>Key Tools (Examples)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Developer & Technical Tools</strong></td>
+                            <td>Engineered for precision, handling raw data, complex strings, and formatting challenges instantly for coders.</td>
+                            <td>JSON Formatter & Validator, Live HTML Previewer, MD5/SHA Hash Generator, UUID / GUID Generator, Base64 to Image Decoder, URL Encoder-Decoder, IP Address Lookup, Robots.txt Generator.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Marketing & Social Media Utilities</strong></td>
+                            <td>Designed for agility in digital marketing, managing campaigns across various platforms with standardized tracking and optimized assets.</td>
+                            <td>UTM Link Builder, WhatsApp Link Generator, Mailto Generator, Hashtag Generator, Blog Title Generator, YouTube Thumbnail Downloader, Facebook ID Finder, Privacy Policy Generator, Terms & Conditions Generator, Disclaimer Generator.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SEO & Content Optimization</strong></td>
+                            <td>Bridges the gap between creative writing and technical search engine optimization, ensuring content is valuable and discoverable.</td>
+                            <td>Keyword Density Checker, Word Counter, SERP Preview Tool, Schema Generator, Text Case Converter, Lorem Ipsum Generator.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Daily Utilities & Calculators</strong></td>
+                            <td>A suite of tools simplifying daily life, personal finance, and personal productivity.</td>
+                            <td>EMI Calculator, CPM ROI Calculator, Percentage Calculator, BMI BMR Calculator, Age Calculator, Pomodoro Timer, Image Compressor, Color Palette Extractor, Password Generator, Unit Converter, Secure Notepad.</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-<section id="founder" aria-labelledby="founder-h">
-<h2 id="founder-h">Meet the Founder</h2>
-<p>SmartGen is built and maintained by <strong>Sayad Md Bayezid Hosan</strong>, a digital marketing specialist and technical consultant based in Bangladesh, and founder of <strong>Connect With Bayezid (CWB Agency)</strong>. Operating as a Meta Verified Tech Provider through that agency, his day-to-day work covers account security, platform troubleshooting, and monetization support for businesses that depend on their online presence.</p>
-<p>That agency work is the direct reason SmartGen exists. Building tracking links and auditing ad accounts for clients meant needing fast, reliable utilities on demand — and being unwilling to hand client data to an unfamiliar server just to format a JSON file or generate a password. SmartGen's earliest tools were built to solve that problem internally, then published once they proved useful to a wider audience.</p>
-<p>Sayad is also a final-year undergraduate student in the Department of English at Northern University Bangladesh, a background that shows up directly in how SmartGen is written: instructions are meant to be read once and understood, not decoded. That standard applies to every tool page on this site, including this one.</p>
-<p>SmartGen is an independent, founder-led project. Every tool, decision, and page of content here is something Sayad has personally built, written, or reviewed.</p>
-<div class="founder-card">
-<p><strong>Sayad Md Bayezid Hosan</strong><br>Founder, SmartGen &amp; Connect With Bayezid (CWB Agency)</p>
-<p>Digital marketing specialist and technical consultant based in Bangladesh. Final-year undergraduate, Department of English, Northern University Bangladesh.</p>
-</div>
-</section>
+                <h2>5. Our Commitment to Google AdSense Policies and User Trust</h2>
+                <p>Trust is the currency of the digital web. We recognize that to build a sustainable, globally recognized platform, we must adhere strictly to the highest standards of web publishing. SmartGen was built to be fully compliant with the Google AdSense Program Policies, prioritizing the user experience above all else.</p>
+                <ul>
+                    <li><strong>Originality and Value:</strong> Every tool on SmartGen is custom-configured to provide genuine, functional value. Our comprehensive guides ensure users understand the underlying concepts, use-cases, and industry best practices.</li>
+                    <li><strong>Navigational Clarity:</strong> SmartGen is designed with a logical, hierarchical navigation system. Tools are categorized intuitively, URLs are clean and descriptive, and users can find exactly what they are looking for within seconds.</li>
+                    <li><strong>No Deceptive Practices:</strong> We strictly prohibit deceptive UI elements. Our processing buttons clearly state their function. We do not use "fake download" ads or misdirect users to malicious third-party sites.</li>
+                    <li><strong>E-E-A-T Compliance:</strong> By transparently sharing the identity of our founder, Sayad Md Bayezid Hosan, and outlining our technical architecture, we strive to meet the rigorous standards of Experience, Expertise, Authoritativeness, and Trustworthiness expected by modern search engines and advertising networks.</li>
+                </ul>
 
-<section id="mission" aria-labelledby="mission-h">
-<h2 id="mission-h">Our Mission</h2>
-<p>SmartGen's mission is to make professional-grade web utilities accessible to anyone, without asking them to pay for access, hand over an email address, or send their data to a server they've never heard of.</p>
-<p>We measure success by a simple question: did this tool solve your problem faster than searching for, signing up for, and learning a heavier alternative would have? If a utility on this site doesn't clear that bar, we consider it unfinished, not shipped.</p>
-</section>
+                <h2>6. The Future Roadmap for SmartGen</h2>
+                <p>The web is not static, and neither is SmartGen. As we move through 2026 and beyond, we are committed to aggressively expanding our ecosystem. Our development roadmap includes:</p>
+                <ul>
+                    <li><strong>AI Integrations:</strong> Actively researching secure, API-driven artificial intelligence integrations for generative text, code-completion, and advanced image processing tools.</li>
+                    <li><strong>Progressive Web App (PWA) Capabilities:</strong> Enhancing our architecture for desktop and mobile home screen installation, allowing offline access to critical tools.</li>
+                    <li><strong>Expanded Developer APIs:</strong> Exploring the possibility of opening select SmartGen endpoints for other developers to securely route data through our formatting and cryptography tools.</li>
+                    <li><strong>Community-Driven Tools:</strong> Implementing feedback loops to build custom tools requested by our users.</li>
+                </ul>
 
-<section id="values" aria-labelledby="values-h">
-<h2 id="values-h">Our Core Values</h2>
-<p>Five principles guide every tool we build and every page we write:</p>
-<div class="value-grid">
-<div class="value-card">
-<h3>Privacy First</h3>
-<p>If a tool can run entirely in your browser, it does. Your inputs stay on your device by default, not as an opt-in setting.</p>
-</div>
-<div class="value-card">
-<h3>Free By Design</h3>
-<p>There's no premium tier waiting behind a paywall. SmartGen was built to stay free, not to convert you into a paying customer later.</p>
-</div>
-<div class="value-card">
-<h3>Built For Speed</h3>
-<p>A tool that makes you wait has already failed at its one job. Every utility is built to respond instantly.</p>
-</div>
-<div class="value-card">
-<h3>Written By A Human</h3>
-<p>Every guide and explanation on this site is written and reviewed by a person who uses these tools, not generated and published unedited.</p>
-</div>
-<div class="value-card">
-<h3>Held To A Standard</h3>
-<p>New tools are tested across browsers and devices before release. Existing ones are revisited when something changes, not left to quietly break.</p>
-</div>
-</div>
-</section>
-
-<section id="privacy" aria-labelledby="privacy-h">
-<h2 id="privacy-h">Privacy Commitment</h2>
-<p>Privacy at SmartGen isn't a policy statement added after the fact — it's a technical constraint the tools are designed around. Wherever the underlying task allows it, processing happens locally in your browser using standard JavaScript and Web APIs. When you format JSON, extract colors from an image, calculate a loan payment, or generate a password, that data is handled on your device and is never transmitted to a SmartGen server.</p>
-<p>Because of that, we don't require an account — there's nothing to attach one to. We don't ask for an email address to unlock a tool, and we don't store your inputs in a database, because in the large majority of cases, we never receive them in the first place.</p>
-<p>A small number of tools necessarily involve checking a public data source — an IP or domain lookup, for example. Even there, only the specific input that task needs is used, and it isn't connected to any account or profile, because none exists on SmartGen.</p>
-</section>
-
-<section id="editorial-standards" aria-labelledby="editorial-standards-h">
-<h2 id="editorial-standards-h">Editorial Standards</h2>
-<p>Every article, guide, and explanation published on SmartGen — including this page — is written and personally reviewed by our founder, Sayad Md Bayezid Hosan. We do not publish AI-generated articles, and content on this site is never machine-written and posted without human authorship.</p>
-<p>Where AI tools are used at all, their role is limited to engineering support: assisting with debugging, brainstorming implementation approaches, and technical research during development. That's a coding aid, not an editorial one, and it doesn't extend to the words you read on any SmartGen page.</p>
-<p>We hold this distinction deliberately. A tool's documentation is only useful if it reflects real use of that tool, and a mission statement is only honest if a person actually means it. Both are true here.</p>
-</section>
-
-<section id="quality-assurance" aria-labelledby="quality-assurance-h">
-<h2 id="quality-assurance-h">Quality Assurance</h2>
-<p>Before a tool ships — and on an ongoing basis afterward — it goes through the same quality process:</p>
-<ul>
-<li><strong>Cross-browser testing</strong> across Chrome, Firefox, Safari, and Edge</li>
-<li><strong>Performance checks</strong> to keep load times and processing fast on modest hardware</li>
-<li><strong>Accessibility passes</strong> for keyboard navigation, screen readers, and color contrast</li>
-<li><strong>Responsive testing</strong> across phone, tablet, and desktop breakpoints</li>
-<li><strong>Usability review</strong> of every input, label, and error message</li>
-<li><strong>Scheduled maintenance</strong> to catch breaking changes in browser APIs or dependencies</li>
-</ul>
-<p>This isn't a one-time launch checklist. Browsers update, standards shift, and a tool that worked perfectly last year can quietly break. Revisiting existing tools is treated with the same priority as building new ones.</p>
-</section>
-
-<section id="technical-philosophy" aria-labelledby="technical-philosophy-h">
-<h2 id="technical-philosophy-h">Technical Philosophy</h2>
-<p>SmartGen is built on modern HTML5, CSS3, and JavaScript — deliberately without a heavy framework stack for most tools, because the fastest code to load is code that was never shipped in the first place.</p>
-<p>We follow a progressive enhancement approach: a tool's core layout and content are usable immediately, with interactive behavior layered on top rather than required just to render the page. Combined with a client-side-first architecture, this keeps most tools usable the moment they load, without waiting on round trips to a server.</p>
-<p>This is also why the site looks and behaves consistently from page to page. Every tool shares the same underlying design system and JavaScript foundation, so what you learn using one utility — how to copy a result, how settings are laid out — carries over to the next.</p>
-</section>
-
-<section id="ecosystem" aria-labelledby="ecosystem-h">
-<h2 id="ecosystem-h">The SmartGen Tool Ecosystem</h2>
-<p>SmartGen's 40+ tools are organized into four practical categories. This isn't an exhaustive list — new tools are added regularly — but it maps the shape of what's here today.</p>
-<div class="table-scroll">
-<table class="tool-category-table">
-<thead>
-<tr>
-<th scope="col">Category</th>
-<th scope="col">What It's For</th>
-<th scope="col">Example Tools</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Developer &amp; Technical Tools</strong></td>
-<td>Formatting, validating, encoding, and previewing raw data for coders</td>
-<td>JSON Formatter &amp; Validator, Live HTML Previewer, MD5/SHA Hash Generator, UUID/GUID Generator, Base64 to Image Decoder, URL Encoder/Decoder, IP Address Lookup, Robots.txt Generator</td>
-</tr>
-<tr>
-<td><strong>Marketing &amp; Social Media</strong></td>
-<td>Campaign tracking, link generation, and legal-page generation for marketers and site owners</td>
-<td>UTM Link Builder, WhatsApp Link Generator, Mailto Link Generator, Hashtag Generator, Blog Title Generator, YouTube Thumbnail Downloader, Facebook ID Finder, Privacy Policy Generator, Terms &amp; Conditions Generator, Disclaimer Generator</td>
-</tr>
-<tr>
-<td><strong>SEO &amp; Content Optimization</strong></td>
-<td>Improving content quality and search visibility</td>
-<td>Keyword Density Checker, Word Counter, SERP Preview Tool, Schema Generator, Text Case Converter, Lorem Ipsum Generator</td>
-</tr>
-<tr>
-<td><strong>Daily Utilities &amp; Calculators</strong></td>
-<td>Everyday calculations and file tasks</td>
-<td>EMI Calculator, CPM &amp; ROI Calculator, Percentage Calculator, BMI/BMR Calculator, Age Calculator, Pomodoro Timer, Image Compressor, Color Palette Extractor, Password Generator, Unit Converter, Secure Notepad</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-
-<section id="advertising" aria-labelledby="advertising-h">
-<h2 id="advertising-h">Ethical Advertising</h2>
-<p>SmartGen is free to use because it's supported by display advertising, primarily through Google AdSense. We consider that a trade worth being transparent about, and we hold our own advertising to a higher bar than the minimum required.</p>
-<ul>
-<li>Ads follow the Better Ads Standards and Google's AdSense program policies</li>
-<li>No fake or disguised "download" buttons, and no ads styled to look like tool controls</li>
-<li>No pop-unders, no auto-playing audio, and no interstitials that block a tool you came to use</li>
-<li>Ad placements are fixed in the layout, not injected in ways that shift content while you're reading or interacting with it</li>
-</ul>
-<p>If an ad on SmartGen ever violates this standard, that's a bug, not a business decision — and we treat it that way when it's reported.</p>
-</section>
-
-<section id="accessibility" aria-labelledby="accessibility-h">
-<h2 id="accessibility-h">Accessibility Commitment</h2>
-<p>Accessibility is treated as a requirement, not an enhancement. Practically, that means:</p>
-<ul>
-<li>Semantic HTML structure, so screen readers and assistive technology can navigate the page logically</li>
-<li>Sufficient color contrast between text and backgrounds, including in dark mode</li>
-<li>Interactive elements that are reachable and operable by keyboard alone</li>
-<li>Descriptive labels and alt text instead of layout-only cues like color or icon shape</li>
-<li>Text that resizes cleanly without breaking layout, for users who increase browser font size</li>
-</ul>
-<p>We don't claim perfect compliance with every WCAG success criterion on every page — that would be an easy claim to make and a hard one to verify. What we can commit to is that accessibility is checked as part of our quality process, not treated as an afterthought, and that reported issues get fixed.</p>
-</section>
-
-<section id="security" aria-labelledby="security-h">
-<h2 id="security-h">Security Commitment</h2>
-<p>SmartGen is served exclusively over HTTPS, with a Content Security Policy and standard protective headers — including X-Content-Type-Options, X-Frame-Options, and X-XSS-Protection — applied site-wide to reduce common attack surfaces like clickjacking and MIME-type sniffing.</p>
-<p>Because most tools process data client-side and no account system exists, there is simply less sensitive data for a breach to expose in the first place. That's a deliberate side effect of the privacy architecture described above, not a separate security feature.</p>
-<p>Dependencies, browser compatibility, and headers are reviewed on an ongoing basis rather than left untouched after launch. If you believe you've found a security issue, we want to hear about it before anyone else does.</p>
-</section>
-
-<section id="roadmap" aria-labelledby="roadmap-h">
-<h2 id="roadmap-h">Future Roadmap</h2>
-<p>SmartGen is under active, ongoing development. Areas we're currently exploring include:</p>
-<ul>
-<li>Secure, opt-in AI-assisted features for select tools, kept clearly separate from editorial content</li>
-<li>Progressive Web App support, so core tools can be installed and used offline</li>
-<li>A limited set of developer-facing endpoints for select formatting and encoding tools</li>
-<li>New tools requested directly by users, prioritized by how many people ask for them</li>
-</ul>
-<p>Not everything on this list will ship, and nothing here is a promise with a date attached. It's an honest look at what we're actively working on.</p>
-</section>
-
-<section id="contact" aria-labelledby="contact-h">
-<h2 id="contact-h">Contact &amp; Feedback</h2>
-<p>SmartGen improves through direct feedback. If you've found a bug, want to request a tool, or have a partnership or advertising inquiry, reach out through the contact link in the site footer below.</p>
-<p>When reporting a technical issue, include the tool name, your browser and device, and what you expected to happen versus what actually happened — that's usually enough to reproduce and fix a problem quickly.</p>
-</section>
-
-<section id="faq" aria-labelledby="faq-h">
-<h2 id="faq-h">Frequently Asked Questions</h2>
-<div class="faq-accordion">
-<div class="faq-item">
-<h3 class="faq-question">Is SmartGen really free to use?</h3>
-<p class="faq-answer">Yes. Every tool on SmartGen is free, with no premium tier, credit card, or usage limit attached. The site is supported by advertising, not subscriptions.</p>
-</div>
-<div class="faq-item">
-<h3 class="faq-question">Do I need to create an account?</h3>
-<p class="faq-answer">No. None of SmartGen's tools require registration, a login, or an email address.</p>
-</div>
-<div class="faq-item">
-<h3 class="faq-question">Is my data uploaded to your servers when I use a tool?</h3>
-<p class="faq-answer">For the large majority of tools, no — processing happens locally in your browser. A small number of tools that check public data, such as a domain lookup, send only the specific input that task requires.</p>
-</div>
-<div class="faq-item">
-<h3 class="faq-question">Who builds and maintains SmartGen?</h3>
-<p class="faq-answer">SmartGen is an independent, founder-led project built and maintained by Sayad Md Bayezid Hosan, founder of Connect With Bayezid (CWB Agency).</p>
-</div>
-<div class="faq-item">
-<h3 class="faq-question">Do you use AI to write your articles?</h3>
-<p class="faq-answer">No. Every article and guide on SmartGen is written and personally reviewed by our founder. AI tools are used only for development support, such as debugging and technical research — never for writing published content.</p>
-</div>
-<div class="faq-item">
-<h3 class="faq-question">How does SmartGen make money if everything is free?</h3>
-<p class="faq-answer">Through display advertising, primarily Google AdSense, shown under the Better Ads Standards. SmartGen does not run pop-unders, disguised download buttons, or content-blocking interstitials.</p>
-</div>
-<div class="faq-item">
-<h3 class="faq-question">Will SmartGen ever charge for tools that are free today?</h3>
-<p class="faq-answer">There are no plans to introduce a paid tier. SmartGen was built to stay free, and its architecture — no accounts, minimal server processing — keeps it inexpensive to run that way.</p>
-</div>
-<div class="faq-item">
-<h3 class="faq-question">Is SmartGen accessible for users with disabilities?</h3>
-<p class="faq-answer">Accessibility is part of the standard quality process: semantic HTML, keyboard operability, and color contrast are checked on every tool. Report any issue you find and it will be fixed.</p>
-</div>
-<div class="faq-item">
-<h3 class="faq-question">How often are tools updated?</h3>
-<p class="faq-answer">Continuously. Existing tools are revisited when browser standards change or issues are reported, and new tools are added based on user requests.</p>
-</div>
-<div class="faq-item">
-<h3 class="faq-question">How do I report a bug or request a new tool?</h3>
-<p class="faq-answer">Use the contact link in the site footer. Include the tool name, your browser, and what you expected versus what actually happened.</p>
-</div>
-</div>
-</section>
-
-</div>
-
-<footer class="founder-closing">
-<blockquote>I built SmartGen because I needed these tools myself, and I was tired of the compromises every alternative asked for. I intend to keep it free, keep it fast, and keep it honest about how it works and how it's funded. If it ever stops meeting that bar, tell me, and I'll fix it.</blockquote>
-<p class="founder-signature">— Sayad Md Bayezid Hosan, Founder, SmartGen</p>
-</footer>
-
-</section>
-</main>
-
-<footer id="main-footer"></footer>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "name": "About SmartGen",
-  "url": "https://smartgentools.com/about/",
-  "description": "SmartGen builds 40+ free, privacy-first web tools that run entirely in your browser.",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "SmartGen",
-    "url": "https://smartgentools.com/"
-  },
-  "mainEntity": {
-    "@type": "Organization",
-    "name": "SmartGen",
-    "url": "https://smartgentools.com/",
-    "description": "A free, privacy-first platform of 40+ browser-based web utilities for developers, marketers, and everyday users.",
-    "founder": {
-      "@type": "Person",
-      "name": "Sayad Md Bayezid Hosan",
-      "jobTitle": "Founder"
-    }
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is SmartGen really free to use?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every tool on SmartGen is free, with no premium tier, credit card, or usage limit attached. The site is supported by advertising, not subscriptions." }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to create an account?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. None of SmartGen's tools require registration, a login, or an email address." }
-    },
-    {
-      "@type": "Question",
-      "name": "Is my data uploaded to your servers when I use a tool?",
-      "acceptedAnswer": { "@type": "Answer", "text": "For the large majority of tools, no — processing happens locally in your browser. A small number of tools that check public data, such as a domain lookup, send only the specific input that task requires." }
-    },
-    {
-      "@type": "Question",
-      "name": "Who builds and maintains SmartGen?",
-      "acceptedAnswer": { "@type": "Answer", "text": "SmartGen is an independent, founder-led project built and maintained by Sayad Md Bayezid Hosan, founder of Connect With Bayezid (CWB Agency)." }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you use AI to write your articles?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Every article and guide on SmartGen is written and personally reviewed by our founder. AI tools are used only for development support, such as debugging and technical research — never for writing published content." }
-    },
-    {
-      "@type": "Question",
-      "name": "How does SmartGen make money if everything is free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Through display advertising, primarily Google AdSense, shown under the Better Ads Standards. SmartGen does not run pop-unders, disguised download buttons, or content-blocking interstitials." }
-    },
-    {
-      "@type": "Question",
-      "name": "Will SmartGen ever charge for tools that are free today?",
-      "acceptedAnswer": { "@type": "Answer", "text": "There are no plans to introduce a paid tier. SmartGen was built to stay free, and its architecture keeps it inexpensive to run that way." }
-    },
-    {
-      "@type": "Question",
-      "name": "Is SmartGen accessible for users with disabilities?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Accessibility is part of the standard quality process: semantic HTML, keyboard operability, and color contrast are checked on every tool." }
-    },
-    {
-      "@type": "Question",
-      "name": "How often are tools updated?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Continuously. Existing tools are revisited when browser standards change or issues are reported, and new tools are added based on user requests." }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I report a bug or request a new tool?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Use the contact link in the site footer. Include the tool name, your browser, and what you expected versus what actually happened." }
-    }
-  ]
-}
-</script>
+                <h2>7. Get in Touch with Us</h2>
+                <p>SmartGen is a living, breathing project, and user feedback is the lifeblood of our development process. Whether you have discovered a bug, want to request a new tool, or have a business inquiry regarding partnerships or advertising, we want to hear from you.</p>
+                <p>Because we value transparency and open communication, we make it easy to reach the team behind the tools. For technical support, please provide the tool name, your browser, and the specific error to help our development team assist you efficiently.</p>
+            </div>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
 </body>
 </html>
