@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add AdSense Placeholder Remover script",
+    "date": "2026-07-03T15:54:15Z",
+    "description": "This script removes AdSense placeholders and related lazy-loading logic from HTML files to ensure a clean user experience for AdSense review."
+  },
+  {
     "title": "Update index.html",
     "date": "2026-07-03T15:45:51Z",
     "description": "Platform improvement and optimization."
