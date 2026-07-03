@@ -171,7 +171,7 @@ In this module, we covered what social media networks are and why they matter, t
 ## What's Next?
 
 In Module 3, we'll move from optimizing your social presence to driving consistent organic traffic through Search Engine Optimization (SEO) — learning exactly how Google decides which pages to show, and how to make sure yours is one of them.
-Introduction to Online Digital Marketing: A Beginner's Guide](https://smartgentools.com/blog/introduction-to-online-digital-marketing-a-beginners-guide/)
+- [Introduction to Online Digital Marketing: A Beginner's Guide](https://smartgentools.com/blog/introduction-to-online-digital-marketing-a-beginners-guide/)
 - [Module 3: Social Media Marketing (SMM) — Advertising Concepts and Platform Selection](https://smartgentools.com/blog/module-3-social-media-marketing-smm-social-media-advertising-concepts-and-choosing-the-right-platform-for-your-audience/)
 - [Module 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 5: Instagram Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
