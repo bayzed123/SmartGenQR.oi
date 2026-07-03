@@ -33,6 +33,8 @@
 ---
 
 <!-- pagespeed_start -->
+### 📊 Site Health Report (Updated: 2026-07-03)
+- **Performance Score:** 0/100
 <!-- pagespeed_end -->
 
 ---

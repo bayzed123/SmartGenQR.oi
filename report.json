@@ -1,0 +1,10 @@
+{
+  "url": "https://smartgentools.com",
+  "strategy": "mobile",
+  "performance_score": null,
+  "metrics": {},
+  "opportunities": [],
+  "diagnostics": [],
+  "field_data_available": false,
+  "error": "Rate limited by Google API. Wait a few minutes or add an API key."
+}
