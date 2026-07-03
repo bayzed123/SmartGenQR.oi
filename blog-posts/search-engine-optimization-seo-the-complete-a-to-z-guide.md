@@ -213,8 +213,9 @@ Below is an original infographic built specifically for this guide, mapping out 
 In this module, we covered what SEO actually is and why it matters as a durable, compounding counterpart to the paid and social strategies covered elsewhere in this course, the three-stage mechanical process search engines use to build their results — crawling, indexing, and ranking — how to read a modern SERP and use it as direct research into search intent before creating any content, and the practical mechanics of crawling and indexing, including robots.txt, noindex tags, sitemaps, and the common technical reasons a page can fail to appear in search results at all.
 
 **Practice exercise:** Pick a keyword genuinely relevant to your business or the WordPress site you built in Module 9. Search that keyword and study the resulting SERP: note what content formats dominate the organic results, whether a local pack or featured snippet appears, and what that tells you about the underlying search intent. Then open Google Search Console for your own site (or set it up if you haven't yet) and check your Page Indexing report to confirm your key pages are actually indexed, resolving any exclusions you find before moving on to the next module.
-you can free to use [Google SERP Snippet Preview](https://smartgentools.com/serp-preview-tool/)
+
 ---
+# you can free to use [SmartGen Google SERP Snippet Preview](https://smartgentools.com/serp-preview-tool/)
 
 ## Frequently Asked Questions
 
