@@ -3,7 +3,7 @@ title: "MODULE 5: Instagram Marketing — The Complete A to Z Mega Guide for Beg
 description: "A complete, professional guide to Instagram Marketing: introduction to Instagram, building a winning strategy, profile optimization, content creation and curation, engagement strategies, Instagram Ads and analytics, Stories and IGTV, and influencer marketing."
 keywords: "instagram marketing, instagram strategy, instagram profile optimization, instagram content creation, instagram engagement, instagram ads, instagram analytics, instagram stories marketing, IGTV marketing, influencer marketing instagram, smartgen"
 date: 2026-06-30
-image: "assets/images/module5-instagram-marketing-infographic.svg"
+image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module5-instagram-marketing-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -160,7 +160,7 @@ Instagram remains the single most active platform for influencer marketing, and 
 
 Below is an original infographic mapping the Instagram content formats covered in this module to the specific role each one plays in your overall marketing strategy. This graphic was created specifically for this guide and is completely free of copyright restrictions.
 
-![Instagram marketing formats and their roles — Feed, Stories, Reels, and longer-form video](assets/images/module5-instagram-marketing-infographic.svg)
+![Instagram marketing formats and their roles — Feed, Stories, Reels, and longer-form video](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module5-instagram-marketing-infographic.svg)
 
 ---
 
@@ -180,7 +180,12 @@ In Module 6, we'll continue expanding your platform-specific marketing skills. I
 - [Module 1: Basic Image and Video Editing with Filmora and Canva](https://smartgentools.com/blog/module-1-basic-image-and-video-editing-complete-guide-to-filmora-and-canva-for-beginners/)
 - [Module 3: Social Media Marketing (SMM) — Advertising Concepts and Platform Selection](https://smartgentools.com/blog/module-3-social-media-marketing-smm-social-media-advertising-concepts-and-choosing-the-right-platform-for-your-audience/)
 - [Module 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-
+- [Module 5: Instagram Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+- [Module 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 8: Pinterest Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 9: Creating a WordPress Website — The Complete A to Z Mega Guide](https://smartgentools.com/blog/creating-a-wordpress-website-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide](https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 ---
 
 *This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
