@@ -32,6 +32,10 @@
 
 ---
 
+<!-- pagespeed_start -->
+<!-- pagespeed_end -->
+
+---
 ## 🏗️ Master Tool Directory
 
 ### 💻 Developer & Technical
