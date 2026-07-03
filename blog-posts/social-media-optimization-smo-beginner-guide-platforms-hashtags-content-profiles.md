@@ -3,7 +3,7 @@ title: "MODULE 2: Social Media Optimization (SMO) — Complete Beginner's Guide 
 description: "A complete, in-depth guide to Social Media Optimization (SMO): social media networks explained, major platform types, core SMO concepts, hashtag strategy, content creation, and how to build a strong profile on Facebook, Instagram, X, LinkedIn, and Pinterest."
 keywords: "social media optimization, SMO, what is SMO, social media networks, types of social media, hashtag strategy, social media content creation, how to create a strong social media profile, facebook profile tips, instagram profile tips, linkedin profile tips, twitter profile tips, pinterest profile tips, smartgen"
 date: 2026-06-30
-image: "assets/images/module2-smo-overview-infographic.svg"
+image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module2-smo-overview-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -156,7 +156,7 @@ Convert to a Business account to access analytics and rich pins. Write a keyword
 
 Below is an original infographic summarizing how the major platforms covered in this module connect back to a consistent brand profile at the center of your SMO strategy. This graphic was created specifically for this guide and is completely free of copyright restrictions — feel free to use it directly on this article.
 
-![Social Media Optimization Overview — Facebook, Instagram, LinkedIn, X, and Pinterest connecting to a consistent brand profile](assets/images/module2-smo-overview-infographic.svg)
+![Social Media Optimization Overview — Facebook, Instagram, LinkedIn, X, and Pinterest connecting to a consistent brand profile](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module2-smo-overview-infographic.svg)
 
 ---
 
@@ -171,7 +171,15 @@ In this module, we covered what social media networks are and why they matter, t
 ## What's Next?
 
 In Module 3, we'll move from optimizing your social presence to driving consistent organic traffic through Search Engine Optimization (SEO) — learning exactly how Google decides which pages to show, and how to make sure yours is one of them.
-
+Introduction to Online Digital Marketing: A Beginner's Guide](https://smartgentools.com/blog/introduction-to-online-digital-marketing-a-beginners-guide/)
+- [Module 3: Social Media Marketing (SMM) — Advertising Concepts and Platform Selection](https://smartgentools.com/blog/module-3-social-media-marketing-smm-social-media-advertising-concepts-and-choosing-the-right-platform-for-your-audience/)
+- [Module 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+- [Module 5: Instagram Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+- [Module 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 8: Pinterest Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 9: Creating a WordPress Website — The Complete A to Z Mega Guide](https://smartgentools.com/blog/creating-a-wordpress-website-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide](https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 ---
 
 *This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
