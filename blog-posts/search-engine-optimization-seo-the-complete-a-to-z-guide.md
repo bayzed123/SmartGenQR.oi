@@ -3,7 +3,7 @@ title: "Search Engine Optimization (SEO) — The Complete A to Z Mega Guide for 
 description: "A complete, practical A to Z guide to Search Engine Optimization for beginners — what SEO actually is and why it underlies everything else in this course, how search engines really work behind the scenes, how to read and understand the SERP the way a search engine sees it, and how crawling and indexing determine whether your content can ever be found at all."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 10, SEO, Search Engine Optimization, How Search Engines Work, SERP, Crawling, Indexing"
 date: 2026-07-01
-image: "assets/images/module10-seo-infographic.svg"
+image: "https://i.ibb.co/pBZ22gqY/IMG-6100.jpg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -204,7 +204,7 @@ It's worth being direct about why this module ends with crawling and indexing ra
 
 Below is an original infographic built specifically for this guide, mapping out how search engines discover, store, and rank web content — from crawling and indexing through the modern SERP.
 
-![SEO Fundamentals System — from crawling and indexing through search engine ranking and the modern SERP](https://smartgentools.com/blog/module-10-search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners/assets/images/module10-seo-infographic.svg)
+![SEO Fundamentals System — from crawling and indexing through search engine ranking and the modern SERP](https://i.ibb.co/1tk5BfLR/IMG-6101.png)
 
 ---
 
@@ -213,7 +213,7 @@ Below is an original infographic built specifically for this guide, mapping out 
 In this module, we covered what SEO actually is and why it matters as a durable, compounding counterpart to the paid and social strategies covered elsewhere in this course, the three-stage mechanical process search engines use to build their results — crawling, indexing, and ranking — how to read a modern SERP and use it as direct research into search intent before creating any content, and the practical mechanics of crawling and indexing, including robots.txt, noindex tags, sitemaps, and the common technical reasons a page can fail to appear in search results at all.
 
 **Practice exercise:** Pick a keyword genuinely relevant to your business or the WordPress site you built in Module 9. Search that keyword and study the resulting SERP: note what content formats dominate the organic results, whether a local pack or featured snippet appears, and what that tells you about the underlying search intent. Then open Google Search Console for your own site (or set it up if you haven't yet) and check your Page Indexing report to confirm your key pages are actually indexed, resolving any exclusions you find before moving on to the next module.
-
+you can free to use [Google SERP Snippet Preview](https://smartgentools.com/serp-preview-tool/)
 ---
 
 ## Frequently Asked Questions
