@@ -19,7 +19,7 @@ July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, practical A to Z guide to Search Engine Optimization for beginners — what SEO actually is and why it underlies everything else in this course, how search engines really work behind the scenes, how to read and understand the SERP the way a search engine sees it, and how crawling and indexing determine whether your content can ever be found at all.
 
-![MODULE 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/module-10-search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners/assets/images/module10-seo-infographic.svg)
+![MODULE 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide for Beginners](https://i.ibb.co/LX0jqQbF/IMG-6102.jpg)
 
 ---
 
