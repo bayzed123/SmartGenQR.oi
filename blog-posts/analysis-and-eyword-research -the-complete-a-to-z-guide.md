@@ -3,7 +3,7 @@ title: "Analysis and Keyword Research — The Complete A to Z Mega Guide for Beg
 description: "A complete, practical A to Z guide to keyword research and analysis for beginners — the real role keywords play in SEO, the different types of keywords and what each one is actually good for, how to research and analyze keywords using Google Keyword Planner, how to pick the right keyword for a specific project, and how to analyze a competitor's website to find keyword opportunities they're already winning."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 11, Keyword Research, Keyword Analysis, Types of Keywords, Google Keyword Planner, Competitor Keyword Analysis, SEO"
 date: 2026-07-01
-image: "assets/images/module11-keyword-research-infographic.svg"
+image: "https://i.ibb.co/jk5V0CVN/IMG-6099.jpg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -19,7 +19,7 @@ July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, practical A to Z guide to keyword research and analysis for beginners — the real role keywords play in SEO, the different types of keywords and what each one is actually good for, how to research and analyze keywords using Google Keyword Planner, how to pick the right keyword for a specific project, and how to analyze a competitor's website to find keyword opportunities they're already winning.
 
-![MODULE 11: Analysis and Keyword Research — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/module-11-analysis-and-keyword-research-the-complete-a-to-z-mega-guide-for-beginners/assets/images/module11-keyword-research-infographic.svg)
+![MODULE 11: Analysis and Keyword Research — The Complete A to Z Mega Guide for Beginners](https://i.ibb.co/jk5V0CVN/IMG-6099.jpg)
 
 ---
 
@@ -211,7 +211,7 @@ The goal of competitor keyword analysis is not to copy a competitor's content di
 
 Below is an original infographic built specifically for this guide, mapping out the keyword research process from understanding keyword types through tool-based research, selection, and competitor analysis.
 
-![Keyword Research System — from keyword types through Google Keyword Planner, keyword selection, and competitor analysis](https://smartgentools.com/blog/module-11-analysis-and-keyword-research-the-complete-a-to-z-mega-guide-for-beginners/assets/images/module11-keyword-research-infographic.svg)
+![Keyword Research System — from keyword types through Google Keyword Planner, keyword selection, and competitor analysis](https://i.ibb.co/jk5V0CVN/IMG-6099.jpg)
 
 ---
 
@@ -251,11 +251,11 @@ In the next module, we'll build directly on this keyword research foundation wit
 - [Module 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 5: Instagram Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-7-linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-- [Module 8: Pinterest Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-8-pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-- [Module 9: Creating a WordPress Website — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-9-creating-a-wordpress-website-the-complete-a-to-z-mega-guide-for-beginners/)
-- [Module 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-10-search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners/)
+- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 8: Pinterest Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 9: Creating a WordPress Website — The Complete A to Z Mega Guide](https://smartgentools.com/blog/creating-a-wordpress-website-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide](https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 
 ---
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by [Sayad Md Bayezid Hosan](www.sayadbayezid.com) for the SmartGen blog. For free tools to support your digital marketing journey, visit [SmartGen](https://www.smartgentools.com).*
