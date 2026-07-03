@@ -1,10 +1,41 @@
 {
   "url": "https://smartgentools.com",
   "strategy": "mobile",
-  "performance_score": null,
-  "metrics": {},
-  "opportunities": [],
+  "performance_score": 99,
+  "metrics": {
+    "LCP": {
+      "value": 1881,
+      "unit": "ms",
+      "label": "Largest Contentful Paint",
+      "rating": "good"
+    },
+    "CLS": {
+      "value": 0.065,
+      "unit": "",
+      "label": "Cumulative Layout Shift",
+      "rating": "good"
+    },
+    "FCP": {
+      "value": 802,
+      "unit": "ms",
+      "label": "First Contentful Paint",
+      "rating": "good"
+    },
+    "TTFB": {
+      "value": 2,
+      "unit": "ms",
+      "label": "Time to First Byte",
+      "rating": "good"
+    }
+  },
+  "opportunities": [
+    {
+      "title": "Reduce unused JavaScript",
+      "savings_ms": 150,
+      "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lig"
+    }
+  ],
   "diagnostics": [],
   "field_data_available": false,
-  "error": "Rate limited by Google API. Wait a few minutes or add an API key."
+  "error": null
 }
