@@ -3,7 +3,7 @@ title: "MODULE 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide f
 description: "The complete beginner-to-advanced guide to Meta (Facebook) Marketing: Page vs Profile vs Group, Facebook Marketplace and product catalogue, creating a Business Page, Business Manager and Ads Manager, every type of Facebook advertising explained, and how to create your first ad campaign step by step."
 keywords: "facebook marketing, meta marketing, facebook page vs profile vs group, facebook marketplace, facebook product catalogue, how to create facebook business page, business manager facebook, business suite facebook, ads manager facebook, facebook advertising types, facebook ad campaign, facebook ads for beginners, smartgen"
 date: 2026-06-30
-image: "assets/images/module4-meta-facebook-marketing-infographic.svg"
+image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module4-meta-facebook-marketing-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -212,7 +212,7 @@ The Pixel is an essential tool for serious Facebook advertisers, but it deserves
 
 Below is an original infographic summarizing the Meta marketing ecosystem covered in this module — how Pages, Business Manager, Business Suite, Ads Manager, and Ad Accounts all connect together. This graphic was created specifically for this guide and is completely free of copyright restrictions.
 
-![Meta Facebook Marketing ecosystem — Page, Business Manager, Business Suite, Ads Manager, and Ad Account relationships](assets/images/module4-meta-facebook-marketing-infographic.svg)
+![Meta Facebook Marketing ecosystem — Page, Business Manager, Business Suite, Ads Manager, and Ad Account relationships](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module4-meta-facebook-marketing-infographic.svg)
 
 ---
 
@@ -232,7 +232,12 @@ In Module 5, we'll continue building your platform-specific marketing skills. Be
 - [Importance of Digital Marketing, How It Works, and Key Concepts](https://smartgentools.com/blog/importance-of-digital-marketing-how-it-works-and-key-concepts-every-beginner-should-understand/)
 - [Module 1: Basic Image and Video Editing with Filmora and Canva](https://smartgentools.com/blog/module-1-basic-image-and-video-editing-complete-guide-to-filmora-and-canva-for-beginners/)
 - [Module 3: Social Media Marketing (SMM) — Advertising Concepts and Platform Selection](https://smartgentools.com/blog/module-3-social-media-marketing-smm-social-media-advertising-concepts-and-choosing-the-right-platform-for-your-audience/)
-
+- [Module 5: Instagram Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+- [Module 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 8: Pinterest Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 9: Creating a WordPress Website — The Complete A to Z Mega Guide](https://smartgentools.com/blog/creating-a-wordpress-website-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide](https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 ---
 
 *This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
