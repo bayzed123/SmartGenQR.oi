@@ -1,0 +1,77 @@
+name: CI/CD Pipeline - SmartGen Optimization
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Runs every Sunday at midnight
+  workflow_dispatch:    # Manual trigger
+
+jobs:
+  optimize-and-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+      PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run HTML Optimizer
+        run: python3 optimize_lighthouse.py
+
+      - name: Run E-E-A-T Signal Checker
+        run: |
+          python3 scripts/eeat_signal_checker.py https://smartgentools.com/ --json > eeat_report.json
+
+      - name: Run PageSpeed Audit
+        run: |
+          python3 scripts/pagespeed.py https://smartgentools.com --strategy mobile --json > report.json
+
+      - name: Update README.md
+        run: |
+          python3 -c "
+          import json, re, os
+          
+          # Load Performance Score
+          perf_score = 'N/A'
+          if os.path.exists('report.json'):
+              with open('report.json', 'r') as f:
+                  data = json.load(f)
+                  perf_score = int(data.get('performance_score', 0))
+          
+          # Load EEAT Score
+          eeat_score = 'N/A'
+          if os.path.exists('eeat_report.json'):
+              with open('eeat_report.json', 'r') as f:
+                  data = json.load(f)
+                  eeat_score = data.get('score', 'N/A')
+
+          report = f'\n### 📊 Site Health Report (Updated: $(date +%Y-%m-%d))\n- **Performance Score:** {perf_score}/100\n- **E-E-A-T Score:** {eeat_score}/100\n'
+          
+          with open('README.md', 'r') as f:
+              content = f.read()
+          
+          updated = re.sub(r'<!-- pagespeed_start -->.*?<!-- pagespeed_end -->', 
+                           f'<!-- pagespeed_start -->{report}<!-- pagespeed_end -->', 
+                           content, flags=re.DOTALL)
+          
+          with open('README.md', 'w') as f:
+              f.write(updated)
+          "
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git diff --quiet && git diff --staged --quiet || (git commit -m 'chore: run optimization and update metrics' && git push)
