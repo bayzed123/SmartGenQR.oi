@@ -134,58 +134,109 @@ function generatePostHTML(post) {
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/blog.css">
     
-    <!-- Print Styles -->
+    <!-- Inline Styles for Print and Share Modal -->
     <style>
+        /* Print Styles */
         @media print {
-            header, footer, .newsletter-section, .blog-related-posts, #print-button, #share-button, #main-header, #main-footer {
+            header, footer, .newsletter-section, .blog-related-posts, #print-button, #share-button, #main-header, #main-footer, .share-modal {
                 display: none !important;
             }
-            body {
-                background: white;
-                color: black;
-            }
-            .blog-post-container {
-                max-width: 100%;
-                padding: 0;
-            }
-            .blog-post-article {
-                box-shadow: none;
-                border: none;
-            }
-            .blog-post-title {
-                page-break-after: avoid;
-            }
-            .blog-post-content {
-                color: black;
-            }
-            .blog-post-content a {
-                color: #0066cc;
-                text-decoration: underline;
-            }
-            img {
-                max-width: 100%;
-                height: auto;
-                page-break-inside: avoid;
-            }
-            h2, h3, h4 {
-                page-break-after: avoid;
-                page-break-inside: avoid;
-            }
-            p {
-                orphans: 3;
-                widows: 3;
-            }
-            pre {
-                background: #f5f5f5 !important;
-                border: 1px solid #ddd !important;
-                page-break-inside: avoid;
-            }
+            body { background: white; color: black; }
+            .blog-post-container { max-width: 100%; padding: 0; }
+            .blog-post-article { box-shadow: none; border: none; }
+            .blog-post-title { page-break-after: avoid; }
+            .blog-post-content { color: black; }
+            .blog-post-content a { color: #0066cc; text-decoration: underline; }
+            img { max-width: 100%; height: auto; page-break-inside: avoid; }
+            h2, h3, h4 { page-break-after: avoid; page-break-inside: avoid; }
+            p { orphans: 3; widows: 3; }
+            pre { background: #f5f5f5 !important; border: 1px solid #ddd !important; page-break-inside: avoid; }
         }
+
+        /* Share Modal Styles */
+        .share-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .share-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .share-modal-content {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            max-width: 350px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        .share-modal.show .share-modal-content {
+            transform: translateY(0);
+        }
+        .share-close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 28px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .share-close:hover { color: #000; }
+        .share-modal h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+            font-size: 1.5rem;
+        }
+        .share-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .share-btn {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .share-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+        .share-btn.fb { background: #1877F2; }
+        .share-btn.tw { background: #000000; }
+        .share-btn.li { background: #0A66C2; }
+        .share-btn.wa { background: #25D366; }
+        .share-btn.copy { background: #4b5563; }
     </style>
     
     <!-- Scripts -->
     <script src="../../assets/js/app.js" defer></script>
     <script src="../../assets/js/blog.js" defer></script>
+
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -247,33 +298,89 @@ function generatePostHTML(post) {
     </main>
 
     <footer id="main-footer"></footer>
+
+    <!-- Custom Share Modal -->
+    <div id="shareModal" class="share-modal">
+        <div class="share-modal-content">
+            <span class="share-close">&times;</span>
+            <h3>Share this article</h3>
+            <div class="share-buttons">
+                <button onclick="shareTo('facebook')" class="share-btn fb">📘 Facebook</button>
+                <button onclick="shareTo('twitter')" class="share-btn tw">𝕏 Twitter</button>
+                <button onclick="shareTo('linkedin')" class="share-btn li">💼 LinkedIn</button>
+                <button onclick="shareTo('whatsapp')" class="share-btn wa">💬 WhatsApp</button>
+                <button onclick="shareTo('copy')" class="share-btn copy">🔗 Copy Link</button>
+            </div>
+        </div>
+    </div>
     
     <script>
-        // Print button functionality
-        document.getElementById('print-button').addEventListener('click', function() {
-            window.print();
-        });
-        
-        // Share button functionality
-        document.getElementById('share-button').addEventListener('click', function() {
-            const title = document.querySelector('.blog-post-title').textContent;
-            const url = window.location.href;
+        document.addEventListener('DOMContentLoaded', function() {
+            // Print & Download Functionality
+            const printBtn = document.getElementById('print-button');
+            if (printBtn) {
+                printBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.print();
+                });
+            }
             
-            if (navigator.share) {
-                navigator.share({
-                    title: title,
-                    text: '${post.description}',
-                    url: url
-                }).catch(err => console.log('Share failed:', err));
-            } else {
-                const shareText = title + '\n' + url;
-                navigator.clipboard.writeText(shareText).then(() => {
-                    alert('Article link copied to clipboard!');
-                }).catch(err => {
-                    alert('Share URL: ' + url);
+            // Share Modal Functionality
+            const shareBtn = document.getElementById('share-button');
+            const modal = document.getElementById('shareModal');
+            const closeBtn = document.querySelector('.share-close');
+            
+            if (shareBtn && modal) {
+                shareBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.classList.add('show');
+                });
+                
+                closeBtn.addEventListener('click', function() {
+                    modal.classList.remove('show');
+                });
+                
+                // Close modal when clicking outside
+                window.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.classList.remove('show');
+                    }
                 });
             }
         });
+
+        // Social Sharing Logic
+        function shareTo(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'facebook':
+                    shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+                    break;
+                case 'twitter':
+                    shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+                    break;
+                case 'linkedin':
+                    shareUrl = 'https://www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + title;
+                    break;
+                case 'whatsapp':
+                    shareUrl = 'https://api.whatsapp.com/send?text=' + title + ' ' + url;
+                    break;
+                case 'copy':
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        alert('✅ Link copied to clipboard!');
+                    }).catch(err => {
+                        console.error('Failed to copy: ', err);
+                    });
+                    return; // Exit early for copy
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=500,scrollbars=no,resizable=no');
+            }
+        }
     </script>
 </body>
 </html>`;
@@ -335,6 +442,9 @@ function generateArchiveHTML() {
     <!-- Scripts -->
     <script src="../assets/js/app.js" defer></script>
     <script src="../assets/js/blog.js" defer></script>
+
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
 </head>
 <body>
     <header id="main-header"></header>
