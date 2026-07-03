@@ -38,10 +38,10 @@ This module is where we start building that understanding properly, from the act
 - [Module 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 5: Instagram Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-7-linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-- [Module 8: Pinterest Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-8-pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-- [Module 9: Creating a WordPress Website — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-9-creating-a-wordpress-website-the-complete-a-to-z-mega-guide-for-beginners/)
-
+- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 8: Pinterest Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 9: Creating a WordPress Website — The Complete A to Z Mega Guide](https://smartgentools.com/blog/creating-a-wordpress-website-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide](https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 ---
 
 ## Why I'm Writing This Guide the Way I Am
@@ -244,10 +244,10 @@ In the next module, we'll continue building on these SEO fundamentals with keywo
 - [Module 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 5: Instagram Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-7-linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-- [Module 8: Pinterest Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-8-pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
-- [Module 9: Creating a WordPress Website — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-9-creating-a-wordpress-website-the-complete-a-to-z-mega-guide-for-beginners/)
-
+- [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 8: Pinterest Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 9: Creating a WordPress Website — The Complete A to Z Mega Guide](https://smartgentools.com/blog/creating-a-wordpress-website-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide](https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 ---
 
 *This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
