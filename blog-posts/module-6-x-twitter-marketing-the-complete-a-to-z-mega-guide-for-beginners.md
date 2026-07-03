@@ -3,7 +3,7 @@ title: "MODULE 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Gu
 description: "A complete, practical guide to marketing on X (formerly Twitter): creating and curating your profile, understanding followers, retweets, clicks, and conversions, using hashtags effectively, finding and following niche users, writing posts that drive engagement, and running X ad campaigns."
 keywords: "x marketing, twitter marketing, x profile setup, x followers retweets, x hashtags, x engagement strategy, x ads campaign, twitter ads, how to grow on x, smartgen"
 date: 2026-06-30
-image: "assets/images/module6-x-twitter-marketing-infographic.svg"
+image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module6-x-twitter-marketing-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -134,7 +134,7 @@ When you're ready to extend your reach beyond organic growth, X's advertising pl
 
 Below is an original infographic summarizing the core growth loop on X — how following niche users, engaging genuinely, and posting strong content feed into the core metrics that ultimately drive real conversions. This graphic was created specifically for this guide and is completely free of copyright restrictions.
 
-![X (Twitter) marketing growth loop — niche following, engagement, posts, and conversions](assets/images/module6-x-twitter-marketing-infographic.svg)
+![X (Twitter) marketing growth loop — niche following, engagement, posts, and conversions](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module6-x-twitter-marketing-infographic.svg)
 
 ---
 
