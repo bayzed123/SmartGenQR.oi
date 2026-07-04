@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update .gitignore",
+    "date": "2026-07-04T04:06:31Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Revise footer text and links for Smartgen",
     "date": "2026-07-04T02:24:51Z",
     "description": "Updated footer text for Smartgen with proper formatting."
