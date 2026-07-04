@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix broken links in tools directory and update search for subdirectories",
+    "date": "2026-07-04T23:49:39Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Update index.html",
     "date": "2026-07-04T16:41:25Z",
     "description": "Platform improvement and optimization."
