@@ -1,0 +1,100 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1B2A4A" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="scanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#101B33" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#050810" stop-opacity="0.65"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0B1220"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.5"/>
+  <rect width="1200" height="630" fill="url(#vignette)"/>
+
+  <!-- Corner registration brackets -->
+  <g stroke="#2DD4BF" stroke-width="2.5" fill="none" stroke-linecap="square">
+    <path d="M 40 72 L 40 40 L 72 40"/>
+    <path d="M 1128 40 L 1160 40 L 1160 72"/>
+    <path d="M 1160 558 L 1160 590 L 1128 590"/>
+    <path d="M 72 590 L 40 590 L 40 558"/>
+  </g>
+  <circle cx="40" cy="40" r="3" fill="#F5A623"/>
+  <circle cx="1160" cy="40" r="3" fill="#F5A623"/>
+  <circle cx="1160" cy="590" r="3" fill="#F5A623"/>
+  <circle cx="40" cy="590" r="3" fill="#F5A623"/>
+
+  <!-- Eyebrow -->
+  <text x="600" y="100" text-anchor="middle" font-family="'Consolas','SF Mono','Roboto Mono',monospace" font-size="15" letter-spacing="4" fill="#F5A623" font-weight="700">SMARTGEN DIGITAL MARKETING COURSE &#183; MODULE 14</text>
+
+  <!-- Scan line -->
+  <rect x="40" y="118" width="1120" height="2" fill="url(#scanGlow)"/>
+
+  <!-- Title -->
+  <text x="600" y="228" text-anchor="middle" font-family="Arial, 'Helvetica Neue', sans-serif" font-size="70" font-weight="900" fill="#F1F5F9" letter-spacing="0.5">TECHNICAL SEO</text>
+  <text x="600" y="308" text-anchor="middle" font-family="Arial, 'Helvetica Neue', sans-serif" font-size="70" font-weight="900" fill="#2DD4BF" letter-spacing="0.5">OPTIMIZATION</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#9FB0CC">The Complete A to Z Mega Guide for Beginners</text>
+
+  <!-- Divider -->
+  <line x1="520" y1="385" x2="680" y2="385" stroke="#F5A623" stroke-width="3"/>
+
+  <!-- Small label -->
+  <text x="600" y="422" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="13" letter-spacing="3" fill="#7C8DAF">5 TECHNICAL SEO PILLARS COVERED IN THIS GUIDE</text>
+
+  <!-- Icon 1: Audit (magnifying glass) -->
+  <g transform="translate(150,470)">
+    <circle cx="0" cy="0" r="24" fill="#101B33" stroke="#1B2A4A" stroke-width="1"/>
+    <circle cx="-4" cy="-4" r="12" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <line x1="6" y1="6" x2="15" y2="15" stroke="#2DD4BF" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+  <text x="150" y="516" text-anchor="middle" font-family="'Consolas',monospace" font-size="12.5" letter-spacing="1" fill="#F1F5F9" font-weight="700">AUDIT</text>
+
+  <!-- Icon 2: Speed (gauge) -->
+  <g transform="translate(375,470)">
+    <circle cx="0" cy="0" r="24" fill="#101B33" stroke="#1B2A4A" stroke-width="1"/>
+    <path d="M -14,7 A 16,16 0 0 1 14,7" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round"/>
+    <line x1="0" y1="7" x2="8" y2="-8" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="0" cy="7" r="2.5" fill="#2DD4BF"/>
+  </g>
+  <text x="375" y="516" text-anchor="middle" font-family="'Consolas',monospace" font-size="12.5" letter-spacing="1" fill="#F1F5F9" font-weight="700">SPEED</text>
+
+  <!-- Icon 3: Mobile -->
+  <g transform="translate(600,470)">
+    <circle cx="0" cy="0" r="24" fill="#101B33" stroke="#1B2A4A" stroke-width="1"/>
+    <rect x="-11" y="-16" width="22" height="32" rx="4" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <line x1="-4" y1="10" x2="4" y2="10" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="600" y="516" text-anchor="middle" font-family="'Consolas',monospace" font-size="12.5" letter-spacing="1" fill="#F1F5F9" font-weight="700">MOBILE</text>
+
+  <!-- Icon 4: Architecture (sitemap tree) -->
+  <g transform="translate(825,470)">
+    <circle cx="0" cy="0" r="24" fill="#101B33" stroke="#1B2A4A" stroke-width="1"/>
+    <line x1="0" y1="-11" x2="-11" y2="9" stroke="#2DD4BF" stroke-width="2.5"/>
+    <line x1="0" y1="-11" x2="0" y2="9" stroke="#2DD4BF" stroke-width="2.5"/>
+    <line x1="0" y1="-11" x2="11" y2="9" stroke="#2DD4BF" stroke-width="2.5"/>
+    <circle cx="0" cy="-11" r="4" fill="#2DD4BF"/>
+    <circle cx="-11" cy="9" r="4" fill="#2DD4BF"/>
+    <circle cx="0" cy="9" r="4" fill="#2DD4BF"/>
+    <circle cx="11" cy="9" r="4" fill="#2DD4BF"/>
+  </g>
+  <text x="825" y="516" text-anchor="middle" font-family="'Consolas',monospace" font-size="11.5" letter-spacing="0.5" fill="#F1F5F9" font-weight="700">ARCHITECTURE</text>
+
+  <!-- Icon 5: Schema -->
+  <g transform="translate(1050,470)">
+    <circle cx="0" cy="0" r="24" fill="#101B33" stroke="#1B2A4A" stroke-width="1"/>
+    <text x="0" y="9" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="26" font-weight="700" fill="#2DD4BF">{ }</text>
+  </g>
+  <text x="1050" y="516" text-anchor="middle" font-family="'Consolas',monospace" font-size="12.5" letter-spacing="1" fill="#F1F5F9" font-weight="700">SCHEMA</text>
+
+  <!-- Footer -->
+  <text x="600" y="580" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="14" letter-spacing="3" fill="#7C8DAF" font-weight="700">SMARTGENTOOLS.COM</text>
+</svg>
