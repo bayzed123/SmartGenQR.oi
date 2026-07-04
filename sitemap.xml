@@ -805,6 +805,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smartgentools.com/review/</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smartgentools.com/robots-txt-generator/</loc>
     <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
