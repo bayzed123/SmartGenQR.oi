@@ -1,132 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartGen User Reviews</title>
-    <style>
-        /* Mobile-friendly basic styling */
-        body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
-        nav { margin-bottom: 20px; }
-        nav a { text-decoration: none; color: #007bff; font-weight: bold; }
-        .review-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; }
-        input, textarea, button { padding: 12px; font-size: 16px; border-radius: 6px; border: 1px solid #ccc; }
-        button { background-color: #007bff; color: white; border: none; cursor: pointer; font-weight: bold; }
-        button:disabled { background-color: #999; cursor: not-allowed; }
-        
-        .review-card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 15px; background: #f9f9f9; }
-        .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .stars { color: #f5b301; font-size: 18px; }
-        .review-text { margin: 0; color: #333; line-height: 1.5; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Reviews - SmartGen Tools</title>
+  <!-- Reuses your existing stylesheets -->
+  <link rel="stylesheet" href="../assets/style.css"> 
 </head>
 <body>
 
-    <nav>
-        <a href="../index.html">&larr; Back to Home</a>
-    </nav>
-
-    <h2>Leave a Review</h2>
-    
-    <form id="review-form" class="review-form">
-        <input type="text" id="reviewer-name" placeholder="Your Name" required />
-        <input type="number" id="review-rating" placeholder="Rating (1 to 5)" min="1" max="5" required />
-        <textarea id="review-text" placeholder="Write your experience..." rows="4" required></textarea>
-        <button type="submit" id="submit-btn">Submit Review</button>
+  <div class="container">
+    <h1>Submit a Review</h1>
+    <form id="reviewForm">
+      <input type="text" id="username" placeholder="Your Name" required><br><br>
+      <input type="number" id="rating" placeholder="Rating (1-5)" min="1" max="5" required><br><br>
+      <textarea id="comment" placeholder="Write your review here..." required></textarea><br><br>
+      <button type="submit">Submit Review</button>
     </form>
 
-    <hr style="border: 1px solid #eee; margin-bottom: 30px;">
+    <hr>
 
-    <h2>All Reviews</h2>
-    
-    <div id="reviews-list">
-        <p style="color: #666;">Loading real-time reviews...</p>
-    </div>
+    <h2>What Our Users Say</h2>
+    <div id="reviewsList">Loading reviews...</div>
+  </div>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-        import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
-        
-        // IMPORTANT: Path changed to ../config.js because this file is inside the /review folder
-        import { firebaseConfig } from "../config.js";
+  <!-- Firebase JavaScript SDK (ES Modules CDN Placeholders) -->
+  <script type="module">
+    // Replace these placeholder strings with your actual Firebase SDK CDN URLs
+    import { initializeApp } from "FIREBASE_APP_SDK_CDN_URL"; 
+    import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } 
+      from "FIREBASE_FIRESTORE_SDK_CDN_URL";
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        
-        // Exact collection name from your Firestore database
-        const reviewsCollection = collection(db, "Smartgen Review");
+    // Your Firebase Configuration (From SmartGen Review db)
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY", 
+      authDomain: "smartgen-review-db.firebaseapp.com",
+      projectId: "smartgen-review-db",
+      messagingSenderId: "326618655365",
+      appId: "YOUR_APP_ID"
+    };
 
-        const reviewForm = document.getElementById("review-form");
-        const reviewsList = document.getElementById("reviews-list");
-        const submitBtn = document.getElementById("submit-btn");
+    // Initialize Firebase and Firestore
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const reviewsRef = collection(db, "reviews");
 
-        // STEP 1: Handle Review Submission (Write to Database)
-        reviewForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById("reviewer-name").value;
-            const rating = parseInt(document.getElementById("review-rating").value);
-            const text = document.getElementById("review-text").value;
+    const reviewForm = document.getElementById("reviewForm");
+    const reviewsList = document.getElementById("reviewsList");
 
-            try {
-                // UI feedback while submitting
-                submitBtn.innerText = "Submitting...";
-                submitBtn.disabled = true;
+    // 1. Listen for new reviews and display them instantly
+    const q = query(reviewsRef, orderBy("createdAt", "desc"));
+    onSnapshot(q, (snapshot) => {
+      reviewsList.innerHTML = ""; // Clear existing text
+      if (snapshot.empty) {
+        reviewsList.innerHTML = "<p>No reviews yet. Be the first to leave one!</p>";
+        return;
+      }
+      
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        const reviewElement = document.createElement("div");
+        reviewElement.className = "review-card";
+        reviewElement.innerHTML = `
+          <h3>${data.username} (${data.rating}/5 ⭐)</h3>
+          <p>${data.comment}</p>
+          <small>${data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : "Just now"}</small>
+        `;
+        reviewsList.appendChild(reviewElement);
+      });
+    });
 
-                // Send to Firestore
-                await addDoc(reviewsCollection, {
-                    name: name,
-                    rating: rating,
-                    text: text,
-                    timestamp: serverTimestamp() // Firestore native time for accurate sorting
-                });
+    // 2. Submit a new review when the user clicks button
+    reviewForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      
+      const username = document.getElementById("username").value;
+      const rating = document.getElementById("rating").value;
+      const comment = document.getElementById("comment").value;
 
-                // Reset on success
-                reviewForm.reset();
-                submitBtn.innerText = "Submit Review";
-                submitBtn.disabled = false;
-                
-            } catch (error) {
-                console.error("Error writing document: ", error);
-                alert("Something went wrong. Please try again.");
-                submitBtn.innerText = "Submit Review";
-                submitBtn.disabled = false;
-            }
+      try {
+        await addDoc(reviewsRef, {
+          username: username,
+          rating: Number(rating),
+          comment: comment,
+          createdAt: new Date()
         });
-
-        // STEP 2: Fetch and Display Reviews Dynamically (Read from Database)
-        const q = query(reviewsCollection, orderBy("timestamp", "desc"));
-
-        onSnapshot(q, (snapshot) => {
-            reviewsList.innerHTML = ""; // Clear loader text
-
-            if (snapshot.empty) {
-                reviewsList.innerHTML = "<p style='color: #666;'>No reviews yet. Be the first to share your experience!</p>";
-                return;
-            }
-            
-            snapshot.forEach((doc) => {
-                const data = doc.data();
-                
-                // Create a star string based on rating (e.g., 4 = ★★★★☆)
-                const activeStars = "★".repeat(data.rating || 5);
-                const inactiveStars = "☆".repeat(5 - (data.rating || 5));
-                
-                // Build HTML element
-                const card = document.createElement("div");
-                card.className = "review-card";
-                card.innerHTML = `
-                    <div class="review-header">
-                        <strong>${data.name}</strong>
-                        <span class="stars">${activeStars}${inactiveStars}</span>
-                    </div>
-                    <p class="review-text">${data.text}</p>
-                `;
-                
-                reviewsList.appendChild(card);
-            });
-        });
-    </script>
+        reviewForm.reset(); // Clear the input fields
+      } catch (error) {
+        console.error("Error writing review: ", error);
+        alert("Failed to submit review. Please try again!");
+      }
+    });
+  </script>
 </body>
 </html>
