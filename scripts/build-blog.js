@@ -17,6 +17,7 @@ const slugify = require('slugify');
 const BLOG_POSTS_DIR = path.join(__dirname, '../blog-posts');
 const BLOG_OUTPUT_DIR = path.join(__dirname, '../blog');
 const TEMPLATES_DIR = path.join(__dirname, '../templates');
+const INCLUDES_DIR = path.join(__dirname, '../_includes');
 const AUTHOR_NAME = 'Sayad Md Bayezid Hosan';
 const SITE_URL = 'https://smartgentools.com';
 
@@ -71,10 +72,42 @@ function readBlogPosts() {
 }
 
 /**
+ * Load author profile box
+ */
+function loadAuthorProfileBox() {
+  try {
+    const profilePath = path.join(INCLUDES_DIR, 'author-profile-box.html');
+    if (fs.existsSync(profilePath)) {
+      return fs.readFileSync(profilePath, 'utf8');
+    }
+  } catch (error) {
+    console.warn('⚠️  Warning: Could not load author profile box:', error.message);
+  }
+  return '';
+}
+
+/**
+ * Load author footer box
+ */
+function loadAuthorFooterBox() {
+  try {
+    const footerPath = path.join(INCLUDES_DIR, 'author-blog-fotter-box.html');
+    if (fs.existsSync(footerPath)) {
+      return fs.readFileSync(footerPath, 'utf8');
+    }
+  } catch (error) {
+    console.warn('⚠️  Warning: Could not load author footer box:', error.message);
+  }
+  return '';
+}
+
+/**
  * Generate HTML for a single blog post
  */
 function generatePostHTML(post) {
   const htmlContent = marked(post.content);
+  const authorProfileBox = loadAuthorProfileBox();
+  const authorFooterBox = loadAuthorFooterBox();
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -258,6 +291,7 @@ function generatePostHTML(post) {
             <img src="${post.image}" alt="${post.title}" class="blog-post-featured-image reveal-up delay-100">
 
             <div class="blog-post-content reveal-up delay-200">
+                ${authorProfileBox}
                 ${htmlContent}
             </div>
 
@@ -276,6 +310,9 @@ function generatePostHTML(post) {
                     </button>
                 </div>
             </footer>
+
+            <!-- Author Footer Section - E-E-A-T Signal -->
+            ${authorFooterBox}
         </article>
 
         <!-- Newsletter Section -->
