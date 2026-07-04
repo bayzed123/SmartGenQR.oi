@@ -65,15 +65,22 @@ function displaySearchResults(results, container) {
         return;
     }
 
-    const resultsHTML = results.map(tool => `
-        <a href="${tool.url}" class="search-result-item">
+    const resultsHTML = results.map(tool => {
+        let toolUrl = tool.url;
+        // Fix relative links if in /tools/ directory
+        if (window.location.pathname.includes('/tools/') && !toolUrl.startsWith('http') && !toolUrl.startsWith('../')) {
+            toolUrl = '../' + toolUrl.replace(/^\.\//, '');
+        }
+        return `
+        <a href="${toolUrl}" class="search-result-item">
             <div class="search-result-icon">${tool.icon}</div>
             <div class="search-result-content">
                 <div class="search-result-title">${tool.title}</div>
                 <div class="search-result-category">${tool.category}</div>
             </div>
         </a>
-    `).join('');
+        `;
+    }).join('');
 
     container.innerHTML = `
         <div class="search-results-header">
