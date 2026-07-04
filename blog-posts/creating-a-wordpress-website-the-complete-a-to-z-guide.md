@@ -405,4 +405,5 @@ In the next module, we'll continue building your platform-specific and technical
   </div>
 </div>
 ---
-* All rights Reserve [smartgen](www.samartgentools.com) * [more visit developer Docs](https://smartgentools.com/docs) * 
+* All rights Reserve [smartgen](www.samartgentools.com) [more visit developer Docs](https://smartgentools.com/docs) 
+---
