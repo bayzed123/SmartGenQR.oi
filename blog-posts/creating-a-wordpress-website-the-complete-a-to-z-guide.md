@@ -372,29 +372,35 @@ In the next module, we'll continue building your platform-specific and technical
 - [Off-Page Optimization — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/off-page-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 - [How to Optimize Your Website for Google AdSense Approval in 2026: The Mega Guide](https://smartgentools.com/blog/how-to-optimize-your-website-for-google-adsense-approval-in-2026-the-mega-guide/)
 ---
-<!-- Author Bio Card -->
-<div class="modern-author-card">
-  <div class="author-avatar-wrap">
-    <img src="../assets/smartgen-founder.jpg" alt="Sayad Md Bayezid Hosan" class="author-avatar" loading="lazy">
-  </div>
-  <div class="author-info">
-    <h3 class="author-name-title">Sayad Md Bayezid Hosan</h3>
-    <div class="author-tags">
-      <span class="author-tag tag-1">Full-stack Developer</span>
-      <span class="author-tag tag-2">Digital Marketer</span>
-      <span class="author-tag tag-3">Tech Consultant</span>
-      <span class="author-tag tag-4">Meta Verified Provider</span>
+<div class="flex items-center justify-center py-6 px-4 w-full" style="box-sizing: border-box;">
+  <article class="rounded-3xl p-8 md:p-10 shadow-2xl border border-emerald-100 w-full max-w-2xl" style="background: rgb(255, 255, 255); box-sizing: border-box;">
+    <div class="flex flex-col items-center gap-5" style="box-sizing: border-box;">
+      <img class="w-32 h-32 rounded-full object-cover ring-4 ring-emerald-200 shadow-lg" 
+           src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/smartgen-founder.jpg" 
+           alt="Sayad Md Bayezid Hosan portrait" 
+           style="box-sizing: border-box;">
+      <div class="text-center" style="box-sizing: border-box;">
+        <h1 style="color: rgb(30, 41, 59); font-weight: 700; font-family: serif; font-size: 32px; margin: 0; line-height: 1.2; box-sizing: border-box;">Sayad Md Bayezid Hosan</h1>
+        <div class="flex flex-wrap justify-center gap-2 mt-3" style="box-sizing: border-box;">
+          <span style="background: rgb(209, 250, 229); color: rgb(6, 95, 70); padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 500; box-sizing: border-box;">Full-stack Developer</span> 
+          <span style="background: rgb(219, 234, 254); color: rgb(30, 64, 175); padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 500; box-sizing: border-box;">Digital Marketer</span> 
+          <span style="background: rgb(254, 243, 199); color: rgb(146, 64, 14); padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 500; box-sizing: border-box;">Researcher</span> 
+          <span style="background: rgb(237, 233, 254); color: rgb(91, 33, 182); padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 500; box-sizing: border-box;">Tech Writer</span>
+        </div>
+        <p class="mt-4 leading-relaxed max-w-lg mx-auto" style="color: rgb(71, 85, 105); font-weight: 400; font-size: 15px; font-family: sans-serif; box-sizing: border-box;">
+          Full-stack Web Developer, Digital Marketer, and Web Designer with 5+ years of experience delivering innovative digital solutions. Specializing in web development, AI integration, strategic digital marketing, and tech entrepreneurship. As a leading Tech Provider, I help audiences navigate digital platforms safely through permission-based technical solutions and digital business asset management.
+        </p>
+        <div class="flex items-center justify-center gap-4 mt-6" style="box-sizing: border-box;">
+          <a href="https://github.com/Sayadbayezid" target="_blank" style="color: rgb(51, 51, 51); display: inline-block; transition: transform 0.2s;"><img src="https://cdn-icons-png.flaticon.com/51/25/25231.png" width="22" height="22" alt="GitHub"></a> 
+          <a href="https://www.facebook.com/bayezidhosan" target="_blank" style="color: rgb(24, 119, 242); display: inline-block; transition: transform 0.2s;"><img src="https://cdn-icons-png.flaticon.com/51/733/733547.png" width="22" height="22" alt="Facebook"></a> 
+          <a href="https://www.linkedin.com/in/sayadbayezid" target="_blank" style="color: rgb(10, 102, 194); display: inline-block; transition: transform 0.2s;"><img src="https://cdn-icons-png.flaticon.com/51/174/174857.png" width="22" height="22" alt="LinkedIn"></a> 
+          <a href="https://www.sayadbayezid.com" target="_blank" style="color: rgb(16, 185, 129); display: inline-block; transition: transform 0.2s;"><img src="https://cdn-icons-png.flaticon.com/51/2829/2829988.png" width="22" height="22" alt="Website"></a> 
+          <a href="https://smartgentools.com/about/" target="_blank" style="color: rgb(245, 158, 11); display: inline-block; transition: transform 0.2s;"><img src="https://cdn-icons-png.flaticon.com/51/3182/3182759.png" width="22" height="22" alt="Zap"></a> 
+          <a href="https://orcid.org/0009-0003-6568-6648" target="_blank" style="color: rgb(166, 206, 57); display: inline-block; transition: transform 0.2s;"><img src="https://cdn-icons-png.flaticon.com/51/3203/3203063.png" width="22" height="22" alt="Book"></a>
+        </div>
+      </div>
     </div>
-    <p class="author-bio-text">
-      Digital marketing specialist and technical consultant based in Tangail, Bangladesh. Final-year undergraduate, Department of English, Northern University Bangladesh. Founder of Connect With Bayezid (CWB Agency) and creator of SmartGen.
-    </p>
-    <div class="author-socials">
-      <a href="https://www.sayadbayezid.com" target="_blank" rel="noopener noreferrer" class="social-icon-link social-website" aria-label="Personal Website"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></a>
-      <a href="https://www.facebook.com/bayezidhosan" target="_blank" rel="noopener noreferrer" class="social-icon-link social-facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.988h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.891h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
-      <a href="https://www.linkedin.com/in/sayadbayezid" target="_blank" rel="noopener noreferrer" class="social-icon-link social-linkedin" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
-      <a href="https://github.com/bayzed123" target="_blank" rel="noopener noreferrer" class="social-icon-link social-github" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0 1 12 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
-    </div>
-  </div>
+  </article>
 </div>
 ---
 *This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
