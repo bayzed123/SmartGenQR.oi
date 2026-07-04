@@ -14,7 +14,6 @@ tags:
 ---
 SmartGen Launch Update: HTML Marquee Generator is Now Live
 ---
-
 <!-- Minimalist Author Box -->
 <div class="author-box" style="display: flex; align-items: center; margin: 30px 0; padding: 10px 0;">
     <!-- Profile Picture -->
