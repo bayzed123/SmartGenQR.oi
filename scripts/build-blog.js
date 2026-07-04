@@ -105,17 +105,47 @@ function loadAuthorFooterBox() {
  * Check if footer box is already in content
  */
 function hasAuthorFooterBox(content) {
-  return content.includes('author-blog-fotter-box') || content.includes('author-footer-box') || content.includes('E-E-A-T Signal');
+  return content.includes('author-blog-fotter-box') || content.includes('author-footer-box') || content.includes('E-E-A-T Signal') || content.includes('<!--AUTHOR_FOOTER-->');
+}
+
+/**
+ * Replace manual tags with actual content
+ * Supports: <!--AUTHOR_PROFILE--> and <!--AUTHOR_FOOTER-->
+ */
+function replaceManualTags(htmlContent, authorProfileBox, authorFooterBox) {
+  let processedContent = htmlContent;
+  
+  // Replace manual profile tag if present
+  if (processedContent.includes('<!--AUTHOR_PROFILE-->')) {
+    processedContent = processedContent.replace('<!--AUTHOR_PROFILE-->', authorProfileBox);
+  }
+  
+  // Replace manual footer tag if present
+  if (processedContent.includes('<!--AUTHOR_FOOTER-->')) {
+    processedContent = processedContent.replace('<!--AUTHOR_FOOTER-->', authorFooterBox);
+  }
+  
+  return processedContent;
 }
 
 /**
  * Generate HTML for a single blog post
  */
 function generatePostHTML(post) {
-  const htmlContent = marked(post.content);
+  let htmlContent = marked(post.content);
   const authorProfileBox = loadAuthorProfileBox();
-  // Only add footer box if it's not already in the content
-  const authorFooterBox = hasAuthorFooterBox(htmlContent) ? '' : loadAuthorFooterBox();
+  const authorFooterBox = loadAuthorFooterBox();
+  
+  // Check if profile/footer were manually placed
+  const hasManualProfile = post.content.includes('<!--AUTHOR_PROFILE-->');
+  const hasManualFooter = post.content.includes('<!--AUTHOR_FOOTER-->');
+  
+  // Replace manual tags if they exist in the markdown
+  htmlContent = replaceManualTags(htmlContent, authorProfileBox, authorFooterBox);
+  
+  // Only add auto cards if they're not manually placed
+  const autoProfileBox = hasManualProfile ? '' : authorProfileBox;
+  const autoFooterBox = hasManualFooter ? '' : authorFooterBox;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -296,8 +326,8 @@ function generatePostHTML(post) {
                 <p class="blog-post-excerpt">${post.description}</p>
             </header>
 
-            <!-- Author Profile Section - Right after title -->
-            ${authorProfileBox}
+            <!-- Author Profile Section - Right after title (Auto-inserted if not manually placed) -->
+            ${autoProfileBox}
 
             <img src="${post.image}" alt="${post.title}" class="blog-post-featured-image reveal-up delay-100">
 
@@ -322,8 +352,8 @@ function generatePostHTML(post) {
             </footer>
         </article>
 
-        <!-- Author Footer Section - E-E-A-T Signal (After Article) -->
-        ${authorFooterBox ? authorFooterBox : ''}
+        <!-- Author Footer Section - E-E-A-T Signal (After Article, Auto-inserted if not manually placed) -->
+        ${autoFooterBox ? autoFooterBox : ''}
 
         <!-- Newsletter Section -->
         <section class="newsletter-section reveal-up" style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 5rem 2rem; border-radius: 30px; margin: 4rem auto; max-width: 900px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
