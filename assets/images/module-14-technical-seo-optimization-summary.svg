@@ -1,0 +1,59 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="gridS" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1B2A4A" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="scanGlowS" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="#0B1220"/>
+  <rect width="1200" height="750" fill="url(#gridS)" opacity="0.45"/>
+
+  <g stroke="#2DD4BF" stroke-width="2.5" fill="none" stroke-linecap="square">
+    <path d="M 40 72 L 40 40 L 72 40"/>
+    <path d="M 1128 40 L 1160 40 L 1160 72"/>
+    <path d="M 1160 678 L 1160 710 L 1128 710"/>
+    <path d="M 72 710 L 40 710 L 40 678"/>
+  </g>
+
+  <text x="600" y="88" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="14" letter-spacing="4" fill="#F5A623" font-weight="700">MODULE 14 &#183; VISUAL SUMMARY</text>
+  <rect x="40" y="104" width="1120" height="2" fill="url(#scanGlowS)"/>
+  <text x="600" y="152" text-anchor="middle" font-family="Arial, 'Helvetica Neue', sans-serif" font-size="36" font-weight="900" fill="#F1F5F9">What You Now Know How To Do</text>
+
+  <!-- Row 1 -->
+  <circle cx="110" cy="230" r="26" fill="#2DD4BF"/>
+  <path d="M 99,230 L 107,238 L 122,220" fill="none" stroke="#08131F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="156" y="223" font-family="Arial, sans-serif" font-size="23" font-weight="800" fill="#F1F5F9">Run a Technical SEO Audit</text>
+  <text x="156" y="249" font-family="Arial, sans-serif" font-size="16" fill="#9FB0CC">Use the 5-phase framework — crawl, render, architecture, index, speed — every quarter</text>
+
+  <!-- Row 2 -->
+  <circle cx="110" cy="320" r="26" fill="#2DD4BF"/>
+  <path d="M 99,320 L 107,328 L 122,310" fill="none" stroke="#08131F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="156" y="313" font-family="Arial, sans-serif" font-size="23" font-weight="800" fill="#F1F5F9">Pass Core Web Vitals</text>
+  <text x="156" y="339" font-family="Arial, sans-serif" font-size="16" fill="#9FB0CC">LCP under 2.5s, INP under 200ms, CLS under 0.1 — all at the 75th percentile</text>
+
+  <!-- Row 3 -->
+  <circle cx="110" cy="410" r="26" fill="#2DD4BF"/>
+  <path d="M 99,410 L 107,418 L 122,400" fill="none" stroke="#08131F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="156" y="403" font-family="Arial, sans-serif" font-size="23" font-weight="800" fill="#F1F5F9">Build Mobile-First, Not Mobile-Also</text>
+  <text x="156" y="429" font-family="Arial, sans-serif" font-size="16" fill="#9FB0CC">One responsive site with full content parity — Google only ranks what mobile shows</text>
+
+  <!-- Row 4 -->
+  <circle cx="110" cy="500" r="26" fill="#2DD4BF"/>
+  <path d="M 99,500 L 107,508 L 122,490" fill="none" stroke="#08131F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="156" y="493" font-family="Arial, sans-serif" font-size="23" font-weight="800" fill="#F1F5F9">Structure a Crawlable Site</text>
+  <text x="156" y="519" font-family="Arial, sans-serif" font-size="16" fill="#9FB0CC">Flat architecture, clean sitemaps, and a robots.txt built for 2026's AI crawlers too</text>
+
+  <!-- Row 5 -->
+  <circle cx="110" cy="590" r="26" fill="#2DD4BF"/>
+  <path d="M 99,590 L 107,598 L 122,580" fill="none" stroke="#08131F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="156" y="583" font-family="Arial, sans-serif" font-size="23" font-weight="800" fill="#F1F5F9">Implement Schema That Still Works</text>
+  <text x="156" y="609" font-family="Arial, sans-serif" font-size="16" fill="#9FB0CC">JSON-LD on Organization, Article, Product, LocalBusiness &amp; BreadcrumbList — not FAQ</text>
+
+  <line x1="90" y1="650" x2="1110" y2="650" stroke="#1B2A4A" stroke-width="1"/>
+  <text x="600" y="695" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="14" letter-spacing="2" fill="#7C8DAF" font-weight="700">SMARTGENTOOLS.COM &#183; DIGITAL MARKETING COURSE &#183; MODULE 14 COMPLETE</text>
+</svg>
