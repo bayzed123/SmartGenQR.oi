@@ -22,14 +22,12 @@
 </head>
 <body>
 
-    <!-- Simple Navigation back to main page -->
     <nav>
-        <a href="index.html">&larr; Back to Home</a>
+        <a href="../index.html">&larr; Back to Home</a>
     </nav>
 
     <h2>Leave a Review</h2>
     
-    <!-- User Input Form -->
     <form id="review-form" class="review-form">
         <input type="text" id="reviewer-name" placeholder="Your Name" required />
         <input type="number" id="review-rating" placeholder="Rating (1 to 5)" min="1" max="5" required />
@@ -41,18 +39,16 @@
 
     <h2>All Reviews</h2>
     
-    <!-- Dynamic Reviews Container -->
     <div id="reviews-list">
         <p style="color: #666;">Loading real-time reviews...</p>
     </div>
 
-    <!-- Firebase Integration Logic -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
         import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
         
-        // Importing the auto-generated secure config
-        import { firebaseConfig } from "./config.js";
+        // IMPORTANT: Path changed to ../config.js because this file is inside the /review folder
+        import { firebaseConfig } from "../config.js";
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
