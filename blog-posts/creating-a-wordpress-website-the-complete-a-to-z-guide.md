@@ -405,4 +405,4 @@ In the next module, we'll continue building your platform-specific and technical
   </div>
 </div>
 ---
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+* All rights Reserve [smartgen](www.samartgentools.com) * [more visit developer Docs](https://smartgentools.com/docs) * 
