@@ -1,5 +1,10 @@
 [
   {
+    "title": "Create SmartGen Blog Manual Author Card Placement Guidelines.md",
+    "date": "2026-07-04T10:56:53Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: Add manual author card placement and guideline.md",
     "date": "2026-07-04T10:53:47Z",
     "description": "- Updated build-blog.js to recognize and replace these tags, disabling automatic injection if tags are present.- Created guideline.md to explain manual placement to the user.- Ensured no duplication of cards, whether auto or manually placed."
