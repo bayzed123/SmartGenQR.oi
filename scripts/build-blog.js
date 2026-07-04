@@ -102,12 +102,20 @@ function loadAuthorFooterBox() {
 }
 
 /**
+ * Check if footer box is already in content
+ */
+function hasAuthorFooterBox(content) {
+  return content.includes('author-blog-fotter-box') || content.includes('author-footer-box') || content.includes('E-E-A-T Signal');
+}
+
+/**
  * Generate HTML for a single blog post
  */
 function generatePostHTML(post) {
   const htmlContent = marked(post.content);
   const authorProfileBox = loadAuthorProfileBox();
-  const authorFooterBox = loadAuthorFooterBox();
+  // Only add footer box if it's not already in the content
+  const authorFooterBox = hasAuthorFooterBox(htmlContent) ? '' : loadAuthorFooterBox();
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -291,9 +299,11 @@ function generatePostHTML(post) {
             <img src="${post.image}" alt="${post.title}" class="blog-post-featured-image reveal-up delay-100">
 
             <div class="blog-post-content reveal-up delay-200">
-                ${authorProfileBox}
                 ${htmlContent}
             </div>
+
+            <!-- Author Profile Section -->
+            ${authorProfileBox}
 
             <footer class="blog-post-footer reveal-up delay-300">
                 <div class="blog-post-tags">
@@ -312,7 +322,7 @@ function generatePostHTML(post) {
             </footer>
 
             <!-- Author Footer Section - E-E-A-T Signal -->
-            ${authorFooterBox}
+            ${authorFooterBox ? authorFooterBox : ''}
         </article>
 
         <!-- Newsletter Section -->
