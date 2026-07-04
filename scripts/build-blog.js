@@ -296,14 +296,14 @@ function generatePostHTML(post) {
                 <p class="blog-post-excerpt">${post.description}</p>
             </header>
 
+            <!-- Author Profile Section - Right after title -->
+            ${authorProfileBox}
+
             <img src="${post.image}" alt="${post.title}" class="blog-post-featured-image reveal-up delay-100">
 
             <div class="blog-post-content reveal-up delay-200">
                 ${htmlContent}
             </div>
-
-            <!-- Author Profile Section -->
-            ${authorProfileBox}
 
             <footer class="blog-post-footer reveal-up delay-300">
                 <div class="blog-post-tags">
@@ -320,10 +320,10 @@ function generatePostHTML(post) {
                     </button>
                 </div>
             </footer>
-
-            <!-- Author Footer Section - E-E-A-T Signal -->
-            ${authorFooterBox ? authorFooterBox : ''}
         </article>
+
+        <!-- Author Footer Section - E-E-A-T Signal (After Article) -->
+        ${authorFooterBox ? authorFooterBox : ''}
 
         <!-- Newsletter Section -->
         <section class="newsletter-section reveal-up" style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 5rem 2rem; border-radius: 30px; margin: 4rem auto; max-width: 900px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
