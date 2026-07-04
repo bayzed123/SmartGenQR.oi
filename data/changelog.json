@@ -1,5 +1,10 @@
 [
   {
+    "title": "refactor: Slim down author profile box and improve footer injection logic",
+    "date": "2026-07-04T10:33:13Z",
+    "description": "- Changed author-profile-box.html to minimalist design (similar to Google's blog style)- Reduced padding and font sizes for a cleaner look- Added hasAuthorFooterBox() function to prevent duplicate footer injection- Repositioned author profile to appear after content but before tags- Ensures footer box only appears once per post- Better SEO signal placement without visual clutter"
+  },
+  {
     "title": "feat: Add automatic author profile and footer injection to blog posts with E-E-A-T signals",
     "date": "2026-07-04T10:26:17Z",
     "description": "- Enhanced author-profile-box.html with premium design and verification badge- Improved author-blog-fotter-box.html with credentials section and better styling- Added loadAuthorProfileBox() and loadAuthorFooterBox() functions to build-blog.js- Implemented automatic injection of author cards into all blog posts- Prevents duplicate rendering on same page- Improves SEO signals and E-E-A-T credibility"
