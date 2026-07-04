@@ -3,7 +3,90 @@ document.addEventListener('DOMContentLoaded', () => {
     injectFooter();
     initTheme();
     initAccordion();
+    initReviews(); // <-- Added this to initialize your reviews feature!
 });
+
+// --- NEW REVIEWS FUNCTION FOR FIRESTORE ---
+function initReviews() {
+    const reviewForm = document.getElementById("reviewForm");
+    const reviewsList = document.getElementById("reviewsList");
+    
+    // Only run this code on pages that actually have the review form and list elements
+    if (!reviewForm || !reviewsList) return;
+
+    // Check if Firebase scripts are loaded on the page
+    if (typeof firebase === 'undefined') {
+        console.warn("Firebase SDK is not loaded on this page.");
+        return;
+    }
+
+    // Your Firebase Project Configuration
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY", // Replace with your actual web API key from Firebase settings
+      authDomain: "smartgen-review-db.firebaseapp.com",
+      projectId: "smartgen-review-db",
+      messagingSenderId: "326618655365",
+      appId: "YOUR_APP_ID" // Replace with your actual App ID
+    };
+
+    // Initialize Firebase (checking to prevent duplicate initializations)
+    const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
+    const db = firebase.firestore();
+
+    // 1. Listen for new reviews in real-time
+    db.collection("reviews").orderBy("createdAt", "desc").onSnapshot((snapshot) => {
+        reviewsList.innerHTML = ""; // Clear loader text
+        
+        if (snapshot.empty) {
+            reviewsList.innerHTML = "<p>No reviews yet. Be the first to leave one!</p>";
+            return;
+        }
+
+        snapshot.forEach((doc) => {
+            const data = doc.data();
+            const reviewElement = document.createElement("div");
+            reviewElement.className = "review-card";
+            reviewElement.innerHTML = `
+                <h3>${escapeHTML(data.username)} (${data.rating}/5 ⭐)</h3>
+                <p>${escapeHTML(data.comment)}</p>
+                <small>${data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : "Just now"}</small>
+            `;
+            reviewsList.appendChild(reviewElement);
+        });
+    });
+
+    // 2. Submit a new review when the user clicks button
+    reviewForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        
+        const username = document.getElementById("username").value;
+        const rating = document.getElementById("rating").value;
+        const comment = document.getElementById("comment").value;
+
+        try {
+            await db.collection("reviews").add({
+                username: username,
+                rating: Number(rating),
+                comment: comment,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp() // Secure server time
+            });
+            reviewForm.reset(); // Clear form fields
+        } catch (error) {
+            console.error("Error writing to Firestore: ", error);
+            alert("Failed to submit review. Please try again!");
+        }
+    });
+}
+
+// Security helper to prevent XSS (cross-site scripting) if users type malicious HTML inside a review
+function escapeHTML(str) {
+    if (!str) return '';
+    return str.replace(/[&<>'"]/g, 
+        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+    );
+}
+
+// --- YOUR ORIGINAL CODE BELOW ---
 
 function injectNavbar() {
     const header = document.getElementById('main-header');
@@ -270,52 +353,4 @@ function initFooterAccordion() {
     triggers.forEach(trigger => {
         trigger.addEventListener('click', () => {
             if (window.innerWidth < 768) {
-                const column = trigger.parentElement;
-                const isActive = column.classList.contains('active');
-                
-                // Close all other footer accordion items
-                document.querySelectorAll('.footer-column').forEach(otherCol => {
-                    if (otherCol !== column) {
-                        otherCol.classList.remove('active');
-                    }
-                });
-                
-                // Toggle current item
-                column.classList.toggle('active');
-            }
-        });
-    });
-}
-
-function initAccordion() {
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const item = header.parentElement;
-            const isActive = item.classList.contains('active');
-            
-            // Close all other accordion items
-            document.querySelectorAll('.accordion-item').forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
-            });
-            
-            // Toggle current item
-            item.classList.toggle('active');
-        });
-    });
-}
-
-function initTheme() {
-    const theme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', theme);
-}
-
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-}
+                const column = trigger.No response
