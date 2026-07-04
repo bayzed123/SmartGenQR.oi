@@ -21,12 +21,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
       
-      # --- New step added for Firebase Secret ---
-      - name: Inject Firebase Secret into config.js
-        run: |
-          echo "export const firebaseConfig = ${{ secrets.FIREBASE_CONFIG_JSON }};" > config.js
-      # ------------------------------------------
-          
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
