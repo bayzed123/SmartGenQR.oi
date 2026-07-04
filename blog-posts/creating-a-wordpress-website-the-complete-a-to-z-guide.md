@@ -3,7 +3,7 @@ title: "Creating a WordPress Website — The Complete A to Z Mega Guide for Begi
 description: "A complete, practical A to Z guide to building a WordPress website for beginners — what WordPress actually is and why it matters for digital marketers, the real difference between WordPress.com and WordPress.org, how to register a domain and choose hosting, how to install and set up WordPress correctly, how to pick themes and plugins without wrecking your site, how to actually build the pages and structure of a real website, and how to use WordPress for blogging the right way."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 9, WordPress, WordPress Website, WordPress.com vs WordPress.org, Domain Hosting, WordPress Themes, WordPress Plugins, WordPress Blogging"
 date: 2026-07-01
-image:"https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/smartgen-wordpress-guide.jpg"
+image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/smartgen-wordpress-guide.jpg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
