@@ -169,7 +169,7 @@ def optimize_html_file(filepath, is_root=False):
 def process_all_files():
     """Process all HTML files in the repository"""
     
-    repo_path = Path('/home/ubuntu/SmartGenQR.oi')
+    repo_path = Path('/home/ubuntu/SmartGenTools')
     html_files = list(repo_path.glob('**/index.html'))
     
     print(f"Found {len(html_files)} HTML files to optimize")

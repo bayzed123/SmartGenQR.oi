@@ -24,8 +24,9 @@ function injectNavbar() {
                 <nav id="nav-links">
                     <a href="/">Home</a>
                     <a href="/blog/">Blog</a>
+                    <a href="/tools/">Tools</a>
                     <div class="dropdown" id="tools-dropdown">
-                        <a href="/#all-tools" class="dropdown-trigger">Tools</a>
+                        <a href="/tools/" class="dropdown-trigger">Directory</a>
                         <div class="dropdown-content">
                             <div class="dropdown-category">
                                 <h4>📈 Marketing</h4>
@@ -71,6 +72,7 @@ function injectNavbar() {
             <div class="sidebar-nav-links" style="display: flex; flex-direction: column; padding: 20px; overflow-y: auto;">
                 <a href="/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🏠 Home</a>
                 <a href="/blog/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">📝 Blog</a>
+                <a href="/tools/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🛠️ All Tools</a>
                 <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
                 
                 <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 10px; font-size: 0.85rem; text-transform: uppercase;">🧑‍💻 Developer Tools</div>
@@ -219,8 +221,10 @@ function injectFooter() {
                         <h4 class="footer-accordion-trigger">📚 RESOURCES <span class="accordion-icon"></span></h4>
                         <ul class="footer-links">
                             <li><a href="/blog/" style="font-weight: 700; color: #2563eb;">📖 Read Our Blog</a></li>
+                            <li><a href="/tools/" style="font-weight: 700; color: #2563eb;">🛠️ Tool Directory</a></li>
                             <li><a href="/about/">About Us</a></li>
                             <li><a href="/contact/">Contact Support</a></li>
+                            <li><a href="https://github.com/bayzed123/SmartGenQR.oi" target="_blank">⭐ Star on GitHub</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">

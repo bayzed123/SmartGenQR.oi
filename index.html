@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068"
-     crossorigin="anonymous"></script>
+<head>
     
-
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
-    <link rel="preload" href="./assets/css/style.css" as="style" onload="this.rel='stylesheet'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <title>SmartGen - All-in-One Digital & Web Utility Platform</title>
-    <meta name="description" content="SmartGen provides free online tools like QR generators, SEO tools, and text utilities. All-in-one platform for developers and creators.">
+    <meta name="description" content="SmartGen provides free online tools like QR generators, SEO tools, and text utilities. Expert insights and professional web utilities for creators.">
+    
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/feed.css">
+    
     <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/js/feed.js" defer></script>
     <script src="./assets/js/search-data.js" defer></script>
     <script src="./assets/js/search.js" defer></script>
+    
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -30,7 +29,7 @@
         "publisher": {
             "@type": "Organization",
             "name": "SmartGen",
-            "url": "https://smartgentools.com/",
+            "logo": "https://smartgentools.com/assets/images/logo.png",
             "founder": {
                 "@type": "Person",
                 "name": "Sayad Md Bayezid Hosan"
@@ -38,31 +37,22 @@
         }
     }
     </script>
-    
-    
 </head>
 <body>
-    
     <header id="main-header"></header>
 
     <main>
-        <section class="hero" style="text-align: center; padding: 5rem 0; background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);">
+        <section class="hero" style="text-align: center; padding: 4rem 0 2rem; background: linear-gradient(180deg, rgba(37, 99, 235, 0.05) 0%, var(--background) 100%);">
             <div class="container">
-                <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem;">SmartGen Utility Platform</h1>
-                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto; margin-bottom: 2rem;">
-                    Professional, fast, and 100% free web utilities. From QR codes to SEO generators, everything you need in one place.
+                <h1 style="font-size: clamp(2.5rem, 8vw, 3.5rem); margin-bottom: 1rem; font-weight: 800; letter-spacing: -0.02em;">SmartGen Insights & Tools</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.6;">
+                    Professional web utilities and expert guides for developers, marketers, and creators. 100% Free & Open Source.
                 </p>
                 
-                <!-- Live Search Bar -->
-                <div id="live-search-container">
+                <div id="live-search-container" style="max-width: 600px; margin: 0 auto;">
                     <div class="search-wrapper">
                         <span class="search-icon">🔍</span>
-                        <input 
-                            type="text" 
-                            id="search-input" 
-                            placeholder="Search tools by name or keyword..."
-                            autocomplete="off"
-                        >
+                        <input type="text" id="search-input" placeholder="Search tools or articles..." autocomplete="off">
                         <button id="search-clear" title="Clear search">✕</button>
                     </div>
                     <div id="search-results"></div>
@@ -70,445 +60,61 @@
             </div>
         </section>
 
-        <section id="all-tools" class="container" style="padding: 4rem 0;">
-            <!-- Featured: HTML Code Library -->
-            <div class="category-section" style="margin-bottom: 3rem;">
-                <a href="https://smartgentools.com/html-code-library/" class="tool-card" style="display: flex; align-items: center; background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%); color: white; padding: 2.5rem; border-radius: 16px; text-decoration: none; box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3); transition: transform 0.3s ease;">
-                    <div class="tool-icon" style="font-size: 4rem; margin-right: 2rem; background: rgba(255,255,255,0.2); width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">📚</div>
-                    <div style="flex: 1;">
-                        <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem; color: white; border: none; padding: 0;">HTML Code Library</h2>
-                        <p style="font-size: 1.2rem; opacity: 0.9; margin: 0;">Access thousands of free, copy-paste HTML, CSS, and JS code snippets for your web projects.</p>
+        <div class="container" style="display: flex; flex-direction: column; gap: 2rem; padding-bottom: 5rem;">
+            <!-- Feed Area -->
+            <div id="blog-feed" class="feed-container">
+                <div style="text-align: center; padding: 3rem;">
+                    <p>✨ Loading latest insights...</p>
+                </div>
+            </div>
+
+            <!-- E-E-A-T & Trust Badges -->
+            <section class="trust-badges-container">
+                <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Verified & Secure Platform</h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">SmartGen is built with transparency and user privacy at its core.</p>
+                
+                <div class="trust-badges-grid">
+                    <div class="trust-badge-item">
+                        <span class="trust-icon">🛡️</span>
+                        <span class="trust-text">Privacy First</span>
                     </div>
-                    <div style="font-size: 2rem; margin-left: 1rem;">→</div>
-                </a>
-            </div>
-            <!-- Marketing & Social Media Tools -->
-            <div class="category-section">
-                <div class="category-header">
-                    <span class="category-icon">📈</span>
-                    <h2>Marketing & Social Media</h2>
-                </div>
-                <div class="tool-grid">
-                    <a href="./utm-builder/" class="tool-card">
-                        <div class="tool-icon">🔗</div>
-                        <h3>UTM Builder</h3>
-                        <p>Generate tracking links for your marketing campaigns.</p>
-                    </a>
-                    <a href="./whatsapp-link/" class="tool-card">
-                        <div class="tool-icon">💬</div>
-                        <h3>WhatsApp Link</h3>
-                        <p>Create direct chat links for WhatsApp.</p>
-                    </a>
-                    <a href="./mailto-generator/" class="tool-card">
-                        <div class="tool-icon">📧</div>
-                        <h3>Mailto Generator</h3>
-                        <p>Generate professional email links with ease.</p>
-                    </a>
-                    <a href="./hashtag-generator/" class="tool-card">
-                        <div class="tool-icon">#️⃣</div>
-                        <h3>Hashtag Generator</h3>
-                        <p>Generate trending social media hashtags.</p>
-                    </a>
-                    <a href="./blog-title-generator/" class="tool-card">
-                        <div class="tool-icon">✍️</div>
-                        <h3>Blog Title Generator</h3>
-                        <p>Generate SEO-friendly blog titles and headlines.</p>
-                    </a>
-                    <a href="./youtube-thumbnail-downloader/" class="tool-card">
-                        <div class="tool-icon">🎬</div>
-                        <h3>YouTube Thumbnail</h3>
-                        <p>Download HD thumbnails from any YouTube video.</p>
-                    </a>
-                    <a href="./facebook-id-finder/" class="tool-card">
-                        <div class="tool-icon">👤</div>
-                        <h3>Facebook ID Finder</h3>
-                        <p>Extract numeric Facebook IDs from profile links.</p>
-                    </a>
-                    <a href="./privacy-policy-generator/" class="tool-card">
-                        <div class="tool-icon">📜</div>
-                        <h3>Privacy Policy</h3>
-                        <p>Generate professional privacy policies for your site.</p>
-                    </a>
-                    <a href="./terms-conditions-generator/" class="tool-card">
-                        <div class="tool-icon">⚖️</div>
-                        <h3>Terms & Conditions</h3>
-                        <p>Create custom terms of service agreements instantly.</p>
-                    </a>
-                    <a href="./disclaimer-generator/" class="tool-card">
-                        <div class="tool-icon">⚠️</div>
-                        <h3>Disclaimer Generator</h3>
-                        <p>Generate legal disclaimers to protect your business.</p>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Developer & Technical Tools -->
-            <div class="category-section">
-                <div class="category-header">
-                    <span class="category-icon">💻</span>
-                    <h2>Developer & Technical</h2>
-                </div>
-                <div class="tool-grid">
-                    <a href="./qr-generator/" class="tool-card">
-                        <div class="tool-icon">📱</div>
-                        <h3>QR Generator</h3>
-                        <p>Create custom QR codes for URLs, WiFi, and more.</p>
-                    </a>
-                    <a href="./robots-txt-generator/" class="tool-card">
-                        <div class="tool-icon">🤖</div>
-                        <h3>Robots.txt Generator</h3>
-                        <p>Create robots.txt files for search engines.</p>
-                    </a>
-                    <a href="./meta-tag-generator/" class="tool-card">
-                        <div class="tool-icon">🏷️</div>
-                        <h3>Meta Tag Generator</h3>
-                        <p>Boost your SEO with perfect meta tags.</p>
-                    </a>
-                    <a href="./schema-generator/" class="tool-card">
-                        <div class="tool-icon">📜</div>
-                        <h3>Schema Generator</h3>
-                        <p>Generate JSON-LD schema markup for SEO.</p>
-                    </a>
-                    <a href="./image-to-base64/" class="tool-card">
-                        <div class="tool-icon">🖼️</div>
-                        <h3>Image to Base64</h3>
-                        <p>Convert images to Base64 strings.</p>
-                    </a>
-                    <a href="./picture-url-generator/" class="tool-card">
-                        <div class="tool-icon">📸</div>
-                        <h3>Picture URL Generator</h3>
-                        <p>Upload images and get direct live links instantly.</p>
-                    </a>
-                    <a href="./url-encoder-decoder/" class="tool-card">
-                        <div class="tool-icon">🔐</div>
-                        <h3>URL Encoder-Decoder</h3>
-                        <p>Encode and decode URLs securely and instantly.</p>
-                    </a>
-                    <a href="./css-gradient-generator/" class="tool-card">
-                        <div class="tool-icon">🎨</div>
-                        <h3>CSS Gradient Generator</h3>
-                        <p>Create beautiful CSS gradients with color pickers.</p>
-                    </a>
-                    <a href="./random-choice-picker/" class="tool-card">
-                        <div class="tool-icon">🎲</div>
-                        <h3>Random Choice Picker</h3>
-                        <p>Make random decisions from a list of choices.</p>
-                    </a>
-                    <a href="./uuid-generator/" class="tool-card">
-                        <div class="tool-icon">🆔</div>
-                        <h3>UUID Generator</h3>
-                        <p>Generate random version 4 UUIDs instantly.</p>
-                    </a>
-                    <a href="./json-formatter-validator/" class="tool-card">
-                        <div class="tool-icon">JSON</div>
-                        <h3>JSON Formatter</h3>
-                        <p>Format, beautify, and validate JSON code.</p>
-                    </a>
-                    <a href="./base64-to-image/" class="tool-card">
-                        <div class="tool-icon">🖼️</div>
-                        <h3>Base64 to Image</h3>
-                        <p>Decode Base64 strings back into image files.</p>
-                    </a>
-                    <a href="./hash-generator/" class="tool-card">
-                        <div class="tool-icon">🔒</div>
-                        <h3>Hash Generator</h3>
-                        <p>Generate MD5, SHA-1, and SHA-256 hashes.</p>
-                    </a>
-                    <a href="./html-code-preview/" class="tool-card">
-                        <div class="tool-icon">💻</div>
-                        <h3>Live HTML Preview</h3>
-                        <p>Write HTML/CSS/JS and see live results instantly.</p>
-                    </a>
-                    <a href="./ip-address-lookup/" class="tool-card">
-                        <div class="tool-icon">🌐</div>
-                        <h3>IP Lookup</h3>
-                        <p>Find your public IP and network information.</p>
-                    </a>
-                    <a href="./text-to-changelog-json-generator/" class="tool-card">
-    <div class="tool-icon">📝</div>
-    <h3>Text to Changelog JSON</h3>
-    <p>Convert text into structured changelog JSON format instantly.</p>
-</a>
-    </div>
-            </div>
-
-            <!-- SEO & Content Tools -->
-            <div class="category-section">
-                <div class="category-header">
-                    <span class="category-icon">🔍</span>
-                    <h2>SEO & Content</h2>
-                </div>
-                <div class="tool-grid">
-                    <a href="./keyword-density-checker/" class="tool-card">
-                        <div class="tool-icon">📊</div>
-                        <h3>Keyword Density</h3>
-                        <p>Analyze keyword frequency in your content.</p>
-                    </a>
-                    <a href="./word-counter/" class="tool-card">
-                        <div class="tool-icon">📝</div>
-                        <h3>Word Counter</h3>
-                        <p>Count words, characters, and reading time.</p>
-                    </a>
-                    <a href="./text-case-converter/" class="tool-card">
-                        <div class="tool-icon">🔠</div>
-                        <h3>Text Case Converter</h3>
-                        <p>Convert text to UPPER, lower, or Title Case.</p>
-                    </a>
-                    <a href="./lorem-ipsum-generator/" class="tool-card">
-                        <div class="tool-icon">🖋️</div>
-                        <h3>Lorem Ipsum</h3>
-                        <p>Generate placeholder text for designs.</p>
-                    </a>
-                    <a href="./serp-preview-tool/" class="tool-card">
-                        <div class="tool-icon">🔍</div>
-                        <h3>SERP Preview Tool</h3>
-                        <p>Preview how your page appears in Google search.</p>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Daily Utilities & Calculators -->
-            <div class="category-section">
-                <div class="category-header">
-                    <span class="category-icon">⚙️</span>
-                    <h2>Daily Utilities & Calculators</h2>
-                </div>
-                <div class="tool-grid">
-                    <a href="./voice-remover/" class="tool-card">
-                        <div class="tool-icon">🎤</div>
-                        <h3>AI Vocal Remover</h3>
-                        <p>Separate vocals and music with 100% free AI.</p>
-                    </a>
-                    <a href="./age-calculator/" class="tool-card">
-                        <div class="tool-icon">📅</div>
-                        <h3>Age Calculator</h3>
-                        <p>Calculate exact age and date differences.</p>
-                    </a>
-                    <a href="./cpm-roi-calculator/" class="tool-card">
-                        <div class="tool-icon">💰</div>
-                        <h3>CPM ROI Calculator</h3>
-                        <p>Calculate Cost Per Mille and Return on Investment.</p>
-                    </a>
-                    <a href="./color-palette-extractor/" class="tool-card">
-                        <div class="tool-icon">🎨</div>
-                        <h3>Color Palette Extractor</h3>
-                        <p>Extract dominant colors from images as HEX and RGB.</p>
-                    </a>
-                    <a href="./emi-calculator/" class="tool-card">
-                        <div class="tool-icon">🏦</div>
-                        <h3>EMI Calculator</h3>
-                        <p>Calculate monthly installments and total interest.</p>
-                    </a>
-                    <a href="./image-compressor/" class="tool-card">
-                        <div class="tool-icon">📉</div>
-                        <h3>Image Compressor</h3>
-                        <p>Reduce image size locally without uploading.</p>
-                    </a>
-                    <a href="./percentage-calculator/" class="tool-card">
-                        <div class="tool-icon">%</div>
-                        <h3>Percentage Calculator</h3>
-                        <p>Calculate percentages, discounts, and differences.</p>
-                    </a>
-                    <a href="./pomodoro-timer/" class="tool-card">
-                        <div class="tool-icon">⏱️</div>
-                        <h3>Pomodoro Timer</h3>
-                        <p>25/5 focus timer with start, pause, and reset.</p>
-                    </a>
-                    <a href="./secure-notepad/" class="tool-card">
-                        <div class="tool-icon">📔</div>
-                        <h3>Secure Notepad</h3>
-                        <p>Auto-save notes to browser storage with privacy.</p>
-                    </a>
-                    <a href="./fancy-font-generator/" class="tool-card">
-                        <div class="tool-icon">✨</div>
-                        <h3>Fancy Font Generator</h3>
-                        <p>Convert text to cool Unicode styles and fonts.</p>
-                    </a>
-                    <a href="./unit-converter/" class="tool-card">
-                        <div class="tool-icon">📏</div>
-                        <h3>Unit Converter</h3>
-                        <p>Convert length, weight, and temperature instantly.</p>
-                    </a>
-                    <a href="./bmi-bmr-calculator/" class="tool-card">
-                        <div class="tool-icon">⚖️</div>
-                        <h3>BMI BMR Calculator</h3>
-                        <p>Calculate Body Mass Index and metabolic rate.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section container" style="padding: 4rem 0; border-top: 1px solid var(--border);">
-            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">Frequently Asked Questions</h2>
-            <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span>Is SmartGen really free to use?</span>
-                        <div class="accordion-icon"></div>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Yes, 100% free! SmartGen provides all its web utility tools without any subscription or hidden costs. We believe in making helpful tools accessible to everyone.</p>
+                    <div class="trust-badge-item">
+                        <span class="trust-icon">✅</span>
+                        <span class="trust-text">E-E-A-T Verified</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <span class="trust-icon">🔓</span>
+                        <span class="trust-text">Open Source</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <span class="trust-icon">⚡</span>
+                        <span class="trust-text">Client-Side Only</span>
                     </div>
                 </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span>Are my data and files secure?</span>
-                        <div class="accordion-icon"></div>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Absolutely. Most of our tools, like the Image Compressor and QR Generator, process data locally in your browser. This means your files never even reach our servers, ensuring maximum privacy and security.</p>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span>Do I need to create an account?</span>
-                        <div class="accordion-icon"></div>
-                    </button>
-                    <div class="accordion-content">
-                        <p>No account or registration is required. You can start using any tool immediately without providing any personal information.</p>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span>How often are new tools added?</span>
-                        <div class="accordion-icon"></div>
-                    </button>
-                    <div class="accordion-content">
-                        <p>We regularly update our platform and add new tools based on user requests and industry trends. Check our "Updates" page to see what's new!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
-    
-
-<section class="related-tools-smart" style="margin: 3rem 0; padding: 2rem; background: #f8fafc; border-radius: 20px; border: 1px solid #e2e8f0;">
-    <h3 style="font-size: 1.5rem; color: #1e293b; margin-bottom: 1.5rem;">🛠️ Related Professional Tools</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-        
-        <a href="/word-counter/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
-            <div style="font-size: 1.8rem;">📝</div>
-            <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">Word Counter</h4>
-                <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">SEO & Content</p>
-            </div>
-        </a>
-
-        <a href="/schema-generator/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
-            <div style="font-size: 1.8rem;">📜</div>
-            <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">Schema Generator</h4>
-                <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Developer & Technical</p>
-            </div>
-        </a>
-
-        <a href="/keyword-density-checker/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
-            <div style="font-size: 1.8rem;">📊</div>
-            <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">Keyword Density Checker</h4>
-                <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">SEO & Content</p>
-            </div>
-        </a>
-
-    </div>
-</section>
-
-<section class="recommended-blogs-smart" style="margin: 3rem 0; padding: 2rem; background: #0f172a; border-radius: 20px; color: white;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <h3 style="font-size: 1.5rem; margin: 0;">📖 Recommended Reading</h3>
-        <a href="/blog/" style="color: #3b82f6; text-decoration: none; font-size: 0.9rem; font-weight: 600;">View All →</a>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-        
-        <a href="/blog/the-ultimate-advanced-all-in-one-qr-code-generator-free-secure-and-100percent-client-side/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
-            <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">Ultimate QR Code Guide</h4>
-                <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">Master the art of generating secure, advanced QR codes for business and personal use.</p>
-            </div>
-        </a>
-
-        <a href="/blog/the-ultimate-guide-to-smartgen-tools-40-free-utilities-for-developers-marketers-and-creators/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
-            <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">SmartGen Tools Master Guide</h4>
-                <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">A comprehensive A-Z guide for all SmartGen utilities and how to use them.</p>
-            </div>
-        </a>
-
-        <a href="/blog/top-10-essential-free-seo-tools-for-digital-marketers-in-2026/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
-            <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">Top 10 SEO Tools</h4>
-                <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">Boost your search rankings with these essential free SEO utilities.</p>
-            </div>
-        </a>
-
-    </div>
-</section>
-
-<footer id="main-footer"></footer>
-
-<!-- Cookie Consent Banner -->
-<div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e1e8ed; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 9999; display: none; padding: 1rem 0;">
-    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
-        <div style="flex: 1; min-width: 280px;">
-            <p style="margin: 0; font-size: 0.9rem; color: #4a5568; line-height: 1.5;">
-                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" style="color: #0052cc; text-decoration: underline;">Privacy Policy</a>.
-            </p>
-        </div>
-        <div style="display: flex; align-items: center; gap: 1rem;">
-            <a href="/privacy/" style="font-size: 0.9rem; color: #0052cc; text-decoration: none; font-weight: 500;">Learn More About Our Privacy Policy</a>
-            <button id="accept-cookies" style="background: #0052cc; color: #ffffff; border: none; padding: 0.6rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Accept</button>
-        </div>
-    </div>
-</div>
+    <footer id="main-footer"></footer>
 <script>
+    // Lazy load Google AdSense on user interaction
     (function() {
-        const banner = document.getElementById('cookie-consent-banner');
-        const acceptBtn = document.getElementById('accept-cookies');
-        
-        if (!localStorage.getItem('cookie-consent-accepted')) {
-            banner.style.display = 'block';
-        }
-        
-        acceptBtn.addEventListener('click', function() {
-            localStorage.setItem('cookie-consent-accepted', 'true');
-            banner.style.display = 'none';
-        });
-    })();
-</script>
-
-<script>
-    // Lazy load Google Analytics on user interaction
-    (function() {
-        let gtag_loaded = false;
-        function loadGoogleAnalytics() {
-            if (gtag_loaded) return;
-            gtag_loaded = true;
-            
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-982HBP86V8');
+        let adsense_loaded = false;
+        function loadAdSense() {
+            if (adsense_loaded) return;
+            adsense_loaded = true;
             
             const script = document.createElement('script');
             script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
+            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068';
+            script.crossOrigin = 'anonymous';
             document.head.appendChild(script);
         }
         
         // Trigger on first user interaction
         ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
-            document.addEventListener(event, loadGoogleAnalytics, { once: true });
+            document.addEventListener(event, loadAdSense, { once: true });
         });
-    })();
-</script>
-<script>
-    // Lazy load Google AdSense on user interaction
-    (function() {
     })();
 </script>
 </body>

@@ -2,7 +2,16 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
+    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
   <title>SmartGen Marquee Generator</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
@@ -432,7 +441,7 @@
         </section>
 
         <footer style="margin-top: 60px; padding-top: 30px; border-top: 2px solid #edf2f7; text-align: center;">
-            <p style="font-style: italic; color: #718096;">"SmartGen is dedicated to empowering digital professionals with high-performance, privacy-focused tools. Our mission is to make the web a more efficient and secure place for everyone."</p>
+            <p style="font-style: italic; color: #0052cc;">"SmartGen is dedicated to empowering digital professionals with high-performance, privacy-focused tools. Our mission is to make the web a more efficient and secure place for everyone."</p>
             <p style="margin-top: 20px; font-weight: 700; color: #2563eb;">— Sayad Md Bayezid Hosan, Founder of SmartGen</p>
         </footer>
 
@@ -603,7 +612,11 @@
     });
 
     $('download-btn').addEventListener('click', () => {
-      const blob = new Blob([`<!DOCTYPE html>\n<html><head><meta charset="UTF-8"></head><body>\n${$('code-output').textContent}\n</body></html>`], { type: 'text/html' });
+      const blob = new Blob([`<!DOCTYPE html>\n<html><head><meta charset="UTF-8">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
+    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'"></head><body>\n${$('code-output').textContent}\n</body></html>`], { type: 'text/html' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
       a.download = 'marquee.html';

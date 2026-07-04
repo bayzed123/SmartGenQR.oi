@@ -1,0 +1,5 @@
+Contact: security@smartgentools.com
+Expires: 2027-07-15T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://smartgentools.com/.well-known/security.txt
+Acknowledgement: https://smartgentools.com/trust-center/

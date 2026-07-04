@@ -930,7 +930,7 @@
       "Instant copy"
     ]
     
-  } 
+  },
      "gradient-generator": {
       "title": "CSS Gradient Generator - Create Beautiful Background Gradients",
       "description": "Generate stunning CSS linear and radial gradients instantly. Customize colors, angles, and export production-ready CSS code for your websites.",
@@ -1058,7 +1058,7 @@
         "Copy HTML"
       ]
     },
-}    "background-image-code": {
+    "background-image-code": {
       "title": "HTML Background Image Code - Generate CSS Background Images",
       "description": "Create HTML and CSS background image code with custom positioning, sizing, repeat options, and responsive settings for modern websites.",
       "keywords": "background image code, CSS background image, HTML background generator, background CSS",
@@ -1200,7 +1200,8 @@
         "Accessible links",
         "Copy CSS"
       ]
-    },    "bouncing-image": {
+    },
+    "bouncing-image": {
       "title": "HTML Bouncing Image Generator - Create Animated Images",
       "description": "Generate HTML bouncing image animations instantly using marquee and CSS techniques. Create engaging animated image effects with live preview.",
       "keywords": "bouncing image, HTML animation, marquee image, animated image generator",
@@ -1628,5 +1629,6 @@
         "Border customization",
         "Live preview"
       ]
-    },
+    }
+  }
 }
