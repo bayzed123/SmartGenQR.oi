@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: Correct position of author cards in blog posts",
+    "date": "2026-07-04T10:38:48Z",
+    "description": "- Moved author profile card to appear right after the title and description- Moved author footer card to appear at the very end of the blog post article- Cleaned up duplicate code blocks in build-blog.js"
+  },
+  {
     "title": "refactor: Slim down author profile box and improve footer injection logic",
     "date": "2026-07-04T10:33:13Z",
     "description": "- Changed author-profile-box.html to minimalist design (similar to Google's blog style)- Reduced padding and font sizes for a cleaner look- Added hasAuthorFooterBox() function to prevent duplicate footer injection- Repositioned author profile to appear after content but before tags- Ensures footer box only appears once per post- Better SEO signal placement without visual clutter"
