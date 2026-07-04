@@ -1,0 +1,166 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="gridI" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1B2A4A" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="scanGlowI" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1600" fill="#0B1220"/>
+  <rect width="1200" height="1600" fill="url(#gridI)" opacity="0.45"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#2DD4BF" stroke-width="2.5" fill="none" stroke-linecap="square">
+    <path d="M 40 72 L 40 40 L 72 40"/>
+    <path d="M 1128 40 L 1160 40 L 1160 72"/>
+    <path d="M 1160 1528 L 1160 1560 L 1128 1560"/>
+    <path d="M 72 1560 L 40 1560 L 40 1528"/>
+  </g>
+
+  <!-- Header -->
+  <text x="600" y="62" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="15" letter-spacing="4" fill="#F5A623" font-weight="700">SMARTGEN DIGITAL MARKETING COURSE &#183; MODULE 14</text>
+  <rect x="40" y="80" width="1120" height="2" fill="url(#scanGlowI)"/>
+  <text x="600" y="132" text-anchor="middle" font-family="Arial, 'Helvetica Neue', sans-serif" font-size="42" font-weight="900" fill="#F1F5F9">The Complete Technical SEO Framework</text>
+  <text x="600" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#9FB0CC">Audit &#183; Speed &#183; Mobile &#183; Architecture &#183; Schema — the 2026 edition</text>
+
+  <!-- Pipeline strip -->
+  <text x="600" y="205" text-anchor="middle" font-family="'Consolas',monospace" font-size="13" letter-spacing="2" fill="#7C8DAF">WHAT HAS TO WORK, IN ORDER, BEFORE CONTENT OR LINKS EVER MATTER</text>
+
+  <g font-family="Arial, sans-serif" font-size="20" font-weight="800">
+    <rect x="60" y="225" width="220" height="64" rx="8" fill="#101B33" stroke="#2DD4BF" stroke-width="2"/>
+    <text x="170" y="264" text-anchor="middle" fill="#2DD4BF">CRAWL</text>
+
+    <rect x="346" y="225" width="220" height="64" rx="8" fill="#101B33" stroke="#2DD4BF" stroke-width="2"/>
+    <text x="456" y="264" text-anchor="middle" fill="#2DD4BF">RENDER</text>
+
+    <rect x="632" y="225" width="220" height="64" rx="8" fill="#101B33" stroke="#2DD4BF" stroke-width="2"/>
+    <text x="742" y="264" text-anchor="middle" fill="#2DD4BF">INDEX</text>
+
+    <rect x="918" y="225" width="220" height="64" rx="8" fill="#2DD4BF" stroke="#2DD4BF" stroke-width="2"/>
+    <text x="1028" y="264" text-anchor="middle" fill="#08131F">RANK</text>
+  </g>
+  <g stroke="#F5A623" stroke-width="3" fill="#F5A623">
+    <path d="M 286 257 L 340 257 M 330 249 L 340 257 L 330 265" fill="none"/>
+    <path d="M 572 257 L 626 257 M 616 249 L 626 257 L 616 265" fill="none"/>
+    <path d="M 858 257 L 912 257 M 902 249 L 912 257 L 902 265" fill="none"/>
+  </g>
+
+  <!-- ============ CARD TEMPLATE MACRO (manually repeated) ============ -->
+
+  <!-- Card 1: Technical Audit -->
+  <g>
+    <rect x="60" y="320" width="1080" height="220" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="112" cy="362" r="26" fill="#2DD4BF"/>
+    <text x="112" y="371" text-anchor="middle" font-family="Arial" font-size="26" font-weight="900" fill="#08131F">1</text>
+    <text x="156" y="356" font-family="Arial, sans-serif" font-size="25" font-weight="800" fill="#F1F5F9">TECHNICAL SEO AUDIT</text>
+    <text x="156" y="382" font-family="Arial, sans-serif" font-size="15.5" fill="#9FB0CC">Systematic review of crawlability, rendering, architecture, indexation &amp; performance</text>
+    <line x1="90" y1="400" x2="1110" y2="400" stroke="#1B2A4A" stroke-width="1"/>
+
+    <circle cx="100" cy="424" r="3" fill="#F5A623"/>
+    <text x="115" y="429" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">FRAMEWORK: </tspan><tspan fill="#D7E4F0">5 phases — crawl, render, architecture, index, speed</tspan></text>
+
+    <circle cx="100" cy="452" r="3" fill="#F5A623"/>
+    <text x="115" y="457" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">FREQUENCY: </tspan><tspan fill="#D7E4F0">Full audit quarterly, light monitoring monthly</tspan></text>
+
+    <circle cx="100" cy="480" r="3" fill="#F5A623"/>
+    <text x="115" y="485" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">KEY TOOLS: </tspan><tspan fill="#D7E4F0">Search Console &#183; Screaming Frog &#183; PageSpeed Insights</tspan></text>
+
+    <circle cx="100" cy="508" r="3" fill="#2DD4BF"/>
+    <text x="115" y="513" font-family="'Consolas',monospace" font-size="15"><tspan fill="#2DD4BF">2026 UPDATE: </tspan><tspan fill="#D7E4F0">Also audit robots.txt for AI bots (GPTBot, ClaudeBot, PerplexityBot)</tspan></text>
+  </g>
+
+  <!-- Card 2: Speed & Core Web Vitals -->
+  <g>
+    <rect x="60" y="552" width="1080" height="220" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="112" cy="594" r="26" fill="#2DD4BF"/>
+    <text x="112" y="603" text-anchor="middle" font-family="Arial" font-size="26" font-weight="900" fill="#08131F">2</text>
+    <text x="156" y="588" font-family="Arial, sans-serif" font-size="25" font-weight="800" fill="#F1F5F9">SPEED &amp; CORE WEB VITALS</text>
+    <text x="156" y="614" font-family="Arial, sans-serif" font-size="15.5" fill="#9FB0CC">Three real-user metrics Google measures directly from Chrome traffic (CrUX)</text>
+    <line x1="90" y1="632" x2="1110" y2="632" stroke="#1B2A4A" stroke-width="1"/>
+
+    <circle cx="100" cy="656" r="3" fill="#F5A623"/>
+    <text x="115" y="661" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">LCP (LOADING): </tspan><tspan fill="#D7E4F0">Good = under 2.5 seconds</tspan></text>
+
+    <circle cx="100" cy="684" r="3" fill="#F5A623"/>
+    <text x="115" y="689" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">INP (RESPONSIVENESS): </tspan><tspan fill="#D7E4F0">Good = under 200 milliseconds</tspan></text>
+
+    <circle cx="100" cy="712" r="3" fill="#F5A623"/>
+    <text x="115" y="717" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">CLS (STABILITY): </tspan><tspan fill="#D7E4F0">Good = under 0.1</tspan></text>
+
+    <circle cx="100" cy="740" r="3" fill="#2DD4BF"/>
+    <text x="115" y="745" font-family="'Consolas',monospace" font-size="15"><tspan fill="#2DD4BF">THE CATCH: </tspan><tspan fill="#D7E4F0">All 3 must pass for 75% of real visits — at the same time</tspan></text>
+  </g>
+
+  <!-- Card 3: Mobile-First & Responsive -->
+  <g>
+    <rect x="60" y="784" width="1080" height="220" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="112" cy="826" r="26" fill="#2DD4BF"/>
+    <text x="112" y="835" text-anchor="middle" font-family="Arial" font-size="26" font-weight="900" fill="#08131F">3</text>
+    <text x="156" y="820" font-family="Arial, sans-serif" font-size="25" font-weight="800" fill="#F1F5F9">MOBILE-FIRST &amp; RESPONSIVE DESIGN</text>
+    <text x="156" y="846" font-family="Arial, sans-serif" font-size="15.5" fill="#9FB0CC">Google indexes and ranks using your MOBILE version — not desktop</text>
+    <line x1="90" y1="864" x2="1110" y2="864" stroke="#1B2A4A" stroke-width="1"/>
+
+    <circle cx="100" cy="888" r="3" fill="#F5A623"/>
+    <text x="115" y="893" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">GOOGLE'S PREFERRED METHOD: </tspan><tspan fill="#D7E4F0">Responsive design — 1 URL, 1 HTML</tspan></text>
+
+    <circle cx="100" cy="916" r="3" fill="#F5A623"/>
+    <text x="115" y="921" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">CONTENT PARITY: </tspan><tspan fill="#D7E4F0">Missing on mobile = invisible to Google, period</tspan></text>
+
+    <circle cx="100" cy="944" r="3" fill="#F5A623"/>
+    <text x="115" y="949" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">TAP TARGETS: </tspan><tspan fill="#D7E4F0">44&#8211;48px minimum (Apple HIG / Google Material)</tspan></text>
+
+    <circle cx="100" cy="972" r="3" fill="#2DD4BF"/>
+    <text x="115" y="977" font-family="'Consolas',monospace" font-size="15"><tspan fill="#2DD4BF">TEST WITH: </tspan><tspan fill="#D7E4F0">Search Console Mobile Usability + PageSpeed Insights</tspan></text>
+  </g>
+
+  <!-- Card 4: Site Architecture & Crawlability -->
+  <g>
+    <rect x="60" y="1016" width="1080" height="220" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="112" cy="1058" r="26" fill="#2DD4BF"/>
+    <text x="112" y="1067" text-anchor="middle" font-family="Arial" font-size="26" font-weight="900" fill="#08131F">4</text>
+    <text x="156" y="1052" font-family="Arial, sans-serif" font-size="25" font-weight="800" fill="#F1F5F9">SITE ARCHITECTURE &amp; CRAWLABILITY</text>
+    <text x="156" y="1078" font-family="Arial, sans-serif" font-size="15.5" fill="#9FB0CC">How pages are organized, linked to each other, and discovered by crawlers</text>
+    <line x1="90" y1="1096" x2="1110" y2="1096" stroke="#1B2A4A" stroke-width="1"/>
+
+    <circle cx="100" cy="1120" r="3" fill="#F5A623"/>
+    <text x="115" y="1125" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">CRAWL BUDGET: </tspan><tspan fill="#D7E4F0">How much Google WILL crawl (rarely the real bottleneck)</tspan></text>
+
+    <circle cx="100" cy="1148" r="3" fill="#F5A623"/>
+    <text x="115" y="1153" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">INDEX BUDGET: </tspan><tspan fill="#D7E4F0">How much Google DEEMS worth keeping — usually the real issue</tspan></text>
+
+    <circle cx="100" cy="1176" r="3" fill="#F5A623"/>
+    <text x="115" y="1181" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">TARGET DEPTH: </tspan><tspan fill="#D7E4F0">Any page reachable within ~3 clicks of the homepage</tspan></text>
+
+    <circle cx="100" cy="1204" r="3" fill="#2DD4BF"/>
+    <text x="115" y="1209" font-family="'Consolas',monospace" font-size="15"><tspan fill="#2DD4BF">ESSENTIALS: </tspan><tspan fill="#D7E4F0">XML sitemap &#183; robots.txt &#183; rel=canonical &#183; internal links</tspan></text>
+  </g>
+
+  <!-- Card 5: Schema Markup & Structured Data -->
+  <g>
+    <rect x="60" y="1248" width="1080" height="220" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="112" cy="1290" r="26" fill="#2DD4BF"/>
+    <text x="112" y="1299" text-anchor="middle" font-family="Arial" font-size="26" font-weight="900" fill="#08131F">5</text>
+    <text x="156" y="1284" font-family="Arial, sans-serif" font-size="25" font-weight="800" fill="#F1F5F9">SCHEMA MARKUP &amp; STRUCTURED DATA</text>
+    <text x="156" y="1310" font-family="Arial, sans-serif" font-size="15.5" fill="#9FB0CC">Machine-readable page descriptions, written in JSON-LD</text>
+    <line x1="90" y1="1328" x2="1110" y2="1328" stroke="#1B2A4A" stroke-width="1"/>
+
+    <circle cx="100" cy="1352" r="3" fill="#F5A623"/>
+    <text x="115" y="1357" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">STILL ACTIVE: </tspan><tspan fill="#D7E4F0">Organization &#183; Article &#183; Product &#183; LocalBusiness &#183; BreadcrumbList</tspan></text>
+
+    <circle cx="100" cy="1380" r="3" fill="#FB7185"/>
+    <text x="115" y="1385" font-family="'Consolas',monospace" font-size="15"><tspan fill="#FB7185">RETIRED MAY 7, 2026: </tspan><tspan fill="#D7E4F0">FAQ &amp; HowTo rich results — dropdown gone for all sites</tspan></text>
+
+    <circle cx="100" cy="1408" r="3" fill="#F5A623"/>
+    <text x="115" y="1413" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">STILL VALID MARKUP: </tspan><tspan fill="#D7E4F0">FAQPage schema itself — just no visual SERP boost</tspan></text>
+
+    <circle cx="100" cy="1436" r="3" fill="#2DD4BF"/>
+    <text x="115" y="1441" font-family="'Consolas',monospace" font-size="15"><tspan fill="#2DD4BF">VALIDATE WITH: </tspan><tspan fill="#D7E4F0">Google's Rich Results Test + Schema.org Validator</tspan></text>
+  </g>
+
+  <!-- Footer -->
+  <text x="600" y="1508" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="14" letter-spacing="3" fill="#7C8DAF" font-weight="700">SMARTGENTOOLS.COM &#183; MODULE 14: TECHNICAL SEO OPTIMIZATION</text>
+</svg>
