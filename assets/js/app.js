@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     injectFooter();
     initTheme();
     initAccordion();
-    initReviews(); // <-- Added this to initialize reviews on page load
 });
 
 function injectNavbar() {
@@ -56,7 +55,6 @@ function injectNavbar() {
                     <a href="/#all-tools">Top Tools</a>
                     <a href="/contact/">Request a Tool</a>
                     <a href="/about/">About</a>
-                    <a href="https://smartgentools.com/html-code-library/" class="nav-item-highlight" style="color: #ffffff; background: #2563EB; padding: 8px 16px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; margin-left: 10px;">HTML Library</a>
                 </nav>
             </div>
         </div>
@@ -73,7 +71,6 @@ function injectNavbar() {
             <div class="sidebar-nav-links" style="display: flex; flex-direction: column; padding: 20px; overflow-y: auto;">
                 <a href="/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🏠 Home</a>
                 <a href="/blog/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">📝 Blog</a>
-                <a href="https://smartgentools.com/html-code-library/" class="nav-item" style="color: #2563EB; padding: 10px 0; text-decoration: none; font-weight: 700; font-size: 1rem;">📚 HTML Library</a>
                 <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
                 
                 <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 10px; font-size: 0.85rem; text-transform: uppercase;">🧑‍💻 Developer Tools</div>
@@ -319,95 +316,4 @@ function toggleTheme() {
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
-}
-
-// ==========================================
-// NEW DATABASE REVIEWS LOGIC
-// ==========================================
-async function initReviews() {
-    const reviewForm = document.getElementById('reviewForm');
-    const reviewsList = document.getElementById('reviewsList');
-
-    // Only run if the reviews elements exist on this page
-    if (!reviewForm || !reviewsList) return;
-
-    reviewsList.innerHTML = "<p>Loading reviews...</p>";
-
-    try {
-        // Dynamically import Firebase libraries only on the reviews page
-        const { initializeApp } = await import("PASTE_FIREBASE_APP_SDK_CDN_URL");
-        const { getFirestore, collection, addDoc, onSnapshot, query, orderBy } 
-            from "PASTE_FIREBASE_FIRESTORE_SDK_CDN_URL";
-
-        // Your exact project configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAyVlfkmDPm0WGC9Y9u3_v5OGN8YvS_I-c",
-            authDomain: "smartgen-review-db.firebaseapp.com",
-            projectId: "smartgen-review-db",
-            storageBucket: "smartgen-review-db.firebasestorage.app",
-            messagingSenderId: "326618655365",
-            appId: "1:326618655365:web:725a91d2847967a25f97ec"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const reviewsRef = collection(db, "reviews");
-
-        // 1. Fetch and Display Reviews in Realtime
-        const q = query(reviewsRef, orderBy("createdAt", "desc"));
-        onSnapshot(q, (snapshot) => {
-            reviewsList.innerHTML = "";
-            if (snapshot.empty) {
-                reviewsList.innerHTML = "<p>No reviews yet. Be the first to leave one!</p>";
-                return;
-            }
-            snapshot.forEach((doc) => {
-                const data = doc.data();
-                const card = document.createElement('div');
-                card.className = 'review-card';
-                card.innerHTML = `
-                    <div class="review-header">
-                        <strong>${escapeHTML(data.username)}</strong>
-                        <span class="review-rating">${"⭐".repeat(data.rating)}</span>
-                    </div>
-                    <p class="review-text">${escapeHTML(data.comment)}</p>
-                    <span class="review-date">${data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : 'Just now'}</span>
-                `;
-                reviewsList.appendChild(card);
-            });
-        });
-
-        // 2. Submit New Review
-        reviewForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const rating = parseInt(document.getElementById('rating').value);
-            const comment = document.getElementById('comment').value;
-
-            try {
-                await addDoc(reviewsRef, {
-                    username,
-                    rating,
-                    comment,
-                    createdAt: new Date()
-                });
-                reviewForm.reset();
-            } catch (err) {
-                console.error("Error submitting review:", err);
-                alert("Failed to submit review. Please try again.");
-            }
-        });
-
-    } catch (err) {
-        console.error("Error loading database:", err);
-        reviewsList.innerHTML = "<p style='color: red;'>Database error. Please reload page.</p>";
-    }
-}
-
-// Basic helper to securely prevent XSS (Code Injection) inside reviews
-function escapeHTML(str) {
-    if (!str) return '';
-    return str.replace(/[&<>'"]/g, 
-        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
-    );
 }
