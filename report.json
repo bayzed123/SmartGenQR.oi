@@ -1,41 +1,41 @@
 {
   "url": "https://smartgentools.com",
   "strategy": "mobile",
-  "performance_score": 99,
+  "performance_score": 78,
   "metrics": {
     "LCP": {
-      "value": 1881,
+      "value": 2579,
       "unit": "ms",
       "label": "Largest Contentful Paint",
-      "rating": "good"
+      "rating": "needs-improvement"
     },
     "CLS": {
-      "value": 0.065,
+      "value": 0.434,
       "unit": "",
       "label": "Cumulative Layout Shift",
-      "rating": "good"
+      "rating": "poor"
     },
     "FCP": {
-      "value": 802,
+      "value": 774,
       "unit": "ms",
       "label": "First Contentful Paint",
       "rating": "good"
     },
     "TTFB": {
-      "value": 2,
+      "value": 1,
       "unit": "ms",
       "label": "Time to First Byte",
       "rating": "good"
     }
   },
-  "opportunities": [
+  "opportunities": [],
+  "diagnostics": [
     {
-      "title": "Reduce unused JavaScript",
-      "savings_ms": 150,
-      "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lig"
+      "title": "Avoid enormous network payloads",
+      "score": 50,
+      "display": "Total size was 5,423\u00a0KiB"
     }
   ],
-  "diagnostics": [],
   "field_data_available": false,
   "error": null
 }
