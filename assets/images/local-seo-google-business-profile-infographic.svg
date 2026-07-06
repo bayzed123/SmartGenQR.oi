@@ -1,0 +1,293 @@
+<svg viewBox="0 0 800 990" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+
+  <defs>
+    <filter id="card-shadow" x="-4%" y="-4%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="rgba(0,0,0,0.09)"/>
+    </filter>
+    <filter id="section-shadow" x="-2%" y="-2%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="rgba(0,0,0,0.07)"/>
+    </filter>
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1A73E8;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="stats-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1557B0;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0A3880;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="800" height="990" fill="#F8FBFF"/>
+
+  <!-- ================================================ -->
+  <!-- HEADER                                           -->
+  <!-- ================================================ -->
+  <rect width="800" height="118" fill="url(#header-grad)"/>
+  <circle cx="748" cy="20" r="90" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="762" cy="112" r="55" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="28" cy="92" r="64" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- Google Maps Pin Icon -->
+  <rect x="20" y="20" width="68" height="68" rx="10" fill="rgba(255,255,255,0.16)"/>
+  <!-- Pin shape: circle + teardrop bottom -->
+  <circle cx="54" cy="45" r="16" fill="rgba(255,255,255,0.30)"/>
+  <circle cx="54" cy="45" r="8" fill="white" opacity="0.7"/>
+  <polygon points="54,80 42,60 66,60" fill="rgba(255,255,255,0.30)"/>
+
+  <!-- Header Titles -->
+  <text x="106" y="44" fill="white" font-size="22" font-weight="700" letter-spacing="-0.3">Local SEO &amp; Google Business Profile</text>
+  <text x="106" y="70" fill="rgba(255,255,255,0.88)" font-size="13">The Complete A to Z Mega Guide for Beginners</text>
+  <text x="106" y="96" fill="rgba(255,255,255,0.62)" font-size="11">SmartGen Digital Marketing Course  ·  smartgentools.com  ·  By Sayad Md Bayezid Hosan</text>
+
+  <!-- ================================================ -->
+  <!-- STATS STRIP                                      -->
+  <!-- ================================================ -->
+  <rect y="118" width="800" height="56" fill="url(#stats-grad)"/>
+
+  <text x="133" y="143" text-anchor="middle" fill="white" font-size="18" font-weight="700">46%</text>
+  <text x="133" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">of All Google Searches = Local Intent</text>
+
+  <line x1="266" y1="127" x2="266" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="400" y="143" text-anchor="middle" fill="white" font-size="18" font-weight="700">32%</text>
+  <text x="400" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">GBP = Top Local Pack Ranking Factor</text>
+
+  <line x1="533" y1="127" x2="533" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="667" y="143" text-anchor="middle" fill="white" font-size="18" font-weight="700">7×</text>
+  <text x="667" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">More Clicks: Complete vs. Incomplete Profile</text>
+
+  <!-- ================================================ -->
+  <!-- SECTION LABEL                                    -->
+  <!-- ================================================ -->
+  <text x="400" y="196" text-anchor="middle" fill="#4A6FA8" font-size="9.5" letter-spacing="2.5" font-weight="700">4 PILLARS OF LOCAL SEO &amp; GOOGLE BUSINESS PROFILE</text>
+
+  <!--
+    CARD GRID: 2 columns × 2 rows (taller cards — 200px each)
+    Left  col: x=20,  width=372
+    Right col: x=408, width=372
+    Row Y: 204 | 416
+    Card height: 200px   Gap: 12px
+  -->
+
+  <!-- ================================================ -->
+  <!-- CARD 1: Creating and Claiming a GMB Listing      -->
+  <!-- ================================================ -->
+  <rect x="20" y="204" width="372" height="200" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="204" width="5" height="200" rx="2.5" fill="#1A73E8"/>
+
+  <circle cx="63" cy="228" r="18" fill="#1A73E8"/>
+  <text x="63" y="234" text-anchor="middle" fill="white" font-size="14" font-weight="700">1</text>
+  <text x="89" y="224" fill="#1A1A1A" font-size="13" font-weight="700">Creating &amp; Claiming Your GBP</text>
+  <text x="89" y="240" fill="#1A73E8" font-size="8.5" font-weight="700" letter-spacing="0.6">SETUP, VERIFICATION &amp; CATEGORY STRATEGY</text>
+  <line x1="32" y1="252" x2="381" y2="252" stroke="#DBEAFE" stroke-width="1"/>
+
+  <circle cx="40" cy="268" r="3.5" fill="#1A73E8"/>
+  <text x="50" y="272" fill="#333" font-size="10" font-weight="600">Go to business.google.com — claim existing or create new</text>
+
+  <circle cx="40" cy="287" r="3.5" fill="#1A73E8"/>
+  <text x="50" y="291" fill="#333" font-size="10" font-weight="600">Video verification is now the default method in most regions</text>
+
+  <circle cx="40" cy="306" r="3.5" fill="#1A73E8"/>
+  <text x="50" y="310" fill="#333" font-size="10" font-weight="600">Primary category = #1 ranking signal — choose the narrowest fit</text>
+
+  <circle cx="40" cy="325" r="3.5" fill="#1A73E8"/>
+  <text x="50" y="329" fill="#333" font-size="10" font-weight="600">Never keyword-stuff your business name — violates GBP policy</text>
+
+  <rect x="32" y="346" width="348" height="42" rx="8" fill="#EEF4FF"/>
+  <text x="206" y="364" text-anchor="middle" fill="#1A73E8" font-size="10.5" font-weight="700">Only 35% of small businesses have a claimed GBP</text>
+  <text x="206" y="381" text-anchor="middle" fill="#555" font-size="9.5">65% of your local competitors are invisible in the Local Pack</text>
+
+  <!-- ================================================ -->
+  <!-- CARD 2: Optimizing GMB Profile Information       -->
+  <!-- ================================================ -->
+  <rect x="408" y="204" width="372" height="200" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="204" width="5" height="200" rx="2.5" fill="#0F9D58"/>
+
+  <circle cx="451" cy="228" r="18" fill="#0F9D58"/>
+  <text x="451" y="234" text-anchor="middle" fill="white" font-size="14" font-weight="700">2</text>
+  <text x="477" y="224" fill="#1A1A1A" font-size="13" font-weight="700">Optimizing Your GBP Profile</text>
+  <text x="477" y="240" fill="#0F9D58" font-size="8.5" font-weight="700" letter-spacing="0.6">EVERY FIELD THAT AFFECTS YOUR RANKING</text>
+  <line x1="420" y1="252" x2="769" y2="252" stroke="#D4EDDA" stroke-width="1"/>
+
+  <circle cx="428" cy="268" r="3.5" fill="#0F9D58"/>
+  <text x="438" y="272" fill="#333" font-size="10" font-weight="600">Description: 750 chars, lead with primary keyword + city name</text>
+
+  <circle cx="428" cy="287" r="3.5" fill="#0F9D58"/>
+  <text x="438" y="291" fill="#333" font-size="10" font-weight="600">Add 1 primary + up to 9 secondary categories (cover all services)</text>
+
+  <circle cx="428" cy="306" r="3.5" fill="#0F9D58"/>
+  <text x="438" y="310" fill="#333" font-size="10" font-weight="600">Upload 100+ photos: exterior, interior, team, products, work</text>
+
+  <circle cx="428" cy="325" r="3.5" fill="#0F9D58"/>
+  <text x="438" y="329" fill="#333" font-size="10" font-weight="600">Services, Products, Attributes — most rivals leave these blank</text>
+
+  <rect x="420" y="346" width="348" height="42" rx="8" fill="#EDFFF5"/>
+  <text x="594" y="364" text-anchor="middle" fill="#0F9D58" font-size="10.5" font-weight="700">42% more direction requests with photos vs. no photos</text>
+  <text x="594" y="381" text-anchor="middle" fill="#555" font-size="9.5">100+ photos → dramatically higher engagement than 10 or fewer</text>
+
+  <!-- ================================================ -->
+  <!-- CARD 3: GBP Posts and Updates                    -->
+  <!-- ================================================ -->
+  <rect x="20" y="416" width="372" height="200" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="416" width="5" height="200" rx="2.5" fill="#E37400"/>
+
+  <circle cx="63" cy="440" r="18" fill="#E37400"/>
+  <text x="63" y="446" text-anchor="middle" fill="white" font-size="14" font-weight="700">3</text>
+  <text x="89" y="436" fill="#1A1A1A" font-size="13" font-weight="700">GBP Posts &amp; Updates Strategy</text>
+  <text x="89" y="452" fill="#E37400" font-size="8.5" font-weight="700" letter-spacing="0.6">CONTENT THAT WINS CLICKS &amp; FEEDS AI SUMMARIES</text>
+  <line x1="32" y1="464" x2="381" y2="464" stroke="#FDEBD0" stroke-width="1"/>
+
+  <circle cx="40" cy="480" r="3.5" fill="#E37400"/>
+  <text x="50" y="484" fill="#333" font-size="10" font-weight="600">4 post types: What's New, Event, Offer, Product — use all of them</text>
+
+  <circle cx="40" cy="499" r="3.5" fill="#E37400"/>
+  <text x="50" y="503" fill="#333" font-size="10" font-weight="600">Post at least weekly — consistency signals active business to Google</text>
+
+  <circle cx="40" cy="518" r="3.5" fill="#E37400"/>
+  <text x="50" y="522" fill="#333" font-size="10" font-weight="600">Posts lift click-through in local panel (conversion, not ranking)</text>
+
+  <circle cx="40" cy="537" r="3.5" fill="#E37400"/>
+  <text x="50" y="541" fill="#333" font-size="10" font-weight="600">Fresh Posts feed Google's 2026 AI local summary generator</text>
+
+  <rect x="32" y="558" width="348" height="42" rx="8" fill="#FFF8EE"/>
+  <text x="206" y="576" text-anchor="middle" fill="#E37400" font-size="10.5" font-weight="700">Regular posters appear 3.1× more in top-3 map results</text>
+  <text x="206" y="593" text-anchor="middle" fill="#555" font-size="9.5">Reviews = 16% of ranking weight — respond to every one</text>
+
+  <!-- ================================================ -->
+  <!-- CARD 4: Insights and Analytics                   -->
+  <!-- ================================================ -->
+  <rect x="408" y="416" width="372" height="200" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="416" width="5" height="200" rx="2.5" fill="#EA4335"/>
+
+  <circle cx="451" cy="440" r="18" fill="#EA4335"/>
+  <text x="451" y="446" text-anchor="middle" fill="white" font-size="14" font-weight="700">4</text>
+  <text x="477" y="436" fill="#1A1A1A" font-size="13" font-weight="700">GBP Insights &amp; Analytics</text>
+  <text x="477" y="452" fill="#EA4335" font-size="8.5" font-weight="700" letter-spacing="0.6">MEASURE WHAT'S WORKING — THEN DO MORE OF IT</text>
+  <line x1="420" y1="464" x2="769" y2="464" stroke="#FDDBD8" stroke-width="1"/>
+
+  <circle cx="428" cy="480" r="3.5" fill="#EA4335"/>
+  <text x="438" y="484" fill="#333" font-size="10" font-weight="600">Discovery vs. Direct vs. Branded search split — track monthly</text>
+
+  <circle cx="428" cy="499" r="3.5" fill="#EA4335"/>
+  <text x="438" y="503" fill="#333" font-size="10" font-weight="600">Calls, direction requests, website clicks = real conversion metrics</text>
+
+  <circle cx="428" cy="518" r="3.5" fill="#EA4335"/>
+  <text x="438" y="522" fill="#333" font-size="10" font-weight="600">Photo views reveal which content your audience engages most</text>
+
+  <circle cx="428" cy="537" r="3.5" fill="#EA4335"/>
+  <text x="438" y="541" fill="#333" font-size="10" font-weight="600">AI-surface share: new 2026 metric — aim above 15% to rank in AI</text>
+
+  <rect x="420" y="558" width="348" height="42" rx="8" fill="#FFF0EE"/>
+  <text x="594" y="576" text-anchor="middle" fill="#EA4335" font-size="10.5" font-weight="700">Average verified GBP gets 1,420 profile views per month</text>
+  <text x="594" y="593" text-anchor="middle" fill="#555" font-size="9.5">Businesses receive ~595 calls/year from their GBP alone</text>
+
+  <!-- ================================================ -->
+  <!-- LOCAL PACK RANKING FACTORS — FULL WIDTH CHART    -->
+  <!-- ================================================ -->
+  <rect x="20" y="632" width="760" height="182" rx="11" fill="white" filter="url(#section-shadow)"/>
+  <rect x="20" y="632" width="760" height="36" rx="11" fill="#1A73E8"/>
+  <!-- Fix bottom radius of header -->
+  <rect x="20" y="650" width="760" height="18" fill="#1A73E8"/>
+
+  <text x="400" y="656" text-anchor="middle" fill="white" font-size="12" font-weight="700" letter-spacing="0.5">LOCAL PACK RANKING FACTORS 2026</text>
+  <text x="680" y="656" text-anchor="middle" fill="rgba(255,255,255,0.70)" font-size="9">Source: Moz / Whitespark</text>
+
+  <!-- Bar rows — starting at y=675 -->
+  <!-- Max bar width: from x=252 to x=698 = 446px -->
+
+  <!-- Row 1: GBP Signals 32% -->
+  <text x="240" y="688" text-anchor="end" fill="#333" font-size="10" font-weight="600">GBP Profile Signals</text>
+  <rect x="248" y="678" width="143" height="14" rx="3" fill="#1A73E8"/>
+  <text x="397" y="689" fill="#1A73E8" font-size="10" font-weight="700">32%</text>
+
+  <!-- Row 2: On-Page Signals 19% -->
+  <text x="240" y="706" text-anchor="end" fill="#333" font-size="10" font-weight="600">On-Page SEO Signals</text>
+  <rect x="248" y="696" width="85" height="14" rx="3" fill="#34A853"/>
+  <text x="339" y="707" fill="#34A853" font-size="10" font-weight="700">19%</text>
+
+  <!-- Row 3: Review Signals 16% -->
+  <text x="240" y="724" text-anchor="end" fill="#333" font-size="10" font-weight="600">Review Signals</text>
+  <rect x="248" y="714" width="71" height="14" rx="3" fill="#EA4335"/>
+  <text x="325" y="725" fill="#EA4335" font-size="10" font-weight="700">16%</text>
+
+  <!-- Row 4: Link Signals 15% -->
+  <text x="240" y="742" text-anchor="end" fill="#333" font-size="10" font-weight="600">Link Signals</text>
+  <rect x="248" y="732" width="67" height="14" rx="3" fill="#E37400"/>
+  <text x="321" y="743" fill="#E37400" font-size="10" font-weight="700">15%</text>
+
+  <!-- Row 5: Behavioral Signals 8% -->
+  <text x="240" y="760" text-anchor="end" fill="#333" font-size="10" font-weight="600">Behavioral Signals</text>
+  <rect x="248" y="750" width="36" height="14" rx="3" fill="#0F9D58"/>
+  <text x="290" y="761" fill="#0F9D58" font-size="10" font-weight="700">8%</text>
+
+  <!-- Row 6: Citation Signals 7% -->
+  <text x="240" y="778" text-anchor="end" fill="#333" font-size="10" font-weight="600">Citation Signals</text>
+  <rect x="248" y="768" width="31" height="14" rx="3" fill="#FF6D00"/>
+  <text x="285" y="779" fill="#FF6D00" font-size="10" font-weight="700">7%</text>
+
+  <!-- Row 7: Personalization 3% -->
+  <text x="240" y="796" text-anchor="end" fill="#333" font-size="10" font-weight="600">Personalization</text>
+  <rect x="248" y="786" width="13" height="14" rx="3" fill="#9E9E9E"/>
+  <text x="267" y="797" fill="#9E9E9E" font-size="10" font-weight="700">3%</text>
+
+  <!-- Right side note -->
+  <text x="750" y="688" text-anchor="end" fill="#777" font-size="8.5">GBP is #1 — start here</text>
+  <text x="750" y="706" text-anchor="end" fill="#777" font-size="8.5">Local service pages key</text>
+  <text x="750" y="724" text-anchor="end" fill="#777" font-size="8.5">Reviews affect ranking + trust</text>
+  <text x="750" y="742" text-anchor="end" fill="#777" font-size="8.5">Local directory backlinks</text>
+  <text x="750" y="760" text-anchor="end" fill="#777" font-size="8.5">CTR, clicks-to-call, dwell time</text>
+  <text x="750" y="778" text-anchor="end" fill="#777" font-size="8.5">NAP consistency across web</text>
+  <text x="750" y="796" text-anchor="end" fill="#777" font-size="8.5">Search + location history</text>
+
+  <!-- ================================================ -->
+  <!-- SMARTGEN TOOLS BAR                               -->
+  <!-- ================================================ -->
+  <rect x="20" y="828" width="760" height="62" rx="10" fill="#0D47A1"/>
+  <text x="400" y="848" text-anchor="middle" fill="white" font-size="10.5" font-weight="700" letter-spacing="0.8">🔧 FREE SMARTGEN TOOLS — NO LOGIN · NO REGISTRATION REQUIRED</text>
+
+  <!-- Tool pills -->
+  <rect x="32" y="856" width="172" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="118" y="873" text-anchor="middle" fill="white" font-size="9.5" font-weight="600">Schema Generator →</text>
+
+  <rect x="214" y="856" width="172" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="300" y="873" text-anchor="middle" fill="white" font-size="9.5" font-weight="600">Meta Tag Generator →</text>
+
+  <rect x="396" y="856" width="172" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="482" y="873" text-anchor="middle" fill="white" font-size="9.5" font-weight="600">Robots.txt Generator →</text>
+
+  <rect x="578" y="856" width="172" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="664" y="873" text-anchor="middle" fill="white" font-size="9.5" font-weight="600">Sitemap Finder →</text>
+
+  <!-- ================================================ -->
+  <!-- FOOTER: Local SEO Loop                           -->
+  <!-- ================================================ -->
+  <rect y="904" width="800" height="80" fill="#0A2540"/>
+
+  <text x="400" y="924" text-anchor="middle" fill="white" font-size="11.5" font-weight="700" letter-spacing="1.5">THE LOCAL SEO SUCCESS LOOP</text>
+
+  <!-- Stage 1 -->
+  <text x="70" y="945" text-anchor="middle" fill="#5BA8FF" font-size="9" font-weight="700">CLAIM</text>
+  <text x="70" y="958" text-anchor="middle" fill="#7A90A6" font-size="8">Create + Verify GBP</text>
+  <text x="152" y="952" text-anchor="middle" fill="#3A5A78" font-size="15">›</text>
+  <!-- Stage 2 -->
+  <text x="230" y="945" text-anchor="middle" fill="#5BC08A" font-size="9" font-weight="700">OPTIMIZE</text>
+  <text x="230" y="958" text-anchor="middle" fill="#7A90A6" font-size="8">Every Profile Field</text>
+  <text x="318" y="952" text-anchor="middle" fill="#3A5A78" font-size="15">›</text>
+  <!-- Stage 3 -->
+  <text x="400" y="945" text-anchor="middle" fill="#FBBC04" font-size="9" font-weight="700">POST</text>
+  <text x="400" y="958" text-anchor="middle" fill="#7A90A6" font-size="8">Weekly GBP Content</text>
+  <text x="484" y="952" text-anchor="middle" fill="#3A5A78" font-size="15">›</text>
+  <!-- Stage 4 -->
+  <text x="570" y="945" text-anchor="middle" fill="#FF7070" font-size="9" font-weight="700">REVIEW</text>
+  <text x="570" y="958" text-anchor="middle" fill="#7A90A6" font-size="8">Earn + Respond Always</text>
+  <text x="658" y="952" text-anchor="middle" fill="#3A5A78" font-size="15">›</text>
+  <!-- Stage 5 -->
+  <text x="735" y="945" text-anchor="middle" fill="#FF7070" font-size="9" font-weight="700">ANALYZE</text>
+  <text x="735" y="958" text-anchor="middle" fill="#7A90A6" font-size="8">Insights + Refine</text>
+
+  <!-- Copyright -->
+  <text x="400" y="978" text-anchor="middle" fill="#4A6070" font-size="9">© 2026 SmartGen Digital Marketing Course  ·  smartgentools.com  ·  Local SEO Guide by Sayad Md Bayezid Hosan</text>
+
+</svg>
