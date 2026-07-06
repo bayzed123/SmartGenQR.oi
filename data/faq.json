@@ -1,0 +1,124 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "category": "General",
+      "question": "What is SmartGen?",
+      "answer": "SmartGen is an all-in-one digital and web utility platform offering 130+ free tools for developers, marketers, and creators. Everything runs locally in your browser with zero data tracking and no server processing."
+    },
+    {
+      "id": 2,
+      "category": "General",
+      "question": "Is SmartGen really free?",
+      "answer": "Yes, SmartGen is 100% free. All tools are completely free to use with no hidden charges, subscriptions, or premium features. We're also open source, so you can inspect our code anytime."
+    },
+    {
+      "id": 3,
+      "category": "Privacy",
+      "question": "Is my data safe on SmartGen?",
+      "answer": "Absolutely. SmartGen is built with a privacy-first architecture. All processing happens locally in your browser. We don't send any data to servers, don't track users, and don't store any information. Your data never leaves your device."
+    },
+    {
+      "id": 4,
+      "category": "Privacy",
+      "question": "Do you collect any personal information?",
+      "answer": "No. SmartGen does not collect, store, or transmit any personal information. We respect your privacy completely. The only external service we use is Google AdSense for non-intrusive ads to support the platform."
+    },
+    {
+      "id": 5,
+      "category": "Tools",
+      "question": "What tools are available?",
+      "answer": "SmartGen offers 130+ tools across categories including QR generators, SEO tools, developer utilities, marketing tools, image processing, text utilities, calculators, and much more. Visit our Tools directory to explore all available tools."
+    },
+    {
+      "id": 6,
+      "category": "Tools",
+      "question": "How do I use the QR Generator?",
+      "answer": "Navigate to the QR Generator tool, enter the text or URL you want to convert, customize the QR code if desired, and download the generated QR code as an image. It's that simple!"
+    },
+    {
+      "id": 7,
+      "category": "Technical",
+      "question": "Do I need to install anything to use SmartGen?",
+      "answer": "No installation needed. SmartGen is a web-based platform. Simply visit smartgentools.com in your browser and start using the tools immediately."
+    },
+    {
+      "id": 8,
+      "category": "Technical",
+      "question": "Which browsers does SmartGen support?",
+      "answer": "SmartGen works on all modern browsers including Chrome, Firefox, Safari, Edge, and Opera. We recommend keeping your browser updated for the best experience."
+    },
+    {
+      "id": 9,
+      "category": "Technical",
+      "question": "Can I use SmartGen offline?",
+      "answer": "Most SmartGen tools work offline after the initial page load. However, some tools that require external APIs may need an internet connection. Check individual tool descriptions for details."
+    },
+    {
+      "id": 10,
+      "category": "Account",
+      "question": "Do I need to create an account?",
+      "answer": "No account is required. SmartGen is completely anonymous and doesn't require registration. You can use all tools without logging in."
+    },
+    {
+      "id": 11,
+      "category": "Features",
+      "question": "Can I export my results?",
+      "answer": "Yes, most tools allow you to export or download results in various formats (PNG, JPG, JSON, CSV, etc.). Look for the download or export button in each tool."
+    },
+    {
+      "id": 12,
+      "category": "Features",
+      "question": "Is there a dark mode?",
+      "answer": "Yes! SmartGen supports both light and dark themes. Click the theme toggle button (🌓) in the header to switch between themes. Your preference is automatically saved."
+    },
+    {
+      "id": 13,
+      "category": "Support",
+      "question": "How do I report a bug?",
+      "answer": "If you find a bug, please report it on our GitHub repository at github.com/bayzed123/SmartGenQR.oi or contact us through the Contact Us page on the website."
+    },
+    {
+      "id": 14,
+      "category": "Support",
+      "question": "Can I request a new tool?",
+      "answer": "Absolutely! We'd love to hear your suggestions. Visit our 'Request a Tool' page or open an issue on our GitHub repository to suggest new tools or features."
+    },
+    {
+      "id": 15,
+      "category": "Developers",
+      "question": "Is SmartGen open source?",
+      "answer": "Yes, SmartGen is completely open source. You can find our code on GitHub at github.com/bayzed123/SmartGenQR.oi. Feel free to fork, contribute, or use it for your own projects."
+    },
+    {
+      "id": 16,
+      "category": "Developers",
+      "question": "How can I contribute to SmartGen?",
+      "answer": "We welcome contributions! Visit our GitHub repository, fork the project, make your improvements, and submit a pull request. Check our Contributing.md file for guidelines."
+    },
+    {
+      "id": 17,
+      "category": "Performance",
+      "question": "Why is SmartGen so fast?",
+      "answer": "SmartGen is fast because all processing happens locally in your browser. There's no server communication delay, no network latency, and no waiting for responses. Everything runs instantly on your device."
+    },
+    {
+      "id": 18,
+      "category": "Performance",
+      "question": "Will SmartGen work on mobile devices?",
+      "answer": "Yes, SmartGen is fully responsive and works great on mobile devices, tablets, and desktops. The interface automatically adapts to your screen size."
+    },
+    {
+      "id": 19,
+      "category": "Legal",
+      "question": "What is your privacy policy?",
+      "answer": "Our privacy policy is available on the Privacy page. In short: we don't collect data, don't track users, and don't store information. Everything is processed locally on your device."
+    },
+    {
+      "id": 20,
+      "category": "Legal",
+      "question": "What are the terms of service?",
+      "answer": "Our terms of service are available on the Terms & Conditions page. SmartGen is provided as-is for personal and commercial use, free of charge."
+    }
+  ]
+}
