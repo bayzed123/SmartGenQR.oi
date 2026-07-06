@@ -1,22 +1,22 @@
 {
   "url": "https://smartgentools.com",
   "strategy": "mobile",
-  "performance_score": 78,
+  "performance_score": 85,
   "metrics": {
     "LCP": {
-      "value": 2579,
+      "value": 4099,
       "unit": "ms",
       "label": "Largest Contentful Paint",
-      "rating": "needs-improvement"
-    },
-    "CLS": {
-      "value": 0.434,
-      "unit": "",
-      "label": "Cumulative Layout Shift",
       "rating": "poor"
     },
+    "CLS": {
+      "value": 0,
+      "unit": "",
+      "label": "Cumulative Layout Shift",
+      "rating": "good"
+    },
     "FCP": {
-      "value": 774,
+      "value": 946,
       "unit": "ms",
       "label": "First Contentful Paint",
       "rating": "good"
@@ -33,7 +33,7 @@
     {
       "title": "Avoid enormous network payloads",
       "score": 50,
-      "display": "Total size was 5,423\u00a0KiB"
+      "display": "Total size was 5,595\u00a0KiB"
     }
   ],
   "field_data_available": false,
