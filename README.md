@@ -95,7 +95,8 @@
 2.  **Install:** `pnpm install` (Required for blog build and linting).
 3.  **Local Preview:** Open any `index.html` or use `npx serve` for the full environment.
 4.  **Build Blog:** `pnpm build` (Runs `scripts/build-blog.js`).
-
+---
+# how Manage Automated Smartgen Chatbot Read [CHATBOT_README.md](CHATBOT_README.md)
 ---
 
 ## 🤝 Contribution & Support
