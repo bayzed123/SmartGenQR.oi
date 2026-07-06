@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: Correct AdSense ID, encoding issues, and Firebase placeholders",
+    "date": "2026-07-06T18:09:26Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Create smartgen-chatbot-old-guide.md",
     "date": "2026-07-06T07:15:57Z",
     "description": "Platform improvement and optimization."
