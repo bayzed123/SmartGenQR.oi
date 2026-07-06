@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: add cookies component to all pages and disable adsense lazy-loading for 30 days",
+    "date": "2026-07-06T19:39:25Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: remove lazy-loaded AdSense and inject standard script into head for Google approval",
     "date": "2026-07-06T19:06:38Z",
     "description": "Platform improvement and optimization."
