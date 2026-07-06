@@ -2,6 +2,7 @@
 class SmartGenChatbot {
     constructor() {
         this.faqData = [];
+        this.sitemapData = [];
         this.isOpen = false;
         this.conversationHistory = [];
         this.init();
@@ -11,6 +12,8 @@ class SmartGenChatbot {
         try {
             // Load FAQ data
             await this.loadFAQ();
+            // Load Sitemap data
+            await this.loadSitemap();
             
             // Create chatbot UI
             this.createChatbotUI();
@@ -18,34 +21,71 @@ class SmartGenChatbot {
             // Attach event listeners
             this.attachEventListeners();
             
-            console.log('SmartGen Chatbot initialized successfully');
+            console.log("SmartGen Chatbot initialized successfully");
         } catch (error) {
-            console.error('Error initializing chatbot:', error);
+            console.error("Error initializing chatbot:", error);
         }
     }
 
     async loadFAQ() {
         try {
-            const response = await fetch('./data/faq.json');
-            if (!response.ok) throw new Error('Failed to load FAQ data');
+            const response = await fetch("./data/faq.json");
+            if (!response.ok) throw new Error("Failed to load FAQ data");
             
             const data = await response.json();
             this.faqData = data.faqs || [];
             
             if (this.faqData.length === 0) {
-                console.warn('No FAQ data loaded');
+                console.warn("No FAQ data loaded");
             }
         } catch (error) {
-            console.error('Error loading FAQ:', error);
+            console.error("Error loading FAQ:", error);
             this.faqData = [];
         }
     }
 
+    async loadSitemap() {
+        try {
+            const response = await fetch("/sitemap.xml");
+            if (!response.ok) throw new Error("Failed to load sitemap.xml");
+            
+            const sitemapText = await response.text();
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(sitemapText, "text/xml");
+            
+            const urls = xmlDoc.querySelectorAll("url");
+            this.sitemapData = Array.from(urls).map(urlElement => {
+                const loc = urlElement.querySelector("loc").textContent;
+                const path = new URL(loc).pathname;
+                const title = this.extractTitleFromPath(path);
+                return { loc, path, title };
+            });
+
+            if (this.sitemapData.length === 0) {
+                console.warn("No sitemap data loaded");
+            }
+        } catch (error) {
+            console.error("Error loading sitemap:", error);
+            this.sitemapData = [];
+        }
+    }
+
+    extractTitleFromPath(path) {
+        // Example: /blog/my-awesome-post/ -> My Awesome Post
+        // Example: /tools/qr-generator/ -> QR Generator
+        const parts = path.split("/").filter(Boolean);
+        if (parts.length === 0) return "Home Page";
+        
+        let title = parts[parts.length - 1].replace(/-/g, " ");
+        title = title.charAt(0).toUpperCase() + title.slice(1);
+        return title;
+    }
+
     createChatbotUI() {
         // Create container
-        const chatbotContainer = document.createElement('div');
-        chatbotContainer.id = 'smartgen-chatbot';
-        chatbotContainer.className = 'smartgen-chatbot-container';
+        const chatbotContainer = document.createElement("div");
+        chatbotContainer.id = "smartgen-chatbot";
+        chatbotContainer.className = "smartgen-chatbot-container";
         
         // Create chatbot HTML
         chatbotContainer.innerHTML = `
@@ -103,68 +143,68 @@ class SmartGenChatbot {
     }
 
     attachEventListeners() {
-        const toggleBtn = document.getElementById('chatbot-toggle');
-        const closeBtn = document.getElementById('chatbot-close');
-        const sendBtn = document.getElementById('chatbot-send');
-        const input = document.getElementById('chatbot-input');
-        const quickReplyBtns = document.querySelectorAll('.quick-reply-btn');
+        const toggleBtn = document.getElementById("chatbot-toggle");
+        const closeBtn = document.getElementById("chatbot-close");
+        const sendBtn = document.getElementById("chatbot-send");
+        const input = document.getElementById("chatbot-input");
+        const quickReplyBtns = document.querySelectorAll(".quick-reply-btn");
 
         // Toggle chat window
-        toggleBtn.addEventListener('click', () => this.toggleChatWindow());
-        closeBtn.addEventListener('click', () => this.toggleChatWindow());
+        toggleBtn.addEventListener("click", () => this.toggleChatWindow());
+        closeBtn.addEventListener("click", () => this.toggleChatWindow());
 
         // Send message
-        sendBtn.addEventListener('click', () => this.sendMessage());
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') this.sendMessage();
+        sendBtn.addEventListener("click", () => this.sendMessage());
+        input.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") this.sendMessage();
         });
 
         // Quick replies
         quickReplyBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const question = e.target.getAttribute('data-question');
+            btn.addEventListener("click", (e) => {
+                const question = e.target.getAttribute("data-question");
                 this.handleUserMessage(question);
             });
         });
     }
 
     toggleChatWindow() {
-        const chatWindow = document.getElementById('chatbot-window');
-        const toggleBtn = document.getElementById('chatbot-toggle');
+        const chatWindow = document.getElementById("chatbot-window");
+        const toggleBtn = document.getElementById("chatbot-toggle");
         
         this.isOpen = !this.isOpen;
         
         if (this.isOpen) {
-            chatWindow.classList.add('open');
-            toggleBtn.classList.add('active');
-            document.getElementById('chatbot-input').focus();
+            chatWindow.classList.add("open");
+            toggleBtn.classList.add("active");
+            document.getElementById("chatbot-input").focus();
         } else {
-            chatWindow.classList.remove('open');
-            toggleBtn.classList.remove('active');
+            chatWindow.classList.remove("open");
+            toggleBtn.classList.remove("active");
         }
     }
 
     sendMessage() {
-        const input = document.getElementById('chatbot-input');
+        const input = document.getElementById("chatbot-input");
         const message = input.value.trim();
 
         if (message.length === 0) return;
 
         this.handleUserMessage(message);
-        input.value = '';
+        input.value = "";
         input.focus();
     }
 
     handleUserMessage(userMessage) {
         // Add user message to chat
-        this.addMessageToChat(userMessage, 'user');
+        this.addMessageToChat(userMessage, "user");
 
         // Find best matching answer
         const answer = this.findBestAnswer(userMessage);
 
         // Simulate typing delay for better UX
         setTimeout(() => {
-            this.addMessageToChat(answer, 'bot');
+            this.addMessageToChat(answer, "bot");
         }, 300);
 
         // Store in conversation history
@@ -176,7 +216,7 @@ class SmartGenChatbot {
     }
 
     findBestAnswer(userQuery) {
-        if (!userQuery || this.faqData.length === 0) {
+        if (!userQuery) {
             return "I'm sorry, I couldn't find an answer to that. Please try asking another question or visit our Help page.";
         }
 
@@ -188,7 +228,7 @@ class SmartGenChatbot {
         for (const faq of this.faqData) {
             const question = faq.question.toLowerCase();
             const answer = faq.answer.toLowerCase();
-            const category = (faq.category || '').toLowerCase();
+            const category = (faq.category || "").toLowerCase();
 
             // Calculate relevance score
             let score = 0;
@@ -222,9 +262,37 @@ class SmartGenChatbot {
             }
         }
 
-        // Return best match or default message
-        if (bestMatch && bestScore > 20) {
+        // Search through sitemap data for relevant links
+        let bestSitemapMatch = null;
+        let bestSitemapScore = 0;
+
+        for (const page of this.sitemapData) {
+            const pageTitle = page.title.toLowerCase();
+            const pagePath = page.path.toLowerCase();
+            
+            let sitemapScore = 0;
+
+            if (pageTitle.includes(query) || pagePath.includes(query)) {
+                sitemapScore = 50; // Base score for keyword presence
+            }
+            if (this.containsAllWords(pageTitle, query)) {
+                sitemapScore = 70;
+            }
+            if (this.containsAllWords(pagePath, query)) {
+                sitemapScore = 60;
+            }
+
+            if (sitemapScore > bestSitemapScore) {
+                bestSitemapScore = sitemapScore;
+                bestSitemapMatch = page;
+            }
+        }
+
+        // Prioritize FAQ answers if a strong match is found
+        if (bestMatch && bestScore >= 60) {
             return bestMatch.answer;
+        } else if (bestSitemapMatch && bestSitemapScore >= 50) {
+            return `I found something related: <a href="${bestSitemapMatch.loc}" target="_blank" rel="noopener noreferrer">${bestSitemapMatch.title}</a>. Does this help?`;
         }
 
         // Provide helpful suggestions based on query keywords
@@ -253,36 +321,44 @@ class SmartGenChatbot {
         const query = userQuery.toLowerCase();
 
         // Category-based suggestions
-        if (query.includes('tool') || query.includes('feature') || query.includes('use')) {
+        if (query.includes("tool") || query.includes("feature") || query.includes("use")) {
             return "SmartGen has 130+ tools available! You can explore them in the Tools directory. Would you like to know about a specific tool like QR Generator, SEO tools, or developer utilities?";
         }
 
-        if (query.includes('free') || query.includes('cost') || query.includes('price')) {
+        if (query.includes("free") || query.includes("cost") || query.includes("price")) {
             return "Yes, SmartGen is 100% free! All tools are completely free to use with no hidden charges, subscriptions, or premium features.";
         }
 
-        if (query.includes('data') || query.includes('privacy') || query.includes('safe') || query.includes('security')) {
+        if (query.includes("data") || query.includes("privacy") || query.includes("safe") || query.includes("security")) {
             return "Your data is completely safe! SmartGen is built with a privacy-first architecture. All processing happens locally in your browser, and we don't send any data to servers or track users.";
         }
 
-        if (query.includes('account') || query.includes('login') || query.includes('sign')) {
+        if (query.includes("account") || query.includes("login") || query.includes("sign")) {
             return "You don't need an account! SmartGen is completely anonymous and doesn't require registration. You can use all tools without logging in.";
         }
 
-        if (query.includes('bug') || query.includes('error') || query.includes('problem')) {
+        if (query.includes("bug") || query.includes("error") || query.includes("problem")) {
             return "If you're experiencing an issue, please report it on our GitHub repository at github.com/bayzed123/SmartGenQR.oi or contact us through the Contact Us page.";
         }
 
-        if (query.includes('contribute') || query.includes('help') || query.includes('open source')) {
+        if (query.includes("contribute") || query.includes("help") || query.includes("open source")) {
             return "We'd love your help! SmartGen is open source on GitHub. You can fork the project, contribute improvements, and submit pull requests. Check our Contributing.md file for guidelines.";
         }
 
-        if (query.includes('mobile') || query.includes('phone') || query.includes('tablet')) {
+        if (query.includes("mobile") || query.includes("phone") || query.includes("tablet")) {
             return "Yes, SmartGen works great on mobile devices! The interface is fully responsive and automatically adapts to your screen size.";
         }
 
-        if (query.includes('offline') || query.includes('internet')) {
+        if (query.includes("offline") || query.includes("internet")) {
             return "Most SmartGen tools work offline after the initial page load. However, some tools that require external APIs may need an internet connection.";
+        }
+
+        // Check for contact page explicitly
+        if (query.includes("contact") || query.includes("reach out") || query.includes("get in touch")) {
+            const contactPage = this.sitemapData.find(page => page.path.includes("/contact/"));
+            if (contactPage) {
+                return `You can reach us through our <a href="${contactPage.loc}" target="_blank" rel="noopener noreferrer">Contact Us page</a>.`;
+            }
         }
 
         // Default response
@@ -290,14 +366,14 @@ class SmartGenChatbot {
     }
 
     addMessageToChat(message, sender) {
-        const messagesContainer = document.getElementById('chatbot-messages');
+        const messagesContainer = document.getElementById("chatbot-messages");
         
-        const messageDiv = document.createElement('div');
+        const messageDiv = document.createElement("div");
         messageDiv.className = `chatbot-message ${sender}-message`;
         
-        const contentDiv = document.createElement('div');
-        contentDiv.className = 'message-content';
-        contentDiv.textContent = message;
+        const contentDiv = document.createElement("div");
+        contentDiv.className = "message-content";
+        contentDiv.innerHTML = message; // Use innerHTML to render links
         
         messageDiv.appendChild(contentDiv);
         messagesContainer.appendChild(messageDiv);
@@ -306,8 +382,8 @@ class SmartGenChatbot {
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
         // Remove quick replies if bot message
-        if (sender === 'bot') {
-            const quickReplies = messagesContainer.querySelector('.quick-replies');
+        if (sender === "bot") {
+            const quickReplies = messagesContainer.querySelector(".quick-replies");
             if (quickReplies) {
                 quickReplies.remove();
             }
@@ -316,8 +392,8 @@ class SmartGenChatbot {
 }
 
 // Initialize chatbot when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
         new SmartGenChatbot();
     });
 } else {
