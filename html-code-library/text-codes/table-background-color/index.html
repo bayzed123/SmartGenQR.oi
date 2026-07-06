@@ -54,6 +54,69 @@
     <script src="../../../assets/js/search-data.js" defer></script>
     <script src="../../../assets/js/search.js" defer></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+
+    <style>
+        /* Cookie Consent Banner Styling */
+        #cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            border-top: 1px solid #e1e8ed;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            z-index: 9999;
+            display: none;
+            padding: 1rem 0;
+        }
+        .cookie-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .cookie-text {
+            flex: 1;
+            min-width: 280px;
+            margin: 0;
+            font-size: 0.9rem;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+        .cookie-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .cookie-btn {
+            background: #0052cc;
+            color: #ffffff;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .cookie-btn:hover {
+            background: #003d99;
+        }
+        .cookie-link {
+            font-size: 0.9rem;
+            color: #0052cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .cookie-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+
 </head>
 <body class="min-h-screen w-full">
     <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
@@ -223,7 +286,102 @@
     <script src="../../../assets/js/search-data.js" defer></script>
     <script src="../../../assets/js/search.js" defer></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
-</head><body>\n${$('code-output').textContent}\n</body></html>`], { type: 'text/html' });
+
+    <style>
+        /* Cookie Consent Banner Styling */
+        #cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            border-top: 1px solid #e1e8ed;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            z-index: 9999;
+            display: none;
+            padding: 1rem 0;
+        }
+        .cookie-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .cookie-text {
+            flex: 1;
+            min-width: 280px;
+            margin: 0;
+            font-size: 0.9rem;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+        .cookie-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .cookie-btn {
+            background: #0052cc;
+            color: #ffffff;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .cookie-btn:hover {
+            background: #003d99;
+        }
+        .cookie-link {
+            font-size: 0.9rem;
+            color: #0052cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .cookie-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head><body>\n${$('code-output').textContent}\n
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner">
+        <div class="cookie-container">
+            <p class="cookie-text">
+                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" class="cookie-link">Privacy Policy</a> and <a href="/cookies/" class="cookie-link">Cookie Policy</a>.
+            </p>
+            <div class="cookie-actions">
+                <a href="/privacy/" class="cookie-link">Learn More</a>
+                <button id="accept-cookies" class="cookie-btn">Accept</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Cookie Consent Logic
+        (function() {
+            const banner = document.getElementById('cookie-consent-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            
+            if (!localStorage.getItem('cookie-consent-accepted')) {
+                banner.style.display = 'block';
+            }
+            
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem('cookie-consent-accepted', 'true');
+                banner.style.display = 'none';
+            });
+        })();
+    </script>
+
+</body></html>`], { type: 'text/html' });
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
             a.download = 'table-bg.html';
@@ -291,5 +449,37 @@
         });
         
     </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner">
+        <div class="cookie-container">
+            <p class="cookie-text">
+                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" class="cookie-link">Privacy Policy</a> and <a href="/cookies/" class="cookie-link">Cookie Policy</a>.
+            </p>
+            <div class="cookie-actions">
+                <a href="/privacy/" class="cookie-link">Learn More</a>
+                <button id="accept-cookies" class="cookie-btn">Accept</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Cookie Consent Logic
+        (function() {
+            const banner = document.getElementById('cookie-consent-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            
+            if (!localStorage.getItem('cookie-consent-accepted')) {
+                banner.style.display = 'block';
+            }
+            
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem('cookie-consent-accepted', 'true');
+                banner.style.display = 'none';
+            });
+        })();
+    </script>
+
 </body>
 </html>

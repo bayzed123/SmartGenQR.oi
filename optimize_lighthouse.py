@@ -7,6 +7,7 @@ Applies Performance, Accessibility, Best Practices, and SEO improvements
 import os
 import re
 from pathlib import Path
+from datetime import datetime, timedelta
 
 def optimize_html_file(filepath, is_root=False):
     """Optimize a single HTML file for Lighthouse metrics"""
@@ -68,10 +69,19 @@ def optimize_html_file(filepath, is_root=False):
         
         content = re.sub(r'</body>', lazy_gtag + '\n</body>', content)
     
-    # 1.3 Lazy load AdSense
+    # 1.3 Lazy load AdSense - DISABLED UNTIL 2026-08-07 FOR ADSENSE APPROVAL
+    # Current date: 2026-07-07. Disabling for 30 days.
     adsense_pattern = r'<script async src="https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js\?client=[^"]*" crossorigin="anonymous"><\/script>'
     
-    if re.search(adsense_pattern, content):
+    # Check if we should skip lazy loading (AdSense Approval Period)
+    skip_lazy_adsense = True
+    current_date = datetime.now()
+    expiry_date = datetime(2026, 8, 7) # 30 days from now
+    
+    if current_date > expiry_date:
+        skip_lazy_adsense = False
+
+    if not skip_lazy_adsense and re.search(adsense_pattern, content):
         content = re.sub(adsense_pattern, '', content)
         
         lazy_adsense = '''<script>
@@ -169,7 +179,7 @@ def optimize_html_file(filepath, is_root=False):
 def process_all_files():
     """Process all HTML files in the repository"""
     
-    repo_path = Path('/home/ubuntu/SmartGenTools')
+    repo_path = Path('/home/ubuntu/SmartGenQR.oi')
     html_files = list(repo_path.glob('**/index.html'))
     
     print(f"Found {len(html_files)} HTML files to optimize")
@@ -182,7 +192,7 @@ def process_all_files():
         try:
             is_root = html_file.name == 'index.html' and html_file.parent == repo_path
             
-            print(f"\nð Processing: {html_file.relative_to(repo_path)}")
+            print(f"\n📄 Processing: {html_file.relative_to(repo_path)}")
             
             original_size = html_file.stat().st_size
             optimized_content = optimize_html_file(str(html_file), is_root=is_root)
@@ -195,29 +205,29 @@ def process_all_files():
             size_change = original_size - optimized_size
             size_percent = (size_change / original_size * 100) if original_size > 0 else 0
             
-            print(f"   â Optimized")
-            print(f"   Size: {original_size} â {optimized_size} bytes ({size_percent:+.1f}%)")
+            print(f"   ✅ Optimized")
+            print(f"   Size: {original_size} → {optimized_size} bytes ({size_percent:+.1f}%)")
             
             optimized_count += 1
             
         except Exception as e:
-            print(f"   â Error: {str(e)}")
+            print(f"   ❌ Error: {str(e)}")
             error_count += 1
     
     print("\n" + "=" * 60)
-    print(f"â Optimization Complete!")
+    print(f"✅ Optimization Complete!")
     print(f"   Successfully optimized: {optimized_count} files")
     print(f"   Errors: {error_count} files")
     print("\nOptimizations applied:")
-    print("   â Lazy-load Google Analytics (gtag.js)")
-    print("   â Lazy-load Google AdSense")
-    print("   â Added preconnect hints for third-party domains")
-    print("   â Added preload for critical CSS")
-    print("   â Fixed cookie banner contrast (WCAG AA)")
-    print("   â Improved cookie banner SEO text")
-    print("   â Added aria-labels to social icons")
-    print("   â Added security meta tags (CSP, X-Frame-Options, etc.)")
-    print("   â Added rel=noopener noreferrer to external links")
+    print("   ✓ Lazy-load Google Analytics (gtag.js)")
+    print("   ✓ Lazy-load Google AdSense (DISABLED FOR APPROVAL PERIOD)")
+    print("   ✓ Added preconnect hints for third-party domains")
+    print("   ✓ Added preload for critical CSS")
+    print("   ✓ Fixed cookie banner contrast (WCAG AA)")
+    print("   ✓ Improved cookie banner SEO text")
+    print("   ✓ Added aria-labels to social icons")
+    print("   ✓ Added security meta tags (CSP, X-Frame-Options, etc.)")
+    print("   ✓ Added rel=noopener noreferrer to external links")
 
 if __name__ == '__main__':
     process_all_files()
