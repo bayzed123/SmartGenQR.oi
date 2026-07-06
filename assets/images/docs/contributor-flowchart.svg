@@ -1,0 +1,94 @@
+  <svg viewBox="0 0 800 680" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+    <defs>
+      <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L9,3 z" fill="#555"/>
+      </marker>
+    </defs>
+
+    <style>
+      .start { fill:#1e40af; }
+      .diamond { fill:#fef3c7; stroke:#f59e0b; stroke-width:2; }
+      .pathA { fill:#dbeafe; stroke:#3b82f6; stroke-width:2; rx:12; }
+      .pathB { fill:#fce7f3; stroke:#ec4899; stroke-width:2; rx:12; }
+      .pathC { fill:#dcfce7; stroke:#22c55e; stroke-width:2; rx:12; }
+      .final { fill:#f3f4f6; stroke:#6b7280; stroke-width:2; rx:8; }
+      .title { font-size:14px; font-weight:bold; fill:#111; }
+      .sub { font-size:11px; fill:#333; }
+      .code { font-size:10.5px; fill:#374151; font-family:monospace; }
+      .arrow { stroke:#555; stroke-width:1.5; marker-end:url(#arrow2); fill:none; }
+      .qtext { font-size:13px; font-weight:bold; fill:#78350f; text-anchor:middle; }
+      .white { fill:#fff; }
+    </style>
+
+    <!-- Start -->
+    <rect x="300" y="15" width="200" height="45" rx="22" class="start"/>
+    <text x="400" y="43" text-anchor="middle" class="white title">🙋 I want to contribute!</text>
+
+    <line x1="400" y1="60" x2="400" y2="95" class="arrow"/>
+
+    <!-- Diamond Question -->
+    <polygon points="400,100 520,155 400,210 280,155" class="diamond"/>
+    <text x="400" y="150" class="qtext">What do you</text>
+    <text x="400" y="167" class="qtext">want to add?</text>
+
+    <!-- Three branches -->
+    <line x1="335" y1="180" x2="140" y2="260" class="arrow"/>
+    <line x1="400" y1="210" x2="400" y2="260" class="arrow"/>
+    <line x1="465" y1="180" x2="660" y2="260" class="arrow"/>
+
+    <text x="200" y="235" class="sub" text-anchor="middle" fill="#3b82f6" font-weight="bold">A new TOOL</text>
+    <text x="400" y="235" class="sub" text-anchor="middle" fill="#ec4899" font-weight="bold">A chatbot ANSWER</text>
+    <text x="600" y="235" class="sub" text-anchor="middle" fill="#22c55e" font-weight="bold">A BLOG post</text>
+
+    <!-- Path A: New Tool -->
+    <rect x="30" y="265" width="220" height="130" class="pathA"/>
+    <text x="45" y="288" class="title">🧩 Path A: New Tool</text>
+    <text x="45" y="308" class="code">1. mkdir /tool-name/</text>
+    <text x="45" y="323" class="code">2. Copy index.html template</text>
+    <text x="45" y="338" class="code">3. Edit search-data.js →</text>
+    <text x="45" y="352" class="code">   add to TOOLS_INDEX</text>
+    <text x="45" y="367" class="code">4. Add to sitemap.xml</text>
+    <text x="45" y="382" class="sub" font-style="italic">⏱ ~15-30 min</text>
+
+    <!-- Path B: FAQ -->
+    <rect x="290" y="265" width="220" height="130" class="pathB"/>
+    <text x="305" y="288" class="title">💬 Path B: FAQ Answer</text>
+    <text x="305" y="308" class="code">1. Open data/faq.json</text>
+    <text x="305" y="323" class="code">2. Add new {id, category,</text>
+    <text x="305" y="338" class="code">   question, answer}</text>
+    <text x="305" y="352" class="code">3. Test in chatbot UI</text>
+    <text x="305" y="382" class="sub" font-style="italic">⏱ ~5 min</text>
+
+    <!-- Path C: Blog -->
+    <rect x="550" y="265" width="220" height="130" class="pathC"/>
+    <text x="565" y="288" class="title">✍️ Path C: Blog Post</text>
+    <text x="565" y="308" class="code">1. Create blog-posts/</text>
+    <text x="565" y="323" class="code">   your-title.md</text>
+    <text x="565" y="338" class="code">2. Add front matter</text>
+    <text x="565" y="353" class="code">3. Run: pnpm build-blog</text>
+    <text x="565" y="382" class="sub" font-style="italic">⏱ ~20 min+</text>
+
+    <!-- Converge arrows -->
+    <line x1="140" y1="395" x2="380" y2="450" class="arrow"/>
+    <line x1="400" y1="395" x2="400" y2="450" class="arrow"/>
+    <line x1="660" y1="395" x2="420" y2="450" class="arrow"/>
+
+    <!-- Test locally -->
+    <rect x="270" y="455" width="260" height="55" class="final"/>
+    <text x="400" y="478" text-anchor="middle" class="title">🖥️ Test Locally</text>
+    <text x="400" y="497" text-anchor="middle" class="code">npx serve</text>
+
+    <line x1="400" y1="510" x2="400" y2="545" class="arrow"/>
+
+    <!-- Checklist -->
+    <rect x="230" y="550" width="340" height="70" class="final"/>
+    <text x="400" y="572" text-anchor="middle" class="title">✅ Quick Checklist</text>
+    <text x="250" y="590" class="sub">☑ Absolute paths (/assets/...)</text>
+    <text x="250" y="605" class="sub">☑ No manual edit to changelog.json</text>
+
+    <line x1="400" y1="620" x2="400" y2="645" class="arrow"/>
+
+    <!-- PR -->
+    <rect x="320" y="648" width="160" height="30" rx="15" class="start"/>
+    <text x="400" y="668" text-anchor="middle" class="white title" font-size="13">🚀 Open Pull Request</text>
+  </svg>
