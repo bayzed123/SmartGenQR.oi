@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: remove lazy-loaded AdSense and inject standard script into head for Google approval",
+    "date": "2026-07-06T19:06:38Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "update: Replace contact email and verify AdSense code across all pages",
     "date": "2026-07-06T18:10:26Z",
     "description": "- Updated contact email from cwb.agency@outlook.com to info@sayadbayezid.com- Verified AdSense code (ca-pub-9789336661158068) is correctly placed on all pages- Updated all legal pages, contact pages, and support documentation"
