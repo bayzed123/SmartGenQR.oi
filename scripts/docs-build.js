@@ -51,7 +51,8 @@
   }
 
   // ---------------------------------------------------------
-  // Custom renderer:
+  // Custom renderer — DUAL-MODE, works on marked v4–v11 (old API)
+  // AND marked v12+ (new token-object API)
   //   - adds id="" to every heading (fixes TOC scroll targets)
   //   - collects headings into tocList (used for "On This Page" nav)
   //   - rewrites relative image paths to absolute /assets/... (fixes broken images)
@@ -60,19 +61,47 @@
   function createRenderer(tocList) {
       const renderer = new marked.Renderer();
 
-      renderer.heading = (text, level) => {
-          const slug = slugify(text, { lower: true, strict: true });
-          if (level === 2 || level === 3) {
-              tocList.push({ level, text, slug });
+      // Must use `function` (not arrow) so `this.parser` is available
+      // when marked v12+ calls renderer.heading(token) internally.
+      renderer.heading = function (...args) {
+          let text, level;
+
+          if (typeof args[0] === 'object' && args[0] !== null && 'depth' in args[0]) {
+              // marked v12+ : single token object { tokens, depth }
+              const token = args[0];
+              text = this.parser ? this.parser.parseInline(token.tokens) : (token.text || '');
+              level = token.depth;
+          } else {
+              // marked v4–v11 : (text, level, raw, slugger)
+              text = args[0];
+              level = args[1];
           }
+
+          const plainText = String(text).replace(/<[^>]*>/g, ''); // strip any inline HTML for slug
+          const slug = slugify(plainText, { lower: true, strict: true });
+
+          if (level === 2 || level === 3) {
+              tocList.push({ level, text: plainText, slug });
+          }
+
           return `<h${level} id="${slug}">${text}</h${level}>\n`;
       };
 
-      renderer.image = (href, title, text) => {
-          let fixedHref = href;
+      renderer.image = function (...args) {
+          let href, title, text;
 
-          if (!href.startsWith('http') && !href.startsWith('/')) {
-              const cleanPath = href.replace(/^\.?\/?/, '').replace(/^assets\//, '');
+          if (typeof args[0] === 'object' && args[0] !== null && 'href' in args[0]) {
+              // marked v12+ : single token object { href, title, text }
+              ({ href, title, text } = args[0]);
+          } else {
+              // marked v4–v11 : (href, title, text)
+              [href, title, text] = args;
+          }
+
+          let fixedHref = href || '';
+
+          if (!fixedHref.startsWith('http') && !fixedHref.startsWith('/')) {
+              const cleanPath = fixedHref.replace(/^\.?\/?/, '').replace(/^assets\//, '');
               fixedHref = `/assets/${cleanPath}`;
           }
 
@@ -83,7 +112,7 @@
           }
 
           const titleAttr = title ? ` title="${title}"` : '';
-          return `<img src="${fixedHref}" alt="${text}"${titleAttr} loading="lazy" style="max-width:100%;border-radius:8px;" />`;
+          return `<img src="${fixedHref}" alt="${text || ''}"${titleAttr} loading="lazy" style="max-width:100%;border-radius:8px;" />`;
       };
 
       return renderer;
