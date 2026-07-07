@@ -1,5 +1,10 @@
 [
   {
+    "title": "Create deployment and blog system guide",
+    "date": "2026-07-07T20:54:58Z",
+    "description": "Added a comprehensive guide for deploying a portfolio website and utilizing an automated blog system. Covers deployment options, blog pipeline, and publishing workflow."
+  },
+  {
     "title": "Add files via upload",
     "date": "2026-07-07T20:50:15Z",
     "description": "Platform improvement and optimization."
