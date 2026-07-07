@@ -16,7 +16,7 @@ author: "SmartGen Team"
   > 📌 **File location suggestion:** `docs-post/CONTRIBUTOR-GUIDE.md`
 
   ---
-![SmartGen Architecture](./assets/images/docs/architecture-diagram.svg)
+![SmartGen Architecture](assets/images/docs/architecture-diagram.svg)
 ---
   ## 📖 Table of Contents
 
