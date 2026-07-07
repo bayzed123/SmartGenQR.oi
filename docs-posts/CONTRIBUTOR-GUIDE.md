@@ -1,3 +1,10 @@
+---
+title: "Contributor Guide"
+date: "2026-07-07"
+description: "Full architecture and API reference for SmartGen contributors."
+author: "SmartGen Team"
+---
+
   # SmartGen — Contributor & API Reference Guide
 
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
