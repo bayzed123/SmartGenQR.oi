@@ -1,5 +1,10 @@
 [
   {
+    "title": "Create deploy-open-source-portfolio.md",
+    "date": "2026-07-07T19:32:46Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Create api-reference.md",
     "date": "2026-07-07T19:05:15Z",
     "description": "output ✅ Built: /docs/getting-started/  (title: \"Getting Started\") ✅ Built: /docs/installation/     (title: \"Installation\") ✅ Built: /docs/api-reference/    (title: \"API Reference\") git add docs-posts/ git commit -m \"docs: add Getting Started, Installation, and API Reference pages\" git push GUIDES   → Getting Started   → Installation  API REFERENCE   → Api Reference"
