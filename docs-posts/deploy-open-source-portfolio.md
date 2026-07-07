@@ -234,5 +234,5 @@
 
   ## Related Guides
 
-  - [Getting Started with SmartGen](/docs/protfolio-getting-started/)
-  - [SmartGen Deployment Guide](/docs/Protfolio-deployment/)
+  - [Protfolio Getting Started with SmartGen](/docs/protfolio-getting-started/)
+  - [Protfolio Deployment Guide](/docs/Protfolio-deployment/)
