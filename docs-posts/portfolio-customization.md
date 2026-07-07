@@ -1,9 +1,9 @@
-  ---
+---
   title: "Portfolio Website: Customization Guide"
   description: "Complete guide to customizing colors, typography, sections, navigation, and adding new pages to your open-source developer portfolio."
   order: 3
   category: "Portfolio Website"
-  ---
+---
 
   # Portfolio Website: Customization Guide
 
@@ -11,7 +11,7 @@
 
   > **Repository:** [github.com/bayzed123/sayadbayezid-portfolio-](https://github.com/bayzed123/sayadbayezid-portfolio-)
   >
-  > **Prerequisite:** This guide assumes you've completed the [Getting Started guide](/docs/portfolio-getting-started/) and optionally [deployed your site](/docs/portfolio-deployment-and-blog-system/).
+  > **Prerequisite:** This guide assumes you've completed the [Getting Started guide](https://smartgentools.com/docs/protfolio-getting-started/) and optionally [deployed your site](/docs/portfolio-deployment-and-blog-system/).
 
   ![Portfolio customization overview showing editable zones: color theme, hero section, project cards, navigation menu, and typography](assets/images/docs/protfolio-coustomization.JPEG)
 
@@ -52,7 +52,7 @@
   > git push
   > ```
 
-  Keep your local preview server running while you work (see the [Getting Started guide](/docs/portfolio-getting-started/#step-6-preview-locally)) so you can see changes reflected immediately after saving each file.
+  Keep your local preview server running while you work (see the [Getting Started guide](https://smartgentools.com/docs/protfolio-getting-started/#step-6-preview-locally)) so you can see changes reflected immediately after saving each file.
 
   ```bash
   npx serve .
@@ -678,3 +678,46 @@
   - [MDN CSS Custom Properties Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) — deeper reference on CSS variables used throughout this theme
   - [Repository Issues](https://github.com/bayzed123/sayadbayezid-portfolio-/issues) — report bugs or request features
   - [More Resources](https://smartgentools.com/blog/)
+<div align="center">
+  <table width="100%">
+    <tr>
+      <td align="left" width="50%">
+        <p>Previous</p>
+        <b><a href="https://smartgentools.com/docs/portfolio-customization/">Portfolio Customization</a></b>
+      </td>
+      <td align="right" width="50%">
+        <p>Next</p>
+        <b><a href="https://smartgentools.com/docs/portfolio-api-reference/">Portfolio API Reference</a></b>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
+### Help and support
+
+**Did you find what you needed?**  
+Thank you! We received your feedback.  
+<br>
+[Privacy policy](https://smartgentools.com/privacy/)
+
+<br>
+
+**Help us make these docs great!**  
+All GitHub docs are open source. See something that's wrong or unclear? Submit a pull request.  
+<br>
+<a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md"><kbd>⑂ Make a contribution</kbd></a>  
+<br>
+[Learn how to contribute](https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md)
+
+<br>
+
+**Still need help?**  
+👥 [Ask the SmartGen community](https://github.com/bayzed123/SmartGenQR.oi/discussions)  
+💬 [Contact support](https://smartgentools.com/contact/)  
+
+<br>
+
+**Legal**  
+<small>© 2026 SmartGen. &nbsp; [Terms](https://smartgentools.com/terms/) &nbsp; [Privacy](https://smartgentools.com/privacy/) &nbsp; [Expert services](https://smartgentools.com/tools/) &nbsp; [Blog](https://smartgentools.com/blog/)</small>
