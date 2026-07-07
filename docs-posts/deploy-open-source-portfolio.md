@@ -1,9 +1,9 @@
-  ---
+---
   title: "How to Deploy an Open-Source Developer Portfolio (Free, in Minutes)"
   description: "A complete step-by-step guide to forking, customizing, and deploying a free open-source developer portfolio website — with automated blogging built in."
-  order: 1
+  order: overview
   category: "Open Source Projects"
-  ---
+---
 
   # How to Deploy an Open-Source Developer Portfolio (Free, in Minutes)
 
@@ -236,3 +236,47 @@
 
   - [Protfolio Getting Started with SmartGen](/docs/protfolio-getting-started/)
   - [Protfolio Deployment Guide](/docs/Protfolio-deployment/)
+---
+<div align="center">
+  <table width="100%">
+    <tr>
+      <td align="left" width="50%">
+        <p>Previous</p>
+        <b><a href="https://smartgentools.com/docs/portfolio-customization/">Portfolio Customization</a></b>
+      </td>
+      <td align="right" width="50%">
+        <p>Next</p>
+        <b><a href="https://smartgentools.com/docs/portfolio-api-reference/">Portfolio API Reference</a></b>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
+### Help and support
+
+**Did you find what you needed?**  
+Thank you! We received your feedback.  
+<br>
+[Privacy policy](https://smartgentools.com/privacy/)
+
+<br>
+
+**Help us make these docs great!**  
+All GitHub docs are open source. See something that's wrong or unclear? Submit a pull request.  
+<br>
+<a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md"><kbd>⑂ Make a contribution</kbd></a>  
+<br>
+[Learn how to contribute](https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md)
+
+<br>
+
+**Still need help?**  
+👥 [Ask the SmartGen community](https://github.com/bayzed123/SmartGenQR.oi/discussions)  
+💬 [Contact support](https://smartgentools.com/contact/)  
+
+<br>
+
+**Legal**  
+<small>© 2026 SmartGen. &nbsp; [Terms](https://smartgentools.com/terms/) &nbsp; [Privacy](https://smartgentools.com/privacy/) &nbsp; [Expert services](https://smartgentools.com/tools/) &nbsp; [Blog](https://smartgentools.com/blog/)</small>
