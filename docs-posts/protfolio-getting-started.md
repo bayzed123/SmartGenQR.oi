@@ -1,9 +1,9 @@
-  ---
+---
   title: "Portfolio Website: Getting Started Guide"
   description: "Complete guide to forking, setting up, and running the open-source developer portfolio website locally — prerequisites, installation, configuration, and troubleshooting."
   order: 1
   category: "Portfolio Website"
-  ---
+---
 
   # Portfolio Website: Getting Started Guide
 
@@ -482,9 +482,9 @@
 
   Now that your local environment is running, continue with:
 
-  - **[Deployment Guide](https://smartgentools.com/docs/portfolio-deployment-and-blog-system/)** — deploy your personalized portfolio to GitHub Pages, Netlify, or Vercel
-  - **[Blog System Deep Dive](https://smartgentools.com/docs/portfolio-deployment-and-blog-system/#post-deployment-checklist)** — learn the full Markdown/HTML authoring options, FAQ accordions, and Table of Contents generation
-  - **[Customization Guide](/docs/portfolio-customization/)** — detailed walkthrough of editing sections, colors, and adding new pages
+  - ** [Deployment Guide](https://smartgentools.com/docs/portfolio-deployment-and-blog-system/) ** — deploy your personalized portfolio to GitHub Pages, Netlify, or Vercel
+  - ** [Blog System Deep Dive](https://smartgentools.com/docs/portfolio-deployment-and-blog-system/) ** — learn the full Markdown/HTML authoring options, FAQ accordions, and Table of Contents generation
+  - ** [Customization Guide](https://smartgentools.com/docs/portfolio-website-customization-guide/) ** — detailed walkthrough of editing sections, colors, and adding new pages
 
   ---
 
