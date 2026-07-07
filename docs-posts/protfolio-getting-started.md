@@ -165,7 +165,7 @@
   You should see files including `index.html`, `README.md`, `setup.sh`, and folders like `blog_uploads/`, `scripts/`, and `assets/`.
 
   ---
-
+![project diagram](assets/images/docs/protfolio-coustomization.JPEG)
   ## Step 3: Review the project structure
 
   Before making changes, it helps to understand what each part of the repository does.
@@ -482,8 +482,8 @@
 
   Now that your local environment is running, continue with:
 
-  - **[Deployment Guide](/docs/portfolio-deployment/)** — deploy your personalized portfolio to GitHub Pages, Netlify, or Vercel
-  - **[Blog System Deep Dive](/docs/portfolio-blog-system/)** — learn the full Markdown/HTML authoring options, FAQ accordions, and Table of Contents generation
+  - **[Deployment Guide](https://smartgentools.com/docs/portfolio-deployment-and-blog-system/)** — deploy your personalized portfolio to GitHub Pages, Netlify, or Vercel
+  - **[Blog System Deep Dive](https://smartgentools.com/docs/portfolio-deployment-and-blog-system/#post-deployment-checklist)** — learn the full Markdown/HTML authoring options, FAQ accordions, and Table of Contents generation
   - **[Customization Guide](/docs/portfolio-customization/)** — detailed walkthrough of editing sections, colors, and adding new pages
 
   ---
@@ -493,3 +493,46 @@
   - [QUICK_START.md](https://github.com/bayzed123/sayadbayezid-portfolio-/blob/main/QUICK_START.md) — condensed version of this guide, directly in the repo
   - [WIKI.md](https://github.com/bayzed123/sayadbayezid-portfolio-/blob/main/WIKI.md) — full technical reference for the blog system architecture
   - [Repository Issues](https://github.com/bayzed123/sayadbayezid-portfolio-/issues) — report bugs or request features
+<div align="center">
+  <table width="100%">
+    <tr>
+      <td align="left" width="50%">
+        <p>Previous</p>
+        <b><a href="https://smartgentools.com/docs/portfolio-deployment-and-blog-system/">Portfolio Deploy</a></b>
+      </td>
+      <td align="right" width="50%">
+        <p>Next</p>
+        <b><a href="https://smartgentools.com/docs/portfolio-api-reference/">Portfolio API Reference</a></b>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
+### Help and support
+
+**Did you find what you needed?**  
+Thank you! We received your feedback.  
+<br>
+[Privacy policy](https://smartgentools.com/privacy/)
+
+<br>
+
+**Help us make these docs great!**  
+All GitHub docs are open source. See something that's wrong or unclear? Submit a pull request.  
+<br>
+<a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md"><kbd>⑂ Make a contribution</kbd></a>  
+<br>
+[Learn how to contribute](https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md)
+
+<br>
+
+**Still need help?**  
+👥 [Ask the SmartGen community](https://github.com/bayzed123/SmartGenQR.oi/discussions)  
+💬 [Contact support](https://smartgentools.com/contact/)  
+
+<br>
+
+**Legal**  
+<small>© 2026 SmartGen. &nbsp; [Terms](https://smartgentools.com/terms/) &nbsp; [Privacy](https://smartgentools.com/privacy/) &nbsp; [Expert services](https://smartgentools.com/tools/) &nbsp; [Blog](https://smartgentools.com/blog/)</small>
