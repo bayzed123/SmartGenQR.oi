@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
   const fs = require('fs');
   const path = require('path');
   const matter = require('gray-matter');
@@ -31,7 +29,6 @@
           const fileContent = fs.readFileSync(filePath, 'utf8');
           const { data: attributes, content: body } = matter(fileContent);
 
-          // Graceful fallback: derive a readable title from filename instead of literal "Untitled"
           const fallbackTitle = file
               .replace('.md', '')
               .replace(/[-_]/g, ' ')
@@ -54,7 +51,7 @@
   }
 
   // ---------------------------------------------------------
-  // FIX #1: Custom renderer that:
+  // Custom renderer:
   //   - adds id="" to every heading (fixes TOC scroll targets)
   //   - collects headings into tocList (used for "On This Page" nav)
   //   - rewrites relative image paths to absolute /assets/... (fixes broken images)
@@ -65,7 +62,6 @@
 
       renderer.heading = (text, level) => {
           const slug = slugify(text, { lower: true, strict: true });
-          // Only H2/H3 go into the on-page TOC (H1 is the doc title itself)
           if (level === 2 || level === 3) {
               tocList.push({ level, text, slug });
           }
@@ -94,7 +90,7 @@
   }
 
   // ---------------------------------------------------------
-  // FIX #2: Build "On This Page" TOC HTML from collected headings
+  // Build "On This Page" TOC HTML from collected headings
   // ---------------------------------------------------------
   function buildOnPageTocHtml(tocList) {
       if (!tocList.length) return '';
@@ -145,7 +141,6 @@
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
       <style>
-        /* Fallback styles for On-This-Page TOC — safe to move into docs.css later */
         .toc-sidebar { min-width: 200px; padding-left: 1.5rem; border-left: 1px solid #e5e7eb; }
         .toc-heading { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: #888; margin-bottom: 0.75rem; }
         .toc-list { list-style: none; padding: 0; margin: 0; }
@@ -233,7 +228,6 @@
 
       <script src="../../assets/js/docs.js"></script>
       <script>
-        // Smooth scroll + active-link highlighting for "On This Page" TOC
         document.querySelectorAll('.toc-link').forEach(link => {
           link.addEventListener('click', (e) => {
             e.preventDefault();
