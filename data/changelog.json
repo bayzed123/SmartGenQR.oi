@@ -1,5 +1,10 @@
 [
   {
+    "title": "Create client-side-search.md",
+    "date": "2026-07-07T19:44:19Z",
+    "description": "git add docs-posts/ git commit -m \"docs: add 4 new Open Source Projects technical guides\" git push"
+  },
+  {
     "title": "Create deploy-open-source-portfolio.md",
     "date": "2026-07-07T19:32:46Z",
     "description": "Platform improvement and optimization."
