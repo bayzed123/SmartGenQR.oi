@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update QUICKSTART.md",
+    "date": "2026-07-07T00:51:59Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Update docs-build.js",
     "date": "2026-07-07T00:45:41Z",
     "description": "git add scripts/docs-build.js git commit -m \"fix: support marked v12+ token-based renderer API (heading + image)\" git push"
