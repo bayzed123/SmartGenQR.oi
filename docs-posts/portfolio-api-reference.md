@@ -1,9 +1,9 @@
-  ---
+---
   title: "Portfolio Website: API & Script Reference"
   description: "Complete technical reference for every script, function, and data structure powering the open-source developer portfolio — setup.sh, convert_blogs.py, and all JavaScript modules."
   order: 4
   category: "Portfolio Website"
-  ---
+---
 
   # Portfolio Website: API & Script Reference
 
