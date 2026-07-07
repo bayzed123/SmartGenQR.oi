@@ -1,9 +1,9 @@
-  ---
+---
   title: "Getting Started"
   description: "Get SmartGen running on your local machine in under 5 minutes."
   order: 1
   category: "Guides"
-  ---
+---
 
   # Getting Started
 
