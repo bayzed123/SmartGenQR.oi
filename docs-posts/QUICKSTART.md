@@ -162,5 +162,5 @@ author: "SmartGen Team"
 
   ---
 
-  📚 **Need more detail?** → [`docs-post/CONTRIBUTOR-GUIDE.md`](CONTRIBUTOR-GUIDE.md)
+  📚 **Need more detail?** → [`docs-post/CONTRIBUTOR-GUIDE.md`](https://smartgentools.com/docs/contributor-guide/)
   🐛 **Found a bug?** → [Open an issue](https://github.com/bayzed123/SmartGenQR.oi/issues)
