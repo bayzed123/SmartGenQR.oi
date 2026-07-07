@@ -19,13 +19,13 @@
 
   | Step | Guide | What You'll Learn |
   |---|---|---|
-  | **1** | [Getting Started Guide](/docs/portfolio-getting-started/) | Fork, clone, install, and run the project locally |
+  | **1** | [Getting Started Guide](/docs/protfolio-getting-started/) | Fork, clone, install, and run the project locally |
   | **2** | [Deployment & Blog System Guide](/docs/portfolio-deployment-and-blog-system/) | Deploy to GitHub Pages/Netlify/Vercel + publish blog posts |
   | **3** | [Customization Guide](/docs/portfolio-customization/) | Edit colors, sections, navigation, and add new pages |
   | **4** | **API & Script Reference** *(this page)* | Deep technical reference for every script and function |
 
   > **Tip**
-  > New to this project? Start with [Step 1 — Getting Started](/docs/portfolio-getting-started/) instead of this page. This reference is best used *after* you've completed initial setup, when you want to understand or modify the underlying code.
+  > New to this project? Start with [Step 1 — Getting Started](/docs/protfolio-getting-started/) instead of this page. This reference is best used *after* you've completed initial setup, when you want to understand or modify the underlying code.
 
   ## In this guide
 
@@ -581,7 +581,7 @@
   <details>
   <summary><strong>Is there a way to preview JSON output without running the full GitHub Action?</strong></summary>
 
-  Yes — run `python3 scripts/convert_blogs.py` locally as covered in the [Getting Started guide](/docs/portfolio-getting-started/#step-7-verify-everything-works). This runs the exact same function GitHub Actions calls, just on your machine instead of their runner.
+  Yes — run `python3 scripts/convert_blogs.py` locally as covered in the [Getting Started guide](/docs/protfolio-getting-started/#step-7-verify-everything-works). This runs the exact same function GitHub Actions calls, just on your machine instead of their runner.
   </details>
 
   <details>
@@ -601,7 +601,7 @@
 
   You've now reached the end of the **Portfolio Website** documentation series. Here's the complete path for reference:
 
-  1. **[Getting Started Guide](/docs/portfolio-getting-started/)** — Fork, clone, install, run locally
+  1. **[Getting Started Guide](/docs/protfolio-getting-started/)** — Fork, clone, install, run locally
   2. **[Deployment & Blog System Guide](/docs/portfolio-deployment-and-blog-system/)** — Go live + publish posts
   3. **[Customization Guide](/docs/portfolio-customization/)** — Make it visually yours
   4. **API & Script Reference** *(you are here)* — Technical deep dive
