@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: Critical docs link errors and implement combined feed system",
+    "date": "2026-07-08T20:39:52Z",
+    "description": "- Fixed relative image paths in all docs posts (convert to absolute paths)- Added automatic path fixing to docs-build.js renderer- Added AdSense code to docs-build.js- Created feed-combined.js for unified blog + docs feed with category filtering- Updated index.html to use feed-combined.js- Added docs.json generation for feed integration- Improved SEO by ensuring all content is static/hard-coded"
+  },
+  {
     "title": "Create feed-combined.js",
     "date": "2026-07-08T13:41:50Z",
     "description": "Platform improvement and optimization."
