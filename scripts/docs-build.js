@@ -98,6 +98,11 @@
               [href, title, text] = args;
           }
 
+          // Auto-fix relative image paths to absolute paths
+          if (href && !href.startsWith('http') && !href.startsWith('/')) {
+              href = '/' + href;
+          }
+
           let fixedHref = href || '';
 
           if (!fixedHref.startsWith('http') && !fixedHref.startsWith('/')) {
@@ -168,6 +173,9 @@
 
       <link rel="stylesheet" href="../../assets/css/docs.css">
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+      <!-- Google AdSense Code -->
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
 
       <style>
         .toc-sidebar { min-width: 200px; padding-left: 1.5rem; border-left: 1px solid #e5e7eb; }
@@ -309,3 +317,13 @@
   }
 
   buildDocs();
+      // Generate docs.json for feed integration
+      const docsJsonData = docs.map(doc => ({
+          slug: doc.slug,
+          title: doc.title,
+          description: doc.description,
+          category: doc.category || 'Guides',
+          date: new Date().toISOString().split('T')[0]
+      }));
+      fs.writeFileSync(path.join(DOCS_OUTPUT_DIR, 'docs.json'), JSON.stringify(docsJsonData, null, 2));
+      console.log(`✅ Generated: /docs/docs.json`);

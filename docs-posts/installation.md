@@ -112,7 +112,7 @@ This usually means a script file has a stray shebang (`#!/usr/bin/env node`) com
 Make sure image paths in your Markdown are **relative without a leading slash**:
 
 ```markdown
-✅ ![Diagram](assets/images/docs/diagram.svg)
+✅ ![Diagram](/assets/images/docs/diagram.svg)
 ❌ ![Diagram](/assets/images/docs/diagram.svg)
 ```
 
