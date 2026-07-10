@@ -1,0 +1,94 @@
+<svg width="1300" height="900" viewBox="0 0 1300 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradM" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1526"/>
+      <stop offset="100%" stop-color="#1B2A4A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1300" height="900" fill="url(#bgGradM)"/>
+
+  <!-- title -->
+  <text x="650" y="62" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#F6F1E4">Six Metrics Every Beginner Should Know</text>
+  <text x="650" y="94" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" fill="#93A0C2">What each one actually measures, in plain language</text>
+
+  <!-- ============ CARD GRID: 3 columns x 2 rows ============ -->
+  <!-- shared card size 380x260, gaps 40, start x=80 y=140 -->
+
+  <!-- Card 1: Bounce Rate -->
+  <rect x="80" y="140" width="380" height="260" rx="16" fill="#1B2540" stroke="#F1633C" stroke-width="2"/>
+  <g transform="translate(120,190)" stroke="#F1633C" stroke-width="2.4" fill="none">
+    <path d="M-16,10 L-4,-8 L6,2 L16,-14"/>
+    <path d="M4,-14 L16,-14 L16,-2"/>
+  </g>
+  <text x="120" y="238" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#F6F1E4">Bounce Rate</text>
+  <text x="120" y="264" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">The share of visits where someone</text>
+  <text x="120" y="282" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">leaves without meaningful interaction</text>
+  <rect x="120" y="352" width="150" height="26" rx="13" fill="none" stroke="#F1633C" stroke-width="1.3"/>
+  <text x="195" y="369" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11" fill="#F1633C" font-weight="700">USUALLY: LOWER = BETTER</text>
+
+  <!-- Card 2: Engagement Rate -->
+  <rect x="460" y="140" width="380" height="260" rx="16" fill="#1B2540" stroke="#4ED9AE" stroke-width="2"/>
+  <g transform="translate(500,192)" stroke="#4ED9AE" stroke-width="2.4" fill="none">
+    <circle r="16"/>
+    <path d="M-7,3 C-7,-6 7,-6 7,3"/>
+  </g>
+  <text x="500" y="238" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#F6F1E4">Engagement Rate</text>
+  <text x="500" y="264" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">Sessions lasting 10+ seconds, with a</text>
+  <text x="500" y="282" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">conversion, or 2+ pageviews</text>
+  <rect x="500" y="352" width="150" height="26" rx="13" fill="none" stroke="#4ED9AE" stroke-width="1.3"/>
+  <text x="575" y="369" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11" fill="#4ED9AE" font-weight="700">HIGHER = BETTER</text>
+
+  <!-- Card 3: Session Duration -->
+  <rect x="840" y="140" width="380" height="260" rx="16" fill="#1B2540" stroke="#F2A93B" stroke-width="2"/>
+  <g transform="translate(880,192)" stroke="#F2A93B" stroke-width="2.4" fill="none">
+    <circle r="16"/>
+    <line x1="0" y1="0" x2="0" y2="-10"/>
+    <line x1="0" y1="0" x2="8" y2="4"/>
+  </g>
+  <text x="880" y="238" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#F6F1E4">Session Duration</text>
+  <text x="880" y="264" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">How long, on average, people actively</text>
+  <text x="880" y="282" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">spend on your site per visit</text>
+  <rect x="880" y="352" width="150" height="26" rx="13" fill="none" stroke="#F2A93B" stroke-width="1.3"/>
+  <text x="955" y="369" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11" fill="#F2A93B" font-weight="700">HIGHER = BETTER</text>
+
+  <!-- Card 4: Pages per Session -->
+  <rect x="80" y="440" width="380" height="260" rx="16" fill="#1B2540" stroke="#4ED9AE" stroke-width="2"/>
+  <g transform="translate(120,492)" stroke="#4ED9AE" stroke-width="2.2" fill="none">
+    <rect x="-14" y="-14" width="14" height="28"/>
+    <rect x="2" y="-14" width="14" height="20"/>
+  </g>
+  <text x="120" y="538" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#F6F1E4">Pages per Session</text>
+  <text x="120" y="564" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">How many pages someone views</text>
+  <text x="120" y="582" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">on average before leaving</text>
+  <rect x="120" y="652" width="150" height="26" rx="13" fill="none" stroke="#4ED9AE" stroke-width="1.3"/>
+  <text x="195" y="669" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11" fill="#4ED9AE" font-weight="700">HIGHER = BETTER</text>
+
+  <!-- Card 5: Conversion Rate -->
+  <rect x="460" y="440" width="380" height="260" rx="16" fill="#1B2540" stroke="#F1633C" stroke-width="2"/>
+  <g transform="translate(500,492)" stroke="#F1633C" stroke-width="2.2" fill="none">
+    <circle r="16"/><circle r="9"/><circle r="2.6" fill="#F1633C" stroke="none"/>
+  </g>
+  <text x="500" y="538" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#F6F1E4">Conversion Rate</text>
+  <text x="500" y="564" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">The share of sessions that complete</text>
+  <text x="500" y="582" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">a goal you specifically defined</text>
+  <rect x="500" y="652" width="150" height="26" rx="13" fill="none" stroke="#F1633C" stroke-width="1.3"/>
+  <text x="575" y="669" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11" fill="#F1633C" font-weight="700">HIGHER = BETTER</text>
+
+  <!-- Card 6: Traffic Source / Channel / Medium -->
+  <rect x="840" y="440" width="380" height="260" rx="16" fill="#1B2540" stroke="#F2A93B" stroke-width="2"/>
+  <g transform="translate(880,492)" stroke="#F2A93B" stroke-width="2.2" fill="none">
+    <line x1="-16" y1="10" x2="0" y2="-6"/>
+    <line x1="-4" y1="10" x2="0" y2="-6"/>
+    <line x1="8" y1="14" x2="0" y2="-6"/>
+    <circle cx="0" cy="-6" r="3" fill="#F2A93B" stroke="none"/>
+  </g>
+  <text x="880" y="538" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F6F1E4">Source / Channel / Medium</text>
+  <text x="880" y="564" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">Where visitors came from: search,</text>
+  <text x="880" y="582" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">social, direct, referral, email, paid</text>
+  <rect x="880" y="652" width="150" height="26" rx="13" fill="none" stroke="#F2A93B" stroke-width="1.3"/>
+  <text x="955" y="669" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11" fill="#F2A93B" font-weight="700">CONTEXT MATTERS MOST</text>
+
+  <!-- footer -->
+  <text x="650" y="860" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN DIGITAL MARKETING COURSE &#183; MODULE 17</text>
+</svg>
