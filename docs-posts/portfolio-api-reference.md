@@ -19,13 +19,13 @@
 
   | Step | Guide | What You'll Learn |
   |---|---|---|
-  | **1** | [Getting Started Guide](/docs/portfolio-website-getting-started-guide/) | Fork, clone, install, and run the project locally |
-  | **2** | [Deployment & Blog System Guide](/docs/portfolio-website-deployment-blog-system-guide/) | Deploy to GitHub Pages/Netlify/Vercel + publish blog posts |
-  | **3** | [Customization Guide](/docs/portfolio-website-customization-guide/) | Edit colors, sections, navigation, and add new pages |
-  | **4** | **API & Script Reference** *(this page)* | Deep technical reference for every script and function |
+  | **1** | [Getting Started Guide](https://smartgentools.com/docs/portfolio-website-getting-started-guide/) | Fork, clone, install, and run the project locally |
+  | **2** | [Deployment & Blog System Guide](https://smartgentools.com/docs/portfolio-website-deployment-and-blog-system-guide/) | Deploy to GitHub Pages/Netlify/Vercel + publish blog posts |
+  | **3** | [Customization Guide](https://smartgentools.com/docs/portfolio-website-customization-guide/) | Edit colors, sections, navigation, and add new pages |
+  | **4** | **[API & Script Reference](https://smartgentools.com/docs/portfolio-website-api-and-script-reference/) | Deep technical reference for every script and function |
 
   > **Tip**
-  > New to this project? Start with [Step 1 — Getting Started](/docs/portfolio-website-getting-started-guide/) instead of this page. This reference is best used *after* you've completed initial setup, when you want to understand or modify the underlying code.
+  > New to this project? Start with [Step 1 — Getting Started](https://smartgentools.com/docs/portfolio-website-getting-started-guide/) instead of this page. This reference is best used *after* you've completed initial setup, when you want to understand or modify the underlying code.
 
   ## In this guide
 
@@ -393,7 +393,7 @@
 
   **DOM dependency:** Requires a button element with `id="theme-toggle"`.
 
-  **CSS dependency:** Requires a `.dark-mode` class defined on `:root` or `body` with corresponding variable overrides (see [Customization Guide → Enable dark mode](/docs/portfolio-customization/#customizing-colors-and-theme)).
+  **CSS dependency:** Requires a `.dark-mode` class defined on `:root` or `body` with corresponding variable overrides (see [Customization Guide → Enable dark mode](https://smartgentools.com/docs/portfolio-website-customization-guide/#customizing-colors-and-theme)).
 
   ---
 
@@ -581,7 +581,7 @@
   <details>
   <summary><strong>Is there a way to preview JSON output without running the full GitHub Action?</strong></summary>
 
-  Yes — run `python3 scripts/convert_blogs.py` locally as covered in the [Getting Started guide](/docs/protfolio-getting-started/#step-7-verify-everything-works). This runs the exact same function GitHub Actions calls, just on your machine instead of their runner.
+  Yes — run `python3 scripts/convert_blogs.py` locally as covered in the [Getting Started guide](https://smartgentools.com/docs/portfolio-website-getting-started-guide/#step-7-verify-everything-works). This runs the exact same function GitHub Actions calls, just on your machine instead of their runner.
   </details>
 
   <details>
@@ -601,10 +601,10 @@
 
   You've now reached the end of the **Portfolio Website** documentation series. Here's the complete path for reference:
 
-  1. **[Getting Started Guide](/docs/portfolio-website-getting-started-guide/)** — Fork, clone, install, run locally
-  2. **[Deployment & Blog System Guide](/docs/portfolio-website-deployment-blog-system-guide/)** — Go live + publish posts
-  3. **[Customization Guide](/docs/portfolio-website-customization-guide/)** — Make it visually yours
-  4. **API & Script Reference** *(you are here)* — Technical deep dive
+  1. **[Getting Started Guide](https://smartgentools.com/docs/portfolio-website-getting-started-guide/)** — Fork, clone, install, run locally
+  2. **[Deployment & Blog System Guide](https://smartgentools.com/docs/portfolio-website-deployment-and-blog-system-guide/)** — Go live + publish posts
+  3. **[Customization Guide](https://smartgentools.com/docs/portfolio-website-customization-guide/)** — Make it visually yours
+  4. **[API & Script Reference](https://smartgentools.com/docs/portfolio-website-api-and-script-reference/)* — Technical deep dive
 
   > **Tip**
   > Bookmark this reference page — you'll likely return to it any time you extend the blog system or debug an unexpected script behavior, long after initial setup is complete.
@@ -615,46 +615,3 @@
   - [Python `markdown` library docs](https://python-markdown.github.io/) — full extension reference
   - [BeautifulSoup4 documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) — HTML parsing reference
   - [Repository Issues](https://github.com/bayzed123/sayadbayezid-portfolio-/issues) — report bugs or request features>
-<div align="center">
-  <table width="100%">
-    <tr>
-      <td align="left" width="50%">
-        <p>Previous</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-website-customization-guide/">Portfolio Customization</a></b>
-      </td>
-      <td align="right" width="50%">
-        <p>Next</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-website-api-script-reference/">Portfolio API Reference</a></b>
-      </td>
-    </tr>
-  </table>
-</div>
-
----
-
-### Help and support
-
-**Did you find what you needed?**  
-Thank you! We received your feedback.  
-<br>
-[Privacy policy](https://smartgentools.com/privacy/)
-
-<br>
-
-**Help us make these docs great!**  
-All GitHub docs are open source. See something that's wrong or unclear? Submit a pull request.  
-<br>
-<a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md"><kbd>⑂ Make a contribution</kbd></a>  
-<br>
-[Learn how to contribute](https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md)
-
-<br>
-
-**Still need help?**  
-👥 [Ask the SmartGen community](https://github.com/bayzed123/SmartGenQR.oi/discussions)  
-💬 [Contact support](https://smartgentools.com/contact/)  
-
-<br>
-
-**Legal**  
-<small>© 2026 SmartGen. &nbsp; [Terms](https://smartgentools.com/terms/) &nbsp; [Privacy](https://smartgentools.com/privacy/) &nbsp; [Expert services](https://smartgentools.com/tools/) &nbsp; [Blog](https://smartgentools.com/blog/)</small>
