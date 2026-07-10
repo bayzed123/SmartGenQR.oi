@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: Add smart link resolver for internal docs links",
+    "date": "2026-07-10T13:06:47Z",
+    "description": "- Added createSlugMapping() function to map all docs slugs- Added renderer.link() to automatically resolve internal docs links- Links like /docs/portfolio-api-reference/ now resolve to correct slug- Handles both exact matches and normalized slug matching- All 26 docs pages regenerated with working internal links- Fixes all 404 errors from broken internal references"
+  },
+  {
     "title": "build: Generate all 26 docs pages with correct slugs and GitHub-style footer",
     "date": "2026-07-10T13:05:26Z",
     "description": "- All docs pages now generated with correct URL slugs- GitHub-style footer with Previous/Next navigation on all pages- Help section and legal links included on all docs pages- All internal links now point to correct URLs- docs.json generated for feed integration"
