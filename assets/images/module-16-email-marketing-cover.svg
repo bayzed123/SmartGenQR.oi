@@ -1,0 +1,97 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1B2A4A" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="scanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#101B33" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#050810" stop-opacity="0.65"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0B1220"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.5"/>
+  <rect width="1200" height="630" fill="url(#vignette)"/>
+
+  <g stroke="#2DD4BF" stroke-width="2.5" fill="none" stroke-linecap="square">
+    <path d="M 40 72 L 40 40 L 72 40"/>
+    <path d="M 1128 40 L 1160 40 L 1160 72"/>
+    <path d="M 1160 558 L 1160 590 L 1128 590"/>
+    <path d="M 72 590 L 40 590 L 40 558"/>
+  </g>
+  <circle cx="40" cy="40" r="3" fill="#F5A623"/>
+  <circle cx="1160" cy="40" r="3" fill="#F5A623"/>
+  <circle cx="1160" cy="590" r="3" fill="#F5A623"/>
+  <circle cx="40" cy="590" r="3" fill="#F5A623"/>
+
+  <text x="600" y="100" text-anchor="middle" font-family="'Consolas','SF Mono','Roboto Mono',monospace" font-size="15" letter-spacing="4" fill="#F5A623" font-weight="700">SMARTGEN DIGITAL MARKETING COURSE &#183; MODULE 16</text>
+
+  <rect x="40" y="118" width="1120" height="2" fill="url(#scanGlow)"/>
+
+  <text x="600" y="228" text-anchor="middle" font-family="Arial, 'Helvetica Neue', sans-serif" font-size="70" font-weight="900" fill="#F1F5F9" letter-spacing="0.5">EMAIL</text>
+  <text x="600" y="308" text-anchor="middle" font-family="Arial, 'Helvetica Neue', sans-serif" font-size="70" font-weight="900" fill="#2DD4BF" letter-spacing="0.5">MARKETING</text>
+
+  <text x="600" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#9FB0CC">The Complete A to Z Mega Guide for Beginners</text>
+
+  <line x1="520" y1="385" x2="680" y2="385" stroke="#F5A623" stroke-width="3"/>
+
+  <text x="600" y="422" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="13" letter-spacing="3" fill="#7C8DAF">LIST &#183; STRATEGY &#183; AUTOMATION &#183; METRICS &#183; DELIVERABILITY</text>
+
+  <!-- Icon 1: List (envelope) -->
+  <g transform="translate(150,470)">
+    <circle cx="0" cy="0" r="24" fill="#101B33" stroke="#1B2A4A" stroke-width="1"/>
+    <rect x="-14" y="-9" width="28" height="18" rx="2" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <path d="M -14,-9 L 0,2 L 14,-9" fill="none" stroke="#2DD4BF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="150" y="516" text-anchor="middle" font-family="'Consolas',monospace" font-size="12.5" letter-spacing="1" fill="#F1F5F9" font-weight="700">LIST</text>
+
+  <!-- Icon 2: Strategy (target) -->
+  <g transform="translate(375,470)">
+    <circle cx="0" cy="0" r="24" fill="#101B33" stroke="#1B2A4A" stroke-width="1"/>
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="2.5" fill="#2DD4BF"/>
+  </g>
+  <text x="375" y="516" text-anchor="middle" font-family="'Consolas',monospace" font-size="12.5" letter-spacing="1" fill="#F1F5F9" font-weight="700">STRATEGY</text>
+
+  <!-- Icon 3: Automation (gear) -->
+  <g transform="translate(600,470)">
+    <circle cx="0" cy="0" r="24" fill="#101B33" stroke="#1B2A4A" stroke-width="1"/>
+    <circle cx="0" cy="0" r="9" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <g stroke="#2DD4BF" stroke-width="2.5" stroke-linecap="round">
+      <line x1="0" y1="-16" x2="0" y2="-11"/>
+      <line x1="0" y1="11" x2="0" y2="16"/>
+      <line x1="-16" y1="0" x2="-11" y2="0"/>
+      <line x1="11" y1="0" x2="16" y2="0"/>
+      <line x1="-11.3" y1="-11.3" x2="-7.8" y2="-7.8"/>
+      <line x1="7.8" y1="7.8" x2="11.3" y2="11.3"/>
+      <line x1="11.3" y1="-11.3" x2="7.8" y2="-7.8"/>
+      <line x1="-7.8" y1="7.8" x2="-11.3" y2="11.3"/>
+    </g>
+  </g>
+  <text x="600" y="516" text-anchor="middle" font-family="'Consolas',monospace" font-size="12.5" letter-spacing="1" fill="#F1F5F9" font-weight="700">AUTOMATE</text>
+
+  <!-- Icon 4: Metrics (bar chart) -->
+  <g transform="translate(825,470)">
+    <circle cx="0" cy="0" r="24" fill="#101B33" stroke="#1B2A4A" stroke-width="1"/>
+    <rect x="-13" y="2" width="6" height="12" fill="#2DD4BF"/>
+    <rect x="-3" y="-6" width="6" height="20" fill="#2DD4BF"/>
+    <rect x="7" y="-12" width="6" height="26" fill="#2DD4BF"/>
+  </g>
+  <text x="825" y="516" text-anchor="middle" font-family="'Consolas',monospace" font-size="12.5" letter-spacing="1" fill="#F1F5F9" font-weight="700">METRICS</text>
+
+  <!-- Icon 5: Deliverability (shield check) -->
+  <g transform="translate(1050,470)">
+    <circle cx="0" cy="0" r="24" fill="#101B33" stroke="#1B2A4A" stroke-width="1"/>
+    <path d="M 0,-15 L 12,-10 L 12,2 C 12,10 6,15 0,17 C -6,15 -12,10 -12,2 L -12,-10 Z" fill="none" stroke="#2DD4BF" stroke-width="2.3"/>
+    <path d="M -6,1 L -1,7 L 7,-6" fill="none" stroke="#2DD4BF" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="1050" y="516" text-anchor="middle" font-family="'Consolas',monospace" font-size="11.5" letter-spacing="0.5" fill="#F1F5F9" font-weight="700">DELIVER</text>
+
+  <text x="600" y="580" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="14" letter-spacing="3" fill="#7C8DAF" font-weight="700">SMARTGENTOOLS.COM</text>
+</svg>
