@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update protfolio-getting-started.md",
+    "date": "2026-07-10T13:19:33Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: Add smart link resolver for internal docs links",
     "date": "2026-07-10T13:06:47Z",
     "description": "- Added createSlugMapping() function to map all docs slugs- Added renderer.link() to automatically resolve internal docs links- Links like /docs/portfolio-api-reference/ now resolve to correct slug- Handles both exact matches and normalized slug matching- All 26 docs pages regenerated with working internal links- Fixes all 404 errors from broken internal references"
