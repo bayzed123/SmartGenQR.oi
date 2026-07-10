@@ -1,0 +1,73 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1526"/>
+      <stop offset="100%" stop-color="#1B2A4A"/>
+    </linearGradient>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="dotGlow" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="4.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- ambient blobs -->
+  <circle cx="1000" cy="140" r="150" fill="#4ED9AE" opacity="0.10" filter="url(#softGlow)"/>
+  <circle cx="1080" cy="500" r="170" fill="#F1633C" opacity="0.08" filter="url(#softGlow)"/>
+
+  <!-- eyebrow -->
+  <text x="80" y="86" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" letter-spacing="3" fill="#F2A93B" font-weight="700">SMARTGEN DIGITAL MARKETING COURSE</text>
+
+  <!-- module pill -->
+  <rect x="80" y="106" width="128" height="30" rx="15" fill="none" stroke="#F2A93B" stroke-width="1.5"/>
+  <text x="98" y="126" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="2" fill="#F6F1E4" font-weight="700">MODULE 18</text>
+
+  <!-- headline -->
+  <text x="78" y="255" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="700" fill="#F6F1E4">Advanced</text>
+  <text x="78" y="345" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="700" fill="#F6F1E4">Analytics</text>
+
+  <!-- subhead -->
+  <text x="80" y="398" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="20.5" fill="#93A0C2">Tag Manager, custom data, and turning numbers into decisions</text>
+
+  <!-- divider -->
+  <rect x="80" y="426" width="480" height="2" fill="#2E3B5E"/>
+
+  <!-- bottom tags -->
+  <text x="80" y="560" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2" fill="#4ED9AE" font-weight="700">TAG MANAGER &#183; CUSTOM DATA &#183; INTELLIGENCE &#183; REPORTING</text>
+
+  <!-- signature graphic: gear -> tags -> lightbulb -->
+  <path d="M960,110 C1030,150 900,260 990,300 C1080,340 950,420 1000,480" fill="none" stroke="#F2A93B" stroke-width="3.5" stroke-linecap="round" opacity="0.95"/>
+
+  <!-- gear icon at top -->
+  <g transform="translate(960,110)" stroke="#F6F1E4" stroke-width="2.4" fill="none">
+    <circle r="20"/><circle r="8"/>
+    <line x1="0" y1="-20" x2="0" y2="-27"/><line x1="0" y1="20" x2="0" y2="27"/>
+    <line x1="-20" y1="0" x2="-27" y2="0"/><line x1="20" y1="0" x2="27" y2="0"/>
+    <line x1="-14" y1="-14" x2="-19" y2="-19"/><line x1="14" y1="14" x2="19" y2="19"/>
+    <line x1="14" y1="-14" x2="19" y2="-19"/><line x1="-14" y1="14" x2="-19" y2="19"/>
+  </g>
+
+  <!-- tag-shaped node 1 -->
+  <g transform="translate(996,260) rotate(20)" fill="#4ED9AE">
+    <path d="M0,-13 L18,-13 L18,3 L4,17 L-10,3 Z"/>
+    <circle cx="9" cy="-6" r="3" fill="#0F1526"/>
+  </g>
+  <circle cx="990" cy="300" r="6" fill="#4ED9AE" filter="url(#dotGlow)"/>
+
+  <!-- tag-shaped node 2 -->
+  <g transform="translate(966,390) rotate(-15)" fill="#F1633C">
+    <path d="M0,-13 L18,-13 L18,3 L4,17 L-10,3 Z"/>
+    <circle cx="9" cy="-6" r="3" fill="#0F1526"/>
+  </g>
+  <circle cx="1000" cy="480" r="6" fill="#F1633C" filter="url(#dotGlow)"/>
+
+  <!-- lightbulb icon at bottom (insight) -->
+  <g transform="translate(1000,480)" stroke="#F6F1E4" stroke-width="2.4" fill="none">
+    <circle cx="0" cy="-14" r="16"/>
+    <line x1="-6" y1="2" x2="6" y2="2"/>
+    <line x1="-4" y1="8" x2="4" y2="8"/>
+  </g>
+</svg>

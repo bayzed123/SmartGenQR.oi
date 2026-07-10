@@ -1,0 +1,104 @@
+<svg width="1400" height="760" viewBox="0 0 1400 760" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101728"/>
+      <stop offset="100%" stop-color="#1C2C4D"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="760" fill="url(#bgGradG)"/>
+
+  <!-- title -->
+  <text x="700" y="56" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" fill="#F6F1E4">How Google Tag Manager Fits the Picture</text>
+  <text x="700" y="86" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" fill="#93A0C2">From a visitor's click on your site to a number in your reports</text>
+
+  <!-- ================= MAIN PIPELINE ================= -->
+  <!-- Stage 1: Your Website -->
+  <rect x="60" y="290" width="260" height="120" rx="14" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+  <g transform="translate(120,330)" stroke="#4ED9AE" stroke-width="2.2" fill="none">
+    <rect x="-20" y="-16" width="40" height="30" rx="3"/>
+    <line x1="-20" y1="-8" x2="20" y2="-8"/>
+  </g>
+  <text x="190" y="332" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#F6F1E4">YOUR WEBSITE</text>
+  <text x="190" y="354" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">A visitor clicks, scrolls,</text>
+  <text x="190" y="370" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">or submits a form</text>
+
+  <path d="M320,350 L400,350" stroke="#F2A93B" stroke-width="2.5" fill="none"/>
+  <polygon points="400,350 388,344 388,356" fill="#F2A93B"/>
+
+  <!-- Stage 2: GTM Container -->
+  <rect x="410" y="270" width="300" height="160" rx="14" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <g transform="translate(460,320)" stroke="#F2A93B" stroke-width="2.2" fill="none">
+    <rect x="-18" y="-18" width="36" height="36" rx="6"/>
+  </g>
+  <text x="560" y="316" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#F6F1E4">GTM CONTAINER</text>
+  <text x="560" y="338" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">One snippet installed once,</text>
+  <text x="560" y="354" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">manage everything after that</text>
+  <line x1="560" y1="410" x2="560" y2="470" stroke="#3A4A72" stroke-width="2" stroke-dasharray="4 5"/>
+
+  <path d="M710,350 L790,350" stroke="#F2A93B" stroke-width="2.5" fill="none"/>
+  <polygon points="790,350 778,344 778,356" fill="#F2A93B"/>
+
+  <!-- Stage 3: GA4 -->
+  <rect x="800" y="290" width="260" height="120" rx="14" fill="#1B2540" stroke="#F1633C" stroke-width="2.5"/>
+  <g transform="translate(860,330)" fill="#F1633C">
+    <rect x="-16" y="4" width="10" height="18"/>
+    <rect x="0" y="-8" width="10" height="30"/>
+    <rect x="16" y="-16" width="10" height="38"/>
+  </g>
+  <text x="930" y="332" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#F6F1E4">GOOGLE ANALYTICS 4</text>
+  <text x="930" y="354" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">Receives &amp; organizes</text>
+  <text x="930" y="370" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">the tracked event</text>
+
+  <path d="M1060,350 L1140,350" stroke="#F2A93B" stroke-width="2.5" fill="none"/>
+  <polygon points="1140,350 1128,344 1128,356" fill="#F2A93B"/>
+
+  <!-- Stage 4: Your Reports -->
+  <rect x="1150" y="290" width="200" height="120" rx="14" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+  <g transform="translate(1200,330)" stroke="#4ED9AE" stroke-width="2.2" fill="none">
+    <rect x="-16" y="-16" width="32" height="30" rx="3"/>
+    <line x1="-10" y1="-6" x2="10" y2="-6"/><line x1="-10" y1="2" x2="10" y2="2"/><line x1="-10" y1="10" x2="4" y2="10"/>
+  </g>
+  <text x="1250" y="332" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#F6F1E4">YOUR REPORTS</text>
+  <text x="1250" y="354" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">Ready to analyze</text>
+  <text x="1250" y="370" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">and act on</text>
+
+  <!-- ================= ZOOMED INSET: TRIGGER / TAG / VARIABLE ================= -->
+  <rect x="330" y="470" width="740" height="250" rx="16" fill="#141C33" stroke="#3A4A72" stroke-width="2"/>
+  <text x="700" y="504" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#5E6D92" font-weight="700">INSIDE THE GTM CONTAINER</text>
+
+  <!-- Trigger -->
+  <circle cx="480" cy="610" r="60" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+  <g transform="translate(480,595)" stroke="#4ED9AE" stroke-width="2" fill="none">
+    <path d="M0,-14 L8,0 L2,0 L2,14 L-8,-2 L-2,-2 Z" fill="#4ED9AE" stroke="none"/>
+  </g>
+  <text x="480" y="628" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#F6F1E4">TRIGGER</text>
+  <text x="480" y="672" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11.5" fill="#93A0C2">"When this happens..."</text>
+
+  <path d="M540,610 L610,610" stroke="#F2A93B" stroke-width="2.5"/>
+  <polygon points="610,610 598,604 598,616" fill="#F2A93B"/>
+
+  <!-- Tag -->
+  <circle cx="700" cy="610" r="60" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <g transform="translate(688,596) rotate(20)" fill="#F2A93B">
+    <path d="M0,-11 L15,-11 L15,3 L3,15 L-9,3 Z"/>
+    <circle cx="7.5" cy="-5" r="2.5" fill="#141C33"/>
+  </g>
+  <text x="700" y="628" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#F6F1E4">TAG</text>
+  <text x="700" y="672" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11.5" fill="#93A0C2">"...fire this snippet"</text>
+
+  <path d="M760,610 L830,610" stroke="#F1633C" stroke-width="2.5"/>
+  <polygon points="830,610 818,604 818,616" fill="#F1633C"/>
+
+  <!-- Variable -->
+  <circle cx="900" cy="610" r="60" fill="#1B2540" stroke="#F1633C" stroke-width="2.5"/>
+  <g transform="translate(900,596)" stroke="#F1633C" stroke-width="2" fill="none">
+    <rect x="-14" y="-10" width="28" height="20" rx="4"/>
+    <line x1="-7" y1="0" x2="7" y2="0"/>
+  </g>
+  <text x="900" y="628" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#F6F1E4">VARIABLE</text>
+  <text x="900" y="672" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11.5" fill="#93A0C2">reusable info both use</text>
+
+  <!-- footer -->
+  <text x="700" y="740" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN DIGITAL MARKETING COURSE &#183; MODULE 18</text>
+</svg>

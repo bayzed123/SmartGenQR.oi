@@ -1,0 +1,100 @@
+<svg width="1400" height="1200" viewBox="0 0 1400 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradD" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1526"/>
+      <stop offset="100%" stop-color="#1B2A4A"/>
+    </linearGradient>
+    <path id="hubPathD" d="M644,620 A56,56 0 1,1 756,620"/>
+  </defs>
+
+  <rect width="1400" height="1200" fill="url(#bgGradD)"/>
+
+  <!-- title -->
+  <text x="700" y="66" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#F6F1E4">The Data-to-Decision Cycle</text>
+  <text x="700" y="98" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" fill="#93A0C2">Five steps that turn raw numbers into real business action</text>
+
+  <!-- ================= FLOW ARROWS (pentagon, clockwise) ================= -->
+  <!-- N1 Collect (700,280) -> N2 Analyze (1023,515) -->
+  <path d="M760,320 Q1000,340 985,478" fill="none" stroke="#F2A93B" stroke-width="3.5"/>
+  <polygon points="985,478 972,453 997,460" fill="#F2A93B"/>
+
+  <!-- N2 Analyze (1023,515) -> N3 Identify Trends (900,895) -->
+  <path d="M1010,590 Q1060,780 940,872" fill="none" stroke="#4ED9AE" stroke-width="3.5"/>
+  <polygon points="940,872 966,865 957,890" fill="#4ED9AE"/>
+
+  <!-- N3 Identify Trends (900,895) -> N4 Report & Recommend (500,895) -->
+  <path d="M818,918 Q700,970 582,918" fill="none" stroke="#F1633C" stroke-width="3.5"/>
+  <polygon points="582,918 610,912 602,937" fill="#F1633C"/>
+
+  <!-- N4 Report & Recommend (500,895) -> N5 Decide & Act (377,515) -->
+  <path d="M460,872 Q340,780 390,590" fill="none" stroke="#F2A93B" stroke-width="3.5"/>
+  <polygon points="390,590 379,614 365,590" fill="#F2A93B"/>
+
+  <!-- N5 Decide & Act (377,515) -> N1 Collect (700,280) loop-back -->
+  <path d="M415,478 Q400,340 640,320" fill="none" stroke="#4ED9AE" stroke-width="3" stroke-dasharray="10 8"/>
+  <polygon points="640,320 613,322 622,298" fill="#4ED9AE"/>
+  <text x="480" y="410" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.2" fill="#4ED9AE" transform="rotate(-15,480,410)">THEN COLLECT AGAIN</text>
+
+  <!-- ================= CENTER HUB ================= -->
+  <circle cx="700" cy="620" r="58" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <g transform="translate(700,608)" stroke="#F6F1E4" stroke-width="2" fill="none">
+    <path d="M-14,4 A14,14 0 1,1 12,10"/>
+    <polygon points="12,10 20,2 22,14" fill="#F6F1E4" stroke="none"/>
+  </g>
+  <text text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="11" letter-spacing="1.8" fill="#93A0C2" font-weight="700">
+    <textPath href="#hubPathD" startOffset="2">CONTINUOUS IMPROVEMENT</textPath>
+  </text>
+
+  <!-- ================= N1: COLLECT (top) ================= -->
+  <circle cx="700" cy="280" r="82" fill="#1B2540" stroke="#F2A93B" stroke-width="3"/>
+  <g transform="translate(700,272)" stroke="#F6F1E4" stroke-width="2.2" fill="none">
+    <ellipse cx="0" cy="-10" rx="20" ry="8"/>
+    <path d="M-20,-10 v18 a20,8 0 0 0 40,0 v-18"/>
+    <path d="M-20,0 a20,8 0 0 0 40,0"/>
+  </g>
+  <text x="700" y="172" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#F6F1E4">COLLECT</text>
+  <text x="700" y="194" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">GA4 &amp; GTM gather the</text>
+  <text x="700" y="211" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">real visitor data</text>
+
+  <!-- ================= N2: ANALYZE (right) ================= -->
+  <circle cx="1023" cy="515" r="82" fill="#1B2540" stroke="#4ED9AE" stroke-width="3"/>
+  <g transform="translate(1023,507)" stroke="#4ED9AE" stroke-width="2.2" fill="none">
+    <circle cx="-6" cy="-6" r="15"/>
+    <line x1="5" y1="5" x2="20" y2="20"/>
+  </g>
+  <text x="1023" y="618" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#F6F1E4">ANALYZE</text>
+  <text x="1023" y="640" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">Read it honestly, without</text>
+  <text x="1023" y="657" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">cherry-picking the story</text>
+
+  <!-- ================= N3: IDENTIFY TRENDS (bottom right) ================= -->
+  <circle cx="900" cy="895" r="82" fill="#1B2540" stroke="#F1633C" stroke-width="3"/>
+  <g transform="translate(900,887)" stroke="#F1633C" stroke-width="2.4" fill="none">
+    <path d="M-20,10 L-6,-6 L4,2 L20,-16"/>
+    <path d="M6,-16 L20,-16 L20,-2"/>
+  </g>
+  <text x="900" y="1000" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#F6F1E4">IDENTIFY TRENDS</text>
+  <text x="900" y="1022" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">Spot real patterns and</text>
+  <text x="900" y="1039" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">genuine opportunities</text>
+
+  <!-- ================= N4: REPORT & RECOMMEND (bottom left) ================= -->
+  <circle cx="500" cy="895" r="82" fill="#1B2540" stroke="#F2A93B" stroke-width="3"/>
+  <g transform="translate(500,887)" stroke="#F2A93B" stroke-width="2.2" fill="none">
+    <rect x="-16" y="-20" width="32" height="40" rx="4"/>
+    <line x1="-9" y1="-9" x2="9" y2="-9"/><line x1="-9" y1="0" x2="9" y2="0"/><line x1="-9" y1="9" x2="2" y2="9"/>
+  </g>
+  <text x="500" y="1000" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16.5" font-weight="700" fill="#F6F1E4">REPORT &amp; RECOMMEND</text>
+  <text x="500" y="1022" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">A clear finding, plus one</text>
+  <text x="500" y="1039" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">specific recommended action</text>
+
+  <!-- ================= N5: DECIDE & ACT (left) ================= -->
+  <circle cx="377" cy="515" r="82" fill="#1B2540" stroke="#4ED9AE" stroke-width="3"/>
+  <g transform="translate(377,507)" stroke="#4ED9AE" stroke-width="2.4" fill="none">
+    <path d="M-14,0 L-4,10 L16,-12"/>
+  </g>
+  <text x="377" y="618" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#F6F1E4">DECIDE &amp; ACT</text>
+  <text x="377" y="640" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">Make the change, then</text>
+  <text x="377" y="657" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">set a date to review it</text>
+
+  <!-- footer -->
+  <text x="700" y="1160" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN DIGITAL MARKETING COURSE &#183; MODULE 18</text>
+</svg>
