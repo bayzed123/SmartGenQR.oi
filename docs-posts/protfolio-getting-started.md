@@ -482,8 +482,8 @@
 
   Now that your local environment is running, continue with:
 
-  - ** [Deployment Guide](https://smartgentools.com/docs/portfolio-website-deployment-blog-system-guide/) ** — deploy your personalized portfolio to GitHub Pages, Netlify, or Vercel
-  - ** [Blog System Deep Dive](https://smartgentools.com/docs/portfolio-website-deployment-blog-system-guide/) ** — learn the full Markdown/HTML authoring options, FAQ accordions, and Table of Contents generation
+  - ** [Deployment getting started](https://smartgentools.com/docs/portfolio-website-getting-started-guide/) ** — deploy your personalized portfolio to GitHub Pages, Netlify, or Vercel
+  - ** [Blog System Deep Dive](https://smartgentools.com/docs/portfolio-website-deployment-and-blog-system-guide/) ** — learn the full Markdown/HTML authoring options, FAQ accordions, and Table of Contents generation
   - ** [Customization Guide](https://smartgentools.com/docs/portfolio-website-customization-guide/) ** — detailed walkthrough of editing sections, colors, and adding new pages
 
   ---
@@ -502,7 +502,7 @@
       </td>
       <td align="right" width="50%">
         <p>Next</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-website-api-script-reference/">Portfolio API Reference</a></b>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-api-and-script-reference/">Portfolio API Reference</a></b>
       </td>
     </tr>
   </table>
