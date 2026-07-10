@@ -1,5 +1,10 @@
 [
   {
+    "title": "build: Generate all 26 docs pages with correct slugs and GitHub-style footer",
+    "date": "2026-07-10T13:05:26Z",
+    "description": "- All docs pages now generated with correct URL slugs- GitHub-style footer with Previous/Next navigation on all pages- Help section and legal links included on all docs pages- All internal links now point to correct URLs- docs.json generated for feed integration"
+  },
+  {
     "title": "fix: Correct all broken docs links and add GitHub-style footer with navigation",
     "date": "2026-07-10T13:04:18Z",
     "description": "- Fixed all internal docs links to use correct generated slugs- Fixed hardcoded URLs in footer navigation tables- Added GitHub-style footer with Previous/Next navigation- Added help section and legal links to docs footer- Improved mobile responsiveness for footer navigation- All docs links now point to correct URLs"
