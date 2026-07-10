@@ -521,7 +521,7 @@
       </td>
       <td align="right" width="50%">
         <p>Next</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-website-api-script-reference/">Portfolio API Reference</a></b>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-api-and-script-reference/">Portfolio API Reference</a></b>
       </td>
     </tr>
   </table>
