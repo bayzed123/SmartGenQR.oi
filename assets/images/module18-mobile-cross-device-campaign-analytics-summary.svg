@@ -1,0 +1,159 @@
+<svg width="1200" height="1460" viewBox="0 0 1200 1460" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1460" fill="#F6F8FC"/>
+
+  <!-- ===== Header ===== -->
+  <text x="60" y="52" font-family="'JetBrains Mono','Courier New',monospace" font-size="14" letter-spacing="2.5" fill="#17C3B2" font-weight="700">SMARTGEN · MODULE 18 · CHEAT SHEET</text>
+  <text x="60" y="96" font-family="'Sora','Poppins',sans-serif" font-size="30" font-weight="700" fill="#12163A">Mobile, Cross-Device &amp; Campaign Analytics</text>
+  <text x="60" y="126" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="16" fill="#5B6178">Save this reference for UTM tags, cross-device IDs, GA4–Ads linking, and ad metrics</text>
+
+  <!-- ============================================================ -->
+  <!-- CARD A — The 5 UTM Parameters (top-left) -->
+  <!-- ============================================================ -->
+  <rect x="60" y="170" width="560" height="560" rx="20" fill="#FFFFFF" stroke="#E2E6F0" stroke-width="1.5"/>
+  <text x="100" y="215" font-family="'Sora','Poppins',sans-serif" font-size="21" font-weight="700" fill="#12163A">The 5 UTM Parameters</text>
+
+  <text x="116" y="246" font-family="'Inter',sans-serif" font-size="11" letter-spacing="1" font-weight="700" fill="#8A8FB3">PARAMETER</text>
+  <text x="290" y="246" font-family="'Inter',sans-serif" font-size="11" letter-spacing="1" font-weight="700" fill="#8A8FB3">TYPE</text>
+  <text x="390" y="246" font-family="'Inter',sans-serif" font-size="11" letter-spacing="1" font-weight="700" fill="#8A8FB3">EXAMPLE VALUES</text>
+  <line x1="100" y1="258" x2="580" y2="258" stroke="#E2E6F0" stroke-width="1.5"/>
+
+  <!-- row 1: utm_source -->
+  <rect x="100" y="272" width="6" height="70" fill="#FF6F59"/>
+  <text x="116" y="296" font-family="'JetBrains Mono',monospace" font-size="14" font-weight="700" fill="#12163A">utm_source</text>
+  <rect x="290" y="288" width="74" height="24" rx="12" fill="#FFE1DB"/>
+  <text x="327" y="304" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" font-weight="700" fill="#B23A26">REQUIRED</text>
+  <text x="390" y="304" font-family="'Inter',sans-serif" font-size="13" fill="#3A3F5C">newsletter, google</text>
+
+  <!-- row 2: utm_medium -->
+  <rect x="100" y="357" width="6" height="70" fill="#FFC53D"/>
+  <text x="116" y="381" font-family="'JetBrains Mono',monospace" font-size="14" font-weight="700" fill="#12163A">utm_medium</text>
+  <rect x="290" y="373" width="74" height="24" rx="12" fill="#FFE1DB"/>
+  <text x="327" y="389" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" font-weight="700" fill="#B23A26">REQUIRED</text>
+  <text x="390" y="389" font-family="'Inter',sans-serif" font-size="13" fill="#3A3F5C">email, cpc, social</text>
+
+  <!-- row 3: utm_campaign -->
+  <rect x="100" y="442" width="6" height="70" fill="#6C63FF"/>
+  <text x="116" y="466" font-family="'JetBrains Mono',monospace" font-size="14" font-weight="700" fill="#12163A">utm_campaign</text>
+  <rect x="290" y="458" width="74" height="24" rx="12" fill="#FFE1DB"/>
+  <text x="327" y="474" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" font-weight="700" fill="#B23A26">REQUIRED</text>
+  <text x="390" y="474" font-family="'Inter',sans-serif" font-size="13" fill="#3A3F5C">summer_sale</text>
+
+  <!-- row 4: utm_term -->
+  <rect x="100" y="527" width="6" height="70" fill="#17C3B2"/>
+  <text x="116" y="551" font-family="'JetBrains Mono',monospace" font-size="14" font-weight="700" fill="#12163A">utm_term</text>
+  <rect x="290" y="543" width="74" height="24" rx="12" fill="#EAF0FF"/>
+  <text x="327" y="559" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" font-weight="700" fill="#3A56C7">OPTIONAL</text>
+  <text x="390" y="559" font-family="'Inter',sans-serif" font-size="13" fill="#3A3F5C">running+shoes</text>
+
+  <!-- row 5: utm_content -->
+  <rect x="100" y="612" width="6" height="70" fill="#FF5DA2"/>
+  <text x="116" y="636" font-family="'JetBrains Mono',monospace" font-size="14" font-weight="700" fill="#12163A">utm_content</text>
+  <rect x="290" y="628" width="74" height="24" rx="12" fill="#EAF0FF"/>
+  <text x="327" y="644" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" font-weight="700" fill="#3A56C7">OPTIONAL</text>
+  <text x="390" y="644" font-family="'Inter',sans-serif" font-size="13" fill="#3A3F5C">header vs footer</text>
+
+  <!-- ============================================================ -->
+  <!-- CARD B — Cross-Device Identifiers (top-right) -->
+  <!-- ============================================================ -->
+  <rect x="660" y="170" width="560" height="560" rx="20" fill="#FFFFFF" stroke="#E2E6F0" stroke-width="1.5"/>
+  <text x="700" y="215" font-family="'Sora','Poppins',sans-serif" font-size="21" font-weight="700" fill="#12163A">Cross-Device Identifiers</text>
+
+  <!-- item 1: User-ID -->
+  <circle cx="710" cy="260" r="7" fill="#17C3B2"/>
+  <text x="726" y="266" font-family="'Sora',sans-serif" font-size="16" font-weight="700" fill="#12163A">User-ID</text>
+  <rect x="1000" y="250" width="150" height="24" rx="12" fill="#D9F5F1"/>
+  <text x="1075" y="266" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" font-weight="700" fill="#0E7A6E">MOST ACCURATE</text>
+  <text x="726" y="300" font-family="'Inter',sans-serif" font-size="13" fill="#5B6178">Persistent ID passed at login —</text>
+  <text x="726" y="316" font-family="'Inter',sans-serif" font-size="13" fill="#5B6178">stitches every device to one user.</text>
+
+  <!-- item 2: Google Signals -->
+  <circle cx="710" cy="410" r="7" fill="#6C63FF"/>
+  <text x="726" y="416" font-family="'Sora',sans-serif" font-size="16" font-weight="700" fill="#12163A">Google Signals</text>
+  <rect x="1000" y="400" width="150" height="24" rx="12" fill="#E6E4FF"/>
+  <text x="1075" y="416" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" font-weight="700" fill="#4038B0">NO-CODE OPTION</text>
+  <text x="726" y="450" font-family="'Inter',sans-serif" font-size="13" fill="#5B6178">Uses Google's own signed-in data —</text>
+  <text x="726" y="466" font-family="'Inter',sans-serif" font-size="13" fill="#5B6178">no login system required.</text>
+
+  <!-- item 3: Client ID -->
+  <circle cx="710" cy="560" r="7" fill="#FF6F59"/>
+  <text x="726" y="566" font-family="'Sora',sans-serif" font-size="16" font-weight="700" fill="#12163A">Client ID (default)</text>
+  <rect x="1000" y="550" width="150" height="24" rx="12" fill="#FFE1DB"/>
+  <text x="1075" y="566" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" font-weight="700" fill="#B23A26">SINGLE DEVICE</text>
+  <text x="726" y="600" font-family="'Inter',sans-serif" font-size="13" fill="#5B6178">Anonymous cookie-based ID —</text>
+  <text x="726" y="616" font-family="'Inter',sans-serif" font-size="13" fill="#5B6178">resets on every new device or browser.</text>
+
+  <!-- ============================================================ -->
+  <!-- CARD C — GA4 + Google Ads Linking Checklist (bottom-left) -->
+  <!-- ============================================================ -->
+  <rect x="60" y="770" width="560" height="560" rx="20" fill="#FFFFFF" stroke="#E2E6F0" stroke-width="1.5"/>
+  <text x="100" y="815" font-family="'Sora','Poppins',sans-serif" font-size="21" font-weight="700" fill="#12163A">GA4 + Google Ads Linking Checklist</text>
+
+  <!-- item 1 -->
+  <rect x="100" y="846" width="18" height="18" rx="4" fill="none" stroke="#17C3B2" stroke-width="2"/>
+  <path d="M104,855 L109,860 L116,849" stroke="#17C3B2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="130" y="861" font-family="'Inter',sans-serif" font-size="14" font-weight="700" fill="#12163A">Link the accounts</text>
+  <text x="130" y="880" font-family="'Inter',sans-serif" font-size="12" fill="#8A8FB3">GA4 Admin → Product Links → Google Ads Linking</text>
+
+  <!-- item 2 -->
+  <rect x="100" y="936" width="18" height="18" rx="4" fill="none" stroke="#17C3B2" stroke-width="2"/>
+  <path d="M104,945 L109,950 L116,939" stroke="#17C3B2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="130" y="951" font-family="'Inter',sans-serif" font-size="14" font-weight="700" fill="#12163A">Enable auto-tagging</text>
+  <text x="130" y="970" font-family="'Inter',sans-serif" font-size="12" fill="#8A8FB3">Google Ads → Settings → Account settings</text>
+
+  <!-- item 3 -->
+  <rect x="100" y="1026" width="18" height="18" rx="4" fill="none" stroke="#17C3B2" stroke-width="2"/>
+  <path d="M104,1035 L109,1040 L116,1029" stroke="#17C3B2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="130" y="1041" font-family="'Inter',sans-serif" font-size="14" font-weight="700" fill="#12163A">Import GA4 conversions</text>
+  <text x="130" y="1060" font-family="'Inter',sans-serif" font-size="12" fill="#8A8FB3">Ads → Goals → Conversions → + New → Import</text>
+
+  <!-- item 4 -->
+  <rect x="100" y="1116" width="18" height="18" rx="4" fill="none" stroke="#17C3B2" stroke-width="2"/>
+  <path d="M104,1125 L109,1130 L116,1119" stroke="#17C3B2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="130" y="1131" font-family="'Inter',sans-serif" font-size="14" font-weight="700" fill="#12163A">Enable Google Signals</text>
+  <text x="130" y="1150" font-family="'Inter',sans-serif" font-size="12" fill="#8A8FB3">GA4 Admin → Data Settings → Data Collection</text>
+
+  <!-- item 5 -->
+  <rect x="100" y="1206" width="18" height="18" rx="4" fill="none" stroke="#17C3B2" stroke-width="2"/>
+  <path d="M104,1215 L109,1220 L116,1209" stroke="#17C3B2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="130" y="1221" font-family="'Inter',sans-serif" font-size="14" font-weight="700" fill="#12163A">Share audiences for remarketing</text>
+  <text x="130" y="1240" font-family="'Inter',sans-serif" font-size="12" fill="#8A8FB3">Confirm audience export after linking accounts</text>
+
+  <!-- ============================================================ -->
+  <!-- CARD D — Key Ad Metrics Glossary (bottom-right) -->
+  <!-- ============================================================ -->
+  <rect x="660" y="770" width="560" height="560" rx="20" fill="#FFFFFF" stroke="#E2E6F0" stroke-width="1.5"/>
+  <text x="700" y="815" font-family="'Sora','Poppins',sans-serif" font-size="21" font-weight="700" fill="#12163A">Key Ad Metrics Glossary</text>
+
+  <!-- CTR -->
+  <rect x="700" y="842" width="44" height="44" rx="10" fill="#FF6F59"/>
+  <text x="722" y="870" text-anchor="middle" font-family="'Sora',sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">CTR</text>
+  <text x="760" y="860" font-family="'Inter',sans-serif" font-size="14" font-weight="700" fill="#12163A">Click-Through Rate</text>
+  <text x="760" y="878" font-family="'JetBrains Mono',monospace" font-size="12" fill="#8A8FB3">clicks ÷ impressions × 100</text>
+
+  <!-- CPC -->
+  <rect x="700" y="932" width="44" height="44" rx="10" fill="#FFC53D"/>
+  <text x="722" y="960" text-anchor="middle" font-family="'Sora',sans-serif" font-size="14" font-weight="700" fill="#12163A">CPC</text>
+  <text x="760" y="950" font-family="'Inter',sans-serif" font-size="14" font-weight="700" fill="#12163A">Cost Per Click</text>
+  <text x="760" y="968" font-family="'JetBrains Mono',monospace" font-size="12" fill="#8A8FB3">total spend ÷ total clicks</text>
+
+  <!-- CPM -->
+  <rect x="700" y="1022" width="44" height="44" rx="10" fill="#6C63FF"/>
+  <text x="722" y="1050" text-anchor="middle" font-family="'Sora',sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">CPM</text>
+  <text x="760" y="1040" font-family="'Inter',sans-serif" font-size="14" font-weight="700" fill="#12163A">Cost per 1,000 Impressions</text>
+  <text x="760" y="1058" font-family="'JetBrains Mono',monospace" font-size="12" fill="#8A8FB3">(spend ÷ impressions) × 1000</text>
+
+  <!-- CPA -->
+  <rect x="700" y="1112" width="44" height="44" rx="10" fill="#FF5DA2"/>
+  <text x="722" y="1140" text-anchor="middle" font-family="'Sora',sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">CPA</text>
+  <text x="760" y="1130" font-family="'Inter',sans-serif" font-size="14" font-weight="700" fill="#12163A">Cost Per Acquisition</text>
+  <text x="760" y="1148" font-family="'JetBrains Mono',monospace" font-size="12" fill="#8A8FB3">total spend ÷ total conversions</text>
+
+  <!-- ROAS -->
+  <rect x="700" y="1202" width="44" height="44" rx="10" fill="#17C3B2"/>
+  <text x="722" y="1230" text-anchor="middle" font-family="'Sora',sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">ROAS</text>
+  <text x="760" y="1220" font-family="'Inter',sans-serif" font-size="14" font-weight="700" fill="#12163A">Return on Ad Spend</text>
+  <text x="760" y="1238" font-family="'JetBrains Mono',monospace" font-size="12" fill="#8A8FB3">total revenue ÷ total spend</text>
+
+  <!-- Footer -->
+  <text x="60" y="1410" font-family="'Inter',sans-serif" font-size="13" fill="#8A8FB3">SmartGen Digital Marketing Course · Module 18 Cheat Sheet · smartgentools.com</text>
+</svg>
