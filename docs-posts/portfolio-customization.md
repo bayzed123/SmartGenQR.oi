@@ -668,9 +668,9 @@
 
   You've now covered the full customization surface of the portfolio. From here:
 
-  - **[Deployment & Blog System Guide](/docs/portfolio-website-deployment-blog-system-guide/)** — if you haven't deployed yet, or want to start publishing blog posts
-  - **[Getting Started Guide](/docs/portfolio-website-getting-started-guide/)** — for initial setup reference
-  - Start writing your first blog post using the [blog system guide](/docs/portfolio-deployment-and-blog-system/#writing-posts-in-markdown) to begin building content regularly
+  - **[Deployment & Blog System Guide](https://smartgentools.com/docs/portfolio-website-deployment-and-blog-system-guide/)** — if you haven't deployed yet, or want to start publishing blog posts
+  - **[Getting Started Guide](https://smartgentools.com/docs/portfolio-website-getting-started-guide/)** — for initial setup reference
+  - Start writing your first blog post using the [blog system guide](https://smartgentools.com/docs/portfolio-website-deployment-and-blog-system-guide/#writing-posts-in-markdown) to begin building content regularly
 
   ## Further reading
 
@@ -687,7 +687,7 @@
       </td>
       <td align="right" width="50%">
         <p>Next</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-website-api-script-reference/">Portfolio API Reference</a></b>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-api-and-script-reference/">Portfolio API Reference</a></b>
       </td>
     </tr>
   </table>
