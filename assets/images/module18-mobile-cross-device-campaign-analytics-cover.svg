@@ -1,0 +1,101 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B2158"/>
+      <stop offset="55%" stop-color="#141A46"/>
+      <stop offset="100%" stop-color="#0B0E2E"/>
+    </linearGradient>
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#17C3B2" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#17C3B2" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#FFFFFF" fill-opacity="0.06"/>
+    </pattern>
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0B0E2E"/>
+      <stop offset="100%" stop-color="#181C4C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Eyebrow -->
+  <text x="80" y="112" font-family="'JetBrains Mono','Courier New',monospace" font-size="15" letter-spacing="3" fill="#17C3B2" font-weight="700">SMARTGEN DIGITAL MARKETING COURSE · MODULE 18</text>
+
+  <!-- Title -->
+  <text x="78" y="182" font-family="'Sora','Poppins',sans-serif" font-size="45" font-weight="700" fill="#FFFFFF">Mobile, Cross-Device &amp;</text>
+  <text x="78" y="240" font-family="'Sora','Poppins',sans-serif" font-size="45" font-weight="700" fill="#FFFFFF">Campaign Analytics</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="296" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="19" fill="#AEB4D6">User-ID tracking, UTM parameters, and social &amp; ads measurement</text>
+
+  <!-- Author / course tag -->
+  <text x="80" y="336" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="15" fill="#7B82AC">A Complete A to Z Mega Guide for Beginners · By Sayad Md Bayezid Hosan</text>
+
+  <!-- Small badge row -->
+  <g font-family="'Inter',Helvetica,Arial,sans-serif" font-size="13" font-weight="600">
+    <rect x="80" y="365" width="150" height="30" rx="15" fill="none" stroke="#3A3F76" stroke-width="1.5"/>
+    <text x="103" y="384" fill="#C7CBEA">Cross-Device ID</text>
+
+    <rect x="242" y="365" width="112" height="30" rx="15" fill="none" stroke="#3A3F76" stroke-width="1.5"/>
+    <text x="264" y="384" fill="#C7CBEA">UTM Tags</text>
+
+    <rect x="366" y="365" width="152" height="30" rx="15" fill="none" stroke="#3A3F76" stroke-width="1.5"/>
+    <text x="388" y="384" fill="#C7CBEA">GA4 + Ads Link</text>
+  </g>
+
+  <!-- ===== Right side: device convergence graphic ===== -->
+  <g transform="translate(770,55)">
+    <circle cx="230" cy="185" r="95" fill="url(#nodeGlow)"/>
+
+    <!-- Desktop monitor (back) -->
+    <g transform="translate(0,40)" stroke="#6C63FF" stroke-width="2.5" fill="none">
+      <rect x="0" y="0" width="150" height="98" rx="8"/>
+      <line x1="55" y1="98" x2="95" y2="98"/>
+      <line x1="75" y1="98" x2="75" y2="114"/>
+      <line x1="50" y1="114" x2="100" y2="114"/>
+      <circle cx="75" cy="49" r="4" fill="#6C63FF" stroke="none"/>
+    </g>
+    <text x="45" y="168" font-family="'Inter',sans-serif" font-size="12" fill="#8E94C4">Desktop</text>
+
+    <!-- Tablet (middle) -->
+    <g transform="translate(175,90)" stroke="#17C3B2" stroke-width="2.5" fill="none">
+      <rect x="0" y="0" width="86" height="112" rx="10"/>
+      <circle cx="43" cy="56" r="4" fill="#17C3B2" stroke="none"/>
+    </g>
+    <text x="188" y="220" font-family="'Inter',sans-serif" font-size="12" fill="#8E94C4">Tablet</text>
+
+    <!-- Phone (front) -->
+    <g transform="translate(120,168)" stroke="#FF6F59" stroke-width="2.5" fill="none">
+      <rect x="0" y="0" width="54" height="98" rx="10"/>
+      <circle cx="27" cy="49" r="3.5" fill="#FF6F59" stroke="none"/>
+    </g>
+    <text x="98" y="284" font-family="'Inter',sans-serif" font-size="12" fill="#8E94C4">Phone</text>
+
+    <!-- Signal arcs to central node -->
+    <g stroke-dasharray="3 5" fill="none" stroke-width="1.6">
+      <path d="M75,89 Q170,150 230,185" stroke="#6C63FF"/>
+      <path d="M218,146 Q225,165 230,185" stroke="#17C3B2"/>
+      <path d="M147,217 Q190,203 230,185" stroke="#FF6F59"/>
+    </g>
+
+    <!-- Central User-ID node -->
+    <circle cx="230" cy="185" r="11" fill="#0B0E2E" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="230" cy="185" r="3.5" fill="#FFFFFF"/>
+    <text x="230" y="224" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" fill="#FFFFFF" letter-spacing="1">USER_ID</text>
+    <text x="230" y="241" text-anchor="middle" font-family="'Inter',sans-serif" font-size="12" fill="#9AA0C8">one person, three screens</text>
+  </g>
+
+  <!-- ===== Bottom: UTM address bar ===== -->
+  <g transform="translate(80,500)">
+    <rect x="0" y="0" width="1040" height="68" rx="14" fill="url(#barGrad)" stroke="#2B2F63" stroke-width="1.5"/>
+    <circle cx="28" cy="22" r="5" fill="#FF6F59"/>
+    <circle cx="48" cy="22" r="5" fill="#FFC53D"/>
+    <circle cx="68" cy="22" r="5" fill="#17C3B2"/>
+    <text x="28" y="50" font-family="'JetBrains Mono','Courier New',monospace" font-size="16">
+      <tspan fill="#EDEFFB">smartgentools.com/go</tspan><tspan fill="#7B82AC">?</tspan><tspan fill="#FF6F59" font-weight="700">utm_source</tspan><tspan fill="#7B82AC">=newsletter&amp;</tspan><tspan fill="#FFC53D" font-weight="700">utm_medium</tspan><tspan fill="#7B82AC">=email&amp;</tspan><tspan fill="#6C63FF" font-weight="700">utm_campaign</tspan><tspan fill="#7B82AC">=summer</tspan>
+    </text>
+  </g>
+</svg>
