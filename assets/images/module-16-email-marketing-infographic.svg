@@ -1,0 +1,164 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="gridI" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1B2A4A" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="scanGlowI" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1600" fill="#0B1220"/>
+  <rect width="1200" height="1600" fill="url(#gridI)" opacity="0.45"/>
+
+  <g stroke="#2DD4BF" stroke-width="2.5" fill="none" stroke-linecap="square">
+    <path d="M 40 72 L 40 40 L 72 40"/>
+    <path d="M 1128 40 L 1160 40 L 1160 72"/>
+    <path d="M 1160 1528 L 1160 1560 L 1128 1560"/>
+    <path d="M 72 1560 L 40 1560 L 40 1528"/>
+  </g>
+
+  <text x="600" y="62" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="15" letter-spacing="4" fill="#F5A623" font-weight="700">SMARTGEN DIGITAL MARKETING COURSE &#183; MODULE 16</text>
+  <rect x="40" y="80" width="1120" height="2" fill="url(#scanGlowI)"/>
+  <text x="600" y="132" text-anchor="middle" font-family="Arial, 'Helvetica Neue', sans-serif" font-size="40" font-weight="900" fill="#F1F5F9">The Complete Email Marketing System</text>
+  <text x="600" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#9FB0CC">List &#183; Strategy &#183; Content &#183; Automation &#183; Metrics &#183; Deliverability — the 2026 edition</text>
+
+  <text x="600" y="205" text-anchor="middle" font-family="'Consolas',monospace" font-size="13" letter-spacing="2" fill="#7C8DAF">THE LIFECYCLE OF A REAL EMAIL MARKETING PROGRAM</text>
+
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="800">
+    <rect x="60" y="225" width="172" height="64" rx="8" fill="#101B33" stroke="#2DD4BF" stroke-width="2"/>
+    <text x="146" y="264" text-anchor="middle" fill="#2DD4BF">LIST</text>
+
+    <rect x="290" y="225" width="172" height="64" rx="8" fill="#101B33" stroke="#2DD4BF" stroke-width="2"/>
+    <text x="376" y="264" text-anchor="middle" fill="#2DD4BF">STRATEGY</text>
+
+    <rect x="520" y="225" width="172" height="64" rx="8" fill="#101B33" stroke="#2DD4BF" stroke-width="2"/>
+    <text x="606" y="264" text-anchor="middle" fill="#2DD4BF">CONTENT</text>
+
+    <rect x="750" y="225" width="172" height="64" rx="8" fill="#101B33" stroke="#2DD4BF" stroke-width="2"/>
+    <text x="836" y="264" text-anchor="middle" fill="#2DD4BF">AUTOMATE</text>
+
+    <rect x="980" y="225" width="160" height="64" rx="8" fill="#2DD4BF" stroke="#2DD4BF" stroke-width="2"/>
+    <text x="1060" y="264" text-anchor="middle" fill="#08131F">MEASURE</text>
+  </g>
+  <g stroke="#F5A623" stroke-width="3" fill="#F5A623">
+    <path d="M 238 257 L 284 257 M 274 249 L 284 257 L 274 265" fill="none"/>
+    <path d="M 468 257 L 514 257 M 504 249 L 514 257 L 504 265" fill="none"/>
+    <path d="M 698 257 L 744 257 M 734 249 L 744 257 L 734 265" fill="none"/>
+    <path d="M 928 257 L 974 257 M 964 249 L 974 257 L 964 265" fill="none"/>
+  </g>
+
+  <!-- Card 1: Building Your List -->
+  <g>
+    <rect x="60" y="320" width="1080" height="220" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="112" cy="362" r="26" fill="#2DD4BF"/>
+    <text x="112" y="371" text-anchor="middle" font-family="Arial" font-size="26" font-weight="900" fill="#08131F">1</text>
+    <text x="156" y="356" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="#F1F5F9">BUILDING YOUR LIST</text>
+    <text x="156" y="382" font-family="Arial, sans-serif" font-size="15.5" fill="#9FB0CC">Permission-based growth that protects deliverability from day one</text>
+    <line x1="90" y1="400" x2="1110" y2="400" stroke="#1B2A4A" stroke-width="1"/>
+
+    <circle cx="100" cy="424" r="3" fill="#F5A623"/>
+    <text x="115" y="429" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">OPT-IN: </tspan><tspan fill="#D7E4F0">Double opt-in filters bots &amp; typos, protects reputation</tspan></text>
+
+    <circle cx="100" cy="452" r="3" fill="#FB7185"/>
+    <text x="115" y="457" font-family="'Consolas',monospace" font-size="15"><tspan fill="#FB7185">NEVER: </tspan><tspan fill="#D7E4F0">Buy an email list — instant complaints, damaged reputation</tspan></text>
+
+    <circle cx="100" cy="480" r="3" fill="#F5A623"/>
+    <text x="115" y="485" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">HEALTHY GROWTH: </tspan><tspan fill="#D7E4F0">Roughly 1-3% net list growth per month</tspan></text>
+
+    <circle cx="100" cy="508" r="3" fill="#2DD4BF"/>
+    <text x="115" y="513" font-family="'Consolas',monospace" font-size="15"><tspan fill="#2DD4BF">HYGIENE: </tspan><tspan fill="#D7E4F0">Suppress non-openers after ~120 days of inactivity</tspan></text>
+  </g>
+
+  <!-- Card 2: Campaigns vs Automation -->
+  <g>
+    <rect x="60" y="552" width="1080" height="220" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="112" cy="594" r="26" fill="#2DD4BF"/>
+    <text x="112" y="603" text-anchor="middle" font-family="Arial" font-size="26" font-weight="900" fill="#08131F">2</text>
+    <text x="156" y="588" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="#F1F5F9">CAMPAIGNS VS. AUTOMATION</text>
+    <text x="156" y="614" font-family="Arial, sans-serif" font-size="15.5" fill="#9FB0CC">Two tools, two different jobs — know which one to reach for</text>
+    <line x1="90" y1="632" x2="1110" y2="632" stroke="#1B2A4A" stroke-width="1"/>
+
+    <circle cx="100" cy="656" r="3" fill="#F5A623"/>
+    <text x="115" y="661" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">CAMPAIGNS: </tspan><tspan fill="#D7E4F0">One-time sends — newsletters, launches, promotions</tspan></text>
+
+    <circle cx="100" cy="684" r="3" fill="#F5A623"/>
+    <text x="115" y="689" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">FLOWS: </tspan><tspan fill="#D7E4F0">Triggered by behavior — welcome, cart, win-back</tspan></text>
+
+    <circle cx="100" cy="712" r="3" fill="#2DD4BF"/>
+    <text x="115" y="717" font-family="'Consolas',monospace" font-size="15"><tspan fill="#2DD4BF">THE GAP: </tspan><tspan fill="#D7E4F0">Automated flows consistently beat campaigns on CTR &amp; revenue</tspan></text>
+
+    <circle cx="100" cy="740" r="3" fill="#F5A623"/>
+    <text x="115" y="745" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">START WITH: </tspan><tspan fill="#D7E4F0">Welcome series first, then abandoned cart</tspan></text>
+  </g>
+
+  <!-- Card 3: Metrics That Actually Matter -->
+  <g>
+    <rect x="60" y="784" width="1080" height="220" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="112" cy="826" r="26" fill="#2DD4BF"/>
+    <text x="112" y="835" text-anchor="middle" font-family="Arial" font-size="26" font-weight="900" fill="#08131F">3</text>
+    <text x="156" y="820" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="#F1F5F9">METRICS THAT ACTUALLY MATTER</text>
+    <text x="156" y="846" font-family="Arial, sans-serif" font-size="15.5" fill="#9FB0CC">Apple Mail Privacy Protection means open rate alone can mislead</text>
+    <line x1="90" y1="864" x2="1110" y2="864" stroke="#1B2A4A" stroke-width="1"/>
+
+    <circle cx="100" cy="888" r="3" fill="#FB7185"/>
+    <text x="115" y="893" font-family="'Consolas',monospace" font-size="15"><tspan fill="#FB7185">OPEN RATE: </tspan><tspan fill="#D7E4F0">Inflated since 2021 by Apple MPP — read with caution</tspan></text>
+
+    <circle cx="100" cy="916" r="3" fill="#2DD4BF"/>
+    <text x="115" y="921" font-family="'Consolas',monospace" font-size="15"><tspan fill="#2DD4BF">TRUST INSTEAD: </tspan><tspan fill="#D7E4F0">Click-through rate (CTR) &amp; click-to-open rate (CTOR)</tspan></text>
+
+    <circle cx="100" cy="944" r="3" fill="#F5A623"/>
+    <text x="115" y="949" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">RPR: </tspan><tspan fill="#D7E4F0">Revenue Per Recipient — ties email directly to real ROI</tspan></text>
+
+    <circle cx="100" cy="972" r="3" fill="#F5A623"/>
+    <text x="115" y="977" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">SPAM RATE: </tspan><tspan fill="#D7E4F0">Stay under 0.1%, never approach 0.3%</tspan></text>
+  </g>
+
+  <!-- Card 4: The 2024-2026 Deliverability Shift -->
+  <g>
+    <rect x="60" y="1016" width="1080" height="220" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="112" cy="1058" r="26" fill="#2DD4BF"/>
+    <text x="112" y="1067" text-anchor="middle" font-family="Arial" font-size="26" font-weight="900" fill="#08131F">4</text>
+    <text x="156" y="1052" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="#F1F5F9">THE 2024-2026 DELIVERABILITY SHIFT</text>
+    <text x="156" y="1078" font-family="Arial, sans-serif" font-size="15.5" fill="#9FB0CC">Google, Yahoo &amp; Microsoft now require authentication from every bulk sender</text>
+    <line x1="90" y1="1096" x2="1110" y2="1096" stroke="#1B2A4A" stroke-width="1"/>
+
+    <circle cx="100" cy="1120" r="3" fill="#F5A623"/>
+    <text x="115" y="1125" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">BULK THRESHOLD: </tspan><tspan fill="#D7E4F0">5,000+ daily emails to Gmail = permanent bulk status</tspan></text>
+
+    <circle cx="100" cy="1148" r="3" fill="#2DD4BF"/>
+    <text x="115" y="1153" font-family="'Consolas',monospace" font-size="15"><tspan fill="#2DD4BF">REQUIRED: </tspan><tspan fill="#D7E4F0">SPF + DKIM + DMARC — all three, properly aligned</tspan></text>
+
+    <circle cx="100" cy="1176" r="3" fill="#F5A623"/>
+    <text x="115" y="1181" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">ALSO REQUIRED: </tspan><tspan fill="#D7E4F0">One-click unsubscribe, honored within 2 days</tspan></text>
+
+    <circle cx="100" cy="1204" r="3" fill="#FB7185"/>
+    <text x="115" y="1209" font-family="'Consolas',monospace" font-size="15"><tspan fill="#FB7185">ENFORCEMENT: </tspan><tspan fill="#D7E4F0">Soft warnings (2024) &#8594; hard rejections (2026)</tspan></text>
+  </g>
+
+  <!-- Card 5: Choosing the Right Tool -->
+  <g>
+    <rect x="60" y="1248" width="1080" height="220" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="112" cy="1290" r="26" fill="#2DD4BF"/>
+    <text x="112" y="1299" text-anchor="middle" font-family="Arial" font-size="26" font-weight="900" fill="#08131F">5</text>
+    <text x="156" y="1284" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="#F1F5F9">CHOOSING THE RIGHT TOOL</text>
+    <text x="156" y="1310" font-family="Arial, sans-serif" font-size="15.5" fill="#9FB0CC">The best platform depends on your stage, not a "best overall" list</text>
+    <line x1="90" y1="1328" x2="1110" y2="1328" stroke="#1B2A4A" stroke-width="1"/>
+
+    <circle cx="100" cy="1352" r="3" fill="#F5A623"/>
+    <text x="115" y="1357" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">EVALUATE: </tspan><tspan fill="#D7E4F0">Deliverability infra, automation depth, pricing, ease of use</tspan></text>
+
+    <circle cx="100" cy="1380" r="3" fill="#F5A623"/>
+    <text x="115" y="1385" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">PRICING: </tspan><tspan fill="#D7E4F0">Per-contact vs per-email-sent scale very differently</tspan></text>
+
+    <circle cx="100" cy="1408" r="3" fill="#F5A623"/>
+    <text x="115" y="1413" font-family="'Consolas',monospace" font-size="15"><tspan fill="#7C8DAF">ECOMMERCE: </tspan><tspan fill="#D7E4F0">Prioritize deep store integration &amp; purchase triggers</tspan></text>
+
+    <circle cx="100" cy="1436" r="3" fill="#2DD4BF"/>
+    <text x="115" y="1441" font-family="'Consolas',monospace" font-size="15"><tspan fill="#2DD4BF">CHECK TODAY: </tspan><tspan fill="#D7E4F0">Free-tier limits have shrunk industry-wide — verify first</tspan></text>
+  </g>
+
+  <text x="600" y="1508" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="14" letter-spacing="3" fill="#7C8DAF" font-weight="700">SMARTGENTOOLS.COM &#183; MODULE 16: EMAIL MARKETING</text>
+</svg>
