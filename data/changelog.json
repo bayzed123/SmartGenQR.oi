@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update index.html",
+    "date": "2026-07-10T20:27:29Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Add image Infographic  ga4-advanced-features-guide",
     "date": "2026-07-10T20:02:08Z",
     "description": "Cover: gear→tag→lightbulb motif\r\t•\tGTM infographic: the website → GTM → GA4 → reports pipeline, with a zoomed inset on Trigger/Tag/Variable\r\t•\tData-cycle infographic: the 5-stage Collect → Analyze → Identify Trends → Report & Recommend → Decide & Act loop"
