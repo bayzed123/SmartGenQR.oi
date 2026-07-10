@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Workflow Configuration - SmartGen Docs</title>
+    <meta name="description" content="SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions">
+    <link rel="canonical" href="https://smartgentools.com/docs/advanced-workflow-configuration/">
+
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+
+    <style>
+      .toc-sidebar { min-width: 200px; padding-left: 1.5rem; border-left: 1px solid #e5e7eb; }
+      .toc-heading { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: #888; margin-bottom: 0.75rem; }
+      .toc-list { list-style: none; padding: 0; margin: 0; }
+      .toc-list li { margin-bottom: 0.5rem; }
+      .toc-main a { font-size: 0.9rem; color: #444; text-decoration: none; }
+      .toc-sub a { font-size: 0.85rem; color: #777; text-decoration: none; padding-left: 1rem; display:block; }
+      .toc-link:hover, .toc-link.active { color: #3b82f6; font-weight: 500; }
+      .doc-layout-with-toc { display: flex; gap: 2rem; }
+      @media (max-width: 900px) { .toc-sidebar { display: none; } }
+      
+      /* GitHub-style Footer */
+      .doc-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; }
+      .nav-table { display: table; width: 100%; margin-bottom: 2rem; }
+      .nav-row { display: table-row; }
+      .nav-cell { display: table-cell; padding: 1rem; width: 50%; }
+      .nav-prev { text-align: left; padding-right: 2rem; }
+      .nav-next { text-align: right; padding-left: 2rem; border-left: 1px solid #e5e7eb; }
+      .nav-label { font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; font-weight: 500; }
+      .nav-link-footer { color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.05rem; }
+      .nav-link-footer:hover { text-decoration: underline; }
+      .nav-empty { height: 2.5rem; }
+      .footer-divider { margin: 2rem 0; border: none; border-top: 1px solid #e5e7eb; }
+      .help-section { margin: 2rem 0; }
+      .help-box { margin-bottom: 2rem; }
+      .help-box h3 { font-size: 1rem; font-weight: 600; margin: 0 0 0.5rem 0; }
+      .help-box p { margin: 0.5rem 0; color: #555; font-size: 0.95rem; line-height: 1.5; }
+      .btn-contribute { display: inline-block; padding: 0.5rem 1rem; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; color: #0969da; text-decoration: none; font-weight: 500; margin: 0.75rem 0; }
+      .btn-contribute:hover { background: #eaeef2; }
+      .link-secondary { color: #0969da; text-decoration: none; }
+      .link-secondary:hover { text-decoration: underline; }
+      .footer-legal { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; text-align: center; }
+      .footer-legal small { color: #666; font-size: 0.85rem; }
+      .footer-legal a { color: #0969da; text-decoration: none; }
+      .footer-legal a:hover { text-decoration: underline; }
+      
+      @media (max-width: 768px) {
+        .nav-cell { display: block; width: 100%; padding: 1rem 0; border-left: none; }
+        .nav-next { border-left: none; border-top: 1px solid #e5e7eb; padding-top: 1rem; text-align: left; }
+        .nav-prev { padding-right: 0; }
+      }
+    </style>
+</head>
+<body>
+    <header class="docs-header">
+        <div class="header-left">
+            <button id="mobile-menu-btn" class="icon-btn mobile-only" aria-label="Menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <a href="/" class="logo">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="color: var(--primary);"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                SmartGen Docs
+            </a>
+        </div>
+        <div class="header-right">
+            <div class="search-bar desktop-only">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" placeholder="Search or Ask AI..." readonly>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <a href="https://github.com/Sayadbayezid" target="_blank" class="icon-btn" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <div class="docs-layout">
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <aside id="sidebar" class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section-title">Guides</div>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/directory-structure-for-protfolio/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Directory Structure for Protfolio
+                </a>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/your-actual-folder-layout/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Your Actual Folder Layout
+                </a>
+                <a href="/docs/installation/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Installation
+                </a>
+                <a href="/docs/vite-optimization-guide-for-cicd/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Vite Optimization Guide for CI/CD
+                </a>
+                <a href="/docs/advanced-workflow-configuration/" class="nav-link active">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Advanced Workflow Configuration
+                </a>
+                <a href="/docs/vite-config-quick-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Vite Config Quick Reference
+                </a>
+                <a href="/docs/about-the-team-and-contribution/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    About the Team & Contribution
+                </a>
+                <a href="/docs/railway-deployment-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Railway Deployment Guide
+                </a>
+                <a href="/docs/github-actions-configuration-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    GitHub Actions Configuration Guide
+                </a>
+                <a href="/docs/custom-environment-variables/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Custom Environment Variables
+                </a>
+                <a href="/docs/workflow-customization-summary/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Workflow Customization Summary
+                </a>
+                <a href="/docs/contributor-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Contributor Guide
+                </a>
+                <a href="/docs/complete-guide-protfolio/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    complete guide Protfolio
+                </a>
+                <a href="/docs/quickstart-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Quickstart Guide
+                </a><div class="nav-section-title">API Reference</div>
+                <a href="/docs/api-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    API Reference
+                </a><div class="nav-section-title">Portfolio Website</div>
+                <a href="/docs/portfolio-website-getting-started-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Getting Started Guide
+                </a>
+                <a href="/docs/portfolio-website-deployment-and-blog-system-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Deployment & Blog System Guide
+                </a>
+                <a href="/docs/portfolio-website-customization-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Customization Guide
+                </a>
+                <a href="/docs/portfolio-website-api-and-script-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: API & Script Reference
+                </a><div class="nav-section-title">overview</div>
+                <a href="/docs/quick-setup-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Quick Setup Guide
+                </a>
+                <a href="/docs/developer-guidelines/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    developer Guidelines
+                </a><div class="nav-section-title">Open Source Projects</div>
+                <a href="/docs/building-a-fast-client-side-search-feature-without-a-backend/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Building a Fast Client-Side Search Feature Without a Backend
+                </a>
+                <a href="/docs/how-to-deploy-an-open-source-developer-portfolio-free-in-minutes/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    How to Deploy an Open-Source Developer Portfolio (Free, in Minutes)
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="https://smartgentools.com" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                    Home
+                </a>
+                <a href="https://smartgentools.com/blog" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    Blog
+                </a>
+                <a href="https://smartgentools.com/about" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    About Us
+                </a>
+                <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions/1" target="_blank" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    Discussions <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+                <a href="https://smartgentools.com/privacy" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    Privacy & Legal
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="doc-layout-with-toc">
+                <article class="doc-article">
+                    <div class="breadcrumb">
+                        <span>Docs</span> <span class="separator">/</span> <span>Guides</span>
+                    </div>
+                    <h1 class="doc-title">Advanced Workflow Configuration</h1>
+                    <div class="doc-body">
+                        <h1 id="advanced-workflow-configuration">🔧 Advanced Workflow Configuration</h1>
+<h2 id="custom-environment-variables">Custom Environment Variables</h2>
+<h3 id="add-to-workflow">Add to Workflow</h3>
+<pre><code class="language-yaml">env:
+  NODE_VERSION: 20
+  PNPM_VERSION: 10.4.1
+  CUSTOM_VAR: value
+
+jobs:
+  build:
+    env:
+      VITE_BUILD_TARGET: es2020
+</code></pre>
+<h3 id="add-to-docker">Add to Docker</h3>
+<pre><code class="language-yaml">services:
+  app:
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+</code></pre>
+<h2 id="custom-health-checks">Custom Health Checks</h2>
+<h3 id="simple-http-check">Simple HTTP Check</h3>
+<pre><code class="language-yaml">- name: Health Check
+  run: |
+    for i in {1..10}; do
+      curl -f http://localhost:3000 &amp;&amp; break
+      sleep 1
+    done
+</code></pre>
+<h3 id="advanced-health-check">Advanced Health Check</h3>
+<pre><code class="language-yaml">- name: Advanced Health Check
+  run: |
+    node -e &quot;
+    const http = require(&#39;http&#39;);
+    const checkHealth = () =&gt; {
+      http.get(&#39;http://localhost:3000/health&#39;, (res) =&gt; {
+        if (res.statusCode === 200) {
+          console.log(&#39;✅ Healthy&#39;);
+          process.exit(0);
+        } else {
+          console.log(&#39;❌ Not healthy&#39;);
+          process.exit(1);
+        }
+      }).on(&#39;error&#39;, () =&gt; {
+        console.log(&#39;❌ Error&#39;);
+        process.exit(1);
+      });
+    };
+    checkHealth();
+    &quot;
+</code></pre>
+<h2 id="notifications">Notifications</h2>
+<h3 id="slack-notification">Slack Notification</h3>
+<pre><code class="language-yaml">- name: Notify Slack
+  uses: slackapi/slack-github-action@v1
+  with:
+    payload: |
+      {
+        &quot;text&quot;: &quot;Deployment ${{ job.status }}&quot;,
+        &quot;blocks&quot;: [
+          {
+            &quot;type&quot;: &quot;section&quot;,
+            &quot;text&quot;: {
+              &quot;type&quot;: &quot;mrkdwn&quot;,
+              &quot;text&quot;: &quot;Deployment to ${{ env.ENVIRONMENT }}\nStatus: ${{ job.status }}&quot;
+            }
+          }
+        ]
+      }
+  env:
+    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+</code></pre>
+<h3 id="discord-notification">Discord Notification</h3>
+<pre><code class="language-yaml">- name: Notify Discord
+  uses: sarisia/actions-status-discord@v1
+  if: always()
+  with:
+    webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+    status: ${{ job.status }}
+    title: &quot;Deployment to Production&quot;
+    description: &quot;Commit: ${{ github.sha }}&quot;
+</code></pre>
+<h3 id="email-notification">Email Notification</h3>
+<pre><code class="language-yaml">- name: Send Email
+  uses: dawidd6/action-send-mail@v3
+  with:
+    server_address: ${{ secrets.SMTP_HOST }}
+    server_port: ${{ secrets.SMTP_PORT }}
+    username: ${{ secrets.SMTP_USER }}
+    password: ${{ secrets.SMTP_PASS }}
+    subject: &quot;Deployment ${{ job.status }}&quot;
+    to: ${{ secrets.DEPLOY_EMAIL }}
+    from: noreply@your-domain.com
+    body: &quot;Deployment completed with status: ${{ job.status }}&quot;
+</code></pre>
+<h2 id="database-migrations">Database Migrations</h2>
+<h3 id="pre-deployment">Pre-Deployment</h3>
+<pre><code class="language-yaml">- name: Run Migrations
+  run: |
+    npm run migrate:up
+  env:
+    DATABASE_URL: ${{ secrets.DATABASE_URL }}
+</code></pre>
+<h3 id="rollback-on-failure">Rollback on Failure</h3>
+<pre><code class="language-yaml">- name: Rollback Migrations
+  if: failure()
+  run: |
+    npm run migrate:down
+  env:
+    DATABASE_URL: ${{ secrets.DATABASE_URL }}
+</code></pre>
+<h2 id="testing-integration">Testing Integration</h2>
+<h3 id="unit-tests">Unit Tests</h3>
+<pre><code class="language-yaml">- name: Run Tests
+  run: pnpm test --coverage
+  
+- name: Upload Coverage
+  uses: codecov/codecov-action@v3
+  with:
+    files: ./coverage/lcov.info
+    flags: unittests
+</code></pre>
+<h3 id="e2e-tests">E2E Tests</h3>
+<pre><code class="language-yaml">- name: Run E2E Tests
+  run: |
+    npm install -g playwright
+    pnpm test:e2e
+  
+- name: Upload Test Reports
+  if: always()
+  uses: actions/upload-artifact@v4
+  with:
+    name: playwright-report
+    path: playwright-report/
+</code></pre>
+<h3 id="performance-tests">Performance Tests</h3>
+<pre><code class="language-yaml">- name: Performance Testing
+  run: |
+    npm run test:performance
+    
+- name: Compare Performance
+  run: |
+    node scripts/compare-performance.js
+</code></pre>
+<h2 id="database-services">Database Services</h2>
+<h3 id="postgresql">PostgreSQL</h3>
+<pre><code class="language-yaml">services:
+  postgres:
+    image: postgres:15
+    env:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: test_db
+    options: &gt;-
+      --health-cmd pg_isready
+      --health-interval 10s
+      --health-timeout 5s
+      --health-retries 5
+    ports:
+      - 5432:5432
+
+jobs:
+  test:
+    services:
+      postgres: ${{ services.postgres }}
+    steps:
+      - uses: actions/setup-node@v4
+      - run: npm test
+        env:
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/test_db
+</code></pre>
+<h3 id="redis">Redis</h3>
+<pre><code class="language-yaml">services:
+  redis:
+    image: redis:7-alpine
+    options: &gt;-
+      --health-cmd &quot;redis-cli ping&quot;
+      --health-interval 10s
+      --health-timeout 5s
+      --health-retries 5
+    ports:
+      - 6379:6379
+</code></pre>
+<h2 id="caching-strategies">Caching Strategies</h2>
+<h3 id="npm-cache">npm Cache</h3>
+<pre><code class="language-yaml">- name: Cache npm
+  uses: actions/cache@v3
+  with:
+    path: ~/.npm
+    key: ${{ runner.os }}-npm-${{ hashFiles(&#39;**/package-lock.json&#39;) }}
+    restore-keys: |
+      ${{ runner.os }}-npm-
+</code></pre>
+<h3 id="docker-layer-cache">Docker Layer Cache</h3>
+<pre><code class="language-yaml">- name: Build and push
+  uses: docker/build-push-action@v5
+  with:
+    cache-from: type=gha
+    cache-to: type=gha,mode=max
+</code></pre>
+<h3 id="build-artifacts-cache">Build Artifacts Cache</h3>
+<pre><code class="language-yaml">- name: Cache Build
+  uses: actions/cache@v3
+  with:
+    path: dist/
+    key: ${{ runner.os }}-build-${{ github.sha }}
+    restore-keys: |
+      ${{ runner.os }}-build-
+</code></pre>
+<h2 id="conditional-jobs">Conditional Jobs</h2>
+<h3 id="only-on-main-branch">Only on Main Branch</h3>
+<pre><code class="language-yaml">if: github.ref == &#39;refs/heads/main&#39;
+</code></pre>
+<h3 id="only-on-pr">Only on PR</h3>
+<pre><code class="language-yaml">if: github.event_name == &#39;pull_request&#39;
+</code></pre>
+<h3 id="only-on-tags">Only on Tags</h3>
+<pre><code class="language-yaml">if: startsWith(github.ref, &#39;refs/tags/&#39;)
+</code></pre>
+<h3 id="on-manual-trigger">On Manual Trigger</h3>
+<pre><code class="language-yaml">if: github.event_name == &#39;workflow_dispatch&#39;
+</code></pre>
+<h3 id="conditional-steps">Conditional Steps</h3>
+<pre><code class="language-yaml">- name: Deploy
+  if: success() &amp;&amp; github.ref == &#39;refs/heads/main&#39;
+  run: npm run deploy
+</code></pre>
+<h2 id="scheduled-tasks">Scheduled Tasks</h2>
+<h3 id="daily-backup">Daily Backup</h3>
+<pre><code class="language-yaml">name: Daily Backup
+
+on:
+  schedule:
+    - cron: &#39;0 2 * * *&#39;  # 2 AM daily
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Backup Database
+        run: npm run backup
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+</code></pre>
+<h3 id="weekly-security-scan">Weekly Security Scan</h3>
+<pre><code class="language-yaml">on:
+  schedule:
+    - cron: &#39;0 0 * * 1&#39;  # Monday at midnight
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm audit
+</code></pre>
+<h2 id="matrix-strategy">Matrix Strategy</h2>
+<h3 id="multiple-node-versions">Multiple Node Versions</h3>
+<pre><code class="language-yaml">strategy:
+  matrix:
+    node-version: [18, 20, 22]
+
+steps:
+  - uses: actions/setup-node@v4
+    with:
+      node-version: ${{ matrix.node-version }}
+</code></pre>
+<h3 id="multiple-os">Multiple OS</h3>
+<pre><code class="language-yaml">strategy:
+  matrix:
+    os: [ubuntu-latest, windows-latest, macos-latest]
+
+runs-on: ${{ matrix.os }}
+</code></pre>
+<h3 id="multiple-environments">Multiple Environments</h3>
+<pre><code class="language-yaml">strategy:
+  matrix:
+    environment: [staging, production]
+
+environment:
+  name: ${{ matrix.environment }}
+</code></pre>
+<h2 id="artifact-management">Artifact Management</h2>
+<h3 id="upload-artifacts">Upload Artifacts</h3>
+<pre><code class="language-yaml">- name: Upload Artifacts
+  uses: actions/upload-artifact@v4
+  if: always()
+  with:
+    name: build-${{ matrix.node-version }}
+    path: dist/
+    retention-days: 30
+</code></pre>
+<h3 id="download-artifacts">Download Artifacts</h3>
+<pre><code class="language-yaml">- name: Download Artifacts
+  uses: actions/download-artifact@v4
+  with:
+    name: build-${{ matrix.node-version }}
+    path: dist/
+</code></pre>
+<h3 id="cleanup-old-artifacts">Cleanup Old Artifacts</h3>
+<pre><code class="language-yaml">- name: Delete Old Artifacts
+  uses: geekyeggo/delete-artifact@v2
+  with:
+    name: build-*
+</code></pre>
+<h2 id="container-registry">Container Registry</h2>
+<h3 id="github-container-registry">GitHub Container Registry</h3>
+<pre><code class="language-yaml">- name: Login to GHCR
+  uses: docker/login-action@v3
+  with:
+    registry: ghcr.io
+    username: ${{ github.actor }}
+    password: ${{ secrets.GITHUB_TOKEN }}
+
+- name: Build and Push
+  uses: docker/build-push-action@v5
+  with:
+    registry: ghcr.io
+    image: ${{ github.repository }}
+    tags: latest,${{ github.sha }}
+</code></pre>
+<h3 id="docker-hub">Docker Hub</h3>
+<pre><code class="language-yaml">- name: Login to Docker Hub
+  uses: docker/login-action@v3
+  with:
+    username: ${{ secrets.DOCKER_USERNAME }}
+    password: ${{ secrets.DOCKER_PASSWORD }}
+
+- name: Build and Push
+  uses: docker/build-push-action@v5
+  with:
+    image: ${{ secrets.DOCKER_USERNAME }}/bayezid-portfolio
+    tags: latest,${{ github.sha }}
+</code></pre>
+<h2 id="security-scanning">Security Scanning</h2>
+<h3 id="sast-static-analysis">SAST (Static Analysis)</h3>
+<pre><code class="language-yaml">- name: SonarQube Scan
+  uses: sonarsource/sonarcloud-github-action@master
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+</code></pre>
+<h3 id="dependency-check">Dependency Check</h3>
+<pre><code class="language-yaml">- name: Run Dependency Check
+  uses: dependency-check/Dependency-Check_Action@main
+  with:
+    project: &#39;bayezid-portfolio&#39;
+    path: &#39;.&#39;
+    format: &#39;XML&#39;
+</code></pre>
+<h3 id="codeql">CodeQL</h3>
+<pre><code class="language-yaml">- name: Initialize CodeQL
+  uses: github/codeql-action/init@v2
+  with:
+    languages: javascript
+
+- name: Autobuild
+  uses: github/codeql-action/autobuild@v2
+
+- name: Perform CodeQL Analysis
+  uses: github/codeql-action/analyze@v2
+</code></pre>
+<h2 id="release-management">Release Management</h2>
+<h3 id="create-release">Create Release</h3>
+<pre><code class="language-yaml">- name: Create Release
+  uses: actions/create-release@v1
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  with:
+    tag_name: v${{ env.VERSION }}
+    release_name: Release v${{ env.VERSION }}
+    body_path: CHANGELOG.md
+    draft: false
+    prerelease: false
+</code></pre>
+<h3 id="semantic-versioning">Semantic Versioning</h3>
+<pre><code class="language-yaml">- name: Bump Version
+  uses: anothrNick/github-tag-action@1.70.0
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    WITH_V: true
+</code></pre>
+<h2 id="performance-optimization">Performance Optimization</h2>
+<h3 id="parallel-jobs">Parallel Jobs</h3>
+<pre><code class="language-yaml">jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm run test:unit
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm run lint
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm run build
+</code></pre>
+<h3 id="job-dependencies">Job Dependencies</h3>
+<pre><code class="language-yaml">jobs:
+  test:
+    runs-on: ubuntu-latest
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+</code></pre>
+<h3 id="continue-on-error">Continue on Error</h3>
+<pre><code class="language-yaml">- name: Optional Step
+  continue-on-error: true
+  run: npm run optional-script
+</code></pre>
+<h2 id="debugging">Debugging</h2>
+<h3 id="enable-debug-logging">Enable Debug Logging</h3>
+<pre><code class="language-bash"># Set in repository or organization secrets
+ACTIONS_STEP_DEBUG=true
+ACTIONS_RUNNER_DEBUG=true
+</code></pre>
+<h3 id="print-debug-info">Print Debug Info</h3>
+<pre><code class="language-yaml">- name: Debug
+  run: |
+    echo &quot;Ref: ${{ github.ref }}&quot;
+    echo &quot;SHA: ${{ github.sha }}&quot;
+    echo &quot;Actor: ${{ github.actor }}&quot;
+    echo &quot;Event: ${{ github.event_name }}&quot;
+</code></pre>
+<h3 id="use-act-for-local-testing">Use Act for Local Testing</h3>
+<pre><code class="language-bash"># Install act
+brew install act
+
+# Run locally
+act -l                    # List workflows
+act -j build              # Run specific job
+act -s GITHUB_TOKEN=xxx   # With secrets
+</code></pre>
+<hr>
+<p>For more info, see the main guide: <code>COMPLETE_WORKFLOWS_GUIDE.md</code></p>
+
+                    </div>
+                    
+        <div class="doc-footer">
+            <div class="nav-table">
+                <div class="nav-row">
+                    <div class="nav-cell nav-prev">
+                        
+                            <div class="nav-label">← Previous</div>
+                            <a href="/docs/portfolio-website-customization-guide/" class="nav-link-footer">Portfolio Website: Customization Guide</a>
+                        
+                    </div>
+                    <div class="nav-cell nav-next">
+                        
+                            <div class="nav-label">Next →</div>
+                            <a href="/docs/vite-config-quick-reference/" class="nav-link-footer">Vite Config Quick Reference</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="help-section">
+                <div class="help-box">
+                    <h3>Did you find what you needed?</h3>
+                    <p>Thank you! We received your feedback.</p>
+                </div>
+
+                <div class="help-box">
+                    <h3>Help us make these docs great!</h3>
+                    <p>All SmartGen docs are open source. See something that's wrong or unclear? Submit a pull request.</p>
+                    <a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md" class="btn-contribute">⑂ Make a contribution</a>
+                    <p><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md" class="link-secondary">Learn how to contribute</a></p>
+                </div>
+
+                <div class="help-box">
+                    <h3>Still need help?</h3>
+                    <p>👥 <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions" class="link-secondary">Ask the SmartGen community</a></p>
+                    <p>💬 <a href="https://smartgentools.com/contact/" class="link-secondary">Contact support</a></p>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p><small>© 2026 SmartGen. &nbsp; <a href="https://smartgentools.com/terms/">Terms</a> &nbsp; <a href="https://smartgentools.com/privacy/">Privacy</a> &nbsp; <a href="https://smartgentools.com/tools/">Expert services</a> &nbsp; <a href="https://smartgentools.com/blog/">Blog</a></small></p>
+            </div>
+        </div>
+    
+                </article>
+
+                
+        <aside class="toc-sidebar desktop-only">
+            <div class="toc-heading">On This Page</div>
+            <ul class="toc-list">
+                
+                    <li class="toc-item toc-main">
+                        <a href="#custom-environment-variables" class="toc-link">Custom Environment Variables</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#add-to-workflow" class="toc-link">Add to Workflow</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#add-to-docker" class="toc-link">Add to Docker</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#custom-health-checks" class="toc-link">Custom Health Checks</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#simple-http-check" class="toc-link">Simple HTTP Check</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#advanced-health-check" class="toc-link">Advanced Health Check</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#notifications" class="toc-link">Notifications</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#slack-notification" class="toc-link">Slack Notification</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#discord-notification" class="toc-link">Discord Notification</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#email-notification" class="toc-link">Email Notification</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#database-migrations" class="toc-link">Database Migrations</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#pre-deployment" class="toc-link">Pre-Deployment</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#rollback-on-failure" class="toc-link">Rollback on Failure</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#testing-integration" class="toc-link">Testing Integration</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#unit-tests" class="toc-link">Unit Tests</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#e2e-tests" class="toc-link">E2E Tests</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#performance-tests" class="toc-link">Performance Tests</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#database-services" class="toc-link">Database Services</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#postgresql" class="toc-link">PostgreSQL</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#redis" class="toc-link">Redis</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#caching-strategies" class="toc-link">Caching Strategies</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#npm-cache" class="toc-link">npm Cache</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#docker-layer-cache" class="toc-link">Docker Layer Cache</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#build-artifacts-cache" class="toc-link">Build Artifacts Cache</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#conditional-jobs" class="toc-link">Conditional Jobs</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#only-on-main-branch" class="toc-link">Only on Main Branch</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#only-on-pr" class="toc-link">Only on PR</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#only-on-tags" class="toc-link">Only on Tags</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#on-manual-trigger" class="toc-link">On Manual Trigger</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#conditional-steps" class="toc-link">Conditional Steps</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#scheduled-tasks" class="toc-link">Scheduled Tasks</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#daily-backup" class="toc-link">Daily Backup</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#weekly-security-scan" class="toc-link">Weekly Security Scan</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#matrix-strategy" class="toc-link">Matrix Strategy</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#multiple-node-versions" class="toc-link">Multiple Node Versions</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#multiple-os" class="toc-link">Multiple OS</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#multiple-environments" class="toc-link">Multiple Environments</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#artifact-management" class="toc-link">Artifact Management</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#upload-artifacts" class="toc-link">Upload Artifacts</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#download-artifacts" class="toc-link">Download Artifacts</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#cleanup-old-artifacts" class="toc-link">Cleanup Old Artifacts</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#container-registry" class="toc-link">Container Registry</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#github-container-registry" class="toc-link">GitHub Container Registry</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#docker-hub" class="toc-link">Docker Hub</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#security-scanning" class="toc-link">Security Scanning</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#sast-static-analysis" class="toc-link">SAST (Static Analysis)</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#dependency-check" class="toc-link">Dependency Check</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#codeql" class="toc-link">CodeQL</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#release-management" class="toc-link">Release Management</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#create-release" class="toc-link">Create Release</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#semantic-versioning" class="toc-link">Semantic Versioning</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#performance-optimization" class="toc-link">Performance Optimization</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#parallel-jobs" class="toc-link">Parallel Jobs</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#job-dependencies" class="toc-link">Job Dependencies</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#continue-on-error" class="toc-link">Continue on Error</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#debugging" class="toc-link">Debugging</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#enable-debug-logging" class="toc-link">Enable Debug Logging</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#print-debug-info" class="toc-link">Print Debug Info</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#use-act-for-local-testing" class="toc-link">Use Act for Local Testing</a>
+                    </li>
+                
+            </ul>
+        </aside>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/docs.js"></script>
+    <script>
+      document.querySelectorAll('.toc-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      const tocLinks = document.querySelectorAll('.toc-link');
+      const headings = Array.from(tocLinks).map(link =>
+        document.querySelector(link.getAttribute('href'))
+      ).filter(Boolean);
+
+      window.addEventListener('scroll', () => {
+        let current = null;
+        headings.forEach(h => {
+          if (h.getBoundingClientRect().top < 100) current = h;
+        });
+        tocLinks.forEach(link => link.classList.remove('active'));
+        if (current) {
+          const activeLink = document.querySelector('.toc-link[href="#' + current.id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    </script>
+</body>
+</html>

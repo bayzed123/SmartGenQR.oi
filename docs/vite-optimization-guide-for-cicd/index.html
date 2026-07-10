@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Getting Started - SmartGen Docs</title>
-    <meta name="description" content="Learn how to set up and start contributing to SmartGen.">
-    <link rel="canonical" href="https://smartgentools.com/docs/getting-started/">
+    <title>Vite Optimization Guide for CI/CD - SmartGen Docs</title>
+    <meta name="description" content="SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions">
+    <link rel="canonical" href="https://smartgentools.com/docs/vite-optimization-guide-for-cicd/">
 
     <link rel="stylesheet" href="../../assets/css/docs.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -87,7 +87,7 @@
         <aside id="sidebar" class="sidebar">
             <nav class="sidebar-nav">
                 <div class="nav-section-title">Guides</div>
-                <a href="/docs/getting-started/" class="nav-link active">
+                <a href="/docs/getting-started/" class="nav-link ">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Getting Started
                 </a>
@@ -95,11 +95,11 @@
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Directory Structure for Protfolio
                 </a>
-                <a href="/docs/getting-started/" class="nav-link active">
+                <a href="/docs/getting-started/" class="nav-link ">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Getting Started
                 </a>
-                <a href="/docs/getting-started/" class="nav-link active">
+                <a href="/docs/getting-started/" class="nav-link ">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Getting Started
                 </a>
@@ -111,7 +111,7 @@
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Installation
                 </a>
-                <a href="/docs/vite-optimization-guide-for-cicd/" class="nav-link ">
+                <a href="/docs/vite-optimization-guide-for-cicd/" class="nav-link active">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Vite Optimization Guide for CI/CD
                 </a>
@@ -223,64 +223,346 @@
                     <div class="breadcrumb">
                         <span>Docs</span> <span class="separator">/</span> <span>Guides</span>
                     </div>
-                    <h1 class="doc-title">Getting Started</h1>
+                    <h1 class="doc-title">Vite Optimization Guide for CI/CD</h1>
                     <div class="doc-body">
-                        <h1 id="getting-started">Getting Started</h1>
-<p>Welcome to the SmartGen project! This guide will help you get your local environment ready for development.</p>
-<h1 id="architecture-andamp-tech-stack">Architecture &amp; Tech Stack</h1>
-<p>SmartGen employs a lightweight, modular, and client-side focused architecture designed for speed, privacy, and ease of maintenance. The core philosophy revolves around processing all operations directly within the user&#39;s browser, eliminating the need for server-side data handling for most utilities.</p>
-<h2 id="core-architectural-principles">Core Architectural Principles</h2>
+                        <h1 id="vite-optimization-guide-for-cicd">🔧 Vite Optimization Guide for CI/CD</h1>
+<p>Based on your <code>vite.config.ts</code>, here&#39;s how to optimize builds and deployments.</p>
+<h2 id="your-vite-configuration-overview">📋 Your Vite Configuration Overview</h2>
+<p>Your <code>vite.config.ts</code> includes:</p>
 <ul>
-<li><strong>Client-Side Processing:</strong> All primary utility functions, such as QR code generation, image compression, and text conversions, are executed entirely within the user&#39;s web browser. This ensures that no sensitive user data is transmitted to or stored on external servers, upholding the &quot;Privacy First&quot; core value.</li>
-<li><strong>Modular Design:</strong> The application is structured into independent tool modules, each residing in its own directory (<code>/[tool-folder]/index.html</code>). This modularity facilitates easy development, maintenance, and scaling of individual tools without impacting the entire platform.</li>
-<li><strong>Static Site Generation (SSG) with Dynamic Injection:</strong> The platform leverages static HTML pages for individual tools and content, enhanced by client-side JavaScript for dynamic UI elements, navigation, and consistent theming. This approach combines the benefits of fast loading times and robust SEO with a rich user experience.</li>
+<li>✅ React 19 with Vite</li>
+<li>✅ TailwindCSS 4 (Vite plugin)</li>
+<li>✅ JSX location tracking plugin</li>
+<li>✅ Custom Manus debug collector (dev only)</li>
+<li>✅ Storage proxy for development</li>
+<li>✅ Build output to <code>dist/</code> directory</li>
 </ul>
-<h2 id="technical-stack">Technical Stack</h2>
-<p>SmartGen&#39;s technical stack is lean and efficient, primarily relying on modern web standards and a minimal set of JavaScript libraries for specific functionalities.</p>
-<h3 id="frontend">Frontend</h3>
+<h2 id="build-process">🏗️ Build Process</h2>
+<h3 id="what-happens-when-you-run-pnpm-build">What Happens When You Run <code>pnpm build</code></h3>
+<pre><code>vite build
+  ├─ Compiles TypeScript
+  ├─ Bundles React components
+  ├─ Processes TailwindCSS
+  ├─ Outputs to: dist/
+  │  ├─ dist/public/     (static assets)
+  │  ├─ dist/index.js    (entry point)
+  │  └─ dist/...
+  └─ Generates source maps (dev by default)
+</code></pre>
+<h3 id="build-configuration">Build Configuration</h3>
+<pre><code class="language-typescript">build: {
+  outDir: path.resolve(import.meta.dirname, &quot;dist/public&quot;),
+  emptyOutDir: true,
+}
+</code></pre>
+<p><strong>Output Path</strong>: <code>dist/public/</code></p>
+<h2 id="production-build-optimization">⚡ Production Build Optimization</h2>
+<h3 id="1-enable-production-mode">1. Enable Production Mode</h3>
+<pre><code class="language-bash">NODE_ENV=production pnpm build
+</code></pre>
+<p>The workflows already do this automatically.</p>
+<h3 id="2-disable-source-maps-in-production">2. Disable Source Maps in Production</h3>
+<p>Add to <code>vite.config.ts</code>:</p>
+<pre><code class="language-typescript">build: {
+  sourcemap: false,  // Disable source maps in production
+  minify: &#39;terser&#39;,  // Use Terser for minification (smaller bundles)
+  rollupOptions: {
+    output: {
+      manualChunks: {
+        // Split large dependencies
+        radix: [&#39;@radix-ui/react-accordion&#39;, &#39;@radix-ui/react-alert-dialog&#39;],
+        framer: [&#39;framer-motion&#39;],
+        recharts: [&#39;recharts&#39;],
+      },
+    },
+  },
+}
+</code></pre>
+<h3 id="3-css-optimization">3. CSS Optimization</h3>
+<pre><code class="language-typescript">build: {
+  cssCodeSplit: true,  // Split CSS into separate files
+  cssTarget: &#39;chrome88&#39;,  // Target modern browsers
+  cssMinify: &#39;lightningcss&#39;,  // Faster CSS minification
+}
+</code></pre>
+<h3 id="4-asset-optimization">4. Asset Optimization</h3>
+<pre><code class="language-typescript">build: {
+  assetsInlineLimit: 4096,  // Inline assets smaller than 4KB
+  rollupOptions: {
+    output: {
+      assetFileNames: &#39;assets/[name]-[hash][extname]&#39;,
+    },
+  },
+}
+</code></pre>
+<h2 id="build-optimization-tips">📊 Build Optimization Tips</h2>
+<h3 id="current-bundle-analysis">Current Bundle Analysis</h3>
+<p>To analyze your bundle, add to your workflow:</p>
+<pre><code class="language-yaml">- name: Bundle Analysis
+  run: |
+    npm install -g vite-plugin-visualizer
+    pnpm add -D vite-plugin-visualizer
+</code></pre>
+<p>Then add to <code>vite.config.ts</code>:</p>
+<pre><code class="language-typescript">import { visualizer } from &#39;rollup-plugin-visualizer&#39;;
+
+plugins: [
+  // ... other plugins
+  visualizer({
+    open: true,
+    gzipSize: true,
+    brotliSize: true,
+  }),
+]
+</code></pre>
+<h3 id="code-splitting-strategy">Code Splitting Strategy</h3>
+<pre><code class="language-typescript">build: {
+  rollupOptions: {
+    output: {
+      manualChunks: {
+        // Separate vendor chunks
+        vendor: [&#39;react&#39;, &#39;react-dom&#39;],
+        radix: [
+          &#39;@radix-ui/react-accordion&#39;,
+          &#39;@radix-ui/react-alert-dialog&#39;,
+          &#39;@radix-ui/react-avatar&#39;,
+          // ... other radix components
+        ],
+        motion: [&#39;framer-motion&#39;],
+        charts: [&#39;recharts&#39;],
+        forms: [&#39;react-hook-form&#39;, &#39;zod&#39;],
+      },
+    },
+  },
+}
+</code></pre>
+<h3 id="lazy-loading-strategy">Lazy Loading Strategy</h3>
+<pre><code class="language-typescript">// In your React components
+import { lazy, Suspense } from &#39;react&#39;;
+
+const HeavyComponent = lazy(() =&gt; import(&#39;./HeavyComponent&#39;));
+
+export function App() {
+  return (
+    &lt;Suspense fallback={&lt;div&gt;Loading...&lt;/div&gt;}&gt;
+      &lt;HeavyComponent /&gt;
+    &lt;/Suspense&gt;
+  );
+}
+</code></pre>
+<h2 id="vite-specific-workflow-enhancements">🔍 Vite-Specific Workflow Enhancements</h2>
+<h3 id="1-add-vite-build-analysis">1. Add Vite Build Analysis</h3>
+<pre><code class="language-yaml">- name: Vite Build Analysis
+  run: |
+    echo &quot;## 🔨 Vite Build Report&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
+    echo &quot;&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
+    
+    # Show dist size
+    if [ -d &quot;dist&quot; ]; then
+      echo &quot;### Build Size&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
+      du -h -d 1 dist/ &gt;&gt; $GITHUB_STEP_SUMMARY
+      echo &quot;&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
+    fi
+    
+    # Count assets
+    echo &quot;### Asset Count&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
+    echo &quot;- JS files: $(find dist -name &#39;*.js&#39; | wc -l)&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
+    echo &quot;- CSS files: $(find dist -name &#39;*.css&#39; | wc -l)&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
+    echo &quot;- Images: $(find dist -type f \( -name &#39;*.png&#39; -o -name &#39;*.jpg&#39; -o -name &#39;*.svg&#39; \) | wc -l)&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
+</code></pre>
+<h3 id="2-pre-build-checks">2. Pre-build Checks</h3>
+<pre><code class="language-yaml">- name: Validate Vite Config
+  run: |
+    node -e &quot;
+    const config = require(&#39;./vite.config.ts&#39;);
+    console.log(&#39;✅ Vite config is valid&#39;);
+    console.log(&#39;Build output:&#39;, config.build?.outDir || &#39;dist/&#39;);
+    &quot;
+</code></pre>
+<h3 id="3-cache-optimization">3. Cache Optimization</h3>
+<pre><code class="language-yaml">- name: Cache Node Modules
+  uses: actions/cache@v3
+  with:
+    path: |
+      ~/.pnpm-store
+      **/node_modules
+    key: ${{ runner.os }}-pnpm-${{ hashFiles(&#39;**/pnpm-lock.yaml&#39;) }}
+    restore-keys: |
+      ${{ runner.os }}-pnpm-
+
+- name: Cache Vite Build
+  uses: actions/cache@v3
+  with:
+    path: .vite
+    key: ${{ runner.os }}-vite-${{ github.sha }}
+    restore-keys: |
+      ${{ runner.os }}-vite-
+</code></pre>
+<h2 id="environment-variables-for-build">🌍 Environment Variables for Build</h2>
+<p>Add these to your <code>.env</code> for different build scenarios:</p>
+<pre><code class="language-env"># Production Build
+VITE_API_URL=https://api.your-domain.com
+VITE_BUILD_TARGET=es2020
+VITE_SOURCEMAP=false
+
+# Development Build
+VITE_API_URL=http://localhost:3000
+VITE_BUILD_TARGET=es2020
+VITE_SOURCEMAP=true
+</code></pre>
+<p>Use in workflow:</p>
+<pre><code class="language-yaml">- name: Build with Environment
+  run: pnpm build
+  env:
+    VITE_API_URL: ${{ secrets.API_URL }}
+    VITE_BUILD_TARGET: es2020
+</code></pre>
+<h2 id="docker-build-optimization-for-vite">📦 Docker Build Optimization for Vite</h2>
+<h3 id="multi-stage-dockerfile-for-vite">Multi-stage Dockerfile for Vite</h3>
+<pre><code class="language-dockerfile"># Stage 1: Build
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+RUN npm install -g pnpm@10.4.1
+
+COPY pnpm-lock.yaml package.json ./
+COPY patches ./patches
+RUN pnpm install --frozen-lockfile
+
+COPY . .
+
+# Build with optimizations
+RUN VITE_BUILD_TARGET=es2020 pnpm build
+
+# Stage 2: Runtime
+FROM node:20-alpine
+
+WORKDIR /app
+RUN npm install -g pnpm@10.4.1
+
+COPY package.json pnpm-lock.yaml ./
+COPY patches ./patches
+RUN pnpm install --frozen-lockfile --prod
+
+# Copy built assets
+COPY --from=builder /app/dist ./dist
+
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nodejs -u 1001
+USER nodejs
+
+EXPOSE 3000
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD node -e &quot;require(&#39;http&#39;).get(&#39;http://localhost:3000&#39;, (r) =&gt; {if (r.statusCode !== 200) throw new Error(r.statusCode)})&quot;
+
+CMD [&quot;node&quot;, &quot;dist/index.js&quot;]
+</code></pre>
+<h2 id="performance-benchmarks">🚀 Performance Benchmarks</h2>
+<h3 id="expected-build-times">Expected Build Times</h3>
 <ul>
-<li><strong>HTML5:</strong> The foundational markup language for structuring content.</li>
-<li><strong>CSS3:</strong> Utilized for styling, layout, and responsive design, with global styles defined in <code>/assets/css/style.css</code>.</li>
-<li><strong>JavaScript (ES6+):</strong> Powers all client-side logic, dynamic content injection, and tool functionalities. Key global scripts include:<ul>
-<li><code>/assets/js/app.js</code>: Manages global UI elements like navigation (<code>injectNavbar()</code>), footer (<code>injectFooter()</code>), and theme toggling (<code>initTheme()</code>). It also handles mobile responsiveness with a dynamic sidebar.</li>
-<li><code>/assets/js/search-data.js</code>: A centralized JSON data source containing metadata for all tools, used for search functionality and related tool recommendations.</li>
-<li><code>/assets/js/related-tools.js</code>: Dynamically injects related tool suggestions on individual tool pages.</li>
-<li><code>/assets/js/search.js</code>: Implements the client-side live search UI on the homepage.</li>
+<li><strong>Type Check</strong>: ~2-3 seconds</li>
+<li><strong>Vite Build</strong>: ~15-20 seconds</li>
+<li><strong>Total</strong>: ~30-40 seconds (with dependencies cached)</li>
 </ul>
-</li>
-</ul>
-<h3 id="build-andamp-content-management">Build &amp; Content Management</h3>
+<h3 id="expected-bundle-sizes">Expected Bundle Sizes</h3>
+<p>Your project with all Radix components and Framer Motion:</p>
 <ul>
-<li><strong>Node.js:</strong> Used as a runtime environment for build scripts.</li>
-<li><strong>pnpm:</strong> The package manager for project dependencies, as indicated in <code>Contributing.md</code> [1].</li>
-<li><strong><code>scripts/build-blog.js</code>:</strong> A custom Node.js script responsible for generating the blog section. It processes Markdown files from <code>blog-posts/</code>, uses <code>front-matter</code> for metadata extraction, and <code>marked</code> for Markdown-to-HTML conversion. It generates static HTML pages for blog posts and a <code>blog.json</code> index.</li>
-<li><strong><code>front-matter</code>:</strong> A JavaScript library for parsing front matter from Markdown files [2].</li>
-<li><strong><code>marked</code>:</strong> A Markdown parser and compiler, used for converting blog post content into HTML [3].</li>
-<li><strong><code>slugify</code>:</strong> A utility for converting strings into URL-friendly slugs [4].</li>
+<li><strong>JavaScript</strong>: ~300-500 KB (uncompressed)</li>
+<li><strong>CSS</strong>: ~50-100 KB (uncompressed)</li>
+<li><strong>Gzipped Total</strong>: ~80-150 KB</li>
 </ul>
-<h3 id="development-environment-andamp-tools">Development Environment &amp; Tools</h3>
+<p><strong>Goal</strong>: Keep main bundle under 200KB gzipped.</p>
+<h2 id="cicd-integration-with-vite">🔄 CI/CD Integration with Vite</h2>
+<h3 id="optimal-workflow-structure">Optimal Workflow Structure</h3>
+<pre><code class="language-yaml">jobs:
+  type-check:
+    # TypeScript checking (no build)
+    - pnpm check  # 2-3 seconds
+
+  build:
+    needs: type-check
+    # Full Vite build
+    - pnpm build  # 15-20 seconds
+    # Analyze output
+    - Bundle analysis
+    
+  test:
+    needs: build
+    # Can use dist/ output
+    - pnpm test
+
+  deploy:
+    needs: [build, test]
+    # Deploy dist/ folder
+</code></pre>
+<h2 id="common-vite-issues-andamp-solutions">🐛 Common Vite Issues &amp; Solutions</h2>
+<h3 id="issue-build-takes-too-long">Issue: Build takes too long</h3>
+<p><strong>Solution:</strong></p>
+<pre><code class="language-yaml">- name: Faster Build
+  run: NODE_ENV=production pnpm build --clearScreen
+  env:
+    VITE_BUILD_TARGET: es2020
+</code></pre>
+<h3 id="issue-source-maps-too-large">Issue: Source maps too large</h3>
+<p><strong>Solution:</strong></p>
+<pre><code class="language-typescript">// vite.config.ts
+build: {
+  sourcemap: process.env.NODE_ENV === &#39;production&#39; ? false : &#39;inline&#39;,
+}
+</code></pre>
+<h3 id="issue-asset-paths-wrong-in-production">Issue: Asset paths wrong in production</h3>
+<p><strong>Solution:</strong></p>
+<pre><code class="language-typescript">// vite.config.ts
+build: {
+  base: &#39;/&#39;,  // Ensure correct base path
+  assetsDir: &#39;assets&#39;,
+}
+</code></pre>
+<h3 id="issue-css-not-loading">Issue: CSS not loading</h3>
+<p><strong>Solution:</strong></p>
+<pre><code class="language-typescript">// vite.config.ts
+build: {
+  cssCodeSplit: true,  // Generate separate CSS files
+  rollupOptions: {
+    output: {
+      entryFileNames: &#39;[name].js&#39;,
+      chunkFileNames: &#39;[name].[hash].js&#39;,
+      assetFileNames: &#39;assets/[name].[hash][extname]&#39;,
+    },
+  },
+}
+</code></pre>
+<h2 id="monitoring-build-performance">📈 Monitoring Build Performance</h2>
+<h3 id="add-performance-metrics-to-workflow">Add Performance Metrics to Workflow</h3>
+<pre><code class="language-yaml">- name: Build Time Report
+  if: always()
+  run: |
+    echo &quot;## ⏱️ Build Performance&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
+    echo &quot;- Build time: ~20s&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
+    echo &quot;- Bundle size: ~300KB&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
+    echo &quot;- Gzipped: ~80KB&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
+</code></pre>
+<h2 id="vite-workflow-checklist">✅ Vite Workflow Checklist</h2>
 <ul>
-<li><strong>Git:</strong> Version control system for managing the codebase.</li>
-<li><strong>GitHub:</strong> Hosting for the repository and collaborative development workflows.</li>
-<li><strong>VS Code:</strong> Recommended integrated development environment (IDE) [1].</li>
-<li><strong>ESLint &amp; Prettier:</strong> Code linting and formatting tools to maintain code quality and consistency [1].</li>
-<li><strong>Vitest:</strong> A fast unit test framework used for testing JavaScript/TypeScript code [1].</li>
-<li><strong>TypeScript:</strong> While not universally applied across all tools, <code>Contributing.md</code> suggests basic knowledge of React/TypeScript for code contributions, indicating its use in certain parts or for future development [1].</li>
+<li><input disabled="" type="checkbox"> <code>NODE_ENV=production</code> set during build</li>
+<li><input disabled="" type="checkbox"> Source maps disabled in production</li>
+<li><input disabled="" type="checkbox"> Asset optimization enabled</li>
+<li><input disabled="" type="checkbox"> CSS code splitting enabled</li>
+<li><input disabled="" type="checkbox"> Lazy loading for large components</li>
+<li><input disabled="" type="checkbox"> Build output verified (dist/)</li>
+<li><input disabled="" type="checkbox"> Bundle size monitored</li>
+<li><input disabled="" type="checkbox"> Cache strategies implemented</li>
+<li><input disabled="" type="checkbox"> Environment variables properly set</li>
+<li><input disabled="" type="checkbox"> Docker build optimized</li>
 </ul>
-<h2 id="file-structure-overview">File Structure Overview</h2>
-<p>The project follows a clear and organized file structure to ensure maintainability:</p>
-<ul>
-<li><code>/assets/</code>: Contains global CSS (<code>style.css</code>), JavaScript (<code>app.js</code>, <code>search-data.js</code>, <code>related-tools.js</code>, <code>search.js</code>), and other static assets.</li>
-<li><code>/blog/</code>: Houses blog-related files, including <code>blog.json</code> and individual blog post directories.</li>
-<li><code>/blog-posts/</code>: Markdown source files for blog content.</li>
-<li><code>/data/</code>: Stores data files like <code>changelog.json</code>.</li>
-<li><code>/scripts/</code>: Contains Node.js build scripts, such as <code>build-blog.js</code>.</li>
-<li><code>/[tool-folder]/</code>: Each individual utility resides in its own directory, typically containing an <code>index.html</code> file and any tool-specific JavaScript or CSS.</li>
-<li><code>/about/</code>, <code>/contact/</code>, <code>/privacy/</code>, <code>/terms/</code>, <code>/disclaimer/</code>: Static pages for legal information and site details.</li>
-</ul>
-<p>This architecture ensures that SmartGen remains performant, privacy-respecting, and easy to contribute to, aligning with its open-source nature.</p>
-<h2 id="references">References</h2>
-<p>[1] Contributing to SmartGen. (n.d.). <em>GitHub</em>. Retrieved from <a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md">https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md</a><br>[2] front-matter. (n.d.). <em>npm</em>. Retrieved from <a href="https://www.npmjs.com/package/front-matter">https://www.npmjs.com/package/front-matter</a><br>[3] marked. (n.d.). <em>npm</em>. Retrieved from <a href="https://www.npmjs.com/package/marked">https://www.npmjs.com/package/marked</a><br>[4] slugify. (n.d.). <em>npm</em>. Retrieved from <a href="https://www.npmjs.com/package/slugify">https://www.npmjs.com/package/slugify</a></p>
+<hr>
+<p><strong>Next Steps:</strong></p>
+<ol>
+<li>Implement bundle analysis</li>
+<li>Set up code splitting</li>
+<li>Monitor build times</li>
+<li>Optimize for your specific use case</li>
+</ol>
 
                     </div>
                     
@@ -288,12 +570,15 @@
             <div class="nav-table">
                 <div class="nav-row">
                     <div class="nav-cell nav-prev">
-                        <div class="nav-empty"></div>
+                        
+                            <div class="nav-label">← Previous</div>
+                            <a href="/docs/quick-setup-guide/" class="nav-link-footer">Quick Setup Guide</a>
+                        
                     </div>
                     <div class="nav-cell nav-next">
                         
                             <div class="nav-label">Next →</div>
-                            <a href="/docs/directory-structure-for-protfolio/" class="nav-link-footer">Directory Structure for Protfolio</a>
+                            <a href="/docs/developer-guidelines/" class="nav-link-footer">developer Guidelines</a>
                         
                     </div>
                 </div>
@@ -334,31 +619,135 @@
             <ul class="toc-list">
                 
                     <li class="toc-item toc-main">
-                        <a href="#core-architectural-principles" class="toc-link">Core Architectural Principles</a>
+                        <a href="#your-vite-configuration-overview" class="toc-link">📋 Your Vite Configuration Overview</a>
                     </li>
                 
                     <li class="toc-item toc-main">
-                        <a href="#technical-stack" class="toc-link">Technical Stack</a>
+                        <a href="#build-process" class="toc-link">🏗️ Build Process</a>
                     </li>
                 
                     <li class="toc-item toc-sub">
-                        <a href="#frontend" class="toc-link">Frontend</a>
+                        <a href="#what-happens-when-you-run-pnpm-build" class="toc-link">What Happens When You Run pnpm build</a>
                     </li>
                 
                     <li class="toc-item toc-sub">
-                        <a href="#build-andamp-content-management" class="toc-link">Build &amp; Content Management</a>
-                    </li>
-                
-                    <li class="toc-item toc-sub">
-                        <a href="#development-environment-andamp-tools" class="toc-link">Development Environment &amp; Tools</a>
+                        <a href="#build-configuration" class="toc-link">Build Configuration</a>
                     </li>
                 
                     <li class="toc-item toc-main">
-                        <a href="#file-structure-overview" class="toc-link">File Structure Overview</a>
+                        <a href="#production-build-optimization" class="toc-link">⚡ Production Build Optimization</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#1-enable-production-mode" class="toc-link">1. Enable Production Mode</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#2-disable-source-maps-in-production" class="toc-link">2. Disable Source Maps in Production</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#3-css-optimization" class="toc-link">3. CSS Optimization</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#4-asset-optimization" class="toc-link">4. Asset Optimization</a>
                     </li>
                 
                     <li class="toc-item toc-main">
-                        <a href="#references" class="toc-link">References</a>
+                        <a href="#build-optimization-tips" class="toc-link">📊 Build Optimization Tips</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#current-bundle-analysis" class="toc-link">Current Bundle Analysis</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#code-splitting-strategy" class="toc-link">Code Splitting Strategy</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#lazy-loading-strategy" class="toc-link">Lazy Loading Strategy</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#vite-specific-workflow-enhancements" class="toc-link">🔍 Vite-Specific Workflow Enhancements</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#1-add-vite-build-analysis" class="toc-link">1. Add Vite Build Analysis</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#2-pre-build-checks" class="toc-link">2. Pre-build Checks</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#3-cache-optimization" class="toc-link">3. Cache Optimization</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#environment-variables-for-build" class="toc-link">🌍 Environment Variables for Build</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#docker-build-optimization-for-vite" class="toc-link">📦 Docker Build Optimization for Vite</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#multi-stage-dockerfile-for-vite" class="toc-link">Multi-stage Dockerfile for Vite</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#performance-benchmarks" class="toc-link">🚀 Performance Benchmarks</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#expected-build-times" class="toc-link">Expected Build Times</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#expected-bundle-sizes" class="toc-link">Expected Bundle Sizes</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#cicd-integration-with-vite" class="toc-link">🔄 CI/CD Integration with Vite</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#optimal-workflow-structure" class="toc-link">Optimal Workflow Structure</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#common-vite-issues-andamp-solutions" class="toc-link">🐛 Common Vite Issues &amp; Solutions</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#issue-build-takes-too-long" class="toc-link">Issue: Build takes too long</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#issue-source-maps-too-large" class="toc-link">Issue: Source maps too large</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#issue-asset-paths-wrong-in-production" class="toc-link">Issue: Asset paths wrong in production</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#issue-css-not-loading" class="toc-link">Issue: CSS not loading</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#monitoring-build-performance" class="toc-link">📈 Monitoring Build Performance</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#add-performance-metrics-to-workflow" class="toc-link">Add Performance Metrics to Workflow</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#vite-workflow-checklist" class="toc-link">✅ Vite Workflow Checklist</a>
                     </li>
                 
             </ul>

@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contributor Guide - SmartGen Docs</title>
+    <meta name="description" content="Full architecture and API reference for SmartGen contributors.">
+    <link rel="canonical" href="https://smartgentools.com/docs/contributor-guide/">
+
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+
+    <style>
+      .toc-sidebar { min-width: 200px; padding-left: 1.5rem; border-left: 1px solid #e5e7eb; }
+      .toc-heading { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: #888; margin-bottom: 0.75rem; }
+      .toc-list { list-style: none; padding: 0; margin: 0; }
+      .toc-list li { margin-bottom: 0.5rem; }
+      .toc-main a { font-size: 0.9rem; color: #444; text-decoration: none; }
+      .toc-sub a { font-size: 0.85rem; color: #777; text-decoration: none; padding-left: 1rem; display:block; }
+      .toc-link:hover, .toc-link.active { color: #3b82f6; font-weight: 500; }
+      .doc-layout-with-toc { display: flex; gap: 2rem; }
+      @media (max-width: 900px) { .toc-sidebar { display: none; } }
+      
+      /* GitHub-style Footer */
+      .doc-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; }
+      .nav-table { display: table; width: 100%; margin-bottom: 2rem; }
+      .nav-row { display: table-row; }
+      .nav-cell { display: table-cell; padding: 1rem; width: 50%; }
+      .nav-prev { text-align: left; padding-right: 2rem; }
+      .nav-next { text-align: right; padding-left: 2rem; border-left: 1px solid #e5e7eb; }
+      .nav-label { font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; font-weight: 500; }
+      .nav-link-footer { color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.05rem; }
+      .nav-link-footer:hover { text-decoration: underline; }
+      .nav-empty { height: 2.5rem; }
+      .footer-divider { margin: 2rem 0; border: none; border-top: 1px solid #e5e7eb; }
+      .help-section { margin: 2rem 0; }
+      .help-box { margin-bottom: 2rem; }
+      .help-box h3 { font-size: 1rem; font-weight: 600; margin: 0 0 0.5rem 0; }
+      .help-box p { margin: 0.5rem 0; color: #555; font-size: 0.95rem; line-height: 1.5; }
+      .btn-contribute { display: inline-block; padding: 0.5rem 1rem; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; color: #0969da; text-decoration: none; font-weight: 500; margin: 0.75rem 0; }
+      .btn-contribute:hover { background: #eaeef2; }
+      .link-secondary { color: #0969da; text-decoration: none; }
+      .link-secondary:hover { text-decoration: underline; }
+      .footer-legal { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; text-align: center; }
+      .footer-legal small { color: #666; font-size: 0.85rem; }
+      .footer-legal a { color: #0969da; text-decoration: none; }
+      .footer-legal a:hover { text-decoration: underline; }
+      
+      @media (max-width: 768px) {
+        .nav-cell { display: block; width: 100%; padding: 1rem 0; border-left: none; }
+        .nav-next { border-left: none; border-top: 1px solid #e5e7eb; padding-top: 1rem; text-align: left; }
+        .nav-prev { padding-right: 0; }
+      }
+    </style>
+</head>
+<body>
+    <header class="docs-header">
+        <div class="header-left">
+            <button id="mobile-menu-btn" class="icon-btn mobile-only" aria-label="Menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <a href="/" class="logo">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="color: var(--primary);"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                SmartGen Docs
+            </a>
+        </div>
+        <div class="header-right">
+            <div class="search-bar desktop-only">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" placeholder="Search or Ask AI..." readonly>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <a href="https://github.com/Sayadbayezid" target="_blank" class="icon-btn" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <div class="docs-layout">
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <aside id="sidebar" class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section-title">Guides</div>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/directory-structure-for-protfolio/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Directory Structure for Protfolio
+                </a>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/your-actual-folder-layout/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Your Actual Folder Layout
+                </a>
+                <a href="/docs/installation/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Installation
+                </a>
+                <a href="/docs/vite-optimization-guide-for-cicd/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Vite Optimization Guide for CI/CD
+                </a>
+                <a href="/docs/advanced-workflow-configuration/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Advanced Workflow Configuration
+                </a>
+                <a href="/docs/vite-config-quick-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Vite Config Quick Reference
+                </a>
+                <a href="/docs/about-the-team-and-contribution/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    About the Team & Contribution
+                </a>
+                <a href="/docs/railway-deployment-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Railway Deployment Guide
+                </a>
+                <a href="/docs/github-actions-configuration-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    GitHub Actions Configuration Guide
+                </a>
+                <a href="/docs/custom-environment-variables/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Custom Environment Variables
+                </a>
+                <a href="/docs/workflow-customization-summary/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Workflow Customization Summary
+                </a>
+                <a href="/docs/contributor-guide/" class="nav-link active">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Contributor Guide
+                </a>
+                <a href="/docs/complete-guide-protfolio/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    complete guide Protfolio
+                </a>
+                <a href="/docs/quickstart-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Quickstart Guide
+                </a><div class="nav-section-title">API Reference</div>
+                <a href="/docs/api-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    API Reference
+                </a><div class="nav-section-title">Portfolio Website</div>
+                <a href="/docs/portfolio-website-getting-started-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Getting Started Guide
+                </a>
+                <a href="/docs/portfolio-website-deployment-and-blog-system-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Deployment & Blog System Guide
+                </a>
+                <a href="/docs/portfolio-website-customization-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Customization Guide
+                </a>
+                <a href="/docs/portfolio-website-api-and-script-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: API & Script Reference
+                </a><div class="nav-section-title">overview</div>
+                <a href="/docs/quick-setup-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Quick Setup Guide
+                </a>
+                <a href="/docs/developer-guidelines/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    developer Guidelines
+                </a><div class="nav-section-title">Open Source Projects</div>
+                <a href="/docs/building-a-fast-client-side-search-feature-without-a-backend/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Building a Fast Client-Side Search Feature Without a Backend
+                </a>
+                <a href="/docs/how-to-deploy-an-open-source-developer-portfolio-free-in-minutes/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    How to Deploy an Open-Source Developer Portfolio (Free, in Minutes)
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="https://smartgentools.com" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                    Home
+                </a>
+                <a href="https://smartgentools.com/blog" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    Blog
+                </a>
+                <a href="https://smartgentools.com/about" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    About Us
+                </a>
+                <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions/1" target="_blank" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    Discussions <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+                <a href="https://smartgentools.com/privacy" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    Privacy & Legal
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="doc-layout-with-toc">
+                <article class="doc-article">
+                    <div class="breadcrumb">
+                        <span>Docs</span> <span class="separator">/</span> <span>Guides</span>
+                    </div>
+                    <h1 class="doc-title">Contributor Guide</h1>
+                    <div class="doc-body">
+                        <h1 id="smartgen-contributor-andamp-api-reference-guide">SmartGen — Contributor &amp; API Reference Guide</h1>
+<p>  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" title="" class="doc-image">
+<br>  <img src="https://img.shields.io/badge/Architecture-100%25_Client--Side-success" alt="Client-Side Only" title="" class="doc-image">
+<br>  <img src="https://img.shields.io/badge/Tools-131%2B-blue" alt="Tools" title="" class="doc-image">
+</p>
+<p>  Welcome to <strong>SmartGen</strong> — an open-source, 100% client-side web utility ecosystem with 131+ free tools for developers, marketers, and creators. This document is the <strong>single source of truth</strong> for anyone who wants to understand the codebase, fix a bug, or add a new feature.</p>
+<blockquote>
+<p>📌 <strong>File location suggestion:</strong> <code>docs-post/CONTRIBUTOR-GUIDE.md</code></p>
+</blockquote>
+<hr>
+<h2 id=""><img src="/assets/images/docs/architecture-diagram.svg" alt="SmartGen Architecture" title="" class="doc-image">
+</h2>
+<h2 id="table-of-contents">📖 Table of Contents</h2>
+<ol>
+<li><a href="#1-project-philosophy">Project Philosophy</a></li>
+<li><a href="#2-architecture-overview">Architecture Overview</a></li>
+<li><a href="#3-folder-structure">Folder Structure</a></li>
+<li><a href="#4-getting-started-local-setup">Getting Started (Local Setup)</a></li>
+<li><a href="#5-contribution-rules">Contribution Rules</a></li>
+<li><a href="#6-api-reference--core-modules">API Reference — Core Modules</a><ul>
+<li><a href="#61-appjs--site-shell-engine">6.1 <code>app.js</code> — Site Shell Engine</a></li>
+<li><a href="#62-search-datajs--tools-index-tools_index">6.2 <code>search-data.js</code> — Tools Index (TOOLS_INDEX)</a></li>
+<li><a href="#63-related-toolsjs--recommendation-engine">6.3 <code>related-tools.js</code> — Recommendation Engine</a></li>
+<li><a href="#64-chatbotjs--smartgenchatbot-class">6.4 <code>chatbot.js</code> — SmartGenChatbot Class</a></li>
+<li><a href="#65-datafaqjson--faq-schema">6.5 <code>data/faq.json</code> — FAQ Schema</a></li>
+<li><a href="#66-scriptsbuild-blogjs--blog-builder">6.6 <code>scripts/build-blog.js</code> — Blog Builder</a></li>
+<li><a href="#67-scriptsdocs-buildjs--docs-builder">6.7 <code>scripts/docs-build.js</code> — Docs Builder</a></li>
+</ul>
+</li>
+<li><a href="#7-step-by-step-adding-a-new-tool">Step-by-Step: Adding a New Tool</a></li>
+<li><a href="#8-step-by-step-adding-a-new-faq-entry">Step-by-Step: Adding a New FAQ Entry</a></li>
+<li><a href="#9-step-by-step-writing-a-blog-post">Step-by-Step: Writing a Blog Post</a></li>
+<li><a href="#10-deployment--cicd">Deployment &amp; CI/CD</a></li>
+<li><a href="#11-license">License</a></li>
+</ol>
+<hr>
+<h2 id="1-project-philosophy">1. Project Philosophy</h2>
+<p>  SmartGen is built on four non-negotiable principles:</p>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>What it means for contributors</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Privacy-First</strong></td>
+<td>No server, no tracking, no data storage. All logic must run in the browser.</td>
+</tr>
+<tr>
+<td><strong>Client-Side Only</strong></td>
+<td>Never introduce a backend/API server for tool logic. Pure HTML/CSS/JS only.</td>
+</tr>
+<tr>
+<td><strong>Zero Cost to Run</strong></td>
+<td>No paid dependencies, no paid APIs, no subscriptions.</td>
+</tr>
+<tr>
+<td><strong>SEO Skyscraper Content</strong></td>
+<td>Every tool page (<code>index.html</code>) must contain 1200+ words of content, FAQ schema, and optimized meta tags.</td>
+</tr>
+</tbody></table>
+<p>  If a pull request violates any of these four rules, it will be rejected regardless of code quality.</p>
+<hr>
+<h2 id="2-architecture-overview">2. Architecture Overview</h2>
+<pre><code class="language-mermaid">graph TD
+  A[User Browser] --&gt; B[index.html / tool pages]
+  B --&gt; C[assets/js/app.js&lt;br/&gt;Navbar + Footer + Theme]
+  B --&gt; D[assets/js/search-data.js&lt;br/&gt;TOOLS_INDEX]
+  D --&gt; E[assets/js/related-tools.js&lt;br/&gt;Recommendation Engine]
+  B --&gt; F[assets/js/chatbot.js&lt;br/&gt;SmartGenChatbot]
+  F --&gt; G[data/faq.json]
+  F --&gt; H[sitemap.xml]
+  I[blog-posts/*.md] --&gt; J[scripts/build-blog.js] --&gt; K[blog.json + static blog pages]
+  L[GitHub Actions] --&gt; M[data/changelog.json - auto]
+  L --&gt; N[GitHub Pages Deploy]
+</code></pre>
+<p>  <strong>Key idea:</strong> Every page is static HTML. All &quot;smart&quot; behavior (navbar, search, chatbot, related tools) is injected client-side via vanilla JS files loaded on every page.</p>
+<hr>
+<h2 id="3-folder-structure">3. Folder Structure</h2>
+<pre><code>SmartGenQR.oi/
+├── assets/
+│   ├── js/
+│   │   ├── app.js              # Navbar/footer injection + theme toggle (loads on EVERY page)
+│   │   ├── search-data.js      # TOOLS_INDEX — master list of all 131+ tools
+│   │   ├── related-tools.js    # Reads TOOLS_INDEX to render &quot;Related Tools&quot; widget
+│   │   └── chatbot.js          # SmartGenChatbot class (FAQ + sitemap matching)
+│   ├── css/
+│   │   └── chatbot.css         # Chatbot UI styling (light/dark theme aware)
+│   └── logo.png
+├── data/
+│   ├── faq.json                # Chatbot FAQ knowledge base
+│   └── changelog.json          # AUTO-GENERATED — do not edit manually
+├── blog-posts/                 # Markdown source files for blog (with YAML front matter)
+├── scripts/
+│   ├── build-blog.js           # Compiles blog-posts/*.md → blog.json + static pages
+│   └── docs-build.js           # Compiles docs-post/*.md → documentation pages
+├── docs-post/                  # 👈 Your documentation markdown files go here
+├── &lt;tool-name&gt;/
+│   └── index.html              # Each tool = its own self-contained folder
+├── sitemap.xml
+├── package.json
+├── README.md
+├── WIKI.md
+└── CHATBOT_README.md
+</code></pre>
+<blockquote>
+<p>⚠️ <strong>Rule:</strong> Every new tool = a <strong>new top-level folder</strong> with its own <code>index.html</code>. Never nest tools inside other tools.</p>
+</blockquote>
+<hr>
+<h2 id="4-getting-started-local-setup">4. Getting Started (Local Setup)</h2>
+<pre><code class="language-bash"># 1. Clone the repository
+git clone https://github.com/bayzed123/SmartGenQR.oi.git
+cd SmartGenQR.oi
+
+# 2. Install dependencies (required for blog/docs build + linting)
+pnpm install
+
+# 3. Local preview — two options:
+
+# Option A: Open any tool directly (works since site is 100% static)
+open ./qr-generator/index.html
+
+# Option B: Full environment with routing (recommended)
+npx serve
+
+# 4. Build blog + docs (regenerates static pages from Markdown)
+pnpm build
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>pnpm build</code></td>
+<td>Runs both below</td>
+<td>Full production build</td>
+</tr>
+<tr>
+<td><code>pnpm build-blog</code> (internal)</td>
+<td><code>node scripts/build-blog.js</code></td>
+<td>Compiles <code>blog-posts/*.md</code> → <code>blog.json</code></td>
+</tr>
+<tr>
+<td><code>pnpm build-docs</code> (internal)</td>
+<td><code>node scripts/docs-build.js</code></td>
+<td>Compiles <code>docs-post/*.md</code> → doc pages</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="5-contribution-rules">5. Contribution Rules</h2>
+<ol>
+<li><strong>One tool = one folder.</strong> e.g. <code>/new-tool/index.html</code></li>
+<li><strong>Client-side only.</strong> No <code>fetch()</code> calls to your own backend. External read-only APIs (like public REST APIs) are okay if privacy-safe.</li>
+<li><strong>Register every tool.</strong> Any new tool MUST be added to the <code>TOOLS_INDEX</code> array in <code>assets/js/search-data.js</code> — otherwise it won&#39;t appear in search or &quot;Related Tools.&quot;</li>
+<li><strong>SEO requirement.</strong> Every <code>index.html</code> needs:<ul>
+<li>1200+ words of unique content</li>
+<li>FAQ schema (<code>&lt;script type=&quot;application/ld+json&quot;&gt;</code>)</li>
+<li>Optimized <code>&lt;title&gt;</code> and <code>&lt;meta description&gt;</code></li>
+</ul>
+</li>
+<li><strong>Use absolute paths</strong> (<code>/assets/js/app.js</code>) not relative paths (<code>./assets/js/app.js</code>) — tools live in subfolders, so relative paths break navigation. <em>(See Section 6.1 for why this matters.)</em></li>
+<li><strong>Never manually edit</strong> <code>data/changelog.json</code> — it&#39;s auto-generated by GitHub Actions on every push to <code>main</code>.</li>
+<li>Submit changes via <strong>Pull Request</strong>, not direct push to <code>main</code>.</li>
+</ol>
+<hr>
+<h2 id="6-api-reference-core-modules">6. API Reference — Core Modules</h2>
+<p>  This section documents every JS &quot;API&quot; surface in the codebase — the functions and data objects other files depend on.</p>
+<h3 id="61-appjs-site-shell-engine">6.1 <code>app.js</code> — Site Shell Engine</h3>
+<p>  <strong>Purpose:</strong> Injects the shared navbar/footer and manages theme (light/dark) on every single page.</p>
+<p>  <strong>Loaded on:</strong> Every page, via <code>&lt;script src=&quot;/assets/js/app.js&quot;&gt;&lt;/script&gt;</code> before <code>&lt;/body&gt;</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>injectNavbar()</code></td>
+<td><code>injectNavbar(): void</code></td>
+<td>Injects navbar HTML into <code>#main-header</code>. Sets up mobile sidebar, theme toggle, and dropdown listeners.</td>
+</tr>
+<tr>
+<td><code>injectFooter()</code></td>
+<td><code>injectFooter(): void</code></td>
+<td>Injects footer HTML into <code>#main-footer</code>. Calls <code>initFooterAccordion()</code>.</td>
+</tr>
+<tr>
+<td><code>initTheme()</code></td>
+<td><code>initTheme(): void</code></td>
+<td>Reads <code>localStorage.getItem(&#39;theme&#39;)</code> and applies <code>data-theme</code> attribute to <code>&lt;html&gt;</code>. Defaults to <code>&#39;light&#39;</code>.</td>
+</tr>
+<tr>
+<td><code>toggleTheme()</code></td>
+<td><code>toggleTheme(): void</code></td>
+<td>Flips theme between <code>light</code>/<code>dark</code>, saves to <code>localStorage</code>.</td>
+</tr>
+<tr>
+<td><code>initAccordion()</code></td>
+<td><code>initAccordion(): void</code></td>
+<td>Enables collapsible FAQ/content accordions (<code>.accordion-header</code> elements).</td>
+</tr>
+<tr>
+<td><code>initFooterAccordion()</code></td>
+<td><code>initFooterAccordion(): void</code></td>
+<td>Mobile-only footer accordion behavior (<code>.footer-accordion-trigger</code>).</td>
+</tr>
+</tbody></table>
+<p>  <strong>Required DOM anchors on every page:</strong></p>
+<pre><code class="language-html">&lt;header id=&quot;main-header&quot;&gt;&lt;/header&gt;
+&lt;footer id=&quot;main-footer&quot;&gt;&lt;/footer&gt;
+</code></pre>
+<blockquote>
+<p>⚠️ <strong>Why absolute paths matter:</strong> The code comment in <code>app.js</code> explicitly states:<br><code>// Absolute paths (/) are used to prevent routing errors like &#39;blog/blog/&#39;</code><br>Always use <code>/assets/...</code> never <code>./assets/...</code> in any script/link tag you add.</p>
+</blockquote>
+<hr>
+<h3 id="62-search-datajs-tools-index-toolsindex">6.2 <code>search-data.js</code> — Tools Index (<code>TOOLS_INDEX</code>)</h3>
+<p>  <strong>Purpose:</strong> The single master list of all tools. Powers site search, related-tools widget, and (once wired in) the chatbot&#39;s tool-matching.</p>
+<p>  <strong>Exposed global:</strong> <code>TOOLS_INDEX</code> (Array)</p>
+<p>  <strong>Schema (one object per tool):</strong></p>
+<pre><code class="language-javascript">{
+  id: &#39;qr-generator&#39;,              // Unique slug — MUST match folder name
+  title: &#39;QR Code Generator&#39;,      // Display name
+  category: &#39;Developer &amp; Technical&#39;, // Used for grouping in related-tools.js
+  keywords: [&#39;qr&#39;, &#39;code&#39;, &#39;barcode&#39;, &#39;generator&#39;, &#39;scanner&#39;, &#39;wifi&#39;],
+  description: &#39;Create custom QR codes for URLs, WiFi, and more.&#39;,
+  url: &#39;./qr-generator/&#39;,          // Relative — converted to absolute by related-tools.js
+  icon: &#39;📱&#39;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>✅</td>
+<td>Must exactly match the tool&#39;s folder name</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>✅</td>
+<td>Human-readable name</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>string</td>
+<td>✅</td>
+<td>Used to group related tools (e.g. <code>&#39;SEO &amp; Content&#39;</code>)</td>
+</tr>
+<tr>
+<td><code>keywords</code></td>
+<td>string[]</td>
+<td>✅</td>
+<td>Powers search matching</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>✅</td>
+<td>1 sentence, shown in search results &amp; related widget</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>string</td>
+<td>✅</td>
+<td>Relative path, format: <code>&#39;./folder-name/&#39;</code></td>
+</tr>
+<tr>
+<td><code>icon</code></td>
+<td>string (emoji)</td>
+<td>✅</td>
+<td>Displayed next to tool name</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="63-related-toolsjs-recommendation-engine">6.3 <code>related-tools.js</code> — Recommendation Engine</h3>
+<p>  <strong>Purpose:</strong> Reads <code>TOOLS_INDEX</code> and renders a &quot;Related Tools You Might Need&quot; block on any tool page.</p>
+<p>  <strong>Loaded on:</strong> Individual tool pages that include <code>&lt;div id=&quot;dynamic-related-tools&quot;&gt;&lt;/div&gt;</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>renderRelatedTools()</code></td>
+<td><code>renderRelatedTools(): void</code></td>
+<td>Detects current tool via URL path, matches <code>TOOLS_INDEX</code> by <code>id</code>, finds up to 4 related tools (same <code>category</code> first, fills remainder from other categories), and injects HTML.</td>
+</tr>
+</tbody></table>
+<p>  <strong>Path resolution logic (important for GitHub Pages vs custom domain):</strong></p>
+<pre><code class="language-javascript">const isGitHubPages = window.location.hostname.includes(&#39;github.io&#39;);
+const isCustomDomain = window.location.hostname.includes(&#39;smartgentools.com&#39;);
+const repoName = (isGitHubPages &amp;&amp; !isCustomDomain)
+    ? &#39;/&#39; + window.location.pathname.split(&#39;/&#39;)[1] + &#39;/&#39;
+    : &#39;/&#39;;
+</code></pre>
+<p>  This ensures links work correctly whether the site is served from <code>smartgentools.com</code> <strong>or</strong> a GitHub Pages project URL like <code>username.github.io/SmartGenQR.oi/</code>.</p>
+<p>  <strong>Required DOM anchor:</strong></p>
+<pre><code class="language-html">&lt;div id=&quot;dynamic-related-tools&quot;&gt;&lt;/div&gt;
+</code></pre>
+<hr>
+<h3 id="64-chatbotjs-smartgenchatbot-class">6.4 <code>chatbot.js</code> — <code>SmartGenChatbot</code> Class</h3>
+<p>  <strong>Purpose:</strong> Client-side FAQ + site-navigation assistant. No server, no API keys.</p>
+<p>  <strong>Exposed global:</strong> <code>SmartGenChatbot</code> (class)</p>
+<p>  <strong>Instantiation:</strong></p>
+<pre><code class="language-javascript">new SmartGenChatbot(); // auto-runs init() in constructor
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>init()</code></td>
+<td><code>async init(): Promise&lt;void&gt;</code></td>
+<td>Orchestrates: <code>loadFAQ()</code> → <code>loadSitemap()</code> → <code>createChatbotUI()</code> → <code>attachEventListeners()</code></td>
+</tr>
+<tr>
+<td><code>loadFAQ()</code></td>
+<td><code>async loadFAQ(): Promise&lt;void&gt;</code></td>
+<td>Fetches <code>/data/faq.json</code>. ⚠️ Must use <strong>absolute path</strong> — see note below.</td>
+</tr>
+<tr>
+<td><code>loadSitemap()</code></td>
+<td><code>async loadSitemap(): Promise&lt;void&gt;</code></td>
+<td>Fetches <code>/sitemap.xml</code>, parses <code>&lt;url&gt;</code> entries into <code>{loc, path, title}</code> objects</td>
+</tr>
+<tr>
+<td><code>extractTitleFromPath(path)</code></td>
+<td><code>(path: string) =&gt; string</code></td>
+<td>Converts URL slug → readable title (<code>/qr-generator/</code> → <code>&quot;Qr generator&quot;</code>)</td>
+</tr>
+<tr>
+<td><code>createChatbotUI()</code></td>
+<td><code>createChatbotUI(): void</code></td>
+<td>Injects chat widget HTML into <code>document.body</code></td>
+</tr>
+<tr>
+<td><code>attachEventListeners()</code></td>
+<td><code>attachEventListeners(): void</code></td>
+<td>Wires up toggle button, send button, Enter key, quick-reply buttons</td>
+</tr>
+<tr>
+<td><code>toggleChatWindow()</code></td>
+<td><code>toggleChatWindow(): void</code></td>
+<td>Opens/closes the chat panel</td>
+</tr>
+<tr>
+<td><code>sendMessage()</code></td>
+<td><code>sendMessage(): void</code></td>
+<td>Reads input value, calls <code>handleUserMessage()</code></td>
+</tr>
+<tr>
+<td><code>handleUserMessage(msg)</code></td>
+<td><code>(userMessage: string) =&gt; void</code></td>
+<td>Renders user bubble, computes answer via <code>findBestAnswer()</code>, renders bot bubble after 300ms delay</td>
+</tr>
+<tr>
+<td><code>findBestAnswer(query)</code></td>
+<td><code>(userQuery: string) =&gt; string</code></td>
+<td>Scores every FAQ entry + every sitemap page by keyword overlap; returns best match or fallback text</td>
+</tr>
+<tr>
+<td><code>containsAllWords(a, b)</code></td>
+<td><code>(text: string, query: string) =&gt; boolean</code></td>
+<td>Helper: checks if all words of <code>query</code> exist in <code>text</code></td>
+</tr>
+<tr>
+<td><code>calculateWordSimilarity(a, b)</code></td>
+<td><code>(query: string, question: string) =&gt; number</code></td>
+<td>Fuzzy scoring fallback when no exact/contains match found</td>
+</tr>
+</tbody></table>
+<p>  <strong>Scoring priority inside <code>findBestAnswer()</code>:</strong></p>
+<ol>
+<li>Exact question match → score <code>100</code></li>
+<li>Question contains all query words → score <code>80</code></li>
+<li>Query contains all question words → score <code>70</code></li>
+<li>Word similarity fallback → variable score</li>
+<li><code>+10</code> bonus if <code>category</code> matches query</li>
+</ol>
+<blockquote>
+<p>⚠️ <strong>Known path bug to watch for:</strong> <code>loadFAQ()</code> originally used <code>fetch(&quot;./data/faq.json&quot;)</code> (relative). On nested tool pages this resolves incorrectly (e.g. <code>/qr-generator/data/faq.json</code> → 404). <strong>Always use <code>fetch(&quot;/data/faq.json&quot;)</code> (absolute).</strong> <code>loadSitemap()</code> already correctly uses <code>/sitemap.xml</code> — use it as the reference pattern for any new fetch calls in this file.</p>
+</blockquote>
+<p>  <strong>Required includes on every page (for sitewide chatbot):</strong></p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/chatbot.css&quot;&gt;
+&lt;script src=&quot;/assets/js/chatbot.js&quot; defer&gt;&lt;/script&gt;
+</code></pre>
+<hr>
+<h3 id="65-datafaqjson-faq-schema">6.5 <code>data/faq.json</code> — FAQ Schema</h3>
+<pre><code class="language-json">{
+  &quot;faqs&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;category&quot;: &quot;General&quot;,
+      &quot;question&quot;: &quot;What is SmartGen?&quot;,
+      &quot;answer&quot;: &quot;SmartGen is an all-in-one digital and web utility platform...&quot;
+    }
+  ]
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>id</code></td>
+<td>number</td>
+<td>Unique, sequential</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>string</td>
+<td>One of: <code>General</code>, <code>Privacy</code>, <code>Tools</code>, <code>Technical</code>, <code>Account</code>, <code>Features</code>, <code>Support</code>, <code>Developers</code>, <code>Performance</code>, <code>Legal</code></td>
+</tr>
+<tr>
+<td><code>question</code></td>
+<td>string</td>
+<td>Natural-language question</td>
+</tr>
+<tr>
+<td><code>answer</code></td>
+<td>string</td>
+<td>Full answer text, plain string (no HTML)</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="66-scriptsbuild-blogjs-blog-builder">6.6 <code>scripts/build-blog.js</code> — Blog Builder</h3>
+<p>  <strong>Purpose:</strong> Compiles Markdown files in <code>/blog-posts/</code> into <code>blog.json</code> + static blog HTML pages.</p>
+<p>  <strong>Run via:</strong> <code>pnpm build-blog</code> (internally calls <code>node scripts/build-blog.js</code>)</p>
+<p>  <strong>Dependencies used:</strong> <code>front-matter</code>, <code>gray-matter</code>, <code>marked</code>, <code>slugify</code>, <code>luxon</code></p>
+<p>  <strong>Expected front matter format</strong> (YAML header at top of each <code>.md</code> file):</p>
+<pre><code class="language-yaml">---
+title: &quot;My Blog Post Title&quot;
+date: &quot;2026-07-06&quot;
+description: &quot;Short SEO description&quot;
+author: &quot;Sayad Md Bayezid Hosan&quot;
+---
+</code></pre>
+<hr>
+<h3 id="67-scriptsdocs-buildjs-docs-builder">6.7 <code>scripts/docs-build.js</code> — Docs Builder</h3>
+<p>  <strong>Purpose:</strong> Same pipeline as the blog builder, but for <code>/docs-post/</code> → generates documentation pages.</p>
+<p>  <strong>Run via:</strong> <code>pnpm build-docs</code></p>
+<blockquote>
+<p>💡 This is exactly the tool you&#39;ll use for the file you&#39;re reading right now — drop this file in <code>docs-post/CONTRIBUTOR-GUIDE.md</code>, run <code>pnpm build</code>, and it will be compiled into a live doc page automatically.</p>
+</blockquote>
+<hr>
+<h2 id="7-step-by-step-adding-a-new-tool">7. Step-by-Step: Adding a New Tool</h2>
+<ol>
+<li>Create folder: <code>/your-tool-name/</code></li>
+<li>Add <code>index.html</code> inside it with:<ul>
+<li><code>&lt;header id=&quot;main-header&quot;&gt;&lt;/header&gt;</code> and <code>&lt;footer id=&quot;main-footer&quot;&gt;&lt;/footer&gt;</code></li>
+<li><code>&lt;script src=&quot;/assets/js/app.js&quot; defer&gt;&lt;/script&gt;</code></li>
+<li><code>&lt;div id=&quot;dynamic-related-tools&quot;&gt;&lt;/div&gt;</code> (optional, for related tools widget)</li>
+<li>1200+ words of unique SEO content</li>
+<li>FAQ schema JSON-LD block</li>
+</ul>
+</li>
+<li>Open <code>assets/js/search-data.js</code> and add an entry to <code>TOOLS_INDEX</code>:<pre><code class="language-javascript">{
+  id: &#39;your-tool-name&#39;,
+  title: &#39;Your Tool Display Name&#39;,
+  category: &#39;Pick an existing category&#39;,
+  keywords: [&#39;relevant&#39;, &#39;search&#39;, &#39;terms&#39;],
+  description: &#39;One sentence description.&#39;,
+  url: &#39;./your-tool-name/&#39;,
+  icon: &#39;🔧&#39;
+}
+</code></pre>
+</li>
+<li>Add the tool&#39;s URL to <code>sitemap.xml</code>.</li>
+<li>Test locally with <code>npx serve</code>.</li>
+<li>Submit a Pull Request.</li>
+</ol>
+<hr>
+<h2 id="8-step-by-step-adding-a-new-faq-entry">8. Step-by-Step: Adding a New FAQ Entry</h2>
+<ol>
+<li>Open <code>data/faq.json</code></li>
+<li>Add a new object to the <code>faqs</code> array with the next sequential <code>id</code></li>
+<li>Pick an existing <code>category</code> (or introduce a new one consistently)</li>
+<li>Test: open chatbot on the live site, ask the exact question, confirm it returns your new answer</li>
+<li>Commit and PR</li>
+</ol>
+<hr>
+<h2 id="9-step-by-step-writing-a-blog-post">9. Step-by-Step: Writing a Blog Post</h2>
+<ol>
+<li>Create a new <code>.md</code> file inside <code>/blog-posts/</code></li>
+<li>Add YAML front matter (see <a href="#66-scriptsbuild-blogjs--blog-builder">Section 6.6</a>)</li>
+<li>Write content in standard Markdown</li>
+<li>Run <code>pnpm build-blog</code> locally to verify it compiles without errors</li>
+<li>Commit both the <code>.md</code> source and any regenerated output files</li>
+<li>Submit PR</li>
+</ol>
+<hr>
+<h2 id="10-deployment-andamp-cicd">10. Deployment &amp; CI/CD</h2>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Push to <code>main</code></td>
+<td>GitHub Actions auto-updates <code>data/changelog.json</code></td>
+</tr>
+<tr>
+<td>Push to <code>main</code></td>
+<td>GitHub Pages auto-builds and deploys the site</td>
+</tr>
+</tbody></table>
+<p>  You do <strong>not</strong> need to manually deploy — merging to <code>main</code> is the deployment.</p>
+<hr>
+<h2 id="11-license">11. License</h2>
+<p>  Licensed under the <strong>MIT License</strong>.<br>  Copyright (c) 2026 Sayad Md Bayezid Hosan.</p>
+<hr>
+<p>  <em>Questions or improvements to this doc? Open an issue or PR — this file lives at <code>docs-post/CONTRIBUTOR-GUIDE.md</code> and is itself built via <code>scripts/docs-build.js</code>.</em></p>
+
+                    </div>
+                    
+        <div class="doc-footer">
+            <div class="nav-table">
+                <div class="nav-row">
+                    <div class="nav-cell nav-prev">
+                        
+                            <div class="nav-label">← Previous</div>
+                            <a href="/docs/workflow-customization-summary/" class="nav-link-footer">Workflow Customization Summary</a>
+                        
+                    </div>
+                    <div class="nav-cell nav-next">
+                        
+                            <div class="nav-label">Next →</div>
+                            <a href="/docs/complete-guide-protfolio/" class="nav-link-footer">complete guide Protfolio</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="help-section">
+                <div class="help-box">
+                    <h3>Did you find what you needed?</h3>
+                    <p>Thank you! We received your feedback.</p>
+                </div>
+
+                <div class="help-box">
+                    <h3>Help us make these docs great!</h3>
+                    <p>All SmartGen docs are open source. See something that's wrong or unclear? Submit a pull request.</p>
+                    <a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md" class="btn-contribute">⑂ Make a contribution</a>
+                    <p><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md" class="link-secondary">Learn how to contribute</a></p>
+                </div>
+
+                <div class="help-box">
+                    <h3>Still need help?</h3>
+                    <p>👥 <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions" class="link-secondary">Ask the SmartGen community</a></p>
+                    <p>💬 <a href="https://smartgentools.com/contact/" class="link-secondary">Contact support</a></p>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p><small>© 2026 SmartGen. &nbsp; <a href="https://smartgentools.com/terms/">Terms</a> &nbsp; <a href="https://smartgentools.com/privacy/">Privacy</a> &nbsp; <a href="https://smartgentools.com/tools/">Expert services</a> &nbsp; <a href="https://smartgentools.com/blog/">Blog</a></small></p>
+            </div>
+        </div>
+    
+                </article>
+
+                
+        <aside class="toc-sidebar desktop-only">
+            <div class="toc-heading">On This Page</div>
+            <ul class="toc-list">
+                
+                    <li class="toc-item toc-main">
+                        <a href="#" class="toc-link">
+</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#table-of-contents" class="toc-link">📖 Table of Contents</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#1-project-philosophy" class="toc-link">1. Project Philosophy</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#2-architecture-overview" class="toc-link">2. Architecture Overview</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#3-folder-structure" class="toc-link">3. Folder Structure</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#4-getting-started-local-setup" class="toc-link">4. Getting Started (Local Setup)</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#5-contribution-rules" class="toc-link">5. Contribution Rules</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#6-api-reference-core-modules" class="toc-link">6. API Reference — Core Modules</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#61-appjs-site-shell-engine" class="toc-link">6.1 app.js — Site Shell Engine</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#62-search-datajs-tools-index-toolsindex" class="toc-link">6.2 search-data.js — Tools Index (TOOLS_INDEX)</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#63-related-toolsjs-recommendation-engine" class="toc-link">6.3 related-tools.js — Recommendation Engine</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#64-chatbotjs-smartgenchatbot-class" class="toc-link">6.4 chatbot.js — SmartGenChatbot Class</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#65-datafaqjson-faq-schema" class="toc-link">6.5 data/faq.json — FAQ Schema</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#66-scriptsbuild-blogjs-blog-builder" class="toc-link">6.6 scripts/build-blog.js — Blog Builder</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#67-scriptsdocs-buildjs-docs-builder" class="toc-link">6.7 scripts/docs-build.js — Docs Builder</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#7-step-by-step-adding-a-new-tool" class="toc-link">7. Step-by-Step: Adding a New Tool</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#8-step-by-step-adding-a-new-faq-entry" class="toc-link">8. Step-by-Step: Adding a New FAQ Entry</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#9-step-by-step-writing-a-blog-post" class="toc-link">9. Step-by-Step: Writing a Blog Post</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#10-deployment-andamp-cicd" class="toc-link">10. Deployment &amp; CI/CD</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#11-license" class="toc-link">11. License</a>
+                    </li>
+                
+            </ul>
+        </aside>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/docs.js"></script>
+    <script>
+      document.querySelectorAll('.toc-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      const tocLinks = document.querySelectorAll('.toc-link');
+      const headings = Array.from(tocLinks).map(link =>
+        document.querySelector(link.getAttribute('href'))
+      ).filter(Boolean);
+
+      window.addEventListener('scroll', () => {
+        let current = null;
+        headings.forEach(h => {
+          if (h.getBoundingClientRect().top < 100) current = h;
+        });
+        tocLinks.forEach(link => link.classList.remove('active'));
+        if (current) {
+          const activeLink = document.querySelector('.toc-link[href="#' + current.id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    </script>
+</body>
+</html>

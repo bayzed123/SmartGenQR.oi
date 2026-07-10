@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Getting Started - SmartGen Docs</title>
-    <meta name="description" content="Learn how to set up and start contributing to SmartGen.">
-    <link rel="canonical" href="https://smartgentools.com/docs/getting-started/">
+    <title>developer Guidelines - SmartGen Docs</title>
+    <meta name="description" content="Learn how to quickly set up SmartGen tools.">
+    <link rel="canonical" href="https://smartgentools.com/docs/developer-guidelines/">
 
     <link rel="stylesheet" href="../../assets/css/docs.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -87,7 +87,7 @@
         <aside id="sidebar" class="sidebar">
             <nav class="sidebar-nav">
                 <div class="nav-section-title">Guides</div>
-                <a href="/docs/getting-started/" class="nav-link active">
+                <a href="/docs/getting-started/" class="nav-link ">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Getting Started
                 </a>
@@ -95,11 +95,11 @@
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Directory Structure for Protfolio
                 </a>
-                <a href="/docs/getting-started/" class="nav-link active">
+                <a href="/docs/getting-started/" class="nav-link ">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Getting Started
                 </a>
-                <a href="/docs/getting-started/" class="nav-link active">
+                <a href="/docs/getting-started/" class="nav-link ">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Getting Started
                 </a>
@@ -179,7 +179,7 @@
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Quick Setup Guide
                 </a>
-                <a href="/docs/developer-guidelines/" class="nav-link ">
+                <a href="/docs/developer-guidelines/" class="nav-link active">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     developer Guidelines
                 </a><div class="nav-section-title">Open Source Projects</div>
@@ -221,66 +221,149 @@
             <div class="doc-layout-with-toc">
                 <article class="doc-article">
                     <div class="breadcrumb">
-                        <span>Docs</span> <span class="separator">/</span> <span>Guides</span>
+                        <span>Docs</span> <span class="separator">/</span> <span>overview</span>
                     </div>
-                    <h1 class="doc-title">Getting Started</h1>
+                    <h1 class="doc-title">developer Guidelines</h1>
                     <div class="doc-body">
-                        <h1 id="getting-started">Getting Started</h1>
-<p>Welcome to the SmartGen project! This guide will help you get your local environment ready for development.</p>
-<h1 id="architecture-andamp-tech-stack">Architecture &amp; Tech Stack</h1>
-<p>SmartGen employs a lightweight, modular, and client-side focused architecture designed for speed, privacy, and ease of maintenance. The core philosophy revolves around processing all operations directly within the user&#39;s browser, eliminating the need for server-side data handling for most utilities.</p>
-<h2 id="core-architectural-principles">Core Architectural Principles</h2>
+                        <h1 id="developer-guidelines-for-smartgen">Developer Guidelines for SmartGen</h1>
+<p>This document outlines the coding guidelines and best practices for contributing to the SmartGenQR.oi project. Adhering to these guidelines ensures code consistency, maintainability, and collaboration efficiency.</p>
+<h2 id="1-general-principles">1. General Principles</h2>
 <ul>
-<li><strong>Client-Side Processing:</strong> All primary utility functions, such as QR code generation, image compression, and text conversions, are executed entirely within the user&#39;s web browser. This ensures that no sensitive user data is transmitted to or stored on external servers, upholding the &quot;Privacy First&quot; core value.</li>
-<li><strong>Modular Design:</strong> The application is structured into independent tool modules, each residing in its own directory (<code>/[tool-folder]/index.html</code>). This modularity facilitates easy development, maintenance, and scaling of individual tools without impacting the entire platform.</li>
-<li><strong>Static Site Generation (SSG) with Dynamic Injection:</strong> The platform leverages static HTML pages for individual tools and content, enhanced by client-side JavaScript for dynamic UI elements, navigation, and consistent theming. This approach combines the benefits of fast loading times and robust SEO with a rich user experience.</li>
+<li><strong>Readability:</strong> Write code that is easy to understand for other developers and your future self.</li>
+<li><strong>Maintainability:</strong> Design and implement solutions that are easy to modify, debug, and extend.</li>
+<li><strong>Consistency:</strong> Follow existing coding styles and patterns within the project.</li>
+<li><strong>Performance:</strong> Optimize code for efficiency without sacrificing readability or maintainability.</li>
+<li><strong>Security:</strong> Always consider security implications when writing code, especially when handling user input or external data.</li>
 </ul>
-<h2 id="technical-stack">Technical Stack</h2>
-<p>SmartGen&#39;s technical stack is lean and efficient, primarily relying on modern web standards and a minimal set of JavaScript libraries for specific functionalities.</p>
-<h3 id="frontend">Frontend</h3>
+<h2 id="2-code-formatting">2. Code Formatting</h2>
+<h3 id="javascriptnodejs">JavaScript/Node.js</h3>
 <ul>
-<li><strong>HTML5:</strong> The foundational markup language for structuring content.</li>
-<li><strong>CSS3:</strong> Utilized for styling, layout, and responsive design, with global styles defined in <code>/assets/css/style.css</code>.</li>
-<li><strong>JavaScript (ES6+):</strong> Powers all client-side logic, dynamic content injection, and tool functionalities. Key global scripts include:<ul>
-<li><code>/assets/js/app.js</code>: Manages global UI elements like navigation (<code>injectNavbar()</code>), footer (<code>injectFooter()</code>), and theme toggling (<code>initTheme()</code>). It also handles mobile responsiveness with a dynamic sidebar.</li>
-<li><code>/assets/js/search-data.js</code>: A centralized JSON data source containing metadata for all tools, used for search functionality and related tool recommendations.</li>
-<li><code>/assets/js/related-tools.js</code>: Dynamically injects related tool suggestions on individual tool pages.</li>
-<li><code>/assets/js/search.js</code>: Implements the client-side live search UI on the homepage.</li>
+<li>Use <code>prettier</code> and <code>eslint</code> for automatic formatting and linting. Ensure your IDE is configured to use them on save.</li>
+<li><strong>Indentation:</strong> Use 2 spaces for indentation.</li>
+<li><strong>Semicolons:</strong> Always use semicolons at the end of statements.</li>
+<li><strong>Quotes:</strong> Use single quotes for strings, unless escaping is required.</li>
+<li><strong>Braces:</strong> Use K&amp;R style for braces (opening brace on the same line as the statement).</li>
 </ul>
+<pre><code class="language-javascript">// Good
+function exampleFunction() {
+  if (true) {
+    console.log(&#39;Hello, World!&#39;);
+  }
+}
+
+// Bad
+function anotherFunction()
+{
+  if (true)
+  {
+    console.log(&quot;Hello, World!&quot;);
+  }
+}
+</code></pre>
+<h3 id="html">HTML</h3>
+<ul>
+<li>Use <code>prettier</code> for HTML formatting.</li>
+<li><strong>Indentation:</strong> Use 2 spaces for indentation.</li>
+<li><strong>Self-closing tags:</strong> Self-close tags where appropriate (e.g., <code>&lt;img /&gt;</code>, <code>&lt;input /&gt;</code>).</li>
+<li><strong>Attribute order:</strong> Maintain a consistent order for attributes (e.g., <code>id</code>, <code>class</code>, <code>src</code>, <code>alt</code>).</li>
+</ul>
+<h3 id="css">CSS</h3>
+<ul>
+<li>Use <code>prettier</code> for CSS formatting.</li>
+<li><strong>Indentation:</strong> Use 2 spaces for indentation.</li>
+<li><strong>Selectors:</strong> Group related properties together.</li>
+<li><strong>Units:</strong> Use <code>rem</code> or <code>em</code> for most sizing, <code>px</code> for borders or small adjustments.</li>
+</ul>
+<h2 id="3-naming-conventions">3. Naming Conventions</h2>
+<ul>
+<li><strong>Variables and Functions:</strong> Use <code>camelCase</code>.<pre><code class="language-javascript">const myVariableName = &#39;value&#39;;
+function calculateTotalAmount() { /* ... */ }
+</code></pre>
+</li>
+<li><strong>Constants:</strong> Use <code>SCREAMING_SNAKE_CASE</code>.<pre><code class="language-javascript">const MAX_ITEMS = 10;
+</code></pre>
+</li>
+<li><strong>Classes (CSS/JavaScript):</strong> Use <code>PascalCase</code> for JavaScript classes and <code>kebab-case</code> for CSS classes.<pre><code class="language-javascript">class MyComponent { /* ... */ }
+// CSS
+.my-component { /* ... */ }
+</code></pre>
+</li>
+<li><strong>Files:</strong> Use <code>kebab-case</code> for file names (e.g., <code>my-component.js</code>, <code>my-style.css</code>).</li>
+</ul>
+<h2 id="4-comments">4. Comments</h2>
+<ul>
+<li><strong>Purpose:</strong> Explain <em>why</em> the code does something, not <em>what</em> it does (unless the<br>code is complex and not self-explanatory).</li>
+<li><strong>TODOs:</strong> Use <code>// TODO: [description]</code> for temporary notes or future improvements.</li>
+<li><strong>JSDoc:</strong> Use JSDoc for documenting functions, classes, and complex modules.</li>
+</ul>
+<pre><code class="language-javascript">/**
+ * Calculates the sum of two numbers.
+ * @param {number} a - The first number.
+ * @param {number} b - The second number.
+ * @returns {number} The sum of a and b.
+ */
+function add(a, b) {
+  return a + b;
+}
+</code></pre>
+<h2 id="5-version-control-git">5. Version Control (Git)</h2>
+<ul>
+<li><p><strong>Branching:</strong> Use feature branches for new features or bug fixes. Branch names should be descriptive (e.g., <code>feature/add-new-tool</code>, <code>bugfix/sitemap-issue</code>).</p>
+</li>
+<li><p><strong>Commits:</strong> Write clear, concise commit messages.</p>
+<ul>
+<li>Start with a verb in the imperative mood (e.g., <code>Fix:</code>, <code>Add:</code>, <code>Refactor:</code>).</li>
+<li>Keep the subject line under 50 characters.</li>
+<li>Provide a more detailed body if necessary.</li>
+</ul>
+<pre><code>Fix: Correct sitemap generation for blog posts
+
+Ensures that all blog posts are correctly included in the sitemap.xml
+by modifying the build script to dynamically add blog post URLs.
+This resolves the issue where new blog posts were not discoverable by search engines.
+</code></pre>
+</li>
+<li><p><strong>Pull Requests (PRs):</strong> Create PRs for all changes. Ensure your code is reviewed before merging into <code>main</code>.</p>
 </li>
 </ul>
-<h3 id="build-andamp-content-management">Build &amp; Content Management</h3>
+<h2 id="6-security-best-practices">6. Security Best Practices</h2>
 <ul>
-<li><strong>Node.js:</strong> Used as a runtime environment for build scripts.</li>
-<li><strong>pnpm:</strong> The package manager for project dependencies, as indicated in <code>Contributing.md</code> [1].</li>
-<li><strong><code>scripts/build-blog.js</code>:</strong> A custom Node.js script responsible for generating the blog section. It processes Markdown files from <code>blog-posts/</code>, uses <code>front-matter</code> for metadata extraction, and <code>marked</code> for Markdown-to-HTML conversion. It generates static HTML pages for blog posts and a <code>blog.json</code> index.</li>
-<li><strong><code>front-matter</code>:</strong> A JavaScript library for parsing front matter from Markdown files [2].</li>
-<li><strong><code>marked</code>:</strong> A Markdown parser and compiler, used for converting blog post content into HTML [3].</li>
-<li><strong><code>slugify</code>:</strong> A utility for converting strings into URL-friendly slugs [4].</li>
+<li><strong>Input Validation:</strong> Always validate and sanitize user input on both client and server sides to prevent XSS, SQL injection, and other vulnerabilities.</li>
+<li><strong>Dependencies:</strong> Regularly update dependencies to patch known security vulnerabilities. Use <code>npm audit</code>.</li>
+<li><strong>Environment Variables:</strong> Never hardcode sensitive information (API keys, credentials). Use environment variables.</li>
+<li><strong>Error Handling:</strong> Implement robust error handling to prevent information leakage through error messages.</li>
 </ul>
-<h3 id="development-environment-andamp-tools">Development Environment &amp; Tools</h3>
+<h2 id="7-project-structure">7. Project Structure</h2>
+<p>Maintain a logical and consistent project structure. For this project, follow the existing patterns:</p>
 <ul>
-<li><strong>Git:</strong> Version control system for managing the codebase.</li>
-<li><strong>GitHub:</strong> Hosting for the repository and collaborative development workflows.</li>
-<li><strong>VS Code:</strong> Recommended integrated development environment (IDE) [1].</li>
-<li><strong>ESLint &amp; Prettier:</strong> Code linting and formatting tools to maintain code quality and consistency [1].</li>
-<li><strong>Vitest:</strong> A fast unit test framework used for testing JavaScript/TypeScript code [1].</li>
-<li><strong>TypeScript:</strong> While not universally applied across all tools, <code>Contributing.md</code> suggests basic knowledge of React/TypeScript for code contributions, indicating its use in certain parts or for future development [1].</li>
+<li><code>assets/</code>: Static assets (images, CSS, JS).</li>
+<li><code>blog-posts/</code>: Markdown files for blog posts.</li>
+<li><code>blog/</code>: Generated HTML for blog posts and archive.</li>
+<li><code>scripts/</code>: Build scripts and other utility scripts.</li>
+<li><code>templates/</code>: HTML templates for dynamic content generation.</li>
+<li>Root directory for main HTML pages and tools.</li>
 </ul>
-<h2 id="file-structure-overview">File Structure Overview</h2>
-<p>The project follows a clear and organized file structure to ensure maintainability:</p>
+<h2 id="8-performance-optimization">8. Performance Optimization</h2>
 <ul>
-<li><code>/assets/</code>: Contains global CSS (<code>style.css</code>), JavaScript (<code>app.js</code>, <code>search-data.js</code>, <code>related-tools.js</code>, <code>search.js</code>), and other static assets.</li>
-<li><code>/blog/</code>: Houses blog-related files, including <code>blog.json</code> and individual blog post directories.</li>
-<li><code>/blog-posts/</code>: Markdown source files for blog content.</li>
-<li><code>/data/</code>: Stores data files like <code>changelog.json</code>.</li>
-<li><code>/scripts/</code>: Contains Node.js build scripts, such as <code>build-blog.js</code>.</li>
-<li><code>/[tool-folder]/</code>: Each individual utility resides in its own directory, typically containing an <code>index.html</code> file and any tool-specific JavaScript or CSS.</li>
-<li><code>/about/</code>, <code>/contact/</code>, <code>/privacy/</code>, <code>/terms/</code>, <code>/disclaimer/</code>: Static pages for legal information and site details.</li>
+<li><strong>Lazy Loading:</strong> Implement lazy loading for images and other non-critical assets.</li>
+<li><strong>Minification:</strong> Ensure CSS and JavaScript files are minified in production builds.</li>
+<li><strong>Image Optimization:</strong> Optimize images for web (compression, appropriate formats).</li>
+<li><strong>Caching:</strong> Utilize browser caching effectively.</li>
 </ul>
-<p>This architecture ensures that SmartGen remains performant, privacy-respecting, and easy to contribute to, aligning with its open-source nature.</p>
-<h2 id="references">References</h2>
-<p>[1] Contributing to SmartGen. (n.d.). <em>GitHub</em>. Retrieved from <a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md">https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md</a><br>[2] front-matter. (n.d.). <em>npm</em>. Retrieved from <a href="https://www.npmjs.com/package/front-matter">https://www.npmjs.com/package/front-matter</a><br>[3] marked. (n.d.). <em>npm</em>. Retrieved from <a href="https://www.npmjs.com/package/marked">https://www.npmjs.com/package/marked</a><br>[4] slugify. (n.d.). <em>npm</em>. Retrieved from <a href="https://www.npmjs.com/package/slugify">https://www.npmjs.com/package/slugify</a></p>
+<h2 id="9-accessibility-a11y">9. Accessibility (A11y)</h2>
+<ul>
+<li><strong>Semantic HTML:</strong> Use semantic HTML elements to improve accessibility and SEO.</li>
+<li><strong>ARIA Attributes:</strong> Use ARIA attributes where necessary to enhance accessibility for dynamic content or custom controls.</li>
+<li><strong>Keyboard Navigation:</strong> Ensure all interactive elements are keyboard accessible.</li>
+<li><strong>Color Contrast:</strong> Maintain sufficient color contrast for text and interactive elements.</li>
+</ul>
+<h2 id="10-testing">10. Testing</h2>
+<ul>
+<li><strong>Unit Tests:</strong> Write unit tests for critical functions and modules.</li>
+<li><strong>Integration Tests:</strong> Implement integration tests for key features.</li>
+<li><strong>Browser Testing:</strong> Test across different browsers and devices to ensure compatibility.</li>
+</ul>
+<p>By following these guidelines, we can ensure the SmartGenQR.oi project remains a high-quality, maintainable, and secure application. This document will be updated periodically to reflect new best practices and project requirements.</p>
 
                     </div>
                     
@@ -288,12 +371,15 @@
             <div class="nav-table">
                 <div class="nav-row">
                     <div class="nav-cell nav-prev">
-                        <div class="nav-empty"></div>
+                        
+                            <div class="nav-label">← Previous</div>
+                            <a href="/docs/vite-optimization-guide-for-cicd/" class="nav-link-footer">Vite Optimization Guide for CI/CD</a>
+                        
                     </div>
                     <div class="nav-cell nav-next">
                         
                             <div class="nav-label">Next →</div>
-                            <a href="/docs/directory-structure-for-protfolio/" class="nav-link-footer">Directory Structure for Protfolio</a>
+                            <a href="/docs/portfolio-website-customization-guide/" class="nav-link-footer">Portfolio Website: Customization Guide</a>
                         
                     </div>
                 </div>
@@ -334,31 +420,55 @@
             <ul class="toc-list">
                 
                     <li class="toc-item toc-main">
-                        <a href="#core-architectural-principles" class="toc-link">Core Architectural Principles</a>
+                        <a href="#1-general-principles" class="toc-link">1. General Principles</a>
                     </li>
                 
                     <li class="toc-item toc-main">
-                        <a href="#technical-stack" class="toc-link">Technical Stack</a>
+                        <a href="#2-code-formatting" class="toc-link">2. Code Formatting</a>
                     </li>
                 
                     <li class="toc-item toc-sub">
-                        <a href="#frontend" class="toc-link">Frontend</a>
+                        <a href="#javascriptnodejs" class="toc-link">JavaScript/Node.js</a>
                     </li>
                 
                     <li class="toc-item toc-sub">
-                        <a href="#build-andamp-content-management" class="toc-link">Build &amp; Content Management</a>
+                        <a href="#html" class="toc-link">HTML</a>
                     </li>
                 
                     <li class="toc-item toc-sub">
-                        <a href="#development-environment-andamp-tools" class="toc-link">Development Environment &amp; Tools</a>
+                        <a href="#css" class="toc-link">CSS</a>
                     </li>
                 
                     <li class="toc-item toc-main">
-                        <a href="#file-structure-overview" class="toc-link">File Structure Overview</a>
+                        <a href="#3-naming-conventions" class="toc-link">3. Naming Conventions</a>
                     </li>
                 
                     <li class="toc-item toc-main">
-                        <a href="#references" class="toc-link">References</a>
+                        <a href="#4-comments" class="toc-link">4. Comments</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#5-version-control-git" class="toc-link">5. Version Control (Git)</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#6-security-best-practices" class="toc-link">6. Security Best Practices</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#7-project-structure" class="toc-link">7. Project Structure</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#8-performance-optimization" class="toc-link">8. Performance Optimization</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#9-accessibility-a11y" class="toc-link">9. Accessibility (A11y)</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#10-testing" class="toc-link">10. Testing</a>
                     </li>
                 
             </ul>

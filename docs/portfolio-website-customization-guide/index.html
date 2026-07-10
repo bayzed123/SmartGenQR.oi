@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website: Customization Guide - SmartGen Docs</title>
+    <meta name="description" content="Complete guide to customizing colors, typography, sections, navigation, and adding new pages to your open-source developer portfolio.">
+    <link rel="canonical" href="https://smartgentools.com/docs/portfolio-website-customization-guide/">
+
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+
+    <style>
+      .toc-sidebar { min-width: 200px; padding-left: 1.5rem; border-left: 1px solid #e5e7eb; }
+      .toc-heading { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: #888; margin-bottom: 0.75rem; }
+      .toc-list { list-style: none; padding: 0; margin: 0; }
+      .toc-list li { margin-bottom: 0.5rem; }
+      .toc-main a { font-size: 0.9rem; color: #444; text-decoration: none; }
+      .toc-sub a { font-size: 0.85rem; color: #777; text-decoration: none; padding-left: 1rem; display:block; }
+      .toc-link:hover, .toc-link.active { color: #3b82f6; font-weight: 500; }
+      .doc-layout-with-toc { display: flex; gap: 2rem; }
+      @media (max-width: 900px) { .toc-sidebar { display: none; } }
+      
+      /* GitHub-style Footer */
+      .doc-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; }
+      .nav-table { display: table; width: 100%; margin-bottom: 2rem; }
+      .nav-row { display: table-row; }
+      .nav-cell { display: table-cell; padding: 1rem; width: 50%; }
+      .nav-prev { text-align: left; padding-right: 2rem; }
+      .nav-next { text-align: right; padding-left: 2rem; border-left: 1px solid #e5e7eb; }
+      .nav-label { font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; font-weight: 500; }
+      .nav-link-footer { color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.05rem; }
+      .nav-link-footer:hover { text-decoration: underline; }
+      .nav-empty { height: 2.5rem; }
+      .footer-divider { margin: 2rem 0; border: none; border-top: 1px solid #e5e7eb; }
+      .help-section { margin: 2rem 0; }
+      .help-box { margin-bottom: 2rem; }
+      .help-box h3 { font-size: 1rem; font-weight: 600; margin: 0 0 0.5rem 0; }
+      .help-box p { margin: 0.5rem 0; color: #555; font-size: 0.95rem; line-height: 1.5; }
+      .btn-contribute { display: inline-block; padding: 0.5rem 1rem; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; color: #0969da; text-decoration: none; font-weight: 500; margin: 0.75rem 0; }
+      .btn-contribute:hover { background: #eaeef2; }
+      .link-secondary { color: #0969da; text-decoration: none; }
+      .link-secondary:hover { text-decoration: underline; }
+      .footer-legal { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; text-align: center; }
+      .footer-legal small { color: #666; font-size: 0.85rem; }
+      .footer-legal a { color: #0969da; text-decoration: none; }
+      .footer-legal a:hover { text-decoration: underline; }
+      
+      @media (max-width: 768px) {
+        .nav-cell { display: block; width: 100%; padding: 1rem 0; border-left: none; }
+        .nav-next { border-left: none; border-top: 1px solid #e5e7eb; padding-top: 1rem; text-align: left; }
+        .nav-prev { padding-right: 0; }
+      }
+    </style>
+</head>
+<body>
+    <header class="docs-header">
+        <div class="header-left">
+            <button id="mobile-menu-btn" class="icon-btn mobile-only" aria-label="Menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <a href="/" class="logo">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="color: var(--primary);"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                SmartGen Docs
+            </a>
+        </div>
+        <div class="header-right">
+            <div class="search-bar desktop-only">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" placeholder="Search or Ask AI..." readonly>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <a href="https://github.com/Sayadbayezid" target="_blank" class="icon-btn" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <div class="docs-layout">
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <aside id="sidebar" class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section-title">Guides</div>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/directory-structure-for-protfolio/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Directory Structure for Protfolio
+                </a>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/your-actual-folder-layout/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Your Actual Folder Layout
+                </a>
+                <a href="/docs/installation/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Installation
+                </a>
+                <a href="/docs/vite-optimization-guide-for-cicd/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Vite Optimization Guide for CI/CD
+                </a>
+                <a href="/docs/advanced-workflow-configuration/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Advanced Workflow Configuration
+                </a>
+                <a href="/docs/vite-config-quick-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Vite Config Quick Reference
+                </a>
+                <a href="/docs/about-the-team-and-contribution/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    About the Team & Contribution
+                </a>
+                <a href="/docs/railway-deployment-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Railway Deployment Guide
+                </a>
+                <a href="/docs/github-actions-configuration-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    GitHub Actions Configuration Guide
+                </a>
+                <a href="/docs/custom-environment-variables/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Custom Environment Variables
+                </a>
+                <a href="/docs/workflow-customization-summary/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Workflow Customization Summary
+                </a>
+                <a href="/docs/contributor-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Contributor Guide
+                </a>
+                <a href="/docs/complete-guide-protfolio/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    complete guide Protfolio
+                </a>
+                <a href="/docs/quickstart-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Quickstart Guide
+                </a><div class="nav-section-title">API Reference</div>
+                <a href="/docs/api-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    API Reference
+                </a><div class="nav-section-title">Portfolio Website</div>
+                <a href="/docs/portfolio-website-getting-started-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Getting Started Guide
+                </a>
+                <a href="/docs/portfolio-website-deployment-and-blog-system-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Deployment & Blog System Guide
+                </a>
+                <a href="/docs/portfolio-website-customization-guide/" class="nav-link active">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Customization Guide
+                </a>
+                <a href="/docs/portfolio-website-api-and-script-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: API & Script Reference
+                </a><div class="nav-section-title">overview</div>
+                <a href="/docs/quick-setup-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Quick Setup Guide
+                </a>
+                <a href="/docs/developer-guidelines/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    developer Guidelines
+                </a><div class="nav-section-title">Open Source Projects</div>
+                <a href="/docs/building-a-fast-client-side-search-feature-without-a-backend/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Building a Fast Client-Side Search Feature Without a Backend
+                </a>
+                <a href="/docs/how-to-deploy-an-open-source-developer-portfolio-free-in-minutes/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    How to Deploy an Open-Source Developer Portfolio (Free, in Minutes)
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="https://smartgentools.com" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                    Home
+                </a>
+                <a href="https://smartgentools.com/blog" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    Blog
+                </a>
+                <a href="https://smartgentools.com/about" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    About Us
+                </a>
+                <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions/1" target="_blank" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    Discussions <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+                <a href="https://smartgentools.com/privacy" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    Privacy & Legal
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="doc-layout-with-toc">
+                <article class="doc-article">
+                    <div class="breadcrumb">
+                        <span>Docs</span> <span class="separator">/</span> <span>Portfolio Website</span>
+                    </div>
+                    <h1 class="doc-title">Portfolio Website: Customization Guide</h1>
+                    <div class="doc-body">
+                        <h1 id="portfolio-website-customization-guide">Portfolio Website: Customization Guide</h1>
+<p>  Once your portfolio is deployed, the next step is making it truly <em>yours</em> — not just personalized with your name and links, but visually and structurally tailored to how you want to present your work. This guide covers every major customization point: colors, fonts, sections, navigation, and adding entirely new pages.</p>
+<blockquote>
+<p><strong>Repository:</strong> <a href="https://github.com/bayzed123/sayadbayezid-portfolio-">github.com/bayzed123/sayadbayezid-portfolio-</a></p>
+<p><strong>Prerequisite:</strong> This guide assumes you&#39;ve completed the <a href="https://smartgentools.com/docs/portfolio-website-getting-started-guide/">Getting Started guide</a> and optionally <a href="/docs/portfolio-website-deployment-blog-system-guide/">deployed your site</a>.</p>
+</blockquote>
+<p>  <img src="/assets/images/docs/protfolio-coustomization.JPEG" alt="Portfolio customization overview showing editable zones: color theme, hero section, project cards, navigation menu, and typography" title="" class="doc-image">
+</p>
+<h2 id="in-this-guide">In this guide</h2>
+<ul>
+<li><a href="#before-you-start-recommended-workflow">Before you start: recommended workflow</a></li>
+<li><a href="#customizing-colors-and-theme">Customizing colors and theme</a></li>
+<li><a href="#customizing-typography">Customizing typography</a></li>
+<li><a href="#editing-the-hero-section">Editing the hero section</a></li>
+<li><a href="#editing-the-about-section">Editing the about section</a></li>
+<li><a href="#adding-and-editing-project-cards">Adding and editing project cards</a></li>
+<li><a href="#customizing-the-navigation-menu">Customizing the navigation menu</a></li>
+<li><a href="#editing-the-servicesskills-section">Editing the services/skills section</a></li>
+<li><a href="#customizing-the-contact-section">Customizing the contact section</a></li>
+<li><a href="#adding-a-completely-new-page">Adding a completely new page</a></li>
+<li><a href="#customizing-the-404-page">Customizing the 404 page</a></li>
+<li><a href="#working-with-multi-language-support">Working with multi-language support</a></li>
+<li><a href="#responsive-design-considerations">Responsive design considerations</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#frequently-asked-questions">Frequently asked questions</a></li>
+<li><a href="#next-steps">Next steps</a></li>
+</ul>
+<hr>
+<h2 id="before-you-start-recommended-workflow">Before you start: recommended workflow</h2>
+<p>  Customization involves editing plain HTML and CSS directly — there&#39;s no visual editor or admin panel. This is intentional: it keeps the project lightweight, fast, and fully under your control with no vendor lock-in.</p>
+<blockquote>
+<p><strong>Tip</strong><br>Before making changes, create a new Git branch so you can experiment freely and revert if needed:</p>
+<pre><code class="language-bash">git checkout -b customize-homepage
+</code></pre>
+<p>Once you&#39;re happy with your changes, merge back into <code>main</code>:</p>
+<pre><code class="language-bash">git checkout main
+git merge customize-homepage
+git push
+</code></pre>
+</blockquote>
+<p>  Keep your local preview server running while you work (see the <a href="https://smartgentools.com/docs/portfolio-website-getting-started-guide/#step-6-preview-locally">Getting Started guide</a>) so you can see changes reflected immediately after saving each file.</p>
+<pre><code class="language-bash">npx serve .
+</code></pre>
+<p>  Refresh your browser after each save to see the update.</p>
+<hr>
+<h2 id="customizing-colors-and-theme">Customizing colors and theme</h2>
+<p>  All color values are centralized as <strong>CSS custom properties (variables)</strong> at the top of the main stylesheet — this is the single most impactful place to start customizing.</p>
+<h3 id="step-1-locate-the-theme-variables">Step 1 — Locate the theme variables</h3>
+<p>  Open <code>assets/css/style.css</code> and find the <code>:root</code> block near the top of the file:</p>
+<pre><code class="language-css">:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --accent-color: #f59e0b;
+  --background-color: #ffffff;
+  --text-color: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+  --card-background: #f9fafb;
+}
+</code></pre>
+<h3 id="step-2-change-the-values">Step 2 — Change the values</h3>
+<p>  Every other style rule in the file references these variables, so changing them updates the entire site consistently:</p>
+<pre><code class="language-css">:root {
+  --primary-color: #059669;    /* Changed from blue to green */
+  --secondary-color: #047857;
+  --accent-color: #f97316;
+  --background-color: #ffffff;
+  --text-color: #111827;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+  --card-background: #f0fdf4;
+}
+</code></pre>
+<blockquote>
+<p><strong>Note</strong><br>You never need to search-and-replace colors throughout the file. Because every button, link, and highlight references <code>var(--primary-color)</code> instead of a hardcoded hex value, updating the variable once cascades everywhere automatically.</p>
+</blockquote>
+<h3 id="step-3-enable-dark-mode-optional">Step 3 — Enable dark mode (optional)</h3>
+<p>  If you want to support a dark theme, add a second variable set scoped to a <code>.dark-mode</code> class:</p>
+<pre><code class="language-css">.dark-mode {
+  --background-color: #0f172a;
+  --text-color: #f1f5f9;
+  --text-muted: #94a3b8;
+  --card-background: #1e293b;
+  --border-color: #334155;
+}
+</code></pre>
+<p>  Then add a simple toggle script in <code>assets/js/theme-toggle.js</code>:</p>
+<pre><code class="language-javascript">const toggleBtn = document.querySelector(&#39;#theme-toggle&#39;);
+const body = document.body;
+
+// Restore saved preference on load
+if (localStorage.getItem(&#39;theme&#39;) === &#39;dark&#39;) {
+  body.classList.add(&#39;dark-mode&#39;);
+}
+
+toggleBtn.addEventListener(&#39;click&#39;, () =&gt; {
+  body.classList.toggle(&#39;dark-mode&#39;);
+  localStorage.setItem(&#39;theme&#39;, body.classList.contains(&#39;dark-mode&#39;) ? &#39;dark&#39; : &#39;light&#39;);
+});
+</code></pre>
+<p>  And a toggle button in <code>index.html</code>:</p>
+<pre><code class="language-html">&lt;button id=&quot;theme-toggle&quot; aria-label=&quot;Toggle dark mode&quot;&gt;🌙&lt;/button&gt;
+</code></pre>
+<h3 id="color-palette-reference-table">Color palette reference table</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Purpose</th>
+<th>Where It&#39;s Used</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--primary-color</code></td>
+<td>Main brand color</td>
+<td>Buttons, links, active nav item</td>
+</tr>
+<tr>
+<td><code>--secondary-color</code></td>
+<td>Hover/darker variant</td>
+<td>Button hover states</td>
+</tr>
+<tr>
+<td><code>--accent-color</code></td>
+<td>Highlight/call-to-action</td>
+<td>Badges, &quot;New&quot; tags, CTA buttons</td>
+</tr>
+<tr>
+<td><code>--background-color</code></td>
+<td>Page background</td>
+<td><code>body</code> background</td>
+</tr>
+<tr>
+<td><code>--text-color</code></td>
+<td>Main body text</td>
+<td>Paragraphs, headings</td>
+</tr>
+<tr>
+<td><code>--text-muted</code></td>
+<td>Secondary text</td>
+<td>Captions, dates, descriptions</td>
+</tr>
+<tr>
+<td><code>--card-background</code></td>
+<td>Card/panel backgrounds</td>
+<td>Project cards, service cards</td>
+</tr>
+<tr>
+<td><code>--border-color</code></td>
+<td>Dividers and outlines</td>
+<td>Card borders, <code>&lt;hr&gt;</code> elements</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Tip</strong><br>Use a tool like <a href="https://coolors.co/">coolors.co</a> or <a href="https://www.realtimecolors.com/">realtimecolors.com</a> to generate a cohesive palette before editing — pasting your primary color in and exploring complementary shades saves a lot of trial and error.</p>
+</blockquote>
+<hr>
+<h2 id="customizing-typography">Customizing typography</h2>
+<p>  Font settings live in the same <code>:root</code> block:</p>
+<pre><code class="language-css">:root {
+  --font-heading: &#39;Poppins&#39;, sans-serif;
+  --font-body: &#39;Inter&#39;, sans-serif;
+}
+</code></pre>
+<h3 id="changing-fonts">Changing fonts</h3>
+<ol>
+<li><p>Choose fonts from <a href="https://fonts.google.com/">Google Fonts</a></p>
+</li>
+<li><p>Add the <code>&lt;link&gt;</code> tag to the <code>&lt;head&gt;</code> of every HTML page (or a shared partial if your setup uses one):</p>
+<pre><code class="language-html">&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;family=Inter:wght@400;500&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+</code></pre>
+</li>
+<li><p>Update the CSS variables to match:</p>
+<pre><code class="language-css">:root {
+  --font-heading: &#39;Poppins&#39;, sans-serif;
+  --font-body: &#39;Inter&#39;, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+body, p, a, li {
+  font-family: var(--font-body);
+}
+</code></pre>
+</li>
+</ol>
+<blockquote>
+<p><strong>Warning</strong><br>Limit yourself to 2-3 font weights per typeface (e.g., 400, 600, 700). Loading every available weight significantly increases page load time — each additional weight is a separate file download.</p>
+</blockquote>
+<hr>
+<h2 id="editing-the-hero-section">Editing the hero section</h2>
+<p>  The hero section is the first thing visitors see — it lives near the top of <code>index.html</code>.</p>
+<pre><code class="language-html">&lt;section class=&quot;hero&quot;&gt;
+  &lt;div class=&quot;hero-content&quot;&gt;
+    &lt;h1&gt;Hi, I&#39;m &lt;span class=&quot;highlight&quot;&gt;Your Name&lt;/span&gt;&lt;/h1&gt;
+    &lt;p class=&quot;hero-subtitle&quot;&gt;Full-Stack Developer &amp; Open Source Enthusiast&lt;/p&gt;
+    &lt;p class=&quot;hero-description&quot;&gt;
+      I build tools and platforms that solve real problems —
+      from developer utilities to full-scale web applications.
+    &lt;/p&gt;
+    &lt;div class=&quot;hero-buttons&quot;&gt;
+      &lt;a href=&quot;#projects&quot; class=&quot;btn btn-primary&quot;&gt;View My Work&lt;/a&gt;
+      &lt;a href=&quot;contact.html&quot; class=&quot;btn btn-outline&quot;&gt;Get In Touch&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;hero-image&quot;&gt;
+    &lt;img src=&quot;assets/images/profile.jpg&quot; alt=&quot;Your Name&quot;&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+<h3 id="what-to-customize-here">What to customize here</h3>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>What to Change</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;h1&gt;</code> text</td>
+<td>Your name and a short tagline</td>
+</tr>
+<tr>
+<td><code>.hero-subtitle</code></td>
+<td>Your role/title (e.g., &quot;Full-Stack Developer&quot;)</td>
+</tr>
+<tr>
+<td><code>.hero-description</code></td>
+<td>1-2 sentence value proposition</td>
+</tr>
+<tr>
+<td><code>.hero-buttons</code> links</td>
+<td>Point to your actual sections/pages</td>
+</tr>
+<tr>
+<td><code>assets/images/profile.jpg</code></td>
+<td>Replace with your own photo (same filename, or update the <code>src</code> path)</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Tip</strong><br>Keep <code>.hero-description</code> under 200 characters. This section is the highest-visibility text on your entire site — visitors decide whether to keep scrolling within seconds of reading it.</p>
+</blockquote>
+<hr>
+<h2 id="editing-the-about-section">Editing the about section</h2>
+<p>  Found further down in <code>index.html</code>:</p>
+<pre><code class="language-html">&lt;section class=&quot;about&quot; id=&quot;about&quot;&gt;
+  &lt;h2&gt;About Me&lt;/h2&gt;
+  &lt;div class=&quot;about-content&quot;&gt;
+    &lt;p&gt;
+      Write 2-4 paragraphs here about your background, what drives you,
+      and what kind of work you&#39;re looking for or currently doing.
+    &lt;/p&gt;
+    &lt;div class=&quot;about-stats&quot;&gt;
+      &lt;div class=&quot;stat&quot;&gt;
+        &lt;span class=&quot;stat-number&quot;&gt;5+&lt;/span&gt;
+        &lt;span class=&quot;stat-label&quot;&gt;Years Experience&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;stat&quot;&gt;
+        &lt;span class=&quot;stat-number&quot;&gt;20+&lt;/span&gt;
+        &lt;span class=&quot;stat-label&quot;&gt;Projects Completed&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+<p>  Simply edit the paragraph text and update <code>.stat-number</code>/<code>.stat-label</code> pairs to reflect real numbers. You can add or remove <code>.stat</code> blocks freely — the CSS grid layout adjusts automatically to however many you include.</p>
+<hr>
+<h2 id="adding-and-editing-project-cards">Adding and editing project cards</h2>
+<p>  Projects are the core of any developer portfolio. Each project is a repeatable card block:</p>
+<pre><code class="language-html">&lt;section class=&quot;projects&quot; id=&quot;projects&quot;&gt;
+  &lt;h2&gt;Featured Projects&lt;/h2&gt;
+  &lt;div class=&quot;project-grid&quot;&gt;
+
+    &lt;div class=&quot;project-card&quot;&gt;
+      &lt;img src=&quot;assets/images/projects/smartgen.png&quot; alt=&quot;SmartGen Platform&quot;&gt;
+      &lt;div class=&quot;project-info&quot;&gt;
+        &lt;h3&gt;SmartGen&lt;/h3&gt;
+        &lt;p&gt;A developer tools and blog platform with 40+ free browser-based utilities.&lt;/p&gt;
+        &lt;div class=&quot;project-tags&quot;&gt;
+          &lt;span class=&quot;tag&quot;&gt;JavaScript&lt;/span&gt;
+          &lt;span class=&quot;tag&quot;&gt;Static Site&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;project-links&quot;&gt;
+          &lt;a href=&quot;https://smartgentools.com&quot; target=&quot;_blank&quot;&gt;Live Demo&lt;/a&gt;
+          &lt;a href=&quot;https://github.com/yourusername/smartgen&quot; target=&quot;_blank&quot;&gt;Source Code&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Duplicate this block for each additional project --&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+<h3 id="adding-a-new-project">Adding a new project</h3>
+<p>  To add another project, copy the entire <code>.project-card</code> block and update:</p>
+<ol>
+<li><code>src</code> — path to a screenshot (recommended size: 1200×675px, <code>.webp</code> format for smaller file size)</li>
+<li><code>alt</code> — descriptive alt text (matters for SEO and accessibility)</li>
+<li><code>&lt;h3&gt;</code> — project name</li>
+<li><code>&lt;p&gt;</code> — 1-2 sentence description</li>
+<li><code>.project-tags</code> — technologies used</li>
+<li><code>.project-links</code> — live demo and/or source code URLs</li>
+</ol>
+<blockquote>
+<p><strong>Note</strong><br>The <code>.project-grid</code> uses CSS Grid with <code>auto-fit</code>, so adding more cards automatically reflows the layout — you don&#39;t need to manually manage columns or rows.</p>
+</blockquote>
+<h3 id="removing-the-demoplaceholder-projects">Removing the demo/placeholder projects</h3>
+<p>  If the forked repo includes example projects you don&#39;t want, simply delete their entire <code>.project-card</code> block. There&#39;s no minimum number required — the grid works correctly with any number of cards, including just one.</p>
+<hr>
+<h2 id="customizing-the-navigation-menu">Customizing the navigation menu</h2>
+<p>  The nav bar appears at the top of every page. Find it near the top of <code>index.html</code>:</p>
+<pre><code class="language-html">&lt;nav class=&quot;navbar&quot;&gt;
+  &lt;div class=&quot;nav-logo&quot;&gt;Your Name&lt;/div&gt;
+  &lt;ul class=&quot;nav-links&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#projects&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;blog.html&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;contact.html&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<h3 id="adding-a-new-nav-item">Adding a new nav item</h3>
+<p>  Add a new <code>&lt;li&gt;</code> following the same pattern:</p>
+<pre><code class="language-html">&lt;li&gt;&lt;a href=&quot;resume.html&quot;&gt;Resume&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+<blockquote>
+<p><strong>Warning</strong><br>If your new nav link points to a section on the same page (like <code>#about</code>), make sure a matching <code>id=&quot;about&quot;</code> exists on that section. If it points to a separate page (like <code>resume.html</code>), make sure that file actually exists in your project root — otherwise visitors will hit a 404.</p>
+</blockquote>
+<h3 id="making-the-active-page-highlight">Making the active page highlight</h3>
+<p>  Add this small script to <code>assets/js/nav-active.js</code> to automatically highlight the current page in the nav:</p>
+<pre><code class="language-javascript">const currentPath = window.location.pathname.split(&#39;/&#39;).pop() || &#39;index.html&#39;;
+document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
+  if (link.getAttribute(&#39;href&#39;) === currentPath) {
+    link.classList.add(&#39;active&#39;);
+  }
+});
+</code></pre>
+<hr>
+<h2 id="editing-the-servicesskills-section">Editing the services/skills section</h2>
+<p>  This section typically displays your core skills or service offerings as a card grid:</p>
+<pre><code class="language-html">&lt;section class=&quot;services&quot; id=&quot;services&quot;&gt;
+  &lt;h2&gt;What I Do&lt;/h2&gt;
+  &lt;div class=&quot;services-grid&quot;&gt;
+    &lt;div class=&quot;service-card&quot;&gt;
+      &lt;div class=&quot;service-icon&quot;&gt;💻&lt;/div&gt;
+      &lt;h3&gt;Web Development&lt;/h3&gt;
+      &lt;p&gt;Building fast, responsive websites and web applications.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;service-card&quot;&gt;
+      &lt;div class=&quot;service-icon&quot;&gt;🛠️&lt;/div&gt;
+      &lt;h3&gt;Developer Tools&lt;/h3&gt;
+      &lt;p&gt;Creating utilities that solve real workflow problems.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+<p>  Emoji icons work well for quick customization without needing an icon library, but you can also use SVG icons or an icon font — just replace the <code>.service-icon</code> content with an <code>&lt;svg&gt;</code> or <code>&lt;i&gt;</code> tag matching whichever icon system you prefer.</p>
+<hr>
+<h2 id="customizing-the-contact-section">Customizing the contact section</h2>
+<p>  Located in <code>contact.html</code>:</p>
+<pre><code class="language-html">&lt;section class=&quot;contact&quot;&gt;
+  &lt;h2&gt;Get In Touch&lt;/h2&gt;
+  &lt;p&gt;Have a project in mind or just want to connect? Reach out below.&lt;/p&gt;
+
+  &lt;div class=&quot;contact-methods&quot;&gt;
+    &lt;a href=&quot;mailto:you@example.com&quot; class=&quot;contact-item&quot;&gt;
+      📧 you@example.com
+    &lt;/a&gt;
+    &lt;a href=&quot;https://github.com/yourusername&quot; class=&quot;contact-item&quot; target=&quot;_blank&quot;&gt;
+      🔗 GitHub
+    &lt;/a&gt;
+    &lt;a href=&quot;https://linkedin.com/in/yourprofile&quot; class=&quot;contact-item&quot; target=&quot;_blank&quot;&gt;
+      💼 LinkedIn
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+<blockquote>
+<p><strong>Note</strong><br>The <code>setup.sh</code> script (from the Getting Started guide) already populates your email, GitHub, and LinkedIn links here. This section is mainly for adding <strong>additional</strong> contact methods (Twitter/X, Discord, a scheduling link like Calendly, etc.) beyond the defaults.</p>
+</blockquote>
+<h3 id="adding-a-working-contact-form-optional">Adding a working contact form (optional)</h3>
+<p>  Since this is a static site, a traditional form <code>POST</code> won&#39;t work without a backend. Two free options:</p>
+<p>  <strong>Using Netlify Forms</strong> (if hosted on Netlify):</p>
+<pre><code class="language-html">&lt;form name=&quot;contact&quot; method=&quot;POST&quot; data-netlify=&quot;true&quot;&gt;
+  &lt;input type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Your Name&quot; required&gt;
+  &lt;input type=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Your Email&quot; required&gt;
+  &lt;textarea name=&quot;message&quot; placeholder=&quot;Your Message&quot; required&gt;&lt;/textarea&gt;
+  &lt;button type=&quot;submit&quot;&gt;Send Message&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+<p>  <strong>Using Formspree</strong> (works on any host):</p>
+<pre><code class="language-html">&lt;form action=&quot;https://formspree.io/f/YOUR_FORM_ID&quot; method=&quot;POST&quot;&gt;
+  &lt;input type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Your Name&quot; required&gt;
+  &lt;input type=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Your Email&quot; required&gt;
+  &lt;textarea name=&quot;message&quot; placeholder=&quot;Your Message&quot; required&gt;&lt;/textarea&gt;
+  &lt;button type=&quot;submit&quot;&gt;Send Message&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+<p>  Sign up free at <a href="https://formspree.io/">formspree.io</a> to get your form ID.</p>
+<hr>
+<h2 id="adding-a-completely-new-page">Adding a completely new page</h2>
+<p>  Sometimes you need an entirely new page — a resume page, a detailed case study, a testimonials page.</p>
+<h3 id="step-1-duplicate-an-existing-simple-page">Step 1 — Duplicate an existing simple page</h3>
+<p>  Use <code>contact.html</code> as a template since it has a simpler structure than <code>index.html</code>:</p>
+<pre><code class="language-bash">cp contact.html resume.html
+</code></pre>
+<h3 id="step-2-update-the-content">Step 2 — Update the content</h3>
+<p>  Open <code>resume.html</code> and replace the <code>&lt;main&gt;</code> content with your new page&#39;s content, keeping the <code>&lt;head&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;footer&gt;</code> sections intact so styling and navigation stay consistent.</p>
+<h3 id="step-3-update-meta-tags">Step 3 — Update meta tags</h3>
+<p>  Every page needs unique meta tags for SEO:</p>
+<pre><code class="language-html">&lt;head&gt;
+  &lt;title&gt;Resume - Your Name&lt;/title&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;View my professional resume, experience, and skills.&quot;&gt;
+  &lt;link rel=&quot;canonical&quot; href=&quot;https://yourdomain.com/resume.html&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+<h3 id="step-4-add-it-to-navigation">Step 4 — Add it to navigation</h3>
+<p>  Follow the <a href="#customizing-the-navigation-menu">navigation customization steps above</a> to link to your new page from the nav menu.</p>
+<h3 id="step-5-add-it-to-your-sitemap">Step 5 — Add it to your sitemap</h3>
+<p>  Open <code>sitemap.xml</code> and add a new entry:</p>
+<pre><code class="language-xml">&lt;url&gt;
+  &lt;loc&gt;https://yourdomain.com/resume.html&lt;/loc&gt;
+  &lt;lastmod&gt;2026-07-08&lt;/lastmod&gt;
+  &lt;changefreq&gt;monthly&lt;/changefreq&gt;
+  &lt;priority&gt;0.7&lt;/priority&gt;
+&lt;/url&gt;
+</code></pre>
+<blockquote>
+<p><strong>Tip</strong><br>Forgetting to update the sitemap is one of the most common reasons a new page takes longer to get indexed by search engines. It&#39;s a quick step that&#39;s easy to skip.</p>
+</blockquote>
+<hr>
+<h2 id="customizing-the-404-page">Customizing the 404 page</h2>
+<p>  Found in <code>404.html</code> — this displays when a visitor hits a broken/missing link.</p>
+<pre><code class="language-html">&lt;div class=&quot;error-page&quot;&gt;
+  &lt;h1&gt;404&lt;/h1&gt;
+  &lt;p&gt;Oops! The page you&#39;re looking for doesn&#39;t exist.&lt;/p&gt;
+  &lt;a href=&quot;index.html&quot; class=&quot;btn btn-primary&quot;&gt;Go Back Home&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+<p>  Customize the message, and consider adding helpful links (to your blog, projects section, or a search bar) to reduce bounce rate when visitors land here by mistake.</p>
+<blockquote>
+<p><strong>Note</strong><br>If deploying to <strong>GitHub Pages</strong>, <code>404.html</code> in your repo root is automatically used for any unmatched URL — no extra configuration needed. Netlify and Vercel also detect this file automatically by default.</p>
+</blockquote>
+<hr>
+<h2 id="working-with-multi-language-support">Working with multi-language support</h2>
+<p>  The <code>i18n/</code> folder contains scaffolding for supporting multiple languages, structured as JSON key-value files:</p>
+<pre><code class="language-json">// i18n/en.json
+{
+  &quot;nav.about&quot;: &quot;About&quot;,
+  &quot;nav.projects&quot;: &quot;Projects&quot;,
+  &quot;hero.title&quot;: &quot;Hi, I&#39;m&quot;,
+  &quot;hero.subtitle&quot;: &quot;Full-Stack Developer&quot;
+}
+</code></pre>
+<pre><code class="language-json">// i18n/bn.json (example: Bengali)
+{
+  &quot;nav.about&quot;: &quot;সম্পর্কে&quot;,
+  &quot;nav.projects&quot;: &quot;প্রজেক্ট&quot;,
+  &quot;hero.title&quot;: &quot;হ্যালো, আমি&quot;,
+  &quot;hero.subtitle&quot;: &quot;ফুল-স্ট্যাক ডেভেলপার&quot;
+}
+</code></pre>
+<p>  A small loader script reads the browser&#39;s language preference (or a manual toggle) and swaps text content accordingly:</p>
+<pre><code class="language-javascript">async function loadLanguage(lang) {
+  const res = await fetch(`i18n/${lang}.json`);
+  const strings = await res.json();
+
+  document.querySelectorAll(&#39;[data-i18n]&#39;).forEach(el =&gt; {
+    const key = el.getAttribute(&#39;data-i18n&#39;);
+    if (strings[key]) el.textContent = strings[key];
+  });
+}
+</code></pre>
+<p>  Corresponding HTML uses <code>data-i18n</code> attributes instead of hardcoded text:</p>
+<pre><code class="language-html">&lt;h1 data-i18n=&quot;hero.title&quot;&gt;Hi, I&#39;m&lt;/h1&gt;
+</code></pre>
+<blockquote>
+<p><strong>Warning</strong><br>This scaffolding is provided as a starting point, not a complete i18n solution. For production multi-language sites with many pages, consider whether a dedicated i18n library is worth the added complexity versus this lightweight approach.</p>
+</blockquote>
+<hr>
+<h2 id="responsive-design-considerations">Responsive design considerations</h2>
+<p>  The existing CSS uses mobile-first responsive breakpoints. When adding new sections, follow the same pattern:</p>
+<pre><code class="language-css">/* Base styles: mobile first */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</code></pre>
+<blockquote>
+<p><strong>Tip</strong><br>Always test new sections at three widths: <strong>375px</strong> (mobile), <strong>768px</strong> (tablet), and <strong>1440px</strong> (desktop) using your browser&#39;s DevTools device toolbar (<code>Ctrl+Shift+M</code> / <code>Cmd+Shift+M</code>) before considering a change complete.</p>
+</blockquote>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="my-css-changes-arenand39t-showing-up">My CSS changes aren&#39;t showing up</h3>
+<p>  Browsers aggressively cache CSS files. Try:</p>
+<ol>
+<li>Hard refresh: <code>Ctrl+Shift+R</code> (Windows/Linux) or <code>Cmd+Shift+R</code> (Mac)</li>
+<li>Or open DevTools → Network tab → check &quot;Disable cache&quot; while DevTools is open</li>
+</ol>
+<h3 id="layout-broke-after-adding-a-new-project-card">Layout broke after adding a new project card</h3>
+<p>  Almost always caused by an unclosed HTML tag. Check that your new <code>.project-card</code> block has matching opening/closing tags — a missing <code>&lt;/div&gt;</code> will cascade layout issues to everything after it.</p>
+<h3 id="new-page-shows-unstyledplain-html">New page shows unstyled/plain HTML</h3>
+<p>  Confirm the <code>&lt;link&gt;</code> tag to your stylesheet is present and the path is correct:</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/style.css&quot;&gt;
+</code></pre>
+<p>  If your new page lives in a subfolder, adjust the relative path accordingly (e.g., <code>../assets/css/style.css</code>).</p>
+<h3 id="fonts-not-loading-after-changing-google-fonts-link">Fonts not loading after changing Google Fonts link</h3>
+<p>  Confirm the <code>&lt;link&gt;</code> tags are inside <code>&lt;head&gt;</code>, not <code>&lt;body&gt;</code>, and that you copied the <strong>exact</strong> URL from Google Fonts (including all requested weights) — a mismatched font-family name between the <code>&lt;link&gt;</code> and your CSS <code>font-family</code> value is the most common cause.</p>
+<h3 id="dark-mode-toggle-doesnand39t-persist-after-page-reload">Dark mode toggle doesn&#39;t persist after page reload</h3>
+<p>  Confirm <code>localStorage.setItem()</code> is being called correctly and that the restore-on-load check runs <strong>before</strong> the rest of the page renders (placing the script tag near the top of <code>&lt;body&gt;</code>, or using the <code>defer</code> attribute correctly, avoids a visible &quot;flash&quot; of the wrong theme).</p>
+<hr>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+  <details>
+  <summary><strong>Can I completely redesign the layout instead of just changing colors?</strong></summary><p>  Yes. Since this is plain HTML/CSS, you can restructure sections, change the grid system, or rewrite the CSS entirely. The only requirement is keeping the blog system&#39;s expected HTML structure intact in <code>blog.html</code> and <code>blog-loader.html</code> if you want the automated blog pipeline to keep working.<br>  </details></p>
+  <details>
+  <summary><strong>Do I need to know CSS Grid/Flexbox to customize this?</strong></summary><p>  Basic familiarity helps for structural changes (like changing how many columns the project grid shows), but simple changes — colors, text, fonts, adding/removing cards using the existing patterns — require no CSS layout knowledge at all.<br>  </details></p>
+  <details>
+  <summary><strong>Will customizing break the automated blog system?</strong></summary><p>  Not if you leave <code>blog.html</code>, <code>blog-loader.html</code>, and the <code>blogs/</code>/<code>blog_uploads/</code> folders untouched structurally. You can safely restyle these pages visually (colors, fonts) without breaking the underlying JSON-fetching logic.<br>  </details></p>
+  <details>
+  <summary><strong>How do I add animations or scroll effects?</strong></summary><p>  For simple effects, CSS <code>transition</code> and <code>@keyframes</code> handle most cases without any JavaScript. For scroll-triggered animations (elements fading in as you scroll), consider the lightweight <code>Intersection Observer API</code> — it requires no external library and is well-supported in all modern browsers.<br>  </details></p>
+  <details>
+  <summary><strong>Can I use a CSS framework like Tailwind instead of the existing stylesheet?</strong></summary><p>  Yes, but this requires rewriting most HTML class names and setting up a build step (since Tailwind&#39;s utility classes are typically compiled). This is a larger undertaking than incremental customization — only recommended if you&#39;re comfortable maintaining a build pipeline going forward.<br>  </details></p>
+<hr>
+<h2 id="next-steps">Next steps</h2>
+<p>  You&#39;ve now covered the full customization surface of the portfolio. From here:</p>
+<ul>
+<li><strong><a href="/docs/portfolio-website-deployment-blog-system-guide/">Deployment &amp; Blog System Guide</a></strong> — if you haven&#39;t deployed yet, or want to start publishing blog posts</li>
+<li><strong><a href="/docs/portfolio-website-getting-started-guide/">Getting Started Guide</a></strong> — for initial setup reference</li>
+<li>Start writing your first blog post using the <a href="/docs/portfolio-deployment-and-blog-system/#writing-posts-in-markdown">blog system guide</a> to begin building content regularly</li>
+</ul>
+<h2 id="further-reading">Further reading</h2>
+<ul>
+<li><a href="https://github.com/bayzed123/sayadbayezid-portfolio-/blob/main/WIKI.md">WIKI.md</a> — full technical reference</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">MDN CSS Custom Properties Guide</a> — deeper reference on CSS variables used throughout this theme</li>
+<li><a href="https://github.com/bayzed123/sayadbayezid-portfolio-/issues">Repository Issues</a> — report bugs or request features</li>
+<li><a href="https://smartgentools.com/blog/">More Resources</a></li>
+</ul>
+<div align="center">
+  <table width="100%">
+    <tr>
+      <td align="left" width="50%">
+        <p>Previous</p>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-customization-guide/">Portfolio Customization</a></b>
+      </td>
+      <td align="right" width="50%">
+        <p>Next</p>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-api-script-reference/">Portfolio API Reference</a></b>
+      </td>
+    </tr>
+  </table>
+</div><hr>
+<h3 id="help-and-support">Help and support</h3>
+<p><strong>Did you find what you needed?</strong><br>Thank you! We received your feedback.<br><br><br><a href="https://smartgentools.com/privacy/">Privacy policy</a></p>
+<br><p><strong>Help us make these docs great!</strong><br>All GitHub docs are open source. See something that&#39;s wrong or unclear? Submit a pull request.<br><br><br><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md"><kbd>⑂ Make a contribution</kbd></a><br><br><br><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md">Learn how to contribute</a></p>
+<br><p><strong>Still need help?</strong><br>👥 <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions">Ask the SmartGen community</a><br>💬 <a href="https://smartgentools.com/contact/">Contact support</a>  </p>
+<br><p><strong>Legal</strong><br><small>© 2026 SmartGen. &nbsp; <a href="https://smartgentools.com/terms/">Terms</a> &nbsp; <a href="https://smartgentools.com/privacy/">Privacy</a> &nbsp; <a href="https://smartgentools.com/tools/">Expert services</a> &nbsp; <a href="https://smartgentools.com/blog/">Blog</a></small></p>
+
+                    </div>
+                    
+        <div class="doc-footer">
+            <div class="nav-table">
+                <div class="nav-row">
+                    <div class="nav-cell nav-prev">
+                        
+                            <div class="nav-label">← Previous</div>
+                            <a href="/docs/developer-guidelines/" class="nav-link-footer">developer Guidelines</a>
+                        
+                    </div>
+                    <div class="nav-cell nav-next">
+                        
+                            <div class="nav-label">Next →</div>
+                            <a href="/docs/advanced-workflow-configuration/" class="nav-link-footer">Advanced Workflow Configuration</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="help-section">
+                <div class="help-box">
+                    <h3>Did you find what you needed?</h3>
+                    <p>Thank you! We received your feedback.</p>
+                </div>
+
+                <div class="help-box">
+                    <h3>Help us make these docs great!</h3>
+                    <p>All SmartGen docs are open source. See something that's wrong or unclear? Submit a pull request.</p>
+                    <a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md" class="btn-contribute">⑂ Make a contribution</a>
+                    <p><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md" class="link-secondary">Learn how to contribute</a></p>
+                </div>
+
+                <div class="help-box">
+                    <h3>Still need help?</h3>
+                    <p>👥 <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions" class="link-secondary">Ask the SmartGen community</a></p>
+                    <p>💬 <a href="https://smartgentools.com/contact/" class="link-secondary">Contact support</a></p>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p><small>© 2026 SmartGen. &nbsp; <a href="https://smartgentools.com/terms/">Terms</a> &nbsp; <a href="https://smartgentools.com/privacy/">Privacy</a> &nbsp; <a href="https://smartgentools.com/tools/">Expert services</a> &nbsp; <a href="https://smartgentools.com/blog/">Blog</a></small></p>
+            </div>
+        </div>
+    
+                </article>
+
+                
+        <aside class="toc-sidebar desktop-only">
+            <div class="toc-heading">On This Page</div>
+            <ul class="toc-list">
+                
+                    <li class="toc-item toc-main">
+                        <a href="#in-this-guide" class="toc-link">In this guide</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#before-you-start-recommended-workflow" class="toc-link">Before you start: recommended workflow</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#customizing-colors-and-theme" class="toc-link">Customizing colors and theme</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#step-1-locate-the-theme-variables" class="toc-link">Step 1 — Locate the theme variables</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#step-2-change-the-values" class="toc-link">Step 2 — Change the values</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#step-3-enable-dark-mode-optional" class="toc-link">Step 3 — Enable dark mode (optional)</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#color-palette-reference-table" class="toc-link">Color palette reference table</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#customizing-typography" class="toc-link">Customizing typography</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#changing-fonts" class="toc-link">Changing fonts</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#editing-the-hero-section" class="toc-link">Editing the hero section</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#what-to-customize-here" class="toc-link">What to customize here</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#editing-the-about-section" class="toc-link">Editing the about section</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#adding-and-editing-project-cards" class="toc-link">Adding and editing project cards</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#adding-a-new-project" class="toc-link">Adding a new project</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#removing-the-demoplaceholder-projects" class="toc-link">Removing the demo/placeholder projects</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#customizing-the-navigation-menu" class="toc-link">Customizing the navigation menu</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#adding-a-new-nav-item" class="toc-link">Adding a new nav item</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#making-the-active-page-highlight" class="toc-link">Making the active page highlight</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#editing-the-servicesskills-section" class="toc-link">Editing the services/skills section</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#customizing-the-contact-section" class="toc-link">Customizing the contact section</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#adding-a-working-contact-form-optional" class="toc-link">Adding a working contact form (optional)</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#adding-a-completely-new-page" class="toc-link">Adding a completely new page</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#step-1-duplicate-an-existing-simple-page" class="toc-link">Step 1 — Duplicate an existing simple page</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#step-2-update-the-content" class="toc-link">Step 2 — Update the content</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#step-3-update-meta-tags" class="toc-link">Step 3 — Update meta tags</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#step-4-add-it-to-navigation" class="toc-link">Step 4 — Add it to navigation</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#step-5-add-it-to-your-sitemap" class="toc-link">Step 5 — Add it to your sitemap</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#customizing-the-404-page" class="toc-link">Customizing the 404 page</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#working-with-multi-language-support" class="toc-link">Working with multi-language support</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#responsive-design-considerations" class="toc-link">Responsive design considerations</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#troubleshooting" class="toc-link">Troubleshooting</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#my-css-changes-arenand39t-showing-up" class="toc-link">My CSS changes aren&#39;t showing up</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#layout-broke-after-adding-a-new-project-card" class="toc-link">Layout broke after adding a new project card</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#new-page-shows-unstyledplain-html" class="toc-link">New page shows unstyled/plain HTML</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#fonts-not-loading-after-changing-google-fonts-link" class="toc-link">Fonts not loading after changing Google Fonts link</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#dark-mode-toggle-doesnand39t-persist-after-page-reload" class="toc-link">Dark mode toggle doesn&#39;t persist after page reload</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#frequently-asked-questions" class="toc-link">Frequently asked questions</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#next-steps" class="toc-link">Next steps</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#further-reading" class="toc-link">Further reading</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#help-and-support" class="toc-link">Help and support</a>
+                    </li>
+                
+            </ul>
+        </aside>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/docs.js"></script>
+    <script>
+      document.querySelectorAll('.toc-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      const tocLinks = document.querySelectorAll('.toc-link');
+      const headings = Array.from(tocLinks).map(link =>
+        document.querySelector(link.getAttribute('href'))
+      ).filter(Boolean);
+
+      window.addEventListener('scroll', () => {
+        let current = null;
+        headings.forEach(h => {
+          if (h.getBoundingClientRect().top < 100) current = h;
+        });
+        tocLinks.forEach(link => link.classList.remove('active'));
+        if (current) {
+          const activeLink = document.querySelector('.toc-link[href="#' + current.id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    </script>
+</body>
+</html>

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Getting Started - SmartGen Docs</title>
-    <meta name="description" content="Learn how to set up and start contributing to SmartGen.">
-    <link rel="canonical" href="https://smartgentools.com/docs/getting-started/">
+    <title>How to Deploy an Open-Source Developer Portfolio (Free, in Minutes) - SmartGen Docs</title>
+    <meta name="description" content="A complete step-by-step guide to forking, customizing, and deploying a free open-source developer portfolio website — with automated blogging built in.">
+    <link rel="canonical" href="https://smartgentools.com/docs/how-to-deploy-an-open-source-developer-portfolio-free-in-minutes/">
 
     <link rel="stylesheet" href="../../assets/css/docs.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -87,7 +87,7 @@
         <aside id="sidebar" class="sidebar">
             <nav class="sidebar-nav">
                 <div class="nav-section-title">Guides</div>
-                <a href="/docs/getting-started/" class="nav-link active">
+                <a href="/docs/getting-started/" class="nav-link ">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Getting Started
                 </a>
@@ -95,11 +95,11 @@
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Directory Structure for Protfolio
                 </a>
-                <a href="/docs/getting-started/" class="nav-link active">
+                <a href="/docs/getting-started/" class="nav-link ">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Getting Started
                 </a>
-                <a href="/docs/getting-started/" class="nav-link active">
+                <a href="/docs/getting-started/" class="nav-link ">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Getting Started
                 </a>
@@ -187,7 +187,7 @@
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Building a Fast Client-Side Search Feature Without a Backend
                 </a>
-                <a href="/docs/how-to-deploy-an-open-source-developer-portfolio-free-in-minutes/" class="nav-link ">
+                <a href="/docs/how-to-deploy-an-open-source-developer-portfolio-free-in-minutes/" class="nav-link active">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     How to Deploy an Open-Source Developer Portfolio (Free, in Minutes)
                 </a>
@@ -221,66 +221,215 @@
             <div class="doc-layout-with-toc">
                 <article class="doc-article">
                     <div class="breadcrumb">
-                        <span>Docs</span> <span class="separator">/</span> <span>Guides</span>
+                        <span>Docs</span> <span class="separator">/</span> <span>Open Source Projects</span>
                     </div>
-                    <h1 class="doc-title">Getting Started</h1>
+                    <h1 class="doc-title">How to Deploy an Open-Source Developer Portfolio (Free, in Minutes)</h1>
                     <div class="doc-body">
-                        <h1 id="getting-started">Getting Started</h1>
-<p>Welcome to the SmartGen project! This guide will help you get your local environment ready for development.</p>
-<h1 id="architecture-andamp-tech-stack">Architecture &amp; Tech Stack</h1>
-<p>SmartGen employs a lightweight, modular, and client-side focused architecture designed for speed, privacy, and ease of maintenance. The core philosophy revolves around processing all operations directly within the user&#39;s browser, eliminating the need for server-side data handling for most utilities.</p>
-<h2 id="core-architectural-principles">Core Architectural Principles</h2>
+                        <h1 id="how-to-deploy-an-open-source-developer-portfolio-free-in-minutes">How to Deploy an Open-Source Developer Portfolio (Free, in Minutes)</h1>
+<p>  Every developer needs a portfolio — but building one from scratch takes time you&#39;d rather spend on actual projects. In this guide, I&#39;ll walk you through deploying a <strong>free, open-source developer portfolio</strong> with a built-in automated blogging system, using the project I built and maintain: <a href="https://github.com/bayzed123/sayadbayezid-portfolio-"><code>sayadbayezid-portfolio-</code></a>.</p>
+<p>  By the end of this guide, you&#39;ll have your own personalized portfolio live on the internet — with zero backend, zero hosting cost, and a blog system that publishes new posts automatically every time you push to GitHub.</p>
+<h2 id="why-this-project-exists">Why This Project Exists</h2>
+<p>  Most portfolio templates fall into two categories:</p>
+<ol>
+<li><strong>Static templates</strong> — look nice, but updating content means editing raw HTML every time</li>
+<li><strong>Full CMS platforms</strong> (WordPress, etc.) — powerful, but overkill for a personal portfolio, and require hosting/maintenance costs</li>
+</ol>
+<p>  This project takes a third approach: a <strong>100% static site</strong> with an <strong>automated Markdown-to-blog pipeline</strong>, so you get the simplicity of static hosting with the convenience of a real blogging workflow.</p>
+<h2 id="what-you-get-out-of-the-box">What You Get Out of the Box</h2>
 <ul>
-<li><strong>Client-Side Processing:</strong> All primary utility functions, such as QR code generation, image compression, and text conversions, are executed entirely within the user&#39;s web browser. This ensures that no sensitive user data is transmitted to or stored on external servers, upholding the &quot;Privacy First&quot; core value.</li>
-<li><strong>Modular Design:</strong> The application is structured into independent tool modules, each residing in its own directory (<code>/[tool-folder]/index.html</code>). This modularity facilitates easy development, maintenance, and scaling of individual tools without impacting the entire platform.</li>
-<li><strong>Static Site Generation (SSG) with Dynamic Injection:</strong> The platform leverages static HTML pages for individual tools and content, enhanced by client-side JavaScript for dynamic UI elements, navigation, and consistent theming. This approach combines the benefits of fast loading times and robust SEO with a rich user experience.</li>
+<li>A complete personal portfolio homepage (<code>index.html</code>)</li>
+<li>A working blog system that converts Markdown or HTML posts into rendered pages automatically</li>
+<li>GitHub Actions automation — no manual build steps required</li>
+<li>SEO essentials: sitemap, robots.txt, meta tags</li>
+<li>A 404 error page, contact page, and privacy policy template</li>
+<li>Multi-language support scaffolding (<code>i18n/</code>)</li>
+<li>MIT-style license with attribution requirement</li>
 </ul>
-<h2 id="technical-stack">Technical Stack</h2>
-<p>SmartGen&#39;s technical stack is lean and efficient, primarily relying on modern web standards and a minimal set of JavaScript libraries for specific functionalities.</p>
-<h3 id="frontend">Frontend</h3>
-<ul>
-<li><strong>HTML5:</strong> The foundational markup language for structuring content.</li>
-<li><strong>CSS3:</strong> Utilized for styling, layout, and responsive design, with global styles defined in <code>/assets/css/style.css</code>.</li>
-<li><strong>JavaScript (ES6+):</strong> Powers all client-side logic, dynamic content injection, and tool functionalities. Key global scripts include:<ul>
-<li><code>/assets/js/app.js</code>: Manages global UI elements like navigation (<code>injectNavbar()</code>), footer (<code>injectFooter()</code>), and theme toggling (<code>initTheme()</code>). It also handles mobile responsiveness with a dynamic sidebar.</li>
-<li><code>/assets/js/search-data.js</code>: A centralized JSON data source containing metadata for all tools, used for search functionality and related tool recommendations.</li>
-<li><code>/assets/js/related-tools.js</code>: Dynamically injects related tool suggestions on individual tool pages.</li>
-<li><code>/assets/js/search.js</code>: Implements the client-side live search UI on the homepage.</li>
-</ul>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p>  Before deploying, it helps to understand the data flow:</p>
+<pre><code class="language-text">You write a .md or .html file
+        ↓
+Place it in blog_uploads/
+        ↓
+git push
+        ↓
+GitHub Action (.github/workflows/blog_automation.yml) triggers
+        ↓
+scripts/convert_blogs.py runs automatically
+        ↓
+Generates JSON in blogs/
+        ↓
+blog-loader.html fetches JSON and renders the live post
+</code></pre>
+<p>  Everything except the blog pipeline is static — no build tools needed to run the core site.</p>
+<h2 id="step-1-fork-the-repository">Step 1 — Fork the Repository</h2>
+<p>  Go to <a href="https://github.com/bayzed123/sayadbayezid-portfolio-">github.com/bayzed123/sayadbayezid-portfolio-</a> and click <strong>Fork</strong> in the top right.</p>
+<p>  Then clone your fork locally:</p>
+<pre><code class="language-bash">git clone https://github.com/YOUR_USERNAME/sayadbayezid-portfolio-.git
+cd sayadbayezid-portfolio-
+</code></pre>
+<h2 id="step-2-run-the-setup-script">Step 2 — Run the Setup Script</h2>
+<p>  The repo includes an interactive script that personalizes every file for you — no manual find-and-replace needed.</p>
+<pre><code class="language-bash">bash setup.sh
+</code></pre>
+<p>  You&#39;ll be prompted for:</p>
+<pre><code class="language-text">Enter your full name: 
+Enter your website URL: 
+Enter your GitHub username: 
+Enter your LinkedIn profile URL: 
+Enter your email address: 
+Enter your blog URL: 
+</code></pre>
+<p>  This automatically updates <code>index.html</code>, <code>blog.html</code>, <code>blog-loader.html</code>, <code>README.md</code>, <code>LICENSE</code>, and <code>scripts/convert_blogs.py</code> with your details in one pass.</p>
+<h2 id="step-3-install-blog-system-dependencies">Step 3 — Install Blog System Dependencies</h2>
+<p>  The automated blog pipeline is powered by a small Python script:</p>
+<pre><code class="language-bash">pip install beautifulsoup4 markdown
+</code></pre>
+<h2 id="step-4-test-the-blog-system-locally">Step 4 — Test the Blog System Locally</h2>
+<p>  Create a test post at <code>blog_uploads/test-post.md</code>:</p>
+<pre><code class="language-markdown"># My First Blog Post
+
+This is a test of the automated blog system.
+
+## Section 1
+Content goes here.
+</code></pre>
+<p>  Then run the converter manually to confirm it works:</p>
+<pre><code class="language-bash">python scripts/convert_blogs.py
+</code></pre>
+<p>  Check the <code>blogs/</code> folder — you should see a new JSON file generated for your post.</p>
+<h2 id="step-5-preview-locally">Step 5 — Preview Locally</h2>
+<pre><code class="language-bash">npx serve .
+</code></pre>
+<p>  Visit <code>http://localhost:3000</code> and confirm your homepage and blog page render correctly.</p>
+<h2 id="step-6-deploy-to-production">Step 6 — Deploy to Production</h2>
+<p>  Since this is a fully static site, you have several free hosting options:</p>
+<h3 id="github-pages-recommended">GitHub Pages (Recommended)</h3>
+<ol>
+<li>Push your personalized repo to GitHub</li>
+<li>Go to <strong>Settings → Pages</strong></li>
+<li>Set source to the <code>main</code> branch, root folder</li>
+<li>Your site goes live at:<pre><code class="language-text">https://YOUR_USERNAME.github.io/sayadbayezid-portfolio-/
+</code></pre>
 </li>
-</ul>
-<h3 id="build-andamp-content-management">Build &amp; Content Management</h3>
+</ol>
+<h3 id="netlify">Netlify</h3>
+<ol>
+<li><a href="https://www.netlify.com/">netlify.com</a> → <strong>New site from Git</strong></li>
+<li>Connect your repo</li>
+<li>Leave build command empty, publish directory as <code>/</code></li>
+<li>Deploy — future pushes auto-redeploy</li>
+</ol>
+<h3 id="custom-domain">Custom Domain</h3>
+<p>  Edit the <code>CNAME</code> file with your domain, then point your DNS records to your hosting provider.</p>
+<h2 id="step-7-publishing-new-blog-posts-going-forward">Step 7 — Publishing New Blog Posts Going Forward</h2>
+<p>  Once deployed, publishing is as simple as:</p>
+<pre><code class="language-bash"># 1. Write your post
+vim blog_uploads/my-new-post.md
+
+# 2. Commit and push
+git add blog_uploads/my-new-post.md
+git commit -m &quot;blog: add new post about X&quot;
+git push
+</code></pre>
+<p>  GitHub Actions handles the rest — no manual build step, no server access required.</p>
+<h2 id="content-guidelines-for-best-results">Content Guidelines for Best Results</h2>
+<h3 id="markdown-posts">Markdown Posts</h3>
+<p>  Use standard heading hierarchy:</p>
+<pre><code class="language-markdown"># Post Title
+Intro paragraph.
+
+## Main Section
+Content.
+
+### Sub-section
+More detail.
+</code></pre>
+<h3 id="html-posts-for-more-control">HTML Posts (for more control)</h3>
+<p>  For richer formatting — Table of Contents, FAQ accordions — use HTML directly:</p>
+<pre><code class="language-html">&lt;h1&gt;Your Blog Post Title&lt;/h1&gt;
+&lt;meta name=&quot;description&quot; content=&quot;A brief summary&quot;&gt;
+
+&lt;section class=&quot;toc&quot;&gt;
+  &lt;h3&gt;Table of Contents&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;Section 1&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;section1&quot;&gt;
+  &lt;h2&gt;Section 1&lt;/h2&gt;
+  &lt;p&gt;Your content here&lt;/p&gt;
+&lt;/section&gt;
+</code></pre>
+<p>  Interactive FAQ blocks are also supported:</p>
+<pre><code class="language-html">&lt;button class=&quot;accordion&quot;&gt;Q: Your Question Here?&lt;/button&gt;
+&lt;div class=&quot;panel&quot;&gt;&lt;p&gt;A: Your answer here.&lt;/p&gt;&lt;/div&gt;
+</code></pre>
+<h2 id="common-issues-andamp-fixes">Common Issues &amp; Fixes</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Blog post doesn&#39;t appear after push</td>
+<td>Check the <strong>Actions</strong> tab on GitHub — confirm <code>blog_automation.yml</code> ran successfully</td>
+</tr>
+<tr>
+<td>GitHub Pages shows 404</td>
+<td>Confirm branch/folder is set correctly under Settings → Pages; wait 1–2 min after first deploy</td>
+</tr>
+<tr>
+<td>Custom domain not resolving</td>
+<td>Double-check <code>CNAME</code> has no <code>https://</code> prefix; DNS can take up to 24 hours</td>
+</tr>
+<tr>
+<td>Images not rendering in blog posts</td>
+<td>Confirm image URLs are absolute (<code>https://...</code>), not relative paths</td>
+</tr>
+</tbody></table>
+<h2 id="why-i-built-it-this-way">Why I Built It This Way</h2>
+<p>  As someone running a developer tools platform (<a href="https://smartgentools.com">SmartGen</a>) alongside a personal portfolio, I wanted a system where:</p>
 <ul>
-<li><strong>Node.js:</strong> Used as a runtime environment for build scripts.</li>
-<li><strong>pnpm:</strong> The package manager for project dependencies, as indicated in <code>Contributing.md</code> [1].</li>
-<li><strong><code>scripts/build-blog.js</code>:</strong> A custom Node.js script responsible for generating the blog section. It processes Markdown files from <code>blog-posts/</code>, uses <code>front-matter</code> for metadata extraction, and <code>marked</code> for Markdown-to-HTML conversion. It generates static HTML pages for blog posts and a <code>blog.json</code> index.</li>
-<li><strong><code>front-matter</code>:</strong> A JavaScript library for parsing front matter from Markdown files [2].</li>
-<li><strong><code>marked</code>:</strong> A Markdown parser and compiler, used for converting blog post content into HTML [3].</li>
-<li><strong><code>slugify</code>:</strong> A utility for converting strings into URL-friendly slugs [4].</li>
+<li>Publishing a new post takes <strong>under 2 minutes</strong> — write Markdown, push, done</li>
+<li>There&#39;s <strong>zero hosting cost</strong> and <strong>zero server maintenance</strong></li>
+<li>The blog and portfolio share the same static-first philosophy that powers SmartGen&#39;s own tools</li>
 </ul>
-<h3 id="development-environment-andamp-tools">Development Environment &amp; Tools</h3>
+<p>  This project is the result — and it&#39;s free for anyone to fork and use as their own developer portfolio.</p>
+<h2 id="try-it-yourself">Try It Yourself</h2>
 <ul>
-<li><strong>Git:</strong> Version control system for managing the codebase.</li>
-<li><strong>GitHub:</strong> Hosting for the repository and collaborative development workflows.</li>
-<li><strong>VS Code:</strong> Recommended integrated development environment (IDE) [1].</li>
-<li><strong>ESLint &amp; Prettier:</strong> Code linting and formatting tools to maintain code quality and consistency [1].</li>
-<li><strong>Vitest:</strong> A fast unit test framework used for testing JavaScript/TypeScript code [1].</li>
-<li><strong>TypeScript:</strong> While not universally applied across all tools, <code>Contributing.md</code> suggests basic knowledge of React/TypeScript for code contributions, indicating its use in certain parts or for future development [1].</li>
+<li>🔗 <strong>Repository:</strong> <a href="https://github.com/bayzed123/sayadbayezid-portfolio-">github.com/bayzed123/sayadbayezid-portfolio-</a></li>
+<li>📖 <strong>Full technical docs:</strong> See <code>WIKI.md</code> in the repo for deep customization details</li>
+<li>⭐ <strong>Star it</strong> if you find it useful — it helps other developers discover the project</li>
 </ul>
-<h2 id="file-structure-overview">File Structure Overview</h2>
-<p>The project follows a clear and organized file structure to ensure maintainability:</p>
+<h2 id="related-guides">Related Guides</h2>
 <ul>
-<li><code>/assets/</code>: Contains global CSS (<code>style.css</code>), JavaScript (<code>app.js</code>, <code>search-data.js</code>, <code>related-tools.js</code>, <code>search.js</code>), and other static assets.</li>
-<li><code>/blog/</code>: Houses blog-related files, including <code>blog.json</code> and individual blog post directories.</li>
-<li><code>/blog-posts/</code>: Markdown source files for blog content.</li>
-<li><code>/data/</code>: Stores data files like <code>changelog.json</code>.</li>
-<li><code>/scripts/</code>: Contains Node.js build scripts, such as <code>build-blog.js</code>.</li>
-<li><code>/[tool-folder]/</code>: Each individual utility resides in its own directory, typically containing an <code>index.html</code> file and any tool-specific JavaScript or CSS.</li>
-<li><code>/about/</code>, <code>/contact/</code>, <code>/privacy/</code>, <code>/terms/</code>, <code>/disclaimer/</code>: Static pages for legal information and site details.</li>
+<li><a href="/docs/portfolio-website-getting-started-guide/">Protfolio Getting Started with SmartGen</a></li>
+<li><a href="/docs/portfolio-website-deployment-blog-system-guide/">Protfolio Deployment Guide</a></li>
 </ul>
-<p>This architecture ensures that SmartGen remains performant, privacy-respecting, and easy to contribute to, aligning with its open-source nature.</p>
-<h2 id="references">References</h2>
-<p>[1] Contributing to SmartGen. (n.d.). <em>GitHub</em>. Retrieved from <a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md">https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md</a><br>[2] front-matter. (n.d.). <em>npm</em>. Retrieved from <a href="https://www.npmjs.com/package/front-matter">https://www.npmjs.com/package/front-matter</a><br>[3] marked. (n.d.). <em>npm</em>. Retrieved from <a href="https://www.npmjs.com/package/marked">https://www.npmjs.com/package/marked</a><br>[4] slugify. (n.d.). <em>npm</em>. Retrieved from <a href="https://www.npmjs.com/package/slugify">https://www.npmjs.com/package/slugify</a></p>
+<hr>
+<div align="center">
+  <table width="100%">
+    <tr>
+      <td align="left" width="50%">
+        <p>Previous</p>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-customization-guide/">Portfolio Customization</a></b>
+      </td>
+      <td align="right" width="50%">
+        <p>Next</p>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-api-script-reference/">Portfolio API Reference</a></b>
+      </td>
+    </tr>
+  </table>
+</div><hr>
+<h3 id="help-and-support">Help and support</h3>
+<p><strong>Did you find what you needed?</strong><br>Thank you! We received your feedback.<br><br><br><a href="https://smartgentools.com/privacy/">Privacy policy</a></p>
+<br><p><strong>Help us make these docs great!</strong><br>All GitHub docs are open source. See something that&#39;s wrong or unclear? Submit a pull request.<br><br><br><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md"><kbd>⑂ Make a contribution</kbd></a><br><br><br><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md">Learn how to contribute</a></p>
+<br><p><strong>Still need help?</strong><br>👥 <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions">Ask the SmartGen community</a><br>💬 <a href="https://smartgentools.com/contact/">Contact support</a>  </p>
+<br><p><strong>Legal</strong><br><small>© 2026 SmartGen. &nbsp; <a href="https://smartgentools.com/terms/">Terms</a> &nbsp; <a href="https://smartgentools.com/privacy/">Privacy</a> &nbsp; <a href="https://smartgentools.com/tools/">Expert services</a> &nbsp; <a href="https://smartgentools.com/blog/">Blog</a></small></p>
 
                     </div>
                     
@@ -288,13 +437,13 @@
             <div class="nav-table">
                 <div class="nav-row">
                     <div class="nav-cell nav-prev">
-                        <div class="nav-empty"></div>
+                        
+                            <div class="nav-label">← Previous</div>
+                            <a href="/docs/quickstart-guide/" class="nav-link-footer">Quickstart Guide</a>
+                        
                     </div>
                     <div class="nav-cell nav-next">
-                        
-                            <div class="nav-label">Next →</div>
-                            <a href="/docs/directory-structure-for-protfolio/" class="nav-link-footer">Directory Structure for Protfolio</a>
-                        
+                        <div class="nav-empty"></div>
                     </div>
                 </div>
             </div>
@@ -334,31 +483,87 @@
             <ul class="toc-list">
                 
                     <li class="toc-item toc-main">
-                        <a href="#core-architectural-principles" class="toc-link">Core Architectural Principles</a>
+                        <a href="#why-this-project-exists" class="toc-link">Why This Project Exists</a>
                     </li>
                 
                     <li class="toc-item toc-main">
-                        <a href="#technical-stack" class="toc-link">Technical Stack</a>
-                    </li>
-                
-                    <li class="toc-item toc-sub">
-                        <a href="#frontend" class="toc-link">Frontend</a>
-                    </li>
-                
-                    <li class="toc-item toc-sub">
-                        <a href="#build-andamp-content-management" class="toc-link">Build &amp; Content Management</a>
-                    </li>
-                
-                    <li class="toc-item toc-sub">
-                        <a href="#development-environment-andamp-tools" class="toc-link">Development Environment &amp; Tools</a>
+                        <a href="#what-you-get-out-of-the-box" class="toc-link">What You Get Out of the Box</a>
                     </li>
                 
                     <li class="toc-item toc-main">
-                        <a href="#file-structure-overview" class="toc-link">File Structure Overview</a>
+                        <a href="#architecture-overview" class="toc-link">Architecture Overview</a>
                     </li>
                 
                     <li class="toc-item toc-main">
-                        <a href="#references" class="toc-link">References</a>
+                        <a href="#step-1-fork-the-repository" class="toc-link">Step 1 — Fork the Repository</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#step-2-run-the-setup-script" class="toc-link">Step 2 — Run the Setup Script</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#step-3-install-blog-system-dependencies" class="toc-link">Step 3 — Install Blog System Dependencies</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#step-4-test-the-blog-system-locally" class="toc-link">Step 4 — Test the Blog System Locally</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#step-5-preview-locally" class="toc-link">Step 5 — Preview Locally</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#step-6-deploy-to-production" class="toc-link">Step 6 — Deploy to Production</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#github-pages-recommended" class="toc-link">GitHub Pages (Recommended)</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#netlify" class="toc-link">Netlify</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#custom-domain" class="toc-link">Custom Domain</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#step-7-publishing-new-blog-posts-going-forward" class="toc-link">Step 7 — Publishing New Blog Posts Going Forward</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#content-guidelines-for-best-results" class="toc-link">Content Guidelines for Best Results</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#markdown-posts" class="toc-link">Markdown Posts</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#html-posts-for-more-control" class="toc-link">HTML Posts (for more control)</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#common-issues-andamp-fixes" class="toc-link">Common Issues &amp; Fixes</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#why-i-built-it-this-way" class="toc-link">Why I Built It This Way</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#try-it-yourself" class="toc-link">Try It Yourself</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#related-guides" class="toc-link">Related Guides</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#help-and-support" class="toc-link">Help and support</a>
                     </li>
                 
             </ul>

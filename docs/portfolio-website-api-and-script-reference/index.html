@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website: API & Script Reference - SmartGen Docs</title>
+    <meta name="description" content="Complete technical reference for every script, function, and data structure powering the open-source developer portfolio — setup.sh, convert_blogs.py, and all JavaScript modules.">
+    <link rel="canonical" href="https://smartgentools.com/docs/portfolio-website-api-and-script-reference/">
+
+    <link rel="stylesheet" href="../../assets/css/docs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+
+    <style>
+      .toc-sidebar { min-width: 200px; padding-left: 1.5rem; border-left: 1px solid #e5e7eb; }
+      .toc-heading { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: #888; margin-bottom: 0.75rem; }
+      .toc-list { list-style: none; padding: 0; margin: 0; }
+      .toc-list li { margin-bottom: 0.5rem; }
+      .toc-main a { font-size: 0.9rem; color: #444; text-decoration: none; }
+      .toc-sub a { font-size: 0.85rem; color: #777; text-decoration: none; padding-left: 1rem; display:block; }
+      .toc-link:hover, .toc-link.active { color: #3b82f6; font-weight: 500; }
+      .doc-layout-with-toc { display: flex; gap: 2rem; }
+      @media (max-width: 900px) { .toc-sidebar { display: none; } }
+      
+      /* GitHub-style Footer */
+      .doc-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; }
+      .nav-table { display: table; width: 100%; margin-bottom: 2rem; }
+      .nav-row { display: table-row; }
+      .nav-cell { display: table-cell; padding: 1rem; width: 50%; }
+      .nav-prev { text-align: left; padding-right: 2rem; }
+      .nav-next { text-align: right; padding-left: 2rem; border-left: 1px solid #e5e7eb; }
+      .nav-label { font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; font-weight: 500; }
+      .nav-link-footer { color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.05rem; }
+      .nav-link-footer:hover { text-decoration: underline; }
+      .nav-empty { height: 2.5rem; }
+      .footer-divider { margin: 2rem 0; border: none; border-top: 1px solid #e5e7eb; }
+      .help-section { margin: 2rem 0; }
+      .help-box { margin-bottom: 2rem; }
+      .help-box h3 { font-size: 1rem; font-weight: 600; margin: 0 0 0.5rem 0; }
+      .help-box p { margin: 0.5rem 0; color: #555; font-size: 0.95rem; line-height: 1.5; }
+      .btn-contribute { display: inline-block; padding: 0.5rem 1rem; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; color: #0969da; text-decoration: none; font-weight: 500; margin: 0.75rem 0; }
+      .btn-contribute:hover { background: #eaeef2; }
+      .link-secondary { color: #0969da; text-decoration: none; }
+      .link-secondary:hover { text-decoration: underline; }
+      .footer-legal { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; text-align: center; }
+      .footer-legal small { color: #666; font-size: 0.85rem; }
+      .footer-legal a { color: #0969da; text-decoration: none; }
+      .footer-legal a:hover { text-decoration: underline; }
+      
+      @media (max-width: 768px) {
+        .nav-cell { display: block; width: 100%; padding: 1rem 0; border-left: none; }
+        .nav-next { border-left: none; border-top: 1px solid #e5e7eb; padding-top: 1rem; text-align: left; }
+        .nav-prev { padding-right: 0; }
+      }
+    </style>
+</head>
+<body>
+    <header class="docs-header">
+        <div class="header-left">
+            <button id="mobile-menu-btn" class="icon-btn mobile-only" aria-label="Menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <a href="/" class="logo">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="color: var(--primary);"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                SmartGen Docs
+            </a>
+        </div>
+        <div class="header-right">
+            <div class="search-bar desktop-only">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" placeholder="Search or Ask AI..." readonly>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <a href="https://github.com/Sayadbayezid" target="_blank" class="icon-btn" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <div class="docs-layout">
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <aside id="sidebar" class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section-title">Guides</div>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/directory-structure-for-protfolio/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Directory Structure for Protfolio
+                </a>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/your-actual-folder-layout/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Your Actual Folder Layout
+                </a>
+                <a href="/docs/installation/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Installation
+                </a>
+                <a href="/docs/vite-optimization-guide-for-cicd/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Vite Optimization Guide for CI/CD
+                </a>
+                <a href="/docs/advanced-workflow-configuration/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Advanced Workflow Configuration
+                </a>
+                <a href="/docs/vite-config-quick-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Vite Config Quick Reference
+                </a>
+                <a href="/docs/about-the-team-and-contribution/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    About the Team & Contribution
+                </a>
+                <a href="/docs/railway-deployment-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Railway Deployment Guide
+                </a>
+                <a href="/docs/github-actions-configuration-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    GitHub Actions Configuration Guide
+                </a>
+                <a href="/docs/custom-environment-variables/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Custom Environment Variables
+                </a>
+                <a href="/docs/workflow-customization-summary/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Workflow Customization Summary
+                </a>
+                <a href="/docs/contributor-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Contributor Guide
+                </a>
+                <a href="/docs/complete-guide-protfolio/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    complete guide Protfolio
+                </a>
+                <a href="/docs/quickstart-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Quickstart Guide
+                </a><div class="nav-section-title">API Reference</div>
+                <a href="/docs/api-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    API Reference
+                </a><div class="nav-section-title">Portfolio Website</div>
+                <a href="/docs/portfolio-website-getting-started-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Getting Started Guide
+                </a>
+                <a href="/docs/portfolio-website-deployment-and-blog-system-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Deployment & Blog System Guide
+                </a>
+                <a href="/docs/portfolio-website-customization-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Customization Guide
+                </a>
+                <a href="/docs/portfolio-website-api-and-script-reference/" class="nav-link active">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: API & Script Reference
+                </a><div class="nav-section-title">overview</div>
+                <a href="/docs/quick-setup-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Quick Setup Guide
+                </a>
+                <a href="/docs/developer-guidelines/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    developer Guidelines
+                </a><div class="nav-section-title">Open Source Projects</div>
+                <a href="/docs/building-a-fast-client-side-search-feature-without-a-backend/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Building a Fast Client-Side Search Feature Without a Backend
+                </a>
+                <a href="/docs/how-to-deploy-an-open-source-developer-portfolio-free-in-minutes/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    How to Deploy an Open-Source Developer Portfolio (Free, in Minutes)
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="https://smartgentools.com" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                    Home
+                </a>
+                <a href="https://smartgentools.com/blog" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    Blog
+                </a>
+                <a href="https://smartgentools.com/about" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    About Us
+                </a>
+                <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions/1" target="_blank" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    Discussions <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+                <a href="https://smartgentools.com/privacy" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    Privacy & Legal
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="doc-layout-with-toc">
+                <article class="doc-article">
+                    <div class="breadcrumb">
+                        <span>Docs</span> <span class="separator">/</span> <span>Portfolio Website</span>
+                    </div>
+                    <h1 class="doc-title">Portfolio Website: API & Script Reference</h1>
+                    <div class="doc-body">
+                        <h1 id="portfolio-website-api-andamp-script-reference">Portfolio Website: API &amp; Script Reference</h1>
+<p>  This is the technical reference documentation for the internal scripts and functions that power the portfolio project. Unlike the previous guides — which walk through <em>tasks</em> — this page documents every function, parameter, and data structure so you can confidently extend or debug the codebase.</p>
+<blockquote>
+<p><strong>Repository:</strong> <a href="https://github.com/bayzed123/sayadbayezid-portfolio-">github.com/bayzed123/sayadbayezid-portfolio-</a></p>
+</blockquote>
+<hr>
+<h2 id="portfolio-website-documentation-series">📖 Portfolio Website Documentation Series</h2>
+<p>  This page is <strong>Part 4</strong> of a complete 4-part guide series. If you&#39;re following along step by step, here&#39;s the full path:</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Guide</th>
+<th>What You&#39;ll Learn</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1</strong></td>
+<td><a href="/docs/portfolio-website-getting-started-guide/">Getting Started Guide</a></td>
+<td>Fork, clone, install, and run the project locally</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><a href="/docs/portfolio-website-deployment-blog-system-guide/">Deployment &amp; Blog System Guide</a></td>
+<td>Deploy to GitHub Pages/Netlify/Vercel + publish blog posts</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><a href="/docs/portfolio-website-customization-guide/">Customization Guide</a></td>
+<td>Edit colors, sections, navigation, and add new pages</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>API &amp; Script Reference</strong> <em>(this page)</em></td>
+<td>Deep technical reference for every script and function</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Tip</strong><br>New to this project? Start with <a href="/docs/portfolio-website-getting-started-guide/">Step 1 — Getting Started</a> instead of this page. This reference is best used <em>after</em> you&#39;ve completed initial setup, when you want to understand or modify the underlying code.</p>
+</blockquote>
+<h2 id="in-this-guide">In this guide</h2>
+<ul>
+<li><a href="#setupsh-reference"><code>setup.sh</code> reference</a></li>
+<li><a href="#scriptsconvert_blogspy-reference"><code>scripts/convert_blogs.py</code> reference</a></li>
+<li><a href="#blog-json-data-structures">Blog JSON data structures</a></li>
+<li><a href="#blog-loaderhtml-javascript-reference"><code>blog-loader.html</code> JavaScript reference</a></li>
+<li><a href="#assetsjsnav-activejs-reference"><code>assets/js/nav-active.js</code> reference</a></li>
+<li><a href="#assetsjstheme-togglejs-reference"><code>assets/js/theme-toggle.js</code> reference</a></li>
+<li><a href="#i18n-loader-reference"><code>i18n</code> loader reference</a></li>
+<li><a href="#github-actions-workflow-reference">GitHub Actions workflow reference</a></li>
+<li><a href="#file-and-folder-reference">File and folder reference</a></li>
+<li><a href="#extending-the-codebase">Extending the codebase</a></li>
+<li><a href="#frequently-asked-questions">Frequently asked questions</a></li>
+</ul>
+<hr>
+<h2 id="setupsh-reference"><code>setup.sh</code> reference</h2>
+<p>  Interactive shell script that personalizes the project with your information across all relevant files in a single run.</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="language-bash">bash setup.sh
+</code></pre>
+<h3 id="prompts-and-variables">Prompts and variables</h3>
+<table>
+<thead>
+<tr>
+<th>Prompt</th>
+<th>Variable Name</th>
+<th>Example Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Full name</td>
+<td><code>$FULL_NAME</code></td>
+<td><code>Sayad Bayezid</code></td>
+</tr>
+<tr>
+<td>Website URL</td>
+<td><code>$WEBSITE_URL</code></td>
+<td><code>www.example.com</code></td>
+</tr>
+<tr>
+<td>GitHub username</td>
+<td><code>$GITHUB_USER</code></td>
+<td><code>bayzed123</code></td>
+</tr>
+<tr>
+<td>LinkedIn URL</td>
+<td><code>$LINKEDIN_URL</code></td>
+<td><code>linkedin.com/in/yourprofile</code></td>
+</tr>
+<tr>
+<td>Email address</td>
+<td><code>$EMAIL</code></td>
+<td><code>you@example.com</code></td>
+</tr>
+<tr>
+<td>Blog URL</td>
+<td><code>$BLOG_URL</code></td>
+<td><code>yourblog.blogspot.com</code></td>
+</tr>
+</tbody></table>
+<h3 id="internal-logic">Internal logic</h3>
+<pre><code class="language-bash">#!/bin/bash
+
+read -p &quot;Enter your full name: &quot; FULL_NAME
+read -p &quot;Enter your website URL: &quot; WEBSITE_URL
+read -p &quot;Enter your GitHub username: &quot; GITHUB_USER
+read -p &quot;Enter your LinkedIn profile URL: &quot; LINKEDIN_URL
+read -p &quot;Enter your email address: &quot; EMAIL
+read -p &quot;Enter your blog URL: &quot; BLOG_URL
+
+FILES=(&quot;index.html&quot; &quot;blog.html&quot; &quot;blog-loader.html&quot; &quot;README.md&quot; &quot;LICENSE&quot; &quot;scripts/convert_blogs.py&quot;)
+
+for file in &quot;${FILES[@]}&quot;; do
+  sed -i.bak &quot;s/PLACEHOLDER_NAME/$FULL_NAME/g&quot; &quot;$file&quot;
+  sed -i.bak &quot;s/PLACEHOLDER_WEBSITE/$WEBSITE_URL/g&quot; &quot;$file&quot;
+  sed -i.bak &quot;s/PLACEHOLDER_GITHUB/$GITHUB_USER/g&quot; &quot;$file&quot;
+  sed -i.bak &quot;s/PLACEHOLDER_LINKEDIN/$LINKEDIN_URL/g&quot; &quot;$file&quot;
+  sed -i.bak &quot;s/PLACEHOLDER_EMAIL/$EMAIL/g&quot; &quot;$file&quot;
+  sed -i.bak &quot;s/PLACEHOLDER_BLOG/$BLOG_URL/g&quot; &quot;$file&quot;
+  rm &quot;$file.bak&quot;
+done
+
+echo &quot;✅ Setup Complete!&quot;
+</code></pre>
+<blockquote>
+<p><strong>Note</strong><br>The script uses <code>sed</code> (stream editor) to perform find-and-replace across files. <code>sed -i.bak</code> creates a backup file first, then the script deletes it after a successful replacement — this is a safety pattern in case <code>sed</code> fails partway through on certain systems.</p>
+</blockquote>
+<h3 id="return-behavior">Return behavior</h3>
+<table>
+<thead>
+<tr>
+<th>Exit Condition</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>All prompts answered</td>
+<td>Prints success summary, exits <code>0</code></td>
+</tr>
+<tr>
+<td>Empty input on a prompt</td>
+<td>Placeholder remains unset in that field — script does not validate for empty strings</td>
+</tr>
+<tr>
+<td>File not found</td>
+<td><code>sed</code> silently skips missing files without halting the script</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Warning</strong><br><code>setup.sh</code> does <strong>not</strong> validate input format. Entering an invalid URL (missing <code>https://</code>, typos) will insert exactly what you typed. Double-check each generated file after running it.</p>
+</blockquote>
+<hr>
+<h2 id="scriptsconvertblogspy-reference"><code>scripts/convert_blogs.py</code> reference</h2>
+<p>  The core Python module that converts Markdown/HTML files in <code>blog_uploads/</code> into structured JSON consumed by the front end.</p>
+<h3 id="module-level-constants">Module-level constants</h3>
+<pre><code class="language-python">UPLOADS_DIR = &quot;blog_uploads&quot;
+OUTPUT_DIR = &quot;blogs&quot;
+</code></pre>
+<h3 id="function-slugifytitle">Function: <code>slugify(title)</code></h3>
+<p>  Converts a post title into a URL-safe slug.</p>
+<pre><code class="language-python">def slugify(title):
+    return title.lower().strip().replace(&quot; &quot;, &quot;-&quot;)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>title</code></td>
+<td><code>str</code></td>
+<td>The raw post title extracted from the <code>&lt;h1&gt;</code></td>
+</tr>
+</tbody></table>
+<p>  <strong>Returns:</strong> <code>str</code> — lowercase, space-to-hyphen converted string</p>
+<p>  <strong>Example:</strong></p>
+<pre><code class="language-python">slugify(&quot;My First Blog Post&quot;)
+# → &quot;my-first-blog-post&quot;
+</code></pre>
+<blockquote>
+<p><strong>Note</strong><br>This basic implementation does not strip punctuation. A title like <code>&quot;What&#39;s New?&quot;</code> produces <code>&quot;what&#39;s-new?&quot;</code> — special characters pass through unmodified. If you need stricter slugs, extend this function with a regex substitution (see <a href="#extending-the-codebase">Extending the codebase</a>).</p>
+</blockquote>
+<h3 id="function-extracttocsoup">Function: <code>extract_toc(soup)</code></h3>
+<p>  Scans parsed HTML for <code>&lt;h2&gt;</code>/<code>&lt;h3&gt;</code> tags, assigns each an <code>id</code>, and builds a Table of Contents list.</p>
+<pre><code class="language-python">def extract_toc(soup):
+    toc = []
+    for heading in soup.find_all([&quot;h2&quot;, &quot;h3&quot;]):
+        text = heading.get_text()
+        slug = slugify(text)
+        heading[&#39;id&#39;] = slug
+        toc.append({&quot;level&quot;: heading.name, &quot;text&quot;: text, &quot;slug&quot;: slug})
+    return toc
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>soup</code></td>
+<td><code>BeautifulSoup</code></td>
+<td>Parsed HTML tree of the post body</td>
+</tr>
+</tbody></table>
+<p>  <strong>Returns:</strong> <code>list[dict]</code> — each dict contains <code>level</code> (<code>&quot;h2&quot;</code> or <code>&quot;h3&quot;</code>), <code>text</code>, and <code>slug</code></p>
+<p>  <strong>Side effect:</strong> Mutates <code>soup</code> in place by adding an <code>id</code> attribute to each matched heading — required so TOC links (<code>#slug</code>) can jump to the correct element.</p>
+<h3 id="function-processmarkdownfilefilepath">Function: <code>process_markdown_file(filepath)</code></h3>
+<p>  The main per-file processor — reads a Markdown file, converts it to HTML, and extracts all metadata needed for the JSON output.</p>
+<pre><code class="language-python">def process_markdown_file(filepath):
+    with open(filepath, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+        raw = f.read()
+
+    html = markdown.markdown(raw, extensions=[&quot;extra&quot;, &quot;toc&quot;])
+    soup = BeautifulSoup(html, &quot;html.parser&quot;)
+
+    title_tag = soup.find(&quot;h1&quot;)
+    title = title_tag.get_text() if title_tag else &quot;Untitled&quot;
+    if title_tag:
+        title_tag.extract()
+
+    toc = extract_toc(soup)
+    excerpt = soup.find(&quot;p&quot;).get_text()[:160] if soup.find(&quot;p&quot;) else &quot;&quot;
+
+    return {
+        &quot;title&quot;: title,
+        &quot;slug&quot;: slugify(title),
+        &quot;excerpt&quot;: excerpt,
+        &quot;content&quot;: str(soup),
+        &quot;toc&quot;: toc,
+    }
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>filepath</code></td>
+<td><code>str</code></td>
+<td>Full path to the <code>.md</code> file being processed</td>
+</tr>
+</tbody></table>
+<p>  <strong>Returns:</strong> <code>dict</code> with keys <code>title</code>, <code>slug</code>, <code>excerpt</code>, <code>content</code>, <code>toc</code></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>title</code></td>
+<td><code>str</code></td>
+<td>Extracted from the first <code>&lt;h1&gt;</code>; defaults to <code>&quot;Untitled&quot;</code> if missing</td>
+</tr>
+<tr>
+<td><code>slug</code></td>
+<td><code>str</code></td>
+<td>URL-safe version of the title, used as filename and route</td>
+</tr>
+<tr>
+<td><code>excerpt</code></td>
+<td><code>str</code></td>
+<td>First 160 characters of the first paragraph — used in blog listing previews</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td><code>str</code></td>
+<td>Full rendered HTML body (with <code>&lt;h1&gt;</code> removed, heading <code>id</code>s injected)</td>
+</tr>
+<tr>
+<td><code>toc</code></td>
+<td><code>list[dict]</code></td>
+<td>Table of Contents structure from <code>extract_toc()</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Warning</strong><br>If a Markdown file has <strong>no</strong> <code># Heading</code>, the title defaults to <code>&quot;Untitled&quot;</code> and the slug becomes <code>&quot;untitled&quot;</code> — a second such file will silently overwrite the first&#39;s JSON output. Always include exactly one <code># Title</code> per post.</p>
+</blockquote>
+<h3 id="function-buildallposts">Function: <code>build_all_posts()</code></h3>
+<p>  Orchestrates the full batch process — iterates every file in <code>blog_uploads/</code>, processes it, writes individual JSON files, and rebuilds the master index.</p>
+<pre><code class="language-python">def build_all_posts():
+    index = []
+    for filename in os.listdir(UPLOADS_DIR):
+        if filename.endswith(&quot;.md&quot;):
+            filepath = os.path.join(UPLOADS_DIR, filename)
+            post = process_markdown_file(filepath)
+
+            out_path = os.path.join(OUTPUT_DIR, f&quot;{post[&#39;slug&#39;]}.json&quot;)
+            with open(out_path, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+                json.dump(post, f, ensure_ascii=False, indent=2)
+
+            index.append({
+                &quot;title&quot;: post[&quot;title&quot;],
+                &quot;slug&quot;: post[&quot;slug&quot;],
+                &quot;excerpt&quot;: post[&quot;excerpt&quot;]
+            })
+
+    with open(os.path.join(OUTPUT_DIR, &quot;index.json&quot;), &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+        json.dump(index, f, ensure_ascii=False, indent=2)
+</code></pre>
+<p>  <strong>Parameters:</strong> None (reads from module-level <code>UPLOADS_DIR</code> constant)</p>
+<p>  <strong>Returns:</strong> <code>None</code> — writes files as a side effect</p>
+<p>  <strong>Files written:</strong></p>
+<ul>
+<li><code>blogs/{slug}.json</code> — one per post</li>
+<li><code>blogs/index.json</code> — master list used by the blog listing page</li>
+</ul>
+<p>  <strong>Entry point:</strong></p>
+<pre><code class="language-python">if __name__ == &quot;__main__&quot;:
+    build_all_posts()
+</code></pre>
+<p>  This means running <code>python3 scripts/convert_blogs.py</code> directly triggers the full batch conversion — the same call GitHub Actions makes automatically on every push to <code>blog_uploads/</code>.</p>
+<hr>
+<h2 id="blog-json-data-structures">Blog JSON data structures</h2>
+<h3 id="individual-post-schema-blogsslugjson">Individual post schema — <code>blogs/{slug}.json</code></h3>
+<pre><code class="language-json">{
+  &quot;title&quot;: &quot;My First Blog Post&quot;,
+  &quot;slug&quot;: &quot;my-first-blog-post&quot;,
+  &quot;excerpt&quot;: &quot;This is a test of the automated blog system.&quot;,
+  &quot;content&quot;: &quot;&lt;p&gt;Full rendered HTML body...&lt;/p&gt;&lt;h2 id=\&quot;section-1\&quot;&gt;Section 1&lt;/h2&gt;...&quot;,
+  &quot;toc&quot;: [
+    { &quot;level&quot;: &quot;h2&quot;, &quot;text&quot;: &quot;Section 1&quot;, &quot;slug&quot;: &quot;section-1&quot; },
+    { &quot;level&quot;: &quot;h2&quot;, &quot;text&quot;: &quot;Section 2&quot;, &quot;slug&quot;: &quot;section-2&quot; }
+  ]
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Rendered as page <code>&lt;h1&gt;</code> by <code>blog-loader.html</code></td>
+</tr>
+<tr>
+<td><code>slug</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Used in the URL: <code>blog-loader.html?post=my-first-blog-post</code></td>
+</tr>
+<tr>
+<td><code>excerpt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Displayed on <code>blog.html</code> listing page</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Raw HTML — inserted via <code>innerHTML</code>, not sanitized</td>
+</tr>
+<tr>
+<td><code>toc</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Empty array <code>[]</code> if the post has no <code>##</code>/<code>###</code> headings</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Warning</strong><br><code>content</code> is inserted directly via <code>innerHTML</code> with no sanitization step. Since you control all input files yourself, this is safe for personal use — but <strong>never</strong> accept blog post uploads from untrusted third parties without adding an HTML sanitization library first, as this would otherwise be an XSS vulnerability.</p>
+</blockquote>
+<h3 id="index-schema-blogsindexjson">Index schema — <code>blogs/index.json</code></h3>
+<pre><code class="language-json">[
+  { &quot;title&quot;: &quot;My First Blog Post&quot;, &quot;slug&quot;: &quot;my-first-blog-post&quot;, &quot;excerpt&quot;: &quot;...&quot; },
+  { &quot;title&quot;: &quot;Second Post&quot;, &quot;slug&quot;: &quot;second-post&quot;, &quot;excerpt&quot;: &quot;...&quot; }
+]
+</code></pre>
+<p>  A flat array, ordered by filesystem iteration order (typically alphabetical by filename — <strong>not</strong> guaranteed to be chronological). See <a href="#extending-the-codebase">Extending the codebase</a> for adding date-based sorting.</p>
+<hr>
+<h2 id="blog-loaderhtml-javascript-reference"><code>blog-loader.html</code> JavaScript reference</h2>
+<h3 id="function-loadblogpostslug">Function: <code>loadBlogPost(slug)</code></h3>
+<p>  Fetches a single post&#39;s JSON and renders it into the page.</p>
+<pre><code class="language-javascript">async function loadBlogPost(slug) {
+  const res = await fetch(`/blogs/${slug}.json`);
+  const post = await res.json();
+
+  document.title = `${post.title} - Blog`;
+  document.querySelector(&#39;.post-title&#39;).textContent = post.title;
+  document.querySelector(&#39;.post-content&#39;).innerHTML = post.content;
+
+  renderToc(post.toc);
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>slug</code></td>
+<td><code>string</code></td>
+<td>Extracted from the URL query string (<code>?post=slug-name</code>)</td>
+</tr>
+</tbody></table>
+<p>  <strong>DOM dependencies:</strong> Requires elements with classes <code>.post-title</code> and <code>.post-content</code> present in <code>blog-loader.html</code>.</p>
+<p>  <strong>Failure mode:</strong> If <code>slug</code> doesn&#39;t match any existing JSON file, <code>fetch()</code> resolves with a 404 response, and <code>res.json()</code> throws — currently unhandled, resulting in a blank page. See <a href="#extending-the-codebase">Extending the codebase</a> for adding error handling.</p>
+<h3 id="function-rendertoctoc">Function: <code>renderToc(toc)</code></h3>
+<p>  Renders the Table of Contents sidebar from the <code>toc</code> array.</p>
+<pre><code class="language-javascript">function renderToc(toc) {
+  const container = document.querySelector(&#39;.toc-list&#39;);
+  container.innerHTML = toc.map(item =&gt;
+    `&lt;li class=&quot;toc-${item.level}&quot;&gt;&lt;a href=&quot;#${item.slug}&quot;&gt;${item.text}&lt;/a&gt;&lt;/li&gt;`
+  ).join(&#39;&#39;);
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>toc</code></td>
+<td><code>array</code></td>
+<td>The <code>toc</code> field from the post JSON</td>
+</tr>
+</tbody></table>
+<p>  <strong>DOM dependency:</strong> Requires an element with class <code>.toc-list</code>.</p>
+<p>  <strong>CSS hook:</strong> Generated <code>&lt;li&gt;</code> elements receive classes <code>toc-h2</code> or <code>toc-h3</code>, allowing indentation styling to differentiate heading levels in the sidebar.</p>
+<hr>
+<h2 id="assetsjsnav-activejs-reference"><code>assets/js/nav-active.js</code> reference</h2>
+<p>  Automatically highlights the current page&#39;s link in the navigation bar.</p>
+<pre><code class="language-javascript">const currentPath = window.location.pathname.split(&#39;/&#39;).pop() || &#39;index.html&#39;;
+document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
+  if (link.getAttribute(&#39;href&#39;) === currentPath) {
+    link.classList.add(&#39;active&#39;);
+  }
+});
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>currentPath</code></td>
+<td><code>string</code></td>
+<td>Current page&#39;s filename, extracted from the URL path</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Note</strong><br>This matches on exact <code>href</code> string equality. A link written as <code>href=&quot;index.html&quot;</code> will <strong>not</strong> match a URL path of <code>/</code> (root) — if using a custom domain where the homepage loads without a filename, extend this logic to also check for an empty string case (see <a href="#extending-the-codebase">Extending the codebase</a>).</p>
+</blockquote>
+<hr>
+<h2 id="assetsjstheme-togglejs-reference"><code>assets/js/theme-toggle.js</code> reference</h2>
+<p>  Handles dark/light mode switching with persistence via <code>localStorage</code>.</p>
+<pre><code class="language-javascript">const toggleBtn = document.querySelector(&#39;#theme-toggle&#39;);
+const body = document.body;
+
+if (localStorage.getItem(&#39;theme&#39;) === &#39;dark&#39;) {
+  body.classList.add(&#39;dark-mode&#39;);
+}
+
+toggleBtn.addEventListener(&#39;click&#39;, () =&gt; {
+  body.classList.toggle(&#39;dark-mode&#39;);
+  localStorage.setItem(&#39;theme&#39;, body.classList.contains(&#39;dark-mode&#39;) ? &#39;dark&#39; : &#39;light&#39;);
+});
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>localStorage Key</th>
+<th>Possible Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>theme</code></td>
+<td><code>&quot;dark&quot;</code> | <code>&quot;light&quot;</code></td>
+<td>Persisted user preference, read on every page load</td>
+</tr>
+</tbody></table>
+<p>  <strong>DOM dependency:</strong> Requires a button element with <code>id=&quot;theme-toggle&quot;</code>.</p>
+<p>  <strong>CSS dependency:</strong> Requires a <code>.dark-mode</code> class defined on <code>:root</code> or <code>body</code> with corresponding variable overrides (see <a href="/docs/portfolio-customization/#customizing-colors-and-theme">Customization Guide → Enable dark mode</a>).</p>
+<hr>
+<h2 id="i18n-loader-reference"><code>i18n</code> loader reference</h2>
+<h3 id="function-loadlanguagelang">Function: <code>loadLanguage(lang)</code></h3>
+<p>  Fetches a language JSON file and applies translated strings to matching DOM elements.</p>
+<pre><code class="language-javascript">async function loadLanguage(lang) {
+  const res = await fetch(`i18n/${lang}.json`);
+  const strings = await res.json();
+
+  document.querySelectorAll(&#39;[data-i18n]&#39;).forEach(el =&gt; {
+    const key = el.getAttribute(&#39;data-i18n&#39;);
+    if (strings[key]) el.textContent = strings[key];
+  });
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>lang</code></td>
+<td><code>string</code></td>
+<td>Language code matching a filename in <code>i18n/</code> (e.g., <code>&quot;en&quot;</code>, <code>&quot;bn&quot;</code>)</td>
+</tr>
+</tbody></table>
+<p>  <strong>DOM dependency:</strong> Elements must have a <code>data-i18n=&quot;key.name&quot;</code> attribute matching a key in the JSON file.</p>
+<p>  <strong>Failure mode:</strong> If a key in <code>data-i18n</code> doesn&#39;t exist in the loaded JSON, the element&#39;s <code>textContent</code> is left unchanged (falls back to whatever is in the HTML source by default) — this is a safe default, not a crash.</p>
+<h3 id="i18n-file-schema">i18n file schema</h3>
+<pre><code class="language-json">{
+  &quot;nav.about&quot;: &quot;About&quot;,
+  &quot;nav.projects&quot;: &quot;Projects&quot;,
+  &quot;hero.title&quot;: &quot;Hi, I&#39;m&quot;,
+  &quot;hero.subtitle&quot;: &quot;Full-Stack Developer&quot;
+}
+</code></pre>
+<p>  Flat key-value pairs — no nesting supported in the default implementation.</p>
+<hr>
+<h2 id="github-actions-workflow-reference">GitHub Actions workflow reference</h2>
+<h3 id="githubworkflowsblogautomationyml"><code>.github/workflows/blog_automation.yml</code></h3>
+<pre><code class="language-yaml">name: Blog Automation
+
+on:
+  push:
+    paths:
+      - &#39;blog_uploads/**&#39;
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: &#39;3.11&#39;
+
+      - name: Install dependencies
+        run: pip install beautifulsoup4 markdown
+
+      - name: Run conversion script
+        run: python scripts/convert_blogs.py
+
+      - name: Commit generated files
+        run: |
+          git config user.name &quot;github-actions[bot]&quot;
+          git config user.email &quot;github-actions[bot]@users.noreply.github.com&quot;
+          git add blogs/
+          git diff --staged --quiet || git commit -m &quot;auto: rebuild blog JSON&quot;
+          git push
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Trigger Field</th>
+<th>Value</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>on.push.paths</code></td>
+<td><code>blog_uploads/**</code></td>
+<td>Workflow only runs when files inside this folder change — pushes elsewhere in the repo don&#39;t trigger it</td>
+</tr>
+<tr>
+<td><code>runs-on</code></td>
+<td><code>ubuntu-latest</code></td>
+<td>GitHub-hosted runner, no self-hosted infrastructure needed</td>
+</tr>
+<tr>
+<td><code>python-version</code></td>
+<td><code>&#39;3.11&#39;</code></td>
+<td>Pinned version — update here if you need a newer/older Python for compatibility</td>
+</tr>
+</tbody></table>
+<p>  <strong>Permissions note:</strong> This workflow pushes commits back to the repository. Ensure <strong>Settings → Actions → General → Workflow permissions</strong> is set to &quot;Read and write permissions&quot; for this to succeed.</p>
+<hr>
+<h2 id="file-and-folder-reference">File and folder reference</h2>
+<p>  Quick-lookup table of every functional file in the project:</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Type</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>index.html</code></td>
+<td>HTML</td>
+<td>Main homepage</td>
+</tr>
+<tr>
+<td><code>blog.html</code></td>
+<td>HTML</td>
+<td>Blog post listing page</td>
+</tr>
+<tr>
+<td><code>blog-loader.html</code></td>
+<td>HTML</td>
+<td>Individual blog post renderer</td>
+</tr>
+<tr>
+<td><code>contact.html</code></td>
+<td>HTML</td>
+<td>Contact page</td>
+</tr>
+<tr>
+<td><code>privacy-policy.html</code></td>
+<td>HTML</td>
+<td>Privacy policy template</td>
+</tr>
+<tr>
+<td><code>404.html</code></td>
+<td>HTML</td>
+<td>Custom error page</td>
+</tr>
+<tr>
+<td><code>setup.sh</code></td>
+<td>Shell script</td>
+<td>One-time personalization script</td>
+</tr>
+<tr>
+<td><code>scripts/convert_blogs.py</code></td>
+<td>Python</td>
+<td>Blog conversion engine</td>
+</tr>
+<tr>
+<td><code>assets/css/style.css</code></td>
+<td>CSS</td>
+<td>Main stylesheet, theme variables</td>
+</tr>
+<tr>
+<td><code>assets/js/nav-active.js</code></td>
+<td>JavaScript</td>
+<td>Active nav link highlighting</td>
+</tr>
+<tr>
+<td><code>assets/js/theme-toggle.js</code></td>
+<td>JavaScript</td>
+<td>Dark/light mode toggle</td>
+</tr>
+<tr>
+<td><code>blog_uploads/</code></td>
+<td>Folder</td>
+<td>Source Markdown/HTML posts (input)</td>
+</tr>
+<tr>
+<td><code>blogs/</code></td>
+<td>Folder</td>
+<td>Generated JSON posts (output — do not edit)</td>
+</tr>
+<tr>
+<td><code>i18n/</code></td>
+<td>Folder</td>
+<td>Language translation JSON files</td>
+</tr>
+<tr>
+<td><code>.github/workflows/blog_automation.yml</code></td>
+<td>YAML</td>
+<td>CI/CD automation config</td>
+</tr>
+<tr>
+<td><code>sitemap.xml</code></td>
+<td>XML</td>
+<td>SEO sitemap</td>
+</tr>
+<tr>
+<td><code>robots.txt</code></td>
+<td>Text</td>
+<td>Search engine crawl rules</td>
+</tr>
+<tr>
+<td><code>CNAME</code></td>
+<td>Text</td>
+<td>Custom domain config for GitHub Pages</td>
+</tr>
+<tr>
+<td><code>LICENSE</code></td>
+<td>Text</td>
+<td>Project license terms</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="extending-the-codebase">Extending the codebase</h2>
+<p>  Common extension points referenced throughout this document:</p>
+<h3 id="stricter-slugification">Stricter slugification</h3>
+<pre><code class="language-python">import re
+
+def slugify(title):
+    slug = title.lower().strip()
+    slug = re.sub(r&#39;[^\w\s-]&#39;, &#39;&#39;, slug)   # strip punctuation
+    slug = re.sub(r&#39;[\s_]+&#39;, &#39;-&#39;, slug)    # collapse whitespace to hyphens
+    return slug
+</code></pre>
+<h3 id="chronological-post-ordering">Chronological post ordering</h3>
+<p>  Add a <code>date</code> field to each post (either from front-matter or filename convention), then sort before writing <code>index.json</code>:</p>
+<pre><code class="language-python">index.sort(key=lambda p: p.get(&quot;date&quot;, &quot;&quot;), reverse=True)
+</code></pre>
+<h3 id="error-handling-in-loadblogpost">Error handling in <code>loadBlogPost</code></h3>
+<pre><code class="language-javascript">async function loadBlogPost(slug) {
+  try {
+    const res = await fetch(`/blogs/${slug}.json`);
+    if (!res.ok) throw new Error(&#39;Post not found&#39;);
+    const post = await res.json();
+    // ...render post
+  } catch (err) {
+    document.querySelector(&#39;.post-content&#39;).innerHTML =
+      &#39;&lt;p&gt;Sorry, this post could not be found.&lt;/p&gt;&#39;;
+  }
+}
+</code></pre>
+<h3 id="root-path-handling-in-nav-activejs">Root-path handling in <code>nav-active.js</code></h3>
+<pre><code class="language-javascript">const currentPath = window.location.pathname.split(&#39;/&#39;).pop() || &#39;index.html&#39;;
+// Add this line to also match root-path homepage loads:
+const isHome = currentPath === &#39;&#39; || currentPath === &#39;index.html&#39;;
+</code></pre>
+<hr>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+  <details>
+  <summary><strong>Can I add front-matter (like date, tags) to Markdown posts?</strong></summary><p>  Not by default — the current <code>process_markdown_file()</code> function only extracts the <code>&lt;h1&gt;</code> title and first paragraph. To support front-matter, add the <code>python-frontmatter</code> package and parse YAML metadata at the top of each <code>.md</code> file before passing the remaining body to <code>markdown.markdown()</code>.<br>  </details></p>
+  <details>
+  <summary><strong>Why does `content` use raw HTML instead of Markdown in the JSON?</strong></summary><p>  Converting to HTML once at build time (rather than shipping raw Markdown to the browser) avoids needing a Markdown parser library in the front end — <code>blog-loader.html</code> simply inserts pre-rendered HTML via <code>innerHTML</code>, keeping the client-side code minimal.<br>  </details></p>
+  <details>
+  <summary><strong>Is there a way to preview JSON output without running the full GitHub Action?</strong></summary><p>  Yes — run <code>python3 scripts/convert_blogs.py</code> locally as covered in the <a href="/docs/protfolio-getting-started/#step-7-verify-everything-works">Getting Started guide</a>. This runs the exact same function GitHub Actions calls, just on your machine instead of their runner.<br>  </details></p>
+  <details>
+  <summary><strong>Can I call `build_all_posts()` from another Python script?</strong></summary><p>  Yes — since it&#39;s a standard function (not wrapped in a class), you can import it:</p>
+<pre><code class="language-python">from scripts.convert_blogs import build_all_posts
+build_all_posts()
+</code></pre>
+<p>  This is useful if you want to integrate blog conversion into a larger custom build pipeline.<br>  </details></p>
+<hr>
+<h2 id="related-guides-in-this-series">Related guides in this series</h2>
+<p>  You&#39;ve now reached the end of the <strong>Portfolio Website</strong> documentation series. Here&#39;s the complete path for reference:</p>
+<ol>
+<li><strong><a href="/docs/portfolio-website-getting-started-guide/">Getting Started Guide</a></strong> — Fork, clone, install, run locally</li>
+<li><strong><a href="/docs/portfolio-website-deployment-blog-system-guide/">Deployment &amp; Blog System Guide</a></strong> — Go live + publish posts</li>
+<li><strong><a href="/docs/portfolio-website-customization-guide/">Customization Guide</a></strong> — Make it visually yours</li>
+<li><strong>API &amp; Script Reference</strong> <em>(you are here)</em> — Technical deep dive</li>
+</ol>
+<blockquote>
+<p><strong>Tip</strong><br>Bookmark this reference page — you&#39;ll likely return to it any time you extend the blog system or debug an unexpected script behavior, long after initial setup is complete.</p>
+</blockquote>
+<h2 id="further-reading">Further reading</h2>
+<ul>
+<li><a href="https://github.com/bayzed123/sayadbayezid-portfolio-/blob/main/WIKI.md">WIKI.md</a> — original repository wiki</li>
+<li><a href="https://python-markdown.github.io/">Python <code>markdown</code> library docs</a> — full extension reference</li>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup4 documentation</a> — HTML parsing reference</li>
+<li><a href="https://github.com/bayzed123/sayadbayezid-portfolio-/issues">Repository Issues</a> — report bugs or request features&gt;</li>
+</ul>
+<div align="center">
+  <table width="100%">
+    <tr>
+      <td align="left" width="50%">
+        <p>Previous</p>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-customization-guide/">Portfolio Customization</a></b>
+      </td>
+      <td align="right" width="50%">
+        <p>Next</p>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-api-script-reference/">Portfolio API Reference</a></b>
+      </td>
+    </tr>
+  </table>
+</div><hr>
+<h3 id="help-and-support">Help and support</h3>
+<p><strong>Did you find what you needed?</strong><br>Thank you! We received your feedback.<br><br><br><a href="https://smartgentools.com/privacy/">Privacy policy</a></p>
+<br><p><strong>Help us make these docs great!</strong><br>All GitHub docs are open source. See something that&#39;s wrong or unclear? Submit a pull request.<br><br><br><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md"><kbd>⑂ Make a contribution</kbd></a><br><br><br><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md">Learn how to contribute</a></p>
+<br><p><strong>Still need help?</strong><br>👥 <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions">Ask the SmartGen community</a><br>💬 <a href="https://smartgentools.com/contact/">Contact support</a>  </p>
+<br><p><strong>Legal</strong><br><small>© 2026 SmartGen. &nbsp; <a href="https://smartgentools.com/terms/">Terms</a> &nbsp; <a href="https://smartgentools.com/privacy/">Privacy</a> &nbsp; <a href="https://smartgentools.com/tools/">Expert services</a> &nbsp; <a href="https://smartgentools.com/blog/">Blog</a></small></p>
+
+                    </div>
+                    
+        <div class="doc-footer">
+            <div class="nav-table">
+                <div class="nav-row">
+                    <div class="nav-cell nav-prev">
+                        
+                            <div class="nav-label">← Previous</div>
+                            <a href="/docs/about-the-team-and-contribution/" class="nav-link-footer">About the Team & Contribution</a>
+                        
+                    </div>
+                    <div class="nav-cell nav-next">
+                        
+                            <div class="nav-label">Next →</div>
+                            <a href="/docs/railway-deployment-guide/" class="nav-link-footer">Railway Deployment Guide</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="help-section">
+                <div class="help-box">
+                    <h3>Did you find what you needed?</h3>
+                    <p>Thank you! We received your feedback.</p>
+                </div>
+
+                <div class="help-box">
+                    <h3>Help us make these docs great!</h3>
+                    <p>All SmartGen docs are open source. See something that's wrong or unclear? Submit a pull request.</p>
+                    <a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md" class="btn-contribute">⑂ Make a contribution</a>
+                    <p><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md" class="link-secondary">Learn how to contribute</a></p>
+                </div>
+
+                <div class="help-box">
+                    <h3>Still need help?</h3>
+                    <p>👥 <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions" class="link-secondary">Ask the SmartGen community</a></p>
+                    <p>💬 <a href="https://smartgentools.com/contact/" class="link-secondary">Contact support</a></p>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p><small>© 2026 SmartGen. &nbsp; <a href="https://smartgentools.com/terms/">Terms</a> &nbsp; <a href="https://smartgentools.com/privacy/">Privacy</a> &nbsp; <a href="https://smartgentools.com/tools/">Expert services</a> &nbsp; <a href="https://smartgentools.com/blog/">Blog</a></small></p>
+            </div>
+        </div>
+    
+                </article>
+
+                
+        <aside class="toc-sidebar desktop-only">
+            <div class="toc-heading">On This Page</div>
+            <ul class="toc-list">
+                
+                    <li class="toc-item toc-main">
+                        <a href="#portfolio-website-documentation-series" class="toc-link">📖 Portfolio Website Documentation Series</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#in-this-guide" class="toc-link">In this guide</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#setupsh-reference" class="toc-link">setup.sh reference</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#usage" class="toc-link">Usage</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#prompts-and-variables" class="toc-link">Prompts and variables</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#internal-logic" class="toc-link">Internal logic</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#return-behavior" class="toc-link">Return behavior</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#scriptsconvertblogspy-reference" class="toc-link">scripts/convert_blogs.py reference</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#module-level-constants" class="toc-link">Module-level constants</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#function-slugifytitle" class="toc-link">Function: slugify(title)</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#function-extracttocsoup" class="toc-link">Function: extract_toc(soup)</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#function-processmarkdownfilefilepath" class="toc-link">Function: process_markdown_file(filepath)</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#function-buildallposts" class="toc-link">Function: build_all_posts()</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#blog-json-data-structures" class="toc-link">Blog JSON data structures</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#individual-post-schema-blogsslugjson" class="toc-link">Individual post schema — blogs/{slug}.json</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#index-schema-blogsindexjson" class="toc-link">Index schema — blogs/index.json</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#blog-loaderhtml-javascript-reference" class="toc-link">blog-loader.html JavaScript reference</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#function-loadblogpostslug" class="toc-link">Function: loadBlogPost(slug)</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#function-rendertoctoc" class="toc-link">Function: renderToc(toc)</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#assetsjsnav-activejs-reference" class="toc-link">assets/js/nav-active.js reference</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#assetsjstheme-togglejs-reference" class="toc-link">assets/js/theme-toggle.js reference</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#i18n-loader-reference" class="toc-link">i18n loader reference</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#function-loadlanguagelang" class="toc-link">Function: loadLanguage(lang)</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#i18n-file-schema" class="toc-link">i18n file schema</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#github-actions-workflow-reference" class="toc-link">GitHub Actions workflow reference</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#githubworkflowsblogautomationyml" class="toc-link">.github/workflows/blog_automation.yml</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#file-and-folder-reference" class="toc-link">File and folder reference</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#extending-the-codebase" class="toc-link">Extending the codebase</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#stricter-slugification" class="toc-link">Stricter slugification</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#chronological-post-ordering" class="toc-link">Chronological post ordering</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#error-handling-in-loadblogpost" class="toc-link">Error handling in loadBlogPost</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#root-path-handling-in-nav-activejs" class="toc-link">Root-path handling in nav-active.js</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#frequently-asked-questions" class="toc-link">Frequently asked questions</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#related-guides-in-this-series" class="toc-link">Related guides in this series</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#further-reading" class="toc-link">Further reading</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#help-and-support" class="toc-link">Help and support</a>
+                    </li>
+                
+            </ul>
+        </aside>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/docs.js"></script>
+    <script>
+      document.querySelectorAll('.toc-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      const tocLinks = document.querySelectorAll('.toc-link');
+      const headings = Array.from(tocLinks).map(link =>
+        document.querySelector(link.getAttribute('href'))
+      ).filter(Boolean);
+
+      window.addEventListener('scroll', () => {
+        let current = null;
+        headings.forEach(h => {
+          if (h.getBoundingClientRect().top < 100) current = h;
+        });
+        tocLinks.forEach(link => link.classList.remove('active'));
+        if (current) {
+          const activeLink = document.querySelector('.toc-link[href="#' + current.id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    </script>
+</body>
+</html>

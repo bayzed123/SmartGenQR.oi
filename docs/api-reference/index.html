@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Getting Started - SmartGen Docs</title>
-    <meta name="description" content="Learn how to set up and start contributing to SmartGen.">
-    <link rel="canonical" href="https://smartgentools.com/docs/getting-started/">
+    <title>API Reference - SmartGen Docs</title>
+    <meta name="description" content="Reference documentation for SmartGen's internal JavaScript functions and data structures.">
+    <link rel="canonical" href="https://smartgentools.com/docs/api-reference/">
 
     <link rel="stylesheet" href="../../assets/css/docs.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -87,7 +87,7 @@
         <aside id="sidebar" class="sidebar">
             <nav class="sidebar-nav">
                 <div class="nav-section-title">Guides</div>
-                <a href="/docs/getting-started/" class="nav-link active">
+                <a href="/docs/getting-started/" class="nav-link ">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Getting Started
                 </a>
@@ -95,11 +95,11 @@
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Directory Structure for Protfolio
                 </a>
-                <a href="/docs/getting-started/" class="nav-link active">
+                <a href="/docs/getting-started/" class="nav-link ">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Getting Started
                 </a>
-                <a href="/docs/getting-started/" class="nav-link active">
+                <a href="/docs/getting-started/" class="nav-link ">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Getting Started
                 </a>
@@ -155,7 +155,7 @@
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     Quickstart Guide
                 </a><div class="nav-section-title">API Reference</div>
-                <a href="/docs/api-reference/" class="nav-link ">
+                <a href="/docs/api-reference/" class="nav-link active">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
                     API Reference
                 </a><div class="nav-section-title">Portfolio Website</div>
@@ -221,66 +221,213 @@
             <div class="doc-layout-with-toc">
                 <article class="doc-article">
                     <div class="breadcrumb">
-                        <span>Docs</span> <span class="separator">/</span> <span>Guides</span>
+                        <span>Docs</span> <span class="separator">/</span> <span>API Reference</span>
                     </div>
-                    <h1 class="doc-title">Getting Started</h1>
+                    <h1 class="doc-title">API Reference</h1>
                     <div class="doc-body">
-                        <h1 id="getting-started">Getting Started</h1>
-<p>Welcome to the SmartGen project! This guide will help you get your local environment ready for development.</p>
-<h1 id="architecture-andamp-tech-stack">Architecture &amp; Tech Stack</h1>
-<p>SmartGen employs a lightweight, modular, and client-side focused architecture designed for speed, privacy, and ease of maintenance. The core philosophy revolves around processing all operations directly within the user&#39;s browser, eliminating the need for server-side data handling for most utilities.</p>
-<h2 id="core-architectural-principles">Core Architectural Principles</h2>
+                        <h1 id="api-reference">API Reference</h1>
+<p>This page documents the core JavaScript functions and data structures used across the SmartGen platform. These are internal APIs — not a public REST API — since SmartGen is fully client-side.</p>
+<h2 id="appjs-global-ui-controller"><code>app.js</code> — Global UI Controller</h2>
+<p>Located at <code>/assets/js/app.js</code>. Loaded on every page.</p>
+<h3 id="injectnavbar"><code>injectNavbar()</code></h3>
+<p>Dynamically injects the site&#39;s top navigation bar into the page.</p>
+<pre><code class="language-javascript">injectNavbar();
+</code></pre>
+<p><strong>Behavior:</strong></p>
 <ul>
-<li><strong>Client-Side Processing:</strong> All primary utility functions, such as QR code generation, image compression, and text conversions, are executed entirely within the user&#39;s web browser. This ensures that no sensitive user data is transmitted to or stored on external servers, upholding the &quot;Privacy First&quot; core value.</li>
-<li><strong>Modular Design:</strong> The application is structured into independent tool modules, each residing in its own directory (<code>/[tool-folder]/index.html</code>). This modularity facilitates easy development, maintenance, and scaling of individual tools without impacting the entire platform.</li>
-<li><strong>Static Site Generation (SSG) with Dynamic Injection:</strong> The platform leverages static HTML pages for individual tools and content, enhanced by client-side JavaScript for dynamic UI elements, navigation, and consistent theming. This approach combines the benefits of fast loading times and robust SEO with a rich user experience.</li>
+<li>Fetches the shared navbar HTML template</li>
+<li>Inserts it into <code>&lt;header id=&quot;main-header&quot;&gt;</code></li>
+<li>Attaches mobile menu toggle listeners</li>
 </ul>
-<h2 id="technical-stack">Technical Stack</h2>
-<p>SmartGen&#39;s technical stack is lean and efficient, primarily relying on modern web standards and a minimal set of JavaScript libraries for specific functionalities.</p>
-<h3 id="frontend">Frontend</h3>
+<p><strong>When to use:</strong> Call this once on <code>DOMContentLoaded</code> in any new page that needs the standard site header.</p>
+<hr>
+<h3 id="injectfooter"><code>injectFooter()</code></h3>
+<p>Injects the shared footer markup (links to Privacy, Terms, About, etc.).</p>
+<pre><code class="language-javascript">injectFooter();
+</code></pre>
+<p><strong>Behavior:</strong></p>
 <ul>
-<li><strong>HTML5:</strong> The foundational markup language for structuring content.</li>
-<li><strong>CSS3:</strong> Utilized for styling, layout, and responsive design, with global styles defined in <code>/assets/css/style.css</code>.</li>
-<li><strong>JavaScript (ES6+):</strong> Powers all client-side logic, dynamic content injection, and tool functionalities. Key global scripts include:<ul>
-<li><code>/assets/js/app.js</code>: Manages global UI elements like navigation (<code>injectNavbar()</code>), footer (<code>injectFooter()</code>), and theme toggling (<code>initTheme()</code>). It also handles mobile responsiveness with a dynamic sidebar.</li>
-<li><code>/assets/js/search-data.js</code>: A centralized JSON data source containing metadata for all tools, used for search functionality and related tool recommendations.</li>
-<li><code>/assets/js/related-tools.js</code>: Dynamically injects related tool suggestions on individual tool pages.</li>
-<li><code>/assets/js/search.js</code>: Implements the client-side live search UI on the homepage.</li>
+<li>Fetches shared footer HTML</li>
+<li>Inserts it into <code>&lt;footer id=&quot;main-footer&quot;&gt;</code></li>
 </ul>
-</li>
-</ul>
-<h3 id="build-andamp-content-management">Build &amp; Content Management</h3>
+<hr>
+<h3 id="inittheme"><code>initTheme()</code></h3>
+<p>Initializes light/dark theme toggling and persists user preference.</p>
+<pre><code class="language-javascript">initTheme();
+</code></pre>
+<p><strong>Behavior:</strong></p>
 <ul>
-<li><strong>Node.js:</strong> Used as a runtime environment for build scripts.</li>
-<li><strong>pnpm:</strong> The package manager for project dependencies, as indicated in <code>Contributing.md</code> [1].</li>
-<li><strong><code>scripts/build-blog.js</code>:</strong> A custom Node.js script responsible for generating the blog section. It processes Markdown files from <code>blog-posts/</code>, uses <code>front-matter</code> for metadata extraction, and <code>marked</code> for Markdown-to-HTML conversion. It generates static HTML pages for blog posts and a <code>blog.json</code> index.</li>
-<li><strong><code>front-matter</code>:</strong> A JavaScript library for parsing front matter from Markdown files [2].</li>
-<li><strong><code>marked</code>:</strong> A Markdown parser and compiler, used for converting blog post content into HTML [3].</li>
-<li><strong><code>slugify</code>:</strong> A utility for converting strings into URL-friendly slugs [4].</li>
+<li>Reads saved theme from <code>localStorage</code></li>
+<li>Applies <code>data-theme=&quot;dark&quot;</code> or <code>data-theme=&quot;light&quot;</code> to <code>&lt;html&gt;</code></li>
+<li>Attaches click listener to <code>#theme-toggle</code> button</li>
 </ul>
-<h3 id="development-environment-andamp-tools">Development Environment &amp; Tools</h3>
+<p><strong>Storage key:</strong> <code>smartgen-theme</code></p>
+<hr>
+<h2 id="search-datajs-tool-metadata-source"><code>search-data.js</code> — Tool Metadata Source</h2>
+<p>Located at <code>/assets/js/search-data.js</code>. A static JSON-like array containing metadata for every tool on the platform.</p>
+<h3 id="data-structure">Data Structure</h3>
+<pre><code class="language-javascript">const toolsData = [
+  {
+    name: &quot;QR Code Generator&quot;,
+    slug: &quot;qr-code-generator&quot;,
+    category: &quot;Generators&quot;,
+    description: &quot;Create custom QR codes instantly.&quot;,
+    url: &quot;/qr-code-generator/&quot;,
+    tags: [&quot;qr&quot;, &quot;generator&quot;, &quot;barcode&quot;]
+  },
+  // ...more tools
+];
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Display name of the tool</td>
+</tr>
+<tr>
+<td><code>slug</code></td>
+<td>string</td>
+<td>URL-friendly identifier</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>string</td>
+<td>Grouping used in navigation/search filters</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>Short one-line summary</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>string</td>
+<td>Absolute path to the tool page</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td>string[]</td>
+<td>Keywords used for search matching</td>
+</tr>
+</tbody></table>
+<p><strong>Used by:</strong> <code>search.js</code> (live search) and <code>related-tools.js</code> (recommendations).</p>
+<hr>
+<h2 id="related-toolsjs-related-tool-suggestions"><code>related-tools.js</code> — Related Tool Suggestions</h2>
+<p>Located at <code>/assets/js/related-tools.js</code>. Runs on individual tool pages.</p>
+<h3 id="renderrelatedtoolscurrentslug-limit-4"><code>renderRelatedTools(currentSlug, limit = 4)</code></h3>
+<pre><code class="language-javascript">renderRelatedTools(&quot;qr-code-generator&quot;, 4);
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>currentSlug</code></td>
+<td>string</td>
+<td>—</td>
+<td>Slug of the currently viewed tool</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>number</td>
+<td><code>4</code></td>
+<td>Max number of related tools to display</td>
+</tr>
+</tbody></table>
+<p><strong>Behavior:</strong></p>
+<ol>
+<li>Reads <code>toolsData</code> from <code>search-data.js</code></li>
+<li>Filters tools matching the current tool&#39;s <code>category</code> or shared <code>tags</code></li>
+<li>Excludes the current tool itself</li>
+<li>Renders result cards into <code>#related-tools-container</code></li>
+</ol>
+<hr>
+<h2 id="searchjs-live-search-ui"><code>search.js</code> — Live Search UI</h2>
+<p>Located at <code>/assets/js/search.js</code>. Powers the homepage search bar.</p>
+<h3 id="initsearchinputselector-resultsselector"><code>initSearch(inputSelector, resultsSelector)</code></h3>
+<pre><code class="language-javascript">initSearch(&quot;#search-input&quot;, &quot;#search-results&quot;);
+</code></pre>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>inputSelector</code></td>
+<td>string</td>
+<td>CSS selector for the search <code>&lt;input&gt;</code></td>
+</tr>
+<tr>
+<td><code>resultsSelector</code></td>
+<td>string</td>
+<td>CSS selector for the results container</td>
+</tr>
+</tbody></table>
+<p><strong>Behavior:</strong></p>
 <ul>
-<li><strong>Git:</strong> Version control system for managing the codebase.</li>
-<li><strong>GitHub:</strong> Hosting for the repository and collaborative development workflows.</li>
-<li><strong>VS Code:</strong> Recommended integrated development environment (IDE) [1].</li>
-<li><strong>ESLint &amp; Prettier:</strong> Code linting and formatting tools to maintain code quality and consistency [1].</li>
-<li><strong>Vitest:</strong> A fast unit test framework used for testing JavaScript/TypeScript code [1].</li>
-<li><strong>TypeScript:</strong> While not universally applied across all tools, <code>Contributing.md</code> suggests basic knowledge of React/TypeScript for code contributions, indicating its use in certain parts or for future development [1].</li>
+<li>Listens for <code>input</code> events on the search field</li>
+<li>Performs case-insensitive substring match against <code>toolsData</code> (<code>name</code>, <code>description</code>, <code>tags</code>)</li>
+<li>Renders matching results as clickable links</li>
+<li>Debounced at 150ms to avoid excessive re-renders</li>
 </ul>
-<h2 id="file-structure-overview">File Structure Overview</h2>
-<p>The project follows a clear and organized file structure to ensure maintainability:</p>
-<ul>
-<li><code>/assets/</code>: Contains global CSS (<code>style.css</code>), JavaScript (<code>app.js</code>, <code>search-data.js</code>, <code>related-tools.js</code>, <code>search.js</code>), and other static assets.</li>
-<li><code>/blog/</code>: Houses blog-related files, including <code>blog.json</code> and individual blog post directories.</li>
-<li><code>/blog-posts/</code>: Markdown source files for blog content.</li>
-<li><code>/data/</code>: Stores data files like <code>changelog.json</code>.</li>
-<li><code>/scripts/</code>: Contains Node.js build scripts, such as <code>build-blog.js</code>.</li>
-<li><code>/[tool-folder]/</code>: Each individual utility resides in its own directory, typically containing an <code>index.html</code> file and any tool-specific JavaScript or CSS.</li>
-<li><code>/about/</code>, <code>/contact/</code>, <code>/privacy/</code>, <code>/terms/</code>, <code>/disclaimer/</code>: Static pages for legal information and site details.</li>
-</ul>
-<p>This architecture ensures that SmartGen remains performant, privacy-respecting, and easy to contribute to, aligning with its open-source nature.</p>
-<h2 id="references">References</h2>
-<p>[1] Contributing to SmartGen. (n.d.). <em>GitHub</em>. Retrieved from <a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md">https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md</a><br>[2] front-matter. (n.d.). <em>npm</em>. Retrieved from <a href="https://www.npmjs.com/package/front-matter">https://www.npmjs.com/package/front-matter</a><br>[3] marked. (n.d.). <em>npm</em>. Retrieved from <a href="https://www.npmjs.com/package/marked">https://www.npmjs.com/package/marked</a><br>[4] slugify. (n.d.). <em>npm</em>. Retrieved from <a href="https://www.npmjs.com/package/slugify">https://www.npmjs.com/package/slugify</a></p>
+<hr>
+<h2 id="docs-buildjs-documentation-build-script"><code>docs-build.js</code> — Documentation Build Script</h2>
+<p>Located at <code>/scripts/docs-build.js</code>. A Node.js CLI script (not browser-facing) that compiles <code>docs-posts/*.md</code> into static HTML.</p>
+<h3 id="front-matter-schema">Front-Matter Schema</h3>
+<p>Every file in <code>docs-posts/</code> should include:</p>
+<pre><code class="language-yaml">---
+title: &quot;Page Title&quot;        # required
+description: &quot;SEO summary&quot; # optional
+order: 1                    # optional, default 999
+category: &quot;Guides&quot;          # optional, default &quot;Guides&quot;
+---
+</code></pre>
+<h3 id="custom-renderer-behavior">Custom Renderer Behavior</h3>
+<p>The script overrides two <code>marked.Renderer</code> methods:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>renderer.heading</code></td>
+<td>Adds <code>id=&quot;slug&quot;</code> to every <code>&lt;h2&gt;</code>/<code>&lt;h3&gt;</code> for anchor scrolling; collects headings into the &quot;On This Page&quot; TOC</td>
+</tr>
+<tr>
+<td><code>renderer.image</code></td>
+<td>Rewrites relative image paths to absolute <code>/assets/...</code>; auto-fixes pasted GitHub <code>/blob/</code> links</td>
+</tr>
+</tbody></table>
+<h3 id="output">Output</h3>
+<p>For each <code>docs-posts/example.md</code>, generates:</p>
+<pre><code class="language-text">/docs/example/index.html
+</code></pre>
+<p>Plus a root <code>/docs/index.html</code> that redirects to the first doc (sorted by <code>order</code>).</p>
+<hr>
+<h2 id="build-blogjs-blog-build-script"><code>build-blog.js</code> — Blog Build Script</h2>
+<p>Located at <code>/scripts/build-blog.js</code>. Same pattern as <code>docs-build.js</code>, but for <code>/blog-posts/</code> → <code>/blog/</code>. Also generates <code>/blog/blog.json</code> (used for blog search/listing) and updates <code>sitemap.xml</code> automatically.</p>
+<hr>
+<h2 id="need-help">Need Help?</h2>
+<p>If you&#39;re integrating with any of these internal functions and something isn&#39;t behaving as documented, open an issue on <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions/1">GitHub Discussions</a>.</p>
 
                     </div>
                     
@@ -288,12 +435,15 @@
             <div class="nav-table">
                 <div class="nav-row">
                     <div class="nav-cell nav-prev">
-                        <div class="nav-empty"></div>
+                        
+                            <div class="nav-label">← Previous</div>
+                            <a href="/docs/directory-structure-for-protfolio/" class="nav-link-footer">Directory Structure for Protfolio</a>
+                        
                     </div>
                     <div class="nav-cell nav-next">
                         
                             <div class="nav-label">Next →</div>
-                            <a href="/docs/directory-structure-for-protfolio/" class="nav-link-footer">Directory Structure for Protfolio</a>
+                            <a href="/docs/getting-started/" class="nav-link-footer">Getting Started</a>
                         
                     </div>
                 </div>
@@ -334,31 +484,67 @@
             <ul class="toc-list">
                 
                     <li class="toc-item toc-main">
-                        <a href="#core-architectural-principles" class="toc-link">Core Architectural Principles</a>
-                    </li>
-                
-                    <li class="toc-item toc-main">
-                        <a href="#technical-stack" class="toc-link">Technical Stack</a>
+                        <a href="#appjs-global-ui-controller" class="toc-link">app.js — Global UI Controller</a>
                     </li>
                 
                     <li class="toc-item toc-sub">
-                        <a href="#frontend" class="toc-link">Frontend</a>
+                        <a href="#injectnavbar" class="toc-link">injectNavbar()</a>
                     </li>
                 
                     <li class="toc-item toc-sub">
-                        <a href="#build-andamp-content-management" class="toc-link">Build &amp; Content Management</a>
+                        <a href="#injectfooter" class="toc-link">injectFooter()</a>
                     </li>
                 
                     <li class="toc-item toc-sub">
-                        <a href="#development-environment-andamp-tools" class="toc-link">Development Environment &amp; Tools</a>
+                        <a href="#inittheme" class="toc-link">initTheme()</a>
                     </li>
                 
                     <li class="toc-item toc-main">
-                        <a href="#file-structure-overview" class="toc-link">File Structure Overview</a>
+                        <a href="#search-datajs-tool-metadata-source" class="toc-link">search-data.js — Tool Metadata Source</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#data-structure" class="toc-link">Data Structure</a>
                     </li>
                 
                     <li class="toc-item toc-main">
-                        <a href="#references" class="toc-link">References</a>
+                        <a href="#related-toolsjs-related-tool-suggestions" class="toc-link">related-tools.js — Related Tool Suggestions</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#renderrelatedtoolscurrentslug-limit-4" class="toc-link">renderRelatedTools(currentSlug, limit = 4)</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#searchjs-live-search-ui" class="toc-link">search.js — Live Search UI</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#initsearchinputselector-resultsselector" class="toc-link">initSearch(inputSelector, resultsSelector)</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#docs-buildjs-documentation-build-script" class="toc-link">docs-build.js — Documentation Build Script</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#front-matter-schema" class="toc-link">Front-Matter Schema</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#custom-renderer-behavior" class="toc-link">Custom Renderer Behavior</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#output" class="toc-link">Output</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#build-blogjs-blog-build-script" class="toc-link">build-blog.js — Blog Build Script</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#need-help" class="toc-link">Need Help?</a>
                     </li>
                 
             </ul>
