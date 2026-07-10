@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: Correct all broken docs links and add GitHub-style footer with navigation",
+    "date": "2026-07-10T13:04:18Z",
+    "description": "- Fixed all internal docs links to use correct generated slugs- Fixed hardcoded URLs in footer navigation tables- Added GitHub-style footer with Previous/Next navigation- Added help section and legal links to docs footer- Improved mobile responsiveness for footer navigation- All docs links now point to correct URLs"
+  },
+  {
     "title": "Create google-web-analytics-the-complete-a-to-z-mega-guide-for-beginners.md",
     "date": "2026-07-10T12:16:24Z",
     "description": "Platform improvement and optimization."
