@@ -1,0 +1,179 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="barVisits" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#17C3B2"/><stop offset="100%" stop-color="#10A093"/>
+    </linearGradient>
+    <linearGradient id="barLeads" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6C63FF"/><stop offset="100%" stop-color="#564ECC"/>
+    </linearGradient>
+    <linearGradient id="barSales" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6F59"/><stop offset="100%" stop-color="#E85641"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1600" fill="#F6F8FC"/>
+
+  <!-- ===== Header ===== -->
+  <text x="60" y="52" font-family="'JetBrains Mono','Courier New',monospace" font-size="14" letter-spacing="2.5" fill="#17C3B2" font-weight="700">SMARTGEN · MODULE 18 · FRAMEWORK MAP</text>
+  <text x="60" y="96" font-family="'Sora','Poppins',sans-serif" font-size="30" font-weight="700" fill="#12163A">Mobile, Cross-Device &amp; Campaign Analytics Framework</text>
+  <text x="60" y="126" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="16" fill="#5B6178">How measurement connects across devices, campaigns, and ad platforms</text>
+
+  <!-- ===== Spine ===== -->
+  <line x1="60" y1="200" x2="60" y2="1490" stroke="#DDE1F0" stroke-width="3"/>
+  <circle cx="60" cy="340" r="22" fill="#12163A" stroke="#17C3B2" stroke-width="3"/>
+  <text x="60" y="347" text-anchor="middle" font-family="'Sora',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">01</text>
+  <circle cx="60" cy="840" r="22" fill="#12163A" stroke="#6C63FF" stroke-width="3"/>
+  <text x="60" y="847" text-anchor="middle" font-family="'Sora',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">02</text>
+  <circle cx="60" cy="1345" r="22" fill="#12163A" stroke="#FF6F59" stroke-width="3"/>
+  <text x="60" y="1352" text-anchor="middle" font-family="'Sora',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">03</text>
+
+  <!-- ===================================================== -->
+  <!-- PANEL 1 — Mobile & Cross-Device Analytics -->
+  <!-- ===================================================== -->
+  <rect x="120" y="170" width="1020" height="340" rx="20" fill="#FFFFFF" stroke="#E2E6F0" stroke-width="1.5"/>
+  <rect x="170" y="205" width="46" height="24" rx="12" fill="#EAF9F7"/>
+  <text x="193" y="221" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700" fill="#0E9E90">01</text>
+  <text x="170" y="255" font-family="'Sora','Poppins',sans-serif" font-size="27" font-weight="700" fill="#12163A">Mobile &amp; Cross-Device Analytics</text>
+  <text x="170" y="282" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="15" fill="#5B6178">Responsive tracking + one identity across every screen</text>
+
+  <!-- left column: breakpoints -->
+  <circle cx="176" cy="311" r="6" fill="#FF6F59"/>
+  <text x="192" y="316" font-family="'Inter',sans-serif" font-size="15" fill="#2A2F55">Mobile — up to 767px width</text>
+  <circle cx="176" cy="366" r="6" fill="#FFC53D"/>
+  <text x="192" y="371" font-family="'Inter',sans-serif" font-size="15" fill="#2A2F55">Tablet — 768px to 1024px</text>
+  <circle cx="176" cy="421" r="6" fill="#6C63FF"/>
+  <text x="192" y="426" font-family="'Inter',sans-serif" font-size="15" fill="#2A2F55">Desktop — 1024px and above</text>
+  <text x="170" y="466" font-family="'Inter',sans-serif" font-size="13" fill="#8A8FB3">Confirm real breakpoints in Reports → Tech → Overview</text>
+
+  <!-- right column: cross-device cluster -->
+  <g transform="translate(680,280)" fill="none">
+    <rect x="0" y="40" width="90" height="60" rx="8" stroke="#6C63FF" stroke-width="2.5"/>
+    <rect x="110" y="15" width="55" height="75" rx="10" stroke="#17C3B2" stroke-width="2.5"/>
+    <rect x="60" y="95" width="34" height="62" rx="8" stroke="#FF6F59" stroke-width="2.5"/>
+    <g stroke-dasharray="3 5" stroke-width="1.6">
+      <path d="M45,70 Q160,75 260,60" stroke="#6C63FF"/>
+      <path d="M137,52 Q200,55 260,60" stroke="#17C3B2"/>
+      <path d="M77,126 Q170,100 260,60" stroke="#FF6F59"/>
+    </g>
+    <circle cx="260" cy="60" r="16" fill="#12163A" stroke="#FFFFFF" stroke-width="2"/>
+    <text x="260" y="65" text-anchor="middle" font-family="'Sora',sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">ID</text>
+    <text x="260" y="98" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" fill="#5B6178">User-ID</text>
+    <text x="0" y="152" font-family="'Inter',sans-serif" font-size="14" fill="#2A2F55" font-weight="600">Same person, one journey, one User-ID</text>
+  </g>
+
+  <!-- ===================================================== -->
+  <!-- PANEL 2 — Campaign Tracking & UTM Parameters -->
+  <!-- ===================================================== -->
+  <rect x="120" y="550" width="1020" height="580" rx="20" fill="#FFFFFF" stroke="#E2E6F0" stroke-width="1.5"/>
+  <rect x="170" y="585" width="46" height="24" rx="12" fill="#F1EFFF"/>
+  <text x="193" y="601" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700" fill="#564ECC">02</text>
+  <text x="170" y="635" font-family="'Sora','Poppins',sans-serif" font-size="27" font-weight="700" fill="#12163A">Campaign Tracking &amp; UTM Parameters</text>
+  <text x="170" y="662" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="15" fill="#5B6178">Tag every link so Analytics knows exactly where it came from</text>
+
+  <!-- Row 1: required params -->
+  <rect x="170" y="670" width="290" height="84" rx="14" fill="#FF6F59"/>
+  <text x="315" y="704" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="700" fill="#FFFFFF">utm_source</text>
+  <text x="315" y="728" text-anchor="middle" font-family="'Inter',sans-serif" font-size="12" fill="#FFE7E2">e.g. newsletter, google</text>
+
+  <rect x="480" y="670" width="290" height="84" rx="14" fill="#FFC53D"/>
+  <text x="625" y="704" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="700" fill="#12163A">utm_medium</text>
+  <text x="625" y="728" text-anchor="middle" font-family="'Inter',sans-serif" font-size="12" fill="#5B4300">e.g. email, cpc, social</text>
+
+  <rect x="790" y="670" width="290" height="84" rx="14" fill="#6C63FF"/>
+  <text x="935" y="704" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="700" fill="#FFFFFF">utm_campaign</text>
+  <text x="935" y="728" text-anchor="middle" font-family="'Inter',sans-serif" font-size="12" fill="#E7E5FF">e.g. summer_sale</text>
+
+  <!-- Row 2: optional params -->
+  <rect x="325" y="778" width="290" height="84" rx="14" fill="#17C3B2"/>
+  <text x="470" y="812" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="700" fill="#FFFFFF">utm_term *</text>
+  <text x="470" y="836" text-anchor="middle" font-family="'Inter',sans-serif" font-size="12" fill="#DFFBF7">e.g. running+shoes</text>
+
+  <rect x="635" y="778" width="290" height="84" rx="14" fill="#FF5DA2"/>
+  <text x="780" y="812" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="700" fill="#FFFFFF">utm_content *</text>
+  <text x="780" y="836" text-anchor="middle" font-family="'Inter',sans-serif" font-size="12" fill="#FFE3F1">e.g. header_link</text>
+
+  <text x="170" y="882" font-family="'Inter',sans-serif" font-size="13" fill="#8A8FB3">* optional — used for paid search keywords and A/B link variants</text>
+
+  <!-- Example funnel -->
+  <text x="170" y="915" font-family="'Sora','Poppins',sans-serif" font-size="16" font-weight="700" fill="#12163A">Example Campaign Funnel</text>
+
+  <rect x="170" y="925" width="760" height="26" rx="6" fill="url(#barVisits)"/>
+  <text x="945" y="943" font-family="'Inter',sans-serif" font-size="14" fill="#2A2F55">Visits — 12,400</text>
+
+  <rect x="170" y="965" width="420" height="26" rx="6" fill="url(#barLeads)"/>
+  <text x="605" y="983" font-family="'Inter',sans-serif" font-size="14" fill="#2A2F55">Leads — 860</text>
+
+  <rect x="170" y="1005" width="190" height="26" rx="6" fill="url(#barSales)"/>
+  <text x="375" y="1023" font-family="'Inter',sans-serif" font-size="14" fill="#2A2F55">Sales — 210</text>
+
+  <text x="170" y="1060" font-family="'Inter',sans-serif" font-size="12" font-style="italic" fill="#8A8FB3">Illustrative example — real funnel shapes vary by business and channel</text>
+
+  <!-- ===================================================== -->
+  <!-- PANEL 3 — Social & Advertising Analytics -->
+  <!-- ===================================================== -->
+  <rect x="120" y="1170" width="1020" height="350" rx="20" fill="#FFFFFF" stroke="#E2E6F0" stroke-width="1.5"/>
+  <rect x="170" y="1205" width="46" height="24" rx="12" fill="#FFEFEA"/>
+  <text x="193" y="1221" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700" fill="#E85641">03</text>
+  <text x="170" y="1255" font-family="'Sora','Poppins',sans-serif" font-size="27" font-weight="700" fill="#12163A">Social &amp; Advertising Analytics</text>
+  <text x="170" y="1282" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="15" fill="#5B6178">Connect GA4 with Ads to see spend and revenue in one place</text>
+
+  <!-- channel icons -->
+  <g font-family="'Inter',sans-serif" font-size="12" fill="#5B6178" text-anchor="middle">
+    <rect x="170" y="1290" width="70" height="70" rx="16" fill="none" stroke="#FF6F59" stroke-width="2.5"/>
+    <path d="M205,1315 c-8,-8 -20,-2 -20,8 c0,10 20,24 20,24 c0,0 20,-14 20,-24 c0,-10 -12,-16 -20,-8 z" fill="#FF6F59"/>
+    <text x="205" y="1378">Social</text>
+
+    <rect x="280" y="1290" width="70" height="70" rx="16" fill="none" stroke="#FFC53D" stroke-width="2.5"/>
+    <circle cx="310" cy="1318" r="11" fill="none" stroke="#FFC53D" stroke-width="3"/>
+    <line x1="318" y1="1326" x2="330" y2="1338" stroke="#FFC53D" stroke-width="3" stroke-linecap="round"/>
+    <text x="315" y="1378">Search Ads</text>
+
+    <rect x="390" y="1290" width="70" height="70" rx="16" fill="none" stroke="#6C63FF" stroke-width="2.5"/>
+    <rect x="404" y="1306" width="42" height="30" rx="3" fill="none" stroke="#6C63FF" stroke-width="2.5"/>
+    <circle cx="413" cy="1315" r="3" fill="#6C63FF"/>
+    <path d="M406,1332 L418,1318 L428,1328 L446,1308" stroke="#6C63FF" stroke-width="2" fill="none"/>
+    <text x="425" y="1378">Display</text>
+
+    <rect x="500" y="1290" width="70" height="70" rx="16" fill="none" stroke="#17C3B2" stroke-width="2.5"/>
+    <path d="M523,1310 L523,1340 L548,1325 Z" fill="#17C3B2"/>
+    <text x="535" y="1378">Video</text>
+  </g>
+
+  <!-- bracket + arrow into GA4 -->
+  <path d="M580,1290 L595,1290 L595,1360 L580,1360" fill="none" stroke="#B7BCDD" stroke-width="2"/>
+  <path d="M595,1325 L715,1325" fill="none" stroke="#B7BCDD" stroke-width="2"/>
+  <path d="M715,1325 L703,1318 M715,1325 L703,1332" stroke="#B7BCDD" stroke-width="2" fill="none"/>
+  <text x="655" y="1310" text-anchor="middle" font-family="'Inter',sans-serif" font-size="12" fill="#8A8FB3">sessions &amp; events</text>
+
+  <!-- GA4 + Ads linked circles -->
+  <circle cx="760" cy="1325" r="42" fill="#17C3B2"/>
+  <text x="760" y="1332" text-anchor="middle" font-family="'Sora',sans-serif" font-size="17" font-weight="700" fill="#FFFFFF">GA4</text>
+
+  <circle cx="900" cy="1325" r="42" fill="#6C63FF"/>
+  <text x="900" y="1332" text-anchor="middle" font-family="'Sora',sans-serif" font-size="17" font-weight="700" fill="#FFFFFF">Ads</text>
+
+  <path d="M804,1325 L856,1325" stroke="#12163A" stroke-width="2.5"/>
+  <path d="M804,1325 L814,1319 M804,1325 L814,1331" stroke="#12163A" stroke-width="2.5" fill="none"/>
+  <path d="M856,1325 L846,1319 M856,1325 L846,1331" stroke="#12163A" stroke-width="2.5" fill="none"/>
+  <text x="830" y="1385" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" fill="#5B6178">linked property</text>
+
+  <!-- ad metrics glossary strip -->
+  <rect x="170" y="1395" width="210" height="60" rx="14" fill="#FFE1DB"/>
+  <text x="275" y="1418" text-anchor="middle" font-family="'Sora',sans-serif" font-size="15" font-weight="700" fill="#B23A26">CTR</text>
+  <text x="275" y="1438" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" fill="#7A2E1D">Click-Through Rate</text>
+
+  <rect x="400" y="1395" width="210" height="60" rx="14" fill="#FFF3D6"/>
+  <text x="505" y="1418" text-anchor="middle" font-family="'Sora',sans-serif" font-size="15" font-weight="700" fill="#8A6A00">CPC</text>
+  <text x="505" y="1438" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" fill="#6B5300">Cost Per Click</text>
+
+  <rect x="630" y="1395" width="210" height="60" rx="14" fill="#D9F5F1"/>
+  <text x="735" y="1418" text-anchor="middle" font-family="'Sora',sans-serif" font-size="15" font-weight="700" fill="#0E7A6E">ROAS</text>
+  <text x="735" y="1438" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" fill="#0B5F56">Return on Ad Spend</text>
+
+  <rect x="860" y="1395" width="210" height="60" rx="14" fill="#E6E4FF"/>
+  <text x="965" y="1418" text-anchor="middle" font-family="'Sora',sans-serif" font-size="15" font-weight="700" fill="#4038B0">CPA</text>
+  <text x="965" y="1438" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" fill="#332C8F">Cost Per Acquisition</text>
+
+  <!-- Footer -->
+  <text x="60" y="1565" font-family="'Inter',sans-serif" font-size="13" fill="#8A8FB3">SmartGen Digital Marketing Course · Module 18 · smartgentools.com</text>
+</svg>
