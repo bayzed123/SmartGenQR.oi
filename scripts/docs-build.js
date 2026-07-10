@@ -50,7 +50,22 @@ function readDocPosts() {
     return docs.sort((a, b) => a.order - b.order);
 }
 
-function createRenderer(tocList) {
+// Create a slug mapping from all docs for link resolution
+function createSlugMapping(allDocs) {
+    const mapping = {};
+    allDocs.forEach(doc => {
+        // Map by title (normalized)
+        const titleSlug = slugify(doc.title, { lower: true, strict: true });
+        mapping[titleSlug] = doc.slug;
+        
+        // Map by filename (without .md)
+        const fileSlug = slugify(doc.title, { lower: true, strict: true });
+        mapping[fileSlug] = doc.slug;
+    });
+    return mapping;
+}
+
+function createRenderer(tocList, slugMapping = {}) {
     const renderer = new marked.Renderer();
 
     renderer.heading = function (...args) {
@@ -73,6 +88,40 @@ function createRenderer(tocList) {
         }
 
         return `<h${level} id="${slug}">${text}</h${level}>\n`;
+    };
+
+    // Smart link resolver for internal docs links
+    renderer.link = function (...args) {
+        let href, title, text;
+
+        if (typeof args[0] === 'object' && args[0] !== null && 'href' in args[0]) {
+            ({ href, title, text } = args[0]);
+        } else {
+            [href, title, text] = args;
+        }
+
+        if (!href) return text;
+
+        // Handle internal docs links
+        if (href.includes('/docs/')) {
+            // Extract the slug from the link
+            const match = href.match(/\/docs\/([^/]+)\/?/);
+            if (match) {
+                const linkedSlug = match[1];
+                // Check if this slug exists in our mapping
+                if (slugMapping[linkedSlug]) {
+                    href = `/docs/${slugMapping[linkedSlug]}/`;
+                } else {
+                    // Try to resolve by normalizing the slug
+                    const normalized = slugify(linkedSlug.replace(/-/g, ' '), { lower: true, strict: true });
+                    if (slugMapping[normalized]) {
+                        href = `/docs/${slugMapping[normalized]}/`;
+                    }
+                }
+            }
+        }
+
+        return `<a href="${href}"${title ? ` title="${title}"` : ''}>${text}</a>`;
     };
 
     renderer.image = function (...args) {
@@ -101,7 +150,8 @@ function createRenderer(tocList) {
 
 function generateDocHTML(doc, allDocs) {
     const tocList = [];
-    const renderer = createRenderer(tocList);
+    const slugMapping = createSlugMapping(allDocs);
+    const renderer = createRenderer(tocList, slugMapping);
     const htmlContent = marked.parse(doc.content, { renderer });
 
     // Find current doc index for navigation
@@ -354,10 +404,11 @@ function buildDocs() {
 
     if (docs.length === 0) return;
 
-    docs.forEach(doc => {
+    docs.forEach((doc, index) => {
         const docDir = path.join(DOCS_OUTPUT_DIR, doc.slug);
         if (!fs.existsSync(docDir)) fs.mkdirSync(docDir, { recursive: true });
-        fs.writeFileSync(path.join(docDir, 'index.html'), generateDocHTML(doc, docs));
+        const html = generateDocHTML(doc, docs);
+        fs.writeFileSync(path.join(docDir, 'index.html'), html);
         console.log(`✅ Built: /docs/${doc.slug}/  (title: "${doc.title}")`);
     });
 
