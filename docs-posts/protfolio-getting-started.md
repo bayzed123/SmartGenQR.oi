@@ -498,7 +498,7 @@
     <tr>
       <td align="left" width="50%">
         <p>Previous</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-website-deployment-blog-system-guide/">Portfolio Deploy</a></b>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-customization-guide/">Portfolio customization</a></b>
       </td>
       <td align="right" width="50%">
         <p>Next</p>
