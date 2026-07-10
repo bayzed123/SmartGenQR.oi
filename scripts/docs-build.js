@@ -104,6 +104,59 @@ function generateDocHTML(doc, allDocs) {
     const renderer = createRenderer(tocList);
     const htmlContent = marked.parse(doc.content, { renderer });
 
+    // Find current doc index for navigation
+    const currentIndex = allDocs.findIndex(d => d.slug === doc.slug);
+    const prevDoc = currentIndex > 0 ? allDocs[currentIndex - 1] : null;
+    const nextDoc = currentIndex < allDocs.length - 1 ? allDocs[currentIndex + 1] : null;
+
+    // Generate GitHub-style footer
+    const footerHtml = `
+        <div class="doc-footer">
+            <div class="nav-table">
+                <div class="nav-row">
+                    <div class="nav-cell nav-prev">
+                        ${prevDoc ? `
+                            <div class="nav-label">← Previous</div>
+                            <a href="/docs/${prevDoc.slug}/" class="nav-link-footer">${prevDoc.title}</a>
+                        ` : '<div class="nav-empty"></div>'}
+                    </div>
+                    <div class="nav-cell nav-next">
+                        ${nextDoc ? `
+                            <div class="nav-label">Next →</div>
+                            <a href="/docs/${nextDoc.slug}/" class="nav-link-footer">${nextDoc.title}</a>
+                        ` : '<div class="nav-empty"></div>'}
+                    </div>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="help-section">
+                <div class="help-box">
+                    <h3>Did you find what you needed?</h3>
+                    <p>Thank you! We received your feedback.</p>
+                </div>
+
+                <div class="help-box">
+                    <h3>Help us make these docs great!</h3>
+                    <p>All SmartGen docs are open source. See something that's wrong or unclear? Submit a pull request.</p>
+                    <a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md" class="btn-contribute">⑂ Make a contribution</a>
+                    <p><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md" class="link-secondary">Learn how to contribute</a></p>
+                </div>
+
+                <div class="help-box">
+                    <h3>Still need help?</h3>
+                    <p>👥 <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions" class="link-secondary">Ask the SmartGen community</a></p>
+                    <p>💬 <a href="https://smartgentools.com/contact/" class="link-secondary">Contact support</a></p>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p><small>© 2026 SmartGen. &nbsp; <a href="https://smartgentools.com/terms/">Terms</a> &nbsp; <a href="https://smartgentools.com/privacy/">Privacy</a> &nbsp; <a href="https://smartgentools.com/tools/">Expert services</a> &nbsp; <a href="https://smartgentools.com/blog/">Blog</a></small></p>
+            </div>
+        </div>
+    `;
+
     const onPageTocHtml = tocList.length > 0 ? `
         <aside class="toc-sidebar desktop-only">
             <div class="toc-heading">On This Page</div>
@@ -156,6 +209,37 @@ function generateDocHTML(doc, allDocs) {
       .toc-link:hover, .toc-link.active { color: #3b82f6; font-weight: 500; }
       .doc-layout-with-toc { display: flex; gap: 2rem; }
       @media (max-width: 900px) { .toc-sidebar { display: none; } }
+      
+      /* GitHub-style Footer */
+      .doc-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; }
+      .nav-table { display: table; width: 100%; margin-bottom: 2rem; }
+      .nav-row { display: table-row; }
+      .nav-cell { display: table-cell; padding: 1rem; width: 50%; }
+      .nav-prev { text-align: left; padding-right: 2rem; }
+      .nav-next { text-align: right; padding-left: 2rem; border-left: 1px solid #e5e7eb; }
+      .nav-label { font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; font-weight: 500; }
+      .nav-link-footer { color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.05rem; }
+      .nav-link-footer:hover { text-decoration: underline; }
+      .nav-empty { height: 2.5rem; }
+      .footer-divider { margin: 2rem 0; border: none; border-top: 1px solid #e5e7eb; }
+      .help-section { margin: 2rem 0; }
+      .help-box { margin-bottom: 2rem; }
+      .help-box h3 { font-size: 1rem; font-weight: 600; margin: 0 0 0.5rem 0; }
+      .help-box p { margin: 0.5rem 0; color: #555; font-size: 0.95rem; line-height: 1.5; }
+      .btn-contribute { display: inline-block; padding: 0.5rem 1rem; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; color: #0969da; text-decoration: none; font-weight: 500; margin: 0.75rem 0; }
+      .btn-contribute:hover { background: #eaeef2; }
+      .link-secondary { color: #0969da; text-decoration: none; }
+      .link-secondary:hover { text-decoration: underline; }
+      .footer-legal { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; text-align: center; }
+      .footer-legal small { color: #666; font-size: 0.85rem; }
+      .footer-legal a { color: #0969da; text-decoration: none; }
+      .footer-legal a:hover { text-decoration: underline; }
+      
+      @media (max-width: 768px) {
+        .nav-cell { display: block; width: 100%; padding: 1rem 0; border-left: none; }
+        .nav-next { border-left: none; border-top: 1px solid #e5e7eb; padding-top: 1rem; text-align: left; }
+        .nav-prev { padding-right: 0; }
+      }
     </style>
 </head>
 <body>
@@ -225,6 +309,7 @@ function generateDocHTML(doc, allDocs) {
                     <div class="doc-body">
                         ${htmlContent}
                     </div>
+                    ${footerHtml}
                 </article>
 
                 ${onPageTocHtml}

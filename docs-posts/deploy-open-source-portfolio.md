@@ -234,19 +234,19 @@
 
   ## Related Guides
 
-  - [Protfolio Getting Started with SmartGen](/docs/protfolio-getting-started/)
-  - [Protfolio Deployment Guide](/docs/Protfolio-deployment/)
+  - [Protfolio Getting Started with SmartGen](/docs/portfolio-website-getting-started-guide/)
+  - [Protfolio Deployment Guide](/docs/portfolio-website-deployment-blog-system-guide/)
 ---
 <div align="center">
   <table width="100%">
     <tr>
       <td align="left" width="50%">
         <p>Previous</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-customization/">Portfolio Customization</a></b>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-customization-guide/">Portfolio Customization</a></b>
       </td>
       <td align="right" width="50%">
         <p>Next</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-api-reference/">Portfolio API Reference</a></b>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-api-script-reference/">Portfolio API Reference</a></b>
       </td>
     </tr>
   </table>

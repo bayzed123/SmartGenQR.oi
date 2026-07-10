@@ -11,7 +11,7 @@
 
   > **Repository:** [github.com/bayzed123/sayadbayezid-portfolio-](https://github.com/bayzed123/sayadbayezid-portfolio-)
   >
-  > **Prerequisite:** This guide assumes you've completed the [Getting Started guide](https://smartgentools.com/docs/protfolio-getting-started/) and optionally [deployed your site](/docs/portfolio-deployment-and-blog-system/).
+  > **Prerequisite:** This guide assumes you've completed the [Getting Started guide](https://smartgentools.com/docs/portfolio-website-getting-started-guide/) and optionally [deployed your site](/docs/portfolio-website-deployment-blog-system-guide/).
 
   ![Portfolio customization overview showing editable zones: color theme, hero section, project cards, navigation menu, and typography](assets/images/docs/protfolio-coustomization.JPEG)
 
@@ -52,7 +52,7 @@
   > git push
   > ```
 
-  Keep your local preview server running while you work (see the [Getting Started guide](https://smartgentools.com/docs/protfolio-getting-started/#step-6-preview-locally)) so you can see changes reflected immediately after saving each file.
+  Keep your local preview server running while you work (see the [Getting Started guide](https://smartgentools.com/docs/portfolio-website-getting-started-guide/#step-6-preview-locally)) so you can see changes reflected immediately after saving each file.
 
   ```bash
   npx serve .
@@ -668,8 +668,8 @@
 
   You've now covered the full customization surface of the portfolio. From here:
 
-  - **[Deployment & Blog System Guide](/docs/portfolio-deployment-and-blog-system/)** — if you haven't deployed yet, or want to start publishing blog posts
-  - **[Getting Started Guide](/docs/portfolio-getting-started/)** — for initial setup reference
+  - **[Deployment & Blog System Guide](/docs/portfolio-website-deployment-blog-system-guide/)** — if you haven't deployed yet, or want to start publishing blog posts
+  - **[Getting Started Guide](/docs/portfolio-website-getting-started-guide/)** — for initial setup reference
   - Start writing your first blog post using the [blog system guide](/docs/portfolio-deployment-and-blog-system/#writing-posts-in-markdown) to begin building content regularly
 
   ## Further reading
@@ -683,11 +683,11 @@
     <tr>
       <td align="left" width="50%">
         <p>Previous</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-customization/">Portfolio Customization</a></b>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-customization-guide/">Portfolio Customization</a></b>
       </td>
       <td align="right" width="50%">
         <p>Next</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-api-reference/">Portfolio API Reference</a></b>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-api-script-reference/">Portfolio API Reference</a></b>
       </td>
     </tr>
   </table>

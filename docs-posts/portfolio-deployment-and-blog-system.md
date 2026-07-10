@@ -11,7 +11,7 @@
 
   > **Repository:** [github.com/bayzed123/sayadbayezid-portfolio-](https://github.com/bayzed123/sayadbayezid-portfolio-)
   >
-  > **Prerequisite:** This guide assumes you've already completed the [Getting Started guide](/docs/portfolio-getting-started/) — your project should be personalized via `setup.sh` and tested locally before deploying.
+  > **Prerequisite:** This guide assumes you've already completed the [Getting Started guide](/docs/portfolio-website-getting-started-guide/) — your project should be personalized via `setup.sh` and tested locally before deploying.
 
   ## In this guide
 
@@ -503,8 +503,8 @@
 
   ## Next steps
 
-  - **[Getting Started Guide](/docs/portfolio-getting-started/)** — if you haven't completed initial setup yet
-  - **[Customization Guide](/docs/portfolio-customization/)** — editing colors, layout sections, and adding new pages
+  - **[Getting Started Guide](/docs/portfolio-website-getting-started-guide/)** — if you haven't completed initial setup yet
+  - **[Customization Guide](/docs/portfolio-website-customization-guide/)** — editing colors, layout sections, and adding new pages
   - Start writing your first real post and push it live using the workflow above
 
   ## Further reading
@@ -517,11 +517,11 @@
     <tr>
       <td align="left" width="50%">
         <p>Previous</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-customization/">Portfolio Customization</a></b>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-customization-guide/">Portfolio Customization</a></b>
       </td>
       <td align="right" width="50%">
         <p>Next</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-api-reference/">Portfolio API Reference</a></b>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-api-script-reference/">Portfolio API Reference</a></b>
       </td>
     </tr>
   </table>

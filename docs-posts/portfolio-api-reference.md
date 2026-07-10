@@ -19,13 +19,13 @@
 
   | Step | Guide | What You'll Learn |
   |---|---|---|
-  | **1** | [Getting Started Guide](/docs/protfolio-getting-started/) | Fork, clone, install, and run the project locally |
-  | **2** | [Deployment & Blog System Guide](/docs/portfolio-deployment-and-blog-system/) | Deploy to GitHub Pages/Netlify/Vercel + publish blog posts |
-  | **3** | [Customization Guide](/docs/portfolio-customization/) | Edit colors, sections, navigation, and add new pages |
+  | **1** | [Getting Started Guide](/docs/portfolio-website-getting-started-guide/) | Fork, clone, install, and run the project locally |
+  | **2** | [Deployment & Blog System Guide](/docs/portfolio-website-deployment-blog-system-guide/) | Deploy to GitHub Pages/Netlify/Vercel + publish blog posts |
+  | **3** | [Customization Guide](/docs/portfolio-website-customization-guide/) | Edit colors, sections, navigation, and add new pages |
   | **4** | **API & Script Reference** *(this page)* | Deep technical reference for every script and function |
 
   > **Tip**
-  > New to this project? Start with [Step 1 — Getting Started](/docs/protfolio-getting-started/) instead of this page. This reference is best used *after* you've completed initial setup, when you want to understand or modify the underlying code.
+  > New to this project? Start with [Step 1 — Getting Started](/docs/portfolio-website-getting-started-guide/) instead of this page. This reference is best used *after* you've completed initial setup, when you want to understand or modify the underlying code.
 
   ## In this guide
 
@@ -601,9 +601,9 @@
 
   You've now reached the end of the **Portfolio Website** documentation series. Here's the complete path for reference:
 
-  1. **[Getting Started Guide](/docs/protfolio-getting-started/)** — Fork, clone, install, run locally
-  2. **[Deployment & Blog System Guide](/docs/portfolio-deployment-and-blog-system/)** — Go live + publish posts
-  3. **[Customization Guide](/docs/portfolio-customization/)** — Make it visually yours
+  1. **[Getting Started Guide](/docs/portfolio-website-getting-started-guide/)** — Fork, clone, install, run locally
+  2. **[Deployment & Blog System Guide](/docs/portfolio-website-deployment-blog-system-guide/)** — Go live + publish posts
+  3. **[Customization Guide](/docs/portfolio-website-customization-guide/)** — Make it visually yours
   4. **API & Script Reference** *(you are here)* — Technical deep dive
 
   > **Tip**
@@ -620,11 +620,11 @@
     <tr>
       <td align="left" width="50%">
         <p>Previous</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-customization/">Portfolio Customization</a></b>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-customization-guide/">Portfolio Customization</a></b>
       </td>
       <td align="right" width="50%">
         <p>Next</p>
-        <b><a href="https://smartgentools.com/docs/portfolio-api-reference/">Portfolio API Reference</a></b>
+        <b><a href="https://smartgentools.com/docs/portfolio-website-api-script-reference/">Portfolio API Reference</a></b>
       </td>
     </tr>
   </table>
