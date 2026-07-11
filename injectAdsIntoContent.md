@@ -1,4 +1,3 @@
-```markdown
 # Automated Ad Integration & CLS Prevention Guidelines
 
 This document outlines the standard operating procedures for injecting Adsterra ad units dynamically into the `smartgentools.com` content ecosystem. The primary objective is to maximize monetization without compromising the 100% Core Web Vitals score (Zero Cumulative Layout Shift).
