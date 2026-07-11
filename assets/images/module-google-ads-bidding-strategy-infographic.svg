@@ -1,0 +1,83 @@
+<svg width="1300" height="820" viewBox="0 0 1300 820" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101728"/>
+      <stop offset="100%" stop-color="#1C2C4D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1300" height="820" fill="url(#bgGradA)"/>
+
+  <text x="650" y="56" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" fill="#F6F1E4">The Anatomy of a Google Search Ad</text>
+  <text x="650" y="86" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" fill="#93A0C2">Every piece you can control, labeled</text>
+
+  <!-- Ad mockup card -->
+  <rect x="150" y="140" width="700" height="430" rx="12" fill="#161F36" stroke="#3A4A72" stroke-width="2"/>
+
+  <!-- Ad badge + display URL -->
+  <rect x="180" y="168" width="40" height="24" rx="4" fill="none" stroke="#4ED9AE" stroke-width="2"/>
+  <text x="200" y="185" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12" font-weight="700" fill="#4ED9AE">Ad</text>
+  <text x="232" y="186" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" fill="#93A0C2">www.yoursite.com/free-checklist</text>
+
+  <!-- Headlines -->
+  <text x="180" y="222" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#7FB2F0">Free Marketing Checklist</text>
+  <text x="180" y="222" dx="0" dy="0"></text>
+  <text x="185" y="222" font-family="'Trebuchet MS', sans-serif" font-size="19" font-weight="700" fill="#7FB2F0"></text>
+  <text x="180" y="222" text-anchor="start"></text>
+  <text x="180" y="222" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#7FB2F0">Free Marketing Checklist | Download Free | Start Today</text>
+
+  <!-- Description -->
+  <text x="180" y="252" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" fill="#C7CFE3">Get our step-by-step checklist used by 10,000+ marketers. No</text>
+  <text x="180" y="272" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" fill="#C7CFE3">signup required. Instant access, download it free right now.</text>
+
+  <!-- Sitelinks row -->
+  <line x1="180" y1="296" x2="800" y2="296" stroke="#2E3B5E"/>
+  <text x="180" y="326" font-family="'Trebuchet MS', sans-serif" font-size="14" fill="#7FB2F0" text-decoration="underline">Pricing</text>
+  <text x="290" y="326" font-family="'Trebuchet MS', sans-serif" font-size="14" fill="#7FB2F0" text-decoration="underline">Free Trial</text>
+  <text x="420" y="326" font-family="'Trebuchet MS', sans-serif" font-size="14" fill="#7FB2F0" text-decoration="underline">Case Studies</text>
+  <text x="570" y="326" font-family="'Trebuchet MS', sans-serif" font-size="14" fill="#7FB2F0" text-decoration="underline">Contact Us</text>
+
+  <!-- Callouts row -->
+  <text x="180" y="358" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Free Shipping &#183; 24/7 Support &#183; No Credit Card &#183; Cancel Anytime</text>
+
+  <!-- Structured snippet row -->
+  <text x="180" y="388" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Types: Templates, Checklists, Worksheets, Guides</text>
+
+  <!-- Callout leader lines + numbers -->
+  <circle cx="900" cy="180" r="16" fill="#1B2540" stroke="#4ED9AE" stroke-width="2"/>
+  <text x="900" y="185" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#4ED9AE" font-weight="700">1</text>
+  <line x1="884" y1="180" x2="222" y2="180" stroke="#4ED9AE" stroke-dasharray="3 4" opacity="0.5"/>
+  <text x="925" y="176" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#F6F1E4">Ad Label + Display URL</text>
+  <text x="925" y="195" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">Shows it's paid, builds the URL trust cue</text>
+
+  <circle cx="900" cy="240" r="16" fill="#1B2540" stroke="#F2A93B" stroke-width="2"/>
+  <text x="900" y="245" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#F2A93B" font-weight="700">2</text>
+  <line x1="884" y1="240" x2="700" y2="222" stroke="#F2A93B" stroke-dasharray="3 4" opacity="0.5"/>
+  <text x="925" y="236" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#F6F1E4">Headlines (up to 15)</text>
+  <text x="925" y="255" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">Google mixes and tests combinations</text>
+
+  <circle cx="900" cy="300" r="16" fill="#1B2540" stroke="#F1633C" stroke-width="2"/>
+  <text x="900" y="305" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#F1633C" font-weight="700">3</text>
+  <line x1="884" y1="300" x2="700" y2="262" stroke="#F1633C" stroke-dasharray="3 4" opacity="0.5"/>
+  <text x="925" y="296" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#F6F1E4">Descriptions (up to 4)</text>
+  <text x="925" y="315" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">The full pitch and call to action</text>
+
+  <circle cx="900" cy="360" r="16" fill="#1B2540" stroke="#4ED9AE" stroke-width="2"/>
+  <text x="900" y="365" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#4ED9AE" font-weight="700">4</text>
+  <line x1="884" y1="360" x2="700" y2="316" stroke="#4ED9AE" stroke-dasharray="3 4" opacity="0.5"/>
+  <text x="925" y="356" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#F6F1E4">Sitelink Extensions</text>
+  <text x="925" y="375" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">Extra links to specific site pages</text>
+
+  <circle cx="900" cy="420" r="16" fill="#1B2540" stroke="#F2A93B" stroke-width="2"/>
+  <text x="900" y="425" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#F2A93B" font-weight="700">5</text>
+  <line x1="884" y1="420" x2="700" y2="352" stroke="#F2A93B" stroke-dasharray="3 4" opacity="0.5"/>
+  <text x="925" y="416" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#F6F1E4">Callout Extensions</text>
+  <text x="925" y="435" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">Short trust and benefit phrases</text>
+
+  <circle cx="900" cy="480" r="16" fill="#1B2540" stroke="#F1633C" stroke-width="2"/>
+  <text x="900" y="485" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#F1633C" font-weight="700">6</text>
+  <line x1="884" y1="480" x2="700" y2="382" stroke="#F1633C" stroke-dasharray="3 4" opacity="0.5"/>
+  <text x="925" y="476" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#F6F1E4">Structured Snippets</text>
+  <text x="925" y="495" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12" fill="#93A0C2">A themed list, like Types or Brands</text>
+
+  <text x="650" y="785" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN DIGITAL MARKETING COURSE &#183; MODULE 19</text>
+</svg>
