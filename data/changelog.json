@@ -1,5 +1,10 @@
 [
   {
+    "title": "docs(schema-generator): implement comprehensive step-by-step user guide and optimize internal contextual linking",
+    "date": "2026-07-12T20:25:16Z",
+    "description": "- Integrated a comprehensive Step-by-Step User Guide mapping specific operational UI workflows. - Embedded programmatic preview code blocks matching the production interface results output. - Strategic deployment of contextual interlinking targeting key blog assets (/free-schema-markup-generator-..., /technical-seo-optimization-...) and corporate directories (/docs/, /blog/) to maximize SEO link juice. - Expanded page content depth, FAQ components, and semantic volume to align with Google AdSense evaluation frameworks."
+  },
+  {
     "title": "fix(schema-generator): resolve live preview bug and add copy/download features",
     "date": "2026-07-12T20:06:05Z",
     "description": "- Fixed Javascript crash caused by unescaped script tag injection in buildSchema() - Implemented real-time dynamic live preview rendering inside the textarea - Added interactive 'Copy to Clipboard' and native '.json' file download buttons - Optimized title, meta keywords, and meta description for 2026 Google SERP ranking"
