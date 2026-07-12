@@ -1,0 +1,293 @@
+/**
+ * Adsterra Ad Integration Styles
+ * CLS-Optimized CSS for all ad placements
+ */
+
+/* ============================================
+   CLS Prevention - Ad Wrapper Base Styles
+   ============================================ */
+
+.ad-cls-wrapper {
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+/* Specific height reservations for each ad type */
+.ad-cls-wrapper[id*="social-bar"] {
+  min-height: 0; /* Social bar is injected as script, no height needed */
+}
+
+.ad-cls-wrapper[id*="native-banner"] {
+  min-height: auto;
+}
+
+.ad-cls-wrapper[id*="rect-300x250"] {
+  min-height: 250px;
+}
+
+.ad-cls-wrapper[id*="skyscraper-160x600"] {
+  min-height: 600px;
+}
+
+.ad-cls-wrapper[id*="leaderboard-728x90"] {
+  min-height: 90px;
+}
+
+.ad-cls-wrapper[id*="mobile-320x50"] {
+  min-height: 50px;
+}
+
+.ad-cls-wrapper[id*="banner-468x60"] {
+  min-height: 60px;
+}
+
+/* ============================================
+   Header Ads Container
+   ============================================ */
+
+.header-ads-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.header-ads-container .desktop-only {
+  display: none;
+}
+
+.header-ads-container .mobile-only {
+  display: none;
+}
+
+/* Desktop: Show 728x90 */
+@media (min-width: 1024px) {
+  .header-ads-container .desktop-only {
+    display: flex;
+  }
+  
+  .header-ads-container .mobile-only {
+    display: none;
+  }
+}
+
+/* Mobile: Show 320x50 */
+@media (max-width: 767px) {
+  .header-ads-container .mobile-only {
+    display: flex;
+  }
+  
+  .header-ads-container .desktop-only {
+    display: none;
+  }
+}
+
+/* ============================================
+   Sidebar Ads
+   ============================================ */
+
+.sidebar {
+  position: relative;
+  min-width: 160px;
+  max-width: 160px;
+  margin-left: 20px;
+}
+
+.sidebar-ad {
+  width: 100%;
+}
+
+.sidebar-ad.sticky {
+  position: sticky;
+  top: 20px;
+}
+
+/* Hide sidebar on mobile and tablet */
+@media (max-width: 1023px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* ============================================
+   In-Content Ads
+   ============================================ */
+
+.ad-cls-wrapper[id*="rect-300x250"] {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 767px) {
+  .ad-cls-wrapper[id*="rect-300x250"] {
+    max-width: 100%;
+  }
+}
+
+/* ============================================
+   Responsive Display Classes
+   ============================================ */
+
+.desktop-only {
+  display: none;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.tablet-only {
+  display: none;
+}
+
+/* Desktop (1024px and above) */
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: block !important;
+  }
+  
+  .mobile-only {
+    display: none !important;
+  }
+  
+  .tablet-only {
+    display: none !important;
+  }
+}
+
+/* Tablet (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: none !important;
+  }
+  
+  .tablet-only {
+    display: block !important;
+  }
+}
+
+/* Mobile (below 768px) */
+@media (max-width: 767px) {
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: block !important;
+  }
+  
+  .tablet-only {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   Ad Loading States
+   ============================================ */
+
+.ad-cls-wrapper.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.ad-cls-wrapper.loaded {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ad-cls-wrapper.error {
+  background-color: #f0f0f0;
+  border: 1px solid #e0e0e0;
+  min-height: 0;
+}
+
+/* ============================================
+   Ad Container Animations
+   ============================================ */
+
+@keyframes adFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.ad-cls-wrapper {
+  animation: adFadeIn 0.5s ease-in-out;
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .ad-cls-wrapper,
+  .header-ads-container,
+  .sidebar {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+.ad-cls-wrapper {
+  /* Ensure ads don't interfere with focus management */
+  z-index: 1;
+}
+
+.sidebar-ad.sticky {
+  /* Sticky ads should not interfere with navigation */
+  z-index: 10;
+}
+
+/* Ensure sufficient spacing for keyboard navigation */
+.ad-cls-wrapper:focus-within {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Dark Mode Support
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  .ad-cls-wrapper {
+    background-color: #2a2a2a;
+  }
+  
+  .ad-cls-wrapper.error {
+    background-color: #1a1a1a;
+    border-color: #444;
+  }
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .ad-cls-wrapper {
+    animation: none;
+  }
+  
+  .sidebar-ad.sticky {
+    position: relative;
+  }
+}
