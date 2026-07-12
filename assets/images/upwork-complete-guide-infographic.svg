@@ -1,0 +1,304 @@
+<svg viewBox="0 0 800 992" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+
+  <defs>
+    <filter id="card-shadow" x="-4%" y="-4%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="rgba(0,0,0,0.07)"/>
+    </filter>
+    <filter id="badge-shadow" x="-4%" y="-4%" width="114%" height="114%">
+      <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="rgba(0,0,0,0.10)"/>
+    </filter>
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#14A800;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0D7A00;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="stats-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0D7A00;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#085A00;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ================================================ -->
+  <!-- BACKGROUND                                       -->
+  <!-- ================================================ -->
+  <rect width="800" height="992" fill="#F5FBF3"/>
+
+  <!-- ================================================ -->
+  <!-- HEADER                                           -->
+  <!-- ================================================ -->
+  <rect width="800" height="118" fill="url(#header-grad)"/>
+  <circle cx="748" cy="20" r="90" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="760" cy="112" r="55" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="28" cy="92" r="64" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- Upwork "UW" Badge -->
+  <rect x="20" y="20" width="68" height="68" rx="10" fill="rgba(255,255,255,0.18)"/>
+  <text x="54" y="68" text-anchor="middle" fill="white" font-size="30" font-weight="900">UW</text>
+
+  <!-- Header Titles -->
+  <text x="106" y="44" fill="white" font-size="21" font-weight="700" letter-spacing="-0.3">Upwork — Complete Freelancer Success Roadmap</text>
+  <text x="106" y="70" fill="rgba(255,255,255,0.88)" font-size="13">The A to Z Mega Guide for Beginners — From Signup to Top Rated</text>
+  <text x="106" y="96" fill="rgba(255,255,255,0.62)" font-size="11">SmartGen Digital Marketing Course  ·  smartgentools.com  ·  By Sayad Md Bayezid Hosan</text>
+
+  <!-- ================================================ -->
+  <!-- STATS STRIP                                      -->
+  <!-- ================================================ -->
+  <rect y="118" width="800" height="56" fill="url(#stats-grad)"/>
+
+  <text x="133" y="143" text-anchor="middle" fill="white" font-size="18" font-weight="700">18M+</text>
+  <text x="133" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">Registered Freelancers</text>
+
+  <line x1="266" y1="127" x2="266" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="400" y="143" text-anchor="middle" fill="white" font-size="18" font-weight="700">$4.1B</text>
+  <text x="400" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">Gross Services Volume</text>
+
+  <line x1="533" y1="127" x2="533" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="667" y="143" text-anchor="middle" fill="white" font-size="18" font-weight="700">90%+</text>
+  <text x="667" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">JSS Required for Top Rated Badge</text>
+
+  <!-- ================================================ -->
+  <!-- SECTION LABEL                                    -->
+  <!-- ================================================ -->
+  <text x="400" y="194" text-anchor="middle" fill="#2D7A20" font-size="9.5" letter-spacing="2.5" font-weight="700">13-STEP COMPLETE UPWORK SUCCESS ROADMAP</text>
+
+  <!--
+    STEP CARDS: 2 columns
+    Left  col: x=10,  w=382  Steps 1-7
+    Right col: x=408, w=382  Steps 8-13
+    Card H=64px  Gap=7px
+    Row formula: y = 202 + (step_in_col - 1) × 71
+  -->
+
+  <!-- ================================================ -->
+  <!-- LEFT COLUMN: STEPS 1–7                           -->
+  <!-- ================================================ -->
+
+  <!-- STEP 1: Introduction (y=202) -->
+  <rect x="10" y="202" width="382" height="64" rx="8" fill="white" filter="url(#card-shadow)"/>
+  <rect x="10" y="202" width="4" height="64" rx="2" fill="#6DB33F"/>
+  <circle cx="34" cy="234" r="16" fill="#6DB33F"/>
+  <text x="34" y="239" text-anchor="middle" fill="white" font-size="13" font-weight="700">1</text>
+  <text x="57" y="226" fill="#1A1A1A" font-size="11.5" font-weight="700">Introduction to Upwork.com</text>
+  <text x="57" y="242" fill="#555" font-size="9.5">World's largest freelance marketplace — 18M+ freelancers, 90+ categories, 180+ countries</text>
+  <rect x="322" y="210" width="62" height="18" rx="4" fill="#EDF7E6"/>
+  <text x="353" y="222" text-anchor="middle" fill="#6DB33F" font-size="8.5" font-weight="700">PLATFORM</text>
+
+  <!-- STEP 2: Sign Up (y=273) -->
+  <rect x="10" y="273" width="382" height="64" rx="8" fill="white" filter="url(#card-shadow)"/>
+  <rect x="10" y="273" width="4" height="64" rx="2" fill="#5EA832"/>
+  <circle cx="34" cy="305" r="16" fill="#5EA832"/>
+  <text x="34" y="310" text-anchor="middle" fill="white" font-size="13" font-weight="700">2</text>
+  <text x="57" y="297" fill="#1A1A1A" font-size="11.5" font-weight="700">How to Sign Up</text>
+  <text x="57" y="313" fill="#555" font-size="9.5">Professional email · Legal name matching your ID · Google/Apple login also available</text>
+  <rect x="322" y="281" width="62" height="18" rx="4" fill="#EDF7E6"/>
+  <text x="353" y="293" text-anchor="middle" fill="#5EA832" font-size="8.5" font-weight="700">ACCOUNT</text>
+
+  <!-- STEP 3: Profile Approved (y=344) -->
+  <rect x="10" y="344" width="382" height="64" rx="8" fill="white" filter="url(#card-shadow)"/>
+  <rect x="10" y="344" width="4" height="64" rx="2" fill="#4EA326"/>
+  <circle cx="34" cy="376" r="16" fill="#4EA326"/>
+  <text x="34" y="381" text-anchor="middle" fill="white" font-size="13" font-weight="700">3</text>
+  <text x="57" y="368" fill="#1A1A1A" font-size="11.5" font-weight="700">How to Get Profile Approved</text>
+  <text x="57" y="384" fill="#555" font-size="9.5">Complete before submitting · Specific overview · No keyword stuffing in display name</text>
+  <rect x="302" y="352" width="82" height="18" rx="4" fill="#FFF3E0"/>
+  <text x="343" y="364" text-anchor="middle" fill="#E65100" font-size="8.5" font-weight="700">⚠ CRITICAL STEP</text>
+
+  <!-- STEP 4: Identity Verify (y=415) -->
+  <rect x="10" y="415" width="382" height="64" rx="8" fill="white" filter="url(#card-shadow)"/>
+  <rect x="10" y="415" width="4" height="64" rx="2" fill="#3EA21A"/>
+  <circle cx="34" cy="447" r="16" fill="#3EA21A"/>
+  <text x="34" y="452" text-anchor="middle" fill="white" font-size="13" font-weight="700">4</text>
+  <text x="57" y="439" fill="#1A1A1A" font-size="11.5" font-weight="700">Identity Verification</text>
+  <text x="57" y="455" fill="#555" font-size="9.5">Govt photo ID + selfie · Good lighting · Name must exactly match your Upwork account</text>
+  <rect x="322" y="423" width="62" height="18" rx="4" fill="#EDF7E6"/>
+  <text x="353" y="435" text-anchor="middle" fill="#3EA21A" font-size="8.5" font-weight="700">VERIFY</text>
+
+  <!-- STEP 5: Payment Setup (y=486) -->
+  <rect x="10" y="486" width="382" height="64" rx="8" fill="white" filter="url(#card-shadow)"/>
+  <rect x="10" y="486" width="4" height="64" rx="2" fill="#14A800"/>
+  <circle cx="34" cy="518" r="16" fill="#14A800"/>
+  <text x="34" y="523" text-anchor="middle" fill="white" font-size="13" font-weight="700">5</text>
+  <text x="57" y="510" fill="#1A1A1A" font-size="11.5" font-weight="700">Payment Method Verification</text>
+  <text x="57" y="526" fill="#555" font-size="9.5">Bank / Payoneer / Wise · Confirm test deposit · Required before any withdrawal</text>
+  <rect x="322" y="494" width="62" height="18" rx="4" fill="#EDF7E6"/>
+  <text x="353" y="506" text-anchor="middle" fill="#14A800" font-size="8.5" font-weight="700">PAYMENT</text>
+
+  <!-- STEP 6: 100% Profile (y=557) -->
+  <rect x="10" y="557" width="382" height="64" rx="8" fill="white" filter="url(#card-shadow)"/>
+  <rect x="10" y="557" width="4" height="64" rx="2" fill="#14A800"/>
+  <circle cx="34" cy="589" r="16" fill="#14A800"/>
+  <text x="34" y="594" text-anchor="middle" fill="white" font-size="13" font-weight="700">6</text>
+  <text x="57" y="581" fill="#1A1A1A" font-size="11.5" font-weight="700">Setup 100% Complete Profile</text>
+  <text x="57" y="597" fill="#555" font-size="9.5">Photo + headline + overview + skills + portfolio + rate + certs + profile video</text>
+  <rect x="302" y="565" width="82" height="18" rx="4" fill="#FFF3E0"/>
+  <text x="343" y="577" text-anchor="middle" fill="#E65100" font-size="8.5" font-weight="700">⚠ CRITICAL STEP</text>
+
+  <!-- STEP 7: Cover Letter (y=628) -->
+  <rect x="10" y="628" width="382" height="64" rx="8" fill="white" filter="url(#card-shadow)"/>
+  <rect x="10" y="628" width="4" height="64" rx="2" fill="#14A800"/>
+  <circle cx="34" cy="660" r="16" fill="#14A800"/>
+  <text x="34" y="665" text-anchor="middle" fill="white" font-size="13" font-weight="700">7</text>
+  <text x="57" y="652" fill="#1A1A1A" font-size="11.5" font-weight="700">Write a Winning Cover Letter</text>
+  <text x="57" y="668" fill="#555" font-size="9.5">Read JD fully · Reference specifics · Under 250 words · End with a discovery question</text>
+  <rect x="322" y="636" width="62" height="18" rx="4" fill="#EDF7E6"/>
+  <text x="353" y="648" text-anchor="middle" fill="#14A800" font-size="8.5" font-weight="700">PITCH</text>
+
+  <!-- ================================================ -->
+  <!-- RIGHT COLUMN: STEPS 8–13                         -->
+  <!-- ================================================ -->
+
+  <!-- STEP 8: Connects (y=202) -->
+  <rect x="408" y="202" width="382" height="64" rx="8" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="202" width="4" height="64" rx="2" fill="#0D8F00"/>
+  <circle cx="432" cy="234" r="16" fill="#0D8F00"/>
+  <text x="432" y="239" text-anchor="middle" fill="white" font-size="13" font-weight="700">8</text>
+  <text x="455" y="226" fill="#1A1A1A" font-size="11.5" font-weight="700">Connects — Your Bid Tokens</text>
+  <text x="455" y="242" fill="#555" font-size="9.5">10 free/month · 2–6 Connects per job · Only bid on verified-payment client jobs</text>
+  <rect x="718" y="210" width="64" height="18" rx="4" fill="#E8F5E2"/>
+  <text x="750" y="222" text-anchor="middle" fill="#0D8F00" font-size="8.5" font-weight="700">CONNECTS</text>
+
+  <!-- STEP 9: How to Bid (y=273) -->
+  <rect x="408" y="273" width="382" height="64" rx="8" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="273" width="4" height="64" rx="2" fill="#0D8F00"/>
+  <circle cx="432" cy="305" r="16" fill="#0D8F00"/>
+  <text x="432" y="310" text-anchor="middle" fill="white" font-size="13" font-weight="700">9</text>
+  <text x="455" y="297" fill="#1A1A1A" font-size="11.5" font-weight="700">How to Bid on Jobs</text>
+  <text x="455" y="313" fill="#555" font-size="9.5">Filter: fit + budget reality + client history · Bid at your profile rate · Screen red flags</text>
+  <rect x="720" y="281" width="62" height="18" rx="4" fill="#E8F5E2"/>
+  <text x="751" y="293" text-anchor="middle" fill="#0D8F00" font-size="8.5" font-weight="700">BIDDING</text>
+
+  <!-- STEP 10: Project Catalog (y=344) -->
+  <rect x="408" y="344" width="382" height="64" rx="8" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="344" width="4" height="64" rx="2" fill="#0D8F00"/>
+  <circle cx="432" cy="376" r="16" fill="#0D8F00"/>
+  <text x="432" y="381" text-anchor="middle" fill="white" font-size="13" font-weight="700">10</text>
+  <text x="455" y="368" fill="#1A1A1A" font-size="11.5" font-weight="700">Create a Project / Catalogue</text>
+  <text x="455" y="384" fill="#555" font-size="9.5">Pre-packaged fixed-price services · 3-tier pricing · Passive discovery — clients come to you</text>
+  <rect x="720" y="352" width="62" height="18" rx="4" fill="#E8F5E2"/>
+  <text x="751" y="364" text-anchor="middle" fill="#0D8F00" font-size="8.5" font-weight="700">CATALOG</text>
+
+  <!-- STEP 11: Justify Buyer (y=415) -->
+  <rect x="408" y="415" width="382" height="64" rx="8" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="415" width="4" height="64" rx="2" fill="#0A7800"/>
+  <circle cx="432" cy="447" r="16" fill="#0A7800"/>
+  <text x="432" y="452" text-anchor="middle" fill="white" font-size="13" font-weight="700">11</text>
+  <text x="455" y="439" fill="#1A1A1A" font-size="11.5" font-weight="700">How to Justify the Buyer</text>
+  <text x="455" y="455" fill="#555" font-size="9.5">Social proof · Paid test task offer · Skill badges · LinkedIn + external portfolio</text>
+  <rect x="720" y="423" width="62" height="18" rx="4" fill="#E8F5E2"/>
+  <text x="751" y="435" text-anchor="middle" fill="#0A7800" font-size="8.5" font-weight="700">TRUST</text>
+
+  <!-- STEP 12: Order & Delivery (y=486) -->
+  <rect x="408" y="486" width="382" height="64" rx="8" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="486" width="4" height="64" rx="2" fill="#0A7800"/>
+  <circle cx="432" cy="518" r="16" fill="#0A7800"/>
+  <text x="432" y="523" text-anchor="middle" fill="white" font-size="13" font-weight="700">12</text>
+  <text x="455" y="510" fill="#1A1A1A" font-size="11.5" font-weight="700">Order and Delivery</text>
+  <text x="455" y="526" fill="#555" font-size="9.5">Use milestones · Work Diary for hourly · Weekly updates · Deliver before deadline</text>
+  <rect x="302" y="352" width="0" height="0" rx="4"/><!-- placeholder -->
+  <rect x="718" y="494" width="64" height="18" rx="4" fill="#E8F5E2"/>
+  <text x="750" y="506" text-anchor="middle" fill="#0A7800" font-size="8.5" font-weight="700">DELIVER</text>
+
+  <!-- STEP 13: Top Rated / Rising Talent (y=557, GOLD) -->
+  <rect x="408" y="557" width="382" height="64" rx="8" fill="#FFF9E6" filter="url(#card-shadow)"/>
+  <rect x="408" y="557" width="4" height="64" rx="2" fill="#FFB800"/>
+  <circle cx="432" cy="589" r="16" fill="#FFB800"/>
+  <text x="432" y="594" text-anchor="middle" fill="white" font-size="12" font-weight="700">13</text>
+  <text x="455" y="581" fill="#1A1A1A" font-size="11.5" font-weight="700">Top Rated or Rising Talent?</text>
+  <text x="455" y="597" fill="#555" font-size="9.5">Rising: active &lt;13 weeks · Top Rated: 90%+ JSS + $1,000 earned + 12 months active</text>
+  <rect x="718" y="565" width="64" height="18" rx="4" fill="#FFF3CD"/>
+  <text x="750" y="577" text-anchor="middle" fill="#E07B00" font-size="8.5" font-weight="700">⭐ BADGE</text>
+
+  <!-- ================================================ -->
+  <!-- BADGES COMPARISON SECTION                        -->
+  <!-- ================================================ -->
+
+  <!-- RISING TALENT CARD -->
+  <rect x="10" y="706" width="380" height="118" rx="10" fill="white" filter="url(#badge-shadow)"/>
+  <rect x="10" y="706" width="380" height="32" rx="10" fill="#6DB33F"/>
+  <rect x="10" y="726" width="380" height="12" fill="#6DB33F"/>
+  <text x="200" y="727" text-anchor="middle" fill="white" font-size="12" font-weight="700">🌱 RISING TALENT</text>
+  <text x="200" y="741" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="9">For new freelancers showing strong early signals</text>
+
+  <circle cx="30" cy="760" r="3.5" fill="#6DB33F"/>
+  <text x="40" y="764" fill="#333" font-size="10" font-weight="600">Timeline: Awarded within first 13 weeks</text>
+  <circle cx="30" cy="778" r="3.5" fill="#6DB33F"/>
+  <text x="40" y="782" fill="#333" font-size="10" font-weight="600">Profile: 100% complete + regular login</text>
+  <circle cx="30" cy="796" r="3.5" fill="#6DB33F"/>
+  <text x="40" y="800" fill="#333" font-size="10" font-weight="600">Activity: High response rate + active proposals</text>
+  <rect x="18" y="810" width="364" height="8" rx="4" fill="#E8F5E2"/>
+  <rect x="18" y="810" width="210" height="8" rx="4" fill="#6DB33F"/>
+  <text x="200" y="822" text-anchor="middle" fill="#555" font-size="9">Temporary visibility boost while building reviews</text>
+
+  <!-- TOP RATED CARD -->
+  <rect x="410" y="706" width="380" height="118" rx="10" fill="white" filter="url(#badge-shadow)"/>
+  <rect x="410" y="706" width="380" height="32" rx="10" fill="#E07B00"/>
+  <rect x="410" y="726" width="380" height="12" fill="#E07B00"/>
+  <text x="600" y="727" text-anchor="middle" fill="white" font-size="12" font-weight="700">⭐ TOP RATED</text>
+  <text x="600" y="741" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="9">For experienced freelancers with proven track record</text>
+
+  <circle cx="430" cy="760" r="3.5" fill="#E07B00"/>
+  <text x="440" y="764" fill="#333" font-size="10" font-weight="600">JSS: 90%+ for 13 of the last 16 weeks</text>
+  <circle cx="430" cy="778" r="3.5" fill="#E07B00"/>
+  <text x="440" y="782" fill="#333" font-size="10" font-weight="600">Earnings: $1,000+ from multiple clients in 12 months</text>
+  <circle cx="430" cy="796" r="3.5" fill="#E07B00"/>
+  <text x="440" y="800" fill="#333" font-size="10" font-weight="600">Benefit: 20–30% more visibility + private invites</text>
+  <rect x="418" y="810" width="364" height="8" rx="4" fill="#FFF3CD"/>
+  <rect x="418" y="810" width="328" height="8" rx="4" fill="#E07B00"/>
+  <text x="600" y="822" text-anchor="middle" fill="#555" font-size="9">JSS recalculates daily — protect it from day one</text>
+
+  <!-- ================================================ -->
+  <!-- SMARTGEN TOOLS BAR                               -->
+  <!-- ================================================ -->
+  <rect x="10" y="840" width="780" height="62" rx="10" fill="#085A00"/>
+  <text x="400" y="860" text-anchor="middle" fill="white" font-size="10.5" font-weight="700" letter-spacing="0.8">🔧 FREE SMARTGEN TOOLS FOR UPWORK FREELANCERS — NO LOGIN REQUIRED</text>
+
+  <rect x="22" y="868" width="138" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="91" y="885" text-anchor="middle" fill="white" font-size="9" font-weight="600">Word Counter →</text>
+
+  <rect x="168" y="868" width="138" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="237" y="885" text-anchor="middle" fill="white" font-size="9" font-weight="600">Image Compressor →</text>
+
+  <rect x="314" y="868" width="138" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="383" y="885" text-anchor="middle" fill="white" font-size="9" font-weight="600">Password Generator →</text>
+
+  <rect x="460" y="868" width="138" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="529" y="885" text-anchor="middle" fill="white" font-size="9" font-weight="600">UTM Builder →</text>
+
+  <rect x="606" y="868" width="138" height="26" rx="6" fill="rgba(255,255,255,0.14)"/>
+  <text x="675" y="885" text-anchor="middle" fill="white" font-size="9" font-weight="600">QR Generator →</text>
+
+  <!-- ================================================ -->
+  <!-- FOOTER                                           -->
+  <!-- ================================================ -->
+  <rect y="916" width="800" height="70" fill="#0A2A06"/>
+
+  <text x="400" y="936" text-anchor="middle" fill="white" font-size="11.5" font-weight="700" letter-spacing="1.5">THE UPWORK SUCCESS LOOP</text>
+
+  <text x="62" y="956" text-anchor="middle" fill="#7DDD65" font-size="9" font-weight="700">SIGNUP</text>
+  <text x="62" y="969" text-anchor="middle" fill="#5A8A52" font-size="8">Create Account</text>
+  <text x="130" y="963" text-anchor="middle" fill="#3A6A32" font-size="14">›</text>
+
+  <text x="197" y="956" text-anchor="middle" fill="#7DDD65" font-size="9" font-weight="700">PROFILE</text>
+  <text x="197" y="969" text-anchor="middle" fill="#5A8A52" font-size="8">Build 100% Complete</text>
+  <text x="265" y="963" text-anchor="middle" fill="#3A6A32" font-size="14">›</text>
+
+  <text x="332" y="956" text-anchor="middle" fill="#7DDD65" font-size="9" font-weight="700">BID</text>
+  <text x="332" y="969" text-anchor="middle" fill="#5A8A52" font-size="8">Pitch + Connects</text>
+  <text x="400" y="963" text-anchor="middle" fill="#3A6A32" font-size="14">›</text>
+
+  <text x="467" y="956" text-anchor="middle" fill="#7DDD65" font-size="9" font-weight="700">WIN</text>
+  <text x="467" y="969" text-anchor="middle" fill="#5A8A52" font-size="8">Justify + Close</text>
+  <text x="535" y="963" text-anchor="middle" fill="#3A6A32" font-size="14">›</text>
+
+  <text x="602" y="956" text-anchor="middle" fill="#7DDD65" font-size="9" font-weight="700">DELIVER</text>
+  <text x="602" y="969" text-anchor="middle" fill="#5A8A52" font-size="8">Quality + On Time</text>
+  <text x="670" y="963" text-anchor="middle" fill="#3A6A32" font-size="14">›</text>
+
+  <text x="738" y="956" text-anchor="middle" fill="#FFD060" font-size="9" font-weight="700">TOP RATED</text>
+  <text x="738" y="969" text-anchor="middle" fill="#5A8A52" font-size="8">JSS 90%+ Badge</text>
+
+  <!-- Copyright -->
+  <text x="400" y="984" text-anchor="middle" fill="#3A6032" font-size="9">© 2026 SmartGen Digital Marketing Course  ·  smartgentools.com  ·  Upwork Guide by Sayad Md Bayezid Hosan</text>
+
+</svg>
