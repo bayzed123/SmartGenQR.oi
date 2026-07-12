@@ -12,6 +12,7 @@ const path = require('path');
 const matter = require('front-matter');
 const { marked } = require('marked');
 const slugify = require('slugify');
+const { BuildTimeAdInjector } = require('../utils/ad-injector.js');
 
 // Configuration
 const BLOG_POSTS_DIR = path.join(__dirname, '../blog-posts');
@@ -204,6 +205,7 @@ function generatePostHTML(post) {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/blog.css">
+    <link rel="stylesheet" href="../../assets/css/ads.css">
     
     <!-- Inline Styles for Print and Share Modal -->
     <style>
@@ -334,6 +336,9 @@ function generatePostHTML(post) {
             <div class="blog-post-content reveal-up delay-200">
                 ${htmlContent}
             </div>
+
+            <!-- Adsterra In-Content Ads (Auto-injected) -->
+            <div id="adsterra-in-content-container"></div>
 
             <footer class="blog-post-footer reveal-up delay-300">
                 <div class="blog-post-tags">
@@ -666,9 +671,13 @@ function buildBlog() {
       fs.mkdirSync(postDir, { recursive: true });
     }
 
-    const postHTML = generatePostHTML(post);
+    let postHTML = generatePostHTML(post);
+    
+    // Apply Adsterra ad injections with CLS prevention
+    postHTML = BuildTimeAdInjector.injectAllAds(postHTML);
+    
     fs.writeFileSync(path.join(postDir, 'index.html'), postHTML);
-    console.log(`✅ Generated: /blog/${post.slug}/index.html`);
+    console.log(`✅ Generated: /blog/${post.slug}/index.html (with Adsterra ads)`);
   });
 
   // Generate blog archive page
@@ -686,6 +695,7 @@ function buildBlog() {
 
   console.log('🎉 Blog build completed successfully!');
   console.log(`📊 Total posts: ${posts.length}`);
+  console.log('🎯 Adsterra ads injected with 100% CLS prevention');
   console.log(`🌐 Blog URL: ${SITE_URL}/blog/\n`);
 }
 

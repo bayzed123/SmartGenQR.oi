@@ -166,3 +166,8 @@ const AD_CONFIG = {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = AD_CONFIG;
 }
+
+// Export for browser (runtime)
+if (typeof window !== 'undefined') {
+  window.AD_CONFIG = AD_CONFIG;
+}

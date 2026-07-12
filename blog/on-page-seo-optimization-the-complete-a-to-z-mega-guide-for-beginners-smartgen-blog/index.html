@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners - SmartGen Blog - SmartGen Blog</title>
+    <meta name="description" content="A complete, practical A to Z guide to on-page SEO optimization — conducting audits, optimizing title tags, meta descriptions, headers, images, URLs, internal links, 301 redirects, XML sitemaps, robots.txt, and monitoring page performance for real search results.">
+    <meta name="author" content="Sayad Md Bayezid Hosan">
+    <meta name="keywords" content="SmartGen, SEO, On-Page SEO, On-Page Optimization, Title Tag Optimization, Meta Description, XML Sitemap, Robots.txt, Page Performance">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners - SmartGen Blog">
+    <meta property="og:description" content="A complete, practical A to Z guide to on-page SEO optimization — conducting audits, optimizing title tags, meta descriptions, headers, images, URLs, internal links, 301 redirects, XML sitemaps, robots.txt, and monitoring page performance for real search results.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/on-page-seo-optimization-infographic.svg">
+    <meta property="og:url" content="https://smartgentools.com/blog/on-page-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="Thu Jul 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)">
+    <meta property="article:author" content="Sayad Md Bayezid Hosan">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners - SmartGen Blog">
+    <meta name="twitter:description" content="A complete, practical A to Z guide to on-page SEO optimization — conducting audits, optimizing title tags, meta descriptions, headers, images, URLs, internal links, 301 redirects, XML sitemaps, robots.txt, and monitoring page performance for real search results.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/on-page-seo-optimization-infographic.svg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://smartgentools.com/blog/on-page-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/">
+    
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners - SmartGen Blog",
+        "description": "A complete, practical A to Z guide to on-page SEO optimization — conducting audits, optimizing title tags, meta descriptions, headers, images, URLs, internal links, 301 redirects, XML sitemaps, robots.txt, and monitoring page performance for real search results.",
+        "image": "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/on-page-seo-optimization-infographic.svg",
+        "datePublished": "Thu Jul 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "author": {
+            "@type": "Person",
+            "name": "Sayad Md Bayezid Hosan",
+            "url": "https://smartgentools.com/about/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "SmartGen",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://smartgentools.com/assets/images/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/blog.css">
+    <link rel="stylesheet" href="../../assets/css/ads.css">
+    
+    <!-- Inline Styles for Print and Share Modal -->
+    <style>
+        /* Print Styles */
+        @media print {
+            header, footer, .newsletter-section, .blog-related-posts, #print-button, #share-button, #main-header, #main-footer, .share-modal {
+                display: none !important;
+            }
+            body { background: white; color: black; }
+            .blog-post-container { max-width: 100%; padding: 0; }
+            .blog-post-article { box-shadow: none; border: none; }
+            .blog-post-title { page-break-after: avoid; }
+            .blog-post-content { color: black; }
+            .blog-post-content a { color: #0066cc; text-decoration: underline; }
+            img { max-width: 100%; height: auto; page-break-inside: avoid; }
+            h2, h3, h4 { page-break-after: avoid; page-break-inside: avoid; }
+            p { orphans: 3; widows: 3; }
+            pre { background: #f5f5f5 !important; border: 1px solid #ddd !important; page-break-inside: avoid; }
+        }
+
+        /* Share Modal Styles */
+        .share-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .share-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .share-modal-content {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            max-width: 350px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        .share-modal.show .share-modal-content {
+            transform: translateY(0);
+        }
+        .share-close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 28px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .share-close:hover { color: #000; }
+        .share-modal h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+            font-size: 1.5rem;
+        }
+        .share-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .share-btn {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .share-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+        .share-btn.fb { background: #1877F2; }
+        .share-btn.tw { background: #000000; }
+        .share-btn.li { background: #0A66C2; }
+        .share-btn.wa { background: #25D366; }
+        .share-btn.copy { background: #4b5563; }
+    </style>
+    
+    <!-- Scripts -->
+    <script src="../../assets/js/app.js" defer></script>
+    <script src="../../assets/js/blog.js" defer></script>
+
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="blog-post-container">
+        <article class="blog-post-article reveal-up">
+            <header class="blog-post-header">
+                <div class="blog-post-meta">
+                    <time datetime="Thu Jul 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)">July 2, 2026</time>
+                    <span class="meta-separator">•</span>
+                    <span class="blog-post-category">General</span>
+                    <span class="meta-separator">•</span>
+                    <span class="blog-post-author">By Sayad Md Bayezid Hosan</span>
+                </div>
+                <h1 class="blog-post-title">On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners - SmartGen Blog</h1>
+<div class="header-ads-container">
+  <div class="desktop-only">
+    <div id="ad-wrapper-leaderboard-728x90" class="ad-cls-wrapper" style="min-height: 90px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden;">
+  <script>
+  atOptions = {
+    'key' : 'f9d4f2f3a29a9dcfb43dddf1fd33eb88',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f9d4f2f3a29a9dcfb43dddf1fd33eb88/invoke.js"></script>
+</div>
+  </div>
+  <div class="mobile-only">
+    <div id="ad-wrapper-mobile-320x50" class="ad-cls-wrapper" style="min-height: 50px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden;">
+  <script>
+  atOptions = {
+    'key' : '6af746fdd2244652b728e73b1a70db61',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>
+</div>
+  </div>
+</div>
+                <p class="blog-post-excerpt">A complete, practical A to Z guide to on-page SEO optimization — conducting audits, optimizing title tags, meta descriptions, headers, images, URLs, internal links, 301 redirects, XML sitemaps, robots.txt, and monitoring page performance for real search results.</p>
+            </header>
+
+            <!-- Author Profile Section - Right after title (Auto-inserted if not manually placed) -->
+            <!-- Slim Minimalist Author Profile Box -->
+<div id="ad-wrapper-native-banner" class="ad-cls-wrapper" style="min-height: autopx; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden;">
+  <script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
+<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>
+</div>
+<div class="author-box" style="display: flex; align-items: center; margin: 2rem 0; padding: 0.75rem 0; gap: 0.75rem;">
+    <!-- Profile Picture -->
+    <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/smartgentools-blog-bayezid-profile.jpg" 
+         alt="Sayad Md Bayezid Hosan" 
+         style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+    
+    <!-- Info -->
+    <div class="author-info" style="flex: 1;">
+        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
+    </div>
+</div>
+
+
+            <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/on-page-seo-optimization-infographic.svg" alt="On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners - SmartGen Blog" class="blog-post-featured-image reveal-up delay-100">
+
+            <div class="blog-post-content reveal-up delay-200">
+                <p>July 02, 2026 • General • By <a href="https://www.sayadbayezid.com">Sayad Md Bayezid Hosan</a></p>
+<h1>On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners</h1>
+<p>A complete, practical A to Z guide to on-page SEO optimization — conducting audits that reveal exactly what needs fixing, optimizing every HTML element from title tags to header structure, handling images and video correctly so they help rather than hurt your rankings, building a clean URL and internal link architecture, managing 301 redirects and 404 error pages, creating XML sitemaps and robots.txt files, and monitoring page performance so your results compound over time.</p>
+<div id="ad-wrapper-rect-300x250" class="ad-cls-wrapper" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+<p><img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/on-page-seo-optimization-infographic.svg" alt="On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners"></p>
+<hr>
+<h2>Welcome to This Guide: On-Page SEO</h2>
+<p>Search engine optimization has three broad pillars: on-page, off-page, and technical. Off-page covers backlinks and external authority. Technical covers site infrastructure — hosting, crawlability, server speed, and core web architecture. On-page covers everything you can directly control on the page itself: the words, the structure, the tags, the media, the links, the URLs, and the signals you send to search engines through well-organized HTML.</p>
+<p>This guide focuses entirely on on-page, because it is the area you have the most direct control over right now, regardless of your budget, your domain age, or how many backlinks you have. A single page that is properly optimized, top to bottom, following everything in this guide, will consistently outperform pages that only partially address these elements — even on sites with stronger overall authority.</p>
+<p>Before diving in, a quick note on the relationship between on-page and technical SEO. There is genuine overlap between the two, and you will notice a few topics in this guide — particularly XML sitemaps, robots.txt, and redirect handling — that some practitioners categorize as &quot;technical.&quot; The reason I&#39;ve included them here is that they are most meaningfully understood in the context of on-page decisions: which pages you include, which you exclude, and what happens when a URL changes. You cannot make good sitemaps or robots.txt decisions without understanding your page-level strategy first.</p>
+<div id="ad-wrapper-rect-300x250" class="ad-cls-wrapper" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+<hr>
+<h2>1. Conducting an On-Page Audit</h2>
+<p>Before fixing anything, you need to know exactly what&#39;s broken, what&#39;s suboptimal, and what&#39;s already performing well. An on-page audit is simply a structured review of every page element that affects SEO — done systematically, not by feel.</p>
+<h3>What an Audit Actually Covers</h3>
+<p>An on-page audit reviews title tags (are they present, unique, and the right length?), meta descriptions (are they compelling and not duplicated across pages?), header tag structure (is there exactly one H1 per page, and do the H2–H6 tags form a logical hierarchy?), content quality and keyword relevance (does each page clearly match a user&#39;s search intent?), image optimization (do all images have descriptive filenames and alt text?), URL structure (are URLs short, clean, and keyword-relevant?), internal link structure (are important pages well-linked from within the site?), page load speed (are large media files or render-blocking scripts slowing things down?), mobile usability (does the page work correctly on a phone screen?), and canonical tags (are there duplicate content signals being sent to search engines?).</p>
+<h3>How to Run Your Audit</h3>
+<p>Start with Google Search Console. It is free, it connects directly to Google&#39;s own data about your site, and the Coverage report alone will show you which pages Google has successfully indexed, which it has attempted but failed to index, and which have been intentionally excluded. The Performance report shows which pages are getting impressions and clicks, and — critically — which pages are getting impressions but very few clicks, which often signals weak title tags or meta descriptions.</p>
+<p>For a deeper crawl, tools like Screaming Frog&#39;s SEO Spider (free up to 500 URLs) or Sitebulb can systematically crawl every page of your site and flag missing title tags, duplicate content, missing alt text, broken internal links, redirect chains, and dozens of other issues in a single scan.</p>
+<h3>Prioritizing What to Fix First</h3>
+<p>Not everything flagged in an audit is equally urgent. The highest-priority fixes, in practical order, are: pages with missing or duplicate title tags and meta descriptions, since these directly affect how Google presents your content in search results; pages with broken internal links (which both hurt user experience and waste crawl budget); images without alt text (which block search engines from understanding visual content); pages with missing H1 tags or multiple H1 tags; and pages with slow load times caused by uncompressed media.</p>
+<p>Fix what&#39;s broken, then optimize what&#39;s merely mediocre, then focus on what&#39;s already working and can be pushed further.</p>
+<hr>
+<h2>2. Title Tag, Meta Description, Canonical Tag &amp; Header Tag Optimization</h2>
+<p>These are the four HTML elements that do the most direct work in communicating your page&#39;s topic to both search engines and users before they even arrive on your page. Getting them right is the highest-leverage, lowest-effort optimization available to you.</p>
+<h3>Title Tag</h3>
+<p>The title tag is the single most important on-page SEO element. It appears as the large blue clickable link in Google&#39;s search results, in browser tabs, and in social media previews. Google uses it as a primary signal for understanding what a page is about.</p>
+<p><strong>Length:</strong> Keep it between 50 and 60 characters. Shorter than 50 characters means you are likely wasting valuable space. Longer than 60 and Google will truncate it in search results, often cutting off in awkward places.</p>
+<p><strong>Keyword placement:</strong> Include your primary keyword as close to the beginning of the title as possible. Google gives more weight to terms that appear early in the title, and users also scan from left to right, so a front-loaded keyword immediately confirms relevance.</p>
+<p><strong>Brand name:</strong> For most pages other than the homepage, put the brand name at the end, separated by a dash or pipe — not at the front, where it takes up space that would be better used by your keyword.</p>
+<p><strong>No keyword stuffing:</strong> &quot;Best SEO Tips | SEO Guide | SEO Strategies | SEO Tools 2026&quot; is a title that Google will either truncate, rewrite, or penalize. One primary keyword, one secondary reference if it fits naturally, and a compelling reason to click.</p>
+<p><strong>Example:</strong> Bad: &quot;SmartGen - Tools, SEO, Digital Marketing Resources and Blog&quot; → Good: &quot;Free SEO Tools for Beginners — SmartGen&quot;</p>
+<h3>Meta Description</h3>
+<p>The meta description does not directly affect your rankings. Google does not use it as a ranking signal. However, it significantly affects your click-through rate from the search results page, and click-through rate is a behavioral signal that does influence how Google values your page over time.</p>
+<p><strong>Length:</strong> 150 to 160 characters. Long enough to communicate genuine value; short enough to avoid truncation.</p>
+<p><strong>Include a keyword:</strong> Google bolds the words in a meta description that match the user&#39;s search query. This makes your result visually stand out in the list, which increases clicks.</p>
+<p><strong>End with a clear CTA:</strong> &quot;Learn how,&quot; &quot;Start free,&quot; &quot;Read the guide,&quot; &quot;See all tools&quot; — a short action phrase at the end of a meta description consistently outperforms descriptions that just describe the page without inviting action.</p>
+<p><strong>Make every one unique:</strong> Duplicate meta descriptions across multiple pages are a frequent audit finding, and they confuse search engines about which page should rank for which query.</p>
+<h3>Canonical Tag</h3>
+<p>The canonical tag (<code>&lt;link rel=&quot;canonical&quot; href=&quot;https://example.com/page/&quot;&gt;</code>) tells search engines which version of a page is the &quot;master&quot; version when multiple URLs might serve similar or identical content.</p>
+<p>This comes up more often than beginners expect. A page accessible at both <code>http://</code> and <code>https://</code>, or at both <code>www.</code> and non-<code>www.</code>, or with and without a trailing slash, can appear to search engines as four different versions of the same content. Canonical tags consolidate all of those signals into a single URL.</p>
+<p><strong>When to use it:</strong> On any page that has duplicate or near-duplicate versions. On paginated series where page 2 and page 3 might contain overlapping content. On product pages in e-commerce where the same product appears under multiple category paths. On any page you want to syndicate to another site without splitting its authority.</p>
+<p><strong>Common mistakes:</strong> Setting the canonical to a non-indexable page (which creates a contradiction the crawler has to resolve). Having multiple conflicting canonical tags. Forgetting to update canonicals after a URL migration.</p>
+<h3>Header Tags (H1–H6)</h3>
+<p>Header tags structure your content for both users and search engines. Think of them the way you&#39;d think of an academic paper&#39;s outline: H1 is the title, H2s are the major sections, H3s are subsections within each H2, and so on.</p>
+<p><strong>H1:</strong> One per page, always. It should contain your primary keyword, but it does not need to be identical to your title tag — and in most cases, a slightly different formulation that is more readable for a visitor is the better choice. If your title tag is optimized for search, let your H1 be optimized for the person already on your page.</p>
+<p><strong>H2s:</strong> These are your section headings. Each H2 should represent a genuinely distinct subtopic of the page, and together they should form a logical outline of the page&#39;s full content. Include secondary keywords naturally in H2 tags — not forced, but where they fit the topic of that section.</p>
+<p><strong>H3–H6:</strong> Use these to create hierarchy within sections. Do not skip levels (an H4 directly under an H1 without any H2 or H3 between them confuses both users and search engine parsers). Do not use header tags purely for visual styling — if you want larger text, use CSS, not H tags.</p>
+<hr>
+<blockquote>
+<h3>🔧 SmartGen Free Tool Recommendation</h3>
+<p><strong>Meta Tag Generator — Generate Perfect HTML Meta Tags in Seconds</strong></p>
+<p>Writing title tags and meta descriptions manually for every page is time-consuming and easy to get wrong — especially getting the character length right or ensuring your Open Graph tags are properly formatted for social sharing. The SmartGen Meta Tag Generator does this for you instantly.</p>
+<p>Type in your page title, description, keywords, and author — and the tool generates a complete, properly formatted block of HTML meta tags including your title tag, meta description, keywords tag, viewport tag, robots tag, and Open Graph tags for Facebook and Twitter cards. Copy the output and paste it directly into your page&#39;s <code>&lt;head&gt;</code> section.</p>
+<p><strong>Free. No login. No registration required.</strong></p>
+<p><a href="https://smartgentools.com/meta-tag-generator/"><img src="https://smartgentools.com/meta-tag-generator/" alt="Use Meta Tag Generator — Free →"></a></p>
+<p><strong><a href="https://smartgentools.com/meta-tag-generator/">🔧 Open Meta Tag Generator</a></strong></p>
+<p><em>Your data is never stored or shared. <a href="https://smartgentools.com/privacy/">Read our Privacy Policy</a> to understand exactly how SmartGen handles your information.</em></p>
+</blockquote>
+<hr>
+<h2>3. Multimedia File Optimization (Images, Videos &amp; More)</h2>
+<p>Unoptimized media is one of the most common and most consequential on-page problems on the entire web. A single uncompressed hero image can add three seconds to your page load time, and a three-second delay meaningfully increases bounce rate, reduces conversions, and sends a negative user experience signal back to Google. Meanwhile, missing alt text on images means search engines receive zero information about what your visual content contains — a missed opportunity for additional keyword signals and image search visibility.</p>
+<h3>Image Optimization</h3>
+<p><strong>Filenames:</strong> The moment you take a screenshot or export a design, rename the file before uploading it. <code>IMG_4892.jpg</code> tells Google nothing. <code>on-page-seo-audit-checklist.jpg</code> tells Google exactly what it depicts, associates that content with your page&#39;s topic, and can appear in Google Images for relevant queries.</p>
+<p><strong>Alt text:</strong> Alt text (the <code>alt=&quot;&quot;</code> attribute on <code>&lt;img&gt;</code> tags) serves two purposes simultaneously: it tells screen readers what an image shows (accessibility) and it tells search engines what the image depicts (SEO). Write a concise, accurate description of what is in the image. Include your keyword where it genuinely fits the description. Do not stuff it — &quot;on-page SEO tips on-page optimization on-page guide image&quot; is keyword spam, not alt text.</p>
+<p><strong>Compression:</strong> This is the most impactful single step in image optimization for most sites. Use a tool like Squoosh (squoosh.app, free, no sign-up needed) or TinyPNG (tinypng.com) to compress images before uploading them. A 3MB JPEG photo of your team can typically be compressed to under 200KB with no visible quality loss, which directly translates to faster page load times.</p>
+<p><strong>Modern image formats:</strong> WebP and AVIF are newer image formats that achieve significantly smaller file sizes than JPEG or PNG at equivalent visual quality. Most modern browsers support both. If your CMS allows it, serving images in WebP or AVIF rather than traditional formats is one of the simplest performance wins available without any code changes.</p>
+<p><strong>Dimensions:</strong> Upload images at the size they will actually display on the page. If an image slot on your page is 800px wide, there is no reason to upload a 3000px-wide image and let the browser scale it down. The browser still downloads the full 3000px file even when displaying it at 800px.</p>
+<p><strong>Lazy loading:</strong> The <code>loading=&quot;lazy&quot;</code> attribute on image tags tells the browser not to download off-screen images until the user scrolls near them. This significantly reduces the initial page load time, especially on long pages with many images. Simply add <code>loading=&quot;lazy&quot;</code> to every <code>&lt;img&gt;</code> tag below the fold.</p>
+<h3>Video Optimization</h3>
+<p><strong>Hosting:</strong> For most sites, hosting video on YouTube and embedding it rather than self-hosting the video file is the correct choice. Self-hosted video requires significant server bandwidth and can dramatically slow down your page. YouTube handles delivery, buffering, and mobile optimization automatically.</p>
+<p><strong>Thumbnails:</strong> A compelling custom thumbnail on a YouTube embed does more to increase click-through than almost any other single adjustment. Use a thumbnail that clearly communicates what the video covers.</p>
+<p><strong>Video Schema:</strong> Adding VideoObject structured data (Schema.org markup) to pages containing embedded video gives Google enough information to show a video rich result in search — including a thumbnail, title, description, and duration directly in the search results page. This can meaningfully increase click-through rates from organic search.</p>
+<p><strong>Captions and transcripts:</strong> Captions make videos accessible to users who watch without sound (the majority on mobile) and add indexable text content to your page that supports keyword relevance without any additional writing.</p>
+<hr>
+<h2>4. URL Structure, Internal Linking, No-Follow &amp; Do-Follow Links</h2>
+<h3>URL Structure</h3>
+<p>Your URLs are one of the smallest but most immediately visible signals in SEO — to both users and search engines. A clean, descriptive URL tells a user what they are about to read before they click, and it tells a search engine what the page is about in one of the first signals it reads.</p>
+<p><strong>Keep URLs short and descriptive:</strong> <code>smartgentools.com/blog/on-page-seo-guide/</code> is clean and communicates the topic immediately. <code>smartgentools.com/blog/?p=438&amp;category=seo&amp;ref=internal</code> communicates nothing. The shorter, the better.</p>
+<p><strong>Use hyphens, not underscores:</strong> Google reads hyphens as word separators. It does not treat underscores the same way. <code>on-page-seo</code> is correctly read as three words; <code>on_page_seo</code> is read as one word. Always use hyphens.</p>
+<p><strong>Lowercase only:</strong> URLs are case-sensitive on most web servers. <code>/On-Page-SEO/</code> and <code>/on-page-seo/</code> could be treated as two different URLs, creating duplicate content. Use all lowercase, always.</p>
+<p><strong>Include your primary keyword:</strong> The keyword in the URL is a mild but real ranking signal, and it also helps users and other sites that link to your content accurately describe it in anchor text.</p>
+<p><strong>Avoid dates in URLs where possible:</strong> <code>smartgentools.com/blog/2026/07/on-page-seo-guide/</code> will look outdated in 2028 even if you refresh the content. A timeless URL like <code>smartgentools.com/blog/on-page-seo-guide/</code> allows the content to stay relevant indefinitely.</p>
+<p><strong>If you change a URL:</strong> Always set up a 301 redirect from the old URL to the new one (covered in detail in Section 5). Never change a URL without redirecting the old one — any rankings, links, and traffic the old URL had will evaporate.</p>
+<h3>Internal Linking</h3>
+<p>Internal links are the connections between pages within your own site, and they do two things simultaneously that most beginners underestimate. First, they pass authority from one page to another, which means a high-authority page on your site can help a newer, less-established page rank by linking to it. Second, they guide the Google crawler from page to page, which determines how thoroughly your site is indexed.</p>
+<p><strong>Anchor text matters:</strong> The clickable text of an internal link (the anchor text) tells search engines what the destination page is about. &quot;Click here&quot; and &quot;read more&quot; are weak anchor texts. &quot;Complete guide to on-page SEO optimization&quot; is a strong anchor text that sends a clear, relevant signal about the linked page.</p>
+<p><strong>Link depth:</strong> Any important page on your site should be reachable within three clicks from your homepage. Pages buried deeper than that get crawled less frequently, passed less authority, and ranked less reliably.</p>
+<p><strong>Orphan pages:</strong> An orphan page is a page with no internal links pointing to it — meaning Google can only find it if the URL is submitted directly in a sitemap. Orphan pages are a common audit finding and a genuine problem. Every page on your site should be linked from at least one other page.</p>
+<p><strong>Do not overlink:</strong> Having fifty internal links on a single page is not better than having ten. When the link count on a page is very high, each individual link carries less weight. Link where it genuinely serves the reader — where a related piece of content would add value if they clicked it.</p>
+<h3>No-Follow vs. Do-Follow Links</h3>
+<p>Every link is either dofollow or nofollow, and the difference matters for how search engine authority passes through your site.</p>
+<p><strong>Dofollow (default):</strong> This is the standard state of any link with no <code>rel</code> attribute. When you create a link without specifying anything else, it is dofollow by default. Dofollow links pass &quot;link equity&quot; (sometimes called link juice or PageRank) from the linking page to the destination page. Most internal links and most editorial external links should be dofollow.</p>
+<p><strong>Nofollow (<code>rel=&quot;nofollow&quot;</code>):</strong> This attribute tells search engines not to follow the link and not to pass authority through it. Use nofollow for paid or sponsored links (where Google&#39;s guidelines require it), user-generated content links (like comment sections where you cannot vouch for every link someone posts), and links to pages you are required to link to but do not want to endorse.</p>
+<p><strong>Sponsored (<code>rel=&quot;sponsored&quot;</code>):</strong> Introduced by Google in 2019 as a specific attribute for paid or affiliate links. It is treated similarly to nofollow but provides clearer intent information to the crawler.</p>
+<p><strong>UGC (<code>rel=&quot;ugc&quot;</code>):</strong> Specifically for user-generated content areas — forums, comments, community posts — where you cannot vouch for every external link posted.</p>
+<p>The practical rule: all your internal links should be dofollow. External links to resources you genuinely trust and recommend can be dofollow. Paid links, affiliate links, and links in comment sections should use the appropriate attribute.</p>
+<hr>
+<blockquote>
+<p><strong>A Note on What This Is Actually Building</strong></p>
+<p>At this point in the guide you have covered roughly half the terrain. The first four sections have dealt with understanding your pages, optimizing their most critical elements, making their media perform correctly, and connecting them intelligently.</p>
+<p>What you are building is not a checklist. It is a system: a set of interconnected signals that tell search engines, collectively, that every page on your site has a clear purpose, is organized logically, loads quickly, and connects meaningfully to related content. None of these elements works in complete isolation — a perfectly written title tag on a page with no internal links pointing to it, four-megabyte images, and a missing H1 will still underperform. The system has to work as a whole.</p>
+<p>The second half of this guide covers the structural and operational layer: how to handle page transitions and errors, how to communicate your site&#39;s architecture to Google systematically, and how to know whether any of this is actually working. These sections are less glamorous than title tag optimization but arguably more important for sustainable results.</p>
+<p>Everything written in this guide is based on currently documented Google guidelines, widely established SEO practice, and practical patterns that show up consistently when you study what actually ranks. Where specific claims are contested in the SEO community, I have tried to say so rather than presenting one side as settled truth.</p>
+</blockquote>
+<hr>
+<h2>5. 301 Redirects &amp; 404 Error Pages</h2>
+<h3>301 Redirects</h3>
+<p>A 301 redirect is a server-level instruction that tells both browsers and search engines: &quot;This URL has permanently moved to a new location. Please update your records and go directly to the new URL instead.&quot; It passes virtually all of the original URL&#39;s ranking signals, link equity, and indexing history to the new destination.</p>
+<p><strong>When to use a 301:</strong></p>
+<ul>
+<li>When you permanently change a page&#39;s URL for any reason (restructuring, removing dates, fixing a typo in a slug).</li>
+<li>When you migrate an entire site to a new domain.</li>
+<li>When you merge two pages into one — the old URL 301s to the new combined page.</li>
+<li>When your site is accessible at both <code>http://</code> and <code>https://</code> or both <code>www.</code> and non-<code>www.</code> — one version should 301 redirect to the canonical version.</li>
+</ul>
+<p><strong>301 vs. 302:</strong> A 302 redirect means &quot;temporarily moved.&quot; Google holds the original page&#39;s ranking signals in reserve when it sees a 302, rather than transferring them to the destination. If a redirect is intended to be permanent, always use a 301. Using a 302 when you mean a 301 is one of the most common migration mistakes in SEO, and it costs rankings.</p>
+<p><strong>Redirect chains:</strong> A redirect chain is when URL A redirects to URL B, which redirects to URL C, which redirects to URL D. Each hop in the chain slightly weakens the authority transfer and adds load time. If you discover a chain in your audit, collapse it: make URL A redirect directly to URL D, removing all the intermediate hops.</p>
+<p><strong>Redirect loops:</strong> A redirect loop is when URL A redirects to URL B, which redirects back to URL A, creating an infinite circle. Browsers and crawlers detect and break out of loops, but they produce errors rather than pages. Always test your redirects after implementing them.</p>
+<h3>404 Error Pages</h3>
+<p>A 404 error means a browser or crawler requested a URL that does not exist on your server. Some 404s are harmless and expected — if someone types a URL incorrectly, you cannot control that. Others represent genuine SEO problems: internal links pointing to deleted or renamed pages, external sites linking to URLs that no longer exist, and URLs that were linked in your own sitemap but have since been removed without a redirect.</p>
+<p><strong>Auditing your 404s:</strong> Google Search Console&#39;s Pages report (under Indexing) flags URLs Google has tried to crawl but received a 404 response. Review this list regularly. For any URL that was previously indexed (meaning Google ranked it for something) and now returns a 404, set up a 301 redirect to the most relevant existing page.</p>
+<p><strong>Designing a useful 404 page:</strong> A 404 page that simply says &quot;Page Not Found&quot; with no navigation is a dead end — the user and the crawler both have nowhere to go. A well-designed 404 page includes your site&#39;s main navigation so users can find what they were looking for, a search box so they can look for the specific content, links to your most important or popular pages as a fallback, and a friendly, on-brand message that reassures the user rather than alarming them.</p>
+<p><strong>Soft 404s:</strong> A soft 404 is a page that returns a 200 (success) HTTP status code to the server but contains essentially no content — like an empty search results page or a deleted blog post that now shows a placeholder. Google identifies these because it can read the page and recognize there is nothing there, even though the server said the page exists. Soft 404s waste crawl budget and can dilute your site&#39;s overall quality signal. Fix them by either restoring the page content, setting up a proper 301 redirect, or returning a genuine 404 or 410 (gone) HTTP response.</p>
+<hr>
+<h2>6. Creating XML Sitemap &amp; Robots.txt</h2>
+<h3>XML Sitemap</h3>
+<p>An XML sitemap is a file that lists the URLs on your site you want search engines to know about, along with optional metadata about each URL (when it was last updated, how frequently it changes, how important it is relative to other pages). Submitting a sitemap to Google Search Console ensures that the crawler does not have to discover all your pages by following links alone — it can check the sitemap and go directly to the URLs you have listed.</p>
+<p><strong>What to include in your sitemap:</strong></p>
+<ul>
+<li>Your highest-value, canonical URLs (no redirect URLs, no noindex pages).</li>
+<li>Pages you want indexed and ranked — blog posts, product pages, landing pages, key category pages.</li>
+<li>Your sitemap should reflect pages you are proud of and want Google to assess.</li>
+</ul>
+<p><strong>What to exclude from your sitemap:</strong></p>
+<ul>
+<li>Pages with <code>noindex</code> meta tags (including them creates a contradiction Google has to resolve).</li>
+<li>Redirect URLs (include only the final destination, not the old redirected URL).</li>
+<li>Paginated pages beyond the first page in most cases.</li>
+<li>Thin or low-quality pages you do not want highlighted to Google.</li>
+<li>Admin pages, login pages, and thank-you pages.</li>
+</ul>
+<p><strong>Submitting your sitemap:</strong> Log into Google Search Console, go to Sitemaps in the left menu, and paste your sitemap URL (usually <code>https://yourdomain.com/sitemap.xml</code>). Submit it. Google will begin crawling the URLs in the sitemap. Resubmit whenever you make major content additions or structural changes.</p>
+<hr>
+<blockquote>
+<h3>🔧 SmartGen Free Tool Recommendation</h3>
+<p><strong>Sitemap Finder &amp; Downloader — Find Any Website&#39;s Sitemap Instantly</strong></p>
+<p>Not sure where your sitemap is located, or want to check what a competitor&#39;s sitemap includes? The SmartGen Sitemap Finder &amp; Downloader lets you enter any domain and instantly locate and download its XML sitemap — no manual guessing required.</p>
+<p>Enter a website URL, and the tool automatically checks all common sitemap locations, finds the sitemap (including nested sitemap index files), and gives you a direct download. Useful for auditing your own site, understanding competitor architecture, and verifying your sitemap is correctly accessible before submitting to Google Search Console.</p>
+<p><strong>Free. No login. No registration required.</strong></p>
+<p><strong><a href="https://smartgentools.com/sitemap-finder-and-downloader/">🗂️ Open Sitemap Finder &amp; Downloader</a></strong></p>
+<p><em>Your data is never stored or shared. <a href="https://smartgentools.com/privacy/">Read our Privacy Policy</a> to understand exactly how SmartGen handles your information.</em></p>
+</blockquote>
+<hr>
+<h3>Robots.txt</h3>
+<p>Robots.txt is a plain text file located at the root of your domain (<code>https://yourdomain.com/robots.txt</code>). It contains instructions for web crawlers — primarily telling them which parts of your site they are and are not allowed to crawl.</p>
+<p>Important clarification that beginners frequently misunderstand: robots.txt controls <strong>crawling</strong>, not indexing. If a page is blocked by robots.txt, Google cannot crawl it, but if other sites link to it, Google may still know it exists and may even show it in search results (with a message that no information about the page is available). To truly prevent a page from being indexed in search results, you need a <code>noindex</code> meta tag — but that requires the crawler to be able to reach the page and read it. Robots.txt and noindex serve related but distinct purposes.</p>
+<p><strong>Common robots.txt instructions:</strong></p>
+<pre><code>User-agent: *
+Disallow: /admin/
+Disallow: /wp-login.php
+Disallow: /search?
+Allow: /
+
+Sitemap: https://yourdomain.com/sitemap.xml
+</code></pre>
+<ul>
+<li><code>User-agent: *</code> applies the following rules to all crawlers.</li>
+<li><code>Disallow: /admin/</code> blocks crawlers from accessing the admin directory.</li>
+<li><code>Allow: /</code> explicitly allows everything else.</li>
+<li><code>Sitemap:</code> at the end tells crawlers where to find your sitemap.</li>
+</ul>
+<p><strong>What not to block:</strong> Do not block your CSS or JavaScript files. Google needs to render your pages, which requires access to the stylesheets and scripts that control how they look. Blocking these can cause Google to misread your page&#39;s layout and content.</p>
+<p><strong>Check it after any changes:</strong> A misconfigured robots.txt that accidentally blocks your entire site (<code>Disallow: /</code>) is one of the most catastrophic — and embarrassingly common — SEO disasters. Always verify changes to robots.txt using Google Search Console&#39;s robots.txt tester before they go live.</p>
+<hr>
+<blockquote>
+<h3>🔧 SmartGen Free Tool Recommendation</h3>
+<p><strong>Robots.txt Generator — Build a Perfect Robots.txt File Without Code</strong></p>
+<p>Writing a robots.txt file manually requires understanding the syntax precisely — a single spacing or formatting error can block the wrong directories or fail to block the ones you intended. The SmartGen Robots.txt Generator makes this visual and error-free.</p>
+<p>Select which user agents you want to configure, choose which directories to allow or disallow, add your sitemap URL, and the tool generates a correctly formatted, ready-to-upload robots.txt file. No coding knowledge required.</p>
+<p><strong>Free. No login. No registration required.</strong></p>
+<p><strong><a href="https://smartgentools.com/robots-txt-generator/">🤖 Open Robots.txt Generator</a></strong></p>
+<p><em>Your data is never stored or shared. <a href="https://smartgentools.com/privacy/">Read our Privacy Policy</a> to understand exactly how SmartGen handles your information.</em></p>
+</blockquote>
+<hr>
+<h2>7. Page Performance Monitoring &amp; Updating</h2>
+<p>Getting your pages optimized is not a one-time job. Search results change, competitors improve their content, Google&#39;s algorithm evolves, and user behavior shifts. Page performance monitoring is the habit that keeps your SEO results compounding rather than decaying.</p>
+<h3>Core Web Vitals</h3>
+<p>Core Web Vitals are a set of real-world user experience metrics that Google uses as ranking signals. They measure three dimensions of page experience:</p>
+<p><strong>LCP (Largest Contentful Paint):</strong> How long it takes for the main content of a page to appear on screen. Google&#39;s target is under 2.5 seconds. The most common cause of a slow LCP is a large, uncompressed hero image or a server that takes too long to respond. Fix: compress images, use a CDN, and upgrade hosting if needed.</p>
+<p><strong>INP (Interaction to Next Paint):</strong> How quickly the page responds when a user clicks, taps, or types something. Google&#39;s target is under 200 milliseconds. Heavy or poorly written JavaScript is the most common cause. This metric replaced FID (First Input Delay) in March 2024.</p>
+<p><strong>CLS (Cumulative Layout Shift):</strong> How much the page&#39;s layout shifts unexpectedly while loading — for example, when an image loads and pushes the text down, causing the user to accidentally click the wrong thing. Google&#39;s target is under 0.1. Fix: always specify explicit width and height dimensions on images and video embeds, and use font-display settings that prevent text from jumping when a custom font loads.</p>
+<p>Check your Core Web Vitals scores using Google&#39;s PageSpeed Insights tool (pagespeed.web.dev) for any specific URL, or in aggregate for your whole site under the Experience section of Google Search Console.</p>
+<h3>Google Search Console Performance Monitoring</h3>
+<p>Google Search Console&#39;s Performance report is the most direct measurement tool you have for SEO results. It shows:</p>
+<ul>
+<li><strong>Total clicks:</strong> How many times users clicked through to your site from Google search.</li>
+<li><strong>Total impressions:</strong> How many times your pages appeared in search results.</li>
+<li><strong>Average CTR (Click-Through Rate):</strong> Clicks divided by impressions. A low CTR on pages with high impressions almost always points to weak title tags or meta descriptions.</li>
+<li><strong>Average position:</strong> Your average ranking position for all queries. Note that this is an average across all queries a page ranks for — a page might show position 2 for its primary keyword and position 45 for a dozen secondary queries, and the average obscures the important number.</li>
+</ul>
+<p>Filter the performance report by individual pages to see which queries each page ranks for. This reveals keyword opportunities you were not actively targeting — queries where Google already thinks your page is relevant and is testing it in results.</p>
+<h3>Content Freshness and Updating</h3>
+<p>Google gives a freshness bonus to recently updated content for queries where recency matters (news, current events, time-sensitive topics). For evergreen content (how-to guides, educational articles, tool comparisons), freshness still matters but in a different way — Google rewards pages that stay accurately up to date with current information over pages that were great three years ago but have since gone stale.</p>
+<p>Build a simple content audit habit: every quarter, review your top 20 pages (by impressions in Search Console) and ask three questions: Is any specific data on this page outdated? Has Google&#39;s recommended guidance on this topic changed? Are there search queries this page is ranking for that I could serve better with a small update? You do not need to rewrite the whole page — targeted updates to specific sections, refreshed examples, and updated data points are often enough to trigger a fresh crawl and recover or extend your rankings.</p>
+<hr>
+<blockquote>
+<h3>🔧 SmartGen Bonus Tool Recommendation</h3>
+<p><strong>Schema Generator — Add Structured Data to Unlock Rich Search Results</strong></p>
+<p>Schema markup (structured data) is the behind-the-scenes code that tells Google not just what your page says but what type of content it is — an article, a product, a recipe, an FAQ, a how-to guide, a local business, a review, a video, or more. When Google understands this context, it can display your result with enhanced features: star ratings, price ranges, FAQ dropdowns, breadcrumbs, how-to steps, and more — all visible directly in the search results without the user having to click through. These rich results typically earn significantly higher click-through rates than standard blue-link results.</p>
+<p>The SmartGen Schema Generator makes this completely beginner-friendly. Select your content type (Article, Product, FAQ, LocalBusiness, Recipe, Video, Review, and more), fill in the fields, and the tool outputs ready-to-paste JSON-LD code. Add it to your page&#39;s <code>&lt;head&gt;</code> section or just before <code>&lt;/body&gt;</code>.</p>
+<p><strong>Free. No login. No registration required.</strong></p>
+<p><strong><a href="https://smartgentools.com/schema-generator/">⚡ Open Schema Generator</a></strong></p>
+<p><em>Your data is never stored or shared. <a href="https://smartgentools.com/privacy/">Read our Privacy Policy</a> to understand exactly how SmartGen handles your information.</em></p>
+</blockquote>
+<hr>
+<h2>Your Complete SmartGen Free Toolbox for On-Page SEO</h2>
+<p>All four tools below are completely free, require no login and no registration, and are built and maintained by SmartGen for learners and practitioners at every level. Each tool was designed to remove the technical friction from a task that used to require either expensive software or manual coding knowledge.</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What It Does</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Meta Tag Generator</strong></td>
+<td>Generates title tag, meta description, keywords, OG tags, and Twitter Card tags in one click</td>
+<td><a href="https://smartgentools.com/meta-tag-generator/">Use Free →</a></td>
+</tr>
+<tr>
+<td><strong>Robots.txt Generator</strong></td>
+<td>Builds a perfectly formatted robots.txt file visually, no code required</td>
+<td><a href="https://smartgentools.com/robots-txt-generator/">Use Free →</a></td>
+</tr>
+<tr>
+<td><strong>Sitemap Finder &amp; Downloader</strong></td>
+<td>Locates and downloads any website&#39;s XML sitemap instantly</td>
+<td><a href="https://smartgentools.com/sitemap-finder-and-downloader/">Use Free →</a></td>
+</tr>
+<tr>
+<td><strong>Schema Generator</strong></td>
+<td>Creates JSON-LD structured data for rich Google results — Article, FAQ, Product, Video, and more</td>
+<td><a href="https://smartgentools.com/schema-generator/">Use Free →</a></td>
+</tr>
+</tbody></table>
+<p><em>All SmartGen tools are free to use and require no account. Your inputs are never stored or shared. <a href="https://smartgentools.com/privacy/">SmartGen Privacy Policy →</a></em></p>
+<hr>
+<h2>Visual Summary</h2>
+<p>The infographic below maps the complete on-page SEO optimization workflow — from initial audit through each optimization layer to performance monitoring and iteration. Created exclusively for this guide.</p>
+<p><img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/on-page-seo-optimization-infographic.svg" alt="On-Page SEO Optimization Framework — 7-step workflow from audit to monitoring"></p>
+<hr>
+<h2>Guide Summary</h2>
+<p>In this guide, we covered how to run a systematic on-page audit to identify exactly what to fix and in what order; how to optimize title tags (50–60 characters, keyword-first), meta descriptions (150–160 characters with a CTA), canonical tags (to consolidate duplicate URL signals), and header tags (one H1 per page, logical H2–H6 hierarchy); how to optimize images with descriptive filenames, alt text, compression, modern formats, and lazy loading, and how to handle video for both performance and SEO; how to build clean URL structures, use dofollow links for authority transfer, apply nofollow and sponsored attributes correctly, and build a smart internal link network; how to implement 301 redirects correctly (versus 302), avoid redirect chains and loops, design useful 404 error pages, and identify and fix soft 404s; how to build XML sitemaps that include the right pages and exclude the wrong ones, submit them to Google Search Console, and write a robots.txt file that controls crawling without accidentally blocking important resources; and how to monitor Core Web Vitals (LCP, INP, CLS), use Google Search Console&#39;s performance report to find and fix CTR problems, and build a quarterly content refresh habit that keeps your rankings compounding rather than decaying.</p>
+<p><strong>Practice exercise:</strong> Open Google Search Console for your site. Go to Pages under Indexing. Look at the &quot;Not indexed&quot; tab and identify the single most common reason your pages are not being indexed. Then go to the Performance report, filter by Pages, find the page with the highest impressions but lowest CTR, open that page, and rewrite its title tag using the formula from Section 2. Track the CTR change over the next 30 days.</p>
+<hr>
+<h2>Frequently Asked Questions</h2>
+<p><strong>How is on-page SEO different from technical SEO?</strong><br>On-page SEO refers to the content and HTML elements on individual pages — title tags, meta descriptions, headers, images, URLs, and links. Technical SEO refers to the site&#39;s underlying infrastructure — hosting, crawlability, server response codes, HTTPS, structured data frameworks, and JavaScript rendering. There is meaningful overlap, and the line between them shifts depending on who you ask. The practical answer: on-page is what you optimize on the page itself; technical is what you optimize in the server, code, and architecture that delivers the page.</p>
+<p><strong>How long does it take to see results from on-page optimization?</strong><br>Typically two to eight weeks for changes to pages Google already crawls regularly. Changes to title tags and meta descriptions can produce CTR changes relatively quickly once Google recrawls the page. Content-level improvements that affect ranking position usually take longer — several weeks to several months — depending on your domain&#39;s authority, the competitiveness of the keywords, and how frequently Google crawls your pages.</p>
+<p><strong>Do meta keywords still matter?</strong><br>No. Google officially stopped using the meta keywords tag as a ranking signal in 2009. Including it does not help; it also does not hurt. Most modern SEO workflows simply omit it. The keywords that matter are the ones in your title tag, headers, body content, URL, and image alt text.</p>
+<p><strong>How many H1 tags should a page have?</strong><br>One. Technically, HTML5 allows multiple H1 tags within different article or section elements, and Google has stated it can handle multiple H1 tags. In practice, one clear H1 containing your primary keyword is the cleanest and most widely recommended approach, and it avoids any ambiguity about what the page&#39;s primary topic is.</p>
+<p><strong>Is robots.txt the same as a noindex tag?</strong><br>No, and confusing the two is a genuinely common mistake. Robots.txt controls whether Google&#39;s crawler can access a URL. A noindex meta tag controls whether Google can add a URL to its search index. Blocking a URL in robots.txt does not prevent it from appearing in search results if other sites link to it — Google will know the URL exists, it just cannot read the page. To both prevent crawling and prevent indexing reliably, you need a noindex tag on a page that is NOT blocked by robots.txt.</p>
+<p><strong>What is a canonical tag and do I always need one?</strong><br>A canonical tag tells Google which URL is the authoritative version of a page when multiple URLs serve similar or identical content. You do not need one on every page — if your URLs are clean, consistent, and have no duplication issues, the need is lower. But for any site with e-commerce product pages accessible through multiple category paths, paginated content, or URLs with query string parameters, canonical tags are important.</p>
+<hr>
+<h2>What&#39;s Next?</h2>
+<p>Continue building your SEO and digital marketing knowledge with the earlier modules in this course:</p>
+<ul>
+<li><a href="https://smartgentools.com/blog/introduction-to-online-digital-marketing-a-beginners-guide/">Introduction to Online Digital Marketing: A Beginner&#39;s Guide</a></li>
+<li><a href="https://smartgentools.com/blog/module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners/">Module 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide</a></li>
+<li><a href="https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/">Module 5: Instagram Marketing — The Complete A to Z Mega Guide</a></li>
+<li><a href="https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/">Module 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide</a></li>
+<li><a href="https://smartgentools.com/blog/linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/">Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide</a></li>
+<li><a href="https://smartgentools.com/blog/pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/">Module 8: Pinterest Marketing — The Complete A to Z Mega Guide</a></li>
+</ul>
+<hr>
+<p><em>This article was written by <a href="https://www.sayadbayezid.com">Sayad Md Bayezid Hosan</a> for the SmartGen blog. All SmartGen tools mentioned are free to use with no registration required. <a href="https://smartgentools.com/privacy/">SmartGen Privacy Policy</a> · <a href="https://smartgentools.com">Visit SmartGen Tools</a></em></p>
+
+            </div>
+
+            <!-- Adsterra In-Content Ads (Auto-injected) -->
+            <div id="adsterra-in-content-container"></div>
+
+            <footer class="blog-post-footer reveal-up delay-300">
+                <div class="blog-post-tags">
+                    <span class="blog-tag">SmartGen</span><span class="blog-tag">SEO</span><span class="blog-tag">On-Page SEO</span><span class="blog-tag">On-Page Optimization</span><span class="blog-tag">Title Tag Optimization</span><span class="blog-tag">Meta Description</span><span class="blog-tag">XML Sitemap</span><span class="blog-tag">Robots.txt</span><span class="blog-tag">Page Performance</span>
+                </div>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button id="print-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #2563eb; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" title="Print or download this article as PDF">
+                        <span>🖨️</span>
+                        <span>Print / Download</span>
+                    </button>
+                    <button id="share-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #6b7280; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" title="Share this article">
+                        <span>📤</span>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </footer>
+        </article>
+
+        <!-- Author Footer Section - E-E-A-T Signal (After Article, Auto-inserted if not manually placed) -->
+        <!-- Premium Author Footer Box - SEO & E-E-A-T Optimized -->
+<div style="margin-top: 4rem; border-top: 2px solid #e2e8f0; padding-top: 3rem;">
+  <p style="text-align: center; color: #64748b; font-size: 0.95rem; margin-bottom: 2rem; font-style: italic; font-weight: 500;">
+    — Written by <strong style="color: #1e293b;">Sayad Md Bayezid Hosan</strong> for the SmartGen blog
+  </p>
+
+  <div style="max-width: 700px; margin: 0 auto; padding: 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); text-align: center; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+    
+    <!-- Profile Image with Verification Badge -->
+    <div style="position: relative; display: inline-block; margin-bottom: 1.5rem;">
+      <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/smartgen-founder.jpg" 
+           alt="Sayad Md Bayezid Hosan - Tech Entrepreneur & Full-Stack Developer" 
+           style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid #2563eb; object-fit: cover; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);">
+      <span style="position: absolute; bottom: 0; right: 0; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 18px; border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" title="Verified Author">✓</span>
+    </div>
+    
+    <!-- Author Name & Title -->
+    <h2 style="margin: 1rem 0 0.5rem 0; font-size: 1.8rem; color: #1e293b; font-weight: 800; font-family: 'Poppins', sans-serif;">Sayad Md Bayezid Hosan</h2>
+    <p style="margin: 0 0 1.5rem 0; color: #2563eb; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px;">Founder & Tech Entrepreneur | Full-Stack Developer</p>
+    
+    <!-- Expertise Tags -->
+    <div style="margin: 1.5rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+      <span style="background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 100%); color: #166534; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #a7f3d0;">Full-stack Developer</span>
+      <span style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); color: #1e40af; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #93c5fd;">Digital Marketer</span>
+      <span style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #92400e; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #fcd34d;">SEO Expert</span>
+      <span style="background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); color: #5b21b6; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #c4b5fd;">Tech Writer</span>
+    </div>
+    
+    <!-- Bio -->
+    <p style="color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; padding: 0 0.5rem;">
+      Full-stack Web Developer, Digital Marketing Strategist, and Tech Entrepreneur with 5+ years of experience delivering innovative digital solutions. Specializing in web development, AI integration, strategic digital marketing, and tech entrepreneurship. As a leading Tech Provider, I help audiences navigate digital platforms safely through permission-based technical solutions and digital business asset management.
+    </p>
+
+    <!-- Credentials & Achievements -->
+    <div style="background: #f0f9ff; border-left: 3px solid #0284c7; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: left;">
+      <p style="margin: 0; color: #0c4a6e; font-size: 0.9rem; font-weight: 600;">Credentials & Expertise:</p>
+      <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0; color: #475569; font-size: 0.9rem; line-height: 1.6;">
+        <li>Founder of CWB Agency & GenZFrontier</li>
+        <li>Final-year English Student at Northern University Bangladesh</li>
+        <li>Specialized in AI-powered web development & content strategy</li>
+        <li>Published author on tech, digital marketing & entrepreneurship</li>
+      </ul>
+    </div>
+    
+    <!-- Social Links & External Profiles -->
+    <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem;">
+      <a href="https://github.com/Sayadbayezid" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1f2937; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="GitHub Profile" onmouseover="this.style.background='#111827'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#1f2937'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0 1 12 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/bayezidhosan" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1877f2; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="Facebook Profile" onmouseover="this.style.background='#0a66c2'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#1877f2'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.988h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.891h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/sayadbayezid" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0077b5; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="LinkedIn Profile" onmouseover="this.style.background='#005885'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#0077b5'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      </a>
+      <a href="https://www.sayadbayezid.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #10b981; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="Personal Website" onmouseover="this.style.background='#059669'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#10b981'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      </a>
+      <a href="https://smartgentools.com/about/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #f59e0b; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="SmartGen About" onmouseover="this.style.background='#d97706'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#f59e0b'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </a>
+      <a href="https://orcid.org/0009-0003-6568-6648" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #a6ce39; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="ORCID Profile" onmouseover="this.style.background='#8ab81f'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#a6ce39'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/></svg>
+      </a>
+    </div>
+
+    <!-- CTA Button -->
+    <a href="https://smartgentools.com/about/" style="display: inline-block; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37, 99, 235, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(37, 99, 235, 0.3)';">
+      Learn More About Me
+    </a>
+  </div>
+</div>
+
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section reveal-up" style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 5rem 2rem; border-radius: 30px; margin: 4rem auto; max-width: 900px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
+            <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
+            <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
+            <form action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                <input type="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <button type="submit" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
+            </form>
+        </section>
+
+        <!-- Related Posts Section -->
+        <section class="blog-related-posts reveal-up" data-post-slug="on-page-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog" data-post-tags="SmartGen,SEO,On-Page SEO,On-Page Optimization,Title Tag Optimization,Meta Description,XML Sitemap,Robots.txt,Page Performance">
+            <h2 class="related-posts-title">📚 Related Posts</h2>
+            <div id="related-posts-grid" class="blog-grid">
+                <!-- Related posts will be injected by JS -->
+            </div>
+        </section>
+    
+<aside class="sidebar desktop-only">
+  <div class="sidebar-ad sticky">
+    <div id="ad-wrapper-skyscraper-160x600" class="ad-cls-wrapper" style="min-height: 600px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden;">
+  <script>
+  atOptions = {
+    'key' : '96e8bb0db46b2c8ef669fa310ed45f8b',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script>
+</div>
+  </div>
+</aside>
+</main>
+
+    <footer id="main-footer"></footer>
+
+    <!-- Custom Share Modal -->
+    <div id="shareModal" class="share-modal">
+        <div class="share-modal-content">
+            <span class="share-close">&times;</span>
+            <h3>Share this article</h3>
+            <div class="share-buttons">
+                <button onclick="shareTo('facebook')" class="share-btn fb">📘 Facebook</button>
+                <button onclick="shareTo('twitter')" class="share-btn tw">𝕏 Twitter</button>
+                <button onclick="shareTo('linkedin')" class="share-btn li">💼 LinkedIn</button>
+                <button onclick="shareTo('whatsapp')" class="share-btn wa">💬 WhatsApp</button>
+                <button onclick="shareTo('copy')" class="share-btn copy">🔗 Copy Link</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Print & Download Functionality
+            const printBtn = document.getElementById('print-button');
+            if (printBtn) {
+                printBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.print();
+                });
+            }
+            
+            // Share Modal Functionality
+            const shareBtn = document.getElementById('share-button');
+            const modal = document.getElementById('shareModal');
+            const closeBtn = document.querySelector('.share-close');
+            
+            if (shareBtn && modal) {
+                shareBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.classList.add('show');
+                });
+                
+                closeBtn.addEventListener('click', function() {
+                    modal.classList.remove('show');
+                });
+                
+                // Close modal when clicking outside
+                window.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.classList.remove('show');
+                    }
+                });
+            }
+        });
+
+        // Social Sharing Logic
+        function shareTo(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'facebook':
+                    shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+                    break;
+                case 'twitter':
+                    shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+                    break;
+                case 'linkedin':
+                    shareUrl = 'https://www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + title;
+                    break;
+                case 'whatsapp':
+                    shareUrl = 'https://api.whatsapp.com/send?text=' + title + ' ' + url;
+                    break;
+                case 'copy':
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        alert('✅ Link copied to clipboard!');
+                    }).catch(err => {
+                        console.error('Failed to copy: ', err);
+                    });
+                    return; // Exit early for copy
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=500,scrollbars=no,resizable=no');
+            }
+        }
+    </script>
+
+<script src="https://pl30322061.effectivecpmnetwork.com/f1/52/ca/f152ca4aaee504006bf6b462c2535ea8.js"></script>
+</body>
+</html>

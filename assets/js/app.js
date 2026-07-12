@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     injectFooter();
     initTheme();
     initAccordion();
+    
+    // Inject Adsterra ads on tool pages (runtime injection for static pages)
+    if (typeof RuntimeAdInjector !== 'undefined' && RuntimeAdInjector.injectAllAds) {
+        RuntimeAdInjector.injectAllAds();
+    }
 });
 
 function injectNavbar() {

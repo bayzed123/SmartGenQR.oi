@@ -3,6 +3,7 @@ const path = require('path');
 const matter = require('gray-matter');
 const { marked } = require('marked');
 const slugify = require('slugify');
+const { BuildTimeAdInjector } = require('../utils/ad-injector.js');
 
 const DOCS_POSTS_DIR = path.join(__dirname, '../docs-posts');
 const DOCS_OUTPUT_DIR = path.join(__dirname, '../docs');
@@ -407,9 +408,13 @@ function buildDocs() {
     docs.forEach((doc, index) => {
         const docDir = path.join(DOCS_OUTPUT_DIR, doc.slug);
         if (!fs.existsSync(docDir)) fs.mkdirSync(docDir, { recursive: true });
-        const html = generateDocHTML(doc, docs);
+        let html = generateDocHTML(doc, docs);
+        
+        // Apply Adsterra ad injections with CLS prevention
+        html = BuildTimeAdInjector.injectAllAds(html);
+        
         fs.writeFileSync(path.join(docDir, 'index.html'), html);
-        console.log(`✅ Built: /docs/${doc.slug}/  (title: "${doc.title}")`);
+        console.log(`✅ Built: /docs/${doc.slug}/  (title: "${doc.title}") - with Adsterra ads`);
     });
 
     if (docs.length > 0) {
@@ -430,6 +435,7 @@ function buildDocs() {
     console.log(`✅ Generated: /docs/docs.json`);
 
     console.log(`\n🎉 Docs build completed successfully! ${docs.length} pages generated.`);
+    console.log('🎯 Adsterra ads injected with 100% CLS prevention');
 }
 
 buildDocs();

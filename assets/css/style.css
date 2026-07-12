@@ -876,3 +876,86 @@ button.accordion-header { width: 100%; display: flex; justify-content: space-bet
 button.accordion-header:hover { background: var(--hover, #f8fafc); }
 .accordion-content { display: none; padding: 0 20px 20px; color: var(--text-secondary, #4b5563); line-height: 1.6; border-top: 1px solid var(--border-color, #e5e7eb); margin-top: 10px; }
 .accordion-item.active .accordion-content { display: block; }
+
+
+/* ===== ADSTERRA AD INJECTION - CLS PREVENTION ===== */
+/* Cumulative Layout Shift (CLS) prevention for ads */
+.ad-cls-wrapper {
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.ad-cls-wrapper.sticky {
+    position: sticky;
+    top: 20px;
+    z-index: 50;
+}
+
+.header-ads-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.header-ads-container .desktop-only {
+    display: none;
+}
+
+.header-ads-container .mobile-only {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .header-ads-container .desktop-only {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-ads-container .mobile-only {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Sidebar ad container */
+aside.sidebar {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    aside.sidebar {
+        display: block;
+        position: relative;
+        flex-shrink: 0;
+    }
+}
+
+/* Ensure ads don't cause layout shifts */
+.ad-cls-wrapper iframe,
+.ad-cls-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Social bar container */
+.social-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    overflow: hidden;
+    flex-shrink: 0;
+}
