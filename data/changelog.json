@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: Add complete Adsterra ad automation system with CLS optimization",
+    "date": "2026-07-12T15:19:58Z",
+    "description": "- Added config/ad-config.js: Centralized ad configuration with all Adsterra units- Added utils/ad-injector.js: Build-time and runtime injection utilities- Added assets/css/ads.css: CLS-optimized responsive ad styles- Added ADSTERRA_INTEGRATION_GUIDE.md: Complete implementation guideFeatures:- Automatic in-content ad injection (300x250 after 4th & 8th paragraphs)- Responsive header ads (728x90 desktop, 320x50 mobile)- Sticky sidebar ad (160x600 desktop only)- Native banner injection (bottom of content)- Social bar injection (before </body>)- 100% CLS prevention with proper space reservation- Full responsive design support- Dark mode and accessibility support"
+  },
+  {
     "title": "Update injectAdsIntoContent.md",
     "date": "2026-07-11T20:01:30Z",
     "description": "Platform improvement and optimization."
