@@ -4,7 +4,7 @@
   "performance_score": 40,
   "metrics": {
     "LCP": {
-      "value": 7698,
+      "value": 7605,
       "unit": "ms",
       "label": "Largest Contentful Paint",
       "rating": "poor"
@@ -16,7 +16,7 @@
       "rating": "poor"
     },
     "FCP": {
-      "value": 3440,
+      "value": 3824,
       "unit": "ms",
       "label": "First Contentful Paint",
       "rating": "poor"
@@ -31,7 +31,7 @@
   "opportunities": [
     {
       "title": "Reduce unused JavaScript",
-      "savings_ms": 880,
+      "savings_ms": 860,
       "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lig"
     }
   ],
@@ -39,7 +39,7 @@
     {
       "title": "Avoid enormous network payloads",
       "score": 50,
-      "display": "Total size was 5,862\u00a0KiB"
+      "display": "Total size was 5,887\u00a0KiB"
     }
   ],
   "field_data_available": false,
