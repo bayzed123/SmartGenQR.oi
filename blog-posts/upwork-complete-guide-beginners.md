@@ -3,7 +3,7 @@ title: "Upwork for Beginners — The Complete A to Z Mega Guide: From Profile Se
 description: "A complete, practical A to Z guide to Upwork for beginners in 2026 — creating your account, getting your profile approved, setting up 100% profile, writing winning cover letters, using Connects wisely, bidding correctly, building a Project Catalog, justifying yourself to buyers, delivering orders professionally, and earning Rising Talent or Top Rated status."
 keywords: "Upwork for beginners, how to get started on Upwork, Upwork profile setup guide 2026, how to get Upwork profile approved, how to write Upwork cover letter, Upwork Rising Talent vs Top Rated, Upwork connects explained, how to bid on Upwork 2026, Upwork project catalog guide, Upwork JSS score, SmartGen, freelance guide 2026"
 date: 2026-07-13
-image: "assets/images/upwork-complete-guide-infographic.svg"
+image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/upwork-complete-guide-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -23,7 +23,7 @@ July 13, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayez
 
 A complete, practical A to Z guide to Upwork for beginners in 2026 — creating your account, getting your profile approved without rejection, setting up a 100% complete profile that actually converts visitors into contract invitations, writing cover letters that get read, using Connects strategically, bidding on the right jobs at the right rates, building a Project Catalog, justifying yourself to skeptical buyers, delivering orders professionally, and building toward Rising Talent or Top Rated status step by step.
 
-![Upwork Complete Guide — 13-Step Roadmap from Signup to Top Rated Freelancer](https://smartgentools.com/blog/upwork-complete-guide/assets/images/upwork-complete-guide-infographic.svg)
+![Upwork Complete Guide — 13-Step Roadmap from Signup to Top Rated Freelancer](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/upwork-complete-guide-infographic.svg)
 
 ---
 
@@ -500,7 +500,7 @@ All tools below are completely free and require no login or registration:
 
 The infographic below maps the complete 13-step Upwork journey from signup to Top Rated badge, with key metrics and the Rising Talent vs. Top Rated comparison at a glance.
 
-![Upwork 13-Step Success Roadmap — from profile creation to Top Rated freelancer](https://smartgentools.com/blog/upwork-complete-guide/assets/images/upwork-complete-guide-infographic.svg)
+![Upwork 13-Step Success Roadmap — from profile creation to Top Rated freelancer](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/upwork-complete-guide-infographic.svg)
 
 ---
 
