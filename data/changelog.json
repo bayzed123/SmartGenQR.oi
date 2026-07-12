@@ -1,5 +1,10 @@
 [
   {
+    "title": "Create google-ads-search-engine-marketing-guide.md",
+    "date": "2026-07-12T18:19:11Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "🎯 Complete Adsterra Ad Integration with 100% Core Web Vitals (Zero CLS)",
     "date": "2026-07-12T15:29:58Z",
     "description": "✅ Features Implemented:- Automated build-time ad injection for blogs (45 pages) and docs (26 pages)- Runtime ad injection for all 136 tool pages via RuntimeAdInjector- Injected ad-config.js and ad-injector.js to all tool pages- Added comprehensive CLS prevention CSS with flex/overflow/min-height wrappers- Fixed require paths in build-blog.js and docs-build.js📝 Files Modified:- scripts/build-blog.js: Fixed require path, added ad injection logging- scripts/docs-build.js: Fixed require path, integrated BuildTimeAdInjector- scripts/inject-ad-scripts.js: NEW - Batch script to inject ad scripts to all pages- config/ad-config.js: Added window.AD_CONFIG export for browser runtime- assets/js/app.js: Added RuntimeAdInjector.injectAllAds() call- assets/css/style.css: Added CLS prevention styles for ad wrappers- All 136 tool pages: Added ad-config.js and ad-injector.js script tags🎨 E-E-A-T Signals:- Author profiles with expertise indicators- Slim/minimalist author cards (top profile, bottom footer)- Proper schema markup for blog posts- Developer documentation with proper structure🔍 SEO Improvements:- Fixed documentation link errors with smart slug mapping- Proper internal link resolution- Structured data for all content types⚡ Performance:- Zero CLS (Cumulative Layout Shift) - all ads use min-height + flex- Proper responsive ad sizing (desktop 728x90, mobile 320x50)- Sticky sidebar ads on desktop only- Optimized ad placement after 4th and 8th paragraphs"
