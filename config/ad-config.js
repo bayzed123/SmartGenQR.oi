@@ -1,80 +1,14 @@
 /**
  * Adsterra Ad Configuration
- * CLS-Optimized Ad Injection System
- * 
- * This configuration file contains all ad units with their exact codes,
- * placement rules, and CLS-prevention wrappers.
+ * Centralized registry for all ad units with CLS prevention wrappers
+ * All ads use strict min-height + flex layout to prevent Cumulative Layout Shift
  */
 
 const AD_CONFIG = {
-  // Ad Units with their configurations
+  // Ad units registry with actual Adsterra codes
   ads: {
-    socialBar: {
-      id: 'social-bar',
-      type: 'script',
-      placement: 'footer',
-      code: '<script src="https://pl30322061.effectivecpmnetwork.com/f1/52/ca/f152ca4aaee504006bf6b462c2535ea8.js"><\/script>',
-      description: 'Social Bar - Inject before </body> tag'
-    },
-    
-    nativeBanner: {
-      id: 'native-banner',
-      type: 'native',
-      placement: 'content-bottom',
-      height: 'auto',
-      code: `<script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"><\/script>
-<div id="container-333d7660ba0ab1f7a20095918a984f02"><\/div>`,
-      description: 'Native Banner - Bottom of article content'
-    },
-    
-    rect300x250: {
-      id: 'rect-300x250',
-      type: 'iframe',
-      placement: 'in-content',
-      width: 300,
-      height: 250,
-      positions: [4, 8], // After 4th and 8th paragraphs
-      code: `<script>
-  atOptions = {
-    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-<\/script>
-<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"><\/script>`,
-      description: '300x250 Medium Rectangle - In-content'
-    },
-    
-    skyscraper160x600: {
-      id: 'skyscraper-160x600',
-      type: 'iframe',
-      placement: 'sidebar',
-      width: 160,
-      height: 600,
-      responsive: { desktop: true, tablet: false, mobile: false },
-      sticky: true,
-      code: `<script>
-  atOptions = {
-    'key' : '96e8bb0db46b2c8ef669fa310ed45f8b',
-    'format' : 'iframe',
-    'height' : 600,
-    'width' : 160,
-    'params' : {}
-  };
-<\/script>
-<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"><\/script>`,
-      description: '160x600 Wide Skyscraper - Desktop sidebar only'
-    },
-    
     leaderboard728x90: {
-      id: 'leaderboard-728x90',
-      type: 'iframe',
-      placement: 'header',
-      width: 728,
-      height: 90,
-      responsive: { desktop: true, tablet: false, mobile: false },
+      id: 'leaderboard_728x90',
       code: `<script>
   atOptions = {
     'key' : 'f9d4f2f3a29a9dcfb43dddf1fd33eb88',
@@ -83,18 +17,14 @@ const AD_CONFIG = {
     'width' : 728,
     'params' : {}
   };
-<\/script>
-<script src="https://www.highperformanceformat.com/f9d4f2f3a29a9dcfb43dddf1fd33eb88/invoke.js"><\/script>`,
-      description: '728x90 Desktop Leaderboard - Below H1 title'
+</script>
+<script src="https://www.highperformanceformat.com/f9d4f2f3a29a9dcfb43dddf1fd33eb88/invoke.js"></script>`,
+      height: 90,
+      responsive: { desktop: true, tablet: false, mobile: false }
     },
-    
+
     mobile320x50: {
-      id: 'mobile-320x50',
-      type: 'iframe',
-      placement: 'header',
-      width: 320,
-      height: 50,
-      responsive: { desktop: false, tablet: false, mobile: true },
+      id: 'mobile_320x50',
       code: `<script>
   atOptions = {
     'key' : '6af746fdd2244652b728e73b1a70db61',
@@ -103,17 +33,47 @@ const AD_CONFIG = {
     'width' : 320,
     'params' : {}
   };
-<\/script>
-<script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"><\/script>`,
-      description: '320x50 Mobile Leaderboard - Mobile only'
+</script>
+<script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>`,
+      height: 50,
+      responsive: { desktop: false, tablet: false, mobile: true }
     },
-    
+
+    rect300x250: {
+      id: 'rect_300x250',
+      code: `<script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>`,
+      height: 250,
+      responsive: { desktop: true, tablet: true, mobile: true },
+      positions: [4, 8] // After 4th and 8th paragraphs
+    },
+
+    skyscraper160x600: {
+      id: 'skyscraper_160x600',
+      code: `<script>
+  atOptions = {
+    'key' : '96e8bb0db46b2c8ef669fa310ed45f8b',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script>`,
+      height: 600,
+      responsive: { desktop: true, tablet: false, mobile: false }
+    },
+
     banner468x60: {
-      id: 'banner-468x60',
-      type: 'iframe',
-      placement: 'flexible',
-      width: 468,
-      height: 60,
+      id: 'banner_468x60',
       code: `<script>
   atOptions = {
     'key' : '0b5fea20f0ed426f24c4fc004a095026',
@@ -122,20 +82,26 @@ const AD_CONFIG = {
     'width' : 468,
     'params' : {}
   };
-<\/script>
-<script src="https://www.highperformanceformat.com/0b5fea20f0ed426f24c4fc004a095026/invoke.js"><\/script>`,
-      description: '468x60 General Banner - Flexible placement'
-    }
-  },
+</script>
+<script src="https://www.highperformanceformat.com/0b5fea20f0ed426f24c4fc004a095026/invoke.js"></script>`,
+      height: 60,
+      responsive: { desktop: true, tablet: true, mobile: false }
+    },
 
-  /**
-   * CLS-Prevention Wrapper Template
-   * Wraps each ad with proper spacing and height reservation
-   */
-  getClsWrapper: function(adId, content, height) {
-    return `<div id="ad-wrapper-${adId}" class="ad-cls-wrapper" style="min-height: ${height}px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden;">
-  ${content}
-</div>`;
+    nativeBanner: {
+      id: 'native_banner',
+      code: `<script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
+<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>`,
+      height: 'auto',
+      responsive: { desktop: true, tablet: true, mobile: true }
+    },
+
+    socialBar: {
+      id: 'social_bar',
+      code: `<script src="https://pl30322061.effectivecpmnetwork.com/f1/52/ca/f152ca4aaee504006bf6b462c2535ea8.js"></script>`,
+      height: 'auto',
+      responsive: { desktop: true, tablet: true, mobile: true }
+    }
   },
 
   /**
@@ -146,10 +112,30 @@ const AD_CONFIG = {
   },
 
   /**
-   * Get all ads for a specific placement
+   * Get CLS-safe wrapper for ad
+   * Ensures min-height is set before ad loads to prevent layout shift
+   */
+  getClsWrapper: function(adId, adCode, height) {
+    const heightValue = height === 'auto' ? 'auto' : `${height}px`;
+    const minHeight = height === 'auto' ? 'auto' : `${height}px`;
+    
+    return `<div class="ad-cls-wrapper" id="ad-wrapper-${adId}" style="min-height: ${minHeight}; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  ${adCode}
+</div>`;
+  },
+
+  /**
+   * Get ads by placement type
    */
   getAdsByPlacement: function(placement) {
-    return Object.values(this.ads).filter(ad => ad.placement === placement);
+    const placements = {
+      header: ['leaderboard728x90', 'mobile320x50'],
+      inContent: ['rect300x250', 'banner468x60'],
+      sidebar: ['skyscraper160x600'],
+      native: ['nativeBanner'],
+      social: ['socialBar']
+    };
+    return placements[placement] || [];
   },
 
   /**
