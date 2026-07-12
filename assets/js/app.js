@@ -3,12 +3,43 @@ document.addEventListener('DOMContentLoaded', () => {
     injectFooter();
     initTheme();
     initAccordion();
+    initCookieConsent();
     
     // Inject Adsterra ads on tool pages (runtime injection for static pages)
     if (typeof RuntimeAdInjector !== 'undefined' && RuntimeAdInjector.injectAllAds) {
         RuntimeAdInjector.injectAllAds();
     }
 });
+
+function initCookieConsent() {
+    const banner = document.getElementById('cookie-consent-banner') || document.getElementById('cookieBanner');
+    const acceptBtn = document.getElementById('accept-cookies') || document.getElementById('acceptCookies');
+    
+    if (!banner || !acceptBtn) return;
+
+    const consentKey = banner.id === 'cookieBanner' ? 'smartgen_cookie_consent' : 'cookie-consent-accepted';
+
+    if (!localStorage.getItem(consentKey)) {
+        banner.style.display = 'block';
+    } else {
+        banner.style.display = 'none';
+    }
+
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem(consentKey, 'true');
+        localStorage.setItem('cookie-consent-accepted', 'true'); // Sync both keys
+        localStorage.setItem('smartgen_cookie_consent', 'accepted');
+        banner.style.display = 'none';
+    });
+
+    const declineBtn = document.getElementById('declineCookies');
+    if (declineBtn) {
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem(consentKey, 'declined');
+            banner.style.display = 'none';
+        });
+    }
+}
 
 function injectNavbar() {
     const header = document.getElementById('main-header');

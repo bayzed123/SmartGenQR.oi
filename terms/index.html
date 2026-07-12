@@ -219,40 +219,6 @@
     </div>
 
     <!-- Optimization Scripts -->
-    <script>
-        // Cookie Consent Logic
-        (function() {
-            const banner = document.getElementById('cookie-consent-banner');
-            const acceptBtn = document.getElementById('accept-cookies');
-            
-            if (!localStorage.getItem('cookie-consent-accepted')) {
-                banner.style.display = 'block';
-            }
-            
-            acceptBtn.addEventListener('click', function() {
-                localStorage.setItem('cookie-consent-accepted', 'true');
-                banner.style.display = 'none';
-            });
-        })();
-
-        // Lazy load Google AdSense
-        (function() {
-            let adsense_loaded = false;
-            function loadAdSense() {
-                if (adsense_loaded) return;
-                adsense_loaded = true;
-                
-                const script = document.createElement('script');
-                script.async = true;
-                script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068';
-                script.crossOrigin = 'anonymous';
-                document.head.appendChild(script);
-            }
-            
-            ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
-                document.addEventListener(event, loadAdSense, { once: true });
-            });
-        })();
-    </script>
+    <!-- Cookie logic handled by app.js -->
 </body>
 </html>

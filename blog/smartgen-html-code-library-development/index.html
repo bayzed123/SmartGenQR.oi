@@ -452,22 +452,7 @@
     </div>
 
 
-    <script>
-        // Cookie Consent Logic
-        (function() {
-            const banner = document.getElementById('cookie-consent-banner');
-            const acceptBtn = document.getElementById('accept-cookies');
-            
-            if (!localStorage.getItem('cookie-consent-accepted')) {
-                banner.style.display = 'block';
-            }
-            
-            acceptBtn.addEventListener('click', function() {
-                localStorage.setItem('cookie-consent-accepted', 'true');
-                banner.style.display = 'none';
-            });
-        })();
-    </script>
+    <!-- Cookie logic handled by app.js -->
 
 </body>
 </html>

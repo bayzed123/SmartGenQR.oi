@@ -708,19 +708,7 @@
         });
     });
 
-    // Cookie Banner Handler
-    const cookieBanner = document.getElementById('cookieBanner');
-
-    if (!localStorage.getItem('smartgen_cookie_consent')) {
-        setTimeout(() => {
-            cookieBanner.style.display = 'block';
-        }, 1000); // Slight delay for better UX
-    }
-
-    document.getElementById('acceptCookies').addEventListener('click', () => {
-        localStorage.setItem('smartgen_cookie_consent', 'accepted');
-        cookieBanner.style.display = 'none';
-    });
+    // Cookie logic handled by app.js
 
     document.getElementById('declineCookies').addEventListener('click', () => {
         localStorage.setItem('smartgen_cookie_consent', 'declined');
@@ -743,22 +731,7 @@
     </div>
 
 
-    <script>
-        // Cookie Consent Logic
-        (function() {
-            const banner = document.getElementById('cookie-consent-banner');
-            const acceptBtn = document.getElementById('accept-cookies');
-            
-            if (!localStorage.getItem('cookie-consent-accepted')) {
-                banner.style.display = 'block';
-            }
-            
-            acceptBtn.addEventListener('click', function() {
-                localStorage.setItem('cookie-consent-accepted', 'true');
-                banner.style.display = 'none';
-            });
-        })();
-    </script>
+    <!-- Cookie logic handled by app.js -->
 
 </body>
 </html>
