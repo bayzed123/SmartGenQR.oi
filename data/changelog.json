@@ -1,5 +1,10 @@
 [
   {
+    "title": "🔧 Fix Cookie Consent Banner - Centralized in app.js",
+    "date": "2026-07-12T20:43:06Z",
+    "description": "✅ Changes:- Centralized cookie consent logic in assets/js/app.js- Supports both #cookie-consent-banner and #cookieBanner IDs- Synchronizes both 'cookie-consent-accepted' and 'smartgen_cookie_consent' localStorage keys- Removed redundant inline cookie scripts from 219 HTML files- Added cleanup-cookie-logic.js script for future maintenanceThis ensures the 'Accept' button works consistently across the entire website."
+  },
+  {
     "title": "📊 Add comprehensive Adsterra deployment report - All 195 pages live with ads",
     "date": "2026-07-12T20:39:52Z",
     "description": "Platform improvement and optimization."
