@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix(schema-generator): resolve live preview bug and add copy/download features",
+    "date": "2026-07-12T20:06:05Z",
+    "description": "- Fixed Javascript crash caused by unescaped script tag injection in buildSchema() - Implemented real-time dynamic live preview rendering inside the textarea - Added interactive 'Copy to Clipboard' and native '.json' file download buttons - Optimized title, meta keywords, and meta description for 2026 Google SERP ranking"
+  },
+  {
     "title": "Create google-ads-search-engine-marketing-guide.md",
     "date": "2026-07-12T18:19:11Z",
     "description": "Platform improvement and optimization."
