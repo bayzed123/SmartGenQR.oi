@@ -48,9 +48,13 @@ SmartGen is a modern, fast, and privacy-focused utility platform built for profe
 - **Website**: [https://smartgentools.com/](https://smartgentools.com/)
 - **Blog**: [https://smartgentools.com/blog/](https://smartgentools.com/blog/)
 - **Docs**: [https://smartgentools.com/docs/](https://smartgentools.com/docs/)
+- **Daily tools**: [https://smartgentools.com/tools/](https://smartgentools.com/tools/)
+- **HTML Code Library**: [https://smartgentools.com/html-code-library/](https://smartgentools.com/html-code-library/)
 - **GitHub**: [https://github.com/bayzed123/SmartGenQR.oi](https://github.com/bayzed123/SmartGenQR.oi)
 
 ## Contact
-- **Founder**: Sayad Md Bayezid Hosan (Connect With Bayezid)
-- **Agency**: CWB Agency
-- **Portal**: GenZFrontier
+- **Founder**: Sayad Md Bayezid Hosan (Smartgen)
+- **Protfolio**: [sayad Md Bayezid Hosan ]
+- **Email**: Cwb.agency@outlook.com
+- **developer Email** : info@sayadbayezid.com
+- **Portal**: Smartgen
