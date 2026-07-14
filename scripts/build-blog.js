@@ -176,6 +176,13 @@ function generatePostHTML(post) {
     <!-- Canonical URL -->
     <link rel="canonical" href="${SITE_URL}/blog/${post.slug}/">
     
+    <!-- HTTPS Redirect Script -->
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace('https:' + location.href.substring(location.protocol.length));
+        }
+    </script>
+    
     <!-- JSON-LD Article Schema -->
     <script type="application/ld+json">
     {

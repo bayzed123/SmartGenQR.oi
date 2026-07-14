@@ -1,173 +1,128 @@
 /**
- * Ad Injector Utilities
- * Handles both build-time and runtime ad injection with CLS optimization
+ * SmartGen Ad Injector
+ * Handles ad placement for both build-time (SSG) and runtime (Browser)
  */
-
-const AD_CONFIG = typeof require !== 'undefined' ? require('../config/ad-config.js') : window.AD_CONFIG;
 
 /**
- * Build-Time Ad Injector (Node.js - used in build-blog.js)
+ * Build-time Ad Injector (Node.js - used in build-blog.js and docs-build.js)
  */
 class BuildTimeAdInjector {
-  /**
-   * Inject 300x250 ads after 4th and 8th paragraphs
-   */
-  static injectInContentAds(htmlContent) {
-    const ad = AD_CONFIG.getAd('rect300x250');
-    if (!ad) return htmlContent;
-
-    const wrappedAd = AD_CONFIG.getClsWrapper(ad.id, ad.code, ad.height);
-    
-    // Parse HTML and find paragraphs
-    const paragraphRegex = /<p[^>]*>[\s\S]*?<\/p>/g;
-    const paragraphs = htmlContent.match(paragraphRegex) || [];
-    
-    if (paragraphs.length === 0) return htmlContent;
-
-    let result = htmlContent;
-    let injectedCount = 0;
-
-    // Inject after 4th paragraph
-    if (paragraphs.length >= 4) {
-      const targetParagraph = paragraphs[3];
-      const replacement = targetParagraph + '\n' + wrappedAd;
-      result = result.replace(targetParagraph, replacement);
-      injectedCount++;
-    }
-
-    // Inject after 8th paragraph (accounting for first injection)
-    if (paragraphs.length >= 8 && injectedCount > 0) {
-      const updatedParagraphs = result.match(paragraphRegex) || [];
-      if (updatedParagraphs.length >= 8) {
-        const targetParagraph = updatedParagraphs[7];
-        const replacement = targetParagraph + '\n' + wrappedAd;
-        result = result.replace(targetParagraph, replacement);
-      }
-    }
-
-    return result;
+  constructor(adConfig) {
+    this.adConfig = adConfig;
   }
 
   /**
-   * Inject header ads (728x90 for desktop, 320x50 for mobile)
+   * Inject header ads after the main H1
    */
-  static injectHeaderAds(htmlContent) {
-    const desktopAd = AD_CONFIG.getAd('leaderboard728x90');
-    const mobileAd = AD_CONFIG.getAd('mobile320x50');
+  injectHeaderAds(content) {
+    const leaderboard = this.adConfig.getAd('leaderboard728x90');
+    const mobileBanner = this.adConfig.getAd('mobile320x50');
+    
+    if (!leaderboard || !mobileBanner) return content;
 
-    if (!desktopAd || !mobileAd) return htmlContent;
+    const desktopWrapper = this.adConfig.getClsWrapper('leaderboard728x90', leaderboard.code, leaderboard.height);
+    const mobileWrapper = this.adConfig.getClsWrapper('mobile320x50', mobileBanner.code, mobileBanner.height);
 
-    const wrappedDesktopAd = AD_CONFIG.getClsWrapper(desktopAd.id, desktopAd.code, desktopAd.height);
-    const wrappedMobileAd = AD_CONFIG.getClsWrapper(mobileAd.id, mobileAd.code, mobileAd.height);
-
-    // Find H1 tag
-    const h1Regex = /<h1[^>]*>[\s\S]*?<\/h1>/;
-    const h1Match = htmlContent.match(h1Regex);
-
-    if (h1Match) {
-      const headerAdsContainer = `<div class="header-ads-container">
-  <div class="desktop-only">
-    ${wrappedDesktopAd}
-  </div>
-  <div class="mobile-only">
-    ${wrappedMobileAd}
-  </div>
+    const adContainer = `
+<div class="header-ads-container">
+  <div class="desktop-only">${desktopWrapper}</div>
+  <div class="mobile-only">${mobileWrapper}</div>
 </div>`;
-      return htmlContent.replace(h1Match[0], h1Match[0] + '\n' + headerAdsContainer);
-    }
 
-    return htmlContent;
+    return content.replace(/<\/h1>/, `</h1>\n${adContainer}`);
   }
 
   /**
-   * Inject native banner at bottom of content
+   * Inject in-content ads after specific paragraph positions
    */
-  static injectNativeBanner(htmlContent) {
-    const ad = AD_CONFIG.getAd('nativeBanner');
-    if (!ad) return htmlContent;
+  injectInContentAds(content) {
+    const ad = this.adConfig.getAd('rect300x250');
+    if (!ad) return content;
 
-    const wrappedAd = AD_CONFIG.getClsWrapper(ad.id, ad.code, 'auto');
+    const paragraphs = content.split('</p>');
+    if (paragraphs.length < 5) return content;
 
-    // Find the last closing tag before author box or related posts
-    const authorBoxRegex = /<div[^>]*class="[^"]*author[^"]*"[^>]*>/i;
-    const relatedPostsRegex = /<div[^>]*class="[^"]*related[^"]*"[^>]*>/i;
+    const positions = ad.positions || [4, 8];
+    let offset = 0;
 
-    let insertPoint = -1;
+    positions.forEach(pos => {
+      const index = pos + offset;
+      if (index < paragraphs.length) {
+        const wrapper = this.adConfig.getClsWrapper(`${ad.id}-${pos}`, ad.code, ad.height);
+        paragraphs[index] = `\n${wrapper}\n${paragraphs[index]}`;
+        offset++;
+      }
+    });
 
-    const authorMatch = htmlContent.search(authorBoxRegex);
-    const relatedMatch = htmlContent.search(relatedPostsRegex);
-
-    if (authorMatch !== -1) {
-      insertPoint = authorMatch;
-    } else if (relatedMatch !== -1) {
-      insertPoint = relatedMatch;
-    } else {
-      // Insert before closing article tag
-      const articleCloseRegex = /<\/article>/i;
-      insertPoint = htmlContent.search(articleCloseRegex);
-    }
-
-    if (insertPoint !== -1) {
-      return htmlContent.slice(0, insertPoint) + wrappedAd + '\n' + htmlContent.slice(insertPoint);
-    }
-
-    return htmlContent;
+    return paragraphs.join('</p>');
   }
 
   /**
-   * Inject sidebar ad (160x600 - desktop only)
+   * Inject sidebar skyscraper (Desktop only)
    */
-  static injectSidebarAd(htmlContent) {
-    const ad = AD_CONFIG.getAd('skyscraper160x600');
-    if (!ad) return htmlContent;
+  injectSidebarAd(content) {
+    const ad = this.adConfig.getAd('skyscraper160x600');
+    if (!ad) return content;
 
-    const wrappedAd = AD_CONFIG.getClsWrapper(ad.id, ad.code, ad.height);
+    const wrapper = `<div class="ad-cls-wrapper sticky" style="min-height: ${ad.height}px; position: sticky; top: 20px;">${ad.code}</div>`;
+    const sidebar = `\n<aside class="sidebar desktop-only">\n  ${wrapper}\n</aside>\n`;
 
-    const sidebarContainer = `<aside class="sidebar desktop-only">
-  <div class="sidebar-ad sticky">
-    ${wrappedAd}
-  </div>
-</aside>`;
-
-    // Insert before closing main tag or at the end of content
-    const mainCloseRegex = /<\/main>/i;
-    const mainMatch = htmlContent.search(mainCloseRegex);
-
-    if (mainMatch !== -1) {
-      return htmlContent.slice(0, mainMatch) + '\n' + sidebarContainer + '\n' + htmlContent.slice(mainMatch);
+    // Insert after the closing </main> or </article>
+    if (content.includes('</main>')) {
+      return content.replace(/<\/main>/, `</main>\n${sidebar}`);
+    } else if (content.includes('</article>')) {
+      return content.replace(/<\/article>/, `</article>\n${sidebar}`);
     }
-
-    return htmlContent + '\n' + sidebarContainer;
+    return content;
   }
 
   /**
-   * Inject social bar script before </body>
+   * Inject native banner before author box or at end of content
    */
-  static injectSocialBar(htmlContent) {
-    const ad = AD_CONFIG.getAd('socialBar');
-    if (!ad) return htmlContent;
+  injectNativeBanner(content) {
+    const ad = this.adConfig.getAd('nativeBanner');
+    if (!ad) return content;
 
-    const bodyCloseRegex = /<\/body>/i;
-    const bodyMatch = htmlContent.search(bodyCloseRegex);
-
-    if (bodyMatch !== -1) {
-      return htmlContent.slice(0, bodyMatch) + '\n' + ad.code + '\n' + htmlContent.slice(bodyMatch);
+    const wrapper = this.adConfig.getClsWrapper(ad.id, ad.code, 'auto');
+    
+    // Try to insert before author box
+    if (content.includes('class="author-card"')) {
+      return content.replace(/<div class="author-card"/, `${wrapper}\n<div class="author-card"`);
+    }
+    
+    // Fallback: insert before footer
+    if (content.includes('<footer')) {
+      return content.replace(/<footer/, `${wrapper}\n<footer`);
     }
 
-    return htmlContent + '\n' + ad.code;
+    return content + `\n${wrapper}`;
   }
 
   /**
-   * Apply all ad injections
+   * Inject social bar before closing body tag
    */
-  static injectAllAds(htmlContent) {
-    let result = htmlContent;
-    result = this.injectHeaderAds(result);
-    result = this.injectInContentAds(result);
-    result = this.injectSidebarAd(result);
-    result = this.injectNativeBanner(result);
-    result = this.injectSocialBar(result);
-    return result;
+  injectSocialBar(content) {
+    const ad = this.adConfig.getAd('socialBar');
+    if (!ad) return content;
+
+    return content.replace(/<\/body>/, `${ad.code}\n</body>`);
+  }
+
+  /**
+   * Apply all ad injections (Static helper for build scripts)
+   */
+  static injectAllAds(content) {
+    const AD_CONFIG = require('../config/ad-config.js');
+    const injector = new BuildTimeAdInjector(AD_CONFIG);
+    
+    let processedContent = content;
+    processedContent = injector.injectHeaderAds(processedContent);
+    processedContent = injector.injectInContentAds(processedContent);
+    processedContent = injector.injectSidebarAd(processedContent);
+    processedContent = injector.injectNativeBanner(processedContent);
+    processedContent = injector.injectSocialBar(processedContent);
+    
+    return processedContent;
   }
 }
 
@@ -186,24 +141,53 @@ class RuntimeAdInjector {
   }
 
   /**
+   * Helper to execute scripts within a container
+   * Required because innerHTML doesn't execute scripts
+   */
+  static executeScripts(container) {
+    const scripts = container.querySelectorAll('script');
+    scripts.forEach(oldScript => {
+      const newScript = document.createElement('script');
+      Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+      if (oldScript.innerHTML) {
+        newScript.innerHTML = oldScript.innerHTML;
+      }
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+  }
+
+  /**
    * Inject in-content ads dynamically
    */
   static injectInContentAds() {
     const ad = AD_CONFIG.getAd('rect300x250');
     if (!ad) return;
 
-    const paragraphs = document.querySelectorAll('article p');
-    const positions = ad.positions || [4, 8];
+    // Expanded selectors for better tool page coverage
+    const paragraphs = document.querySelectorAll('article p, .seo-content p, .seo-content-container p, section p, .tool-container p');
+    if (paragraphs.length === 0) return;
+
+    let positions = ad.positions || [4, 8];
+    
+    // Fallback for short content
+    if (paragraphs.length < 4) {
+      positions = [1];
+    } else if (paragraphs.length < 8) {
+      positions = [2];
+    }
 
     positions.forEach(position => {
-      if (paragraphs[position - 1]) {
+      const targetIdx = Math.min(position - 1, paragraphs.length - 1);
+      if (paragraphs[targetIdx]) {
         const wrapper = document.createElement('div');
         wrapper.id = `ad-wrapper-${ad.id}-${position}`;
         wrapper.className = 'ad-cls-wrapper';
         wrapper.style.cssText = `min-height: ${ad.height}px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden;`;
         wrapper.innerHTML = ad.code;
 
-        paragraphs[position - 1].parentNode.insertBefore(wrapper, paragraphs[position - 1].nextSibling);
+        paragraphs[targetIdx].parentNode.insertBefore(wrapper, paragraphs[targetIdx].nextSibling);
+        this.executeScripts(wrapper);
+        console.log(`[AdInjector] Injected in-content ad at position ${targetIdx + 1}`);
       }
     });
   }
@@ -220,6 +204,7 @@ class RuntimeAdInjector {
     const container = document.createElement('div');
     container.className = 'header-ads-container';
 
+    let injected = false;
     if (deviceType === 'desktop') {
       const ad = AD_CONFIG.getAd('leaderboard728x90');
       if (ad) {
@@ -228,8 +213,10 @@ class RuntimeAdInjector {
         wrapper.style.cssText = `min-height: ${ad.height}px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden;`;
         wrapper.innerHTML = ad.code;
         container.appendChild(wrapper);
+        this.executeScripts(wrapper);
+        injected = true;
       }
-    } else if (deviceType === 'mobile') {
+    } else {
       const ad = AD_CONFIG.getAd('mobile320x50');
       if (ad) {
         const wrapper = document.createElement('div');
@@ -237,10 +224,15 @@ class RuntimeAdInjector {
         wrapper.style.cssText = `min-height: ${ad.height}px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden;`;
         wrapper.innerHTML = ad.code;
         container.appendChild(wrapper);
+        this.executeScripts(wrapper);
+        injected = true;
       }
     }
 
-    h1.parentNode.insertBefore(container, h1.nextSibling);
+    if (injected) {
+      h1.parentNode.insertBefore(container, h1.nextSibling);
+      console.log(`[AdInjector] Injected header ad for ${deviceType}`);
+    }
   }
 
   /**
@@ -253,7 +245,7 @@ class RuntimeAdInjector {
     const ad = AD_CONFIG.getAd('skyscraper160x600');
     if (!ad) return;
 
-    const main = document.querySelector('main') || document.querySelector('article');
+    const main = document.querySelector('main') || document.querySelector('article') || document.querySelector('.tool-container');
     if (!main) return;
 
     const aside = document.createElement('aside');
@@ -266,7 +258,9 @@ class RuntimeAdInjector {
     wrapper.innerHTML = ad.code;
 
     aside.appendChild(wrapper);
+    this.executeScripts(wrapper);
     main.parentNode.insertBefore(aside, main.nextSibling);
+    console.log(`[AdInjector] Injected sidebar ad`);
   }
 
   /**
@@ -276,12 +270,12 @@ class RuntimeAdInjector {
     const ad = AD_CONFIG.getAd('nativeBanner');
     if (!ad) return;
 
-    const article = document.querySelector('article');
+    const article = document.querySelector('article, .seo-content, .seo-content-container, section');
     const authorBox = document.querySelector('[class*="author"]');
 
     let insertBefore = authorBox;
     if (!insertBefore) {
-      insertBefore = document.querySelector('[class*="related"]');
+      insertBefore = document.querySelector('[class*="related"], #dynamic-related-tools');
     }
 
     if (insertBefore) {
@@ -292,6 +286,8 @@ class RuntimeAdInjector {
       wrapper.innerHTML = ad.code;
 
       insertBefore.parentNode.insertBefore(wrapper, insertBefore);
+      this.executeScripts(wrapper);
+      console.log(`[AdInjector] Injected native banner`);
     } else if (article) {
       const wrapper = document.createElement('div');
       wrapper.id = `ad-wrapper-${ad.id}`;
@@ -300,6 +296,8 @@ class RuntimeAdInjector {
       wrapper.innerHTML = ad.code;
 
       article.appendChild(wrapper);
+      this.executeScripts(wrapper);
+      console.log(`[AdInjector] Injected native banner at end of content`);
     }
   }
 
@@ -314,38 +312,28 @@ class RuntimeAdInjector {
     script.src = 'https://pl30322061.effectivecpmnetwork.com/f1/52/ca/f152ca4aaee504006bf6b462c2535ea8.js';
     script.async = true;
     document.body.appendChild(script);
+    console.log(`[AdInjector] Injected social bar`);
   }
 
   /**
    * Apply all ad injections
    */
   static injectAllAds() {
-    // Wait for DOM to be fully loaded
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => {
-        this.injectHeaderAds();
-        this.injectInContentAds();
-        this.injectSidebarAd();
-        this.injectNativeBanner();
-        this.injectSocialBar();
-      });
-    } else {
-      this.injectHeaderAds();
-      this.injectInContentAds();
-      this.injectSidebarAd();
-      this.injectNativeBanner();
-      this.injectSocialBar();
-    }
+    console.log('[AdInjector] Starting runtime ad injection...');
+    this.injectHeaderAds();
+    this.injectInContentAds();
+    this.injectSidebarAd();
+    this.injectNativeBanner();
+    this.injectSocialBar();
   }
 }
 
-// Export for Node.js
+// Export for Node.js (build-time)
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { BuildTimeAdInjector, RuntimeAdInjector };
 }
 
-// Export for browser
+// Export for browser (runtime)
 if (typeof window !== 'undefined') {
-  window.BuildTimeAdInjector = BuildTimeAdInjector;
   window.RuntimeAdInjector = RuntimeAdInjector;
 }

@@ -6,6 +6,13 @@
     <title>Portfolio Website: Getting Started Guide - SmartGen Docs</title>
     <meta name="description" content="Complete guide to forking, setting up, and running the open-source developer portfolio website locally — prerequisites, installation, configuration, and troubleshooting.">
     <link rel="canonical" href="https://smartgentools.com/docs/portfolio-website-getting-started-guide/">
+    
+    <!-- HTTPS Redirect Script -->
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace('https:' + location.href.substring(location.protocol.length));
+        }
+    </script>
 
     <link rel="stylesheet" href="../../assets/css/docs.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -224,9 +231,9 @@
                         <span>Docs</span> <span class="separator">/</span> <span>Portfolio Website</span>
                     </div>
                     <h1 class="doc-title">Portfolio Website: Getting Started Guide</h1>
+
 <div class="header-ads-container">
-  <div class="desktop-only">
-    <div class="ad-cls-wrapper" id="ad-wrapper-leaderboard_728x90" style="min-height: 90px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <div class="desktop-only"><div class="ad-cls-wrapper" id="ad-wrapper-leaderboard728x90" style="min-height: 90px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
     'key' : 'f9d4f2f3a29a9dcfb43dddf1fd33eb88',
@@ -237,10 +244,8 @@
   };
 </script>
 <script src="https://www.highperformanceformat.com/f9d4f2f3a29a9dcfb43dddf1fd33eb88/invoke.js"></script>
-</div>
-  </div>
-  <div class="mobile-only">
-    <div class="ad-cls-wrapper" id="ad-wrapper-mobile_320x50" style="min-height: 50px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+</div></div>
+  <div class="mobile-only"><div class="ad-cls-wrapper" id="ad-wrapper-mobile320x50" style="min-height: 50px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
     'key' : '6af746fdd2244652b728e73b1a70db61',
@@ -251,8 +256,7 @@
   };
 </script>
 <script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>
-</div>
-  </div>
+</div></div>
 </div>
                     <div class="doc-body">
                         <h1 id="portfolio-website-getting-started-guide">Portfolio Website: Getting Started Guide</h1>
@@ -287,7 +291,7 @@
 </ul>
 <blockquote>
 <p><strong>Note</strong><br>This is not a framework or CMS — there is no admin dashboard. All customization happens by editing plain HTML, Markdown, and a single Python conversion script. This keeps the project lightweight and fully under your control.</p>
-<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
     'key' : 'f7aab91a9a0a262448277c24ba0763d1',
@@ -299,6 +303,7 @@
 </script>
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
+
 </blockquote>
 <h3 id="who-this-guide-is-for">Who this guide is for</h3>
 <p>  This guide assumes:</p>
@@ -313,7 +318,8 @@
 <p>  Before you begin, install and verify the following tools.</p>
 <h3 id="1-git">1. Git</h3>
 <p>  Git is required to clone the repository and push changes.</p>
-<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+<p>  <strong>Check if it&#39;s already installed:</strong></p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
     'key' : 'f7aab91a9a0a262448277c24ba0763d1',
@@ -325,7 +331,7 @@
 </script>
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
-<p>  <strong>Check if it&#39;s already installed:</strong></p>
+
 <pre><code class="language-bash">git --version
 </code></pre>
 <p>  Expected output (version number may differ):</p>
@@ -743,11 +749,7 @@ pip install beautifulsoup4 markdown
             </div>
         </div>
     
-                <div class="ad-cls-wrapper" id="ad-wrapper-native_banner" style="min-height: auto; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
-  <script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
-<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>
-</div>
-</article>
+                </article>
 
                 
         <aside class="toc-sidebar desktop-only">
@@ -881,11 +883,10 @@ pip install beautifulsoup4 markdown
             </ul>
         </aside>
             </div>
-        
+        </main>
+
 <aside class="sidebar desktop-only">
-  <div class="sidebar-ad sticky">
-    <div class="ad-cls-wrapper" id="ad-wrapper-skyscraper_160x600" style="min-height: 600px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
-  <script>
+  <div class="ad-cls-wrapper sticky" style="min-height: 600px; position: sticky; top: 20px;"><script>
   atOptions = {
     'key' : '96e8bb0db46b2c8ef669fa310ed45f8b',
     'format' : 'iframe',
@@ -894,11 +895,9 @@ pip install beautifulsoup4 markdown
     'params' : {}
   };
 </script>
-<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script>
-</div>
-  </div>
+<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script></div>
 </aside>
-</main>
+
     </div>
 
     <script src="../../assets/js/docs.js"></script>
@@ -928,7 +927,10 @@ pip install beautifulsoup4 markdown
         }
       });
     </script>
-
 <script src="https://pl30322061.effectivecpmnetwork.com/f1/52/ca/f152ca4aaee504006bf6b462c2535ea8.js"></script>
 </body>
 </html>
+<div class="ad-cls-wrapper" id="ad-wrapper-native_banner" style="min-height: auto; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
+<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>
+</div>

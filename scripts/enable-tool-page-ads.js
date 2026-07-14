@@ -49,11 +49,7 @@ function getRelativePathToRoot(filePath) {
 
 function enableAdsOnPage(filePath) {
   let content = fs.readFileSync(filePath, 'utf-8');
-  
-  // Check if already has ad scripts
-  if (content.includes('ad-config.js') && content.includes('ad-injector.js')) {
-    return 'already_enabled';
-  }
+  let modified = false;
   
   const relativePath = getRelativePathToRoot(filePath);
   
@@ -69,12 +65,35 @@ function enableAdsOnPage(filePath) {
   const adConfigTag = `<script src="${relativePath}config/ad-config.js" defer></script>`;
   const adInjectorTag = `<script src="${relativePath}utils/ad-injector.js" defer></script>`;
   
-  const newScriptTags = `${adConfigTag}\n    ${adInjectorTag}\n    ${appJsTag}`;
+  // Add canonical tag and HTTPS redirect
+  const dirName = path.basename(path.dirname(filePath));
+  const canonicalUrl = `https://smartgentools.com/${dirName}/`;
+  const headEndTag = '</head>';
+  const seoTags = `
+    <link rel="canonical" href="${canonicalUrl}">
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace(\`https:\${location.href.substring(location.protocol.length)}\`);
+        }
+    </script>
+</head>`;
   
-  content = content.replace(appJsTag, newScriptTags);
+  if (!content.includes('rel="canonical"')) {
+    content = content.replace(headEndTag, seoTags);
+    modified = true;
+  }
   
-  fs.writeFileSync(filePath, content, 'utf-8');
-  return 'enabled';
+  if (!content.includes('ad-config.js') || !content.includes('ad-injector.js')) {
+    const newScriptTags = `${adConfigTag}\n    ${adInjectorTag}\n    ${appJsTag}`;
+    content = content.replace(appJsTag, newScriptTags);
+    modified = true;
+  }
+  
+  if (modified) {
+    fs.writeFileSync(filePath, content, 'utf-8');
+    return 'enabled';
+  }
+  return 'already_enabled';
 }
 
 function main() {

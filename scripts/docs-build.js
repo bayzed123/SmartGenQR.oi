@@ -243,6 +243,13 @@ function generateDocHTML(doc, allDocs) {
     <title>${doc.title} - SmartGen Docs</title>
     <meta name="description" content="${doc.description}">
     <link rel="canonical" href="${SITE_URL}/docs/${doc.slug}/">
+    
+    <!-- HTTPS Redirect Script -->
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace('https:' + location.href.substring(location.protocol.length));
+        }
+    </script>
 
     <link rel="stylesheet" href="../../assets/css/docs.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">

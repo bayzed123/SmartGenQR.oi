@@ -4,181 +4,181 @@
     "title": "Getting Started",
     "description": "Learn how to set up and start contributing to SmartGen.",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "directory-structure-for-protfolio",
     "title": "Directory Structure for Protfolio",
     "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "api-reference",
     "title": "API Reference",
     "description": "Reference documentation for SmartGen's internal JavaScript functions and data structures.",
     "category": "API Reference",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "getting-started",
     "title": "Getting Started",
     "description": "Get SmartGen running on your local machine in under 5 minutes.",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "portfolio-website-getting-started-guide",
     "title": "Portfolio Website: Getting Started Guide",
     "description": "Complete guide to forking, setting up, and running the open-source developer portfolio website locally — prerequisites, installation, configuration, and troubleshooting.",
     "category": "Portfolio Website",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "getting-started",
     "title": "Getting Started",
     "description": "Learn how to set up and start contributing to SmartGen.",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "your-actual-folder-layout",
     "title": "Your Actual Folder Layout",
     "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "installation",
     "title": "Installation",
     "description": "Detailed installation and environment setup instructions for SmartGen.",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "portfolio-website-deployment-and-blog-system-guide",
     "title": "Portfolio Website: Deployment & Blog System Guide",
     "description": "Complete guide to deploying your portfolio to GitHub Pages, Netlify, or Vercel, plus a deep technical dive into the automated Markdown-to-blog publishing pipeline.",
     "category": "Portfolio Website",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "quick-setup-guide",
     "title": "Quick Setup Guide",
     "description": "Learn how to quickly set up SmartGen tools.",
     "category": "overview",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "vite-optimization-guide-for-cicd",
     "title": "Vite Optimization Guide for CI/CD",
     "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "developer-guidelines",
     "title": "developer Guidelines",
     "description": "Learn how to quickly set up SmartGen tools.",
     "category": "overview",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "portfolio-website-customization-guide",
     "title": "Portfolio Website: Customization Guide",
     "description": "Complete guide to customizing colors, typography, sections, navigation, and adding new pages to your open-source developer portfolio.",
     "category": "Portfolio Website",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "advanced-workflow-configuration",
     "title": "Advanced Workflow Configuration",
     "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "vite-config-quick-reference",
     "title": "Vite Config Quick Reference",
     "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "about-the-team-and-contribution",
     "title": "About the Team & Contribution",
     "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "portfolio-website-api-and-script-reference",
     "title": "Portfolio Website: API & Script Reference",
     "description": "Complete technical reference for every script, function, and data structure powering the open-source developer portfolio — setup.sh, convert_blogs.py, and all JavaScript modules.",
     "category": "Portfolio Website",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "railway-deployment-guide",
     "title": "Railway Deployment Guide",
     "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "building-a-fast-client-side-search-feature-without-a-backend",
     "title": "Building a Fast Client-Side Search Feature Without a Backend",
     "description": "How to implement instant, responsive search on a static site using nothing but JavaScript, a JSON index, and debouncing.",
     "category": "Open Source Projects",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "github-actions-configuration-guide",
     "title": "GitHub Actions Configuration Guide",
     "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "custom-environment-variables",
     "title": "Custom Environment Variables",
     "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "workflow-customization-summary",
     "title": "Workflow Customization Summary",
     "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "contributor-guide",
     "title": "Contributor Guide",
     "description": "Full architecture and API reference for SmartGen contributors.",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "complete-guide-protfolio",
     "title": "complete guide Protfolio",
     "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "quickstart-guide",
     "title": "Quickstart Guide",
     "description": "Get from zero to a merged PR in under 10 minutes.",
     "category": "Guides",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   },
   {
     "slug": "how-to-deploy-an-open-source-developer-portfolio-free-in-minutes",
     "title": "How to Deploy an Open-Source Developer Portfolio (Free, in Minutes)",
     "description": "A complete step-by-step guide to forking, customizing, and deploying a free open-source developer portfolio website — with automated blogging built in.",
     "category": "Open Source Projects",
-    "date": "2026-07-12"
+    "date": "2026-07-14"
   }
 ]

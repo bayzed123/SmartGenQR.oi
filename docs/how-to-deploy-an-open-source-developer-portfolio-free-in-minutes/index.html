@@ -6,6 +6,13 @@
     <title>How to Deploy an Open-Source Developer Portfolio (Free, in Minutes) - SmartGen Docs</title>
     <meta name="description" content="A complete step-by-step guide to forking, customizing, and deploying a free open-source developer portfolio website — with automated blogging built in.">
     <link rel="canonical" href="https://smartgentools.com/docs/how-to-deploy-an-open-source-developer-portfolio-free-in-minutes/">
+    
+    <!-- HTTPS Redirect Script -->
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace('https:' + location.href.substring(location.protocol.length));
+        }
+    </script>
 
     <link rel="stylesheet" href="../../assets/css/docs.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -224,9 +231,9 @@
                         <span>Docs</span> <span class="separator">/</span> <span>Open Source Projects</span>
                     </div>
                     <h1 class="doc-title">How to Deploy an Open-Source Developer Portfolio (Free, in Minutes)</h1>
+
 <div class="header-ads-container">
-  <div class="desktop-only">
-    <div class="ad-cls-wrapper" id="ad-wrapper-leaderboard_728x90" style="min-height: 90px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <div class="desktop-only"><div class="ad-cls-wrapper" id="ad-wrapper-leaderboard728x90" style="min-height: 90px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
     'key' : 'f9d4f2f3a29a9dcfb43dddf1fd33eb88',
@@ -237,10 +244,8 @@
   };
 </script>
 <script src="https://www.highperformanceformat.com/f9d4f2f3a29a9dcfb43dddf1fd33eb88/invoke.js"></script>
-</div>
-  </div>
-  <div class="mobile-only">
-    <div class="ad-cls-wrapper" id="ad-wrapper-mobile_320x50" style="min-height: 50px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+</div></div>
+  <div class="mobile-only"><div class="ad-cls-wrapper" id="ad-wrapper-mobile320x50" style="min-height: 50px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
     'key' : '6af746fdd2244652b728e73b1a70db61',
@@ -251,8 +256,7 @@
   };
 </script>
 <script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>
-</div>
-  </div>
+</div></div>
 </div>
                     <div class="doc-body">
                         <h1 id="how-to-deploy-an-open-source-developer-portfolio-free-in-minutes">How to Deploy an Open-Source Developer Portfolio (Free, in Minutes)</h1>
@@ -265,7 +269,7 @@
 <li><strong>Full CMS platforms</strong> (WordPress, etc.) — powerful, but overkill for a personal portfolio, and require hosting/maintenance costs</li>
 </ol>
 <p>  This project takes a third approach: a <strong>100% static site</strong> with an <strong>automated Markdown-to-blog pipeline</strong>, so you get the simplicity of static hosting with the convenience of a real blogging workflow.</p>
-<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
     'key' : 'f7aab91a9a0a262448277c24ba0763d1',
@@ -277,6 +281,7 @@
 </script>
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
+
 <h2 id="what-you-get-out-of-the-box">What You Get Out of the Box</h2>
 <ul>
 <li>A complete personal portfolio homepage (<code>index.html</code>)</li>
@@ -307,7 +312,12 @@ blog-loader.html fetches JSON and renders the live post
 <h2 id="step-1-fork-the-repository">Step 1 — Fork the Repository</h2>
 <p>  Go to <a href="https://github.com/bayzed123/sayadbayezid-portfolio-">github.com/bayzed123/sayadbayezid-portfolio-</a> and click <strong>Fork</strong> in the top right.</p>
 <p>  Then clone your fork locally:</p>
-<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+<pre><code class="language-bash">git clone https://github.com/YOUR_USERNAME/sayadbayezid-portfolio-.git
+cd sayadbayezid-portfolio-
+</code></pre>
+<h2 id="step-2-run-the-setup-script">Step 2 — Run the Setup Script</h2>
+<p>  The repo includes an interactive script that personalizes every file for you — no manual find-and-replace needed.</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
     'key' : 'f7aab91a9a0a262448277c24ba0763d1',
@@ -319,11 +329,7 @@ blog-loader.html fetches JSON and renders the live post
 </script>
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
-<pre><code class="language-bash">git clone https://github.com/YOUR_USERNAME/sayadbayezid-portfolio-.git
-cd sayadbayezid-portfolio-
-</code></pre>
-<h2 id="step-2-run-the-setup-script">Step 2 — Run the Setup Script</h2>
-<p>  The repo includes an interactive script that personalizes every file for you — no manual find-and-replace needed.</p>
+
 <pre><code class="language-bash">bash setup.sh
 </code></pre>
 <p>  You&#39;ll be prompted for:</p>
@@ -529,11 +535,7 @@ More detail.
             </div>
         </div>
     
-                <div class="ad-cls-wrapper" id="ad-wrapper-native_banner" style="min-height: auto; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
-  <script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
-<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>
-</div>
-</article>
+                </article>
 
                 
         <aside class="toc-sidebar desktop-only">
@@ -627,11 +629,10 @@ More detail.
             </ul>
         </aside>
             </div>
-        
+        </main>
+
 <aside class="sidebar desktop-only">
-  <div class="sidebar-ad sticky">
-    <div class="ad-cls-wrapper" id="ad-wrapper-skyscraper_160x600" style="min-height: 600px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
-  <script>
+  <div class="ad-cls-wrapper sticky" style="min-height: 600px; position: sticky; top: 20px;"><script>
   atOptions = {
     'key' : '96e8bb0db46b2c8ef669fa310ed45f8b',
     'format' : 'iframe',
@@ -640,11 +641,9 @@ More detail.
     'params' : {}
   };
 </script>
-<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script>
-</div>
-  </div>
+<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script></div>
 </aside>
-</main>
+
     </div>
 
     <script src="../../assets/js/docs.js"></script>
@@ -674,7 +673,10 @@ More detail.
         }
       });
     </script>
-
 <script src="https://pl30322061.effectivecpmnetwork.com/f1/52/ca/f152ca4aaee504006bf6b462c2535ea8.js"></script>
 </body>
 </html>
+<div class="ad-cls-wrapper" id="ad-wrapper-native_banner" style="min-height: auto; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
+<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>
+</div>

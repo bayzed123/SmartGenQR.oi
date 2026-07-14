@@ -1,0 +1,56 @@
+# SmartGen Tools
+
+SmartGen is a modern, fast, and privacy-focused utility platform built for professionals, developers, and everyday users. It offers a wide range of free online tools for SEO, web development, content creation, and utility calculations.
+
+## Key Features
+- **Privacy First**: Most tools use 100% client-side processing, ensuring data never leaves the user's browser.
+- **Performance Optimized**: Built for speed with a focus on Core Web Vitals (Zero CLS).
+- **Comprehensive Toolset**: Over 130+ tools across various categories.
+- **Open Source**: A community-driven project focused on accessibility.
+
+## Tool Categories
+
+### SEO Tools
+- **Meta Tag Generator**: Create SEO-optimized meta tags for websites.
+- **Schema Markup Generator**: Generate JSON-LD structured data for search engines.
+- **Sitemap Finder & Downloader**: Discover and download XML sitemaps.
+- **Keyword Density Checker**: Analyze content for keyword optimization.
+- **SERP Snippet Preview**: Visualize how your page appears in search results.
+
+### Developer Utilities
+- **JSON Formatter & Validator**: Clean and validate JSON data.
+- **Base64 to Image / Image to Base64**: Convert between formats instantly.
+- **HTML Code Library**: A collection of 70+ visual-to-code snippets.
+- **Hash Generator**: Create secure MD5, SHA-1, and SHA-256 hashes.
+- **UUID Generator**: Generate unique identifiers for development.
+
+### Content & Marketing
+- **Blog Title Generator**: Create catchy titles for articles.
+- **UTM Builder**: Generate campaign tracking links.
+- **Fancy Font Generator**: Create stylized text for social media.
+- **WhatsApp Link Generator**: Create direct chat links with custom messages.
+- **Lorem Ipsum Generator**: Generate placeholder text for designs.
+
+### General Utilities
+- **Age Calculator**: Calculate exact age and date differences.
+- **BMI & BMR Calculator**: Track health and fitness metrics.
+- **EMI Calculator**: Plan finances with loan calculations.
+- **Image Compressor**: Optimize images for web use without losing quality.
+- **Unit Converter**: Convert between different measurement units.
+
+## Technical Architecture
+- **Frontend**: Vanilla HTML5, CSS3, and JavaScript (ES6+).
+- **Monetization**: Integrated with Adsterra with 100% CLS prevention.
+- **Deployment**: Optimized for static hosting with automated build scripts for Blog and Docs.
+- **SEO**: Dynamic canonical tags, automated sitemap generation, and optimized metadata.
+
+## Links
+- **Website**: [https://smartgentools.com/](https://smartgentools.com/)
+- **Blog**: [https://smartgentools.com/blog/](https://smartgentools.com/blog/)
+- **Docs**: [https://smartgentools.com/docs/](https://smartgentools.com/docs/)
+- **GitHub**: [https://github.com/bayzed123/SmartGenQR.oi](https://github.com/bayzed123/SmartGenQR.oi)
+
+## Contact
+- **Founder**: Sayad Md Bayezid Hosan (Connect With Bayezid)
+- **Agency**: CWB Agency
+- **Portal**: GenZFrontier
