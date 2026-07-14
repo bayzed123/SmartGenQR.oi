@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update llms.txt",
+    "date": "2026-07-14T23:06:32Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "🚀 Final Performance & Ad Injection Optimization",
     "date": "2026-07-14T22:53:37Z",
     "description": "✅ Major Improvements:- Added llms.txt for AI agents and LLMs- Fixed Adsterra injection for all tool pages (added script execution helper)- Improved RuntimeAdInjector with robust selectors for tool containers- Added canonical tags and HTTPS redirect scripts to all 195+ pages- Optimized build scripts (blog & docs) for better SEO performance- Centralized cookie consent and removed redundant inline scripts📊 Lighthouse Optimization:- Improved CLS with proper ad wrappers- Added explicit canonical links- Enforced HTTPS via client-side redirect- Optimized asset loading paths🎯 Tool page ads are now verified and functional!"
