@@ -1,4 +1,4 @@
-# SmartGen Tools
+# SmartGen Tools - LLM Context File
 
 SmartGen is a modern, fast, and privacy-focused utility platform built for professionals, developers, and everyday users. It offers a wide range of free online tools for SEO, web development, content creation, and utility calculations.
 
@@ -48,13 +48,14 @@ SmartGen is a modern, fast, and privacy-focused utility platform built for profe
 - **Website**: [https://smartgentools.com/](https://smartgentools.com/)
 - **Blog**: [https://smartgentools.com/blog/](https://smartgentools.com/blog/)
 - **Docs**: [https://smartgentools.com/docs/](https://smartgentools.com/docs/)
-- **Daily tools**: [https://smartgentools.com/tools/](https://smartgentools.com/tools/)
+- **Daily Tools**: [https://smartgentools.com/tools/](https://smartgentools.com/tools/)
 - **HTML Code Library**: [https://smartgentools.com/html-code-library/](https://smartgentools.com/html-code-library/)
+- **Platform Updates**: [https://smartgentools.com/updates/](https://smartgentools.com/updates/)
 - **GitHub**: [https://github.com/bayzed123/SmartGenQR.oi](https://github.com/bayzed123/SmartGenQR.oi)
 
 ## Contact
 - **Founder**: Sayad Md Bayezid Hosan (Smartgen)
-- **Protfolio**: [sayad Md Bayezid Hosan ](www.sayadbayezid.com)
-- **Email**: Cwb.agency@outlook.com
-- **developer Email** : info@sayadbayezid.com
+- **Portfolio**: [https://www.sayadbayezid.com](https://www.sayadbayezid.com)
+- **Email**: cwb.agency@outlook.com
+- **Developer Email**: info@sayadbayezid.com
 - **Portal**: Smartgen
