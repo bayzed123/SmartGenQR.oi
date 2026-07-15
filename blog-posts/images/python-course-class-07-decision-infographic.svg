@@ -1,0 +1,72 @@
+<svg width="1300" height="760" viewBox="0 0 1300 760" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradDS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1526"/>
+      <stop offset="100%" stop-color="#1B2A4A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1300" height="760" fill="url(#bgGradDS)"/>
+
+  <text x="650" y="56" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#F6F1E4">Choosing the Right Data Structure</text>
+  <text x="650" y="86" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" fill="#93A0C2">Ask these questions, in this order</text>
+
+  <!-- start node -->
+  <rect x="480" y="120" width="340" height="66" rx="14" fill="#1B2540" stroke="#F2A93B" stroke-width="3"/>
+  <text x="650" y="160" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#F6F1E4">Do you need to look things up</text>
+  <text x="650" y="178" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">by a meaningful name?</text>
+
+  <path d="M600,186 L280,260" stroke="#4ED9AE" stroke-width="2"/>
+  <text x="420" y="235" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#4ED9AE" font-weight="700">YES</text>
+  <path d="M700,186 L1020,260" stroke="#3A4A72" stroke-width="2"/>
+  <text x="890" y="235" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2" font-weight="700">NO</text>
+
+  <!-- dict result -->
+  <rect x="120" y="270" width="320" height="150" rx="14" fill="#1B2540" stroke="#4ED9AE" stroke-width="3"/>
+  <text x="280" y="308" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#4ED9AE">dict</text>
+  <text x="280" y="336" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#F6F1E4">{"name": "Arif"}</text>
+  <text x="280" y="368" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">A user profile, a phone book,</text>
+  <text x="280" y="386" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">settings by name</text>
+
+  <!-- second question -->
+  <rect x="880" y="270" width="340" height="66" rx="14" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <text x="1050" y="300" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#F6F1E4">Must every value be</text>
+  <text x="1050" y="320" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">genuinely unique?</text>
+
+  <path d="M980,336 L780,420" stroke="#4ED9AE" stroke-width="2"/>
+  <text x="850" y="390" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#4ED9AE" font-weight="700">YES</text>
+  <path d="M1100,336 L1220,420" stroke="#3A4A72" stroke-width="2"/>
+  <text x="1180" y="390" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2" font-weight="700">NO</text>
+
+  <!-- set result -->
+  <rect x="620" y="430" width="320" height="150" rx="14" fill="#1B2540" stroke="#F1633C" stroke-width="3"/>
+  <text x="780" y="468" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#F1633C">set</text>
+  <text x="780" y="496" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#F6F1E4">{"seo", "python"}</text>
+  <text x="780" y="528" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">Unique tags, removing</text>
+  <text x="780" y="546" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">duplicates, fast membership</text>
+
+  <!-- third question -->
+  <rect x="1100" y="430" width="320" height="66" rx="14" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <text x="1260" y="460" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#F6F1E4">Should it stay fixed</text>
+  <text x="1260" y="480" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" fill="#93A0C2">once created?</text>
+
+  <path d="M1180,496 L960,580" stroke="#4ED9AE" stroke-width="2"/>
+  <text x="1050" y="550" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#4ED9AE" font-weight="700">YES</text>
+  <path d="M1320,496 L1320,580" stroke="#3A4A72" stroke-width="2"/>
+  <text x="1290" y="550" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2" font-weight="700">NO</text>
+
+  <!-- tuple result -->
+  <rect x="800" y="590" width="320" height="150" rx="14" fill="#1B2540" stroke="#4ED9AE" stroke-width="3"/>
+  <text x="960" y="628" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#4ED9AE">tuple</text>
+  <text x="960" y="656" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#F6F1E4">(23.81, 90.41)</text>
+  <text x="960" y="688" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">Coordinates, RGB values,</text>
+  <text x="960" y="706" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">data that must not change</text>
+
+  <!-- list result -->
+  <rect x="1160" y="590" width="320" height="150" rx="14" fill="#1B2540" stroke="#F1633C" stroke-width="3"/>
+  <text x="1200" y="628" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#F1633C">list</text>
+  <text x="1200" y="656" font-family="'Courier New', monospace" font-size="14" fill="#F6F1E4">["a", "b", "c"]</text>
+  <text x="1200" y="688" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">A to-do list, a shopping</text>
+  <text x="1200" y="706" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">cart, anything that grows</text>
+
+  <text x="650" y="750" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN PYTHON COURSE &#183; CLASS 07</text>
+</svg>
