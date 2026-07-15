@@ -1,0 +1,130 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="gridI" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1B2A4A" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="scanGlowI" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1500" fill="#0B1220"/>
+  <rect width="1200" height="1500" fill="url(#gridI)" opacity="0.45"/>
+
+  <g stroke="#2DD4BF" stroke-width="2.5" fill="none" stroke-linecap="square">
+    <path d="M 40 72 L 40 40 L 72 40"/>
+    <path d="M 1128 40 L 1160 40 L 1160 72"/>
+    <path d="M 1160 1428 L 1160 1460 L 1128 1460"/>
+    <path d="M 72 1460 L 40 1460 L 40 1428"/>
+  </g>
+
+  <text x="600" y="62" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="15" letter-spacing="4" fill="#F5A623" font-weight="700">SMARTGEN PYTHON COURSE &#183; CLASS 04</text>
+  <rect x="40" y="80" width="1120" height="2" fill="url(#scanGlowI)"/>
+  <text x="600" y="132" text-anchor="middle" font-family="Arial, 'Helvetica Neue', sans-serif" font-size="38" font-weight="900" fill="#F1F5F9">Every Python Operator at a Glance</text>
+  <text x="600" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#9FB0CC">Arithmetic &#183; Comparison &#183; Assignment &#183; Logical &#183; Membership &amp; Identity</text>
+
+  <!-- Card 1: Arithmetic -->
+  <g>
+    <rect x="60" y="200" width="1080" height="200" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <text x="90" y="240" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#F1F5F9">ARITHMETIC OPERATORS</text>
+    <text x="90" y="264" font-family="Arial, sans-serif" font-size="14.5" fill="#9FB0CC">Perform math on numbers — a, b = 17, 5</text>
+
+    <g font-family="'Consolas',monospace" font-weight="700" font-size="20" text-anchor="middle">
+      <g transform="translate(115,320)"><circle r="28" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">+</text></g>
+      <g transform="translate(255,320)"><circle r="28" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">-</text></g>
+      <g transform="translate(395,320)"><circle r="28" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">*</text></g>
+      <g transform="translate(535,320)"><circle r="28" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" font-size="16" fill="#2DD4BF">/</text></g>
+      <g transform="translate(675,320)"><circle r="28" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" font-size="15" fill="#2DD4BF">//</text></g>
+      <g transform="translate(815,320)"><circle r="28" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">%</text></g>
+      <g transform="translate(955,320)"><circle r="28" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" font-size="15" fill="#2DD4BF">**</text></g>
+    </g>
+    <g font-family="'Consolas',monospace" font-size="11.5" text-anchor="middle" fill="#7C8DAF">
+      <text x="115" y="368">add</text>
+      <text x="255" y="368">subtract</text>
+      <text x="395" y="368">multiply</text>
+      <text x="535" y="368">divide</text>
+      <text x="675" y="368">floor div</text>
+      <text x="815" y="368">modulus</text>
+      <text x="955" y="368">exponent</text>
+    </g>
+  </g>
+
+  <!-- Card 2: Comparison -->
+  <g>
+    <rect x="60" y="420" width="1080" height="200" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <text x="90" y="460" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#F1F5F9">COMPARISON OPERATORS</text>
+    <text x="90" y="484" font-family="Arial, sans-serif" font-size="14.5" fill="#9FB0CC">Always evaluate to True or False — x, y = 10, 20</text>
+
+    <g font-family="'Consolas',monospace" font-weight="700" font-size="17" text-anchor="middle">
+      <g transform="translate(140,540)"><rect x="-40" y="-28" width="80" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">==</text></g>
+      <g transform="translate(320,540)"><rect x="-40" y="-28" width="80" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">!=</text></g>
+      <g transform="translate(500,540)"><rect x="-40" y="-28" width="80" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">&lt;</text></g>
+      <g transform="translate(680,540)"><rect x="-40" y="-28" width="80" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">&gt;</text></g>
+      <g transform="translate(860,540)"><rect x="-40" y="-28" width="80" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">&lt;=</text></g>
+      <g transform="translate(1040,540)"><rect x="-40" y="-28" width="80" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">&gt;=</text></g>
+    </g>
+    <g font-family="'Consolas',monospace" font-size="11.5" text-anchor="middle" fill="#7C8DAF">
+      <text x="140" y="590">equal</text>
+      <text x="320" y="590">not equal</text>
+      <text x="500" y="590">less than</text>
+      <text x="680" y="590">greater</text>
+      <text x="860" y="590">lt or eq</text>
+      <text x="1040" y="590">gt or eq</text>
+    </g>
+  </g>
+
+  <!-- Card 3: Assignment -->
+  <g>
+    <rect x="60" y="640" width="1080" height="200" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <text x="90" y="680" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#F1F5F9">ASSIGNMENT OPERATORS</text>
+    <text x="90" y="704" font-family="Arial, sans-serif" font-size="14.5" fill="#9FB0CC">Store a value — the augmented forms update in one step</text>
+
+    <g font-family="'Consolas',monospace" font-weight="700" font-size="16" text-anchor="middle">
+      <g transform="translate(140,760)"><rect x="-45" y="-28" width="90" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">=</text></g>
+      <g transform="translate(330,760)"><rect x="-45" y="-28" width="90" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">+=</text></g>
+      <g transform="translate(520,760)"><rect x="-45" y="-28" width="90" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">-=</text></g>
+      <g transform="translate(710,760)"><rect x="-45" y="-28" width="90" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">*=</text></g>
+      <g transform="translate(900,760)"><rect x="-45" y="-28" width="90" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="6" font-size="14" fill="#2DD4BF">//=</text></g>
+      <g transform="translate(1090,760)"><rect x="-45" y="-28" width="90" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">%=</text></g>
+    </g>
+    <g font-family="'Consolas',monospace" font-size="12" text-anchor="middle" fill="#D7E4F0">
+      <text x="140" y="822">score = 20</text>
+      <text x="620" y="822">score += 5   &#8594;   score = score + 5</text>
+    </g>
+  </g>
+
+  <!-- Card 4: Logical -->
+  <g>
+    <rect x="60" y="860" width="1080" height="220" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <text x="90" y="900" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#F1F5F9">LOGICAL OPERATORS</text>
+    <text x="90" y="924" font-family="Arial, sans-serif" font-size="14.5" fill="#9FB0CC">Combine or invert conditions — short-circuit, return an operand</text>
+
+    <g font-family="'Consolas',monospace" font-weight="700" font-size="17" text-anchor="middle">
+      <g transform="translate(160,985)"><rect x="-55" y="-28" width="110" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">and</text></g>
+      <g transform="translate(400,985)"><rect x="-55" y="-28" width="110" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">or</text></g>
+      <g transform="translate(640,985)"><rect x="-55" y="-28" width="110" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">not</text></g>
+    </g>
+    <text x="900" y="992" text-anchor="middle" font-family="'Consolas',monospace" font-size="13" fill="#F5A623">0 and 10 &#8594; 0</text>
+    <text x="900" y="1015" text-anchor="middle" font-family="'Consolas',monospace" font-size="13" fill="#F5A623">"" or "x" &#8594; "x"</text>
+    <text x="90" y="1055" font-family="'Consolas',monospace" font-size="12.5" fill="#7C8DAF">These return an actual operand, not just True/False — see Section 3 for why.</text>
+  </g>
+
+  <!-- Card 5: Membership + Identity -->
+  <g>
+    <rect x="60" y="1100" width="1080" height="220" rx="10" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <text x="90" y="1140" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#F1F5F9">MEMBERSHIP &amp; IDENTITY OPERATORS</text>
+    <text x="90" y="1164" font-family="Arial, sans-serif" font-size="14.5" fill="#9FB0CC">Check presence in a sequence, or same-object identity</text>
+
+    <g font-family="'Consolas',monospace" font-weight="700" font-size="16" text-anchor="middle">
+      <g transform="translate(160,1225)"><rect x="-60" y="-28" width="120" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">in</text></g>
+      <g transform="translate(420,1225)"><rect x="-90" y="-28" width="180" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" font-size="14" fill="#2DD4BF">not in</text></g>
+      <g transform="translate(700,1225)"><rect x="-60" y="-28" width="120" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" fill="#2DD4BF">is</text></g>
+      <g transform="translate(960,1225)"><rect x="-90" y="-28" width="180" height="56" rx="8" fill="#0B1220" stroke="#2DD4BF" stroke-width="2"/><text y="7" font-size="14" fill="#2DD4BF">is not</text></g>
+    </g>
+    <text x="90" y="1295" font-family="'Consolas',monospace" font-size="12.5" fill="#7C8DAF">value is None    &#8594;    the correct, idiomatic way to check for "no value"</text>
+  </g>
+
+  <text x="600" y="1408" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="14" letter-spacing="3" fill="#7C8DAF" font-weight="700">SMARTGENTOOLS.COM &#183; PYTHON COURSE CLASS 04</text>
+</svg>
