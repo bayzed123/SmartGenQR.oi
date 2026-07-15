@@ -1,0 +1,66 @@
+<svg width="1300" height="760" viewBox="0 0 1300 760" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradI" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101728"/>
+      <stop offset="100%" stop-color="#1C2C4D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1300" height="760" fill="url(#bgGradI)"/>
+
+  <text x="650" y="56" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#F6F1E4">Object Identity: == vs is</text>
+  <text x="650" y="86" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" fill="#93A0C2">Same value is not always the same object in memory</text>
+
+  <!-- divider -->
+  <line x1="650" y1="120" x2="650" y2="700" stroke="#2E3B5E" stroke-width="2"/>
+
+  <!-- LEFT: == equality -->
+  <text x="325" y="140" text-anchor="middle" font-family="'Courier New', monospace" font-size="24" font-weight="700" fill="#4ED9AE">==  (Equality)</text>
+  <text x="325" y="164" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">"Do these two hold the same value?"</text>
+
+  <rect x="120" y="200" width="140" height="70" rx="8" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+  <text x="190" y="242" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" fill="#F6F1E4">x = 1000</text>
+  <rect x="330" y="200" width="140" height="70" rx="8" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+  <text x="400" y="242" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" fill="#F6F1E4">y = 1000</text>
+
+  <path d="M190,275 L190,330" stroke="#4ED9AE" stroke-width="2.5"/>
+  <path d="M400,275 L400,330" stroke="#4ED9AE" stroke-width="2.5"/>
+  <rect x="140" y="335" width="100" height="55" rx="6" fill="#233256" stroke="#4ED9AE"/>
+  <text x="190" y="368" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" fill="#4ED9AE">1000</text>
+  <rect x="350" y="335" width="100" height="55" rx="6" fill="#233256" stroke="#4ED9AE"/>
+  <text x="400" y="368" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" fill="#4ED9AE">1000</text>
+  <text x="295" y="368" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12" fill="#5E6D92">(two separate</text>
+  <text x="295" y="382" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12" fill="#5E6D92">objects)</text>
+
+  <rect x="150" y="420" width="350" height="60" rx="10" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+  <text x="325" y="458" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" fill="#4ED9AE">x == y  &#8594;  True</text>
+  <text x="325" y="504" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Values match, even in different objects</text>
+
+  <!-- RIGHT: is identity -->
+  <text x="975" y="140" text-anchor="middle" font-family="'Courier New', monospace" font-size="24" font-weight="700" fill="#F2A93B">is  (Identity)</text>
+  <text x="975" y="164" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">"Are these the exact same object?"</text>
+
+  <rect x="770" y="200" width="140" height="70" rx="8" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <text x="840" y="242" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" fill="#F6F1E4">x = 1000</text>
+  <rect x="980" y="200" width="140" height="70" rx="8" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <text x="1050" y="242" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" fill="#F6F1E4">y = 1000</text>
+
+  <path d="M840,275 L840,330" stroke="#F1633C" stroke-width="2.5"/>
+  <path d="M1050,275 L1050,330" stroke="#F1633C" stroke-width="2.5"/>
+  <rect x="790" y="335" width="100" height="55" rx="6" fill="#233256" stroke="#F1633C"/>
+  <text x="840" y="368" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" fill="#F1633C">obj #1</text>
+  <rect x="1000" y="335" width="100" height="55" rx="6" fill="#233256" stroke="#F1633C"/>
+  <text x="1050" y="368" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" fill="#F1633C">obj #2</text>
+
+  <rect x="800" y="420" width="350" height="60" rx="10" fill="#1B2540" stroke="#F1633C" stroke-width="2.5"/>
+  <text x="975" y="458" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" fill="#F1633C">x is y  &#8594;  False</text>
+  <text x="975" y="504" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Two different objects, outside Python's small-int cache</text>
+
+  <!-- bottom tip bar spanning both -->
+  <rect x="120" y="560" width="1060" height="150" rx="12" fill="#1B2540" stroke="#2E3B5E" stroke-width="1.5"/>
+  <text x="150" y="596" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#F2A93B">PRO TIP</text>
+  <text x="150" y="622" font-family="'Courier New', monospace" font-size="15" fill="#F6F1E4">a = 100; b = 100; a is b  &#8594;  True</text>
+  <text x="150" y="646" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">CPython caches small integers (-5 to 256), so this specific case works &#8212;</text>
+  <text x="150" y="666" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">but never rely on it. Use == for values, and reserve is only for checking against None.</text>
+
+  <text x="650" y="735" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN PYTHON COURSE &#183; CLASS 03</text>
+</svg>
