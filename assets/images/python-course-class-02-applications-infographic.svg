@@ -1,0 +1,66 @@
+<svg width="1300" height="800" viewBox="0 0 1300 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1526"/>
+      <stop offset="100%" stop-color="#1B2A4A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1300" height="800" fill="url(#bgGradA)"/>
+
+  <text x="650" y="56" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#F6F1E4">What People Actually Build With Python</text>
+  <text x="650" y="86" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" fill="#93A0C2">One language, five very different careers</text>
+
+  <!-- Card 1: Web Dev -->
+  <rect x="70" y="130" width="360" height="230" rx="16" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+  <g transform="translate(110,175)" stroke="#4ED9AE" stroke-width="2.2" fill="none"><rect x="-18" y="-14" width="36" height="28" rx="3"/><line x1="-18" y1="-4" x2="18" y2="-4"/></g>
+  <text x="150" y="182" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F6F1E4">Web Development</text>
+  <text x="110" y="222" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Full websites and APIs,</text>
+  <text x="110" y="240" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">from small tools to Instagram-scale apps</text>
+  <rect x="110" y="264" width="90" height="26" rx="13" fill="#233256"/><text x="155" y="281" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="11" fill="#4ED9AE">Django</text>
+  <rect x="210" y="264" width="80" height="26" rx="13" fill="#233256"/><text x="250" y="281" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="11" fill="#4ED9AE">Flask</text>
+  <rect x="300" y="264" width="100" height="26" rx="13" fill="#233256"/><text x="350" y="281" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="11" fill="#4ED9AE">FastAPI</text>
+
+  <!-- Card 2: Data Science -->
+  <rect x="470" y="130" width="360" height="230" rx="16" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <g transform="translate(510,175)" fill="#F2A93B"><rect x="-14" y="0" width="9" height="18"/><rect x="-2" y="-8" width="9" height="26"/><rect x="10" y="-14" width="9" height="32"/></g>
+  <text x="550" y="182" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F6F1E4">Data Science</text>
+  <text x="510" y="222" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Cleaning, analyzing, and</text>
+  <text x="510" y="240" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">visualizing real-world data</text>
+  <rect x="510" y="264" width="95" height="26" rx="13" fill="#233256"/><text x="557" y="281" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="11" fill="#F2A93B">Pandas</text>
+  <rect x="615" y="264" width="90" height="26" rx="13" fill="#233256"/><text x="660" y="281" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="11" fill="#F2A93B">NumPy</text>
+
+  <!-- Card 3: AI / ML -->
+  <rect x="870" y="130" width="360" height="230" rx="16" fill="#1B2540" stroke="#F1633C" stroke-width="2.5"/>
+  <g transform="translate(910,175)" stroke="#F1633C" stroke-width="2" fill="#F1633C"><circle cx="-10" cy="6" r="3"/><circle cx="10" cy="6" r="3"/><circle cx="0" cy="-10" r="3"/><line x1="-10" y1="6" x2="0" y2="-10"/><line x1="10" y1="6" x2="0" y2="-10"/><line x1="-10" y1="6" x2="10" y2="6"/></g>
+  <text x="950" y="182" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F6F1E4">AI &amp; Machine Learning</text>
+  <text x="910" y="222" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Training models that predict,</text>
+  <text x="910" y="240" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">classify, and generate</text>
+  <rect x="910" y="264" width="110" height="26" rx="13" fill="#233256"/><text x="965" y="281" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="10.5" fill="#F1633C">TensorFlow</text>
+  <rect x="1030" y="264" width="95" height="26" rx="13" fill="#233256"/><text x="1077" y="281" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="10.5" fill="#F1633C">PyTorch</text>
+
+  <!-- Card 4: Automation -->
+  <rect x="70" y="400" width="360" height="230" rx="16" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+  <g transform="translate(110,445)" stroke="#4ED9AE" stroke-width="2.2" fill="none"><circle r="16"/><line x1="0" y1="0" x2="0" y2="-10"/><line x1="0" y1="0" x2="8" y2="4"/></g>
+  <text x="150" y="452" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F6F1E4">Automation &amp; Scripting</text>
+  <text x="110" y="492" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Repetitive tasks handled</text>
+  <text x="110" y="510" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">automatically, on a schedule</text>
+  <rect x="110" y="534" width="130" height="26" rx="13" fill="#233256"/><text x="175" y="551" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="11" fill="#4ED9AE">Standard Library</text>
+
+  <!-- Card 5: Game Dev -->
+  <rect x="470" y="400" width="360" height="230" rx="16" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <g transform="translate(510,445)" stroke="#F2A93B" stroke-width="2.2" fill="none"><rect x="-16" y="-10" width="32" height="20" rx="8"/><circle cx="-6" cy="0" r="2" fill="#F2A93B" stroke="none"/><circle cx="6" cy="0" r="2" fill="#F2A93B" stroke="none"/></g>
+  <text x="550" y="452" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F6F1E4">Game Development</text>
+  <text x="510" y="492" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">2D games and rapid</text>
+  <text x="510" y="510" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">prototyping</text>
+  <rect x="510" y="534" width="90" height="26" rx="13" fill="#233256"/><text x="555" y="551" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="11" fill="#F2A93B">Pygame</text>
+
+  <!-- Card 6: Scripting/Everything -->
+  <rect x="870" y="400" width="360" height="230" rx="16" fill="#1B2540" stroke="#F1633C" stroke-width="2.5"/>
+  <g transform="translate(910,445)" stroke="#F1633C" stroke-width="2.2" fill="none"><path d="M-14,-10 h20 a4,4 0 0 1 4,4 v5 a4,4 0 0 1 -4,4 h-11 l-5,5 v-5 h-2 a4,4 0 0 1 -4,-4 v-5 a4,4 0 0 1 4,-4 z"/></g>
+  <text x="950" y="452" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F6F1E4">Everywhere Else</text>
+  <text x="910" y="492" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Cybersecurity tools, finance</text>
+  <text x="910" y="510" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">models, research, and more</text>
+  <rect x="910" y="534" width="150" height="26" rx="13" fill="#233256"/><text x="985" y="551" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="10.5" fill="#F1633C">Requests, BeautifulSoup</text>
+
+  <text x="650" y="700" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN PYTHON COURSE &#183; CLASS 02</text>
+</svg>
