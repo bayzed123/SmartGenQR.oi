@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix broken URLs and update performance score",
+    "date": "2026-07-15T05:15:50Z",
+    "description": "Updated link statuses and improved performance score in README."
+  },
+  {
     "title": "Delete scripts/env_loader.py",
     "date": "2026-07-15T05:13:35Z",
     "description": "Platform improvement and optimization."
