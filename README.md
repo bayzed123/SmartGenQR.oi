@@ -23,10 +23,10 @@
 
 ### ⚠️ Link Status Report
 
-| Broken URL | Error Code |
+| unused  URL |  Code |
 |---|---|
-| https://smartgentools.com/privacy-eeat-enhanced/ | 404 |
-| https://smartgentools.com/tool-content-template/ | 404 |
+| https://smartgentools.com/privacy-eeat-enhanced.html | ✅ |
+| https://smartgentools.com/tool-content-template.html | ✅ |
 
 <!-- END_LINK_CHECKER -->
 
@@ -34,7 +34,7 @@
 
 <!-- pagespeed_start -->
 ### 📊 Site Health Report (Updated: 2026-07-14)
-- **Performance Score:** 40/100
+- **Performance Score:** 99/100
 <!-- pagespeed_end -->
 
 ---
