@@ -1,5 +1,10 @@
 [
   {
+    "title": "Delete assets/images/pythoncover4.svg",
+    "date": "2026-07-15T04:48:25Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Change image URLs to absolute links",
     "date": "2026-07-15T04:46:41Z",
     "description": "Updated image URLs to use absolute paths for better accessibility."
