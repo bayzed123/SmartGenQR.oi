@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix image URLs to use HTTPS",
+    "date": "2026-07-15T18:52:57Z",
+    "description": "Updated image URLs to use HTTPS for better security."
+  },
+  {
     "title": "Add infographic for loop control in Python",
     "date": "2026-07-15T18:48:50Z",
     "description": "Platform improvement and optimization."
