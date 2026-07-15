@@ -3,7 +3,7 @@ title: "Master Python Operators: Step-by-Step Guide⁠"
 description: "Learn every Python operator step by step: arithmetic, comparison, assignment, logical, membership, identity, precedence, and ternary -- with runnable code."
 keywords: "SmartGen, Python Course, Class 04, Python, Operators, Arithmetic Operators, Comparison Operators, Operator Precedence, Ternary Operator"
 date: 2026-07-15
-image: "blog-post/images/python-course-class-04-cover.svg"
+image: "https://www.smartgentools.com/blog-posts/images/python-course-class-04-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -19,7 +19,7 @@ July 15, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, step-by-step guide to Python operators — the real difference between an operand and an operator, every arithmetic, comparison, and assignment operator with runnable code, how logical, membership, and identity operators actually behave (including the short-circuit rule that surprises most beginners), operator precedence and the ternary expression, and the key differences and best practices that separate code that merely runs from code that's actually correct.
 
-![Python Operators Explained — cover image](blog-post/images/python-course-class-04-cover.svg)
+![Python Operators Explained — cover image](https://www.smartgentools.com/blog-posts/images/python-course-class-04-cover.svg)
 
 ---
 
@@ -226,7 +226,7 @@ Without a clear mental model of which operators run first, expressions that mix 
 
 ### The Solution: The Order Python Actually Follows
 
-![Python Operator Precedence Order — from highest to lowest priority, parentheses to logical operators](www.smartgentools.com/blog-posts/images/precedence-infographic.svg)
+![Python Operator Precedence Order — from highest to lowest priority, parentheses to logical operators](https://www.smartgentools.com/blog-posts/images/precedence-infographic.svg)
 
 From highest to lowest priority: **parentheses** run first, always — then **exponentiation** (`**`), then **multiplication, division, floor division, and modulus** (`* / // %`), then **addition and subtraction** (`+ -`), then **comparisons** (`== != < >` and friends), then **logical operators** (`not`, then `and`, then `or`, in that order).
 
