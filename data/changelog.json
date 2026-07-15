@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add identity infographic SVG for Python course",
+    "date": "2026-07-15T01:16:05Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Add infographic for Python's core data types",
     "date": "2026-07-15T01:14:33Z",
     "description": "This SVG infographic illustrates Python's core data types, including int, float, str, bool, list, tuple, dict, and set, along with their descriptions and examples."
