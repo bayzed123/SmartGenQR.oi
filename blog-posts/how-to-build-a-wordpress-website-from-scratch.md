@@ -3,7 +3,7 @@ title: "How to Build a WordPress Website From Scratch"
 description: "Learn how to build a WordPress website from scratch — cPanel, domain setup, WordPress installation, SEO themes, and essential plugins explained step by step."
 keywords: "SmartGen, WordPress Website, How to Build a WordPress Website, cPanel Tutorial, Connect Domain to Hosting, Install WordPress, WordPress SEO Theme, WordPress Plugins, WordPress for Beginners"
 date: 2026-07-14
-image: "https://raw.githubusercontent.com/bayzed123/main/assets/images/how-to-build-a-wordpress-website-cover.svg"
+image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/how-to-build-a-wordpress-website-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -16,6 +16,8 @@ tags:
 ---
 <!--AUTHOR_PROFILE-->
 July 14, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+
+![How to Build a WordPress Website Cover](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/how-to-build-a-wordpress-website-cover.svg)
 
 # How to Build a WordPress Website From Scratch
 
