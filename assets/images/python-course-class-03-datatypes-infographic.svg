@@ -1,0 +1,62 @@
+<svg width="1300" height="820" viewBox="0 0 1300 820" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradD" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1526"/>
+      <stop offset="100%" stop-color="#1B2A4A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1300" height="820" fill="url(#bgGradD)"/>
+
+  <text x="650" y="56" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#F6F1E4">Python's Core Data Types at a Glance</text>
+  <text x="650" y="86" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" fill="#93A0C2">Eight built-in types you'll use in almost every program</text>
+
+  <!-- Row 1 -->
+  <rect x="60" y="130" width="280" height="150" rx="14" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <text x="200" y="168" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#F2A93B">int</text>
+  <text x="200" y="192" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">Whole numbers</text>
+  <text x="200" y="240" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" fill="#F6F1E4">age = 25</text>
+
+  <rect x="360" y="130" width="280" height="150" rx="14" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+  <text x="500" y="168" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#4ED9AE">float</text>
+  <text x="500" y="192" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">Decimal numbers</text>
+  <text x="500" y="240" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" fill="#F6F1E4">price = 19.99</text>
+
+  <rect x="660" y="130" width="280" height="150" rx="14" fill="#1B2540" stroke="#F1633C" stroke-width="2.5"/>
+  <text x="800" y="168" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#F1633C">str</text>
+  <text x="800" y="192" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">Text</text>
+  <text x="800" y="240" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" fill="#F6F1E4">name = "Arif"</text>
+
+  <rect x="960" y="130" width="280" height="150" rx="14" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <text x="1100" y="168" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#F2A93B">bool</text>
+  <text x="1100" y="192" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">True or False</text>
+  <text x="1100" y="240" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" fill="#F6F1E4">is_active = True</text>
+
+  <!-- Row 2 -->
+  <rect x="60" y="300" width="280" height="150" rx="14" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+  <text x="200" y="338" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#4ED9AE">list</text>
+  <text x="200" y="362" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">Ordered, changeable</text>
+  <text x="200" y="410" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#F6F1E4">skills = ["CSS","Py"]</text>
+
+  <rect x="360" y="300" width="280" height="150" rx="14" fill="#1B2540" stroke="#F1633C" stroke-width="2.5"/>
+  <text x="500" y="338" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#F1633C">tuple</text>
+  <text x="500" y="362" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">Ordered, unchangeable</text>
+  <text x="500" y="410" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#F6F1E4">coords = (23.8, 90.4)</text>
+
+  <rect x="660" y="300" width="280" height="150" rx="14" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <text x="800" y="338" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#F2A93B">dict</text>
+  <text x="800" y="362" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">Key &#8594; value pairs</text>
+  <text x="800" y="410" text-anchor="middle" font-family="'Courier New', monospace" font-size="13.5" fill="#F6F1E4">{"name":"Arif"}</text>
+
+  <rect x="960" y="300" width="280" height="150" rx="14" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+  <text x="1100" y="338" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#4ED9AE">set</text>
+  <text x="1100" y="362" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">Unique values only</text>
+  <text x="1100" y="410" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#F6F1E4">tags = {"seo","py"}</text>
+
+  <!-- Bottom bar: None -->
+  <rect x="60" y="480" width="1180" height="90" rx="14" fill="#1B2540" stroke="#2E3B5E" stroke-width="1.5"/>
+  <text x="90" y="518" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#F2A93B">NoneType</text>
+  <text x="90" y="542" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Represents "no value at all" &#8212; not zero, not empty, genuinely nothing</text>
+  <text x="900" y="530" font-family="'Courier New', monospace" font-size="17" fill="#F6F1E4">value = None</text>
+
+  <text x="650" y="640" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN PYTHON COURSE &#183; CLASS 03</text>
+</svg>
