@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix image paths in Python data structures blog post",
+    "date": "2026-07-15T18:37:16Z",
+    "description": "Updated image paths in the blog post to point to the correct directory."
+  },
+  {
     "title": "Fix image URLs in Python Loop Exercises guide",
     "date": "2026-07-15T18:30:44Z",
     "description": "Updated image URLs to point to the correct directory for blog post assets."
