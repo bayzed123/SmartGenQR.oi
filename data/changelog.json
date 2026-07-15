@@ -1,5 +1,10 @@
 [
   {
+    "title": "Change image URLs to absolute links",
+    "date": "2026-07-15T04:46:41Z",
+    "description": "Updated image URLs to use absolute paths for better accessibility."
+  },
+  {
     "title": "Fix image path in Python course class 04 post",
     "date": "2026-07-15T04:36:59Z",
     "description": "Updated image path for the Python course class 04 operators post."
