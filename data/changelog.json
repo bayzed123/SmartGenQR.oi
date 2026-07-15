@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add author profile and date to blog post",
+    "date": "2026-07-15T18:22:18Z",
+    "description": "Added author profile and publication date to the blog post."
+  },
+  {
     "title": "Create Python Loop Exercises and String Basics Guide",
     "date": "2026-07-15T18:16:45Z",
     "description": "Added a comprehensive guide covering Python loop exercises and string basics, including hands-on examples and explanations."
