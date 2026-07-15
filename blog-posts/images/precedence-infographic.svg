@@ -1,0 +1,100 @@
+<svg width="1200" height="1150" viewBox="0 0 1200 1150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="gridP" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1B2A4A" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="scanGlowP" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1150" fill="#0B1220"/>
+  <rect width="1200" height="1150" fill="url(#gridP)" opacity="0.45"/>
+
+  <g stroke="#2DD4BF" stroke-width="2.5" fill="none" stroke-linecap="square">
+    <path d="M 40 72 L 40 40 L 72 40"/>
+    <path d="M 1128 40 L 1160 40 L 1160 72"/>
+    <path d="M 1160 1078 L 1160 1110 L 1128 1110"/>
+    <path d="M 72 1110 L 40 1110 L 40 1078"/>
+  </g>
+
+  <text x="600" y="62" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="15" letter-spacing="4" fill="#F5A623" font-weight="700">SMARTGEN PYTHON COURSE &#183; CLASS 04</text>
+  <rect x="40" y="80" width="1120" height="2" fill="url(#scanGlowP)"/>
+  <text x="600" y="132" text-anchor="middle" font-family="Arial, 'Helvetica Neue', sans-serif" font-size="36" font-weight="900" fill="#F1F5F9">Python Operator Precedence</text>
+  <text x="600" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#9FB0CC">Highest priority runs first — top to bottom</text>
+
+  <!-- Row 1: Parentheses -->
+  <g>
+    <rect x="80" y="210" width="1040" height="105" rx="8" fill="#2DD4BF"/>
+    <circle cx="145" cy="262" r="26" fill="#08131F"/>
+    <text x="145" y="271" text-anchor="middle" font-family="Arial" font-size="24" font-weight="900" fill="#2DD4BF">1</text>
+    <text x="200" y="255" font-family="'Consolas',monospace" font-size="26" font-weight="700" fill="#08131F">( )</text>
+    <text x="330" y="255" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="#08131F">Parentheses</text>
+    <text x="330" y="280" font-family="Arial, sans-serif" font-size="14" fill="#0B1220">Always evaluated first — use to force your intended order</text>
+  </g>
+
+  <!-- Row 2: Exponent -->
+  <g>
+    <rect x="80" y="327" width="1040" height="95" rx="8" fill="#101B33" stroke="#2DD4BF" stroke-width="1.5"/>
+    <circle cx="145" cy="374" r="24" fill="#2DD4BF"/>
+    <text x="145" y="382" text-anchor="middle" font-family="Arial" font-size="22" font-weight="900" fill="#08131F">2</text>
+    <text x="200" y="368" font-family="'Consolas',monospace" font-size="24" font-weight="700" fill="#2DD4BF">**</text>
+    <text x="330" y="368" font-family="Arial, sans-serif" font-size="19" font-weight="800" fill="#F1F5F9">Exponentiation</text>
+    <text x="330" y="392" font-family="Arial, sans-serif" font-size="13.5" fill="#9FB0CC">2 ** 3 ** 2 evaluates right-to-left &#8594; 512</text>
+  </g>
+
+  <!-- Row 3: Mult/Div/Floor/Mod -->
+  <g>
+    <rect x="80" y="434" width="1040" height="95" rx="8" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="145" cy="481" r="24" fill="#2DD4BF" opacity="0.85"/>
+    <text x="145" y="489" text-anchor="middle" font-family="Arial" font-size="22" font-weight="900" fill="#08131F">3</text>
+    <text x="200" y="475" font-family="'Consolas',monospace" font-size="20" font-weight="700" fill="#2DD4BF">* / // %</text>
+    <text x="430" y="475" font-family="Arial, sans-serif" font-size="19" font-weight="800" fill="#F1F5F9">Mult, Div, Floor Div, Modulus</text>
+    <text x="430" y="499" font-family="Arial, sans-serif" font-size="13.5" fill="#9FB0CC">Left-to-right among themselves</text>
+  </g>
+
+  <!-- Row 4: Add/Sub -->
+  <g>
+    <rect x="80" y="541" width="1040" height="95" rx="8" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="145" cy="588" r="24" fill="#2DD4BF" opacity="0.7"/>
+    <text x="145" y="596" text-anchor="middle" font-family="Arial" font-size="22" font-weight="900" fill="#08131F">4</text>
+    <text x="200" y="582" font-family="'Consolas',monospace" font-size="22" font-weight="700" fill="#2DD4BF">+ -</text>
+    <text x="330" y="582" font-family="Arial, sans-serif" font-size="19" font-weight="800" fill="#F1F5F9">Addition, Subtraction</text>
+    <text x="330" y="606" font-family="Arial, sans-serif" font-size="13.5" fill="#9FB0CC">2 + 3 * 4 = 14, not 20 &#8212; the * runs first</text>
+  </g>
+
+  <!-- Row 5: Comparisons -->
+  <g>
+    <rect x="80" y="648" width="1040" height="95" rx="8" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="145" cy="695" r="24" fill="#2DD4BF" opacity="0.55"/>
+    <text x="145" y="703" text-anchor="middle" font-family="Arial" font-size="22" font-weight="900" fill="#08131F">5</text>
+    <text x="200" y="689" font-family="'Consolas',monospace" font-size="16" font-weight="700" fill="#2DD4BF">== != &lt; &gt; &lt;= &gt;=</text>
+    <text x="500" y="689" font-family="Arial, sans-serif" font-size="19" font-weight="800" fill="#F1F5F9">Comparisons</text>
+    <text x="500" y="713" font-family="Arial, sans-serif" font-size="13.5" fill="#9FB0CC">Run after all arithmetic is resolved</text>
+  </g>
+
+  <!-- Row 6: not -->
+  <g>
+    <rect x="80" y="755" width="1040" height="95" rx="8" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="145" cy="802" r="24" fill="#2DD4BF" opacity="0.4"/>
+    <text x="145" y="810" text-anchor="middle" font-family="Arial" font-size="22" font-weight="900" fill="#08131F">6</text>
+    <text x="200" y="796" font-family="'Consolas',monospace" font-size="20" font-weight="700" fill="#2DD4BF">not</text>
+    <text x="330" y="796" font-family="Arial, sans-serif" font-size="19" font-weight="800" fill="#F1F5F9">Logical NOT</text>
+    <text x="330" y="820" font-family="Arial, sans-serif" font-size="13.5" fill="#9FB0CC">Inverts a single boolean</text>
+  </g>
+
+  <!-- Row 7: and / or -->
+  <g>
+    <rect x="80" y="862" width="1040" height="105" rx="8" fill="#101B33" stroke="#1B2A4A" stroke-width="1.5"/>
+    <circle cx="145" cy="914" r="24" fill="#2DD4BF" opacity="0.25"/>
+    <text x="145" y="922" text-anchor="middle" font-family="Arial" font-size="22" font-weight="900" fill="#08131F">7</text>
+    <text x="200" y="908" font-family="'Consolas',monospace" font-size="20" font-weight="700" fill="#2DD4BF">and, or</text>
+    <text x="420" y="908" font-family="Arial, sans-serif" font-size="19" font-weight="800" fill="#F1F5F9">Logical AND / OR</text>
+    <text x="420" y="932" font-family="Arial, sans-serif" font-size="13.5" fill="#9FB0CC">Lowest priority &#8212; and runs before or</text>
+  </g>
+
+  <text x="600" y="1015" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#9FB0CC">When in doubt, add parentheses — clarity always beats memorizing every rule.</text>
+  <text x="600" y="1050" text-anchor="middle" font-family="'Consolas','SF Mono',monospace" font-size="14" letter-spacing="3" fill="#7C8DAF" font-weight="700">SMARTGENTOOLS.COM &#183; PYTHON COURSE CLASS 04</text>
+</svg>
