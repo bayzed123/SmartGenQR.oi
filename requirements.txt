@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+groq
+google-generativeai
+python-dotenv
+firebase-admin
