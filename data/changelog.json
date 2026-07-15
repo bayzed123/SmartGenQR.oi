@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update robots.txt",
+    "date": "2026-07-15T21:54:11Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Fix image URLs to use HTTPS",
     "date": "2026-07-15T18:52:57Z",
     "description": "Updated image URLs to use HTTPS for better security."
