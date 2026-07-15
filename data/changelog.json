@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix image URLs in Python Loop Exercises guide",
+    "date": "2026-07-15T18:30:44Z",
+    "description": "Updated image URLs to point to the correct directory for blog post assets."
+  },
+  {
     "title": "Add decision infographic for Python course class 07",
     "date": "2026-07-15T18:25:02Z",
     "description": "Platform improvement and optimization."
