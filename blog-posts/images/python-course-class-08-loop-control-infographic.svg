@@ -1,0 +1,58 @@
+<svg width="1300" height="740" viewBox="0 0 1300 740" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradB" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101728"/>
+      <stop offset="100%" stop-color="#1C2C4D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1300" height="740" fill="url(#bgGradB)"/>
+
+  <text x="650" y="56" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#F6F1E4">break vs continue vs pass</text>
+  <text x="650" y="86" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" fill="#93A0C2">Looping through numbers 1 through 5, three different ways</text>
+
+  <!-- shared sequence row label -->
+  <text x="90" y="150" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#5E6D92">Loop sees:</text>
+  <g font-family="'Courier New', monospace" font-size="16" fill="#93A0C2">
+    <text x="220" y="150">1</text><text x="270" y="150">2</text><text x="320" y="150">3</text><text x="370" y="150">4</text><text x="420" y="150">5</text>
+  </g>
+
+  <!-- break row -->
+  <rect x="60" y="180" width="1180" height="150" rx="14" fill="#1B2540" stroke="#F1633C" stroke-width="2.5"/>
+  <text x="90" y="216" font-family="'Courier New', monospace" font-size="18" font-weight="700" fill="#F1633C">break</text>
+  <text x="90" y="240" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">Stops the loop completely, right where it is</text>
+  <g font-family="'Courier New', monospace" font-size="18">
+    <text x="620" y="228" fill="#F6F1E4">1</text>
+    <text x="670" y="228" fill="#F6F1E4">2</text>
+    <text x="720" y="228" fill="#F6F1E4">3</text>
+    <text x="770" y="228" fill="#5E6D92" text-decoration="line-through">4</text>
+    <text x="820" y="228" fill="#5E6D92" text-decoration="line-through">5</text>
+  </g>
+  <text x="900" y="228" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#F1633C">&#8592; stopped at "if n == 4: break"</text>
+  <text x="90" y="300" font-family="'Courier New', monospace" font-size="13" fill="#C7CFE3">if n == 4: break</text>
+
+  <!-- continue row -->
+  <rect x="60" y="350" width="1180" height="150" rx="14" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+  <text x="90" y="386" font-family="'Courier New', monospace" font-size="18" font-weight="700" fill="#4ED9AE">continue</text>
+  <text x="90" y="410" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">Skips just this one iteration, loop keeps going</text>
+  <g font-family="'Courier New', monospace" font-size="18">
+    <text x="620" y="398" fill="#F6F1E4">1</text>
+    <text x="670" y="398" fill="#5E6D92" text-decoration="line-through">2</text>
+    <text x="720" y="398" fill="#F6F1E4">3</text>
+    <text x="770" y="398" fill="#5E6D92" text-decoration="line-through">4</text>
+    <text x="820" y="398" fill="#F6F1E4">5</text>
+  </g>
+  <text x="900" y="398" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#4ED9AE">&#8592; even numbers skipped, odd ones print</text>
+  <text x="90" y="470" font-family="'Courier New', monospace" font-size="13" fill="#C7CFE3">if n % 2 == 0: continue</text>
+
+  <!-- pass row -->
+  <rect x="60" y="520" width="1180" height="150" rx="14" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+  <text x="90" y="556" font-family="'Courier New', monospace" font-size="18" font-weight="700" fill="#F2A93B">pass</text>
+  <text x="90" y="580" font-family="'Trebuchet MS', sans-serif" font-size="12.5" fill="#93A0C2">Does nothing at all &#8212; a placeholder, loop is unaffected</text>
+  <g font-family="'Courier New', monospace" font-size="18" fill="#F6F1E4">
+    <text x="620" y="568">1</text><text x="670" y="568">2</text><text x="720" y="568">3</text><text x="770" y="568">4</text><text x="820" y="568">5</text>
+  </g>
+  <text x="900" y="568" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#F2A93B">&#8592; every number still prints, nothing skipped</text>
+  <text x="90" y="640" font-family="'Courier New', monospace" font-size="13" fill="#C7CFE3">if n == 3: pass</text>
+
+  <text x="650" y="705" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN PYTHON COURSE &#183; CLASS 08</text>
+</svg>
