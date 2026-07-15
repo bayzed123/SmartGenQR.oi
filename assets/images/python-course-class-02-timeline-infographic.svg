@@ -1,0 +1,51 @@
+<svg width="1400" height="700" viewBox="0 0 1400 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradT" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101728"/>
+      <stop offset="100%" stop-color="#1C2C4D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="700" fill="url(#bgGradT)"/>
+
+  <text x="700" y="56" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#F6F1E4">Python's Journey: 1991 to Today</text>
+  <text x="700" y="86" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" fill="#93A0C2">Three decades of steady, deliberate evolution</text>
+
+  <line x1="60" y1="360" x2="1340" y2="360" stroke="#2E3B5E" stroke-width="3"/>
+
+  <!-- 1991 Python 0.9 -->
+  <circle cx="140" cy="360" r="12" fill="#F2A93B"/>
+  <line x1="140" y1="348" x2="140" y2="270" stroke="#3A4A72" stroke-width="2"/>
+  <text x="140" y="248" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#F6F1E4">1991</text>
+  <text x="140" y="228" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">Guido van Rossum</text>
+  <text x="140" y="208" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">releases Python 0.9.0</text>
+
+  <!-- 2000 Python 2.0 -->
+  <circle cx="420" cy="360" r="12" fill="#4ED9AE"/>
+  <line x1="420" y1="372" x2="420" y2="450" stroke="#3A4A72" stroke-width="2"/>
+  <text x="420" y="474" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#F6F1E4">2000</text>
+  <text x="420" y="494" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">Python 2.0 brings list</text>
+  <text x="420" y="514" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">comprehensions, GC</text>
+
+  <!-- 2008 Python 3.0 -->
+  <circle cx="700" cy="360" r="14" fill="#F1633C"/>
+  <line x1="700" y1="346" x2="700" y2="270" stroke="#3A4A72" stroke-width="2"/>
+  <text x="700" y="248" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#F6F1E4">2008</text>
+  <text x="700" y="228" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">Python 3.0 &#8212; a deliberate,</text>
+  <text x="700" y="208" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">not-fully-compatible reset</text>
+
+  <!-- 2020 Python 2 EOL -->
+  <circle cx="960" cy="360" r="12" fill="#4ED9AE"/>
+  <line x1="960" y1="372" x2="960" y2="450" stroke="#3A4A72" stroke-width="2"/>
+  <text x="960" y="474" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#F6F1E4">2020</text>
+  <text x="960" y="494" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">Python 2 officially</text>
+  <text x="960" y="514" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">reaches end of life</text>
+
+  <!-- 2025 Python 3.14 -->
+  <circle cx="1220" cy="360" r="14" fill="#F2A93B"/>
+  <line x1="1220" y1="346" x2="1220" y2="270" stroke="#3A4A72" stroke-width="2"/>
+  <text x="1220" y="248" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#F6F1E4">2025&#8211;26</text>
+  <text x="1220" y="228" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">Python 3.14 is the</text>
+  <text x="1220" y="208" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="12.5" fill="#93A0C2">current stable release</text>
+
+  <text x="700" y="620" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN PYTHON COURSE &#183; CLASS 02</text>
+</svg>
