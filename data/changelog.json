@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add SVG cover for Python Course Class 08",
+    "date": "2026-07-15T18:47:50Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Create Python I/O and control statements guide",
     "date": "2026-07-15T18:42:47Z",
     "description": "Add a comprehensive guide on Python I/O, break, continue, and pass statements with examples."
