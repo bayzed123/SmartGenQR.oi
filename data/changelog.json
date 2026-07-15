@@ -1,5 +1,10 @@
 [
   {
+    "title": "Create Python I/O and control statements guide",
+    "date": "2026-07-15T18:42:47Z",
+    "description": "Add a comprehensive guide on Python I/O, break, continue, and pass statements with examples."
+  },
+  {
     "title": "Fix image paths in Python data structures blog post",
     "date": "2026-07-15T18:37:16Z",
     "description": "Updated image paths in the blog post to point to the correct directory."
