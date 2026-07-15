@@ -3,7 +3,7 @@ title: "Master Python Operators: Step-by-Step Guide⁠"
 description: "Learn every Python operator step by step: arithmetic, comparison, assignment, logical, membership, identity, precedence, and ternary -- with runnable code."
 keywords: "SmartGen, Python Course, Class 04, Python, Operators, Arithmetic Operators, Comparison Operators, Operator Precedence, Ternary Operator"
 date: 2026-07-15
-image: "www.smartgentools.com/blog-post/images/python-course-class-04-cover.svg"
+image: "blog-post/images/python-course-class-04-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -19,7 +19,7 @@ July 15, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, step-by-step guide to Python operators — the real difference between an operand and an operator, every arithmetic, comparison, and assignment operator with runnable code, how logical, membership, and identity operators actually behave (including the short-circuit rule that surprises most beginners), operator precedence and the ternary expression, and the key differences and best practices that separate code that merely runs from code that's actually correct.
 
-![Python Operators Explained — cover image](www.smartgentools.com/blog-post/images/python-course-class-04-cover.svg)
+![Python Operators Explained — cover image](blog-post/images/python-course-class-04-cover.svg)
 
 ---
 
