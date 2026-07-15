@@ -3,7 +3,7 @@ title: "Python I/O, Break, Continue, and Pass Guide"
 description: "Learn Python input and output operations, the break, continue, and pass statements, and the little-known else clause on loops, with real code."
 keywords: "SmartGen, Python Course, Class 08, Python input output, break continue pass Python, for else Python, while else Python, Python loop control statements"
 date: 2026-07-15
-image: "https:www.smartgentools.com/blog-posts/images/python-course-class-08-cover.svg"
+image: "https://www.smartgentools.com/blog-posts/images/python-course-class-08-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -19,7 +19,7 @@ July 15, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, step-by-step guide to Python input and output operations, the break, continue, and pass statements that control exactly how a loop behaves, and the genuinely underused `else` clause on loops — with real, copy-paste code for every concept.
 
- ![Python I/O, Break, Continue, and Pass Guide — cover image](https:www.smartgentools.com/blog-posts/images/python-course-class-08-cover.svg)
+ ![Python I/O, Break, Continue, and Pass Guide — cover image](https://www.smartgentools.com/blog-posts/images/python-course-class-08-cover.svg)
 
 ---
 
@@ -85,7 +85,7 @@ A basic loop only knows how to run every iteration from start to finish — real
 
 ### The Solution: Three Distinct Loop-Control Keywords
 
- ![break vs continue vs pass — looping through 1 to 5 three different ways, showing exactly what each keyword changes](https:www.smartgentools.com/blog-posts/images/python-course-class-08-loop-control-infographic.svg)
+ ![break vs continue vs pass — looping through 1 to 5 three different ways, showing exactly what each keyword changes](https://www.smartgentools.com/blog-posts/images/python-course-class-08-loop-control-infographic.svg)
 
 **`break`** exits the loop immediately and completely:
 
