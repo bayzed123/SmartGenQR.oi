@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add SVG cover for Python course class 03",
+    "date": "2026-07-15T01:13:11Z",
+    "description": "This SVG file contains a cover design for a Python course, featuring a gradient background, text elements, and illustrative circles."
+  },
+  {
     "title": "Add Python Variables and Data Types Class 03",
     "date": "2026-07-15T01:10:41Z",
     "description": "This article provides a comprehensive guide to Python variables and data types, covering naming conventions, core data types, object identity, type checking, and comments."
