@@ -1,5 +1,10 @@
 [
   {
+    "title": "Create Python Loop Exercises and String Basics Guide",
+    "date": "2026-07-15T18:16:45Z",
+    "description": "Added a comprehensive guide covering Python loop exercises and string basics, including hands-on examples and explanations."
+  },
+  {
     "title": "Add infographic for Python string slicing",
     "date": "2026-07-15T18:10:44Z",
     "description": "This SVG infographic illustrates string indexing and slicing in Python, including positive and negative indices, example slices, and visual representations of each character in the word 'Python'."
