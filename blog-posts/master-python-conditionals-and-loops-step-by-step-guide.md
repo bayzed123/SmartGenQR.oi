@@ -3,7 +3,7 @@ title: "Python Loops & Conditionals Step-by-Step"
 description: "Learn Python conditionals and loops! Master if-else logic, for/while loops, and control mechanisms with runnable code and exercises."
 keywords: "SmartGen, Python Course, Class 05, Python, Conditionals, Loops, if else, while loop, for loop, Python indentation, Python ternary"
 date: 2026-07-15
-image: "https://www.smartgentools.com/blog-post/images/python-course-class-05-cover.svg"
+image: "https://www.smartgentools.com/blog-post/images/python-course-class-05-cover.jpg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -20,7 +20,7 @@ July 15, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, step-by-step guide to Python's decision-making and repetition tools — the `if` statement and its `else` and `elif` extensions, the indentation rules that replace curly braces entirely, the ternary shorthand for one-line decisions, hands-on practice exercises, and both major loop types (`while` and `for`) including the control keywords that give you precise command over exactly when a loop runs, skips, or stops.
 
-![Master Python Conditionals & Loops: Step-by-Step Guide — cover image](https://www.smartgentools.com/blog-posts/images/python-course-class-05-cover.svg)
+![Master Python Conditionals & Loops: Step-by-Step Guide — cover image](https://www.smartgentools.com/blog-posts/images/python-course-class-05-cover.jpg)
 
 ---
 
