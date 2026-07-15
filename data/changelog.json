@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add infographic for Python string slicing",
+    "date": "2026-07-15T18:10:44Z",
+    "description": "This SVG infographic illustrates string indexing and slicing in Python, including positive and negative indices, example slices, and visual representations of each character in the word 'Python'."
+  },
+  {
     "title": "Create python-course-class-06-cover.svg",
     "date": "2026-07-15T18:08:00Z",
     "description": "Platform improvement and optimization."
