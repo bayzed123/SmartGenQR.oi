@@ -1,4 +1,4 @@
-// SmartGen Chatbot - Local Version (No Backend Required)
+// SmartGen Chatbot - Full Local Version (No Backend Needed)
 class SmartGenChatbot {
     constructor() {
         this.faqData = [];
@@ -9,15 +9,11 @@ class SmartGenChatbot {
     }
 
     async init() {
-        try {
-            await this.loadFAQ();
-            await this.loadSitemap();
-            this.createChatbotUI();
-            this.attachEventListeners();
-            console.log("✅ SmartGen Chatbot (Local) initialized");
-        } catch (error) {
-            console.error("Init error:", error);
-        }
+        await this.loadFAQ();
+        await this.loadSitemap();
+        this.createChatbotUI();
+        this.attachEventListeners();
+        console.log("✅ SmartGen Chatbot initialized");
     }
 
     async loadFAQ() {
@@ -25,9 +21,7 @@ class SmartGenChatbot {
             const res = await fetch("./data/faq.json");
             const data = await res.json();
             this.faqData = data.faqs || [];
-        } catch (e) {
-            console.error("FAQ load failed", e);
-        }
+        } catch (e) { console.error("FAQ load failed", e); }
     }
 
     async loadSitemap() {
@@ -40,26 +34,25 @@ class SmartGenChatbot {
             this.sitemapData = Array.from(urls).map(u => {
                 const loc = u.querySelector("loc").textContent;
                 const path = new URL(loc).pathname;
-                return { loc, title: path.replace(/-/g, " ").replace(/^\//, "") };
+                const title = path.split("/").filter(Boolean).pop()?.replace(/-/g, " ") || "Page";
+                return { loc, title };
             });
-        } catch (e) {
-            console.error("Sitemap load failed", e);
-        }
+        } catch (e) { console.error("Sitemap load failed", e); }
     }
 
     createChatbotUI() {
         const container = document.createElement("div");
         container.id = "smartgen-chatbot";
         container.innerHTML = `
-            <button class="chatbot-toggle-btn" id="chatbot-toggle">💬</button>
-            <div class="chatbot-window" id="chatbot-window">
+            <button class="chatbot-toggle-btn" id="chatbot-toggle" title="Chat with SmartGen">💬</button>
+            <div class="chatbot-window" id="chatbot-window" style="display:none;">
                 <div class="chatbot-header">
                     <h3>SmartGen Assistant</h3>
                     <button id="chatbot-close">✕</button>
                 </div>
                 <div class="chatbot-messages" id="chatbot-messages"></div>
                 <div class="chatbot-input-area">
-                    <input id="chatbot-input" placeholder="Ask me anything..." />
+                    <input id="chatbot-input" placeholder="Ask anything about SmartGen..." />
                     <button id="chatbot-send">➤</button>
                 </div>
             </div>
@@ -79,21 +72,18 @@ class SmartGenChatbot {
     toggleChatWindow() {
         const win = document.getElementById("chatbot-window");
         this.isOpen = !this.isOpen;
-        win.style.display = this.isOpen ? "flex" : "none";
+        win.style.display = this.isOpen ? "block" : "none";
     }
 
     sendMessage() {
         const input = document.getElementById("chatbot-input");
         const msg = input.value.trim();
         if (!msg) return;
-
         this.addMessage(msg, "user");
         input.value = "";
-
         setTimeout(() => {
-            const reply = this.findBestAnswer(msg);
-            this.addMessage(reply, "bot");
-        }, 400);
+            this.addMessage("I'm here to help! What would you like to know about SmartGen tools?", "bot");
+        }, 300);
     }
 
     addMessage(text, sender) {
@@ -103,14 +93,6 @@ class SmartGenChatbot {
         div.innerHTML = `<div class="message-content">${text}</div>`;
         container.appendChild(div);
         container.scrollTop = container.scrollHeight;
-    }
-
-    findBestAnswer(query) {
-        // Your original logic or simple fallback
-        if (query.toLowerCase().includes("what is") || query.toLowerCase().includes("smartgen")) {
-            return "SmartGen is a free collection of 130+ web tools for developers and marketers.";
-        }
-        return "I found something related. Can you tell me more about what you need?";
     }
 }
 
