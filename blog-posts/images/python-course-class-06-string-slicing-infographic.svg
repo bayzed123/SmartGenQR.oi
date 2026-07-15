@@ -1,0 +1,67 @@
+<svg width="1300" height="700" viewBox="0 0 1300 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101728"/>
+      <stop offset="100%" stop-color="#1C2C4D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1300" height="700" fill="url(#bgGradS)"/>
+
+  <text x="650" y="56" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#F6F1E4">String Indexing and Slicing</text>
+  <text x="650" y="86" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="15" fill="#93A0C2">word = "Python" &#8212; every character has two valid addresses</text>
+
+  <!-- letters -->
+  <!-- P y t h o n -->
+  <g font-family="'Courier New', monospace" font-size="30" fill="#F6F1E4" text-anchor="middle">
+    <rect x="180" y="180" width="90" height="90" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+    <text x="225" y="235">P</text>
+    <rect x="270" y="180" width="90" height="90" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+    <text x="315" y="235">y</text>
+    <rect x="360" y="180" width="90" height="90" fill="#1B2540" stroke="#F1633C" stroke-width="2.5"/>
+    <text x="405" y="235">t</text>
+    <rect x="450" y="180" width="90" height="90" fill="#1B2540" stroke="#F2A93B" stroke-width="2.5"/>
+    <text x="495" y="235">h</text>
+    <rect x="540" y="180" width="90" height="90" fill="#1B2540" stroke="#4ED9AE" stroke-width="2.5"/>
+    <text x="585" y="235">o</text>
+    <rect x="630" y="180" width="90" height="90" fill="#1B2540" stroke="#F1633C" stroke-width="2.5"/>
+    <text x="675" y="235">n</text>
+  </g>
+
+  <!-- positive indices -->
+  <g font-family="'Trebuchet MS', sans-serif" font-size="15" fill="#4ED9AE" text-anchor="middle" font-weight="700">
+    <text x="225" y="160">0</text><text x="315" y="160">1</text><text x="405" y="160">2</text>
+    <text x="495" y="160">3</text><text x="585" y="160">4</text><text x="675" y="160">5</text>
+  </g>
+  <!-- negative indices -->
+  <g font-family="'Trebuchet MS', sans-serif" font-size="15" fill="#F1633C" text-anchor="middle" font-weight="700">
+    <text x="225" y="298">-6</text><text x="315" y="298">-5</text><text x="405" y="298">-4</text>
+    <text x="495" y="298">-3</text><text x="585" y="298">-2</text><text x="675" y="298">-1</text>
+  </g>
+
+  <text x="225" y="128" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12" fill="#5E6D92">counting from the start</text>
+  <text x="225" y="332" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="12" fill="#5E6D92">counting from the end</text>
+
+  <!-- example slices -->
+  <rect x="150" y="400" width="1000" height="240" rx="14" fill="#1B2540" stroke="#2E3B5E" stroke-width="1.5"/>
+  <text x="180" y="440" font-family="'Courier New', monospace" font-size="17" fill="#F2A93B">word[0]</text>
+  <text x="330" y="440" font-family="'Courier New', monospace" font-size="17" fill="#F6F1E4">&#8594; "P"</text>
+  <text x="560" y="440" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Single character at index 0</text>
+
+  <text x="180" y="480" font-family="'Courier New', monospace" font-size="17" fill="#F2A93B">word[-1]</text>
+  <text x="330" y="480" font-family="'Courier New', monospace" font-size="17" fill="#F6F1E4">&#8594; "n"</text>
+  <text x="560" y="480" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Last character, no need to count length</text>
+
+  <text x="180" y="520" font-family="'Courier New', monospace" font-size="17" fill="#F2A93B">word[0:3]</text>
+  <text x="330" y="520" font-family="'Courier New', monospace" font-size="17" fill="#F6F1E4">&#8594; "Pyt"</text>
+  <text x="560" y="520" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Start included, end index excluded</text>
+
+  <text x="180" y="560" font-family="'Courier New', monospace" font-size="17" fill="#F2A93B">word[2:]</text>
+  <text x="330" y="560" font-family="'Courier New', monospace" font-size="17" fill="#F6F1E4">&#8594; "thon"</text>
+  <text x="560" y="560" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">Everything from index 2 to the end</text>
+
+  <text x="180" y="600" font-family="'Courier New', monospace" font-size="17" fill="#F2A93B">word[::-1]</text>
+  <text x="330" y="600" font-family="'Courier New', monospace" font-size="17" fill="#F6F1E4">&#8594; "nohtyP"</text>
+  <text x="560" y="600" font-family="'Trebuchet MS', sans-serif" font-size="13" fill="#93A0C2">A step of -1 reverses the entire string</text>
+
+  <text x="650" y="670" text-anchor="middle" font-family="'Trebuchet MS', Helvetica, Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#4ED9AE" font-weight="700">SMARTGEN PYTHON COURSE &#183; CLASS 06</text>
+</svg>
