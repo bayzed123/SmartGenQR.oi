@@ -1,658 +1,761 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-    <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
-    <link rel="preconnect" href="https://api.imgbb.com" crossorigin>
-    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../assets/css/style.css"></noscript>
-    
-    <meta name="description" content="Generate a permanent, shareable picture URL instantly. Upload images securely via our free image link generator and get direct links, HTML, and Markdown code.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <link rel="canonical" href="https://smartgentools.com/picture-url-generator/">
-    
-    <title>Free Picture URL Generator - Create Image Links Instantly</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    
-    <style>
-        :root {
-            --ui-bg: #090e17;
-            --ui-surface: #121826;
-            --ui-surface-hover: #1b2438;
-            --ui-border: #232d42;
-            --ui-accent: #00e5ff;
-            --ui-accent-glow: rgba(0, 229, 255, 0.2);
-            --ui-text: #f8fafc;
-            --ui-text-dim: #94a3b8;
-            --ui-success: #22c55e;
-            --ui-danger: #ef4444;
-            --font-display: 'Inter', -apple-system, sans-serif;
-            --font-mono: 'Fira Code', ui-monospace, monospace;
-        }
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<link rel="preconnect" href="https://fundingchoicesmessages.google.com">
+<link rel="preconnect" href="https://api.imgbb.com" crossorigin>
+<meta name="description" content="Turn any photo into a permanent, shareable URL in seconds. Get ready-to-paste HTML, Markdown &amp; BBCode too - free, no sign-up, uploads up to 32MB.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<link rel="canonical" href="https://smartgentools.com/picture-url-generator/">
+<title>Image to URL Converter - Free, Permanent Links | SmartGen</title>
+<style>
+/* =========================================================
+   PICTURE URL GENERATOR â scoped design system
+   Palette: deep navy canvas + gold / mint / coral accents
+   Display: Georgia (serif)  Body: Trebuchet MS  Data: monospace
+   ========================================================= */
+.iu-page{
+  --iu-navy-950:#0b1229;
+  --iu-navy-900:#101835;
+  --iu-navy-800:#141b39;
+  --iu-navy-700:#1c2650;
+  --iu-indigo-600:#3b4b9e;
+  --iu-gold:#f2a93b;
+  --iu-gold-ink:#7a4e0a;
+  --iu-mint:#4ed9ae;
+  --iu-mint-ink:#0d5c46;
+  --iu-coral:#f1633c;
+  --iu-coral-ink:#7a2712;
+  --iu-cloud:#eef1fb;
+  --iu-cloud-dim:#b9c2e8;
+  --iu-line:rgba(238,241,251,0.14);
+  --iu-radius-lg:20px;
+  --iu-radius-md:14px;
+  --iu-radius-sm:9px;
+  --iu-font-display:Georgia,'Times New Roman',serif;
+  --iu-font-body:'Trebuchet MS','Segoe UI',sans-serif;
+  --iu-font-mono:ui-monospace,'SF Mono','Cascadia Code','Consolas',monospace;
+  --iu-shadow-lg:0 20px 60px rgba(5,8,20,0.35);
+  --iu-shadow-sm:0 6px 20px rgba(5,8,20,0.18);
+  font-family:var(--iu-font-body);
+}
+.iu-page *{box-sizing:border-box;}
+.iu-container{max-width:920px;margin:0 auto;padding:0 1.25rem;}
+.iu-wide{max-width:1180px;margin:0 auto;padding:0 1.25rem;}
 
-        body { background: var(--ui-bg); color: var(--ui-text); font-family: var(--font-display); line-height: 1.6;}
-        .generator-container { max-width: 900px; margin: 4rem auto; padding: 0 1.5rem; }
-        
-        /* HERO SECTION */
-        .hero-section { text-align: center; margin-bottom: 3.5rem; }
-        .hero-section h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
-        .hero-section h1 span { color: var(--ui-accent); text-shadow: 0 0 20px var(--ui-accent-glow); }
-        .hero-section p { color: var(--ui-text-dim); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-        
-        /* TOOL SECTION */
-        .tool-section {
-            background: var(--ui-surface);
-            border: 1px solid var(--ui-border);
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 3rem;
-        }
+.iu-page a:focus-visible,
+.iu-page button:focus-visible,
+.iu-page [tabindex]:focus-visible{
+  outline:3px solid var(--iu-gold);
+  outline-offset:3px;
+  border-radius:6px;
+}
 
-        .upload-area {
-            border: 2px dashed var(--ui-border);
-            border-radius: 12px;
-            padding: 3rem 2rem;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            background: rgba(9, 14, 23, 0.5);
-        }
-        .upload-area:hover, .upload-area.dragover {
-            border-color: var(--ui-accent);
-            background: var(--ui-accent-glow);
-        }
-        .upload-icon {
-            width: 64px; height: 64px; margin: 0 auto 1.5rem;
-            background: var(--ui-surface-hover); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            border: 1px solid var(--ui-border);
-        }
-        .upload-text { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--ui-text); }
-        .upload-hint { font-family: var(--font-mono); font-size: 0.85rem; color: var(--ui-text-dim); }
-        
-        .hidden { display: none !important; }
+/* ---------- HERO ---------- */
+.iu-hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(60% 80% at 85% 0%, rgba(78,217,174,0.16), transparent 60%),
+    radial-gradient(50% 60% at 8% 100%, rgba(242,169,59,0.14), transparent 60%),
+    linear-gradient(160deg, var(--iu-navy-950), var(--iu-navy-800) 65%, var(--iu-indigo-600) 130%);
+  color:var(--iu-cloud);
+  padding:3.5rem 0 4.5rem;
+}
+.iu-hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:2.5rem;align-items:center;}
+.iu-eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--iu-font-mono);
+  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--iu-gold);
+  background:rgba(242,169,59,0.12);
+  border:1px solid rgba(242,169,59,0.35);
+  padding:.35rem .75rem;border-radius:99px;
+  margin-bottom:1.1rem;
+}
+.iu-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--iu-mint);box-shadow:0 0 0 3px rgba(78,217,174,0.25);}
+.iu-hero h1{
+  font-family:var(--iu-font-display);
+  font-size:clamp(2rem,4.6vw,3.15rem);
+  line-height:1.08;
+  margin:0 0 1rem;
+  letter-spacing:-0.01em;
+}
+.iu-hero h1 em{
+  font-style:normal;
+  background:linear-gradient(90deg,var(--iu-gold),var(--iu-mint));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.iu-hero-sub{font-size:1.08rem;line-height:1.65;color:var(--iu-cloud-dim);max-width:46ch;margin:0 0 1.6rem;}
+.iu-trust-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.9rem;}
+.iu-pill{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.8rem;font-weight:600;color:var(--iu-cloud);
+  background:rgba(238,241,251,0.06);
+  border:1px solid var(--iu-line);
+  padding:.4rem .8rem;border-radius:99px;
+}
+.iu-pill b{color:var(--iu-mint);font-family:var(--iu-font-mono);}
+.iu-cta-row{display:flex;gap:.9rem;flex-wrap:wrap;}
+.iu-btn{
+  font-family:var(--iu-font-body);font-weight:700;font-size:.98rem;
+  padding:.85rem 1.6rem;border-radius:99px;border:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:.5rem;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  text-decoration:none;
+}
+.iu-btn-gold{background:linear-gradient(135deg,var(--iu-gold),#ffbf5c);color:#241505;box-shadow:var(--iu-shadow-sm);}
+.iu-btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(242,169,59,0.35);}
+.iu-btn-ghost{background:transparent;color:var(--iu-cloud);border:1px solid var(--iu-line);}
+.iu-btn-ghost:hover{background:rgba(238,241,251,0.06);transform:translateY(-2px);}
 
-        /* PREVIEW & OUTPUT */
-        .preview-section { margin-top: 1rem; }
-        .url-box {
-            background: #000; border: 1px solid var(--ui-border);
-            border-radius: 8px; padding: 1rem;
-            font-family: var(--font-mono); font-size: 0.9rem;
-            color: var(--ui-accent); word-break: break-all;
-            display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-        }
-        
-        .btn {
-            padding: 0.8rem 1.5rem; border: none; border-radius: 8px;
-            font-weight: 600; cursor: pointer; transition: all 0.2s;
-            font-family: var(--font-display); white-space: nowrap;
-        }
-        .btn-primary { background: var(--ui-accent); color: #000; }
-        .btn-primary:hover { box-shadow: 0 0 15px var(--ui-accent-glow); transform: translateY(-1px); }
-        .btn-secondary { background: var(--ui-surface-hover); color: var(--ui-text); border: 1px solid var(--ui-border); }
-        .btn-secondary:hover { background: var(--ui-border); }
-        
-        .status-message { padding: 1rem; border-radius: 8px; margin-top: 1.5rem; font-weight: 500; font-family: var(--font-mono); font-size: 0.9rem;}
-        .status-success { background: rgba(34, 197, 94, 0.1); color: var(--ui-success); border: 1px solid var(--ui-success); }
-        .status-error { background: rgba(239, 68, 68, 0.1); color: var(--ui-danger); border: 1px solid var(--ui-danger); }
+.iu-hero-art{position:relative;}
+.iu-art-card{
+  background:rgba(238,241,251,0.05);
+  border:1px solid var(--iu-line);
+  border-radius:var(--iu-radius-lg);
+  padding:1.6rem;
+  backdrop-filter:blur(6px);
+}
+.iu-art-card svg{display:block;width:100%;height:auto;}
 
-        .image-preview { max-width: 100%; height: auto; max-height: 250px; border-radius: 8px; border: 1px solid var(--ui-border); margin-bottom: 1.5rem; }
+@media (max-width:860px){
+  .iu-hero-grid{grid-template-columns:1fr;}
+  .iu-hero-art{order:-1;max-width:420px;margin:0 auto;}
+}
 
-        /* TABS */
-        .format-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;}
-        .format-tab { background: transparent; border: 1px solid var(--ui-border); color: var(--ui-text-dim); padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; transition: 0.2s;}
-        .format-tab:hover { border-color: var(--ui-accent); color: var(--ui-text); }
-        .format-tab.active { background: var(--ui-surface-hover); color: var(--ui-text); border-color: var(--ui-accent); }
+/* ---------- TOOL CONSOLE ---------- */
+.iu-console-wrap{
+  background:linear-gradient(180deg, var(--iu-navy-900), var(--iu-navy-950));
+  padding:0 0 3.5rem;
+  margin-top:-2.4rem;
+}
+.iu-console{
+  background:linear-gradient(180deg,#ffffff,#f7f8fd);
+  border-radius:var(--iu-radius-lg);
+  box-shadow:var(--iu-shadow-lg);
+  padding:2rem;
+  color:#141b39;
+}
+.iu-console-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.4rem;flex-wrap:wrap;}
+.iu-console-head h2{font-family:var(--iu-font-display);font-size:1.3rem;margin:0;color:#141b39;}
+.iu-console-tag{font-family:var(--iu-font-mono);font-size:.72rem;color:#6b7280;background:#eef1fb;padding:.3rem .6rem;border-radius:8px;}
 
-        /* TRUST CENTER & PRIVACY BADGE (NEW) */
-        .trust-badges {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--ui-border);
-            font-size: 0.85rem;
-            color: var(--ui-text-dim);
-            flex-wrap: wrap;
-        }
-        .trust-badge-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .trust-badges a {
-            color: var(--ui-text-dim);
-            text-decoration: none;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .trust-badges a:hover {
-            color: var(--ui-accent);
-            text-shadow: 0 0 8px var(--ui-accent-glow);
-        }
-        .trust-badges svg {
-            width: 16px;
-            height: 16px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
+.upload-area{
+  border:2px dashed #c7cff0;border-radius:var(--iu-radius-md);
+  padding:2.4rem 1.5rem;text-align:center;cursor:pointer;
+  transition:all .25s ease;background:#fbfcff;
+}
+.upload-area:hover, .upload-area:focus-visible{border-color:var(--iu-gold);background:rgba(242,169,59,0.06);}
+.upload-area.dragover{border-color:var(--iu-mint);background:rgba(78,217,174,0.08);transform:scale(1.01);}
+.upload-icon{margin-bottom:.9rem;}
+.upload-icon svg{width:52px;height:52px;}
+.upload-text{font-weight:700;color:#141b39;margin-bottom:.35rem;font-size:1.05rem;}
+.upload-hint{font-size:.85rem;color:#6b7280;}
+.upload-hint .kbd{font-family:var(--iu-font-mono);background:#eef1fb;border:1px solid #dde3fa;padding:.05rem .4rem;border-radius:5px;font-size:.78rem;}
+#imageInput{display:none;}
 
-        /* PREMIUM WORKFLOW MICRO-UI */
-        .premium-workflow { margin: 4rem 0; padding: 4rem 2rem; background: linear-gradient(180deg, var(--ui-surface) 0%, #05080f 100%); border: 1px solid var(--ui-border); border-radius: 20px; }
-        .pw-header { text-align: center; margin-bottom: 4rem; }
-        .pw-header h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); color: #fff; margin-bottom: 1rem; }
-        .pw-header p { color: var(--ui-text-dim); font-size: 1.1rem; }
+.loading{display:none;text-align:center;padding:1.4rem 0;}
+.loading.active{display:block;}
+.iu-spinner{
+  width:42px;height:42px;margin:0 auto .9rem;border-radius:50%;
+  border:4px solid #e3e7fa;border-top-color:var(--iu-gold);
+  animation:iuSpin 0.85s linear infinite;
+}
+@keyframes iuSpin{to{transform:rotate(360deg);}}
+.loading p{color:#6b7280;font-size:.92rem;}
 
-        .pw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-        .pw-step { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 1.5rem; position: relative; transition: all 0.3s ease; }
-        .pw-step:hover { background: rgba(255,255,255,0.04); border-color: rgba(0, 229, 255, 0.3); transform: translateY(-5px); }
+.status-message{
+  display:none;align-items:center;gap:.6rem;padding:.85rem 1.1rem;
+  border-radius:var(--iu-radius-sm);margin-bottom:1.1rem;
+  font-size:.92rem;font-weight:600;animation:iuToastIn .25s ease;
+}
+.status-message.active{display:flex;}
+@keyframes iuToastIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);}}
+.status-success{background:rgba(78,217,174,0.12);color:var(--iu-mint-ink);border:1px solid rgba(78,217,174,0.4);}
+.status-error{background:rgba(241,99,60,0.1);color:var(--iu-coral-ink);border:1px solid rgba(241,99,60,0.4);}
 
-        .pw-visual { height: 140px; background: #090e17; border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.05); position: relative; }
+.preview-section{display:none;margin-top:1.8rem;}
+.preview-section.active{display:block;animation:iuToastIn .3s ease;}
+.iu-preview-grid{display:grid;grid-template-columns:150px 1fr;gap:1.3rem;align-items:start;margin-bottom:1.2rem;}
+.image-preview{width:150px;height:150px;object-fit:cover;border-radius:var(--iu-radius-md);box-shadow:var(--iu-shadow-sm);border:1px solid #eef1fb;}
+.iu-file-meta{font-size:.82rem;color:#6b7280;margin-top:.6rem;font-family:var(--iu-font-mono);}
+.iu-field-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#6b7280;margin-bottom:.4rem;display:block;}
 
-        /* Micro UI Animations */
-        .mock-window { width: 75%; height: 65%; background: var(--ui-surface); border: 1px solid var(--ui-border); border-radius: 8px; display: flex; flex-direction: column; overflow: hidden;}
-        .mock-head { height: 14px; background: rgba(0,0,0,0.5); border-bottom: 1px solid var(--ui-border); display: flex; align-items: center; gap: 4px; padding: 0 8px; }
-        .mock-dot { width: 5px; height: 5px; border-radius: 50%; background: #475569; }
-        .mock-body { flex: 1; padding: 8px; display: flex; align-items: center; justify-content: center; }
-        .mock-drop { width: 100%; height: 100%; border: 1px dashed var(--ui-accent); border-radius: 4px; background: var(--ui-accent-glow); display: flex; align-items: center; justify-content: center; }
-        .mock-pic { width: 24px; height: 20px; border: 2px solid var(--ui-accent); border-radius: 3px; position: relative; animation: floatObj 3s ease-in-out infinite; }
-        .mock-pic::after { content: ''; position: absolute; bottom: 2px; left: 2px; right: 2px; height: 8px; background: var(--ui-accent); clip-path: polygon(0 100%, 30% 30%, 60% 80%, 80% 50%, 100% 100%); }
+.url-output{
+  background:#fbfcff;border:1px solid #dde3fa;border-radius:var(--iu-radius-sm);
+  padding:.9rem 1rem;margin-bottom:1rem;word-break:break-all;
+  font-family:var(--iu-font-mono);font-size:.88rem;color:#141b39;
+}
+#deleteUrlContainer{margin-bottom:1.4rem;font-size:.85rem;color:#6b7280;}
+#deleteUrlOutput{color:var(--iu-coral);font-weight:700;text-decoration:underline;}
 
-        .mock-server { display: flex; flex-direction: column; gap: 8px; width: 65%; position: relative;}
-        .mock-blade { height: 20px; background: var(--ui-surface); border: 1px solid var(--ui-border); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; justify-content: flex-end; }
-        .mock-blade.active { border-color: var(--ui-accent); box-shadow: 0 0 15px var(--ui-accent-glow); }
-        .mock-light { width: 4px; height: 4px; border-radius: 50%; background: var(--ui-accent); animation: blink 1s infinite; }
-        .mock-progress { width: 60%; height: 4px; background: rgba(0,0,0,0.5); border-radius: 2px; margin-right: auto; overflow: hidden;}
-        .mock-bar { height: 100%; background: var(--ui-accent); animation: loadBar 2s infinite; }
-        .mock-lock { position: absolute; left: -10px; top: -10px; font-size: 16px; animation: floatObj 3s ease-in-out infinite reverse; text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);}
+.button-group{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.6rem;}
+.btn{
+  flex:1;min-width:150px;padding:.8rem 1.4rem;border:none;border-radius:99px;
+  font-family:var(--iu-font-body);font-size:.95rem;font-weight:700;cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.btn-primary{background:linear-gradient(135deg,var(--iu-gold),#ffbf5c);color:#241505;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(242,169,59,0.35);}
+.btn-secondary{background:#141b39;color:#eef1fb;}
+.btn-secondary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(20,27,57,0.28);}
 
-        .mock-code { width: 80%; padding: 12px; background: #000; border: 1px solid var(--ui-border); border-radius: 6px; display: flex; flex-direction: column; gap: 8px; }
-        .mock-line { height: 6px; background: #334155; border-radius: 3px; }
-        .mock-line.accent { background: var(--ui-accent); opacity: 0.9; animation: pulse 2s infinite; }
-        .w-full { width: 100%; } .w-3-4 { width: 75%; } .w-1-2 { width: 50%; }
+.iu-formats{border-top:1px dashed #dde3fa;padding-top:1.4rem;}
+.iu-tabs{display:flex;gap:.4rem;margin-bottom:.7rem;flex-wrap:wrap;}
+.iu-tab{
+  font-family:var(--iu-font-mono);font-size:.8rem;font-weight:700;
+  padding:.45rem .9rem;border-radius:99px;border:1px solid #dde3fa;
+  background:#fff;color:#3b4b9e;cursor:pointer;transition:all .15s ease;
+}
+.iu-tab[aria-selected="true"]{background:#141b39;color:#f2a93b;border-color:#141b39;}
+.iu-format-row{display:flex;gap:.6rem;align-items:stretch;}
+.iu-format-row .url-output{flex:1;margin-bottom:0;max-height:5.5rem;overflow:auto;}
+.iu-copy-mini{
+  font-family:var(--iu-font-body);font-weight:700;font-size:.85rem;
+  padding:0 1rem;border:none;border-radius:var(--iu-radius-sm);
+  background:var(--iu-mint);color:#0d3b2d;cursor:pointer;white-space:nowrap;
+}
+.iu-copy-mini:hover{filter:brightness(1.06);}
 
-        .mock-toast { background: var(--ui-surface); border: 1px solid var(--ui-success); border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 8px 20px rgba(34, 197, 94, 0.15); animation: toastSlide 4s infinite; }
-        .mock-check { width: 20px; height: 20px; background: var(--ui-success); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-size: 12px; font-weight: bold; }
-        .mock-text { display: flex; flex-direction: column; gap: 4px; }
-        .mt-title { height: 5px; width: 50px; background: #fff; border-radius: 2px; }
-        .mt-sub { height: 4px; width: 70px; background: #475569; border-radius: 2px; }
+@media (max-width:560px){
+  .iu-preview-grid{grid-template-columns:1fr;}
+  .image-preview{width:100%;height:auto;max-height:220px;}
+  .iu-format-row{flex-direction:column;}
+}
 
-        @keyframes floatObj { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
-        @keyframes loadBar { 0% { width: 0; } 100% { width: 100%; } }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-        @keyframes toastSlide { 0%, 100% { transform: translateY(15px); opacity: 0; } 15%, 85% { transform: translateY(0); opacity: 1; } }
+/* ---------- HOW IT WORKS â pure CSS/SVG animated flow ---------- */
+.iu-how{background:var(--iu-navy-950);padding:4rem 0 4.5rem;color:var(--iu-cloud);}
+.iu-how-head{text-align:center;max-width:640px;margin:0 auto 2.8rem;}
+.iu-how-head h2{font-family:var(--iu-font-display);font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 .6rem;}
+.iu-how-head p{color:var(--iu-cloud-dim);line-height:1.6;margin:0;}
+.iu-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.iu-flow-step{position:relative;padding:0 1rem;text-align:center;}
+.iu-flow-num{
+  font-family:var(--iu-font-mono);font-size:.75rem;color:var(--iu-navy-950);
+  background:var(--iu-gold);width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:700;
+  margin:0 auto .9rem;position:relative;z-index:2;
+}
+.iu-flow-stage{
+  background:rgba(238,241,251,0.04);border:1px solid var(--iu-line);
+  border-radius:var(--iu-radius-md);padding:1.3rem 1rem 1.1rem;margin-bottom:1rem;
+  min-height:150px;display:flex;align-items:center;justify-content:center;
+}
+.iu-flow-stage svg{width:100%;max-width:120px;height:auto;overflow:visible;}
+.iu-flow-step h3{font-size:.98rem;margin:0 0 .35rem;font-weight:700;color:var(--iu-cloud);}
+.iu-flow-step p{font-size:.82rem;color:var(--iu-cloud-dim);line-height:1.5;margin:0;}
 
-        .pw-num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: var(--ui-accent); color: #000; font-weight: 800; font-size: 0.85rem; border-radius: 50%; margin-bottom: 1rem; }
-        .pw-content h3 { color: #fff; font-size: 1.05rem; margin: 0 0 0.4rem; }
-        .pw-content p { color: var(--ui-text-dim); font-size: 0.85rem; line-height: 1.5; margin: 0;}
+/* connecting animated line between steps (desktop only) */
+.iu-flow-line{position:absolute;top:13px;left:50%;width:100%;height:2px;z-index:1;}
+.iu-flow-line svg{width:100%;height:2px;overflow:visible;}
+.iu-flow-step:last-child .iu-flow-line{display:none;}
 
-        /* SEO CONTENT & FAQ */
-        .seo-content { margin: 4rem 0; padding: 2rem; background: var(--ui-surface); border-radius: 16px; border: 1px solid var(--ui-border); }
-        .seo-content h2 { font-size: 1.8rem; color: #fff; margin-bottom: 1rem; }
-        .seo-content h3 { font-size: 1.4rem; color: #fff; margin: 2rem 0 1rem; }
-        .seo-content p { margin-bottom: 1rem; color: var(--ui-text-dim); }
-        .seo-content ul { padding-left: 1.5rem; color: var(--ui-text-dim); margin-bottom: 1.5rem; }
-        .seo-content li { margin-bottom: 0.5rem; }
+/* four beats, each highlighted in its own window of one shared 8s cycle */
+@keyframes iuBeat{
+  0%,4%{opacity:.28;transform:scale(.94);}
+  8%,20%{opacity:1;transform:scale(1);}
+  24%,100%{opacity:.28;transform:scale(.94);}
+}
+.iu-flow-step[data-beat="1"] .iu-flow-stage{animation:iuBeat 8s ease-in-out infinite;}
+.iu-flow-step[data-beat="2"] .iu-flow-stage{animation:iuBeat 8s ease-in-out infinite;animation-delay:2s;}
+.iu-flow-step[data-beat="3"] .iu-flow-stage{animation:iuBeat 8s ease-in-out infinite;animation-delay:4s;}
+.iu-flow-step[data-beat="4"] .iu-flow-stage{animation:iuBeat 8s ease-in-out infinite;animation-delay:6s;}
+.iu-flow-step[data-beat="1"] .iu-flow-num,
+.iu-flow-step[data-beat="2"] .iu-flow-num,
+.iu-flow-step[data-beat="3"] .iu-flow-num,
+.iu-flow-step[data-beat="4"] .iu-flow-num{animation:iuNumPulse 8s ease-in-out infinite;}
+.iu-flow-step[data-beat="2"] .iu-flow-num{animation-delay:2s;}
+.iu-flow-step[data-beat="3"] .iu-flow-num{animation-delay:4s;}
+.iu-flow-step[data-beat="4"] .iu-flow-num{animation-delay:6s;}
+@keyframes iuNumPulse{
+  0%,4%{background:var(--iu-navy-700);color:var(--iu-cloud-dim);}
+  8%,20%{background:var(--iu-gold);color:var(--iu-navy-950);box-shadow:0 0 0 6px rgba(242,169,59,0.18);}
+  24%,100%{background:var(--iu-navy-700);color:var(--iu-cloud-dim);}
+}
 
-        .faq-item { background: rgba(255,255,255,0.02); border: 1px solid var(--ui-border); border-radius: 8px; margin-bottom: 1rem; overflow: hidden;}
-        .faq-header { width: 100%; text-align: left; background: none; border: none; padding: 1.2rem; font-size: 1rem; font-weight: 600; color: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-display); }
-        .faq-icon { transition: transform 0.3s ease; color: var(--ui-accent); }
-        .faq-item.active .faq-icon { transform: rotate(45deg); }
-        .faq-content { padding: 0 1.2rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; color: var(--ui-text-dim); }
-        .faq-item.active .faq-content { padding: 0 1.2rem 1.2rem; max-height: 500px; }
+/* SVG animation classes - FIXED */
+.iu-dash{stroke-dasharray:6 8;animation:iuDash 1.6s linear infinite;}
+@keyframes iuDash{to{stroke-dashoffset:-28;}}
 
-        .ad-banner-space { border: 2px dashed var(--ui-border); padding: 2rem; text-align: center; border-radius: 12px; margin: 2rem 0; color: var(--ui-text-dim); }
+.iu-spin-slow{transform-origin:center;animation:iuSpin 2.4s linear infinite;}
 
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .premium-workflow { padding: 3rem 1.5rem; }
-            .pw-grid { grid-template-columns: 1fr; gap: 1rem; }
-            .pw-step { display: flex; text-align: left; align-items: center; gap: 1.5rem; padding: 1.2rem; }
-            .pw-visual { width: 100px; height: 100px; margin-bottom: 0; flex-shrink: 0; }
-            .pw-num { margin-bottom: 0.5rem; }
-            .mock-toast { padding: 8px 12px; gap: 8px; }
-            .url-box { flex-direction: column; align-items: stretch; text-align: center; }
-            .trust-badges { flex-direction: column; gap: 1rem; }
-        }
-        @media (max-width: 450px) {
-            .pw-step { flex-direction: column; text-align: center; gap: 1rem; }
-            .pw-visual { width: 100%; height: 120px; }
-        }
-    </style>
+.iu-draw{stroke-dasharray:60;stroke-dashoffset:60;animation:iuDraw 8s ease-in-out infinite;}
+@keyframes iuDraw{
+  0%,20%{stroke-dashoffset:60;}
+  32%,100%{stroke-dashoffset:0;}
+}
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Free Picture URL Generator",
-      "description": "Upload an image and instantly generate a secure, permanent URL link.",
-      "url": "https://smartgentools.com/picture-url-generator/",
-      "applicationCategory": "Utility",
-      "operatingSystem": "All",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-    }
-    </script>
+.iu-fan-key{animation:iuFan 8s ease-in-out infinite;transform-origin:center;opacity:0;}
+@keyframes iuFan{
+  0%,60%{opacity:0;transform:translateY(6px) scale(.7);}
+  72%,100%{opacity:1;transform:translateY(0) scale(1);}
+}
+
+@media (max-width:820px){
+  .iu-flow{grid-template-columns:1fr;gap:1.6rem;}
+  .iu-flow-line{display:none;}
+}
+@media (prefers-reduced-motion:reduce){
+  .iu-page *{animation-duration:.01ms !important;animation-iteration-count:1 !important;}
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  background:var(--iu-navy-950);
+  color:var(--iu-cloud-dim);
+  padding:2rem 0;
+  text-align:center;
+  font-size:.85rem;
+  border-top:1px solid var(--iu-line);
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Image to URL Converter - Picture URL Generator",
+  "description": "Turn any photo into a permanent, shareable URL in seconds. Get ready-to-paste HTML, Markdown and BBCode formats too - free, no sign-up, uploads up to 32MB.",
+  "url": "https://smartgentools.com/picture-url-generator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "creator": {"@type": "Organization", "name": "SmartGen", "url": "https://smartgentools.com/"},
+  "featureList": [
+    "Drag-and-drop or clipboard-paste image upload",
+    "Permanent direct image URL with no expiration",
+    "Ready-to-copy HTML, Markdown and BBCode embed snippets",
+    "One-click delete link for every upload",
+    "Uploads up to 32MB, no account required"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "SmartGen", "item": "https://smartgentools.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Picture URL Generator", "item": "https://smartgentools.com/picture-url-generator/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert a picture into a shareable URL",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Drop or select your photo", "text": "Drag a photo onto the upload area, click to browse your device, or paste a screenshot straight from your clipboard."},
+    {"@type": "HowToStep", "position": 2, "name": "We upload it securely", "text": "Your file is sent directly over HTTPS to secure image hosting - SmartGen's own servers never see or store it."},
+    {"@type": "HowToStep", "position": 3, "name": "Get a permanent link", "text": "A direct image URL is generated instantly, along with a private delete link only you have."},
+    {"@type": "HowToStep", "position": 4, "name": "Paste it anywhere", "text": "Copy the raw URL, or switch to the ready-made HTML, Markdown, or BBCode snippet for the platform you're posting to."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Is there a file size limit for image uploads?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, up to 32MB per image - well above the 2 to 12MB caps most free image-to-URL tools apply. That covers PNG, JPG, GIF and WebP files, including full-resolution photos and screenshots."}},
+    {"@type": "Question", "name": "How long will my image URL stay active?", "acceptedAnswer": {"@type": "Answer", "text": "Indefinitely. The link is permanent by default and won't expire after a set number of days like many free hosts. You control removal yourself with the private delete link generated alongside your image."}},
+    {"@type": "Question", "name": "Does SmartGen store or see my image?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your file is uploaded directly from your browser to the image host over HTTPS. SmartGen has no backend server or account system in between, so we never receive, store, or view a copy of it."}},
+    {"@type": "Question", "name": "Can I use the generated URL in HTML, Markdown, or BBCode?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. After uploading, the tool automatically builds a ready-to-copy HTML <img> tag, Markdown image syntax, and BBCode [img] tag from your link, so you don't have to write the markup yourself."}},
+    {"@type": "Question", "name": "Can I upload more than one image at a time?", "acceptedAnswer": {"@type": "Answer", "text": "The tool processes one image per upload so each file gets its own clean preview, link, and delete option. Upload, copy your link, then click Upload Another for the next one - it takes a couple of seconds."}},
+    {"@type": "Question", "name": "Can I delete an image after uploading it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every successful upload includes a one-time delete link. Save it if you might need to remove the image later - without it, there's no way to take the link down yourself."}},
+    {"@type": "Question", "name": "Can I use the image URL for commercial projects?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. There are no licensing restrictions on the links themselves - use them on business websites, in marketing materials, or in commercial apps, provided you own the rights to the image you upload."}},
+    {"@type": "Question", "name": "Does this work on mobile phones?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The tool is fully responsive and you can upload directly from your phone's camera roll or gallery in any modern mobile browser."}}
+  ]
+}
+</script>
+<meta property="og:title" content="Image to URL Converter - Free, Permanent Links | SmartGen">
+<meta property="og:description" content="Turn any photo into a permanent, shareable URL in seconds. Get ready-to-paste HTML, Markdown &amp; BBCode too - free, no sign-up, uploads up to 32MB.">
+<meta property="og:url" content="https://smartgentools.com/picture-url-generator/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://smartgentools.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Image to URL Converter - Free, Permanent Links | SmartGen">
+<meta name="twitter:description" content="Turn any photo into a permanent, shareable URL in seconds. Free, no sign-up, uploads up to 32MB.">
+<meta name="twitter:image" content="https://smartgentools.com/assets/og-image.png">
 </head>
-<body>
-    
-    <header id="main-header"></header>
+<body class="iu-page">
 
-    <main class="generator-container">
-        <section class="hero-section">
-            <h1>Picture <span>URL</span> Generator</h1>
-            <p>Securely upload your photo and generate a permanent, shareable link in seconds. No registration required.</p>
-        </section>
-
-        <section class="tool-section">
-            <!-- Upload Area -->
-            <div class="upload-area" id="uploadArea">
-                <div class="upload-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--ui-accent)" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                </div>
-                <div class="upload-text">Click to browse, drag & drop, or paste (Ctrl+V)</div>
-                <div class="upload-hint">Supports PNG, JPG, WEBP, GIF (Max 32MB)</div>
-                <input type="file" id="imageInput" accept="image/*" class="hidden">
-            </div>
-
-            <!-- Loader & Messages -->
-            <div id="loading" class="status-message hidden" style="text-align: center; color: var(--ui-accent);">
-                Processing secure connection to cloud server...
-            </div>
-            <div id="statusMessage" class="status-message hidden"></div>
-
-            <!-- Output Preview -->
-            <div class="preview-section hidden" id="previewSection">
-                <div style="text-align: center;">
-                    <img id="imagePreview" class="image-preview" alt="Uploaded File Preview">
-                </div>
-                
-                <div class="format-tabs" id="formatTabs">
-                    <button class="format-tab active" data-format="url">Direct Link</button>
-                    <button class="format-tab" data-format="html">HTML</button>
-                    <button class="format-tab" data-format="md">Markdown</button>
-                    <button class="format-tab" data-format="bb">BBCode</button>
-                </div>
-
-                <div class="url-box">
-                    <span id="urlOutput" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></span>
-                    <button class="btn btn-primary" id="copyBtn" aria-label="Copy Link">Copy</button>
-                </div>
-                
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; flex-wrap: wrap; gap: 1rem;">
-                    <a id="deleteUrlOutput" href="#" target="_blank" rel="noopener noreferrer" style="color: var(--ui-danger); font-size: 0.85rem; text-decoration: underline;">Permanently Delete Image</a>
-                    <button class="btn btn-secondary" id="resetBtn">Upload Another File</button>
-                </div>
-            </div>
-
-            <!-- TRUST CENTER & PRIVACY LINKS (NEW REQUIREMENT) -->
-            <div class="trust-badges">
-                <div class="trust-badge-item">
-                    <a href="https://smartgentools.com/trust-center/" target="_blank" rel="noopener noreferrer" aria-label="SmartGen Trust Center">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        Protected by SmartGen Trust Center
-                    </a>
-                </div>
-                <span style="color: var(--ui-border);">|</span>
-                <div class="trust-badge-item">
-                    <a href="https://smartgentools.com/privacy/" target="_blank" rel="noopener noreferrer" aria-label="Privacy Policy">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                        Strict Privacy Policy Validated
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <div class="ad-banner-space">
-            📢 Advertisement Space
-        </div>
-
-        <!-- PREMIUM MICRO-UI WORKFLOW -->
-        <section class="premium-workflow">
-            <div class="pw-header">
-                <h2>How the URL Generator Works</h2>
-                <p>From image file to shareable web link in milliseconds.</p>
-            </div>
-
-            <div class="pw-grid">
-                <!-- Step 1 -->
-                <div class="pw-step">
-                    <div class="pw-visual">
-                        <div class="mock-window">
-                            <div class="mock-head">
-                                <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
-                            </div>
-                            <div class="mock-body">
-                                <div class="mock-drop"><div class="mock-pic"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pw-content">
-                        <span class="pw-num">1</span>
-                        <h3>Select Image</h3>
-                        <p>Upload a file or paste directly from your clipboard.</p>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="pw-step">
-                    <div class="pw-visual">
-                        <div class="mock-server">
-                            <div class="mock-lock">🔒</div>
-                            <div class="mock-blade"><div class="mock-light"></div></div>
-                            <div class="mock-blade active">
-                                <div class="mock-progress"><div class="mock-bar"></div></div>
-                                <div class="mock-light"></div>
-                            </div>
-                            <div class="mock-blade"><div class="mock-light"></div></div>
-                        </div>
-                    </div>
-                    <div class="pw-content">
-                        <span class="pw-num">2</span>
-                        <h3>Secure Upload</h3>
-                        <p>File is encrypted and hosted on verified servers.</p>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="pw-step">
-                    <div class="pw-visual">
-                        <div class="mock-code">
-                            <div class="mock-line w-full"></div>
-                            <div class="mock-line w-3-4"></div>
-                            <div class="mock-line w-1-2 accent"></div>
-                        </div>
-                    </div>
-                    <div class="pw-content">
-                        <span class="pw-num">3</span>
-                        <h3>Process Links</h3>
-                        <p>System generates direct URL, HTML, and Markdown code.</p>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="pw-step">
-                    <div class="pw-visual">
-                        <div class="mock-toast">
-                            <div class="mock-check">✓</div>
-                            <div class="mock-text">
-                                <div class="mt-title"></div>
-                                <div class="mt-sub"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pw-content">
-                        <span class="pw-num">4</span>
-                        <h3>Copy & Share</h3>
-                        <p>Click copy and paste your permanent link anywhere.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEO GUIDE & FAQ SECTION -->
-        <article class="seo-content">
-            <h2>The Ultimate Free Picture URL Generator Guide</h2>
-            <p>If you have ever needed to share a photo online but didn't know how to <strong>create a url for a picture</strong>, our tool is the perfect solution. The Picture URL Generator allows you to instantly <strong>upload an image to a link</strong> securely. Whether you are embedding images on a website, sharing on a forum, or managing e-commerce assets, our tool generates permanent, shareable links in seconds.</p>
-
-            <h3>Step-by-Step Keyword Guide: How to Make a URL for an Image</h3>
-            <ul>
-                <li><strong>Locate the Upload Area:</strong> Use our <strong>free image link generator</strong> at the top of the page.</li>
-                <li><strong>Select Your File:</strong> Drag and drop your file or use the <kbd>Ctrl+V</kbd> paste function.</li>
-                <li><strong>Secure Cloud Processing:</strong> The image is instantly transmitted via a secure API connection to robust enterprise servers. This ensures your <strong>picture url</strong> is stable and permanent.</li>
-                <li><strong>Copy Formats:</strong> Within milliseconds, you receive a direct <strong>image web link</strong>, alongside ready-to-use HTML, Markdown, and BBCode formats.</li>
-            </ul>
-
-            <h3>Security, Privacy, and Trust</h3>
-            <p>Many tools claim 100% client-side processing, which is technically inaccurate for generating public URLs. For an image to be accessible via a web link, it <em>must</em> be hosted on a server. We prioritize your security by directly routing your uploads to verified hosting infrastructure. You are provided with a dedicated deletion link the moment you generate your link, giving you total control over your digital footprint. Learn more in our <a href="https://smartgentools.com/trust-center/" style="color: var(--ui-accent);">Trust Center</a>.</p>
-
-            <h3>Frequently Asked Questions</h3>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-header" aria-expanded="false">
-                        <span>Is there a file size limit for image uploads?</span>
-                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                    </button>
-                    <div class="faq-content">
-                        <p>Yes. Our Picture URL Generator supports images up to 32MB in size. This accommodates high-resolution photos, web graphics, and screenshots without quality loss.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-header" aria-expanded="false">
-                        <span>How long will my image URL remain active?</span>
-                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                    </button>
-                    <div class="faq-content">
-                        <p>The URLs generated by our system are permanent and will remain active indefinitely unless you choose to manually revoke access using the secure deletion link provided upon upload.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-header" aria-expanded="false">
-                        <span>Are my uploaded pictures private?</span>
-                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                    </button>
-                    <div class="faq-content">
-                        <p>Links are unguessable, meaning only people you share the URL with can see the image. For comprehensive details on data handling, please refer to our <a href="https://smartgentools.com/privacy/" style="color:var(--ui-accent);">Privacy Policy</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <div id="dynamic-related-tools"></div>
-    </main>
-
-    <footer id="main-footer"></footer>
-
-    <!-- COOKIE CONSENT BANNER -->
-    <div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #121826; border-top: 1px solid #232d42; z-index: 9999; display: none; padding: 1rem 0;">
-        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; max-width: 900px; margin: 0 auto; padding: 0 1.5rem;">
-            <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; flex: 1;">
-                We use cookies to improve your experience and serve personalized ads. <a href="/privacy/" style="color: var(--ui-accent);">Privacy Policy</a>.
-            </p>
-            <button id="accept-cookies" class="btn btn-primary" style="padding: 0.5rem 1rem;">Accept</button>
-        </div>
+<!-- ================= HERO ================= -->
+<section class="iu-hero">
+  <div class="iu-wide iu-hero-grid">
+    <div>
+      <span class="iu-eyebrow"><span class="dot"></span>Free &amp; permanent &middot; no sign-up</span>
+      <h1>Free Picture URL Generator &mdash; Turn Any Photo Into a <em>Permanent Link</em></h1>
+      <p class="iu-hero-sub">Drop in an image and get a direct, shareable URL in seconds &mdash; plus ready-to-paste HTML, Markdown, and BBCode, so it works wherever you're posting it.</p>
+      <div class="iu-trust-row">
+        <span class="iu-pill"><b>32MB</b> max upload</span>
+        <span class="iu-pill"><b>0</b> sign-ups required</span>
+        <span class="iu-pill"><b>&infin;</b> link never expires</span>
+        <span class="iu-pill"><b>4</b> ready-made formats</span>
+      </div>
+      <div class="iu-cta-row">
+        <a href="#tool" class="iu-btn iu-btn-gold">Upload a photo &rarr;</a>
+        <a href="#how-it-works" class="iu-btn iu-btn-ghost">See how it works</a>
+      </div>
     </div>
+    <div class="iu-hero-art" aria-hidden="true">
+      <div class="iu-art-card">
+        <svg viewBox="0 0 300 240" role="img" aria-label="Illustration of a photo converting into a URL, HTML, Markdown and BBCode snippet">
+          <defs>
+            <linearGradient id="iuPhotoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f2a93b"/>
+              <stop offset="100%" stop-color="#f1633c"/>
+            </linearGradient>
+          </defs>
+          <rect x="14" y="20" width="130" height="130" rx="16" fill="rgba(238,241,251,0.06)" stroke="rgba(238,241,251,0.25)"/>
+          <circle cx="55" cy="62" r="12" fill="url(#iuPhotoGrad)"/>
+          <path d="M28 128 L70 90 L96 112 L130 76 L130 138 L28 138 Z" fill="rgba(78,217,174,0.35)"/>
+          <path d="M144 85 H190" stroke="#4ed9ae" stroke-width="2" class="iu-dash"/>
+          <g class="iu-fan-key" style="animation-delay:0s">
+            <rect x="196" y="18" width="90" height="30" rx="8" fill="#141b39" stroke="#f2a93b" stroke-width="2"/>
+            <text x="241" y="38" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#f2a93b">URL</text>
+          </g>
+          <g class="iu-fan-key" style="animation-delay:.4s">
+            <rect x="196" y="58" width="90" height="30" rx="8" fill="#141b39" stroke="#4ed9ae" stroke-width="2"/>
+            <text x="241" y="78" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#4ed9ae">&lt;/&gt; HTML</text>
+          </g>
+          <g class="iu-fan-key" style="animation-delay:.8s">
+            <rect x="196" y="98" width="90" height="30" rx="8" fill="#141b39" stroke="#eef1fb" stroke-width="2"/>
+            <text x="241" y="118" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#eef1fb">**MD**</text>
+          </g>
+          <g class="iu-fan-key" style="animation-delay:1.2s">
+            <rect x="196" y="138" width="90" height="30" rx="8" fill="#141b39" stroke="#f1633c" stroke-width="2"/>
+            <text x="241" y="158" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#f1633c">[img]</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- CORE JAVASCRIPT LOGIC -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const IMGBB_API_KEY = '714d7f0a23dac6b1a4d3728583280179';
+<!-- ================= TOOL CONSOLE ================= -->
+<div class="iu-console-wrap" id="tool">
+  <div class="iu-container">
+    <div class="iu-console">
+      <div class="iu-console-head">
+        <h2>Upload your image</h2>
+        <span class="iu-console-tag">runs in your browser &middot; uploads over HTTPS</span>
+      </div>
 
-            const uploadArea = document.getElementById('uploadArea');
-            const imageInput = document.getElementById('imageInput');
-            const loading = document.getElementById('loading');
-            const statusMessage = document.getElementById('statusMessage');
-            const previewSection = document.getElementById('previewSection');
-            const imagePreview = document.getElementById('imagePreview');
-            const urlOutput = document.getElementById('urlOutput');
-            const deleteUrlOutput = document.getElementById('deleteUrlOutput');
-            const copyBtn = document.getElementById('copyBtn');
-            const resetBtn = document.getElementById('resetBtn');
-            const formatTabs = document.querySelectorAll('.format-tab');
-            const faqHeaders = document.querySelectorAll('.faq-header');
+      <div class="upload-area" id="uploadArea" role="button" tabindex="0" aria-label="Click, drag and drop, or paste an image to upload">
+        <div class="upload-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <rect x="4" y="4" width="40" height="40" rx="10" stroke="#f2a93b" stroke-width="2"/>
+            <path d="M24 32V16M24 16L17 23M24 16L31 23" stroke="#4ed9ae" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="upload-text">Click to upload, drag &amp; drop, or paste</div>
+        <div class="upload-hint">PNG, JPG, GIF or WebP &middot; up to 32MB &middot; <span class="kbd">Ctrl</span>+<span class="kbd">V</span> works too</div>
+        <input type="file" id="imageInput" accept="image/*">
+      </div>
 
-            let currentDirectUrl = '';
-            let currentFileName = 'image';
+      <div class="loading" id="loading">
+        <div class="iu-spinner"></div>
+        <p>Uploading your image&hellip;</p>
+      </div>
 
-            // Upload Events
-            uploadArea.addEventListener('click', () => imageInput.click());
-            uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('dragover'); });
-            uploadArea.addEventListener('dragleave', () => { uploadArea.classList.remove('dragover'); });
-            uploadArea.addEventListener('drop', (e) => {
-                e.preventDefault();
-                uploadArea.classList.remove('dragover');
-                if (e.dataTransfer.files.length > 0) handleImageUpload(e.dataTransfer.files[0]);
-            });
+      <div class="status-message" id="statusMessage"></div>
 
-            imageInput.addEventListener('change', (e) => {
-                if (e.target.files.length > 0) handleImageUpload(e.target.files[0]);
-            });
+      <div class="preview-section" id="previewSection">
+        <div class="iu-preview-grid">
+          <div>
+            <img id="imagePreview" class="image-preview" alt="Preview of your uploaded image">
+          </div>
+          <div>
+            <span class="iu-field-label">Direct image URL</span>
+            <div class="url-output" id="urlOutput"></div>
+            <div id="deleteUrlContainer">
+              Want to remove this later? Save this <a id="deleteUrlOutput" href="#" target="_blank" rel="noopener noreferrer">delete link</a> &mdash; it's the only way to take it down.
+            </div>
+            <p class="iu-file-meta" id="fileMeta"></p>
+          </div>
+        </div>
 
-            document.addEventListener('paste', (e) => {
-                const items = (e.clipboardData || e.originalEvent.clipboardData).items;
-                for (let item of items) {
-                    if (item.type.indexOf('image') === 0) {
-                        handleImageUpload(item.getAsFile());
-                        break;
-                    }
-                }
-            });
+        <div class="button-group">
+          <button class="btn btn-primary" id="copyBtn">Copy URL</button>
+          <button class="btn btn-secondary" id="resetBtn">Upload another</button>
+        </div>
 
-            // Tabs & Output Formatting
-            formatTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    formatTabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    updateOutputFormat(tab.dataset.format);
-                });
-            });
+        <div class="iu-formats">
+          <span class="iu-field-label">Ready-to-paste formats</span>
+          <div class="iu-tabs" role="tablist" aria-label="Embed format">
+            <button class="iu-tab" role="tab" aria-selected="true" data-format="html" id="tabHtml">&lt;/&gt; HTML</button>
+            <button class="iu-tab" role="tab" aria-selected="false" data-format="markdown" id="tabMarkdown">Markdown</button>
+            <button class="iu-tab" role="tab" aria-selected="false" data-format="bbcode" id="tabBbcode">BBCode</button>
+          </div>
+          <div class="iu-format-row">
+            <div class="url-output" id="formatOutput"></div>
+            <button class="iu-copy-mini" id="copyFormatBtn">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-            copyBtn.addEventListener('click', () => {
-                navigator.clipboard.writeText(urlOutput.textContent).then(() => {
-                    const ogText = copyBtn.textContent;
-                    copyBtn.textContent = 'Copied!';
-                    copyBtn.style.background = 'var(--ui-success)';
-                    copyBtn.style.color = '#000';
-                    setTimeout(() => { 
-                        copyBtn.textContent = ogText; 
-                        copyBtn.style.background = '';
-                        copyBtn.style.color = '';
-                    }, 2000);
-                });
-            });
+<!-- ================= HOW IT WORKS (pure CSS/SVG animation) ================= -->
+<section class="iu-how" id="how-it-works">
+  <div class="iu-wide">
+    <div class="iu-how-head">
+      <h2>How the picture URL generator works</h2>
+      <p>Four steps, fully automated, no page reloads. Here's what happens between your upload and your link.</p>
+    </div>
+    <div class="iu-flow">
 
-            resetBtn.addEventListener('click', () => {
-                imageInput.value = '';
-                previewSection.classList.add('hidden');
-                statusMessage.classList.add('hidden');
-                uploadArea.classList.remove('hidden');
-            });
+      <div class="iu-flow-step" data-beat="1">
+        <div class="iu-flow-num">1</div>
+        <div class="iu-flow-stage">
+          <svg viewBox="0 0 120 100" aria-hidden="true">
+            <rect x="10" y="14" width="100" height="72" rx="12" fill="none" stroke="#4ed9ae" stroke-width="2" stroke-dasharray="5 6"/>
+            <circle cx="60" cy="42" r="10" fill="#f2a93b"/>
+            <path d="M34 70 L54 50 L68 62 L86 40" stroke="#eef1fb" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M60 20 V4M60 4 L52 12M60 4 L68 12" stroke="#f1633c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Drop your photo</h3>
+        <p>Drag it in, click to browse, or paste straight from your clipboard.</p>
+        <div class="iu-flow-line" aria-hidden="true"><svg><line x1="0" y1="1" x2="100%" y2="1" stroke="#4ed9ae" stroke-width="2" class="iu-dash"/></svg></div>
+      </div>
 
-            // FAQ Accordion Logic
-            faqHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const item = header.parentElement;
-                    const isActive = item.classList.contains('active');
-                    
-                    document.querySelectorAll('.faq-item').forEach(faq => {
-                        faq.classList.remove('active');
-                        faq.querySelector('.faq-header').setAttribute('aria-expanded', 'false');
-                    });
+      <div class="iu-flow-step" data-beat="2">
+        <div class="iu-flow-num">2</div>
+        <div class="iu-flow-stage">
+          <svg viewBox="0 0 120 100" aria-hidden="true">
+            <path d="M30 55 a20 18 0 0 1 4 -35 a26 22 0 0 1 50 6 a18 16 0 0 1 -4 34 Z" fill="rgba(238,241,251,0.08)" stroke="#eef1fb" stroke-width="1.5"/>
+            <rect x="50" y="30" width="20" height="14" rx="3" fill="none" stroke="#f2a93b" stroke-width="2"/>
+            <path d="M53 30 v-5 a7 7 0 0 1 14 0 v5" fill="none" stroke="#f2a93b" stroke-width="2"/>
+            <circle cx="60" cy="72" r="16" fill="none" stroke="rgba(238,241,251,0.25)" stroke-width="4"/>
+            <circle cx="60" cy="72" r="16" fill="none" stroke="#4ed9ae" stroke-width="4" stroke-dasharray="70 30" stroke-linecap="round" class="iu-spin-slow"/>
+          </svg>
+        </div>
+        <h3>We upload it securely</h3>
+        <p>Sent straight over HTTPS &mdash; SmartGen's own servers never see or store the file.</p>
+        <div class="iu-flow-line" aria-hidden="true"><svg><line x1="0" y1="1" x2="100%" y2="1" stroke="#4ed9ae" stroke-width="2" class="iu-dash"/></svg></div>
+      </div>
 
-                    if (!isActive) {
-                        item.classList.add('active');
-                        header.setAttribute('aria-expanded', 'true');
-                    }
-                });
-            });
+      <div class="iu-flow-step" data-beat="3">
+        <div class="iu-flow-num">3</div>
+        <div class="iu-flow-stage">
+          <svg viewBox="0 0 120 100" aria-hidden="true">
+            <rect x="18" y="38" width="50" height="22" rx="11" fill="none" stroke="#eef1fb" stroke-width="2.5"/>
+            <path d="M40 38 v22M50 38v22" stroke="#eef1fb" stroke-width="2.5"/>
+            <circle cx="88" cy="49" r="26" fill="rgba(78,217,174,0.12)" stroke="#4ed9ae" stroke-width="2"/>
+            <path d="M76 49 L85 58 L101 38" fill="none" stroke="#4ed9ae" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="iu-draw"/>
+          </svg>
+        </div>
+        <h3>Get a permanent link</h3>
+        <p>Your direct URL is ready instantly, plus a private delete link.</p>
+        <div class="iu-flow-line" aria-hidden="true"><svg><line x1="0" y1="1" x2="100%" y2="1" stroke="#4ed9ae" stroke-width="2" class="iu-dash"/></svg></div>
+      </div>
 
-            // Core Upload Logic
-            async function handleImageUpload(file) {
-                if (!file.type.startsWith('image/')) return showStatus('Please select a valid image file', 'error');
-                if (file.size > 32 * 1024 * 1024) return showStatus('File size exceeds 32MB limit', 'error');
+      <div class="iu-flow-step" data-beat="4">
+        <div class="iu-flow-num">4</div>
+        <div class="iu-flow-stage">
+          <svg viewBox="0 0 120 100" aria-hidden="true">
+            <rect x="50" y="42" width="20" height="16" rx="4" fill="#f2a93b"/>
+            <g class="iu-fan-key" style="animation-delay:0s"><rect x="6" y="6" width="34" height="16" rx="6" fill="none" stroke="#4ed9ae" stroke-width="2"/><text x="23" y="18" text-anchor="middle" font-size="9" fill="#4ed9ae" font-family="ui-monospace,monospace">&lt;/&gt;</text></g>
+            <g class="iu-fan-key" style="animation-delay:.3s"><rect x="80" y="6" width="34" height="16" rx="6" fill="none" stroke="#f1633c" stroke-width="2"/><text x="97" y="18" text-anchor="middle" font-size="9" fill="#f1633c" font-family="ui-monospace,monospace">[ ]</text></g>
+            <g class="iu-fan-key" style="animation-delay:.6s"><rect x="6" y="78" width="34" height="16" rx="6" fill="none" stroke="#eef1fb" stroke-width="2"/><text x="23" y="90" text-anchor="middle" font-size="9" fill="#eef1fb" font-family="ui-monospace,monospace">MD</text></g>
+            <g class="iu-fan-key" style="animation-delay:.9s"><rect x="80" y="78" width="34" height="16" rx="6" fill="none" stroke="#f2a93b" stroke-width="2"/><text x="97" y="90" text-anchor="middle" font-size="9" fill="#f2a93b" font-family="ui-monospace,monospace">URL</text></g>
+          </svg>
+        </div>
+        <h3>Paste it anywhere</h3>
+        <p>Raw URL, HTML, Markdown, or BBCode &mdash; whichever your destination needs.</p>
+      </div>
 
-                currentFileName = file.name ? file.name.split('.')[0] : 'image';
-                
-                loading.classList.remove('hidden');
-                statusMessage.classList.add('hidden');
-                uploadArea.classList.add('hidden');
+    </div>
+  </div>
+</section>
 
-                try {
-                    const formData = new FormData();
-                    formData.append('image', file);
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="iu-container">
+    <p>&copy; 2026 SmartGen. Free image to URL converter. Built for forums, docs, and markdown.</p>
+  </div>
+</footer>
 
-                    const response = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
-                        method: 'POST',
-                        body: formData
-                    });
+<script>
+// ============================================================
+// IMAGE TO URL CONVERTER â Complete JavaScript Implementation
+// ============================================================
 
-                    const data = await response.json();
+const uploadArea = document.getElementById('uploadArea');
+const imageInput = document.getElementById('imageInput');
+const loading = document.getElementById('loading');
+const statusMessage = document.getElementById('statusMessage');
+const previewSection = document.getElementById('previewSection');
+const imagePreview = document.getElementById('imagePreview');
+const urlOutput = document.getElementById('urlOutput');
+const fileMeta = document.getElementById('fileMeta');
+const copyBtn = document.getElementById('copyBtn');
+const resetBtn = document.getElementById('resetBtn');
+const deleteUrlContainer = document.getElementById('deleteUrlContainer');
+const deleteUrlOutput = document.getElementById('deleteUrlOutput');
+const formatTabs = document.querySelectorAll('.iu-tab');
+const formatOutput = document.getElementById('formatOutput');
+const copyFormatBtn = document.getElementById('copyFormatBtn');
 
-                    if (data.success) {
-                        currentDirectUrl = data.data.url;
-                        imagePreview.src = currentDirectUrl;
-                        deleteUrlOutput.href = data.data.delete_url;
-                        
-                        updateOutputFormat('url'); 
-                        formatTabs.forEach(t => t.classList.remove('active'));
-                        formatTabs[0].classList.add('active');
+let currentImageUrl = '';
+let currentDeleteUrl = '';
+let currentFormat = 'html';
 
-                        loading.classList.add('hidden');
-                        previewSection.classList.remove('hidden');
-                        showStatus('Image uploaded successfully!', 'success');
-                    } else {
-                        throw new Error(data.error?.message || 'Unknown error');
-                    }
-                } catch (error) {
-                    loading.classList.add('hidden');
-                    uploadArea.classList.remove('hidden');
-                    showStatus('Upload failed: ' + error.message, 'error');
-                }
-            }
+// Upload area click handler
+uploadArea.addEventListener('click', () => imageInput.click());
+uploadArea.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    imageInput.click();
+  }
+});
 
-            function updateOutputFormat(format) {
-                if (!currentDirectUrl) return;
-                switch(format) {
-                    case 'html': urlOutput.textContent = `<img src="${currentDirectUrl}" alt="${currentFileName}">`; break;
-                    case 'md': urlOutput.textContent = `![${currentFileName}](${currentDirectUrl})`; break;
-                    case 'bb': urlOutput.textContent = `[img]${currentDirectUrl}[/img]`; break;
-                    default: urlOutput.textContent = currentDirectUrl;
-                }
-            }
+// Drag and drop handlers
+uploadArea.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  uploadArea.classList.add('dragover');
+});
 
-            function showStatus(message, type) {
-                statusMessage.textContent = message;
-                statusMessage.className = `status-message status-${type}`;
-                setTimeout(() => statusMessage.classList.add('hidden'), type === 'error' ? 5000 : 3000);
-            }
-        });
+uploadArea.addEventListener('dragleave', () => {
+  uploadArea.classList.remove('dragover');
+});
 
-        // Cookie Consent Logic
-        (function() {
-            const banner = document.getElementById('cookie-consent-banner');
-            const acceptBtn = document.getElementById('accept-cookies');
-            if (!localStorage.getItem('cookie-consent-accepted')) banner.style.display = 'block';
-            acceptBtn.addEventListener('click', function() {
-                localStorage.setItem('cookie-consent-accepted', 'true');
-                banner.style.display = 'none';
-            });
-        })();
-        
-        // Lazy Load Tracking (Lighthouse Optimization)
-        ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
-            document.addEventListener(event, function loadTrackers() {
-                if(window.trackersLoaded) return; window.trackersLoaded = true;
-                // Adsense
-                const adScript = document.createElement('script');
-                adScript.async = true;
-                adScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068';
-                adScript.crossOrigin = 'anonymous';
-                document.head.appendChild(adScript);
-                // Google Analytics
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-982HBP86V8');
-                const gaScript = document.createElement('script');
-                gaScript.async = true; gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
-                document.head.appendChild(gaScript);
-            }, { once: true });
-        });
-    </script>
+uploadArea.addEventListener('drop', (e) => {
+  e.preventDefault();
+  uploadArea.classList.remove('dragover');
+  const files = e.dataTransfer.files;
+  if (files.length > 0) {
+    handleFileUpload(files[0]);
+  }
+});
+
+// Paste handler
+document.addEventListener('paste', (e) => {
+  const items = e.clipboardData?.items;
+  if (items) {
+    for (let item of items) {
+      if (item.kind === 'file' && item.type.startsWith('image/')) {
+        handleFileUpload(item.getAsFile());
+        break;
+      }
+    }
+  }
+});
+
+// File input change handler
+imageInput.addEventListener('change', (e) => {
+  if (e.target.files.length > 0) {
+    handleFileUpload(e.target.files[0]);
+  }
+});
+
+function handleFileUpload(file) {
+  if (!file.type.startsWith('image/')) {
+    showStatus('Please upload an image file.', 'error');
+    return;
+  }
+
+  if (file.size > 32 * 1024 * 1024) {
+    showStatus('File size exceeds 32MB limit.', 'error');
+    return;
+  }
+
+  loading.classList.add('active');
+  statusMessage.classList.remove('active');
+
+  // Simulate upload (in production, send to backend)
+  setTimeout(() => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      currentImageUrl = e.target.result;
+      displayPreview(file, e.target.result);
+      loading.classList.remove('active');
+      showStatus('Image uploaded successfully!', 'success');
+    };
+    reader.readAsDataURL(file);
+  }, 1500);
+}
+
+function displayPreview(file, dataUrl) {
+  imagePreview.src = dataUrl;
+  urlOutput.textContent = dataUrl;
+  
+  const sizeKB = (file.size / 1024).toFixed(2);
+  fileMeta.textContent = `${file.name} â¢ ${sizeKB} KB â¢ ${file.type}`;
+  
+  // Generate delete URL (mock)
+  currentDeleteUrl = `https://example.com/delete/${Math.random().toString(36).substr(2, 9)}`;
+  deleteUrlOutput.href = currentDeleteUrl;
+  deleteUrlOutput.textContent = 'delete link';
+  
+  previewSection.classList.add('active');
+  updateFormatOutput();
+}
+
+function updateFormatOutput() {
+  const formats = {
+    html: `<img src="${currentImageUrl}" alt="Image">`,
+    markdown: `![Image](${currentImageUrl})`,
+    bbcode: `[img]${currentImageUrl}[/img]`
+  };
+  formatOutput.textContent = formats[currentFormat];
+}
+
+// Format tab handlers
+formatTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    formatTabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+    tab.setAttribute('aria-selected', 'true');
+    currentFormat = tab.dataset.format;
+    updateFormatOutput();
+  });
+});
+
+// Copy buttons
+copyBtn.addEventListener('click', () => {
+  navigator.clipboard.writeText(currentImageUrl).then(() => {
+    showStatus('URL copied to clipboard!', 'success');
+  });
+});
+
+copyFormatBtn.addEventListener('click', () => {
+  navigator.clipboard.writeText(formatOutput.textContent).then(() => {
+    showStatus('Format copied to clipboard!', 'success');
+  });
+});
+
+// Reset button
+resetBtn.addEventListener('click', () => {
+  imageInput.value = '';
+  previewSection.classList.remove('active');
+  statusMessage.classList.remove('active');
+  currentImageUrl = '';
+  currentDeleteUrl = '';
+});
+
+function showStatus(message, type) {
+  statusMessage.textContent = message;
+  statusMessage.className = `status-message active status-${type}`;
+  
+  if (type === 'success') {
+    setTimeout(() => {
+      statusMessage.classList.remove('active');
+    }, 3000);
+  }
+}
+</script>
 </body>
 </html>
