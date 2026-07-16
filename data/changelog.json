@@ -1,5 +1,10 @@
 [
   {
+    "title": "seo(picture-url-generator): add visible FAQ section and missing meta tags",
+    "date": "2026-07-16T16:50:07Z",
+    "description": "- Added missing SEO meta tags (, , ) to the document head to improve search engine crawling and indexing. - Implemented a visible on-page FAQ section that perfectly mirrors the existing JSON-LD schema, preventing Google penalties for hidden structured data. - Added an SEO-optimized introductory article block (\"Why Use an Image to URL Converter?\") to increase semantic relevance and keyword density. - Ensured zero alterations to the existing CSS design system, UI structure, and core JavaScript logic."
+  },
+  {
     "title": "Update faq.json",
     "date": "2026-07-16T03:42:19Z",
     "description": "Platform improvement and optimization."
