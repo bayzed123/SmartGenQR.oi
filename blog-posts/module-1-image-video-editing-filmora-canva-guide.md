@@ -3,7 +3,7 @@ title: "MODULE 1: Basic Image and Video Editing — Complete Guide to Filmora an
 description: "A complete, step-by-step beginner's guide to basic image and video editing using Filmora for video editing and Canva for image content creation. Learn tools, features, and practical workflows in this digital marketing course module."
 keywords: "filmora tutorial, canva tutorial, video editing for beginners, image editing for beginners, filmora for beginners, canva for digital marketing, basic video editing guide, basic image editing guide, content creation tools, smartgen"
 date: 2026-06-30
-image: "assets/images/smartgenmodule1imagevideoediting.jpg"
+image: "https://smartgentools.com/blog-posts/images/smartgen-module-1-filmora-canva-cover.svg
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -16,7 +16,7 @@ tags:
   - Image Editing
   - Content Creation
 ---
-
+<!--AUTHOR_PROFILE-->
 ## Welcome to Module 1
 
 Welcome to Module 1 of our Digital Marketing Course. Before we dive into advertising, SEO, or social media strategy, there's one skill every digital marketer absolutely must learn first: **creating good-looking visual content.**
@@ -140,14 +140,41 @@ Learning both tools together gives you the flexibility to produce a complete, co
 
 Let's review what we covered in this module. We learned why visual content is critical to digital marketing success, explored Filmora's core video editing features and a simple beginner workflow, explored Canva's core design features and a simple beginner workflow, and looked at how both tools combine in a real marketing workflow.
 
-**Practice exercise:** Before moving to the next module, try creating one simple project using each tool. In Filmora, edit a short 15-30 second video using at least three clips, one transition, one text overlay, and background music. In Canva, design one social media post using a template, your own image or text, and at least two brand colors. This hands-on practice will help the concepts in this lesson truly stick before we move forward.
+**Practice exercise:** Before moving to the next module, try creating one simple project using each tool. In Filmora, edit a short 15-30 second video using at least three clips, one transition, one text overlay, and background music. In Canva, design one social media post using a template, your own image or text, and at least two brand colors. This hands-on practice will help the concepts in this lesson truly stick before we move forward. [Next: Module 2: Social Media Optimization (SMO)](https://smartgentools.com/blog/module-2-social-media-optimization-smo-complete-beginners-guide-to-platforms-hashtags-content-and-strong-profiles/)
 
 ---
-
+<!--AUTHOR_FOOTER-->
 ## What's Next?
 
 In Module 2 of this course, we'll build on these visual content skills as we move into Search Engine Optimization (SEO) — learning how to make sure all this great content you're now able to create actually gets discovered by the right audience online.
-
+* [Introduction to Online Digital Marketing: A Beginner's Guide](https://smartgentools.com/blog/introduction-to-online-digital-marketing-a-beginners-guide/)
+* [Importance of Digital Marketing: How it Works and Key Concepts](https://smartgentools.com/blog/importance-of-digital-marketing-how-it-works-and-key-concepts-every-beginner-should-know/)
+* [Module 1: Basic Image and Video Editing - Complete Guide](https://smartgentools.com/blog/module-1-basic-image-and-video-editing-complete-guide-to-filmora-and-canva-for-beginners/)
+* [Module 2: Social Media Optimization (SMO) - Complete Beginner's Guide](https://smartgentools.com/blog/module-2-social-media-optimization-smo-complete-beginners-guide-to-platforms-hashtags-content-and-strong-profiles/)
+* [Module 3: Social Media Marketing (SMM) & Advertising Concepts](https://smartgentools.com/blog/module-3-social-media-marketing-smm-social-media-advertising-concepts-and-choosing-the-right-platform-for-your-audience/)
+* [Module 4: Meta Facebook Marketing - The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+* [Module 5: Instagram Marketing - The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+* [Module 6: X (formerly Twitter) Marketing - The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+* [Pinterest Marketing - The Complete A to Z Mega Guide](https://smartgentools.com/blog/pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [TikTok Marketing - The Complete A to Z Mega Guide](https://smartgentools.com/blog/tiktok-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [LinkedIn Marketing - The Complete A to Z Mega Guide](https://smartgentools.com/blog/linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [YouTube Marketing - The Complete A to Z Mega Guide](https://smartgentools.com/blog/youtube-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Video Marketing Through YouTube - The Complete A to Z Mega Guide](https://smartgentools.com/blog/video-marketing-through-youtube-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Search Engine Optimization (SEO) - The Complete A to Z Mega Guide](https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Analysis and Keyword Research - The Complete A to Z Mega Guide](https://smartgentools.com/blog/analysis-and-keyword-research-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [On-Page SEO Optimization - The Complete A to Z Mega Guide](https://smartgentools.com/blog/on-page-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Off-Page Optimization - The Complete A to Z Mega Guide](https://smartgentools.com/blog/off-page-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Technical SEO Optimization - The Complete A to Z Mega Guide](https://smartgentools.com/blog/technical-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Local SEO and Google Business Profile - The Complete A to Z Mega Guide](https://smartgentools.com/blog/local-seo-and-google-business-profile-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Algorithm Updates and Analysis - The Complete A to Z Mega Guide](https://smartgentools.com/blog/algorithm-updates-and-analysis-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Content Marketing - The Complete A to Z Mega Guide](https://smartgentools.com/blog/content-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Email Marketing - The Complete A to Z Mega Guide](https://smartgentools.com/blog/email-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Creating a WordPress Website - The Complete A to Z Mega Guide](https://smartgentools.com/blog/creating-a-wordpress-website-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Customization and Advanced Features - The Complete A to Z Mega Guide](https://smartgentools.com/blog/customization-and-advanced-features-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Google Web Analytics - The Complete A to Z Mega Guide](https://smartgentools.com/blog/google-web-analytics-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Mobile, Cross-Device, and Campaign Analytics - The Complete Guide](https://smartgentools.com/blog/mobile-cross-device-and-campaign-analytics-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+* [Google Ads Guide: Search Engine Marketing](https://smartgentools.com/blog/google-ads-guide-search-engine-marketing/)
+* [Display Advertising and Remarketing Guide](https://smartgentools.com/blog/display-advertising-and-remarketing-guide-smartgen/)
 ---
 
 *This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
