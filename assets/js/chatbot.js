@@ -1,23 +1,27 @@
-// SmartGen Advanced AI Chatbot - Pure Client-side with Groq API
+// SmartGen FAQ Chatbot - Client-side, Privacy-First
 class SmartGenChatbot {
     constructor() {
         this.faqData = [];
         this.sitemapData = [];
         this.isOpen = false;
         this.conversationHistory = [];
-        // Placeholder for Groq API Key - will be replaced by GitHub Actions
-        this.groqApiKey = "__GROQ_API_KEY__"; 
-        this.groqApiEndpoint = "https://api.groq.com/openai/v1/chat/completions";
         this.init();
     }
 
     async init() {
         try {
+            // Load FAQ data
             await this.loadFAQ();
+            // Load Sitemap data
             await this.loadSitemap();
+            
+            // Create chatbot UI
             this.createChatbotUI();
+            
+            // Attach event listeners
             this.attachEventListeners();
-            console.log("✅ SmartGen AI Chatbot initialized successfully");
+            
+            console.log("SmartGen Chatbot initialized successfully");
         } catch (error) {
             console.error("Error initializing chatbot:", error);
         }
@@ -25,10 +29,15 @@ class SmartGenChatbot {
 
     async loadFAQ() {
         try {
-            const response = await fetch("/data/faq.json");
+            const response = await fetch("./data/faq.json");
             if (!response.ok) throw new Error("Failed to load FAQ data");
+            
             const data = await response.json();
             this.faqData = data.faqs || [];
+            
+            if (this.faqData.length === 0) {
+                console.warn("No FAQ data loaded");
+            }
         } catch (error) {
             console.error("Error loading FAQ:", error);
             this.faqData = [];
@@ -39,9 +48,11 @@ class SmartGenChatbot {
         try {
             const response = await fetch("/sitemap.xml");
             if (!response.ok) throw new Error("Failed to load sitemap.xml");
+            
             const sitemapText = await response.text();
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(sitemapText, "text/xml");
+            
             const urls = xmlDoc.querySelectorAll("url");
             this.sitemapData = Array.from(urls).map(urlElement => {
                 const loc = urlElement.querySelector("loc").textContent;
@@ -49,6 +60,10 @@ class SmartGenChatbot {
                 const title = this.extractTitleFromPath(path);
                 return { loc, path, title };
             });
+
+            if (this.sitemapData.length === 0) {
+                console.warn("No sitemap data loaded");
+            }
         } catch (error) {
             console.error("Error loading sitemap:", error);
             this.sitemapData = [];
@@ -56,56 +71,74 @@ class SmartGenChatbot {
     }
 
     extractTitleFromPath(path) {
+        // Example: /blog/my-awesome-post/ -> My Awesome Post
+        // Example: /tools/qr-generator/ -> QR Generator
         const parts = path.split("/").filter(Boolean);
         if (parts.length === 0) return "Home Page";
+        
         let title = parts[parts.length - 1].replace(/-/g, " ");
         title = title.charAt(0).toUpperCase() + title.slice(1);
         return title;
     }
 
     createChatbotUI() {
-        const existing = document.getElementById("smartgen-chatbot");
-        if (existing) existing.remove();
-
+        // Create container
         const chatbotContainer = document.createElement("div");
         chatbotContainer.id = "smartgen-chatbot";
         chatbotContainer.className = "smartgen-chatbot-container";
         
+        // Create chatbot HTML
         chatbotContainer.innerHTML = `
             <div class="chatbot-widget">
-                <button class="chatbot-toggle-btn" id="chatbot-toggle" title="Open SmartGen AI Assistant">
-                    <span class="chatbot-icon">🤖</span>
+                <!-- Chat Button (Floating Icon) -->
+                <button class="chatbot-toggle-btn" id="chatbot-toggle" title="Open SmartGen Assistant">
+                    <span class="chatbot-icon">💬</span>
+                    <span class="chatbot-badge" id="chatbot-badge"></span>
                 </button>
+
+                <!-- Chat Window -->
                 <div class="chatbot-window" id="chatbot-window">
+                    <!-- Header -->
                     <div class="chatbot-header">
                         <div class="chatbot-header-content">
-                            <h3>SmartGen AI Assistant</h3>
-                            <p>Powered by Groq • Client-side</p>
+                            <h3>SmartGen Assistant</h3>
+                            <p>Ask me anything about SmartGen</p>
                         </div>
                         <button class="chatbot-close-btn" id="chatbot-close" title="Close chat">✕</button>
                     </div>
+
+                    <!-- Messages Container -->
                     <div class="chatbot-messages" id="chatbot-messages">
                         <div class="chatbot-message bot-message">
                             <div class="message-content">
-                                <p>👋 Hello! I\'m your SmartGen AI Assistant. I can help you find tools, answer questions, and provide direct links from our platform. How can I assist you today?</p>
+                                <p>👋 Hi! I'm the SmartGen Assistant. How can I help you today?</p>
                                 <div class="quick-replies">
-                                    <button class="quick-reply-btn">What is SmartGen?</button>
-                                    <button class="quick-reply-btn">Show me SEO tools</button>
-                                    <button class="quick-reply-btn">Is my data safe?</button>
+                                    <button class="quick-reply-btn" data-question="What is SmartGen?">What is SmartGen?</button>
+                                    <button class="quick-reply-btn" data-question="Is my data safe?">Is my data safe?</button>
+                                    <button class="quick-reply-btn" data-question="How do I use the tools?">How do I use the tools?</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="chatbot-typing-indicator" id="chatbot-typing" style="display: none;">
-                        <span></span><span></span><span></span>
-                    </div>
+
+                    <!-- Input Area -->
                     <div class="chatbot-input-area">
-                        <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Ask me anything..." autocomplete="off">
-                        <button class="chatbot-send-btn" id="chatbot-send" title="Send message">➤</button>
+                        <input 
+                            type="text" 
+                            id="chatbot-input" 
+                            class="chatbot-input" 
+                            placeholder="Type your question..."
+                            autocomplete="off"
+                        >
+                        <button class="chatbot-send-btn" id="chatbot-send" title="Send message">
+                            <span>➤</span>
+                        </button>
                     </div>
                 </div>
             </div>
         `;
+
+        // Append to body
         document.body.appendChild(chatbotContainer);
     }
 
@@ -114,26 +147,33 @@ class SmartGenChatbot {
         const closeBtn = document.getElementById("chatbot-close");
         const sendBtn = document.getElementById("chatbot-send");
         const input = document.getElementById("chatbot-input");
+        const quickReplyBtns = document.querySelectorAll(".quick-reply-btn");
 
+        // Toggle chat window
         toggleBtn.addEventListener("click", () => this.toggleChatWindow());
         closeBtn.addEventListener("click", () => this.toggleChatWindow());
+
+        // Send message
         sendBtn.addEventListener("click", () => this.sendMessage());
         input.addEventListener("keypress", (e) => {
             if (e.key === "Enter") this.sendMessage();
         });
 
-        document.addEventListener("click", (e) => {
-            if (e.target.classList.contains("quick-reply-btn")) {
-                input.value = e.target.textContent;
-                this.sendMessage();
-            }
+        // Quick replies
+        quickReplyBtns.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                const question = e.target.getAttribute("data-question");
+                this.handleUserMessage(question);
+            });
         });
     }
 
     toggleChatWindow() {
         const chatWindow = document.getElementById("chatbot-window");
         const toggleBtn = document.getElementById("chatbot-toggle");
+        
         this.isOpen = !this.isOpen;
+        
         if (this.isOpen) {
             chatWindow.classList.add("open");
             toggleBtn.classList.add("active");
@@ -144,167 +184,218 @@ class SmartGenChatbot {
         }
     }
 
-    async sendMessage() {
+    sendMessage() {
         const input = document.getElementById("chatbot-input");
         const message = input.value.trim();
+
         if (message.length === 0) return;
 
+        this.handleUserMessage(message);
         input.value = "";
-        this.addMessageToChat(message, "user");
-        
-        const typingIndicator = document.getElementById("chatbot-typing");
-        typingIndicator.style.display = "flex";
-
-        try {
-            const aiResponse = await this.getAIResponse(message);
-            typingIndicator.style.display = "none";
-            this.addMessageToChat(aiResponse, "bot");
-        } catch (error) {
-            typingIndicator.style.display = "none";
-            console.error("AI Response Error:", error);
-            const fallback = this.findFallbackAnswer(message);
-            this.addMessageToChat(fallback, "bot");
-        }
+        input.focus();
     }
 
-    async getAIResponse(userMessage) {
-        if (!this.groqApiKey || this.groqApiKey === "__GROQ_API_KEY__") {
-            console.error("Groq API Key not configured. Using fallback.");
-            return this.findFallbackAnswer(userMessage);
-        }
+    handleUserMessage(userMessage) {
+        // Add user message to chat
+        this.addMessageToChat(userMessage, "user");
 
-        const knowledgeBase = this.buildKnowledgeBase();
+        // Find best matching answer
+        const answer = this.findBestAnswer(userMessage);
 
-        const systemInstruction = `You are the official AI Assistant for 'SmartGen' — a free web tools platform by Connect with Bayezid. Your goal is to provide concise, smart, and highly engaging answers, always responding in the exact language the user is speaking.
+        // Simulate typing delay for better UX
+        setTimeout(() => {
+            this.addMessageToChat(answer, "bot");
+        }, 300);
 
-[VERIFIED PLATFORM DATA]:
-${knowledgeBase}
-
-Your Strict Rules:
-1. If a user asks about policies (About, Terms, Cookies, Privacy), answer accurately based on the [VERIFIED PLATFORM DATA].
-2. If a user asks for a specific tool, blog, or feature, provide a brief summary and MUST include the exact Direct Link from the verified data. Format links as standard HTML <a> tags.
-3. Do NOT invent or guess URLs. If a specific tool's link is not in the data, politely say you couldn't find the exact link and ask them to check the platform's menu.
-4. Keep your answers concise, smart, and highly engaging.
-5. Always respond in the exact language the user is speaking (e.g., reply in Bengali if asked in Bengali).
-6. Prioritize information from [VERIFIED PLATFORM DATA] over general knowledge.`;
-
-        this.conversationHistory.push({ role: "user", content: userMessage });
-        
-        const messages = [
-            { role: "system", content: systemInstruction },
-            ...this.conversationHistory.slice(-6)
-        ];
-
-        try {
-            const response = await fetch(this.groqApiEndpoint, {
-                method: "POST",
-                headers: {
-                    "Authorization": `Bearer ${this.groqApiKey}`,
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    model: "llama-3.1-8b-instant",
-                    messages: messages,
-                    temperature: 0.4,
-                    max_tokens: 800,
-                    top_p: 0.9
-                })
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(\`Groq API Error: \${response.status} - \${errorData.error.message}\`);
-            }
-            
-            const data = await response.json();
-            const aiMessage = data.choices[0].message.content.trim();
-            
-            this.conversationHistory.push({ role: "assistant", content: aiMessage });
-            return aiMessage;
-        } catch (error) {
-            console.error("Groq API Call Error:", error);
-            throw error;
-        }
+        // Store in conversation history
+        this.conversationHistory.push({
+            user: userMessage,
+            bot: answer,
+            timestamp: new Date()
+        });
     }
 
-    buildKnowledgeBase() {
-        const knowledgeParts = [];
-
-        if (this.sitemapData.length > 0) {
-            const sitemapLinks = this.sitemapData.map(item => `- [\${item.title}](\${item.loc})`).join("\\n");
-            knowledgeParts.push("Available Direct Links on SmartGen:\\n" + sitemapLinks);
+    findBestAnswer(userQuery) {
+        if (!userQuery) {
+            return "I'm sorry, I couldn't find an answer to that. Please try asking another question or visit our Help page.";
         }
 
-        if (this.faqData.length > 0) {
-            const faqText = this.faqData.map(faq => `Q: \${faq.question}\\nA: \${faq.answer}`).join("\\n\\n");
-            knowledgeParts.push("Frequently Asked Questions & Platform Policies:\\n" + faqText);
-        }
-
-        if (knowledgeParts.length === 0) {
-            return "SmartGen is a free tools platform with over 130+ utilities for developers and marketers.";
-        }
-
-        return knowledgeParts.join("\\n\\n");
-    }
-
-    findFallbackAnswer(userQuery) {
-        const query = userQuery.toLowerCase();
-        
+        const query = userQuery.toLowerCase().trim();
         let bestMatch = null;
-        let maxScore = 0;
+        let bestScore = 0;
 
+        // Search through FAQs
         for (const faq of this.faqData) {
-            const score = this.calculateSimilarity(query, faq.question.toLowerCase());
-            if (score > maxScore) {
-                maxScore = score;
-                bestMatch = faq.answer;
+            const question = faq.question.toLowerCase();
+            const answer = faq.answer.toLowerCase();
+            const category = (faq.category || "").toLowerCase();
+
+            // Calculate relevance score
+            let score = 0;
+
+            // Exact match in question
+            if (question === query) {
+                score = 100;
+            }
+            // Question contains all query words
+            else if (this.containsAllWords(question, query)) {
+                score = 80;
+            }
+            // Query contains all question words
+            else if (this.containsAllWords(query, question)) {
+                score = 70;
+            }
+            // Partial word matching in question
+            else {
+                score = this.calculateWordSimilarity(query, question);
+            }
+
+            // Bonus for category match
+            if (this.containsAllWords(category, query)) {
+                score += 10;
+            }
+
+            // Update best match if this is better
+            if (score > bestScore) {
+                bestScore = score;
+                bestMatch = faq;
             }
         }
 
-        if (maxScore > 0.6) return bestMatch;
+        // Search through sitemap data for relevant links
+        let bestSitemapMatch = null;
+        let bestSitemapScore = 0;
 
-        const relevantLinks = this.sitemapData.filter(item => 
-            query.includes(item.title.toLowerCase()) || 
-            item.title.toLowerCase().includes(query)
-        );
+        for (const page of this.sitemapData) {
+            const pageTitle = page.title.toLowerCase();
+            const pagePath = page.path.toLowerCase();
+            
+            let sitemapScore = 0;
 
-        if (relevantLinks.length > 0) {
-            let response = "I found some relevant pages on SmartGen for you:<br><ul>";
-            relevantLinks.slice(0, 3).forEach(link => {
-                response += `<li><a href="\${link.loc}" target="_blank">\${link.title}</a></li>`;
-            });
-            response += "</ul>";
-            return response;
+            if (pageTitle.includes(query) || pagePath.includes(query)) {
+                sitemapScore = 50; // Base score for keyword presence
+            }
+            if (this.containsAllWords(pageTitle, query)) {
+                sitemapScore = 70;
+            }
+            if (this.containsAllWords(pagePath, query)) {
+                sitemapScore = 60;
+            }
+
+            if (sitemapScore > bestSitemapScore) {
+                bestSitemapScore = sitemapScore;
+                bestSitemapMatch = page;
+            }
         }
 
-        return "I\\'m sorry, I\\'m having trouble understanding. SmartGen is a free all-in-one digital utility platform. How else can I help you?";
+        // Prioritize FAQ answers if a strong match is found
+        if (bestMatch && bestScore >= 60) {
+            return bestMatch.answer;
+        } else if (bestSitemapMatch && bestSitemapScore >= 50) {
+            return `I found something related: <a href="${bestSitemapMatch.loc}" target="_blank" rel="noopener noreferrer">${bestSitemapMatch.title}</a>. Does this help?`;
+        }
+
+        // Provide helpful suggestions based on query keywords
+        return this.generateFallbackResponse(userQuery);
     }
 
-    calculateSimilarity(s1, s2) {
-        const words1 = s1.split(/\\s+/);
-        const words2 = s2.split(/\\s+/);
-        const intersection = words1.filter(w => words2.includes(w));
-        return intersection.length / Math.max(words1.length, words2.length);
+    containsAllWords(text, query) {
+        const queryWords = query.split(/\s+/).filter(w => w.length > 2);
+        return queryWords.every(word => text.includes(word));
+    }
+
+    calculateWordSimilarity(query, text) {
+        const queryWords = query.split(/\s+/).filter(w => w.length > 2);
+        let matchCount = 0;
+
+        for (const word of queryWords) {
+            if (text.includes(word)) {
+                matchCount++;
+            }
+        }
+
+        return (matchCount / queryWords.length) * 60;
+    }
+
+    generateFallbackResponse(userQuery) {
+        const query = userQuery.toLowerCase();
+
+        // Category-based suggestions
+        if (query.includes("tool") || query.includes("feature") || query.includes("use")) {
+            return "SmartGen has 130+ tools available! You can explore them in the Tools directory. Would you like to know about a specific tool like QR Generator, SEO tools, or developer utilities?";
+        }
+
+        if (query.includes("free") || query.includes("cost") || query.includes("price")) {
+            return "Yes, SmartGen is 100% free! All tools are completely free to use with no hidden charges, subscriptions, or premium features.";
+        }
+
+        if (query.includes("data") || query.includes("privacy") || query.includes("safe") || query.includes("security")) {
+            return "Your data is completely safe! SmartGen is built with a privacy-first architecture. All processing happens locally in your browser, and we don't send any data to servers or track users.";
+        }
+
+        if (query.includes("account") || query.includes("login") || query.includes("sign")) {
+            return "You don't need an account! SmartGen is completely anonymous and doesn't require registration. You can use all tools without logging in.";
+        }
+
+        if (query.includes("bug") || query.includes("error") || query.includes("problem")) {
+            return "If you're experiencing an issue, please report it on our GitHub repository at github.com/bayzed123/SmartGenQR.oi or contact us through the Contact Us page.";
+        }
+
+        if (query.includes("contribute") || query.includes("help") || query.includes("open source")) {
+            return "We'd love your help! SmartGen is open source on GitHub. You can fork the project, contribute improvements, and submit pull requests. Check our Contributing.md file for guidelines.";
+        }
+
+        if (query.includes("mobile") || query.includes("phone") || query.includes("tablet")) {
+            return "Yes, SmartGen works great on mobile devices! The interface is fully responsive and automatically adapts to your screen size.";
+        }
+
+        if (query.includes("offline") || query.includes("internet")) {
+            return "Most SmartGen tools work offline after the initial page load. However, some tools that require external APIs may need an internet connection.";
+        }
+
+        // Check for contact page explicitly
+        if (query.includes("contact") || query.includes("reach out") || query.includes("get in touch")) {
+            const contactPage = this.sitemapData.find(page => page.path.includes("/contact/"));
+            if (contactPage) {
+                return `You can reach us through our <a href="${contactPage.loc}" target="_blank" rel="noopener noreferrer">Contact Us page</a>.`;
+            }
+        }
+
+        // Default response
+        return "I'm not sure about that. Could you rephrase your question? You can also visit our Help page or contact us for more information.";
     }
 
     addMessageToChat(message, sender) {
         const messagesContainer = document.getElementById("chatbot-messages");
+        
         const messageDiv = document.createElement("div");
-        messageDiv.className = `chatbot-message \${sender}-message`;
+        messageDiv.className = `chatbot-message ${sender}-message`;
+        
         const contentDiv = document.createElement("div");
         contentDiv.className = "message-content";
-        
-        contentDiv.innerHTML = message;
+        contentDiv.innerHTML = message; // Use innerHTML to render links
         
         messageDiv.appendChild(contentDiv);
         messagesContainer.appendChild(messageDiv);
+
+        // Auto-scroll to bottom
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+        // Remove quick replies if bot message
+        if (sender === "bot") {
+            const quickReplies = messagesContainer.querySelector(".quick-replies");
+            if (quickReplies) {
+                quickReplies.remove();
+            }
+        }
     }
 }
 
-// Initialize
+// Initialize chatbot when DOM is ready
 if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => new SmartGenChatbot());
+    document.addEventListener("DOMContentLoaded", () => {
+        new SmartGenChatbot();
+    });
 } else {
     new SmartGenChatbot();
 }
