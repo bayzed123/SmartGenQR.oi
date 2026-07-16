@@ -34,6 +34,11 @@ jobs:
         
       - name: Build Blog HTML & JSON
         run: npm run build
+
+      - name: Inject Groq API Key
+        run: sed -i 's|__GROQ_API_KEY__|<LaTex>${{ secrets.GROQ_API_KEY }}|g' assets/js/chatbot.js
+        env:
+          GROQ_API_KEY: $</LaTex>{{ secrets.GROQ_API_KEY }}
         
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
