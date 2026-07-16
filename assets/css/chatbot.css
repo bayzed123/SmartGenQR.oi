@@ -170,6 +170,39 @@
     background: var(--chatbot-background);
 }
 
+.chatbot-typing-indicator {
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.chatbot-typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: var(--chatbot-text-muted);
+    border-radius: 50%;
+    animation: typing 1s infinite ease-in-out;
+}
+
+.chatbot-typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.chatbot-typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-5px); opacity: 1; }
+}
+
+.chatbot-link {
+    color: var(--chatbot-primary);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+[data-theme="dark"] .chatbot-link {
+    color: var(--chatbot-accent);
+}
+
 .chatbot-messages::-webkit-scrollbar {
     width: 6px;
 }
