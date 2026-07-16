@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
+    <link rel="preconnect" href="https://api.imgbb.com" crossorigin>
     <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
-    <meta name="description" content="Upload your image and get a shareable URL link instantly. Create temporary links for your photos to share on social media, forums, websites, ...">
+    <noscript><link rel="stylesheet" href="../assets/css/style.css"></noscript>
+    
+    <meta name="description" content="Generate a permanent, shareable picture URL instantly. Upload images securely via our free image link generator and get direct links, HTML, and Markdown code.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,557 +17,642 @@
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <link rel="canonical" href="https://smartgentools.com/picture-url-generator/">
-    <title>Image Link Generator - Create URLs for Pictures</title>
+    
+    <title>Free Picture URL Generator - Create Image Links Instantly</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    
     <style>
-        .generator-container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        :root {
+            --ui-bg: #090e17;
+            --ui-surface: #121826;
+            --ui-surface-hover: #1b2438;
+            --ui-border: #232d42;
+            --ui-accent: #00e5ff;
+            --ui-accent-glow: rgba(0, 229, 255, 0.2);
+            --ui-text: #f8fafc;
+            --ui-text-dim: #94a3b8;
+            --ui-success: #22c55e;
+            --ui-danger: #ef4444;
+            --font-display: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'Fira Code', ui-monospace, monospace;
         }
 
+        body { background: var(--ui-bg); color: var(--ui-text); font-family: var(--font-display); line-height: 1.6;}
+        .generator-container { max-width: 900px; margin: 4rem auto; padding: 0 1.5rem; }
+        
+        /* HERO SECTION */
+        .hero-section { text-align: center; margin-bottom: 3.5rem; }
+        .hero-section h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+        .hero-section h1 span { color: var(--ui-accent); text-shadow: 0 0 20px var(--ui-accent-glow); }
+        .hero-section p { color: var(--ui-text-dim); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        
+        /* TOOL SECTION */
         .tool-section {
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background: var(--ui-surface);
+            border: 1px solid var(--ui-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3rem;
         }
 
         .upload-area {
-            border: 3px dashed #3b82f6;
-            border-radius: 8px;
-            padding: 2rem;
+            border: 2px dashed var(--ui-border);
+            border-radius: 12px;
+            padding: 3rem 2rem;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s ease;
-            background: var(--bg-primary);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(9, 14, 23, 0.5);
         }
-
-        .upload-area:hover {
-            border-color: #8b5cf6;
-            background: rgba(139, 92, 246, 0.05);
+        .upload-area:hover, .upload-area.dragover {
+            border-color: var(--ui-accent);
+            background: var(--ui-accent-glow);
         }
-
-        .upload-area.dragover {
-            border-color: #8b5cf6;
-            background: rgba(139, 92, 246, 0.1);
-        }
-
         .upload-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            width: 64px; height: 64px; margin: 0 auto 1.5rem;
+            background: var(--ui-surface-hover); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            border: 1px solid var(--ui-border);
         }
+        .upload-text { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--ui-text); }
+        .upload-hint { font-family: var(--font-mono); font-size: 0.85rem; color: var(--ui-text-dim); }
+        
+        .hidden { display: none !important; }
 
-        .upload-text {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
+        /* PREVIEW & OUTPUT */
+        .preview-section { margin-top: 1rem; }
+        .url-box {
+            background: #000; border: 1px solid var(--ui-border);
+            border-radius: 8px; padding: 1rem;
+            font-family: var(--font-mono); font-size: 0.9rem;
+            color: var(--ui-accent); word-break: break-all;
+            display: flex; justify-content: space-between; align-items: center; gap: 1rem;
         }
-
-        .upload-hint {
-            font-size: 0.9rem;
-            color: #8b5cf6;
+        
+        .btn {
+            padding: 0.8rem 1.5rem; border: none; border-radius: 8px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
+            font-family: var(--font-display); white-space: nowrap;
         }
+        .btn-primary { background: var(--ui-accent); color: #000; }
+        .btn-primary:hover { box-shadow: 0 0 15px var(--ui-accent-glow); transform: translateY(-1px); }
+        .btn-secondary { background: var(--ui-surface-hover); color: var(--ui-text); border: 1px solid var(--ui-border); }
+        .btn-secondary:hover { background: var(--ui-border); }
+        
+        .status-message { padding: 1rem; border-radius: 8px; margin-top: 1.5rem; font-weight: 500; font-family: var(--font-mono); font-size: 0.9rem;}
+        .status-success { background: rgba(34, 197, 94, 0.1); color: var(--ui-success); border: 1px solid var(--ui-success); }
+        .status-error { background: rgba(239, 68, 68, 0.1); color: var(--ui-danger); border: 1px solid var(--ui-danger); }
 
-        #imageInput {
-            display: none;
-        }
+        .image-preview { max-width: 100%; height: auto; max-height: 250px; border-radius: 8px; border: 1px solid var(--ui-border); margin-bottom: 1.5rem; }
 
-        .preview-section {
-            display: none;
-            margin-top: 2rem;
-        }
+        /* TABS */
+        .format-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;}
+        .format-tab { background: transparent; border: 1px solid var(--ui-border); color: var(--ui-text-dim); padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; transition: 0.2s;}
+        .format-tab:hover { border-color: var(--ui-accent); color: var(--ui-text); }
+        .format-tab.active { background: var(--ui-surface-hover); color: var(--ui-text); border-color: var(--ui-accent); }
 
-        .preview-section.active {
-            display: block;
-        }
-
-        .image-preview {
-            max-width: 100%;
-            max-height: 300px;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .url-output {
-            background: var(--bg-primary);
-            border: 1px solid #3b82f6;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            word-break: break-all;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            color: var(--text-primary);
-        }
-
-        .button-group {
+        /* TRUST CENTER & PRIVACY BADGE (NEW) */
+        .trust-badges {
             display: flex;
-            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--ui-border);
+            font-size: 0.85rem;
+            color: var(--ui-text-dim);
             flex-wrap: wrap;
         }
-
-        .btn {
-            flex: 1;
-            min-width: 150px;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .trust-badge-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .trust-badges a {
+            color: var(--ui-text-dim);
+            text-decoration: none;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .trust-badges a:hover {
+            color: var(--ui-accent);
+            text-shadow: 0 0 8px var(--ui-accent-glow);
+        }
+        .trust-badges svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        .btn-primary {
-            background: #3b82f6;
-            color: white;
-        }
+        /* PREMIUM WORKFLOW MICRO-UI */
+        .premium-workflow { margin: 4rem 0; padding: 4rem 2rem; background: linear-gradient(180deg, var(--ui-surface) 0%, #05080f 100%); border: 1px solid var(--ui-border); border-radius: 20px; }
+        .pw-header { text-align: center; margin-bottom: 4rem; }
+        .pw-header h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); color: #fff; margin-bottom: 1rem; }
+        .pw-header p { color: var(--ui-text-dim); font-size: 1.1rem; }
 
-        .btn-primary:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-        }
+        .pw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .pw-step { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 1.5rem; position: relative; transition: all 0.3s ease; }
+        .pw-step:hover { background: rgba(255,255,255,0.04); border-color: rgba(0, 229, 255, 0.3); transform: translateY(-5px); }
 
-        .btn-secondary {
-            background: #8b5cf6;
-            color: white;
-        }
+        .pw-visual { height: 140px; background: #090e17; border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.05); position: relative; }
 
-        .btn-secondary:hover {
-            background: #7c3aed;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-        }
+        /* Micro UI Animations */
+        .mock-window { width: 75%; height: 65%; background: var(--ui-surface); border: 1px solid var(--ui-border); border-radius: 8px; display: flex; flex-direction: column; overflow: hidden;}
+        .mock-head { height: 14px; background: rgba(0,0,0,0.5); border-bottom: 1px solid var(--ui-border); display: flex; align-items: center; gap: 4px; padding: 0 8px; }
+        .mock-dot { width: 5px; height: 5px; border-radius: 50%; background: #475569; }
+        .mock-body { flex: 1; padding: 8px; display: flex; align-items: center; justify-content: center; }
+        .mock-drop { width: 100%; height: 100%; border: 1px dashed var(--ui-accent); border-radius: 4px; background: var(--ui-accent-glow); display: flex; align-items: center; justify-content: center; }
+        .mock-pic { width: 24px; height: 20px; border: 2px solid var(--ui-accent); border-radius: 3px; position: relative; animation: floatObj 3s ease-in-out infinite; }
+        .mock-pic::after { content: ''; position: absolute; bottom: 2px; left: 2px; right: 2px; height: 8px; background: var(--ui-accent); clip-path: polygon(0 100%, 30% 30%, 60% 80%, 80% 50%, 100% 100%); }
 
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 1rem;
-        }
+        .mock-server { display: flex; flex-direction: column; gap: 8px; width: 65%; position: relative;}
+        .mock-blade { height: 20px; background: var(--ui-surface); border: 1px solid var(--ui-border); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; justify-content: flex-end; }
+        .mock-blade.active { border-color: var(--ui-accent); box-shadow: 0 0 15px var(--ui-accent-glow); }
+        .mock-light { width: 4px; height: 4px; border-radius: 50%; background: var(--ui-accent); animation: blink 1s infinite; }
+        .mock-progress { width: 60%; height: 4px; background: rgba(0,0,0,0.5); border-radius: 2px; margin-right: auto; overflow: hidden;}
+        .mock-bar { height: 100%; background: var(--ui-accent); animation: loadBar 2s infinite; }
+        .mock-lock { position: absolute; left: -10px; top: -10px; font-size: 16px; animation: floatObj 3s ease-in-out infinite reverse; text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);}
 
-        .loading.active {
-            display: block;
-        }
+        .mock-code { width: 80%; padding: 12px; background: #000; border: 1px solid var(--ui-border); border-radius: 6px; display: flex; flex-direction: column; gap: 8px; }
+        .mock-line { height: 6px; background: #334155; border-radius: 3px; }
+        .mock-line.accent { background: var(--ui-accent); opacity: 0.9; animation: pulse 2s infinite; }
+        .w-full { width: 100%; } .w-3-4 { width: 75%; } .w-1-2 { width: 50%; }
 
-        .spinner {
-            border: 4px solid rgba(59, 130, 246, 0.2);
-            border-top: 4px solid #3b82f6;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
-        }
+        .mock-toast { background: var(--ui-surface); border: 1px solid var(--ui-success); border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 8px 20px rgba(34, 197, 94, 0.15); animation: toastSlide 4s infinite; }
+        .mock-check { width: 20px; height: 20px; background: var(--ui-success); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-size: 12px; font-weight: bold; }
+        .mock-text { display: flex; flex-direction: column; gap: 4px; }
+        .mt-title { height: 5px; width: 50px; background: #fff; border-radius: 2px; }
+        .mt-sub { height: 4px; width: 70px; background: #475569; border-radius: 2px; }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        @keyframes floatObj { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+        @keyframes loadBar { 0% { width: 0; } 100% { width: 100%; } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        @keyframes toastSlide { 0%, 100% { transform: translateY(15px); opacity: 0; } 15%, 85% { transform: translateY(0); opacity: 1; } }
 
-        .status-message {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            display: none;
-        }
+        .pw-num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: var(--ui-accent); color: #000; font-weight: 800; font-size: 0.85rem; border-radius: 50%; margin-bottom: 1rem; }
+        .pw-content h3 { color: #fff; font-size: 1.05rem; margin: 0 0 0.4rem; }
+        .pw-content p { color: var(--ui-text-dim); font-size: 0.85rem; line-height: 1.5; margin: 0;}
 
-        .status-message.active {
-            display: block;
-        }
+        /* SEO CONTENT & FAQ */
+        .seo-content { margin: 4rem 0; padding: 2rem; background: var(--ui-surface); border-radius: 16px; border: 1px solid var(--ui-border); }
+        .seo-content h2 { font-size: 1.8rem; color: #fff; margin-bottom: 1rem; }
+        .seo-content h3 { font-size: 1.4rem; color: #fff; margin: 2rem 0 1rem; }
+        .seo-content p { margin-bottom: 1rem; color: var(--ui-text-dim); }
+        .seo-content ul { padding-left: 1.5rem; color: var(--ui-text-dim); margin-bottom: 1.5rem; }
+        .seo-content li { margin-bottom: 0.5rem; }
 
-        .status-success {
-            background: rgba(34, 197, 94, 0.1);
-            color: #22c55e;
-            border: 1px solid #22c55e;
-        }
+        .faq-item { background: rgba(255,255,255,0.02); border: 1px solid var(--ui-border); border-radius: 8px; margin-bottom: 1rem; overflow: hidden;}
+        .faq-header { width: 100%; text-align: left; background: none; border: none; padding: 1.2rem; font-size: 1rem; font-weight: 600; color: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-display); }
+        .faq-icon { transition: transform 0.3s ease; color: var(--ui-accent); }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+        .faq-content { padding: 0 1.2rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; color: var(--ui-text-dim); }
+        .faq-item.active .faq-content { padding: 0 1.2rem 1.2rem; max-height: 500px; }
 
-        .status-error {
-            background: rgba(239, 68, 68, 0.1);
-            color: #ef4444;
-            border: 1px solid #ef4444;
-        }
+        .ad-banner-space { border: 2px dashed var(--ui-border); padding: 2rem; text-align: center; border-radius: 12px; margin: 2rem 0; color: var(--ui-text-dim); }
 
-        .seo-content {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--bg-secondary);
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .premium-workflow { padding: 3rem 1.5rem; }
+            .pw-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .pw-step { display: flex; text-align: left; align-items: center; gap: 1.5rem; padding: 1.2rem; }
+            .pw-visual { width: 100px; height: 100px; margin-bottom: 0; flex-shrink: 0; }
+            .pw-num { margin-bottom: 0.5rem; }
+            .mock-toast { padding: 8px 12px; gap: 8px; }
+            .url-box { flex-direction: column; align-items: stretch; text-align: center; }
+            .trust-badges { flex-direction: column; gap: 1rem; }
         }
-
-        .seo-content h2 {
-            font-size: 1.8rem;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .seo-content h3 {
-            font-size: 1.3rem;
-            margin-top: 1.2rem;
-            margin-bottom: 0.8rem;
-            color: var(--text-primary);
-        }
-
-        .seo-content p {
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .faq-item {
-            background: var(--bg-secondary);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            border-left: 4px solid #3b82f6;
-        }
-
-        .faq-question {
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .faq-answer {
-            color: var(--text-secondary);
-            line-height: 1.6;
+        @media (max-width: 450px) {
+            .pw-step { flex-direction: column; text-align: center; gap: 1rem; }
+            .pw-visual { width: 100%; height: 120px; }
         }
     </style>
 
-    
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Image Link Generator - Create URLs for Pictures",
-  "description": "Upload your image and get a shareable URL link instantly. Create temporary links for your photos to share on social media, forums, websites, ...",
-  "url": "https://smartgentools.com/picture-url-generator/",
-  "applicationCategory": "Utility",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "creator": {
-    "@type": "Organization",
-    "name": "SmartGen",
-    "url": "https://smartgentools.com/"
-  }
-}
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free Picture URL Generator",
+      "description": "Upload an image and instantly generate a secure, permanent URL link.",
+      "url": "https://smartgentools.com/picture-url-generator/",
+      "applicationCategory": "Utility",
+      "operatingSystem": "All",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
     </script>
-    
-    
-    <script src="../assets/js/search-data.js" defer></script>
-    
-    <meta property="og:title" content="Image Link Generator - Create URLs for Pictures">
-    <meta property="og:description" content="Upload your image and get a shareable URL link instantly. Create temporary links for your photos to share on social media, forums, websites, ...">
-    <meta property="og:url" content="https://smartgentools.com/picture-url-generator/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://smartgentools.com/assets/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Image Link Generator - Create URLs for Pictures">
-    <meta name="twitter:description" content="Upload your image and get a shareable URL link instantly. Create temporary links for your photos to share on social media, forums, websites, ...">
-    <meta name="twitter:image" content="https://smartgentools.com/assets/og-image.png">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
 </head>
 <body>
     
     <header id="main-header"></header>
 
     <main class="generator-container">
-        <h1 style="text-align: center; margin-bottom: 0.5rem;">Picture URL Generator</h1>
-        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">Upload an image and get a direct live link instantly</p>
+        <section class="hero-section">
+            <h1>Picture <span>URL</span> Generator</h1>
+            <p>Securely upload your photo and generate a permanent, shareable link in seconds. No registration required.</p>
+        </section>
 
-        <div class="tool-section">
+        <section class="tool-section">
+            <!-- Upload Area -->
             <div class="upload-area" id="uploadArea">
-                <div class="upload-icon">📸</div>
-                <div class="upload-text"><strong>Click to upload or drag and drop</strong></div>
-                <div class="upload-hint">PNG, JPG, GIF or WebP (Max 32MB)</div>
-                <input type="file" id="imageInput" accept="image/*">
-            </div>
-
-            <div class="loading" id="loading">
-                <div class="spinner"></div>
-                <p>Uploading your image...</p>
-            </div>
-
-            <div class="status-message" id="statusMessage"></div>
-
-            <div class="preview-section" id="previewSection">
-                <div style="text-align: center; margin-bottom: 1.5rem;">
-                    <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Preview:</strong></p>
-                    <img id="imagePreview" class="image-preview" alt="Preview">
+                <div class="upload-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--ui-accent)" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                 </div>
-                <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Direct Image URL:</strong></p>
-                <div class="url-output" id="urlOutput"></div>
+                <div class="upload-text">Click to browse, drag & drop, or paste (Ctrl+V)</div>
+                <div class="upload-hint">Supports PNG, JPG, WEBP, GIF (Max 32MB)</div>
+                <input type="file" id="imageInput" accept="image/*" class="hidden">
+            </div>
+
+            <!-- Loader & Messages -->
+            <div id="loading" class="status-message hidden" style="text-align: center; color: var(--ui-accent);">
+                Processing secure connection to cloud server...
+            </div>
+            <div id="statusMessage" class="status-message hidden"></div>
+
+            <!-- Output Preview -->
+            <div class="preview-section hidden" id="previewSection">
+                <div style="text-align: center;">
+                    <img id="imagePreview" class="image-preview" alt="Uploaded File Preview">
+                </div>
                 
-                <div id="deleteUrlContainer" style="margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--text-secondary);">
-                    <p>Want to delete this image later? Save this <a id="deleteUrlOutput" href="#" target="_blank" rel="noopener noreferrer" style="color: #ef4444; text-decoration: underline;">delete link</a>.</p>
+                <div class="format-tabs" id="formatTabs">
+                    <button class="format-tab active" data-format="url">Direct Link</button>
+                    <button class="format-tab" data-format="html">HTML</button>
+                    <button class="format-tab" data-format="md">Markdown</button>
+                    <button class="format-tab" data-format="bb">BBCode</button>
                 </div>
 
-                <div class="button-group">
-                    <button class="btn btn-primary" id="copyBtn">📋 Copy URL</button>
-                    <button class="btn btn-secondary" id="resetBtn">🔄 Upload Another</button>
+                <div class="url-box">
+                    <span id="urlOutput" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></span>
+                    <button class="btn btn-primary" id="copyBtn" aria-label="Copy Link">Copy</button>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                    <a id="deleteUrlOutput" href="#" target="_blank" rel="noopener noreferrer" style="color: var(--ui-danger); font-size: 0.85rem; text-decoration: underline;">Permanently Delete Image</a>
+                    <button class="btn btn-secondary" id="resetBtn">Upload Another File</button>
                 </div>
             </div>
-        </div>
 
-        
-
-        <div class="seo-content">
-            <h2>What is a Picture URL Generator?</h2>
-            <p>A Picture URL Generator is an essential online tool that allows users to upload images and receive direct, shareable links instantly. This utility is invaluable for content creators, social media managers, developers, and anyone who needs to share images across the internet. Instead of manually hosting images on complex servers or dealing with cumbersome file management systems, our Picture URL Generator simplifies the entire process by providing instant, permanent links to your images.</p>
-
-            <h3>How Does the Picture URL Generator Work?</h3>
-            <p>Our Picture URL Generator uses advanced cloud technology to upload your images securely and provide you with a direct, permanent URL. Simply select or drag-and-drop your image file, and our system processes it instantly. Within seconds, you'll receive a shareable link that you can use anywhere—in emails, social media posts, websites, or documentation. The process is completely client-side, meaning your images are uploaded directly to our secure servers without any intermediate processing, ensuring maximum speed and privacy.</p>
-
-            <h3>Why Use Our Picture URL Generator?</h3>
-            <p>Our Picture URL Generator offers numerous advantages over traditional image hosting methods. First, it's incredibly fast—upload and get your link in seconds. Second, it's completely free and requires no registration or account creation. Third, the generated URLs are permanent and reliable, perfect for long-term use. Fourth, our tool supports multiple image formats including PNG, JPG, GIF, and WebP. Finally, the interface is intuitive and user-friendly, making it accessible to everyone regardless of technical expertise.</p>
-
-            <h2>Key Features of Our Picture URL Generator</h2>
-
-            <section class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-container">
-        <div class="accordion-item">
-            <button class="accordion-header">
-                <span>Is there a file size limit for image uploads?</span>
-                <div class="accordion-icon"></div>
-            </button>
-            <div class="accordion-content">
-                <p>Our Picture URL Generator supports images up to 32MB in size. This generous limit accommodates high-resolution photos, graphics, and other image types. For most users, this is more than sufficient for typical use cases including social media, web content, and documentation.</p>
+            <!-- TRUST CENTER & PRIVACY LINKS (NEW REQUIREMENT) -->
+            <div class="trust-badges">
+                <div class="trust-badge-item">
+                    <a href="https://smartgentools.com/trust-center/" target="_blank" rel="noopener noreferrer" aria-label="SmartGen Trust Center">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        Protected by SmartGen Trust Center
+                    </a>
+                </div>
+                <span style="color: var(--ui-border);">|</span>
+                <div class="trust-badge-item">
+                    <a href="https://smartgentools.com/privacy/" target="_blank" rel="noopener noreferrer" aria-label="Privacy Policy">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        Strict Privacy Policy Validated
+                    </a>
+                </div>
             </div>
+        </section>
+
+        <div class="ad-banner-space">
+            📢 Advertisement Space
         </div>
-        <div class="accordion-item">
-            <button class="accordion-header">
-                <span>How long will my image URL remain active?</span>
-                <div class="accordion-icon"></div>
-            </button>
-            <div class="accordion-content">
-                <p>The URLs generated by our Picture URL Generator are permanent and will remain active indefinitely. You can share these links with confidence, knowing they will continue to work for years to come. This makes our tool perfect for archival purposes, documentation, and long-term content storage.</p>
+
+        <!-- PREMIUM MICRO-UI WORKFLOW -->
+        <section class="premium-workflow">
+            <div class="pw-header">
+                <h2>How the URL Generator Works</h2>
+                <p>From image file to shareable web link in milliseconds.</p>
             </div>
-        </div>
-        <div class="accordion-item">
-            <button class="accordion-header">
-                <span>Can I use the generated URLs for commercial purposes?</span>
-                <div class="accordion-icon"></div>
-            </button>
-            <div class="accordion-content">
-                <p>Yes, absolutely! The URLs generated by our Picture URL Generator can be used for both personal and commercial purposes. Whether you're building a business website, creating marketing materials, or developing commercial applications, you can confidently use the generated URLs without any restrictions or licensing concerns.</p>
+
+            <div class="pw-grid">
+                <!-- Step 1 -->
+                <div class="pw-step">
+                    <div class="pw-visual">
+                        <div class="mock-window">
+                            <div class="mock-head">
+                                <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-drop"><div class="mock-pic"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pw-content">
+                        <span class="pw-num">1</span>
+                        <h3>Select Image</h3>
+                        <p>Upload a file or paste directly from your clipboard.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="pw-step">
+                    <div class="pw-visual">
+                        <div class="mock-server">
+                            <div class="mock-lock">🔒</div>
+                            <div class="mock-blade"><div class="mock-light"></div></div>
+                            <div class="mock-blade active">
+                                <div class="mock-progress"><div class="mock-bar"></div></div>
+                                <div class="mock-light"></div>
+                            </div>
+                            <div class="mock-blade"><div class="mock-light"></div></div>
+                        </div>
+                    </div>
+                    <div class="pw-content">
+                        <span class="pw-num">2</span>
+                        <h3>Secure Upload</h3>
+                        <p>File is encrypted and hosted on verified servers.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="pw-step">
+                    <div class="pw-visual">
+                        <div class="mock-code">
+                            <div class="mock-line w-full"></div>
+                            <div class="mock-line w-3-4"></div>
+                            <div class="mock-line w-1-2 accent"></div>
+                        </div>
+                    </div>
+                    <div class="pw-content">
+                        <span class="pw-num">3</span>
+                        <h3>Process Links</h3>
+                        <p>System generates direct URL, HTML, and Markdown code.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="pw-step">
+                    <div class="pw-visual">
+                        <div class="mock-toast">
+                            <div class="mock-check">✓</div>
+                            <div class="mock-text">
+                                <div class="mt-title"></div>
+                                <div class="mt-sub"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pw-content">
+                        <span class="pw-num">4</span>
+                        <h3>Copy & Share</h3>
+                        <p>Click copy and paste your permanent link anywhere.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-            <h2>Best Practices for Using Picture URL Generator</h2>
-            <p>To get the most out of our Picture URL Generator, consider these best practices. Always ensure your images are optimized for web use to maintain fast loading times. Use descriptive filenames when possible to help with organization and SEO. Test your generated URLs in different contexts to ensure they display correctly. Keep a record of important image URLs for future reference. Remember that while our service is reliable, it's always good practice to maintain backups of critical images on your own systems as well.</p>
+        <!-- SEO GUIDE & FAQ SECTION -->
+        <article class="seo-content">
+            <h2>The Ultimate Free Picture URL Generator Guide</h2>
+            <p>If you have ever needed to share a photo online but didn't know how to <strong>create a url for a picture</strong>, our tool is the perfect solution. The Picture URL Generator allows you to instantly <strong>upload an image to a link</strong> securely. Whether you are embedding images on a website, sharing on a forum, or managing e-commerce assets, our tool generates permanent, shareable links in seconds.</p>
 
-            <p>Whether you're a blogger, developer, marketer, or casual user, our Picture URL Generator is the perfect solution for quickly sharing images online. Try it today and experience the simplicity and convenience of instant image hosting!</p>
-        </div>
-    
-        
+            <h3>Step-by-Step Keyword Guide: How to Make a URL for an Image</h3>
+            <ul>
+                <li><strong>Locate the Upload Area:</strong> Use our <strong>free image link generator</strong> at the top of the page.</li>
+                <li><strong>Select Your File:</strong> Drag and drop your file or use the <kbd>Ctrl+V</kbd> paste function.</li>
+                <li><strong>Secure Cloud Processing:</strong> The image is instantly transmitted via a secure API connection to robust enterprise servers. This ensures your <strong>picture url</strong> is stable and permanent.</li>
+                <li><strong>Copy Formats:</strong> Within milliseconds, you receive a direct <strong>image web link</strong>, alongside ready-to-use HTML, Markdown, and BBCode formats.</li>
+            </ul>
 
-<article class="seo-content-container container mt-5 mb-5">
-            
+            <h3>Security, Privacy, and Trust</h3>
+            <p>Many tools claim 100% client-side processing, which is technically inaccurate for generating public URLs. For an image to be accessible via a web link, it <em>must</em> be hosted on a server. We prioritize your security by directly routing your uploads to verified hosting infrastructure. You are provided with a dedicated deletion link the moment you generate your link, giving you total control over your digital footprint. Learn more in our <a href="https://smartgentools.com/trust-center/" style="color: var(--ui-accent);">Trust Center</a>.</p>
+
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span>Is there a file size limit for image uploads?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                    </button>
+                    <div class="faq-content">
+                        <p>Yes. Our Picture URL Generator supports images up to 32MB in size. This accommodates high-resolution photos, web graphics, and screenshots without quality loss.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span>How long will my image URL remain active?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                    </button>
+                    <div class="faq-content">
+                        <p>The URLs generated by our system are permanent and will remain active indefinitely unless you choose to manually revoke access using the secure deletion link provided upon upload.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span>Are my uploaded pictures private?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                    </button>
+                    <div class="faq-content">
+                        <p>Links are unguessable, meaning only people you share the URL with can see the image. For comprehensive details on data handling, please refer to our <a href="https://smartgentools.com/privacy/" style="color:var(--ui-accent);">Privacy Policy</a>.</p>
+                    </div>
+                </div>
+            </div>
         </article>
-    
 
-        <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px; border-left: 5px solid #2563eb; padding-left: 20px;">What is Picture Url Generator?</h3>
-            <p>At its core, a <strong>Picture Url Generator</strong> is a specialized utility designed to solve a specific digital problem with speed and accuracy. Our implementation focuses on three pillars: <strong>Security, Speed, and Simplicity</strong>. Unlike many other online tools that require account creation or store your sensitive data on remote servers, SmartGen's Picture Url Generator operates entirely within your browser.</p>
-            <p style="margin-top: 15px;">This means that when you use our Picture Url Generator, your data never leaves your device. This "Client-Side" approach is the gold standard for modern web utilities, providing you with absolute privacy and peace of mind while maintaining lightning-fast performance.</p>
-        </section>
-
-        <section style="margin-bottom: 50px; background: #f8fafc; padding: 30px; border-radius: 20px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Why Choose SmartGen's Picture Url Generator?</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div style="padding: 15px;">
-                    <h4 style="color: #2563eb; margin-bottom: 10px;">🔒 100% Privacy</h4>
-                    <p style="font-size: 0.95rem;">No data is sent to any server. Everything happens locally in your browser.</p>
-                </div>
-                <div style="padding: 15px;">
-                    <h4 style="color: #2563eb; margin-bottom: 10px;">⚡ Instant Results</h4>
-                    <p style="font-size: 0.95rem;">Real-time processing ensures you see your output the moment you finish typing.</p>
-                </div>
-                <div style="padding: 15px;">
-                    <h4 style="color: #2563eb; margin-bottom: 10px;">🆓 Always Free</h4>
-                    <p style="font-size: 0.95rem;">No hidden costs, no premium versions, and no credit card required—ever.</p>
-                </div>
-            </div>
-        </section>
-
-        <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Mastering the Workflow: How to Use the Tool</h3>
-            <p>Using our <strong>Picture Url Generator</strong> is designed to be frictionless. Follow these simple steps to achieve professional results in seconds:</p>
-            <ol style="margin-top: 20px; padding-left: 25px;">
-                <li style="margin-bottom: 15px;"><strong>Data Entry:</strong> Locate the primary input field. This is where you will paste or type the information you wish to process. Our tool supports various data formats and will automatically attempt to sanitize your input.</li>
-                <li style="margin-bottom: 15px;"><strong>Configuration:</strong> If the tool has optional settings (such as formatting options, security levels, or size adjustments), you will find them clearly labeled. Adjust these to meet your specific requirements.</li>
-                <li style="margin-bottom: 15px;"><strong>Live Preview:</strong> As you interact with the tool, watch the output area. Our "Live-Sync" technology updates the result instantaneously. There is no need to wait for a page refresh.</li>
-                <li style="margin-bottom: 15px;"><strong>Export & Implementation:</strong> Once you are satisfied with the result, use the "Copy to Clipboard" button for quick use, or the "Download" button to save the result locally for future reference.</li>
-            </ol>
-        </section>
-
-        <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Advanced Strategies for Professionals</h3>
-            <p>To truly get the most out of a <strong>Picture Url Generator</strong>, you should integrate it into your broader digital workflow. Here are several advanced strategies used by industry experts:</p>
-            <div style="margin-top: 25px;">
-                <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
-                    <h4 style="color: #1a202c; margin-bottom: 10px;">1. Automation Integration</h4>
-                    <p>While our tool is designed for manual use, the logic behind it is consistent with industry standards. Use it to prototype data structures or links before implementing them in your automated scripts or marketing campaigns.</p>
-                </div>
-                <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
-                    <h4 style="color: #1a202c; margin-bottom: 10px;">2. Quality Assurance (QA)</h4>
-                    <p>Always use the Picture Url Generator as a final verification step. Before deploying a campaign or pushing code to production, run your data through the tool to ensure everything is formatted correctly and free of common errors.</p>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <h4 style="color: #1a202c; margin-bottom: 10px;">3. Privacy-First Workflows</h4>
-                    <p>In an era of increasing data regulation (like GDPR and CCPA), using client-side tools like ours helps you maintain compliance by ensuring sensitive client data never touches a third-party server during the processing phase.</p>
-                </div>
-            </div>
-        </section>
-
-        <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Frequently Asked Questions (FAQ)</h3>
-            <div style="margin-top: 20px;">
-                <div style="margin-bottom: 25px;">
-                    <p style="font-weight: 700; color: #1a202c;">Q: Is there a limit to how many times I can use the Picture Url Generator?</p>
-                    <p style="color: #4a5568;">A: Absolutely not. SmartGen provides unlimited access to all our tools. You can process as much data as you need, as often as you need, without any restrictions.</p>
-                </div>
-                <div style="margin-bottom: 25px;">
-                    <p style="font-weight: 700; color: #1a202c;">Q: Do I need to install any software or browser extensions?</p>
-                    <p style="color: #4a5568;">A: No. Our Picture Url Generator is a 100% web-based utility. It runs in any modern browser without the need for additional plugins, ensuring a lightweight and secure experience.</p>
-                </div>
-                <div style="margin-bottom: 25px;">
-                    <p style="font-weight: 700; color: #1a202c;">Q: Can I use this tool on my mobile phone?</p>
-                    <p style="color: #4a5568;">A: Yes! SmartGen is fully responsive. The interface adjusts perfectly to smartphones and tablets, allowing you to work on the go with the same level of precision as a desktop computer.</p>
-                </div>
-            </div>
-        </section>
-
-        <footer style="margin-top: 60px; padding-top: 30px; border-top: 2px solid #edf2f7; text-align: center;">
-            <p style="font-style: italic; color: #0052cc;">"SmartGen is dedicated to empowering digital professionals with high-performance, privacy-focused tools. Our mission is to make the web a more efficient and secure place for everyone."</p>
-            <p style="margin-top: 20px; font-weight: 700; color: #2563eb;">— Sayad Md Bayezid Hosan, Founder of SmartGen</p>
-        </footer>
-
-    </article>
-
-<section class="related-tools-smart" style="margin: 3rem 0; padding: 2rem; background: #f8fafc; border-radius: 20px; border: 1px solid #e2e8f0;">
-    <h3 style="font-size: 1.5rem; color: #1e293b; margin-bottom: 1.5rem;">🛠️ Related Professional Tools</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-        
-        <a href="/emi-calculator/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
-            <div style="font-size: 1.8rem;">🏦</div>
-            <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">EMI Calculator</h4>
-                <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Daily Utilities & Calculators</p>
-            </div>
-        </a>
-
-        <a href="/whatsapp-link/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
-            <div style="font-size: 1.8rem;">💬</div>
-            <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">WhatsApp Link</h4>
-                <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Marketing & Social Media</p>
-            </div>
-        </a>
-
-        <a href="/image-compressor/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
-            <div style="font-size: 1.8rem;">📉</div>
-            <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">Image Compressor</h4>
-                <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Daily Utilities & Calculators</p>
-            </div>
-        </a>
-
-    </div>
-</section>
-
-<section class="recommended-blogs-smart" style="margin: 3rem 0; padding: 2rem; background: #0f172a; border-radius: 20px; color: white;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <h3 style="font-size: 1.5rem; margin: 0;">📖 Recommended Reading</h3>
-        <a href="/blog/" style="color: #3b82f6; text-decoration: none; font-size: 0.9rem; font-weight: 600;">View All →</a>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-        
-        <a href="/blog/how-to-optimize-your-website-for-google-adsense-approval-in-2026/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
-            <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">AdSense Approval Guide</h4>
-                <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">The definitive roadmap to getting your website approved for Google AdSense in 2026.</p>
-            </div>
-        </a>
-
-        <a href="/blog/top-10-essential-free-seo-tools-for-digital-marketers-in-2026/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
-            <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">Top 10 SEO Tools</h4>
-                <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">Boost your search rankings with these essential free SEO utilities.</p>
-            </div>
-        </a>
-
-        <a href="/blog/the-ultimate-advanced-all-in-one-qr-code-generator-free-secure-and-100percent-client-side/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
-            <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">Ultimate QR Code Guide</h4>
-                <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">Master the art of generating secure, advanced QR codes for business and personal use.</p>
-            </div>
-        </a>
-
-    </div>
-</section>
-
-</section>
-
-</main>
+        <div id="dynamic-related-tools"></div>
+    </main>
 
     <footer id="main-footer"></footer>
 
-    <script src="../config/ad-config.js" defer></script>
-    <script src="../utils/ad-injector.js" defer></script>
-    <script src="../assets/js/app.js"></script>
-    <script src="script.js"></script>
-
-<!-- Cookie Consent Banner -->
-<div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e1e8ed; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 9999; display: none; padding: 1rem 0;">
-    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
-        <div style="flex: 1; min-width: 280px;">
-            <p style="margin: 0; font-size: 0.9rem; color: #4a5568; line-height: 1.5;">
-                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" style="color: #0052cc; text-decoration: underline;">Privacy Policy</a>.
+    <!-- COOKIE CONSENT BANNER -->
+    <div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #121826; border-top: 1px solid #232d42; z-index: 9999; display: none; padding: 1rem 0;">
+        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; max-width: 900px; margin: 0 auto; padding: 0 1.5rem;">
+            <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; flex: 1;">
+                We use cookies to improve your experience and serve personalized ads. <a href="/privacy/" style="color: var(--ui-accent);">Privacy Policy</a>.
             </p>
-        </div>
-        <div style="display: flex; align-items: center; gap: 1rem;">
-            <a href="/privacy/" style="font-size: 0.9rem; color: #0052cc; text-decoration: none; font-weight: 500;">Learn More About Our Privacy Policy</a>
-            <button id="accept-cookies" style="background: #0052cc; color: #ffffff; border: none; padding: 0.6rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Accept</button>
+            <button id="accept-cookies" class="btn btn-primary" style="padding: 0.5rem 1rem;">Accept</button>
         </div>
     </div>
-</div>
-<!-- Cookie logic handled by app.js -->
 
-<script>
-    // Lazy load Google Analytics on user interaction
-    (function() {
-        let gtag_loaded = false;
-        function loadGoogleAnalytics() {
-            if (gtag_loaded) return;
-            gtag_loaded = true;
-            
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-982HBP86V8');
-            
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
-            document.head.appendChild(script);
-        }
-        
-        // Trigger on first user interaction
-        ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
-            document.addEventListener(event, loadGoogleAnalytics, { once: true });
+    <!-- CORE JAVASCRIPT LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const IMGBB_API_KEY = '714d7f0a23dac6b1a4d3728583280179';
+
+            const uploadArea = document.getElementById('uploadArea');
+            const imageInput = document.getElementById('imageInput');
+            const loading = document.getElementById('loading');
+            const statusMessage = document.getElementById('statusMessage');
+            const previewSection = document.getElementById('previewSection');
+            const imagePreview = document.getElementById('imagePreview');
+            const urlOutput = document.getElementById('urlOutput');
+            const deleteUrlOutput = document.getElementById('deleteUrlOutput');
+            const copyBtn = document.getElementById('copyBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const formatTabs = document.querySelectorAll('.format-tab');
+            const faqHeaders = document.querySelectorAll('.faq-header');
+
+            let currentDirectUrl = '';
+            let currentFileName = 'image';
+
+            // Upload Events
+            uploadArea.addEventListener('click', () => imageInput.click());
+            uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('dragover'); });
+            uploadArea.addEventListener('dragleave', () => { uploadArea.classList.remove('dragover'); });
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                if (e.dataTransfer.files.length > 0) handleImageUpload(e.dataTransfer.files[0]);
+            });
+
+            imageInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) handleImageUpload(e.target.files[0]);
+            });
+
+            document.addEventListener('paste', (e) => {
+                const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+                for (let item of items) {
+                    if (item.type.indexOf('image') === 0) {
+                        handleImageUpload(item.getAsFile());
+                        break;
+                    }
+                }
+            });
+
+            // Tabs & Output Formatting
+            formatTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    formatTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    updateOutputFormat(tab.dataset.format);
+                });
+            });
+
+            copyBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(urlOutput.textContent).then(() => {
+                    const ogText = copyBtn.textContent;
+                    copyBtn.textContent = 'Copied!';
+                    copyBtn.style.background = 'var(--ui-success)';
+                    copyBtn.style.color = '#000';
+                    setTimeout(() => { 
+                        copyBtn.textContent = ogText; 
+                        copyBtn.style.background = '';
+                        copyBtn.style.color = '';
+                    }, 2000);
+                });
+            });
+
+            resetBtn.addEventListener('click', () => {
+                imageInput.value = '';
+                previewSection.classList.add('hidden');
+                statusMessage.classList.add('hidden');
+                uploadArea.classList.remove('hidden');
+            });
+
+            // FAQ Accordion Logic
+            faqHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.parentElement;
+                    const isActive = item.classList.contains('active');
+                    
+                    document.querySelectorAll('.faq-item').forEach(faq => {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-header').setAttribute('aria-expanded', 'false');
+                    });
+
+                    if (!isActive) {
+                        item.classList.add('active');
+                        header.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // Core Upload Logic
+            async function handleImageUpload(file) {
+                if (!file.type.startsWith('image/')) return showStatus('Please select a valid image file', 'error');
+                if (file.size > 32 * 1024 * 1024) return showStatus('File size exceeds 32MB limit', 'error');
+
+                currentFileName = file.name ? file.name.split('.')[0] : 'image';
+                
+                loading.classList.remove('hidden');
+                statusMessage.classList.add('hidden');
+                uploadArea.classList.add('hidden');
+
+                try {
+                    const formData = new FormData();
+                    formData.append('image', file);
+
+                    const response = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        currentDirectUrl = data.data.url;
+                        imagePreview.src = currentDirectUrl;
+                        deleteUrlOutput.href = data.data.delete_url;
+                        
+                        updateOutputFormat('url'); 
+                        formatTabs.forEach(t => t.classList.remove('active'));
+                        formatTabs[0].classList.add('active');
+
+                        loading.classList.add('hidden');
+                        previewSection.classList.remove('hidden');
+                        showStatus('Image uploaded successfully!', 'success');
+                    } else {
+                        throw new Error(data.error?.message || 'Unknown error');
+                    }
+                } catch (error) {
+                    loading.classList.add('hidden');
+                    uploadArea.classList.remove('hidden');
+                    showStatus('Upload failed: ' + error.message, 'error');
+                }
+            }
+
+            function updateOutputFormat(format) {
+                if (!currentDirectUrl) return;
+                switch(format) {
+                    case 'html': urlOutput.textContent = `<img src="${currentDirectUrl}" alt="${currentFileName}">`; break;
+                    case 'md': urlOutput.textContent = `![${currentFileName}](${currentDirectUrl})`; break;
+                    case 'bb': urlOutput.textContent = `[img]${currentDirectUrl}[/img]`; break;
+                    default: urlOutput.textContent = currentDirectUrl;
+                }
+            }
+
+            function showStatus(message, type) {
+                statusMessage.textContent = message;
+                statusMessage.className = `status-message status-${type}`;
+                setTimeout(() => statusMessage.classList.add('hidden'), type === 'error' ? 5000 : 3000);
+            }
         });
-    })();
-</script>
 
+        // Cookie Consent Logic
+        (function() {
+            const banner = document.getElementById('cookie-consent-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            if (!localStorage.getItem('cookie-consent-accepted')) banner.style.display = 'block';
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem('cookie-consent-accepted', 'true');
+                banner.style.display = 'none';
+            });
+        })();
+        
+        // Lazy Load Tracking (Lighthouse Optimization)
+        ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
+            document.addEventListener(event, function loadTrackers() {
+                if(window.trackersLoaded) return; window.trackersLoaded = true;
+                // Adsense
+                const adScript = document.createElement('script');
+                adScript.async = true;
+                adScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068';
+                adScript.crossOrigin = 'anonymous';
+                document.head.appendChild(adScript);
+                // Google Analytics
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-982HBP86V8');
+                const gaScript = document.createElement('script');
+                gaScript.async = true; gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
+                document.head.appendChild(gaScript);
+            }, { once: true });
+        });
+    </script>
 </body>
 </html>
