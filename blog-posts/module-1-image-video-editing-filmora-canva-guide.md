@@ -3,7 +3,7 @@ title: "MODULE 1: Basic Image and Video Editing — Complete Guide to Filmora an
 description: "A complete, step-by-step beginner's guide to basic image and video editing using Filmora for video editing and Canva for image content creation. Learn tools, features, and practical workflows in this digital marketing course module."
 keywords: "filmora tutorial, canva tutorial, video editing for beginners, image editing for beginners, filmora for beginners, canva for digital marketing, basic video editing guide, basic image editing guide, content creation tools, smartgen"
 date: 2026-06-30
-image: "https://smartgentools.com/blog-posts/images/smartgen-module-1-filmora-canva-cover.svg
+image: "https://smartgentools.com/blog-posts/images/smartgen-module-1-filmora-canva-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
