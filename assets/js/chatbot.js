@@ -1,11 +1,13 @@
-// SmartGen Advanced AI Chatbot - Integrated with Groq API
+// SmartGen Advanced AI Chatbot - Pure Client-side with Groq API
 class SmartGenChatbot {
     constructor() {
         this.faqData = [];
         this.sitemapData = [];
         this.isOpen = false;
         this.conversationHistory = [];
-        this.apiEndpoint = "https://smartgen-chatbot-api.vercel.app/api/chat"; // Replace with your real backend URL
+        // Placeholder for Groq API Key - will be replaced by GitHub Actions
+        this.groqApiKey = "__GROQ_API_KEY__"; 
+        this.groqApiEndpoint = "https://api.groq.com/openai/v1/chat/completions";
         this.init();
     }
 
@@ -23,7 +25,6 @@ class SmartGenChatbot {
 
     async loadFAQ() {
         try {
-            // Use absolute path to ensure it works from any page
             const response = await fetch("/data/faq.json");
             if (!response.ok) throw new Error("Failed to load FAQ data");
             const data = await response.json();
@@ -63,7 +64,6 @@ class SmartGenChatbot {
     }
 
     createChatbotUI() {
-        // Remove existing if any
         const existing = document.getElementById("smartgen-chatbot");
         if (existing) existing.remove();
 
@@ -80,14 +80,14 @@ class SmartGenChatbot {
                     <div class="chatbot-header">
                         <div class="chatbot-header-content">
                             <h3>SmartGen AI Assistant</h3>
-                            <p>Powered by Groq • Online</p>
+                            <p>Powered by Groq • Client-side</p>
                         </div>
                         <button class="chatbot-close-btn" id="chatbot-close" title="Close chat">✕</button>
                     </div>
                     <div class="chatbot-messages" id="chatbot-messages">
                         <div class="chatbot-message bot-message">
                             <div class="message-content">
-                                <p>👋 Hello! I'm your SmartGen AI Assistant. I can help you find tools, answer questions, and provide direct links from our platform. How can I assist you today?</p>
+                                <p>👋 Hello! I\'m your SmartGen AI Assistant. I can help you find tools, answer questions, and provide direct links from our platform. How can I assist you today?</p>
                                 <div class="quick-replies">
                                     <button class="quick-reply-btn">What is SmartGen?</button>
                                     <button class="quick-reply-btn">Show me SEO tools</button>
@@ -122,7 +122,6 @@ class SmartGenChatbot {
             if (e.key === "Enter") this.sendMessage();
         });
 
-        // Delegate quick reply clicks
         document.addEventListener("click", (e) => {
             if (e.target.classList.contains("quick-reply-btn")) {
                 input.value = e.target.textContent;
@@ -153,14 +152,13 @@ class SmartGenChatbot {
         input.value = "";
         this.addMessageToChat(message, "user");
         
-        // Show typing indicator
         const typingIndicator = document.getElementById("chatbot-typing");
         typingIndicator.style.display = "flex";
 
         try {
-            const response = await this.getAIResponse(message);
+            const aiResponse = await this.getAIResponse(message);
             typingIndicator.style.display = "none";
-            this.addMessageToChat(response, "bot");
+            this.addMessageToChat(aiResponse, "bot");
         } catch (error) {
             typingIndicator.style.display = "none";
             console.error("AI Response Error:", error);
@@ -170,42 +168,88 @@ class SmartGenChatbot {
     }
 
     async getAIResponse(userMessage) {
-        // Prepare conversation history for the API
+        if (!this.groqApiKey || this.groqApiKey === "__GROQ_API_KEY__") {
+            console.error("Groq API Key not configured. Using fallback.");
+            return this.findFallbackAnswer(userMessage);
+        }
+
+        const knowledgeBase = this.buildKnowledgeBase();
+
+        const systemInstruction = `You are the official AI Assistant for 'SmartGen' — a free web tools platform by Connect with Bayezid. Your goal is to provide concise, smart, and highly engaging answers, always responding in the exact language the user is speaking.
+
+[VERIFIED PLATFORM DATA]:
+${knowledgeBase}
+
+Your Strict Rules:
+1. If a user asks about policies (About, Terms, Cookies, Privacy), answer accurately based on the [VERIFIED PLATFORM DATA].
+2. If a user asks for a specific tool, blog, or feature, provide a brief summary and MUST include the exact Direct Link from the verified data. Format links as standard HTML <a> tags.
+3. Do NOT invent or guess URLs. If a specific tool's link is not in the data, politely say you couldn't find the exact link and ask them to check the platform's menu.
+4. Keep your answers concise, smart, and highly engaging.
+5. Always respond in the exact language the user is speaking (e.g., reply in Bengali if asked in Bengali).
+6. Prioritize information from [VERIFIED PLATFORM DATA] over general knowledge.`;
+
         this.conversationHistory.push({ role: "user", content: userMessage });
         
+        const messages = [
+            { role: "system", content: systemInstruction },
+            ...this.conversationHistory.slice(-6)
+        ];
+
         try {
-            const response = await fetch(this.apiEndpoint, {
+            const response = await fetch(this.groqApiEndpoint, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Authorization": `Bearer ${this.groqApiKey}`,
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify({
-                    messages: this.conversationHistory.slice(-6) // Send last 6 messages
+                    model: "llama-3.1-8b-instant",
+                    messages: messages,
+                    temperature: 0.4,
+                    max_tokens: 800,
+                    top_p: 0.9
                 })
             });
 
-            if (!response.ok) throw new Error("API request failed");
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(\`Groq API Error: \${response.status} - \${errorData.error.message}\`);
+            }
             
             const data = await response.json();
-            const aiMessage = data.response;
+            const aiMessage = data.choices[0].message.content.trim();
             
             this.conversationHistory.push({ role: "assistant", content: aiMessage });
-            return this.formatLinks(aiMessage);
+            return aiMessage;
         } catch (error) {
+            console.error("Groq API Call Error:", error);
             throw error;
         }
     }
 
-    formatLinks(text) {
-        // Convert URLs to clickable links if the AI didn't format them as Markdown
-        const urlRegex = /(https?:\/\/[^\s]+)/g;
-        return text.replace(urlRegex, (url) => {
-            return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="chatbot-link">${url}</a>`;
-        });
+    buildKnowledgeBase() {
+        const knowledgeParts = [];
+
+        if (this.sitemapData.length > 0) {
+            const sitemapLinks = this.sitemapData.map(item => `- [\${item.title}](\${item.loc})`).join("\\n");
+            knowledgeParts.push("Available Direct Links on SmartGen:\\n" + sitemapLinks);
+        }
+
+        if (this.faqData.length > 0) {
+            const faqText = this.faqData.map(faq => `Q: \${faq.question}\\nA: \${faq.answer}`).join("\\n\\n");
+            knowledgeParts.push("Frequently Asked Questions & Platform Policies:\\n" + faqText);
+        }
+
+        if (knowledgeParts.length === 0) {
+            return "SmartGen is a free tools platform with over 130+ utilities for developers and marketers.";
+        }
+
+        return knowledgeParts.join("\\n\\n");
     }
 
     findFallbackAnswer(userQuery) {
         const query = userQuery.toLowerCase();
         
-        // 1. Search FAQ Data
         let bestMatch = null;
         let maxScore = 0;
 
@@ -219,7 +263,6 @@ class SmartGenChatbot {
 
         if (maxScore > 0.6) return bestMatch;
 
-        // 2. Search Sitemap for relevant links
         const relevantLinks = this.sitemapData.filter(item => 
             query.includes(item.title.toLowerCase()) || 
             item.title.toLowerCase().includes(query)
@@ -228,18 +271,18 @@ class SmartGenChatbot {
         if (relevantLinks.length > 0) {
             let response = "I found some relevant pages on SmartGen for you:<br><ul>";
             relevantLinks.slice(0, 3).forEach(link => {
-                response += `<li><a href="${link.loc}" target="_blank">${link.title}</a></li>`;
+                response += `<li><a href="\${link.loc}" target="_blank">\${link.title}</a></li>`;
             });
             response += "</ul>";
             return response;
         }
 
-        return "I'm sorry, I'm having trouble connecting to my brain right now. SmartGen is a free all-in-one digital utility platform. How else can I help you?";
+        return "I\\'m sorry, I\\'m having trouble understanding. SmartGen is a free all-in-one digital utility platform. How else can I help you?";
     }
 
     calculateSimilarity(s1, s2) {
-        const words1 = s1.split(/\s+/);
-        const words2 = s2.split(/\s+/);
+        const words1 = s1.split(/\\s+/);
+        const words2 = s2.split(/\\s+/);
         const intersection = words1.filter(w => words2.includes(w));
         return intersection.length / Math.max(words1.length, words2.length);
     }
@@ -247,16 +290,11 @@ class SmartGenChatbot {
     addMessageToChat(message, sender) {
         const messagesContainer = document.getElementById("chatbot-messages");
         const messageDiv = document.createElement("div");
-        messageDiv.className = `chatbot-message ${sender}-message`;
+        messageDiv.className = `chatbot-message \${sender}-message`;
         const contentDiv = document.createElement("div");
         contentDiv.className = "message-content";
         
-        // Use innerHTML for bot messages to support links
-        if (sender === "bot") {
-            contentDiv.innerHTML = message;
-        } else {
-            contentDiv.textContent = message;
-        }
+        contentDiv.innerHTML = message;
         
         messageDiv.appendChild(contentDiv);
         messagesContainer.appendChild(messageDiv);
