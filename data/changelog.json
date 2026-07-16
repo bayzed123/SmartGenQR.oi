@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: Pure client-side AI chatbot logic",
+    "date": "2026-07-16T01:55:02Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: Upgrade chatbot to AI-powered with Groq API integration, sitemap knowledge, and typing indicator",
     "date": "2026-07-16T01:52:03Z",
     "description": "Platform improvement and optimization."
