@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640">
+<style>
+text{font-family:Arial,sans-serif}.t{font-size:54px;font-weight:700;fill:#fff}.s{font-size:24px;fill:#dbeafe}
+.i{stroke:#7dd3fc;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round;animation:f 4s ease-in-out infinite}
+@keyframes f{50%{transform:translateY(-8px)}} .p{animation:p 2s infinite}@keyframes p{50%{opacity:.35}}
+</style>
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#0f172a"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs>
+<rect width="1280" height="640" fill="url(#g)"/>
+<circle class="p" cx="1080" cy="120" r="70" fill="#38bdf8" opacity=".15"/>
+<circle class="p" cx="180" cy="500" r="90" fill="#60a5fa" opacity=".12"/>
+<text x="80" y="180" class="t">Introduction to</text>
+<text x="80" y="245" class="t">Online Digital Marketing</text>
+<text x="80" y="290" class="s">A Beginner's Guide • SmartGen</text>
+<g transform="translate(860 180)">
+<g class="i"><circle cx="60" cy="60" r="34"/><path d="M84 84l30 30"/></g>
+<g class="i" transform="translate(170 0)"><rect x="24" y="24" width="72" height="72" rx="10"/><path d="M24 42h72M42 96V24"/></g>
+<g class="i" transform="translate(0 170)"><path d="M20 90l28-32 24 18 42-50"/><path d="M18 108h100"/></g>
+<g class="i" transform="translate(170 170)"><rect x="18" y="30" width="86" height="58" rx="8"/><path d="M18 34l43 30 43-30"/></g>
+</g>
+<path d="M80 420H520" stroke="#60a5fa" stroke-width="3" opacity=".4"/>
+<text x="80" y="470" class="s">SEO • Content • Social • Email • Analytics</text>
+<text x="80" y="560" font-size="20" fill="#93c5fd">© 2026 SmartGen • Sayad Md Bayezid Hosan</text>
+</svg>
