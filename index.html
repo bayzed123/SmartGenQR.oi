@@ -1,184 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-    <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SmartGen - All-in-One Digital & Web Utility Platform</title>
-    <meta name="description" content="SmartGen provides free online tools like QR generators, SEO tools, and text utilities. Expert insights and professional web utilities for creators.">
+    <title>SmartGen - The Privacy-First Web Utility Platform</title>
+    <meta name="description" content="131+ free, client-side web utilities. SEO tools, QR generators, and developer docs with zero data tracking.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/feed.css">
     <link rel="stylesheet" href="./assets/css/chatbot.css">
     
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent: #ff8800;
+            --navy: #0f172a;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-600: #475569;
+            --slate-900: #0f172a;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--navy);
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: 10rem 0 8rem;
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(255, 136, 0, 0.05), transparent 40%);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--slate-100);
+            border: 1px solid var(--slate-200);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-title span {
+            background: linear-gradient(to right, var(--primary), #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--slate-600);
+            max-width: 750px;
+            margin: 0 auto 3.5rem;
+            line-height: 1.6;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn-main {
+            padding: 1.1rem 2.2rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--navy);
+            border: 2px solid var(--slate-200);
+        }
+
+        .btn-secondary:hover {
+            background: var(--slate-50);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            padding: 3rem 0;
+            border-top: 1px solid var(--slate-100);
+            border-bottom: 1px solid var(--slate-100);
+            background: white;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            text-align: center;
+        }
+
+        .trust-item h4 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+            color: var(--navy);
+        }
+
+        .trust-item p {
+            font-size: 0.9rem;
+            color: var(--slate-600);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        /* Category Grid */
+        .section-padding {
+            padding: 8rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .category-card {
+            background: white;
+            border: 1px solid var(--slate-200);
+            border-radius: 24px;
+            padding: 3rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.08);
+        }
+
+        .category-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--slate-50);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            transition: all 0.3s;
+        }
+
+        .category-card:hover .category-icon {
+            background: var(--primary);
+            color: white;
+        }
+
+        .category-card h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        .category-card p {
+            color: var(--slate-600);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-size: 1.05rem;
+            flex-grow: 1;
+        }
+
+        .category-link {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.1rem;
+        }
+
+        /* Style Guide Section */
+        .style-guide-section {
+            background: var(--navy);
+            color: white;
+            border-radius: 32px;
+            padding: 5rem;
+            margin-top: 4rem;
+        }
+
+        .color-swatch {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        /* Footer Links Enhancement */
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+            border-top: 1px solid var(--slate-100);
+        }
+
+        .footer-links a {
+            color: var(--slate-600);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -50px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        .floating-svg {
+            animation: float 15s ease-in-out infinite;
+            filter: blur(2px);
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <svg class="hero-bg-animation" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.15" />
+                    <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
+                </linearGradient>
+                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ff8800;stop-opacity:0.1" />
+                    <stop offset="100%" style="stop-color:#ff8800;stop-opacity:0" />
+                </linearGradient>
+            </defs>
+            <circle class="floating-svg" cx="150" cy="200" r="80" fill="url(#grad1)" />
+            <circle class="floating-svg" cx="850" cy="150" r="120" fill="url(#grad2)" style="animation-delay: -5s;" />
+            <rect class="floating-svg" x="700" y="700" width="100" height="100" rx="20" fill="url(#grad1)" style="animation-delay: -10s;" />
+            <path class="floating-svg" d="M100,700 L200,750 L150,850 Z" fill="url(#grad2)" style="animation-delay: -7s;" />
+        </svg>
+
+        <div class="container">
+            <div class="hero-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                Trusted by 10,000+ Professionals
+            </div>
+            <h1 class="hero-title">Your <span>Privacy-First</span><br>Digital Utility Hub</h1>
+            <p class="hero-subtitle">
+                Access 131+ professional web tools, SEO utilities, and developer guides. Everything runs locally in your browser—zero data tracking, zero server logs.
+            </p>
+            <div class="cta-group">
+                <a href="#tools" class="btn-main btn-primary">
+                    Explore All Tools
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="/docs/" class="btn-main btn-secondary">Read Documentation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <h4>131+</h4>
+                    <p>Free Web Tools</p>
+                </div>
+                <div class="trust-item">
+                    <h4>100%</h4>
+                    <p>Local Processing</p>
+                </div>
+                <div class="trust-item">
+                    <h4>Zero</h4>
+                    <p>Data Tracking</p>
+                </div>
+                <div class="trust-item">
+                    <h4>Open</h4>
+                    <p>Source Engine</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Categories -->
+    <section id="tools" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional tools for every workflow</h2>
+                <p class="hero-subtitle">Stop juggling dozens of tabs. SmartGen centralizes high-performance utilities in one secure, unified interface.</p>
+            </div>
+
+            <div class="category-grid">
+                <!-- SEO & Marketing -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3>SEO & Marketing</h3>
+                    <p>Audit your website, track <a href="/blog/dynamic-sitemap-generation-with-real-time-updates-the-complete-programmatic-seo-blueprint/" style="color: inherit; text-decoration: underline;">AI brand visibility</a>, and generate optimized meta tags that drive organic growth in 2026.</p>
+                    <a href="/seo-tools/" class="category-link">Explore SEO Tools →</a>
+                </div>
+
+                <!-- Developer Utilities -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <h3>Dev Utilities</h3>
+                    <p>JSON formatters, <a href="/base64-to-image/" style="color: inherit; text-decoration: underline;">Base64 converters</a>, and cryptographic hash generators. Fast, secure, and completely local.</p>
+                    <a href="/dev-tools/" class="category-link">Explore Dev Tools →</a>
+                </div>
+
+                <!-- Content & Design -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.5 1.5"/><path d="M7.08 3.17L20 16.08"/></svg>
+                    </div>
+                    <h3>Content & Design</h3>
+                    <p>High-speed <a href="/image-compressor/" style="color: inherit; text-decoration: underline;">image compressors</a>, CSS gradient generators, and fancy font creators to polish your digital presence.</p>
+                    <a href="/design-tools/" class="category-link">Explore Design Tools →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academy Section -->
+    <section class="section-padding" style="background: var(--slate-50);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">SmartGen Academy</h2>
+                <p class="hero-subtitle">Deep-dive guides and expert insights to help you master the digital landscape.</p>
+            </div>
+            
+            <div id="blog-feed" class="category-grid">
+                <!-- Existing feed.js will populate this -->
+                <div style="grid-column: 1/-1; text-align: center; color: var(--slate-600); padding: 4rem;">
+                    <div class="author-avatar" style="margin: 0 auto 1rem;">SG</div>
+                    Loading latest insights...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Style Guide -->
+    <section class="container section-padding">
+        <div class="style-guide-section">
+            <h2 style="font-size: 2.5rem; margin-bottom: 3rem; letter-spacing: -0.02em;">Brand Identity & Style Guide</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
+                <div>
+                    <div class="color-swatch" style="background: var(--primary);"></div>
+                    <p><strong>Primary Blue</strong><br><small>#2563eb - Trust & Action</small></p>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background: var(--accent);"></div>
+                    <p><strong>Accent Orange</strong><br><small>#ff8800 - Energy & Focus</small></p>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background: var(--navy);"></div>
+                    <p><strong>Deep Navy</strong><br><small>#0f172a - Authority</small></p>
+                </div>
+                <div>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
+                        <strong>Typography</strong><br>
+                        <span style="font-weight: 800;">Inter ExtraBold</span> (Headings)<br>
+                        <span style="font-weight: 400;">Inter Regular</span> (Body Content)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Enhancement -->
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-links">
+                <div>
+                    <h5 style="margin-bottom: 1rem;">Platform</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/sitemap.xml">Sitemap (XML)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 style="margin-bottom: 1rem;">Legal</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service/">Terms of Service</a></li>
+                        <li><a href="/cookies/">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 style="margin-bottom: 1rem;">Resources</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="/blog/">SmartGen Blog</a></li>
+                        <li><a href="/docs/">Documentation</a></li>
+                        <li><a href="https://github.com/bayzed123/SmartGenQR.oi">GitHub Repo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="./assets/js/app.js" defer></script>
     <script src="./assets/js/feed.js" defer></script>
     <script src="./assets/js/search-data.js" defer></script>
     <script src="./assets/js/search.js" defer></script>
     <script src="./assets/js/chatbot.js" defer></script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "SmartGen",
-        "url": "https://smartgentools.com/",
-        "publisher": {
-            "@type": "Organization",
-            "name": "SmartGen",
-            "logo": "https://smartgentools.com/assets/images/logo.png",
-            "founder": {
-                "@type": "Person",
-                "name": "Sayad Md Bayezid Hosan"
-            }
-        }
-    }
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Interactive background
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth/2) / 50;
+            const moveY = (e.clientY - window.innerHeight/2) / 50;
+            document.querySelectorAll('.floating-svg').forEach((svg, i) => {
+                const factor = (i + 1) * 0.5;
+                svg.style.transform = `translate(${moveX * factor}px, ${moveY * factor}px)`;
+            });
+        });
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
-
-    <style>
-        /* Cookie Consent Banner Styling */
-        #cookie-consent-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #ffffff;
-            border-top: 1px solid #e1e8ed;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-            z-index: 9999;
-            display: none;
-            padding: 1rem 0;
-        }
-        .cookie-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .cookie-text {
-            flex: 1;
-            min-width: 280px;
-            margin: 0;
-            font-size: 0.9rem;
-            color: #4a5568;
-            line-height: 1.5;
-        }
-        .cookie-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .cookie-btn {
-            background: #0052cc;
-            color: #ffffff;
-            border: none;
-            padding: 0.6rem 1.5rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .cookie-btn:hover {
-            background: #003d99;
-        }
-        .cookie-link {
-            font-size: 0.9rem;
-            color: #0052cc;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .cookie-link:hover {
-            text-decoration: underline;
-        }
-    </style>
-
-</head>
-<body>
-    <header id="main-header"></header>
-
-    <main>
-        <section class="hero" style="text-align: center; padding: 4rem 0 2rem; background: linear-gradient(180deg, rgba(37, 99, 235, 0.05) 0%, var(--background) 100%);">
-            <div class="container">
-                <h1 style="font-size: clamp(2.5rem, 8vw, 3.5rem); margin-bottom: 1rem; font-weight: 800; letter-spacing: -0.02em;">SmartGen Insights & Tools</h1>
-                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.6;">
-                    Professional web utilities and expert guides for developers, marketers, and creators. 100% Free & Open Source.
-                </p>
-                
-                <div id="live-search-container" style="max-width: 600px; margin: 0 auto;">
-                    <div class="search-wrapper">
-                        <span class="search-icon">🔍</span>
-                        <input type="text" id="search-input" placeholder="Search tools or articles..." autocomplete="off">
-                        <button id="search-clear" title="Clear search">✕</button>
-                    </div>
-                    <div id="search-results"></div>
-                </div>
-            </div>
-        </section>
-
-        <div class="container" style="display: flex; flex-direction: column; gap: 2rem; padding-bottom: 5rem;">
-            <!-- Feed Area -->
-            <div id="blog-feed" class="feed-container">
-                <div style="text-align: center; padding: 3rem;">
-                    <p>✨ Loading latest insights...</p>
-                </div>
-            </div>
-
-            <!-- E-E-A-T & Trust Badges -->
-            <section class="trust-badges-container">
-                <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Verified & Secure Platform</h2>
-                <p style="color: var(--text-secondary); font-size: 0.95rem;">SmartGen is built with transparency and user privacy at its core.</p>
-                
-                <div class="trust-badges-grid">
-                    <div class="trust-badge-item">
-                        <span class="trust-icon">🛡️</span>
-                        <span class="trust-text">Privacy First</span>
-                    </div>
-                    <div class="trust-badge-item">
-                        <span class="trust-icon">✅</span>
-                        <span class="trust-text">E-E-A-T Verified</span>
-                    </div>
-                    <div class="trust-badge-item">
-                        <span class="trust-icon">🔓</span>
-                        <span class="trust-text">Open Source</span>
-                    </div>
-                    <div class="trust-badge-item">
-                        <span class="trust-icon">⚡</span>
-                        <span class="trust-text">Client-Side Only</span>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer id="main-footer"></footer>
-
-
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent-banner">
-        <div class="cookie-container">
-            <p class="cookie-text">
-                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" class="cookie-link">Privacy Policy</a> and <a href="/cookies/" class="cookie-link">Cookie Policy</a>.
-            </p>
-            <div class="cookie-actions">
-                <a href="/privacy/" class="cookie-link">Learn More</a>
-                <button id="accept-cookies" class="cookie-btn">Accept</button>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Cookie logic handled by app.js -->
-
 </body>
 </html>
