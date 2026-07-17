@@ -706,6 +706,32 @@ body {
     }
 }
 
+/* ==================== STATS & VISUALIZATIONS ==================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .stat-card {
+    background: #1e293b;
+}
+
+.stat-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15);
+}
+
 /* Hide mobile menu on desktop */
 @media (min-width: 769px) {
     .mobile-only {

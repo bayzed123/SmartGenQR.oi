@@ -429,6 +429,113 @@
         </div>
     </section>
 
+    <!-- Platform Statistics & Visualizations -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Platform Insights & Analytics</h2>
+                <p class="hero-subtitle">Trusted by developers, marketers, and professionals worldwide.</p>
+            </div>
+
+            <div class="stats-grid">
+                <!-- Bar Chart: Tool Categories -->
+                <div class="stat-card">
+                    <h3 style="margin-bottom: 1.5rem; font-weight: 700; color: var(--text-primary);">Tool Distribution</h3>
+                    <svg viewBox="0 0 400 200" style="width: 100%; height: 200px;">
+                        <!-- Y-axis -->
+                        <line x1="40" y1="20" x2="40" y2="160" stroke="var(--border)" stroke-width="2"/>
+                        <!-- X-axis -->
+                        <line x1="40" y1="160" x2="380" y2="160" stroke="var(--border)" stroke-width="2"/>
+                        <!-- Bars -->
+                        <rect x="60" y="80" width="40" height="80" fill="#2563eb" rx="4"/>
+                        <rect x="120" y="60" width="40" height="100" fill="#7c3aed" rx="4"/>
+                        <rect x="180" y="100" width="40" height="60" fill="#ec4899" rx="4"/>
+                        <rect x="240" y="70" width="40" height="90" fill="#f97316" rx="4"/>
+                        <rect x="300" y="90" width="40" height="70" fill="#10b981" rx="4"/>
+                        <!-- Labels -->
+                        <text x="80" y="180" font-size="12" fill="var(--text-secondary)" text-anchor="middle">Dev</text>
+                        <text x="140" y="180" font-size="12" fill="var(--text-secondary)" text-anchor="middle">SEO</text>
+                        <text x="200" y="180" font-size="12" fill="var(--text-secondary)" text-anchor="middle">Marketing</text>
+                        <text x="260" y="180" font-size="12" fill="var(--text-secondary)" text-anchor="middle">Design</text>
+                        <text x="320" y="180" font-size="12" fill="var(--text-secondary)" text-anchor="middle">Utilities</text>
+                    </svg>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 1rem; text-align: center;">131+ Tools Across 5 Categories</p>
+                </div>
+
+                <!-- Line Chart: Growth Trend -->
+                <div class="stat-card">
+                    <h3 style="margin-bottom: 1.5rem; font-weight: 700; color: var(--text-primary);">Usage Trend</h3>
+                    <svg viewBox="0 0 400 200" style="width: 100%; height: 200px;">
+                        <!-- Grid lines -->
+                        <line x1="40" y1="40" x2="380" y2="40" stroke="var(--border)" stroke-width="1" stroke-dasharray="5,5"/>
+                        <line x1="40" y1="80" x2="380" y2="80" stroke="var(--border)" stroke-width="1" stroke-dasharray="5,5"/>
+                        <line x1="40" y1="120" x2="380" y2="120" stroke="var(--border)" stroke-width="1" stroke-dasharray="5,5"/>
+                        <!-- Y-axis -->
+                        <line x1="40" y1="20" x2="40" y2="160" stroke="var(--border)" stroke-width="2"/>
+                        <!-- X-axis -->
+                        <line x1="40" y1="160" x2="380" y2="160" stroke="var(--border)" stroke-width="2"/>
+                        <!-- Line chart -->
+                        <polyline points="60,120 120,100 180,70 240,50 300,35 360,30" stroke="#2563eb" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Points -->
+                        <circle cx="60" cy="120" r="4" fill="#2563eb"/>
+                        <circle cx="120" cy="100" r="4" fill="#2563eb"/>
+                        <circle cx="180" cy="70" r="4" fill="#2563eb"/>
+                        <circle cx="240" cy="50" r="4" fill="#2563eb"/>
+                        <circle cx="300" cy="35" r="4" fill="#2563eb"/>
+                        <circle cx="360" cy="30" r="4" fill="#2563eb"/>
+                        <!-- Labels -->
+                        <text x="60" y="180" font-size="12" fill="var(--text-secondary)" text-anchor="middle">Jan</text>
+                        <text x="120" y="180" font-size="12" fill="var(--text-secondary)" text-anchor="middle">Feb</text>
+                        <text x="180" y="180" font-size="12" fill="var(--text-secondary)" text-anchor="middle">Mar</text>
+                        <text x="240" y="180" font-size="12" fill="var(--text-secondary)" text-anchor="middle">Apr</text>
+                        <text x="300" y="180" font-size="12" fill="var(--text-secondary)" text-anchor="middle">May</text>
+                        <text x="360" y="180" font-size="12" fill="var(--text-secondary)" text-anchor="middle">Jun</text>
+                    </svg>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 1rem; text-align: center;">Monthly Active Users Growth</p>
+                </div>
+
+                <!-- Funnel Chart: User Journey -->
+                <div class="stat-card">
+                    <h3 style="margin-bottom: 1.5rem; font-weight: 700; color: var(--text-primary);">User Journey</h3>
+                    <svg viewBox="0 0 300 200" style="width: 100%; height: 200px;">
+                        <!-- Funnel stages -->
+                        <polygon points="50,30 250,30 220,70 80,70" fill="#2563eb" opacity="0.8"/>
+                        <polygon points="80,80 220,80 180,120 120,120" fill="#7c3aed" opacity="0.8"/>
+                        <polygon points="120,130 180,130 160,160 140,160" fill="#ec4899" opacity="0.8"/>
+                        <!-- Labels -->
+                        <text x="150" y="55" font-size="13" font-weight="600" fill="white" text-anchor="middle">Visitors: 10,000</text>
+                        <text x="150" y="105" font-size="13" font-weight="600" fill="white" text-anchor="middle">Active: 5,000</text>
+                        <text x="150" y="150" font-size="13" font-weight="600" fill="white" text-anchor="middle">Converted: 1,200</text>
+                    </svg>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 1rem; text-align: center;">Conversion Funnel Analysis</p>
+                </div>
+
+                <!-- Feature Highlights -->
+                <div class="stat-card">
+                    <h3 style="margin-bottom: 1.5rem; font-weight: 700; color: var(--text-primary);">Key Features</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#2563eb"><path d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span style="color: var(--text-primary);">100% Client-Side Processing</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span style="color: var(--text-primary);">Zero Data Tracking</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#f97316"><path d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span style="color: var(--text-primary);">Open Source Engine</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#ec4899"><path d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span style="color: var(--text-primary);">Continuously Updated</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Academy Section -->
     <section class="section-padding" style="background: var(--slate-50);">
         <div class="container">

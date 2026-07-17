@@ -50,7 +50,10 @@ function injectNavbar() {
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo">
-                    <div class="logo-icon">⚡</div>
+                    <svg class="logo-icon" width="32" height="32" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
+                        <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
+                    </svg>
                     SmartGen
                 </a>
                 <nav id="nav-links">
@@ -99,7 +102,10 @@ function injectNavbar() {
         <aside id="mobile-sidebar" class="mobile-sidebar">
             <div class="sidebar-header">
                 <a href="/" class="sidebar-logo">
-                    <div class="sidebar-logo-icon">⚡</div>
+                    <svg class="sidebar-logo-icon" width="28" height="28" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
+                        <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
+                    </svg>
                     SmartGen
                 </a>
                 <button id="sidebar-close" class="sidebar-close-btn" title="Close Menu">✕</button>
@@ -209,7 +215,10 @@ function injectFooter() {
             <div class="footer-top">
                 <div class="footer-brand-section">
                     <div class="footer-logo">
-                        <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.5rem;">⚡</div>
+                        <svg class="logo-icon" style="width: 40px; height: 40px;" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
+                            <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
+                        </svg>
                         <h3>SmartGen</h3>
                     </div>
                     <p class="footer-description">Fast, secure, and 100% free client-side web utilities for developers, marketers, and everyday users.</p>
