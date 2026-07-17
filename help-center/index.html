@@ -1,3 +1,243 @@
-Advice and answers from the Smartgen Team
-Building mode 
-Please wait for the update 🙏
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center & FAQ - SmartGen</title>
+    <meta name="description" content="Find answers to frequently asked questions about SmartGen tools, privacy, and usage.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/chatbot.css">
+    
+    <style>
+        .help-hero {
+            padding: 6rem 0 4rem;
+            background: var(--slate-50);
+            text-align: center;
+        }
+        
+        [data-theme="dark"] .help-hero {
+            background: #1e293b;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        [data-theme="dark"] .faq-item {
+            background: #1e293b;
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--text-primary);
+            user-select: none;
+        }
+        
+        .faq-question:hover {
+            background: var(--slate-50);
+        }
+        
+        [data-theme="dark"] .faq-question:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-question {
+            color: var(--primary);
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .help-search {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            position: relative;
+        }
+        
+        .help-search input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 99px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            font-size: 1rem;
+            color: var(--text-primary);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        [data-theme="dark"] .help-search input {
+            background: #0f172a;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main>
+        <section class="help-hero">
+            <div class="container">
+                <h1 class="hero-title">How can we <span>help you?</span></h1>
+                <p class="hero-subtitle">Search our knowledge base or browse frequently asked questions below.</p>
+                <div class="help-search">
+                    <input type="text" placeholder="Search for answers..." id="faq-search">
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Frequently Asked Questions</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is SmartGen Tools?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        SmartGen is an all-in-one digital utility platform providing 131+ free, privacy-first web tools for developers, marketers, and SEO professionals. All our tools run locally in your browser, meaning your data never leaves your device.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is SmartGen really free to use?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! SmartGen is 100% free to use. We believe in providing high-quality digital utilities to everyone without any hidden costs or subscriptions.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How does SmartGen protect my privacy?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        SmartGen tools are built using client-side technology. This means all processing happens directly in your web browser. We do not store, track, or even see the data you input into our tools. Zero server logs, zero data tracking.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need to create an account?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        No account is required. You can access and use all our tools immediately without any registration or login process.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How often are new tools added?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        We regularly update our platform and add new tools based on user feedback and industry trends. You can check our <a href="/updates/" style="color: var(--primary);">Changelog</a> for the latest updates.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I request a specific tool?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! We love hearing from our users. You can use our <a href="/contact/" style="color: var(--primary);">Contact Page</a> to request a new tool or suggest improvements to existing ones.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is the code for SmartGen open source?
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, our engine is open source. You can find our repository on GitHub and even contribute to the project if you're a developer.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../assets/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // FAQ Accordion Logic
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => otherItem.classList.remove('active'));
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // FAQ Search Logic
+            const searchInput = document.getElementById('faq-search');
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                faqItems.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(term)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
