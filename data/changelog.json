@@ -1,5 +1,10 @@
 [
   {
+    "title": "🔧 Fix tool links and add comprehensive Help Center FAQ page",
+    "date": "2026-07-17T20:58:11Z",
+    "description": "- Fixed invalid 'Explore Tools' links on homepage to point to /tools/- Created full Help Center FAQ page with accordion functionality- Added search capability to FAQ page- Integrated Help Center with shared header/footer system"
+  },
+  {
     "title": "🔧 Fix critical navigation bug and redesign homepage with Ahrefs-style navigation",
     "date": "2026-07-17T20:43:29Z",
     "description": "FIXES:- Fixed navigation styling by adding missing CSS variables (--text-primary, --text-secondary, --border-color)- Fixed feed mount point ID mismatch (blog-feed vs blog-feed-placeholder)- Added feed.css stylesheet reference to index.html- Fixed mobile sidebar styling conflictsIMPROVEMENTS:- Redesigned navigation with Ahrefs-style dropdown menu- Added all requested navigation links:  * Products/Tools (with full directory)  * HTML Code Library  * Documentation  * SmartGen Blog  * Changelog  * Help Center  * Trust Center  * Legal Info- Enhanced hero section with improved SVG animations- Added smooth scroll animations for feed posts- Improved dark mode support with proper CSS variables- Better responsive design for mobile and tablet- Enhanced footer with all resource links- Added proper theme toggle functionalityTECHNICAL:- Centralized CSS variables for consistent theming- Fixed animation conflicts by consolidating logic- Improved intersection observer for scroll animations- Better dropdown menu handling on desktop/mobile"
