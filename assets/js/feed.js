@@ -31,6 +31,14 @@ function initHeroAnimations() {
             svg.style.transform = `translate(${moveX * factor}px, ${moveY * factor}px)`;
         });
     });
+
+    // Reset on mouse leave
+    hero.addEventListener('mouseleave', () => {
+        const svgs = hero.querySelectorAll('.floating-svg');
+        svgs.forEach(svg => {
+            svg.style.transform = 'translate(0, 0)';
+        });
+    });
 }
 
 /**
@@ -55,11 +63,12 @@ function initSmoothScroll() {
 }
 
 /**
- * Reveal elements on scroll
+ * Reveal elements on scroll with smooth animations
  */
 function initIntersectionObserver() {
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -72,7 +81,7 @@ function initIntersectionObserver() {
         });
     }, observerOptions);
 
-    const fadeElements = document.querySelectorAll('.category-card, .trust-item, .section-header');
+    const fadeElements = document.querySelectorAll('.category-card, .trust-item, .section-header, .feed-post');
     fadeElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -82,39 +91,126 @@ function initIntersectionObserver() {
 }
 
 /**
- * Mock blog feed loader (integrates with existing feed.js)
+ * Load and render blog feed with proper styling
  */
 function loadBlogFeed() {
-    const placeholder = document.getElementById('blog-feed-placeholder');
-    if (!placeholder) return;
+    // Target the correct feed container ID
+    const feedContainer = document.getElementById('blog-feed') || document.getElementById('blog-feed-placeholder');
+    if (!feedContainer) return;
 
-    // In a real implementation, this would call the existing feed.js logic
-    // or fetch from a JSON file. For now, we'll simulate a clean grid.
+    // Simulate loading delay for better UX
     setTimeout(() => {
-        placeholder.innerHTML = `
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: left;">
-                <article class="category-card">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;" alt="SEO Guide">
-                    <small style="color: var(--primary); font-weight: 600;">SEO & STRATEGY</small>
-                    <h4 style="font-size: 1.25rem; margin: 0.5rem 0;">The 2026 Programmatic SEO Blueprint</h4>
-                    <p style="font-size: 0.9rem;">Master automated sitemaps and real-time updates for scalable growth.</p>
-                    <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Read Guide →</a>
+        feedContainer.innerHTML = `
+            <div class="feed-container">
+                <article class="feed-post">
+                    <div class="feed-post-header">
+                        <div class="author-avatar">📚</div>
+                        <div class="post-meta-info">
+                            <div class="post-author-name">SmartGen Academy</div>
+                            <div class="post-date">2 days ago</div>
+                        </div>
+                    </div>
+                    <div class="feed-post-content">
+                        <h3 class="feed-post-title">The 2026 Programmatic SEO Blueprint</h3>
+                        <p class="feed-post-excerpt">Master automated sitemaps and real-time updates for scalable growth. Learn how to implement dynamic sitemap generation that adapts to your content in real-time.</p>
+                    </div>
+                    <div class="feed-post-footer">
+                        <a href="/blog/" class="feed-action-btn">📖 Read Guide</a>
+                        <a href="/blog/" class="feed-action-btn">💬 Comments</a>
+                        <a href="/blog/" class="feed-action-btn">❤️ Like</a>
+                    </div>
                 </article>
-                <article class="category-card">
-                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;" alt="Python Tutorial">
-                    <small style="color: var(--primary); font-weight: 600;">DEVELOPMENT</small>
-                    <h4 style="font-size: 1.25rem; margin: 0.5rem 0;">Python Data Structures Explained</h4>
-                    <p style="font-size: 0.9rem;">From lists to dictionaries, learn when to use which structure for maximum efficiency.</p>
-                    <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Read Guide →</a>
+
+                <article class="feed-post">
+                    <div class="feed-post-header">
+                        <div class="author-avatar">🔧</div>
+                        <div class="post-meta-info">
+                            <div class="post-author-name">Developer Hub</div>
+                            <div class="post-date">5 days ago</div>
+                        </div>
+                    </div>
+                    <div class="feed-post-content">
+                        <h3 class="feed-post-title">Python Data Structures Explained</h3>
+                        <p class="feed-post-excerpt">From lists to dictionaries, learn when to use which structure for maximum efficiency. A comprehensive guide covering performance implications and best practices.</p>
+                    </div>
+                    <div class="feed-post-footer">
+                        <a href="/blog/" class="feed-action-btn">📖 Read Guide</a>
+                        <a href="/blog/" class="feed-action-btn">💬 Comments</a>
+                        <a href="/blog/" class="feed-action-btn">❤️ Like</a>
+                    </div>
                 </article>
-                <article class="category-card">
-                    <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;" alt="Marketing">
-                    <small style="color: var(--primary); font-weight: 600;">MARKETING</small>
-                    <h4 style="font-size: 1.25rem; margin: 0.5rem 0;">Mastering UTM Campaign Tracking</h4>
-                    <p style="font-size: 0.9rem;">Track every click and conversion with precision using our free builder.</p>
-                    <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Read Guide →</a>
+
+                <article class="feed-post">
+                    <div class="feed-post-header">
+                        <div class="author-avatar">📈</div>
+                        <div class="post-meta-info">
+                            <div class="post-author-name">Marketing Insights</div>
+                            <div class="post-date">1 week ago</div>
+                        </div>
+                    </div>
+                    <div class="feed-post-content">
+                        <h3 class="feed-post-title">Mastering UTM Campaign Tracking</h3>
+                        <p class="feed-post-excerpt">Track every click and conversion with precision using our free builder. Understand UTM parameters and how to structure them for maximum analytics clarity.</p>
+                    </div>
+                    <div class="feed-post-footer">
+                        <a href="/blog/" class="feed-action-btn">📖 Read Guide</a>
+                        <a href="/blog/" class="feed-action-btn">💬 Comments</a>
+                        <a href="/blog/" class="feed-action-btn">❤️ Like</a>
+                    </div>
+                </article>
+
+                <article class="feed-post">
+                    <div class="feed-post-header">
+                        <div class="author-avatar">🛠️</div>
+                        <div class="post-meta-info">
+                            <div class="post-author-name">Tools & Utilities</div>
+                            <div class="post-date">2 weeks ago</div>
+                        </div>
+                    </div>
+                    <div class="feed-post-content">
+                        <h3 class="feed-post-title">Building Scalable Web Applications</h3>
+                        <p class="feed-post-excerpt">Discover best practices for creating web applications that scale with your user base. Learn about architecture patterns, caching strategies, and performance optimization.</p>
+                    </div>
+                    <div class="feed-post-footer">
+                        <a href="/blog/" class="feed-action-btn">📖 Read Guide</a>
+                        <a href="/blog/" class="feed-action-btn">💬 Comments</a>
+                        <a href="/blog/" class="feed-action-btn">❤️ Like</a>
+                    </div>
                 </article>
             </div>
         `;
-    }, 1000);
+
+        // Add fade-in animation to newly loaded posts
+        const posts = feedContainer.querySelectorAll('.feed-post');
+        posts.forEach((post, index) => {
+            post.style.opacity = '0';
+            post.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1}s forwards`;
+        });
+    }, 500);
 }
+
+/**
+ * Add CSS animation keyframes dynamically if not already present
+ */
+function ensureAnimationStyles() {
+    if (document.getElementById('feed-animations')) return;
+
+    const style = document.createElement('style');
+    style.id = 'feed-animations';
+    style.textContent = `
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Ensure animation styles are loaded
+ensureAnimationStyles();
