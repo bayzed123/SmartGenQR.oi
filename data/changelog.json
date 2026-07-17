@@ -1,5 +1,10 @@
 [
   {
+    "title": "Delete docs/getting-started directory",
+    "date": "2026-07-17T13:03:11Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Delete docs/github-actions-configuration-guide directory",
     "date": "2026-07-17T13:02:52Z",
     "description": "Platform improvement and optimization."
