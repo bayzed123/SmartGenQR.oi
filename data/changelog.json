@@ -1,5 +1,10 @@
 [
   {
+    "title": "Delete assets/logo.png",
+    "date": "2026-07-17T21:36:11Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "🔧 Fix tool links and add comprehensive Help Center FAQ page",
     "date": "2026-07-17T20:58:11Z",
     "description": "- Fixed invalid 'Explore Tools' links on homepage to point to /tools/- Created full Help Center FAQ page with accordion functionality- Added search capability to FAQ page- Integrated Help Center with shared header/footer system"
