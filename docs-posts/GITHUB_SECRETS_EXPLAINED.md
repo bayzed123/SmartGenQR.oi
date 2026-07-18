@@ -363,7 +363,7 @@ What: Entire file content (starts with -----BEGIN...)
 
 ### 1. Go to GitHub
 ```
-https://github.com/bayzed123/bayezid_portfolio
+https://github.com/your-account/your_repostory
 ```
 
 ### 2. Click Settings
