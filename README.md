@@ -25,7 +25,6 @@
 
 | Broken URL | Error Code |
 |---|---|
-| https://smartgentools.com/docs/building-a-fast-client-side-search-feature-without-a-backend/ | 503 |
 | https://smartgentools.com/privacy-eeat-enhanced/ | 404 |
 | https://smartgentools.com/tool-content-template/ | 404 |
 
