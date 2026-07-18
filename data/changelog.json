@@ -1,5 +1,10 @@
 [
   {
+    "title": "Create GITHUB_SECRETS_EXPLAINED.md",
+    "date": "2026-07-18T06:04:28Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "picture url generator Bug fixed",
     "date": "2026-07-18T01:37:08Z",
     "description": "•\tUpload → ImgBB → URL flow untouched (your exact API key, endpoint, 32MB limit) \t•\tNew: paste-from-clipboard, file size/dimensions readout, and a 3-tab HTML/Markdown/BBCode output panel (all additive, doesn’t touch the original URL/copy/delete logic) \t•\tPremium navy/gold/mint/coral redesign matching your SmartGen visual identity, pure CSS/SVG “how it works” animation, no images \t•\tRemoved the “Recommended Reading” grid as you asked, and dropped the forced “Related Tools” grid too — instead there are 3 inline contextual links (Image Compressor, Image to Base64, WhatsApp Link Generator) woven into the guide text, only where they actually fit, pulled straight from your sitemap \t•\tFixed the old “temporary” vs “permanent” contradiction (permanent is correct — verified against your actual upload code) and corrected an inaccurate “never leaves your device” claim for this specific tool \t•\tFAQPage, HowTo, and BreadcrumbList"
