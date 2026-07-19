@@ -11,22 +11,53 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Navigation Styles (MUST load first) -->
+    <link rel="stylesheet" href="./assets/css/navbar.css">
+    
+    <!-- Other Styles -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/chatbot.css">
     
     <style>
-        /* Base Layout Fixes for Redesign */
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #0f172a;
-            line-height: 1.5;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #0f172a;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero Section */
         .hero-section {
             padding: 8rem 0;
+            text-align: center;
             background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent),
                         radial-gradient(circle at bottom left, rgba(255, 136, 0, 0.05), transparent);
-            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 99px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 2rem;
         }
 
         .hero-title {
@@ -34,10 +65,13 @@
             font-weight: 800;
             letter-spacing: -0.04em;
             margin-bottom: 1.5rem;
+            line-height: 1.1;
         }
 
         .hero-title span {
-            color: #2563eb;
+            background: linear-gradient(to right, #2563eb, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-subtitle {
@@ -51,6 +85,7 @@
             display: flex;
             gap: 1rem;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -59,6 +94,9 @@
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
         .btn-primary {
@@ -67,30 +105,51 @@
             box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
         }
 
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4);
+        }
+
         .btn-secondary {
             background: white;
             color: #0f172a;
-            border: 1px solid #e2e8f0;
+            border: 2px solid #e2e8f0;
         }
 
-        .section-padding {
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            border-color: #2563eb;
+        }
+
+        /* Section Styles */
+        .section {
             padding: 6rem 0;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
 
-        .tool-grid {
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #475569;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 4rem;
         }
 
-        .tool-card {
+        .card {
             background: white;
             padding: 2.5rem;
             border-radius: 20px;
@@ -98,46 +157,103 @@
             transition: all 0.3s;
         }
 
-        .tool-card:hover {
+        .card:hover {
             border-color: #2563eb;
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
 
-        .tool-icon {
+        .card-icon {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            display: block;
         }
 
-        .tool-card h3 {
+        .card h3 {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
 
-        .tool-card p {
+        .card p {
             color: #475569;
             margin-bottom: 1.5rem;
         }
 
-        .tool-link {
+        .card-link {
             color: #2563eb;
             font-weight: 700;
             text-decoration: none;
         }
+
+        /* Trust Bar */
+        .trust-bar {
+            padding: 3rem 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            background: white;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .trust-item h4 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .trust-item p {
+            font-size: 0.85rem;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .emoji-pulse {
+            animation: pulse 2s infinite;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 4rem 0;
+            }
+            .section {
+                padding: 4rem 0;
+            }
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header injected by app.js -->
+    <!-- Navigation Header (injected by app.js) -->
     <header id="main-header"></header>
 
     <main>
-        <!-- Hero -->
+        <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <div style="display: inline-block; padding: 0.5rem 1rem; background: #f1f5f9; border-radius: 99px; margin-bottom: 2rem; font-weight: 600; color: #2563eb;">
-                    <span class="emoji-animate">✨</span> New: 131+ Tools Available Now
+                <div class="hero-badge">
+                    <span class="emoji-pulse">✨</span>
+                    New: 131+ Tools Available Now
                 </div>
                 <h1 class="hero-title">Your <span>Privacy-First</span><br>Digital Powerhouse</h1>
                 <p class="hero-subtitle">High-performance web utilities for developers, SEO experts, and creators. No tracking. No server logs. Just pure utility.</p>
@@ -148,55 +264,85 @@
             </div>
         </section>
 
-        <!-- Categories -->
-        <section class="section-padding">
+        <!-- Trust Bar -->
+        <div class="trust-bar">
             <div class="container">
-                <h2 style="text-align: center; font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em;">Centralize Your Workflow</h2>
-                <div class="tool-grid">
-                    <div class="tool-card">
-                        <span class="tool-icon">🚀</span>
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <h4>131+</h4>
+                        <p>Free Tools</p>
+                    </div>
+                    <div class="trust-item">
+                        <h4>100%</h4>
+                        <p>Local Processing</p>
+                    </div>
+                    <div class="trust-item">
+                        <h4>Zero</h4>
+                        <p>Data Tracking</p>
+                    </div>
+                    <div class="trust-item">
+                        <h4>Open</h4>
+                        <p>Source</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Centralize Your Workflow</h2>
+                <p class="section-subtitle">Stop juggling dozens of tabs. SmartGen brings all your tools into one secure, unified platform.</p>
+                
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-icon">📊</div>
                         <h3>SEO & Marketing</h3>
                         <p>Generate meta tags, audit keyword density, and preview SERP results instantly.</p>
-                        <a href="/tools/" class="tool-link">View SEO Tools →</a>
+                        <a href="/tools/" class="card-link">View SEO Tools →</a>
                     </div>
-                    <div class="tool-card">
-                        <span class="tool-icon">🛠️</span>
+                    <div class="card">
+                        <div class="card-icon">🛠️</div>
                         <h3>Developer Utilities</h3>
                         <p>JSON formatting, Base64 decoding, and secure password generation—all client-side.</p>
-                        <a href="/tools/" class="tool-link">View Dev Tools →</a>
+                        <a href="/tools/" class="card-link">View Dev Tools →</a>
                     </div>
-                    <div class="tool-card">
-                        <span class="tool-icon">🎨</span>
+                    <div class="card">
+                        <div class="card-icon">🎨</div>
                         <h3>Design & Content</h3>
                         <p>Compress images, generate CSS gradients, and create fancy fonts for your brand.</p>
-                        <a href="/tools/" class="tool-link">View Design Tools →</a>
+                        <a href="/tools/" class="card-link">View Design Tools →</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Style Guide -->
-        <section class="section-padding" style="background: #0f172a; color: white; border-radius: 40px; margin: 0 1.5rem;">
+        <!-- Brand Guide Section -->
+        <section class="section" style="background: #0f172a; color: white; border-radius: 40px; margin: 0 1.5rem;">
             <div class="container">
-                <h2 style="font-size: 2rem; margin-bottom: 3rem;">SmartGen Identity Guide</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                <h2 class="section-title" style="color: white;">SmartGen Brand Identity</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin-top: 3rem;">
                     <div>
-                        <div style="width: 50px; height: 50px; background: #2563eb; border-radius: 10px; margin-bottom: 1rem;"></div>
+                        <div style="width: 60px; height: 60px; background: #2563eb; border-radius: 12px; margin-bottom: 1rem;"></div>
                         <strong>Primary Blue</strong><br><small>#2563eb</small>
                     </div>
                     <div>
-                        <div style="width: 50px; height: 50px; background: #ff8800; border-radius: 10px; margin-bottom: 1rem;"></div>
+                        <div style="width: 60px; height: 60px; background: #ff8800; border-radius: 12px; margin-bottom: 1rem;"></div>
                         <strong>Accent Orange</strong><br><small>#ff8800</small>
                     </div>
                     <div>
-                        <p><strong>Typography</strong><br>Inter (ExtraBold / Regular)</p>
+                        <div style="width: 60px; height: 60px; background: #ffffff; border-radius: 12px; margin-bottom: 1rem;"></div>
+                        <strong>Pure White</strong><br><small>#ffffff</small>
+                    </div>
+                    <div>
+                        <p><strong>Typography</strong><br><small>Inter ExtraBold (Headings)<br>Inter Regular (Body)</small></p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer injected by app.js -->
+    <!-- Footer (injected by app.js) -->
     <footer id="main-footer"></footer>
 
     <!-- Scripts -->
