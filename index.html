@@ -56,12 +56,17 @@
             pointer-events: none;
         }
 
-        .container {
+        /* Fixed Centering for Hero Container */
+        .hero-section .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem;
             position: relative;
             z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Forces perfect centering */
+            text-align: center;
         }
 
         .hero-badge {
@@ -99,10 +104,97 @@
             font-size: 1.25rem;
             color: var(--slate-600);
             max-width: 750px;
-            margin: 0 auto 3.5rem;
+            margin: 0 auto 2.5rem;
             line-height: 1.6;
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
+
+        /* --- Premium Search Bar Styles --- */
+        .premium-search-container {
+            position: relative;
+            max-width: 650px;
+            width: 100%;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+            z-index: 10;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border-radius: 50px;
+            padding: 12px 24px;
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus-within {
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.18), 0 0 0 3px rgba(37, 99, 235, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .search-icon {
+            color: var(--slate-600);
+            display: flex;
+            align-items: center;
+            margin-right: 12px;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1.1rem;
+            color: var(--navy);
+            background: transparent;
+            padding: 8px 0;
+            font-family: inherit;
+        }
+
+        .search-input::placeholder {
+            color: #9ca3af;
+            font-weight: 400;
+        }
+
+        .clear-btn {
+            background: var(--slate-100);
+            border: none;
+            color: var(--slate-600);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .clear-btn:hover {
+            background: var(--slate-200);
+            color: var(--navy);
+        }
+
+        .search-results-dropdown {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-height: 350px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            border: 1px solid var(--slate-100);
+            text-align: left; /* Keep results text left-aligned */
+        }
+        /* --------------------------------- */
 
         .cta-group {
             display: flex;
@@ -352,6 +444,23 @@
             <p class="hero-subtitle">
                 Access 131+ professional web tools, SEO utilities, and developer guides. Everything runs locally in your browser—zero data tracking, zero server logs.
             </p>
+
+            <!-- Premium Search Bar -->
+            <div class="premium-search-container">
+                <div class="search-box">
+                    <span class="search-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </span>
+                    <input type="text" id="search-input" class="search-input" placeholder="Search for tools, docs, or guides..." autocomplete="off">
+                    <button id="search-clear-btn" class="clear-btn" style="display: none;">✕</button>
+                </div>
+                <div id="search-results" class="search-results-dropdown"></div>
+            </div>
+            <!-- End Premium Search Bar -->
+
             <div class="cta-group">
                 <a href="#tools" class="btn-main btn-primary">
                     Explore All Tools
