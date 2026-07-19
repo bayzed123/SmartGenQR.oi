@@ -1,353 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartGen - The Privacy-First Web Utility Platform</title>
-    <meta name="description" content="131+ free, client-side web utilities. SEO tools, QR generators, and developer docs with zero data tracking.">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SmartGen - All-in-One Digital & Web Utility Platform</title>
+    <meta name="description" content="SmartGen provides free online tools like QR generators, SEO tools, and text utilities. Expert insights and professional web utilities for creators.">
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Navigation Styles (MUST load first) -->
-    <link rel="stylesheet" href="./assets/css/navbar.css">
-    
-    <!-- Other Styles -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/feed.css">
     <link rel="stylesheet" href="./assets/css/chatbot.css">
     
+    <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/js/feed-combined.js" defer></script>
+    <script src="./assets/js/search-data.js" defer></script>
+    <script src="./assets/js/search.js" defer></script>
+    <script src="./assets/js/chatbot.js" defer></script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "SmartGen",
+        "url": "https://smartgentools.com/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "SmartGen",
+            "logo": "https://smartgentools.com/assets/images/logo.png",
+            "founder": {
+                "@type": "Person",
+                "name": "Sayad Md Bayezid Hosan"
+            }
+        }
+    }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            color: #0f172a;
+        /* Cookie Consent Banner Styling */
+        #cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             background: #ffffff;
-            line-height: 1.6;
+            border-top: 1px solid #e1e8ed;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            z-index: 9999;
+            display: none;
+            padding: 1rem 0;
         }
-
-        .container {
+        .cookie-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
-
-        /* Hero Section */
-        .hero-section {
-            padding: 8rem 0;
-            text-align: center;
-            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent),
-                        radial-gradient(circle at bottom left, rgba(255, 136, 0, 0.05), transparent);
+        .cookie-text {
+            flex: 1;
+            min-width: 280px;
+            margin: 0;
+            font-size: 0.9rem;
+            color: #4a5568;
+            line-height: 1.5;
         }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            background: #f1f5f9;
-            border: 1px solid #e2e8f0;
-            border-radius: 99px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: #2563eb;
-            margin-bottom: 2rem;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            font-weight: 800;
-            letter-spacing: -0.04em;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .hero-title span {
-            background: linear-gradient(to right, #2563eb, #60a5fa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: #475569;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-        }
-
-        .cta-group {
+        .cookie-actions {
             display: flex;
+            align-items: center;
             gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
         }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s;
+        .cookie-btn {
+            background: #0052cc;
+            color: #ffffff;
             border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: #2563eb;
-            color: white;
-            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: #1d4ed8;
-            transform: translateY(-3px);
-            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #0f172a;
-            border: 2px solid #e2e8f0;
-        }
-
-        .btn-secondary:hover {
-            background: #f1f5f9;
-            border-color: #2563eb;
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 6rem 0;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: #475569;
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s;
-        }
-
-        .card:hover {
-            border-color: #2563eb;
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .card p {
-            color: #475569;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-link {
-            color: #2563eb;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        /* Trust Bar */
-        .trust-bar {
-            padding: 3rem 0;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-            background: white;
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .trust-item h4 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 0.25rem;
-        }
-
-        .trust-item p {
-            font-size: 0.85rem;
-            color: #475569;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
             font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
         }
-
-        /* Animations */
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+        .cookie-btn:hover {
+            background: #003d99;
         }
-
-        .emoji-pulse {
-            animation: pulse 2s infinite;
-            display: inline-block;
+        .cookie-link {
+            font-size: 0.9rem;
+            color: #0052cc;
+            text-decoration: none;
+            font-weight: 500;
         }
-
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 4rem 0;
-            }
-            .section {
-                padding: 4rem 0;
-            }
-            .cta-group {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
+        .cookie-link:hover {
+            text-decoration: underline;
         }
     </style>
+
 </head>
 <body>
-    <!-- Navigation Header (injected by app.js) -->
     <header id="main-header"></header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
+        <section class="hero" style="text-align: center; padding: 4rem 0 2rem; background: linear-gradient(180deg, rgba(37, 99, 235, 0.05) 0%, var(--background) 100%);">
             <div class="container">
-                <div class="hero-badge">
-                    <span class="emoji-pulse">✨</span>
-                    New: 131+ Tools Available Now
-                </div>
-                <h1 class="hero-title">Your <span>Privacy-First</span><br>Digital Powerhouse</h1>
-                <p class="hero-subtitle">High-performance web utilities for developers, SEO experts, and creators. No tracking. No server logs. Just pure utility.</p>
-                <div class="cta-group">
-                    <a href="/tools/" class="btn btn-primary">Explore All Tools</a>
-                    <a href="/blog/" class="btn btn-secondary">Read Academy</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Trust Bar -->
-        <div class="trust-bar">
-            <div class="container">
-                <div class="trust-grid">
-                    <div class="trust-item">
-                        <h4>131+</h4>
-                        <p>Free Tools</p>
-                    </div>
-                    <div class="trust-item">
-                        <h4>100%</h4>
-                        <p>Local Processing</p>
-                    </div>
-                    <div class="trust-item">
-                        <h4>Zero</h4>
-                        <p>Data Tracking</p>
-                    </div>
-                    <div class="trust-item">
-                        <h4>Open</h4>
-                        <p>Source</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tools Section -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Centralize Your Workflow</h2>
-                <p class="section-subtitle">Stop juggling dozens of tabs. SmartGen brings all your tools into one secure, unified platform.</p>
+                <h1 style="font-size: clamp(2.5rem, 8vw, 3.5rem); margin-bottom: 1rem; font-weight: 800; letter-spacing: -0.02em;">SmartGen Insights & Tools</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.6;">
+                    Professional web utilities and expert guides for developers, marketers, and creators. 100% Free & Open Source.
+                </p>
                 
-                <div class="grid-3">
-                    <div class="card">
-                        <div class="card-icon">📊</div>
-                        <h3>SEO & Marketing</h3>
-                        <p>Generate meta tags, audit keyword density, and preview SERP results instantly.</p>
-                        <a href="/tools/" class="card-link">View SEO Tools →</a>
+                <div id="live-search-container" style="max-width: 600px; margin: 0 auto;">
+                    <div class="search-wrapper">
+                        <span class="search-icon">ð</span>
+                        <input type="text" id="search-input" placeholder="Search tools or articles..." autocomplete="off">
+                        <button id="search-clear" title="Clear search">â</button>
                     </div>
-                    <div class="card">
-                        <div class="card-icon">🛠️</div>
-                        <h3>Developer Utilities</h3>
-                        <p>JSON formatting, Base64 decoding, and secure password generation—all client-side.</p>
-                        <a href="/tools/" class="card-link">View Dev Tools →</a>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">🎨</div>
-                        <h3>Design & Content</h3>
-                        <p>Compress images, generate CSS gradients, and create fancy fonts for your brand.</p>
-                        <a href="/tools/" class="card-link">View Design Tools →</a>
-                    </div>
+                    <div id="search-results"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Brand Guide Section -->
-        <section class="section" style="background: #0f172a; color: white; border-radius: 40px; margin: 0 1.5rem;">
-            <div class="container">
-                <h2 class="section-title" style="color: white;">SmartGen Brand Identity</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                    <div>
-                        <div style="width: 60px; height: 60px; background: #2563eb; border-radius: 12px; margin-bottom: 1rem;"></div>
-                        <strong>Primary Blue</strong><br><small>#2563eb</small>
-                    </div>
-                    <div>
-                        <div style="width: 60px; height: 60px; background: #ff8800; border-radius: 12px; margin-bottom: 1rem;"></div>
-                        <strong>Accent Orange</strong><br><small>#ff8800</small>
-                    </div>
-                    <div>
-                        <div style="width: 60px; height: 60px; background: #ffffff; border-radius: 12px; margin-bottom: 1rem;"></div>
-                        <strong>Pure White</strong><br><small>#ffffff</small>
-                    </div>
-                    <div>
-                        <p><strong>Typography</strong><br><small>Inter ExtraBold (Headings)<br>Inter Regular (Body)</small></p>
-                    </div>
+        <div class="container" style="display: flex; flex-direction: column; gap: 2rem; padding-bottom: 5rem;">
+            <!-- Feed Area -->
+            <div id="blog-feed" class="feed-container">
+                <div style="text-align: center; padding: 3rem;">
+                    <p>â¨ Loading latest insights...</p>
                 </div>
             </div>
-        </section>
+
+            <!-- E-E-A-T & Trust Badges -->
+            <section class="trust-badges-container">
+                <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Verified & Secure Platform</h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">SmartGen is built with transparency and user privacy at its core.</p>
+                
+                <div class="trust-badges-grid">
+                    <div class="trust-badge-item">
+                        <span class="trust-icon">ð¡ï¸</span>
+                        <span class="trust-text">Privacy First</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <span class="trust-icon">â</span>
+                        <span class="trust-text">E-E-A-T Verified</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <span class="trust-icon">ð</span>
+                        <span class="trust-text">Open Source</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <span class="trust-icon">â¡</span>
+                        <span class="trust-text">Client-Side Only</span>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <!-- Footer (injected by app.js) -->
     <footer id="main-footer"></footer>
 
-    <!-- Scripts -->
-    <script src="./assets/js/app.js" defer></script>
-    <script src="./assets/js/feed.js" defer></script>
-    <script src="./assets/js/chatbot.js" defer></script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner">
+        <div class="cookie-container">
+            <p class="cookie-text">
+                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" class="cookie-link">Privacy Policy</a> and <a href="/cookies/" class="cookie-link">Cookie Policy</a>.
+            </p>
+            <div class="cookie-actions">
+                <a href="/privacy/" class="cookie-link">Learn More</a>
+                <button id="accept-cookies" class="cookie-btn">Accept</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Cookie logic handled by app.js -->
+
 </body>
 </html>
