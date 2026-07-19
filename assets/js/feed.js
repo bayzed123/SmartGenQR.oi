@@ -81,7 +81,7 @@ function initIntersectionObserver() {
         });
     }, observerOptions);
 
-    const fadeElements = document.querySelectorAll('.category-card, .trust-item, .section-header, .blog-post-card');
+    const fadeElements = document.querySelectorAll('.category-card, .trust-item, .section-header, .blog-post-card, .stat-card');
     fadeElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -91,215 +91,55 @@ function initIntersectionObserver() {
 }
 
 /**
- * Load and render latest 20 blog posts with share buttons
+ * Load and render latest 20 blog posts with direct redirection
  */
 function loadBlogFeed() {
-    // Target the correct feed container ID
     const feedContainer = document.getElementById('blog-feed') || document.getElementById('blog-feed-placeholder');
     if (!feedContainer) return;
 
-    // Sample blog posts data (in production, fetch from API)
+    // Latest real blog posts from blog.json
     const blogPosts = [
         {
-            id: 1,
-            title: "The 2026 Programmatic SEO Blueprint",
-            excerpt: "Master automated sitemaps and real-time updates for scalable growth. Learn how to implement dynamic sitemap generation that adapts to your content in real-time.",
+            slug: "dynamic-sitemap-generation-with-real-time-updates-the-complete-programmatic-seo-blueprint",
+            title: "Dynamic Sitemap Generation with Real-Time Updates",
+            excerpt: "Learn how to build automated XML sitemaps with real-time updates, faster indexing, and advanced optimization strategies.",
             category: "SEO & Strategy",
-            date: "2 days ago",
+            date: "2026-07-14",
+            author: "Sayad Md Bayezid Hosan",
+            verified: true,
+            image: "https://i.ibb.co/cKCS74vJ/auto-sitemap-xml-generator.jpg"
+        },
+        {
+            slug: "master-your-marketing-the-ultimate-guide-to-the-utm-campaign-link-builder",
+            title: "Master Your Marketing: Ultimate UTM Guide",
+            excerpt: "Learn how to use a UTM link builder to track your marketing campaigns in Google Analytics. Generate error-free URLs instantly.",
+            category: "Marketing",
+            date: "2026-06-01",
             author: "SmartGen Academy",
             verified: true,
-            link: "/blog/"
+            image: "https://i.ibb.co/WqNHgyw/IMG-4319.jpg"
         },
         {
-            id: 2,
-            title: "Python Data Structures Explained",
-            excerpt: "From lists to dictionaries, learn when to use which structure for maximum efficiency. A comprehensive guide covering performance implications and best practices.",
+            slug: "python-data-structures-guide",
+            title: "Python Data Structures: A Comprehensive Guide",
+            excerpt: "Master lists, dictionaries, and tuples. Learn when to use each structure for maximum efficiency in your Python projects.",
             category: "Development",
-            date: "5 days ago",
+            date: "2026-07-10",
             author: "Developer Hub",
             verified: true,
-            link: "/blog/"
+            image: "https://i.ibb.co/cKCS74vJ/auto-sitemap-xml-generator.jpg"
         },
         {
-            id: 3,
-            title: "Mastering UTM Campaign Tracking",
-            excerpt: "Track every click and conversion with precision using our free builder. Understand UTM parameters and how to structure them for maximum analytics clarity.",
+            slug: "digital-marketing-course-2026",
+            title: "Digital Marketing Masterclass 2026",
+            excerpt: "Stay ahead of the curve with our latest digital marketing course. From AI integration to advanced analytics.",
             category: "Marketing",
-            date: "1 week ago",
+            date: "2026-07-18",
             author: "Marketing Insights",
             verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 4,
-            title: "Building Scalable Web Applications",
-            excerpt: "Discover best practices for creating web applications that scale with your user base. Learn about architecture patterns, caching strategies, and performance optimization.",
-            category: "Development",
-            date: "2 weeks ago",
-            author: "Tools & Utilities",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 5,
-            title: "Advanced Image Compression Techniques",
-            excerpt: "Reduce file sizes without losing quality. Explore modern compression algorithms and when to use each one for optimal web performance.",
-            category: "Design & Tools",
-            date: "3 weeks ago",
-            author: "SmartGen Academy",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 6,
-            title: "Privacy-First Web Development",
-            excerpt: "Build applications that respect user privacy from the ground up. Learn about client-side processing, data minimization, and secure practices.",
-            category: "Security",
-            date: "1 month ago",
-            author: "Security Team",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 7,
-            title: "JSON Formatting Best Practices",
-            excerpt: "Structure your data correctly for better API integration and debugging. Learn validation techniques and common pitfalls to avoid.",
-            category: "Development",
-            date: "1 month ago",
-            author: "Developer Hub",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 8,
-            title: "QR Code Generation for Marketing",
-            excerpt: "Leverage QR codes to bridge digital and physical marketing. Track engagement and create dynamic campaigns with our free generator.",
-            category: "Marketing",
-            date: "1 month ago",
-            author: "Marketing Insights",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 9,
-            title: "SEO Meta Tags That Actually Work",
-            excerpt: "Optimize your meta tags for search engines and social sharing. Learn what Google really cares about in 2026.",
-            category: "SEO & Strategy",
-            date: "2 months ago",
-            author: "SmartGen Academy",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 10,
-            title: "Voice Removal AI: Technology Explained",
-            excerpt: "Understand how AI-powered voice removal works. Explore use cases from music production to content creation.",
-            category: "AI & Tools",
-            date: "2 months ago",
-            author: "Tech Insights",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 11,
-            title: "Color Psychology in Web Design",
-            excerpt: "Choose the right colors for your brand. Learn how color impacts user behavior and conversion rates.",
-            category: "Design & Tools",
-            date: "2 months ago",
-            author: "Design Team",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 12,
-            title: "Password Security: Best Practices",
-            excerpt: "Create and manage secure passwords. Learn about password managers and multi-factor authentication.",
-            category: "Security",
-            date: "3 months ago",
-            author: "Security Team",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 13,
-            title: "Unit Conversion Guide for Developers",
-            excerpt: "Master common unit conversions used in web development. From pixels to ems, understand responsive design units.",
-            category: "Development",
-            date: "3 months ago",
-            author: "Developer Hub",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 14,
-            title: "WhatsApp Marketing Automation",
-            excerpt: "Leverage WhatsApp for customer engagement. Learn how to create shareable links and track campaign performance.",
-            category: "Marketing",
-            date: "3 months ago",
-            author: "Marketing Insights",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 15,
-            title: "Base64 Encoding Explained",
-            excerpt: "Understand binary-to-text encoding. Learn when and why to use Base64 in your applications.",
-            category: "Development",
-            date: "3 months ago",
-            author: "Developer Hub",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 16,
-            title: "CSS Gradient Design Trends 2026",
-            excerpt: "Create stunning visual effects with CSS gradients. Explore modern design trends and implementation techniques.",
-            category: "Design & Tools",
-            date: "4 months ago",
-            author: "Design Team",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 17,
-            title: "Robots.txt Optimization Guide",
-            excerpt: "Control search engine crawling with robots.txt. Learn best practices for SEO-friendly site structure.",
-            category: "SEO & Strategy",
-            date: "4 months ago",
-            author: "SmartGen Academy",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 18,
-            title: "Pomodoro Technique for Productivity",
-            excerpt: "Boost your productivity with time management. Learn how the Pomodoro technique can transform your workflow.",
-            category: "Productivity",
-            date: "4 months ago",
-            author: "Productivity Tips",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 19,
-            title: "EMI Calculator for Financial Planning",
-            excerpt: "Understand loan calculations and EMI. Learn how to plan your finances with our free calculator.",
-            category: "Finance",
-            date: "5 months ago",
-            author: "Finance Hub",
-            verified: true,
-            link: "/blog/"
-        },
-        {
-            id: 20,
-            title: "Keyword Density: The Complete Guide",
-            excerpt: "Balance keyword usage for SEO success. Learn optimal density rates and how to avoid over-optimization.",
-            category: "SEO & Strategy",
-            date: "5 months ago",
-            author: "SmartGen Academy",
-            verified: true,
-            link: "/blog/"
+            image: "https://i.ibb.co/WqNHgyw/IMG-4319.jpg"
         }
+        // ... In production, this would be dynamically loaded from blog.json
     ];
 
     // Simulate loading delay for better UX
@@ -308,6 +148,8 @@ function loadBlogFeed() {
         
         blogPosts.forEach((post, index) => {
             const categoryColor = getCategoryColor(post.category);
+            const postUrl = `/blog/${post.slug}/`;
+            
             postsHTML += `
                 <article class="blog-post-card" style="animation-delay: ${index * 0.05}s;">
                     <div class="blog-post-header">
@@ -326,13 +168,13 @@ function loadBlogFeed() {
                             <span class="blog-date">${post.date}</span>
                         </div>
                         <div class="blog-post-actions">
-                            <a href="${post.link}" class="blog-action-btn" title="Read Full Article">
+                            <a href="${postUrl}" class="blog-action-btn" title="Read Full Article">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
                                 Read
                             </a>
-                            <button class="blog-action-btn share-btn" title="Share Article" onclick="sharePost('${post.title}', '${post.link}')">
+                            <button class="blog-action-btn share-btn" title="Share Article" onclick="sharePost('${post.title}', '${postUrl}')">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="18" cy="5" r="3"></circle>
                                     <circle cx="6" cy="12" r="3"></circle>
@@ -378,25 +220,41 @@ function getCategoryColor(category) {
 }
 
 /**
- * Share post functionality
+ * Share post functionality with popup feedback
  */
 function sharePost(title, url) {
+    const shareUrl = `${window.location.origin}${url}`;
+    
     if (navigator.share) {
         navigator.share({
             title: title,
-            url: url
+            url: shareUrl
         }).catch(err => console.log('Error sharing:', err));
     } else {
-        // Fallback: copy to clipboard
-        const shareUrl = `${window.location.origin}${url}`;
         navigator.clipboard.writeText(`${title}\n${shareUrl}`).then(() => {
-            alert('Post link copied to clipboard!');
+            showToast('Link copied to clipboard! 🚀');
         });
     }
 }
 
 /**
- * Add CSS animation keyframes dynamically if not already present
+ * Show a professional toast notification
+ */
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => toast.classList.add('show'), 100);
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
+/**
+ * Add CSS animation keyframes and toast styles
  */
 function ensureAnimationStyles() {
     if (document.getElementById('feed-animations')) return;
@@ -413,6 +271,27 @@ function ensureAnimationStyles() {
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        .toast-notification {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #0f172a;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 99px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            opacity: 0;
+        }
+
+        .toast-notification.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
         }
 
         .blog-posts-grid {

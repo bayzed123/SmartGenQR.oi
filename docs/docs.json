@@ -2,7 +2,7 @@
   {
     "slug": "getting-started",
     "title": "Getting Started",
-    "description": "Learn how to set up and start contributing to SmartGen.",
+    "description": "Learn how to set up and start contributing to SmartGen. Get the platform running on your local machine in under 5 minutes.",
     "category": "Guides",
     "date": "2026-07-14"
   },
@@ -21,24 +21,10 @@
     "date": "2026-07-14"
   },
   {
-    "slug": "getting-started",
-    "title": "Getting Started",
-    "description": "Get SmartGen running on your local machine in under 5 minutes.",
-    "category": "Guides",
-    "date": "2026-07-14"
-  },
-  {
     "slug": "portfolio-website-getting-started-guide",
     "title": "Portfolio Website: Getting Started Guide",
     "description": "Complete guide to forking, setting up, and running the open-source developer portfolio website locally — prerequisites, installation, configuration, and troubleshooting.",
     "category": "Portfolio Website",
-    "date": "2026-07-14"
-  },
-  {
-    "slug": "getting-started",
-    "title": "Getting Started",
-    "description": "Learn how to set up and start contributing to SmartGen.",
-    "category": "Guides",
     "date": "2026-07-14"
   },
   {

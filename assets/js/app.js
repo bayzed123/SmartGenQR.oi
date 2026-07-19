@@ -1,51 +1,20 @@
+/**
+ * SmartGen Shared Header & Footer Logic
+ * This script injects the shared header and footer across all pages.
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-    injectNavbar();
+    injectHeader();
     injectFooter();
-    initTheme();
-    initAccordion();
-    initCookieConsent();
-    
-    // Inject Adsterra ads on tool pages (runtime injection for static pages)
-    if (typeof RuntimeAdInjector !== 'undefined' && RuntimeAdInjector.injectAllAds) {
-        RuntimeAdInjector.injectAllAds();
-    }
 });
 
-function initCookieConsent() {
-    const banner = document.getElementById('cookie-consent-banner') || document.getElementById('cookieBanner');
-    const acceptBtn = document.getElementById('accept-cookies') || document.getElementById('acceptCookies');
-    
-    if (!banner || !acceptBtn) return;
-
-    const consentKey = banner.id === 'cookieBanner' ? 'smartgen_cookie_consent' : 'cookie-consent-accepted';
-
-    if (!localStorage.getItem(consentKey)) {
-        banner.style.display = 'block';
-    } else {
-        banner.style.display = 'none';
-    }
-
-    acceptBtn.addEventListener('click', () => {
-        localStorage.setItem(consentKey, 'true');
-        localStorage.setItem('cookie-consent-accepted', 'true'); // Sync both keys
-        localStorage.setItem('smartgen_cookie_consent', 'accepted');
-        banner.style.display = 'none';
-    });
-
-    const declineBtn = document.getElementById('declineCookies');
-    if (declineBtn) {
-        declineBtn.addEventListener('click', () => {
-            localStorage.setItem(consentKey, 'declined');
-            banner.style.display = 'none';
-        });
-    }
-}
-
-function injectNavbar() {
+/**
+ * Injects the navigation header into the #main-header element.
+ */
+function injectHeader() {
     const header = document.getElementById('main-header');
     if (!header) return;
 
-    // Absolute paths (/) are used to prevent routing errors like 'blog/blog/'
     header.innerHTML = `
         <div class="container">
             <div class="header-content">
@@ -58,44 +27,37 @@ function injectNavbar() {
                 </a>
                 <nav id="nav-links">
                     <a href="/">Home</a>
-                    <a href="/tools/">Products/Tools</a>
-                    <a href="/blog/">Blog</a>
-                    <div class="dropdown" id="resources-dropdown">
-                        <a href="#" class="dropdown-trigger">Resources ▼</a>
+                    <a href="/tools/">Tool Directory</a>
+                    <a href="/html-code-library/">HTML Code Library</a>
+                    <div class="dropdown">
+                        <button class="dropdown-btn">📚 Resources <span class="arrow">▾</span></button>
                         <div class="dropdown-content">
-                            <div class="dropdown-category">
-                                <h4>📚 Learning</h4>
-                                <a href="/html-code-library/" class="dropdown-item">HTML Code Library</a>
-                                <a href="/docs/" class="dropdown-item">Documentation</a>
-                                <a href="/blog/" class="dropdown-item">SmartGen Blog</a>
-                            </div>
-                            <div class="dropdown-category">
-                                <h4>🔧 Developer</h4>
-                                <a href="/qr-generator/" class="dropdown-item">QR Generator</a>
-                                <a href="/meta-tag-generator/" class="dropdown-item">Meta Tags</a>
-                                <a href="/json-formatter-validator/" class="dropdown-item">JSON Formatter</a>
-                            </div>
-                            <div class="dropdown-category">
-                                <h4>📈 SEO & Marketing</h4>
-                                <a href="/utm-builder/" class="dropdown-item">UTM Builder</a>
-                                <a href="/keyword-density-checker/" class="dropdown-item">Keyword Density</a>
-                                <a href="/serp-preview-tool/" class="dropdown-item">SERP Preview</a>
-                            </div>
-                            <div class="dropdown-category">
-                                <h4>⚙️ Utilities</h4>
-                                <a href="/voice-remover/" class="dropdown-item">Voice Remover (AI)</a>
-                                <a href="/image-compressor/" class="dropdown-item">Image Compressor</a>
-                                <a href="/password-generator/" class="dropdown-item">Password Generator</a>
-                            </div>
+                            <a href="/blog/">SmartGen Blog</a>
+                            <a href="/docs/">SGDocs</a>
+                            <a href="/updates/">Changelog</a>
                         </div>
                     </div>
-                    <a href="/updates/">Changelog</a>
-                    <a href="/help-center/">Help</a>
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Company <span class="arrow">▾</span></button>
+                        <div class="dropdown-content">
+                            <a href="/about/">About Us</a>
+                            <a href="/contact/">Contact Us</a>
+                            <a href="/smartgen-legal-info/">Legal Info</a>
+                            <a href="/help-center/">Help Center</a>
+                        </div>
+                    </div>
+                    <a href="https://github.com/bayzed123/SmartGenQR.oi" class="github-link" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        Star
+                    </a>
                 </nav>
-                <div class="header-actions">
-                    <button id="theme-toggle" class="icon-btn" title="Toggle Theme">🌓</button>
-                    <button id="mobile-menu-toggle" class="icon-btn mobile-only" title="Toggle Menu">☰</button>
-                </div>
+                <button id="mobile-toggle" class="mobile-toggle-btn" title="Open Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
         </div>
 
@@ -112,100 +74,76 @@ function injectNavbar() {
             </div>
 
             <div class="sidebar-nav-links">
-                <a href="/" class="nav-item">🏠 Home</a>
-                <a href="/tools/" class="nav-item">🛠️ Products/Tools</a>
-                <a href="/blog/" class="nav-item">📝 Blog</a>
-                <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
+                <a href="/" class="sidebar-link">Home</a>
+                <a href="/tools/" class="sidebar-link">Tool Directory</a>
+                <a href="/html-code-library/" class="sidebar-link">HTML Code Library</a>
                 
-                <div class="nav-category">📚 Resources</div>
-                <a href="/html-code-library/" class="nav-item">HTML Code Library</a>
-                <a href="/docs/" class="nav-item">Documentation</a>
-                <a href="/blog/" class="nav-item">SmartGen Blog</a>
-                
-                <div class="nav-category">🔧 Developer Tools</div>
-                <a href="/qr-generator/" class="nav-item">• QR Generator</a>
-                <a href="/json-formatter-validator/" class="nav-item">• JSON Formatter</a>
-                <a href="/uuid-generator/" class="nav-item">• UUID Generator</a>
-                <a href="/meta-tag-generator/" class="nav-item">• Meta Tags</a>
-                <a href="/tools/" class="nav-item" style="color: #2563EB; font-weight: 600;">View All →</a>
+                <div class="sidebar-section">
+                    <span class="sidebar-section-title">📚 Resources</span>
+                    <a href="/blog/" class="sidebar-link">SmartGen Blog</a>
+                    <a href="/docs/" class="sidebar-link">SGDocs</a>
+                    <a href="/updates/" class="sidebar-link">Changelog</a>
+                </div>
 
-                <div class="nav-category">📈 SEO & Marketing</div>
-                <a href="/utm-builder/" class="nav-item">• UTM Builder</a>
-                <a href="/keyword-density-checker/" class="nav-item">• Keyword Density</a>
-                <a href="/serp-preview-tool/" class="nav-item">• SERP Preview</a>
-                <a href="/tools/" class="nav-item" style="color: #2563EB; font-weight: 600;">View All →</a>
+                <div class="sidebar-section">
+                    <span class="sidebar-section-title">Company</span>
+                    <a href="/about/" class="sidebar-link">About Us</a>
+                    <a href="/contact/" class="sidebar-link">Contact Us</a>
+                    <a href="/smartgen-legal-info/" class="sidebar-link">Legal Info</a>
+                    <a href="/help-center/" class="sidebar-link">Help Center</a>
+                </div>
 
-                <div class="nav-category">⚙️ Daily Utilities</div>
-                <a href="/voice-remover/" class="nav-item">• Voice Remover (AI)</a>
-                <a href="/image-compressor/" class="nav-item">• Image Compressor</a>
-                <a href="/password-generator/" class="nav-item">• Password Generator</a>
-                <a href="/tools/" class="nav-item" style="color: #2563EB; font-weight: 600;">View All →</a>
-
-                <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
-                
-                <div class="nav-category">📋 Company</div>
-                <a href="/about/" class="nav-item">About Us</a>
-                <a href="/contact/" class="nav-item">Contact Us</a>
-                <a href="/updates/" class="nav-item">Changelog</a>
-                <a href="/help-center/" class="nav-item">Help Center</a>
-                <a href="/trust-center/" class="nav-item">Trust Center</a>
-                <a href="/smartgen-legal-info/" class="nav-item">Legal Info</a>
-                <a href="/privacy/" class="nav-item">Privacy Policy</a>
+                <a href="https://github.com/bayzed123/SmartGenQR.oi" class="sidebar-link github-sidebar" target="_blank">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    Star on GitHub
+                </a>
             </div>
         </aside>
-
         <div id="sidebar-overlay" class="sidebar-overlay"></div>
     `;
 
-    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-    
-    const menuToggle = document.getElementById('mobile-menu-toggle');
-    const sidebar = document.getElementById('mobile-sidebar');
-    const sidebarClose = document.getElementById('sidebar-close');
-    const sidebarOverlay = document.getElementById('sidebar-overlay');
-    
-    // Toggle sidebar
-    menuToggle.addEventListener('click', () => {
-        sidebar.classList.add('active');
-        sidebarOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-
-    // Close sidebar
-    const closeSidebar = () => {
-        sidebar.classList.remove('active');
-        sidebarOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    };
-
-    sidebarClose.addEventListener('click', closeSidebar);
-    sidebarOverlay.addEventListener('click', closeSidebar);
-
-    // Close sidebar when clicking a link
-    sidebar.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            closeSidebar();
-        });
-    });
-
-    // Desktop dropdown toggle
-    const resourcesDropdown = document.getElementById('resources-dropdown');
-    if (resourcesDropdown && window.innerWidth > 768) {
-        const dropdownTrigger = resourcesDropdown.querySelector('.dropdown-trigger');
-        dropdownTrigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            resourcesDropdown.classList.toggle('active');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!resourcesDropdown.contains(e.target)) {
-                resourcesDropdown.classList.remove('active');
-            }
-        });
-    }
+    // Initialize Menu Interactivity
+    initMobileMenu();
 }
 
+/**
+ * Handles mobile menu toggle, close, and overlay clicks.
+ */
+function initMobileMenu() {
+    const toggle = document.getElementById('mobile-toggle');
+    const close = document.getElementById('sidebar-close');
+    const sidebar = document.getElementById('mobile-sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    if (!toggle || !sidebar || !overlay) return;
+
+    const openMenu = () => {
+        sidebar.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scroll
+    };
+
+    const closeMenu = () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scroll
+    };
+
+    toggle.addEventListener('click', openMenu);
+    if (close) close.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // Close on link click
+    sidebar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+}
+
+/**
+ * Injects the shared footer into the #main-footer element.
+ */
 function injectFooter() {
     const footer = document.getElementById('main-footer');
     if (!footer) return;
@@ -225,123 +163,35 @@ function injectFooter() {
                 </div>
                 <div class="footer-quick-links-grid">
                     <div class="footer-column">
-                        <h4 class="footer-accordion-trigger">Developer Tools <span class="accordion-icon"></span></h4>
-                        <ul class="footer-links">
-                            <li><a href="/qr-generator/">QR Code Generator</a></li>
-                            <li><a href="/html-code-preview/">Live HTML Previewer</a></li>
-                            <li><a href="/json-formatter-validator/">JSON Formatter & Validator</a></li>
-                            <li><a href="/uuid-generator/">UUID / GUID Generator</a></li>
-                            <li><a href="/ip-address-lookup/">IP Address Lookup</a></li>
-                            <li><a href="/url-encoder-decoder/">URL Encoder/Decoder</a></li>
-                            <li><a href="/hash-generator/">MD5/SHA Hash Generator</a></li>
-                            <li><a href="/image-to-base64/">Image to Base64</a></li>
-                            <li><a href="/base64-to-image/">Base64 to Image Decoder</a></li>
-                            <li><a href="/css-gradient-generator/">CSS Gradient Generator</a></li>
-                            <li><a href="/random-choice-picker/">Random Choice Picker</a></li>
-                            <li><a href="/text-to-changelog-json-generator/">Text to Changelog JSON Generator</a></li>
-                        </ul>
+                        <h4>Platform</h4>
+                        <a href="/tools/">Tool Directory</a>
+                        <a href="/html-code-library/">HTML Code Library</a>
+                        <a href="/updates/">Changelog</a>
                     </div>
                     <div class="footer-column">
-                        <h4 class="footer-accordion-trigger">SEO & Marketing <span class="accordion-icon"></span></h4>
-                        <ul class="footer-links">
-                            <li><a href="/blog-title-generator/">Blog Title Generator</a></li>
-                            <li><a href="/utm-builder/">Build UTM Links</a></li>
-                            <li><a href="/keyword-density-checker/">Keyword Density Checker</a></li>
-                            <li><a href="/robots-txt-generator/">Robots.txt Generator</a></li>
-                            <li><a href="/serp-preview-tool/">SERP Preview Tool</a></li>
-                            <li><a href="/schema-generator/">Schema Generator</a></li>
-                            <li><a href="/meta-tag-generator/">Meta Tag Generator</a></li>
-                            <li><a href="/youtube-thumbnail-downloader/">YouTube Thumbnail Downloader</a></li>
-                            <li><a href="/whatsapp-link/">WhatsApp Link Creator</a></li>
-                            <li><a href="/hashtag-generator/">Hashtag Generator</a></li>
-                            <li><a href="/mailto-generator/">Mailto Link Generator</a></li>
-                        </ul>
+                        <h4>Resources</h4>
+                        <a href="/blog/">SmartGen Blog</a>
+                        <a href="/docs/">SGDocs</a>
+                        <a href="/help-center/">Help Center</a>
                     </div>
                     <div class="footer-column">
-                        <h4 class="footer-accordion-trigger">Daily Utilities <span class="accordion-icon"></span></h4>
-                        <ul class="footer-links">
-                            <li><a href="/age-calculator/">Age Calculator</a></li>
-                            <li><a href="/bmi-bmr-calculator/">BMI & BMR Calculator</a></li>
-                            <li><a href="/emi-calculator/">EMI Calculator</a></li>
-                            <li><a href="/percentage-calculator/">Percentage Calculator</a></li>
-                            <li><a href="/pomodoro-timer/">Pomodoro Timer</a></li>
-                            <li><a href="/secure-notepad/">Secure Notepad</a></li>
-                            <li><a href="/unit-converter/">Unit Converter</a></li>
-                            <li><a href="/image-compressor/">Image Compressor</a></li>
-                            <li><a href="/picture-url-generator/">Picture URL Generator</a></li>
-                            <li><a href="/fancy-font-generator/">Fancy Font Generator</a></li>
-                            <li><a href="/word-counter/">Word Counter</a></li>
-                            <li><a href="/text-case-converter/">Text Case Converter</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4 class="footer-accordion-trigger">📚 Resources <span class="accordion-icon"></span></h4>
-                        <ul class="footer-links">
-                            <li><a href="/blog/">📖 SmartGen Blog</a></li>
-                            <li><a href="/html-code-library/">📚 HTML Code Library</a></li>
-                            <li><a href="/docs/">📖 Documentation</a></li>
-                            <li><a href="/updates/">📋 Changelog</a></li>
-                            <li><a href="/trust-center/">🛡️ Trust Center</a></li>
-                            <li><a href="/smartgen-legal-info/">⚖️ Legal Info</a></li>
-                            <li><a href="/help-center/">❓ Help Center</a></li>
-                            <li><a href="/about/">About Us</a></li>
-                            <li><a href="/contact/">Contact Support</a></li>
-                            <li><a href="https://github.com/bayzed123/SmartGenQR.oi">⭐ Star on GitHub</a></li>
-                        </ul>
+                        <h4>Company</h4>
+                        <a href="/about/">About Us</a>
+                        <a href="/contact/">Contact Us</a>
+                        <a href="/smartgen-legal-info/">Legal Info</a>
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2026 SmartGen. All rights reserved. | <a href="/privacy/">Privacy Policy</a> | <a href="/smartgen-legal-info/">Terms & Conditions</a></p>
+                <div class="footer-copyright">
+                    © ${new Date().getFullYear()} SmartGen Tools. All rights reserved. Built with ❤️ for the community.
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/bayzed123/SmartGenQR.oi" title="GitHub" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
     `;
-
-    // Accordion functionality for footer
-    const triggers = footer.querySelectorAll('.footer-accordion-trigger');
-    triggers.forEach(trigger => {
-        trigger.addEventListener('click', function() {
-            const column = this.closest('.footer-column');
-            const links = column.querySelector('.footer-links');
-            
-            if (window.innerWidth <= 768) {
-                links.style.display = links.style.display === 'none' ? 'block' : 'none';
-                this.classList.toggle('active');
-            }
-        });
-    });
-}
-
-function initTheme() {
-    const html = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
-}
-
-function toggleTheme() {
-    const html = document.documentElement;
-    const currentTheme = html.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
-    html.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-}
-
-function initAccordion() {
-    const triggers = document.querySelectorAll('.footer-accordion-trigger');
-    triggers.forEach(trigger => {
-        trigger.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const column = this.closest('.footer-column');
-                const links = column.querySelector('.footer-links');
-                
-                if (links) {
-                    links.style.display = links.style.display === 'none' ? 'block' : 'none';
-                    this.classList.toggle('active');
-                }
-            }
-        });
-    });
 }
