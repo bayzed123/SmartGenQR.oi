@@ -39,7 +39,7 @@ function renderFeed(posts, container) {
                     <div class="author-avatar">${initials}</div>
                     <div class="post-meta-info">
                         <span class="post-author-name">${post.author || 'SmartGen Team'}</span>
-                        <span class="post-date">${formattedDate} â¢ ð Public</span>
+                        <span class="post-date">${formattedDate} • 🌍 Public</span>
                     </div>
                 </div>
                 <div class="feed-post-content">
@@ -51,13 +51,10 @@ function renderFeed(posts, container) {
                 </a>
                 <div class="feed-post-footer">
                     <a href="/blog/${post.slug}/" class="feed-action-btn">
-                        <span>ð</span> Read More
-                    </a>
-                    <a href="https://github.com/bayzed123/SmartGenQR.oi" target="_blank" class="feed-action-btn">
-                        <span>ð»</span> Open Source
+                        <span>📖</span> Read More
                     </a>
                     <a href="#" class="feed-action-btn" onclick="event.preventDefault(); navigator.share({title: '${post.title}', url: '/blog/${post.slug}/'})">
-                        <span>ð¤</span> Share
+                        <span>📤</span> Share
                     </a>
                 </div>
             </div>
