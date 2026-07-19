@@ -3,171 +3,103 @@ document.addEventListener('DOMContentLoaded', () => {
     injectFooter();
     initTheme();
     initAccordion();
-    initCookieConsent();
-    
-    // Inject Adsterra ads on tool pages (runtime injection for static pages)
-    if (typeof RuntimeAdInjector !== 'undefined' && RuntimeAdInjector.injectAllAds) {
-        RuntimeAdInjector.injectAllAds();
-    }
 });
-
-function initCookieConsent() {
-    const banner = document.getElementById('cookie-consent-banner') || document.getElementById('cookieBanner');
-    const acceptBtn = document.getElementById('accept-cookies') || document.getElementById('acceptCookies');
-    
-    if (!banner || !acceptBtn) return;
-
-    const consentKey = banner.id === 'cookieBanner' ? 'smartgen_cookie_consent' : 'cookie-consent-accepted';
-
-    if (!localStorage.getItem(consentKey)) {
-        banner.style.display = 'block';
-    } else {
-        banner.style.display = 'none';
-    }
-
-    acceptBtn.addEventListener('click', () => {
-        localStorage.setItem(consentKey, 'true');
-        localStorage.setItem('cookie-consent-accepted', 'true'); // Sync both keys
-        localStorage.setItem('smartgen_cookie_consent', 'accepted');
-        banner.style.display = 'none';
-    });
-
-    const declineBtn = document.getElementById('declineCookies');
-    if (declineBtn) {
-        declineBtn.addEventListener('click', () => {
-            localStorage.setItem(consentKey, 'declined');
-            banner.style.display = 'none';
-        });
-    }
-}
 
 function injectNavbar() {
     const header = document.getElementById('main-header');
     if (!header) return;
 
     // Absolute paths (/) are used to prevent routing errors like 'blog/blog/'
-    /**
- * SmartGen Shared Header & Footer Logic
- * This script injects the shared header and footer across all pages.
- * FIXED VERSION: Updated navigation with all valid links and proper styling
- */
-
-document.addEventListener('DOMContentLoaded', () => {
-    injectHeader();
-    injectFooter();
-    initDropdowns();
-});
-
-/**
- * Injects the navigation header into the #main-header element.
- */
-function injectHeader() {
-    const header = document.getElementById('main-header');
-    if (!header) return;
-
     header.innerHTML = `
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo">
-                    <svg class="logo-icon" width="32" height="32" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
-                        <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
-                    </svg>
-                    <span class="logo-text">SmartGen</span>
+                    <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/img/logo.svg" alt="SmartGen Logo" class="logo-icon" style="width: 32px; height: 32px; object-fit: contain;">
+                    SmartGen
                 </a>
-
-                <nav id="nav-links" class="nav-links">
-                    <a href="/" class="nav-link">Home</a>
-                    
-                    <div class="dropdown">
-                        <button class="dropdown-btn">Products/Tools <span class="arrow">▾</span></button>
+                <div class="header-actions">
+                    <button id="theme-toggle" class="icon-btn" title="Toggle Theme">🌓</button>
+                    <button id="mobile-menu-toggle" class="icon-btn mobile-only" title="Toggle Menu">☰</button>
+                </div>
+                <nav id="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/blog/">Blog</a>
+                    <div class="dropdown" id="tools-dropdown">
+                        <a href="/#all-tools" class="dropdown-trigger">Tools</a>
                         <div class="dropdown-content">
-                            <a href="/tools/">Explore All Tools</a>
-                            <a href="/html-code-library/">HTML Code Library</a>
+                            <div class="dropdown-category">
+                                <h4>📈 Marketing</h4>
+                                <a href="/utm-builder/" class="dropdown-item">UTM Builder</a>
+                                <a href="/whatsapp-link/" class="dropdown-item">WhatsApp Link</a>
+                                <a href="/blog-title-generator/" class="dropdown-item">Blog Title</a>
+                            </div>
+                            <div class="dropdown-category">
+                                <h4>💻 Developer</h4>
+                                <a href="/qr-generator/" class="dropdown-item">QR Generator</a>
+                                <a href="/meta-tag-generator/" class="dropdown-item">Meta Tags</a>
+                                <a href="/css-gradient-generator/" class="dropdown-item">CSS Gradient</a>
+                            </div>
+                            <div class="dropdown-category">
+                                <h4>🔍 SEO</h4>
+                                <a href="/keyword-density-checker/" class="dropdown-item">Keyword Density</a>
+                                <a href="/serp-preview-tool/" class="dropdown-item">SERP Preview</a>
+                            </div>
+                            <div class="dropdown-category">
+                                <h4>⚙️ Utilities</h4>
+                                <a href="/voice-remover/" class="dropdown-item">🎤 Voice Remover (AI)</a>
+                                <a href="/age-calculator/" class="dropdown-item">Age Calculator</a>
+                                <a href="/image-compressor/" class="dropdown-item">Image Compressor</a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="dropdown">
-                        <button class="dropdown-btn">Resources <span class="arrow">▾</span></button>
-                        <div class="dropdown-content">
-                            <a href="/blog/">SmartGen Academy</a>
-                            <a href="/docs/">Documentation</a>
-                            <a href="/updates/">Daily Changelog</a>
-                        </div>
-                    </div>
-
-                    <div class="dropdown">
-                        <button class="dropdown-btn">Company <span class="arrow">▾</span></button>
-                        <div class="dropdown-content">
-                            <a href="/trust-center/">Trust Centre</a>
-                            <a href="/smartgen-legal-info/">Legal Info</a>
-                            <a href="/help-center/">Help Centre</a>
-                            <a href="/about/">About Us</a>
-                            <a href="/contact/">Contact Us</a>
-                        </div>
-                    </div>
-
-                    <a href="https://github.com/bayzed123/SmartGenQR.oi" class="github-link" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        <span>Star</span>
-                    </a>
+                    <a href="/#all-tools">Top Tools</a>
+                    <a href="/contact/">Request a Tool</a>
+                    <a href="/about/">About</a>
                 </nav>
-
-                <button id="mobile-toggle" class="mobile-toggle-btn" title="Open Menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
             </div>
         </div>
 
         <aside id="mobile-sidebar" class="mobile-sidebar">
             <div class="sidebar-header">
                 <a href="/" class="sidebar-logo">
-                    <svg class="sidebar-logo-icon" width="28" height="28" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
-                        <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
-                    </svg>
-                    <span>SmartGen</span>
+                    <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/img/logo.svg" alt="SmartGen Logo" class="sidebar-logo-icon" style="width: 32px; height: 32px; object-fit: contain;">
+                    SmartGen
                 </a>
                 <button id="sidebar-close" class="sidebar-close-btn" title="Close Menu">✕</button>
             </div>
 
-            <div class="sidebar-nav-links">
-                <a href="/" class="sidebar-link">Home</a>
+            <div class="sidebar-nav-links" style="display: flex; flex-direction: column; padding: 20px; overflow-y: auto;">
+                <a href="/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🏠 Home</a>
+                <a href="/blog/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">📝 Blog</a>
+                <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
                 
-                <div class="sidebar-section">
-                    <span class="sidebar-section-title">Products/Tools</span>
-                    <a href="/tools/" class="sidebar-link">Explore All Tools</a>
-                    <a href="/html-code-library/" class="sidebar-link">HTML Code Library</a>
-                </div>
+                <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 10px; font-size: 0.85rem; text-transform: uppercase;">🧑‍💻 Developer Tools</div>
+                <a href="/qr-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• QR Generator</a>
+                <a href="/json-formatter-validator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• JSON Formatter</a>
+                <a href="/uuid-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• UUID Generator</a>
+                <a href="/text-to-changelog-json-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Text to Changelog JSON Generator</a>
+                <a href="/#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
 
-                <div class="sidebar-section">
-                    <span class="sidebar-section-title">Resources</span>
-                    <a href="/blog/" class="sidebar-link">SmartGen Academy</a>
-                    <a href="/docs/" class="sidebar-link">Documentation</a>
-                    <a href="/updates/" class="sidebar-link">Daily Changelog</a>
-                </div>
+                <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 15px; font-size: 0.85rem; text-transform: uppercase;">📈 SEO & Marketing</div>
+                <a href="/meta-tag-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Meta Tags</a>
+                <a href="/utm-builder/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• UTM Builder</a>
+                <a href="/serp-preview-tool/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• SERP Preview</a>
+                <a href="/#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
 
-                <div class="sidebar-section">
-                    <span class="sidebar-section-title">Company</span>
-                    <a href="/trust-center/" class="sidebar-link">Trust Centre</a>
-                    <a href="/smartgen-legal-info/" class="sidebar-link">Legal Info</a>
-                    <a href="/help-center/" class="sidebar-link">Help Centre</a>
-                    <a href="/about/" class="sidebar-link">About Us</a>
-                    <a href="/contact/" class="sidebar-link">Contact Us</a>
-                </div>
+                <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 15px; font-size: 0.85rem; text-transform: uppercase;">🛠 Daily Utilities</div>
+                <a href="/voice-remover/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• 🎤 Voice Remover (AI)</a>
+                <a href="/image-compressor/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Image Compressor</a>
+                <a href="/password-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Password Gen</a>
+                <a href="/word-counter/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Word Counter</a>
+                <a href="/#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
 
-                <a href="https://github.com/bayzed123/SmartGenQR.oi" class="sidebar-link github-sidebar" target="_blank" rel="noopener noreferrer">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    <span>Star on GitHub</span>
-                </a>
+                <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
+                <a href="/about/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; display: block; font-weight: 500;">📄 About Us</a>
+                <a href="/contact/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; display: block; font-weight: 500;">📩 Contact Us</a>
+                <a href="/privacy/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; display: block; font-weight: 500;">🔒 Privacy Policy</a>
             </div>
         </aside>
+
         <div id="sidebar-overlay" class="sidebar-overlay"></div>
     `;
 
@@ -222,7 +154,7 @@ function injectFooter() {
             <div class="footer-top">
                 <div class="footer-brand-section">
                     <div class="footer-logo">
-                        <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.5rem;">â¡</div>
+                        <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/img/logo.svg" alt="SmartGen Logo" class="logo-icon" style="width: 40px; height: 40px; object-fit: contain;">
                         <h3>SmartGen</h3>
                     </div>
                     <p class="footer-description">Fast, secure, and 100% free client-side web utilities for developers, marketers, and everyday users.</p>
@@ -284,13 +216,11 @@ function injectFooter() {
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4 class="footer-accordion-trigger">ð RESOURCES <span class="accordion-icon"></span></h4>
+                        <h4 class="footer-accordion-trigger">📚 RESOURCES <span class="accordion-icon"></span></h4>
                         <ul class="footer-links">
-                            <li><a href="/blog/" style="font-weight: 700; color: #2563eb;">ð Read Our Blog</a></li>
-                            <li><a href="/tools/" style="font-weight: 700; color: #2563eb;">ð ï¸ Tool Directory</a></li>
+                            <li><a href="/blog/" style="font-weight: 700; color: #2563eb;">📖 Read Our Blog</a></li>
                             <li><a href="/about/">About Us</a></li>
                             <li><a href="/contact/">Contact Support</a></li>
-                            <li><a href="https://github.com/bayzed123/SmartGenQR.oi" target="_blank">â­ Star on GitHub</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
