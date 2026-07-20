@@ -25,9 +25,6 @@
 
 | Broken URL | Error Code |
 |---|---|
-| https://smartgentools.com/_includes/author-blog-fotter-box/ | 404 |
-| https://smartgentools.com/_includes/author-profile-box/ | 404 |
-| https://smartgentools.com/about-eeat-enhanced/ | 404 |
 | https://smartgentools.com/privacy-eeat-enhanced/ | 404 |
 | https://smartgentools.com/tool-content-template/ | 404 |
 
