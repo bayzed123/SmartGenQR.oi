@@ -32,12 +32,12 @@ SmartGen Docs simplifies the process of creating professional, responsive docume
 
 Explore the following topics to get started:
 
-- **[Installation](https://docs.smartgentools.com/getting-started/installation.md)**: Learn how to install SmartGen Docs on your local machine.
-- **[Quick Start](https://docs.smartgentools.com/getting-started/quick-start.md)**: A rapid guide to creating and serving your first documentation site.
-- **[Your First Project](https://docs.smartgentools.com/getting-started/first-project.md)**: A detailed walkthrough of initializing a new project and understanding its components.
-- **[Folder Structure](https://docs.smartgentools.com/getting-started/folder-structure.md)**: Understand the recommended directory layout for your SmartGen Docs project.
-- **[Deployment](https://docs.smartgentools.com/getting-started/deployment.md)**: Instructions on how to deploy your generated static site to various hosting platforms.
-- **[Frequently Asked Questions (FAQ)](https://docs.smartgentools.com/getting-started/faq.md)**: Answers to common questions and troubleshooting tips.
+- **[Installation](https://docs.smartgentools.com/getting-started/installation.html)**: Learn how to install SmartGen Docs on your local machine.
+- **[Quick Start](https://docs.smartgentools.com/getting-started/quick-start.html)**: A rapid guide to creating and serving your first documentation site.
+- **[Your First Project](https://docs.smartgentools.com/getting-started/first-project.html)**: A detailed walkthrough of initializing a new project and understanding its components.
+- **[Folder Structure](https://docs.smartgentools.com/getting-started/folder-structure.html)**: Understand the recommended directory layout for your SmartGen Docs project.
+- **[Deployment](https://docs.smartgentools.com/getting-started/deployment.html)**: Instructions on how to deploy your generated static site to various hosting platforms.
+- **[Frequently Asked Questions (FAQ)](https://docs.smartgentools.com/getting-started/faq.html)**: Answers to common questions and troubleshooting tips.
 
 We recommend following these guides in order to ensure a smooth and comprehensive onboarding experience. Each page builds upon the knowledge gained from the previous one, providing a clear path to mastering SmartGen Docs.
 
@@ -54,17 +54,17 @@ SmartGen Docs is built to be efficient and flexible, transforming your Markdown 
 
 Explore the following topics to gain a comprehensive understanding of SmartGen Docs:
 
-- **[Overview](https://docs.smartgentools.com/docs/index.md)**: A general introduction to the core documentation.
-- **[SmartGen Platform](https://docs.smartgentools.com/docs/platform.md)**: Understand the broader SmartGen Platform and how SmartGen Docs fits into its ecosystem.
-- **[Architecture](https://docs.smartgentools.com/docs/architecture.md)**: Delve into the technical architecture of SmartGen Docs, including its components and their interactions.
-- **[Features](https://docs.smartgentools.com/docs/features.md)**: A detailed look at all the functionalities and capabilities offered by SmartGen Docs.
-- **[Concepts](https://docs.smartgentools.com/docs/concepts.md)**: Explore the fundamental concepts and principles that underpin SmartGen Docs.
-- **[Release Notes](https://docs.smartgentools.com/docs/releases.md)**: Stay updated with new features, improvements, and bug fixes in each release.
-- **[Changelog](https://docs.smartgentools.com/docs/changelog.md)**: A historical record of all changes made to the SmartGen Docs project.
+- **[Overview](https://docs.smartgentools.com/docs/index.html)**: A general introduction to the core documentation.
+- **[SmartGen Platform](https://docs.smartgentools.com/docs/platform.html)**: Understand the broader SmartGen Platform and how SmartGen Docs fits into its ecosystem.
+- **[Architecture](https://docs.smartgentools.com/docs/architecture.html)**: Delve into the technical architecture of SmartGen Docs, including its components and their interactions.
+- **[Features](https://docs.smartgentools.com/docs/features.html)**: A detailed look at all the functionalities and capabilities offered by SmartGen Docs.
+- **[Concepts](https://docs.smartgentools.com/docs/concepts.html)**: Explore the fundamental concepts and principles that underpin SmartGen Docs.
+- **[Release Notes](https://docs.smartgentools.com/docs/releases.html)**: Stay updated with new features, improvements, and bug fixes in each release.
+- **[Changelog](https://docs.smartgentools.com/docs/changelog.html)**: A historical record of all changes made to the SmartGen Docs project.
 
-We recommend starting with the **[Architecture](https://docs.smartgentools.com/docs/architecture.md)** and **[Concepts](https://docs.smartgentools.com/docs/concepts.md)** pages to build a strong foundation, then exploring other topics as needed. Each page is designed to provide clear, concise, and accurate information to enhance your understanding of SmartGen Docs.
-
+We recommend starting with the **[Architecture](https://docs.smartgentools.com/docs/architecture.html)** and **[Concepts](https://docs.smartgentools.com/docs/concepts.html)** pages to build a strong foundation, then exploring other topics as needed. Each page is designed to provide clear, concise, and accurate information to enhance your understanding of SmartGen Docs.
 [PreviousRelease Notes](https://docs.smartgentools.com/blog/releases.html) [Next Developer](https://docs.smartgentools.com/about/developer.html)
+
 ---
 The page outlines the recommended structure for organizing a SmartGen Docs project to enhance maintainability and scalability. The core project directory includes the main configuration file `smartgen.yml`, a `docs/` directory for Markdown documentation files, and a `site/` directory for the generated static website. Key details of each component are explained: \n\n1. **`smartgen.yml`** - Configures site settings like name, URL, author, description, theme, and navigation structure. \n2. **`docs/`** - Contains source Markdown files, including a homepage and logically grouped guides/tutorials. \n3. **`site/`** - Automatically generated HTML files from the Markdown sources, including necessary CSS and JavaScript files. \n\nBest practices suggest logical grouping of documentation, consistent naming conventions for files, and regular updates to the `smartgen.yml` to reflect changes in `docs/`. Following this structure ensures a well-organized documentation project.
 [Home](https://docs.smartgentools.com/index.html) SmartGen Platform
@@ -331,6 +331,7 @@ This directory is automatically generated when you run the `smartgen-docs build`
 By adhering to this folder structure, you can maintain a clean, organized, and easily navigable documentation project with SmartGen Docs.
 
 [PreviousFirst Project](https://docs.smartgentools.com/getting-started/first-project.html) [Next Deployment](https://docs.smartgentools.com/getting-started/deployment.html)
+
 ---
 The 'Getting Started' section of SmartGen Docs helps users set up their documentation projects. It covers installation, creating a site, project initialization, folder structure, deployment methods, and frequently asked questions. The guide provides a structured approach to quickly acquire the necessary information to use SmartGen Docs effectively.
 [Home](https://docs.smartgentools.com/index.html) Welcome
@@ -345,12 +346,12 @@ SmartGen Docs simplifies the process of creating professional, responsive docume
 
 Explore the following topics to get started:
 
-- **[Installation](https://docs.smartgentools.com/getting-started/installation.md)**: Learn how to install SmartGen Docs on your local machine.
-- **[Quick Start](https://docs.smartgentools.com/getting-started/quick-start.md)**: A rapid guide to creating and serving your first documentation site.
-- **[Your First Project](https://docs.smartgentools.com/getting-started/first-project.md)**: A detailed walkthrough of initializing a new project and understanding its components.
-- **[Folder Structure](https://docs.smartgentools.com/getting-started/folder-structure.md)**: Understand the recommended directory layout for your SmartGen Docs project.
-- **[Deployment](https://docs.smartgentools.com/getting-started/deployment.md)**: Instructions on how to deploy your generated static site to various hosting platforms.
-- **[Frequently Asked Questions (FAQ)](https://docs.smartgentools.com/getting-started/faq.md)**: Answers to common questions and troubleshooting tips.
+- **[Installation](https://docs.smartgentools.com/getting-started/installation.html)**: Learn how to install SmartGen Docs on your local machine.
+- **[Quick Start](https://docs.smartgentools.com/getting-started/quick-start.html)**: A rapid guide to creating and serving your first documentation site.
+- **[Your First Project](https://docs.smartgentools.com/getting-started/first-project.html)**: A detailed walkthrough of initializing a new project and understanding its components.
+- **[Folder Structure](https://docs.smartgentools.com/getting-started/folder-structure.html)**: Understand the recommended directory layout for your SmartGen Docs project.
+- **[Deployment](https://docs.smartgentools.com/getting-started/deployment.html)**: Instructions on how to deploy your generated static site to various hosting platforms.
+- **[Frequently Asked Questions (FAQ)](https://docs.smartgentools.com/getting-started/faq.html)**: Answers to common questions and troubleshooting tips.
 
 We recommend following these guides in order to ensure a smooth and comprehensive onboarding experience. Each page builds upon the knowledge gained from the previous one, providing a clear path to mastering SmartGen Docs.
 
@@ -672,7 +673,7 @@ nav:
 Copy
 ```
 
-Refer to the [Folder Structure Guide](https://docs.smartgentools.com/getting-started/folder-structure.md) and [Configuration Guide](https://docs.smartgentools.com/guides/configuration.md) for more details.
+Refer to the [Folder Structure Guide](https://docs.smartgentools.com/getting-started/folder-structure.html) and [Configuration Guide](https://docs.smartgentools.com/guides/configuration.html) for more details.
 
 ## Building and Serving
 
