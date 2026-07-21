@@ -1,5 +1,10 @@
 [
   {
+    "title": "Enhance SmartGen Docs with FAQ and image updates",
+    "date": "2026-07-21T20:49:08Z",
+    "description": "Updated image links and added FAQ section with common questions about SmartGen Docs, including installation, usage, and benefits."
+  },
+  {
     "title": "Update best-mkdocs-alternative-smartgendocs.md",
     "date": "2026-07-21T20:36:59Z",
     "description": "Platform improvement and optimization."
