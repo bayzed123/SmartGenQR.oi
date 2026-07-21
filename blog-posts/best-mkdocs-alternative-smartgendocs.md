@@ -16,13 +16,13 @@ Created by Sayad Md Bayezid Hosan, [SmartGen Docs](https://docs.smartgentools.co
 ---
 SmartGen Docs is an open-source static site generator for project documentation, created by Sayad Md Bayezid Hosan. It allows for easy transformation of Markdown files into responsive websites, designed for developers and technical writers. Key features include Markdown support, static site generation, YAML configuration, live reload development server, customizable themes, CLI for project management, and API auto-generation. Users can quickly get started with installation and project setup by following detailed guides available in the documentation. Various resources, tutorials, and a community section encourage collaboration and knowledge sharing.
 [Home](https://docs.smartgentools.com/index.html) Welcome
-
+![Header-image](https://smartgentools.com/blog-posts/images/smartgenDocsHeader.png
 # Getting Started with SmartGen Docs
 
 Welcome to the **Getting Started** section of SmartGen Docs. This guide is designed to help you quickly set up your documentation project, understand its basic structure, and begin writing your content. Whether you're a new user or looking for a refresher, these pages will provide you with the essential information to kickstart your journey with SmartGen Docs.
 
 SmartGen Docs simplifies the process of creating professional, responsive documentation websites from Markdown files. By following the steps outlined in this section, you will learn how to install the necessary tools, initialize a new project, and deploy your documentation.
-
+![smartgen Docs Home Image](https://smartgentools/blog-posts/images/smartgen-home-overview.JPG)
 ## In This Section
 
 Explore the following topics to get started:
@@ -39,7 +39,7 @@ We recommend following these guides in order to ensure a smooth and comprehensiv
 [PreviousRelease Notes](https://docs.smartgentools.com/blog/releases.html) [Next Developer](https://docs.smartgentools.com/about/developer.html)
 ---
 [Home](https://docs.smartgentools.com/index.html) Overview
-
+![smartgen home overview image](https://smartgentools.com/blog-posts/images/SmartgenDocs Home page .png)
 Welcome to the **Core Documentation** section of SmartGen Docs. This area provides an in-depth understanding of the platform itself, covering its underlying architecture, key features, fundamental concepts, and release history. Whether you are looking to understand how SmartGen Docs works under the hood or seeking detailed information about its capabilities, this section is your primary resource.
 
 SmartGen Docs is built to be efficient and flexible, transforming your Markdown content into a polished static website. The pages within this section will help you grasp the technical aspects and design philosophies that make SmartGen Docs a powerful tool for documentation.
@@ -62,6 +62,7 @@ We recommend starting with the **[Architecture](https://docs.smartgentools.com/d
 ---
 The page outlines the recommended structure for organizing a SmartGen Docs project to enhance maintainability and scalability. The core project directory includes the main configuration file `smartgen.yml`, a `docs/` directory for Markdown documentation files, and a `site/` directory for the generated static website. Key details of each component are explained: \n\n1. **`smartgen.yml`** - Configures site settings like name, URL, author, description, theme, and navigation structure. \n2. **`docs/`** - Contains source Markdown files, including a homepage and logically grouped guides/tutorials. \n3. **`site/`** - Automatically generated HTML files from the Markdown sources, including necessary CSS and JavaScript files. \n\nBest practices suggest logical grouping of documentation, consistent naming conventions for files, and regular updates to the `smartgen.yml` to reflect changes in `docs/`. Following this structure ensures a well-organized documentation project.
 [Home](https://docs.smartgentools.com/index.html) SmartGen Platform
+![smartgen platfrom image](https://smartgentools.com/blog-posts/images/smartgen-project-structure.JPG)
 
 # The SmartGen Platform and SmartGen Docs
 
@@ -90,6 +91,7 @@ For more information on other tools available within the ecosystem, please visit
 
 [PreviousOverview](https://docs.smartgentools.com/docs/index.html) [Next Architecture](https://docs.smartgentools.com/docs/architecture.html)
 ---
+
 The FAQ section for SmartGen Docs covers common inquiries regarding its use, installation, and features. SmartGen Docs is an open-source static site generator that simplifies the creation of documentation websites from Markdown files. Key benefits include ease of use, fast loading times, flexibility, and compatibility with various deployment platforms. Installation requires Python 3.8 or newer. Users can install or upgrade SmartGen Docs via pip. The documentation structure necessitates placing Markdown files in a 'docs/' directory. To add a new page, users must create a Markdown file and update the 'smartgen.yml' configuration. Local previews and builds for deployment are straightforward, and the site can be deployed to GitHub Pages.
 [Home](https://docs.smartgentools.com/index.html) FAQ
 
@@ -219,6 +221,7 @@ Yes, SmartGen Docs sites are perfectly suited for GitHub Pages. You can deploy m
 The Core Documentation section of SmartGen Docs provides comprehensive information about the platform, including its architecture, features, and underlying concepts. It serves as a primary resource for understanding SmartGen Docs, which efficiently transforms Markdown content into a static website. Key topics include an overview of the documentation, the SmartGen platform, technical architecture, features, fundamental concepts, release notes, and a changelog. Users are encouraged to start with the Architecture and Concepts pages for a foundational understanding.
 
 ---
+![smartgen quick start image](https://smartgentools.com/blog-posts/images/smartgen-quick-start.JPG)
 The Quick Start Guide for SmartGen Docs provides a step-by-step approach to creating and serving a documentation site. It includes four main sections: 1. **Initialize a New Project**: Use the command `smartgen-docs init` to set up the project, which creates configuration and an initial `index.md` file. 2. **Write Your Documentation**: Documentation is composed in Markdown, starting with editing `docs/index.md` and adding additional pages as needed, updating `smartgen.yml` for navigation. 3. **Serve Your Documentation Locally**: Run `smartgen-docs serve` to preview changes live on a local server. 4. **Build Your Static Site**: Execute `smartgen-docs build` to generate a static website in the `site/` directory for deployment. The guide concludes with links for further learning and deployment.
 [Home](https://docs.smartgentools.com/index.html) Quick Start
 
@@ -292,6 +295,7 @@ Congratulations! You've successfully initialized, written, served, and built you
 
 [PreviousInstallation](https://docs.smartgentools.com/getting-started/installation.html) [Next First Project](https://docs.smartgentools.com/getting-started/first-project.html)
 ---
+![smartgen docs home inage](https://smartgentools.com/blog-posts/images/smartgen-docs-home.JPG)
 This guide provides a step-by-step process to install SmartGen Docs, a Python-based tool, using `pip`. It outlines prerequisites including Python 3.8+ and pip installation. The installation steps include opening a terminal, executing the installation command, and verifying the installation by using the help command. It also covers upgrading SmartGen Docs and offers links to a Quick Start Guide and troubleshooting resources.
 [Home](https://docs.smartgentools.com/index.html) Installation
 
@@ -557,6 +561,7 @@ Now that you understand the project structure, you can proceed to organize your 
 
 [PreviousQuick Start](https://docs.smartgentools.com/getting-started/quick-start.html) [Next Folder Structure](https://docs.smartgentools.com/getting-started/folder-structure.html)
 ---
+![smartgen deploy image](https://smartgentools.com/blog-posts/images/smartgen-deploy-documentation.JPG)
 [Home](https://docs.smartgentools.com/index.html) Deployment
 
 # Deployment
