@@ -1,13 +1,21 @@
 ---
-title: "pyproject toml Guide Write Configure and Fix Common Errors (2026)"
+title: "pyproject toml Guide Write Configure and Fix Common pypi Errors2026"
 description: "A complete pyproject.toml tutorial: every field explained with examples, step-by-step setup, the 2026 license format change, and fixes for the errors that trip people up most."
 keyword: "pyproject.toml,pypi, python"
-Tags: "pyproject.toml example, pyproject.toml tutorial, python packaging guide, setup.py to pyproject.toml, pyproject.toml license"
 date: 2026-07-22
 Image: "blog-posts/images/python-course-class-08-cover.svg"
-category: Developer & Technical Tools
+Tags: 
+- pyproject.toml 
+- examplepyproject.toml 
+- tutorial
+- python packaging guide
+- setup.py to pyproject.toml
+- pyproject.toml license
+- pypi
 ---
+<!--AUTHOR_PROFILE-->
 
+---
 # pyproject.toml Guide: Write, Configure & Fix Common Errors (2026)
 
 If you have ever opened a Python repository and found `setup.py`, `setup.cfg`, `requirements.txt`, and a half-finished `MANIFEST.in` all fighting for control of the same project, you already know why `pyproject.toml` exists. It replaces that pile of files with a single, readable configuration file that every modern Python tool — pip, build, Hatch, Poetry, uv, linters, type checkers — knows how to read.
@@ -580,6 +588,7 @@ Python 3.11+ includes `tomllib` in the standard library. For anything earlier, i
 
 ## Further Reading
 
+
 - [PyPA: Writing your pyproject.toml](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/) — the canonical technical reference this guide is built on top of
 - [PyPA: How to modernize a setup.py based project](https://packaging.python.org/en/latest/guides/modernize-setup-py-project/)
 - [PyPA: Using TestPyPI](https://packaging.python.org/en/latest/guides/using-testpypi/)
@@ -589,5 +598,26 @@ Python 3.11+ includes `tomllib` in the standard library. For anything earlier, i
 - [validate-pyproject on PyPI](https://pypi.org/project/validate-pyproject/)
 - [build on PyPI](https://pypi.org/project/build/)
 - [twine on PyPI](https://pypi.org/project/twine/)
+---
+<!--AUTHOR_FOOTER-->
+---
+Read related :
+- [What Is Python? A Complete Beginner Guide](https://smartgentools.com/blog/what-is-python-a-complete-beginner-guide/)
+- [Python Loops & Conditionals Step-by-Step](https://smartgentools.com/blog/python-loops-and-conditionals-step-by-step/)
+- [Master Python Operators: Step-by-Step Guide⁠](https://smartgentools.com/blog/master-python-operators-step-by-step-guide/)
+- [Python Variables and Data Types Explained](https://smartgentools.com/blog/python-variables-and-data-types-explained/)
+- [Python Data Structures Explained: Lists to Dicts](https://smartgentools.com/blog/python-data-structures-explained-lists-to-dicts/)
+- [Python Loop Exercises and String Basics Guide](https://smartgentools.com/blog/python-loop-exercises-and-string-basics-guide/)
+- [GITHUB SECRETS EXPLAINED](https://smartgentools.com/docs/github-secrets-explained/)
+- [Vite Optimization Guide for CI/CD](https://smartgentools.com/docs/vite-optimization-guide-for-cicd/)
+---
+Bunas
+### What is SmartGen
+SmartGen Docs is an open-source Python static site generator built specifically for project documentation. It's a pip install-able alternative in the same space as MkDocs and Sphinx, with three deliberate differences:
+Zero third-party front-end dependency. No icon fonts, no UI framework, no CDN calls. Every pixel in the default theme is hand-authored CSS and inline SVG. Code syntax highlighting runs server-side through Pygments at build time — highlighted code even with JavaScript disabled.
+One toolchain, one config file. smartgen-docs init / serve / build covers scaffolding, a live-reload dev server, and static output. Navigation, theme palette, and site metadata all live in a single smartgen.yml.
+Markdown-first, no lock-in. Every page is a plain .md file with YAML front matter. Your content isn't trapped in a proprietary format.
+If you're searching for a documentation generator, a markdown to HTML converter, an MkDocs alternative, or a lightweight docs-as-code tool that deploys straight to GitHub Pages, this repo is built for exactly that.
+more Read [SmartGen Auto Docs](https://docs.smartgentools.com)
 
 *This guide is part of the [SmartGen developer tutorials](https://smartgentools.com/blog/) series. If you're new to SmartGen, the [full guide to SmartGen's 40+ free tools](https://smartgentools.com/blog/the-ultimate-guide-to-smartgen-tools-40-free-utilities-for-developers-marketers-and-creators/) is a good next stop.*
