@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add SVG comparison of long-tail vs head keywords",
+    "date": "2026-07-22T01:47:51Z",
+    "description": "This SVG illustrates the comparison between long-tail and head keywords, including share of search queries, average conversion rates, and typical ranking difficulty."
+  },
+  {
     "title": "Add SVG for keyword research zero volume demand curve",
     "date": "2026-07-22T01:46:55Z",
     "description": "Added an SVG illustrating the keyword research zero volume demand curve, including axes, labels, and annotations."
