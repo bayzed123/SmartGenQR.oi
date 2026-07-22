@@ -1,0 +1,70 @@
+<svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+
+  <defs>
+    <linearGradient id="tail-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.35"/>
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:0.08"/>
+    </linearGradient>
+    <filter id="box-shadow" x="-6%" y="-6%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(0,0,0,0.12)"/>
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="800" height="440" fill="#FCFBFA"/>
+  <rect width="800" height="440" fill="none" stroke="#EEE" stroke-width="1"/>
+
+  <!-- TITLE -->
+  <text x="400" y="28" text-anchor="middle" fill="#1E1B4B" font-size="16" font-weight="700">The Search Demand Curve</text>
+  <text x="400" y="47" text-anchor="middle" fill="#6B7280" font-size="11.5">Why "zero volume" almost never means zero real searches</text>
+
+  <!-- PLOT AREA AXES -->
+  <!-- Y axis -->
+  <line x1="75" y1="80" x2="75" y2="355" stroke="#9CA3AF" stroke-width="1.5"/>
+  <!-- X axis -->
+  <line x1="75" y1="355" x2="755" y2="355" stroke="#9CA3AF" stroke-width="1.5"/>
+
+  <!-- Y axis label -->
+  <text x="30" y="217" text-anchor="middle" fill="#6B7280" font-size="10.5" transform="rotate(-90 30 217)">Monthly Search Volume (as reported by tools)</text>
+
+  <!-- X axis label -->
+  <text x="415" y="380" text-anchor="middle" fill="#6B7280" font-size="10.5">Keywords, ranked from highest to lowest reported volume →</text>
+
+  <!-- Y axis tick labels -->
+  <text x="68" y="90" text-anchor="end" fill="#9CA3AF" font-size="9">High</text>
+  <text x="68" y="358" text-anchor="end" fill="#9CA3AF" font-size="9">0</text>
+
+  <!-- TAIL SHADED REGION (from x=300 to x=755, under curve down to baseline) -->
+  <path d="M 300 290 L 360 308 L 420 322 L 480 332 L 550 340 L 620 345 L 690 348 L 755 350 L 755 355 L 300 355 Z"
+        fill="url(#tail-fill)"/>
+
+  <!-- DEMAND CURVE -->
+  <polyline points="75,95 100,140 130,175 160,205 200,235 250,265 300,290 360,308 420,322 480,332 550,340 620,345 690,348 755,350"
+            fill="none" stroke="#4338CA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Divider where "zero volume" territory begins -->
+  <line x1="300" y1="80" x2="300" y2="355" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="300" y="72" text-anchor="middle" fill="#B45309" font-size="9.5" font-weight="700">↓ Tools start showing "0" around here</text>
+
+  <!-- Head terms callout -->
+  <rect x="82" y="95" width="168" height="46" rx="8" fill="white" filter="url(#box-shadow)" stroke="#E5E7EB"/>
+  <text x="166" y="112" text-anchor="middle" fill="#1E1B4B" font-size="10" font-weight="700">Head Terms</text>
+  <text x="166" y="126" text-anchor="middle" fill="#555" font-size="9">~8% of keywords carry</text>
+  <text x="166" y="137" text-anchor="middle" fill="#555" font-size="9">huge individual volume</text>
+
+  <!-- Long tail callout -->
+  <rect x="470" y="140" width="230" height="58" rx="8" fill="white" filter="url(#box-shadow)" stroke="#FDE68A"/>
+  <text x="585" y="159" text-anchor="middle" fill="#92400E" font-size="10" font-weight="700">The Long Tail</text>
+  <text x="585" y="174" text-anchor="middle" fill="#555" font-size="9">92% of all keywords show</text>
+  <text x="585" y="187" text-anchor="middle" fill="#555" font-size="9">under 10 searches/month</text>
+  <!-- leader line from callout to tail region -->
+  <line x1="500" y1="198" x2="470" y2="290" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Bottom summary bar -->
+  <rect x="75" y="392" width="680" height="34" rx="8" fill="#EEF2FF"/>
+  <text x="415" y="413" text-anchor="middle" fill="#3730A3" font-size="10.5" font-weight="600">Individually tiny — but collectively, the long tail drives the majority of all real search traffic</text>
+
+  <!-- Source note -->
+  <text x="755" y="435" text-anchor="end" fill="#B0B0B0" font-size="8">Illustrative curve based on published 2025–2026 keyword volume distribution research</text>
+
+</svg>
