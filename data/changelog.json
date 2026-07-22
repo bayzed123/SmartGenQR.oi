@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add SVG for keyword research zero volume demand curve",
+    "date": "2026-07-22T01:46:55Z",
+    "description": "Added an SVG illustrating the keyword research zero volume demand curve, including axes, labels, and annotations."
+  },
+  {
     "title": "Update best-mkdocs-alternative-smartgendocs.md",
     "date": "2026-07-21T21:43:40Z",
     "description": "fixing valid format Link. md to html ending"
