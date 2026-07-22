@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-    <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
-    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <title>Scrollbox Border - SmartGen</title>
-    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
-    <style>
-        body { 
+ <head>
+  <meta charset="utf-8"/>
+  <link href="https://www.googletagmanager.com" rel="preconnect"/>
+  <link href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+  <link href="https://fundingchoicesmessages.google.com" rel="preconnect"/>
+  <link as="style" href="../assets/css/style.css" onload="this.rel='stylesheet'" rel="preload"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+  <meta content="SAMEORIGIN" http-equiv="X-Frame-Options"/>
+  <meta content="1; mode=block" http-equiv="X-XSS-Protection"/>
+  <title>
+   Scrollbox Border - SmartGen
+  </title>
+  <script src="https://cdn.tailwindcss.com/3.4.17">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Mono&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body { 
             font-family: 'DM Sans', sans-serif; 
             background-color: #0a1f1a !important; 
             color: #d1fae5 !important; 
@@ -47,18 +51,22 @@
             color: #6ee7b7 !important; 
             margin-bottom: 6px; 
         }
-    </style>
-
-    <!-- Search Assets -->
-    <script src="../../../config/ad-config.js" defer></script>
-    <script src="../../../utils/ad-injector.js" defer></script>
-    <script src="../../../assets/js/app.js" defer></script>
-    <script src="../../../assets/js/search-data.js" defer></script>
-    <script src="../../../assets/js/search.js" defer></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
-
-    <style>
-        /* Cookie Consent Banner Styling */
+  </style>
+  <!-- Search Assets -->
+  <script defer="" src="../../../config/ad-config.js">
+  </script>
+  <script defer="" src="../../../utils/ad-injector.js">
+  </script>
+  <script defer="" src="../../../assets/js/app.js">
+  </script>
+  <script defer="" src="../../../assets/js/search-data.js">
+  </script>
+  <script defer="" src="../../../assets/js/search.js">
+  </script>
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068">
+  </script>
+  <style>
+   /* Cookie Consent Banner Styling */
         #cookie-consent-banner {
             position: fixed;
             bottom: 0;
@@ -117,158 +125,244 @@
         .cookie-link:hover {
             text-decoration: underline;
         }
-    </style>
-
-
-    <link rel="canonical" href="https://smartgentools.com/scrollbox-border/">
-    <script>
-        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+  </style>
+  <link href="https://smartgentools.com/scrollbox-border/" rel="canonical"/>
+  <script>
+   if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
             location.replace(`https:${location.href.substring(location.protocol.length)}`);
         }
-    </script>
-</head>
-<body class="min-h-screen w-full">
-    <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
-    <header class="border-b border-blue-800/50 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <h1 class="font-bold text-lg text-blue-200">Scrollbox Border</h1>
-            <button id="reset-btn" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-800 text-blue-100 hover:bg-blue-700 transition-colors text-sm font-medium"> 
-                <i data-lucide="rotate-ccw" style="width:14px;height:14px"></i> Reset 
-            </button>
-        </div>
-    </header>
-    <main class="max-w-6xl mx-auto p-6">
-        <div class="grid lg:grid-cols-2 gap-6">
-            <div class="space-y-4">
-                <section class="panel">
-                    <h2 class="font-semibold text-blue-100 mb-3">Settings</h2>
-                    <div class="space-y-3">
-                        <div><label class="field-label">Border Color</label><input id="scrollbox-border-col" type="color" value="#34d399" class="field-input h-10 p-1 cursor-pointer"></div>
-                    </div>
-                </section>
-            </div>
-            <div class="space-y-4">
-                <section class="panel">
-                    <h2 class="font-semibold text-blue-100 mb-3">Preview</h2>
-                    <div id="preview-box" class="bg-black/30 rounded-lg p-4 overflow-auto border border-blue-800/50 min-h-[100px]"></div>
-                </section>
-                
-                <section class="panel">
-                    <div class="flex items-center justify-between mb-3">
-                        <h2 class="font-semibold text-blue-100">Generated Code</h2>
-                        <div class="flex gap-2">
-                            <button id="view-code-btn" class="tab-btn active" onclick="setMode('view')">View</button>
-                            <button id="edit-code-btn" class="tab-btn" onclick="setMode('edit')">Edit</button>
-                        </div>
-                    </div>
-                    <div id="view-container">
-                        <pre id="code-output" class="code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-blue-200 border border-blue-800/50 min-h-[150px] whitespace-pre-wrap text-xs"></pre>
-                    </div>
-                    <div id="edit-container" class="hidden">
-                        <textarea id="code-edit" class="field-input code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-blue-200 border border-blue-800/50 min-h-[150px] whitespace-pre-wrap text-xs" style="width: 100%; resize: vertical;"></textarea>
-                    </div>
-                    <div class="flex gap-3 mt-3">
-                        <button id="copy-btn" class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm font-medium transition-colors"> 
-                            <i data-lucide="copy" style="width:14px;height:14px"></i> Copy 
-                        </button> 
-                        <button id="download-btn" class="flex items-center gap-2 px-4 py-2 bg-blue-800 hover:bg-blue-700 text-blue-100 rounded-lg text-sm font-medium transition-colors border border-blue-700"> 
-                            <i data-lucide="download" style="width:14px;height:14px"></i> Download 
-                        </button>
-                    </div>
-                </section>
-        
-            </div>
-        </div>
-
-</main>
-    <!-- Guidelines & FAQ Section -->
-    <section class="max-w-6xl mx-auto p-6 mt-8 space-y-8">
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="panel">
-                <h2 class="text-xl font-bold text-blue-100 mb-4 flex items-center gap-2">
-                    <i data-lucide="book-open" class="w-5 h-5"></i> How To Use
-                </h2>
-                <ul class="space-y-3 text-blue-200 text-sm">
-                    <li class="flex gap-2">
-                        <span class="bg-blue-800 text-blue-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">1</span>
-                        <span>Adjust the settings in the left panel to customize your component.</span>
-                    </li>
-                    <li class="flex gap-2">
-                        <span class="bg-blue-800 text-blue-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">2</span>
-                        <span>View the real-time changes in the "Live Preview" window.</span>
-                    </li>
-                    <li class="flex gap-2">
-                        <span class="bg-blue-800 text-blue-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">3</span>
-                        <span>Click "Copy" to copy the generated code or "Download" to save as HTML.</span>
-                    </li>
-                    <li class="flex gap-2">
-                        <span class="bg-blue-800 text-blue-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">4</span>
-                        <span>Paste the code into your project's HTML file.</span>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="panel">
-                <h2 class="text-xl font-bold text-blue-100 mb-4 flex items-center gap-2">
-                    <i data-lucide="help-circle" class="w-5 h-5"></i> FAQ
-                </h2>
-                <div class="space-y-4">
-                    <div>
-                        <h3 class="text-blue-100 font-semibold text-sm mb-1">Is this tool free?</h3>
-                        <p class="text-blue-300 text-xs">Yes, all tools in our HTML Code Library are 100% free to use for personal and commercial projects.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-blue-100 font-semibold text-sm mb-1">Do I need to install anything?</h3>
-                        <p class="text-blue-300 text-xs">No installation is required. Everything runs directly in your browser.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-blue-100 font-semibold text-sm mb-1">Is my data secure?</h3>
-                        <p class="text-blue-300 text-xs">Absolutely. All processing is done client-side. We never store or transmit your data.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="panel">
-                <h2 class="font-semibold text-blue-100 mb-3 flex items-center gap-2">
-                    <i data-lucide="monitor" class="w-4 h-4"></i> Compatibility
-                </h2>
-                <div class="flex gap-4">
-                    <i data-lucide="chrome" class="w-5 h-5 text-blue-400" title="Chrome"></i>
-                    <i data-lucide="framer" class="w-5 h-5 text-blue-400" title="Firefox"></i>
-                    <i data-lucide="safari" class="w-5 h-5 text-blue-400" title="Safari"></i>
-                    <i data-lucide="edge" class="w-5 h-5 text-blue-400" title="Edge"></i>
-                </div>
-                <p class="text-blue-400 text-[10px] mt-2">Compatible with all modern browsers.</p>
-            </div>
-            
-            <div class="panel md:col-span-2">
-                <h2 class="font-semibold text-blue-100 mb-3 flex items-center gap-2">
-                    <i data-lucide="link" class="w-4 h-4"></i> Related Tools
-                </h2>
-                <div class="flex flex-wrap gap-2">
-                    <a href="../../generators/html-table-generator/" class="text-xs bg-blue-900/50 hover:bg-blue-800 text-blue-200 px-3 py-1 rounded-full transition-colors border border-blue-700/50">Table Generator</a>
-                    <a href="../../generators/html-link-generator/" class="text-xs bg-blue-900/50 hover:bg-blue-800 text-blue-200 px-3 py-1 rounded-full transition-colors border border-blue-700/50">Link Generator</a>
-                    <a href="../../generators/text-color-generator/" class="text-xs bg-blue-900/50 hover:bg-blue-800 text-blue-200 px-3 py-1 rounded-full transition-colors border border-blue-700/50">Color Generator</a>
-                    <a href="../../editors/html-editor/" class="text-xs bg-blue-900/50 hover:bg-blue-800 text-blue-200 px-3 py-1 rounded-full transition-colors border border-blue-700/50">HTML Editor</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="border-t border-blue-800/30 mt-12 py-8 px-6 text-center">
-        <p class="text-blue-400 text-sm">&copy; 2026 SmartGen. Built with passion for web developers.</p>
-        <div class="flex justify-center gap-6 mt-4">
-            <a href="/privacy" class="text-xs text-blue-500 hover:text-blue-300">Privacy Policy</a>
-            <a href="/terms" class="text-xs text-blue-500 hover:text-blue-300">Terms of Use</a>
-            <a href="/contact" class="text-xs text-blue-500 hover:text-blue-300">Contact Us</a>
-        </div>
-    </footer>
-
+  </script>
+  <meta content="Free Scrollbox Border - Visually generate, preview, and copy production-ready HTML/CSS code instantly with SmartGen." name="description"/>
+  <meta content="Scrollbox Border | SmartGen" property="og:title"/>
+  <link href="../../animations.css" rel="stylesheet"/>
+  <script defer="" src="../../icons.js">
+  </script>
+  <script defer="" src="../../preview-panel.js">
+  </script>
+ 
+    <meta name="description" content="Free SmartGen Tool - Visually generate, preview, and copy production-ready HTML/CSS code instantly with SmartGen.">
+    <meta property="og:title" content="SmartGen Tool | SmartGen">
+    <link rel="stylesheet" href="../../animations.css">
+    <script src="../../icons.js" defer></script>
+    <script src="../../preview-panel.js" defer></script>
     
-    <script>
-        lucide.createIcons();
+</head>
+ <body class="min-h-screen w-full">
+  <div class="fixed top-4 right-4 z-50" id="toast-container">
+  </div>
+  <header class="border-b border-blue-800/50 px-6 py-4">
+   <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <h1 class="font-bold text-lg text-blue-200">
+     Scrollbox Border
+    </h1>
+    <button class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-800 text-blue-100 hover:bg-blue-700 transition-colors text-sm font-medium" id="reset-btn">
+     <i data-lucide="rotate-ccw" style="width:14px;height:14px">
+     </i>
+     Reset
+    </button>
+   </div>
+  </header>
+  <main class="max-w-6xl mx-auto p-6">
+   <div class="grid lg:grid-cols-2 gap-6">
+    <div class="space-y-4">
+     <section class="panel reveal-on-scroll">
+      <h2 class="font-semibold text-blue-100 mb-3">
+       Settings
+      </h2>
+      <div class="space-y-3">
+       <div>
+        <label class="field-label">
+         Border Color
+        </label>
+        <input class="field-input h-10 p-1 cursor-pointer" id="scrollbox-border-col" type="color" value="#34d399"/>
+       </div>
+      </div>
+     </section>
+    </div>
+    <div class="space-y-4">
+     <section class="panel reveal-on-scroll">
+      <h2 class="font-semibold text-blue-100 mb-3">
+       Preview
+      </h2>
+      <div class="bg-black/30 rounded-lg p-4 overflow-auto border border-blue-800/50 min-h-[100px]" id="preview-box">
+      </div>
+     </section>
+     <section class="panel reveal-on-scroll">
+      <div class="flex items-center justify-between mb-3">
+       <h2 class="font-semibold text-blue-100">
+        Generated Code
+       </h2>
+       <div class="flex gap-2">
+        <button class="tab-btn active" id="view-code-btn" onclick="setMode('view')">
+         View
+        </button>
+        <button class="tab-btn" id="edit-code-btn" onclick="setMode('edit')">
+         Edit
+        </button>
+       </div>
+      </div>
+      <div id="view-container">
+       <pre class="code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-blue-200 border border-blue-800/50 min-h-[150px] whitespace-pre-wrap text-xs" id="code-output"></pre>
+      </div>
+      <div class="hidden" id="edit-container">
+       <textarea class="field-input code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-blue-200 border border-blue-800/50 min-h-[150px] whitespace-pre-wrap text-xs" id="code-edit" style="width: 100%; resize: vertical;"></textarea>
+      </div>
+      <div class="flex gap-3 mt-3">
+       <button class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm font-medium transition-colors" id="copy-btn">
+        <i data-lucide="copy" style="width:14px;height:14px">
+        </i>
+        Copy
+       </button>
+       <button class="flex items-center gap-2 px-4 py-2 bg-blue-800 hover:bg-blue-700 text-blue-100 rounded-lg text-sm font-medium transition-colors border border-blue-700" id="download-btn">
+        <i data-lucide="download" style="width:14px;height:14px">
+        </i>
+        Download
+       </button>
+      </div>
+     </section>
+    </div>
+   </div>
+  </main>
+  <!-- Guidelines & FAQ Section -->
+  <section class="max-w-6xl mx-auto p-6 mt-8 space-y-8">
+   <div class="grid md:grid-cols-2 gap-8">
+    <div class="panel reveal-on-scroll">
+     <h2 class="text-xl font-bold text-blue-100 mb-4 flex items-center gap-2">
+      <i class="w-5 h-5" data-lucide="book-open">
+      </i>
+      How To Use
+     </h2>
+     <ul class="space-y-3 text-blue-200 text-sm">
+      <li class="flex gap-2">
+       <span class="bg-blue-800 text-blue-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">
+        1
+       </span>
+       <span>
+        Adjust the settings in the left panel to customize your component.
+       </span>
+      </li>
+      <li class="flex gap-2">
+       <span class="bg-blue-800 text-blue-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">
+        2
+       </span>
+       <span>
+        View the real-time changes in the "Live Preview" window.
+       </span>
+      </li>
+      <li class="flex gap-2">
+       <span class="bg-blue-800 text-blue-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">
+        3
+       </span>
+       <span>
+        Click "Copy" to copy the generated code or "Download" to save as HTML.
+       </span>
+      </li>
+      <li class="flex gap-2">
+       <span class="bg-blue-800 text-blue-100 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs">
+        4
+       </span>
+       <span>
+        Paste the code into your project's HTML file.
+       </span>
+      </li>
+     </ul>
+    </div>
+    <div class="panel reveal-on-scroll">
+     <h2 class="text-xl font-bold text-blue-100 mb-4 flex items-center gap-2">
+      <i class="w-5 h-5" data-lucide="help-circle">
+      </i>
+      FAQ
+     </h2>
+     <div class="space-y-4">
+      <div>
+       <h3 class="text-blue-100 font-semibold text-sm mb-1">
+        Is this tool free?
+       </h3>
+       <p class="text-blue-300 text-xs">
+        Yes, all tools in our HTML Code Library are 100% free to use for personal and commercial projects.
+       </p>
+      </div>
+      <div>
+       <h3 class="text-blue-100 font-semibold text-sm mb-1">
+        Do I need to install anything?
+       </h3>
+       <p class="text-blue-300 text-xs">
+        No installation is required. Everything runs directly in your browser.
+       </p>
+      </div>
+      <div>
+       <h3 class="text-blue-100 font-semibold text-sm mb-1">
+        Is my data secure?
+       </h3>
+       <p class="text-blue-300 text-xs">
+        Absolutely. All processing is done client-side. We never store or transmit your data.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="grid md:grid-cols-3 gap-6">
+    <div class="panel reveal-on-scroll">
+     <h2 class="font-semibold text-blue-100 mb-3 flex items-center gap-2">
+      <i class="w-4 h-4" data-lucide="monitor">
+      </i>
+      Compatibility
+     </h2>
+     <div class="flex gap-4">
+      <i class="w-5 h-5 text-blue-400" data-lucide="chrome" title="Chrome">
+      </i>
+      <i class="w-5 h-5 text-blue-400" data-lucide="framer" title="Firefox">
+      </i>
+      <i class="w-5 h-5 text-blue-400" data-lucide="safari" title="Safari">
+      </i>
+      <i class="w-5 h-5 text-blue-400" data-lucide="edge" title="Edge">
+      </i>
+     </div>
+     <p class="text-blue-400 text-[10px] mt-2">
+      Compatible with all modern browsers.
+     </p>
+    </div>
+    <div class="panel md:col-span-2 reveal-on-scroll">
+     <h2 class="font-semibold text-blue-100 mb-3 flex items-center gap-2">
+      <i class="w-4 h-4" data-lucide="link">
+      </i>
+      Related Tools
+     </h2>
+     <div class="flex flex-wrap gap-2">
+      <a class="text-xs bg-blue-900/50 hover:bg-blue-800 text-blue-200 px-3 py-1 rounded-full transition-colors border border-blue-700/50" href="../../generators/html-table-generator/">
+       Table Generator
+      </a>
+      <a class="text-xs bg-blue-900/50 hover:bg-blue-800 text-blue-200 px-3 py-1 rounded-full transition-colors border border-blue-700/50" href="../../generators/html-link-generator/">
+       Link Generator
+      </a>
+      <a class="text-xs bg-blue-900/50 hover:bg-blue-800 text-blue-200 px-3 py-1 rounded-full transition-colors border border-blue-700/50" href="../../generators/text-color-generator/">
+       Color Generator
+      </a>
+      <a class="text-xs bg-blue-900/50 hover:bg-blue-800 text-blue-200 px-3 py-1 rounded-full transition-colors border border-blue-700/50" href="../../editors/html-editor/">
+       HTML Editor
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <footer class="border-t border-blue-800/30 mt-12 py-8 px-6 text-center">
+   <p class="text-blue-400 text-sm">
+    © 2026 SmartGen. Built with passion for web developers.
+   </p>
+   <div class="flex justify-center gap-6 mt-4">
+    <a class="text-xs text-blue-500 hover:text-blue-300" href="/privacy">
+     Privacy Policy
+    </a>
+    <a class="text-xs text-blue-500 hover:text-blue-300" href="/terms">
+     Terms of Use
+    </a>
+    <a class="text-xs text-blue-500 hover:text-blue-300" href="/contact">
+     Contact Us
+    </a>
+   </div>
+  </footer>
+  <script>
+   lucide.createIcons();
         const $ = id => document.getElementById(id);
 
         document.querySelectorAll('input, select, textarea').forEach(el => {
@@ -291,13 +385,16 @@
     <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
     <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
     <!-- Search Assets -->
-    <script src="../../../assets/js/app.js" defer></script>
-    <script src="../../../assets/js/search-data.js" defer></script>
-    <script src="../../../assets/js/search.js" defer></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
-
-    <style>
-        /* Cookie Consent Banner Styling */
+    <script src="../../../assets/js/app.js" defer>
+  </script>
+  <script defer="" src="../../../assets/js/search-data.js">
+  </script>
+  <script defer="" src="../../../assets/js/search.js">
+  </script>
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068">
+  </script>
+  <style>
+   /* Cookie Consent Banner Styling */
         #cookie-consent-banner {
             position: fixed;
             bottom: 0;
@@ -356,44 +453,91 @@
         .cookie-link:hover {
             text-decoration: underline;
         }
-    </style>
-
-</head><body>\n${$('code-output').textContent}\n
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent-banner">
-        <div class="cookie-container">
-            <p class="cookie-text">
-                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" class="cookie-link">Privacy Policy</a> and <a href="/cookies/" class="cookie-link">Cookie Policy</a>.
-            </p>
-            <div class="cookie-actions">
-                <a href="/privacy/" class="cookie-link">Learn More</a>
-                <button id="accept-cookies" class="cookie-btn">Accept</button>
-            </div>
-        </div>
+  </style>
+  <body>
+   \n${$('code-output').textContent}\n
+   <!-- Cookie Consent Banner -->
+   <div id="cookie-consent-banner">
+    <div class="cookie-container">
+     <p class="cookie-text">
+      We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our
+      <a class="cookie-link" href="/privacy/">
+       Privacy Policy
+      </a>
+      and
+      <a class="cookie-link" href="/cookies/">
+       Cookie Policy
+      </a>
+      .
+     </p>
+     <div class="cookie-actions">
+      <a class="cookie-link" href="/privacy/">
+       Learn More
+      </a>
+      <button class="cookie-btn" id="accept-cookies">
+       Accept
+      </button>
+     </div>
     </div>
-
-
-    <!-- Cookie logic handled by app.js -->
-
-</body></html>`], { type: 'text/html' });
+   </div>
+   <!-- Cookie logic handled by app.js -->
+  </body>
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+        });
+  
+    function setMode(mode) {
+        const $ = id => document.getElementById(id);
+        if (mode === 'view') {
+            $('view-code-btn').classList.add('active');
+            $('edit-code-btn').classList.remove('active');
+            $('view-container').classList.remove('hidden');
+            $('edit-container').classList.add('hidden');
+            if (typeof update === 'function') update();
+        } else {
+            $('view-code-btn').classList.remove('active');
+            $('edit-code-btn').classList.add('active');
+            $('view-container').classList.add('hidden');
+            $('edit-container').classList.remove('hidden');
+            $('code-edit').value = $('code-output').textContent;
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    });
+    </script>
+ </body>
+</html>
+`], { type: 'text/html' });
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
             a.download = 'scrollbox-border.html';
             a.click();
         });
 
-        $('reset-btn').addEventListener('click', () => {
+        $('reset-btn').addEventListener('click', () =&gt; {
             $("scrollbox-border-col").value = "#34d399";
             update();
 
-        function setMode(mode) {
-            if (mode === 'view') {
-                $('view-code-btn').classList.add('active');
-                $('edit-code-btn').classList.remove('active');
-                $('view-container').classList.remove('hidden');
-                $('edit-container').classList.add('hidden');
-                update(); // Refresh from controls
-            } else {
+         else {
                 $('view-code-btn').classList.remove('active');
                 $('edit-code-btn').classList.add('active');
                 $('view-container').classList.add('hidden');
@@ -402,7 +546,7 @@
             }
         }
 
-        $('code-edit').addEventListener('input', () => {
+        $('code-edit').addEventListener('input', () =&gt; {
             const code = $('code-edit').value;
             $('preview-box').innerHTML = code;
             $('code-output').textContent = code;
@@ -415,19 +559,12 @@
             t.className = 'toast bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg';
             t.textContent = msg;
             $('toast-container').appendChild(t);
-            setTimeout(() => t.remove(), 2500);
+            setTimeout(() =&gt; t.remove(), 2500);
         }
 
         update();
 
-        function setMode(mode) {
-            if (mode === 'view') {
-                $('view-code-btn').classList.add('active');
-                $('edit-code-btn').classList.remove('active');
-                $('view-container').classList.remove('hidden');
-                $('edit-container').classList.add('hidden');
-                update(); // Refresh from controls
-            } else {
+         else {
                 $('view-code-btn').classList.remove('active');
                 $('edit-code-btn').classList.add('active');
                 $('view-container').classList.add('hidden');
@@ -436,29 +573,33 @@
             }
         }
 
-        $('code-edit').addEventListener('input', () => {
+        $('code-edit').addEventListener('input', () =&gt; {
             const code = $('code-edit').value;
             $('preview-box').innerHTML = code;
             $('code-output').textContent = code;
         });
-        
-    </script>
-
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent-banner">
-        <div class="cookie-container">
-            <p class="cookie-text">
-                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" class="cookie-link">Privacy Policy</a> and <a href="/cookies/" class="cookie-link">Cookie Policy</a>.
-            </p>
-            <div class="cookie-actions">
-                <a href="/privacy/" class="cookie-link">Learn More</a>
-                <button id="accept-cookies" class="cookie-btn">Accept</button>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Cookie logic handled by app.js -->
-
-</body>
-</html>
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent-banner">
+ <div class="cookie-container">
+  <p class="cookie-text">
+   We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our
+   <a class="cookie-link" href="/privacy/">
+    Privacy Policy
+   </a>
+   and
+   <a class="cookie-link" href="/cookies/">
+    Cookie Policy
+   </a>
+   .
+  </p>
+  <div class="cookie-actions">
+   <a class="cookie-link" href="/privacy/">
+    Learn More
+   </a>
+   <button class="cookie-btn" id="accept-cookies">
+    Accept
+   </button>
+  </div>
+ </div>
+</div>
+<!-- Cookie logic handled by app.js -->
