@@ -1,5 +1,10 @@
 [
   {
+    "title": "Redesign HTML Code Library hub and add shared component kit",
+    "date": "2026-07-22T07:26:07Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Update pyproject-toml-guide.md",
     "date": "2026-07-22T05:37:12Z",
     "description": "Platform improvement and optimization."
