@@ -1,9 +1,10 @@
 ---
-title: "pyproject.toml Guide: Write, Configure & Fix Common Errors (2026)"
-slug: pyproject-toml-guide
-meta_description: "A complete pyproject.toml tutorial: every field explained with examples, step-by-step setup, the 2026 license format change, and fixes for the errors that trip people up most."
-focus_keyword: pyproject.toml
-secondary_keywords: pyproject.toml example, pyproject.toml tutorial, python packaging guide, setup.py to pyproject.toml, pyproject.toml license
+title: "pyproject toml Guide Write Configure and Fix Common Errors (2026)"
+description: "A complete pyproject.toml tutorial: every field explained with examples, step-by-step setup, the 2026 license format change, and fixes for the errors that trip people up most."
+keyword: "pyproject.toml,pypi, python ,
+Tag: pyproject.toml example, pyproject.toml tutorial, python packaging guide, setup.py to pyproject.toml, pyproject.toml license
+date: 2026-07-22
+Image: "blog-posts/images/python-course-class-08-cover.svg"
 category: Developer & Technical Tools
 ---
 
