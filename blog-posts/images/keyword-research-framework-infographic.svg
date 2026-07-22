@@ -1,0 +1,226 @@
+<svg viewBox="0 0 800 950" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+
+  <defs>
+    <filter id="card-shadow" x="-4%" y="-4%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="rgba(0,0,0,0.08)"/>
+    </filter>
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#3730A3;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="stats-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3730A3;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#2D2470;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="800" height="950" fill="#FAFAFC"/>
+
+  <!-- ================================================ -->
+  <!-- HEADER -->
+  <!-- ================================================ -->
+  <rect width="800" height="118" fill="url(#header-grad)"/>
+  <circle cx="748" cy="20" r="90" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="762" cy="112" r="55" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="28" cy="92" r="64" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- Magnifying glass badge -->
+  <rect x="20" y="20" width="68" height="68" rx="10" fill="rgba(255,255,255,0.16)"/>
+  <circle cx="49" cy="49" r="14" fill="none" stroke="white" stroke-width="5"/>
+  <line x1="59" y1="59" x2="71" y2="71" stroke="white" stroke-width="5" stroke-linecap="round"/>
+
+  <text x="106" y="44" fill="white" font-size="21" font-weight="700" letter-spacing="-0.3">Keyword Research Framework</text>
+  <text x="106" y="70" fill="rgba(255,255,255,0.88)" font-size="13">Metrics, Prioritization &amp; Business Potential — Full Reference</text>
+  <text x="106" y="96" fill="rgba(255,255,255,0.62)" font-size="11">SmartGen SEO Guide Series  ·  smartgentools.com  ·  By Sayad Md Bayezid Hosan</text>
+
+  <!-- ================================================ -->
+  <!-- STATS STRIP -->
+  <!-- ================================================ -->
+  <rect y="118" width="800" height="56" fill="url(#stats-grad)"/>
+
+  <text x="133" y="143" text-anchor="middle" fill="white" font-size="18" font-weight="700">90%</text>
+  <text x="133" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">of Content Gets Zero Google Traffic</text>
+
+  <line x1="266" y1="127" x2="266" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="400" y="143" text-anchor="middle" fill="white" font-size="18" font-weight="700">70%</text>
+  <text x="400" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">of Search Traffic = Long-Tail Keywords</text>
+
+  <line x1="533" y1="127" x2="533" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="667" y="143" text-anchor="middle" fill="white" font-size="18" font-weight="700">92%</text>
+  <text x="667" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">of Keywords Show Under 10 Searches/Mo</text>
+
+  <!-- ================================================ -->
+  <!-- SECTION: 7 METRICS CHEAT-SHEET -->
+  <!-- ================================================ -->
+  <text x="400" y="198" text-anchor="middle" fill="#4C4A75" font-size="9.5" letter-spacing="2.5" font-weight="700">7 KEYWORD METRICS AT A GLANCE</text>
+
+  <rect x="20" y="208" width="760" height="230" rx="10" fill="white" filter="url(#card-shadow)"/>
+
+  <!-- Row 1: Search Volume -->
+  <circle cx="46" cy="230" r="10" fill="#4338CA"/>
+  <text x="46" y="234" text-anchor="middle" fill="white" font-size="9" font-weight="700">1</text>
+  <text x="64" y="234" fill="#1A1A1A" font-size="10.5" font-weight="700">Search Volume</text>
+  <text x="205" y="234" fill="#666" font-size="10">— monthly search demand for a phrase</text>
+  <rect x="690" y="222" width="72" height="17" rx="8" fill="#EEF2FF"/>
+  <text x="726" y="234" text-anchor="middle" fill="#4338CA" font-size="8.5" font-weight="700">NUMBER</text>
+  <line x1="36" y1="245" x2="764" y2="245" stroke="#F0F0F5" stroke-width="1"/>
+
+  <!-- Row 2: Keyword Difficulty -->
+  <circle cx="46" cy="261" r="10" fill="#5B21B6"/>
+  <text x="46" y="265" text-anchor="middle" fill="white" font-size="9" font-weight="700">2</text>
+  <text x="64" y="265" fill="#1A1A1A" font-size="10.5" font-weight="700">Keyword Difficulty (KD)</text>
+  <text x="245" y="265" fill="#666" font-size="10">— backlinks needed to reach top 10</text>
+  <rect x="690" y="253" width="72" height="17" rx="8" fill="#F3EBFF"/>
+  <text x="726" y="265" text-anchor="middle" fill="#5B21B6" font-size="8.5" font-weight="700">0 – 100</text>
+  <line x1="36" y1="276" x2="764" y2="276" stroke="#F0F0F5" stroke-width="1"/>
+
+  <!-- Row 3: CPC -->
+  <circle cx="46" cy="292" r="10" fill="#0891B2"/>
+  <text x="46" y="296" text-anchor="middle" fill="white" font-size="9" font-weight="700">3</text>
+  <text x="64" y="296" fill="#1A1A1A" font-size="10.5" font-weight="700">Cost Per Click (CPC)</text>
+  <text x="228" y="296" fill="#666" font-size="10">— advertiser $/click = commercial value signal</text>
+  <rect x="690" y="284" width="72" height="17" rx="8" fill="#E0F7FB"/>
+  <text x="726" y="296" text-anchor="middle" fill="#0891B2" font-size="8.5" font-weight="700">$ VALUE</text>
+  <line x1="36" y1="307" x2="764" y2="307" stroke="#F0F0F5" stroke-width="1"/>
+
+  <!-- Row 4: Traffic Potential -->
+  <circle cx="46" cy="323" r="10" fill="#4338CA"/>
+  <text x="46" y="327" text-anchor="middle" fill="white" font-size="9" font-weight="700">4</text>
+  <text x="64" y="327" fill="#1A1A1A" font-size="10.5" font-weight="700">Traffic Potential</text>
+  <text x="216" y="327" fill="#666" font-size="10">— total traffic of the current #1 ranking page</text>
+  <rect x="690" y="315" width="72" height="17" rx="8" fill="#EEF2FF"/>
+  <text x="726" y="327" text-anchor="middle" fill="#4338CA" font-size="8.5" font-weight="700">NUMBER</text>
+  <line x1="36" y1="338" x2="764" y2="338" stroke="#F0F0F5" stroke-width="1"/>
+
+  <!-- Row 5: Business Potential -->
+  <circle cx="46" cy="354" r="10" fill="#16A34A"/>
+  <text x="46" y="358" text-anchor="middle" fill="white" font-size="9" font-weight="700">5</text>
+  <text x="64" y="358" fill="#1A1A1A" font-size="10.5" font-weight="700">Business Potential</text>
+  <text x="228" y="358" fill="#666" font-size="10">— how directly it fits YOUR product or service</text>
+  <rect x="690" y="346" width="72" height="17" rx="8" fill="#E9FBEF"/>
+  <text x="726" y="358" text-anchor="middle" fill="#16A34A" font-size="8.5" font-weight="700">0 – 3</text>
+  <line x1="36" y1="369" x2="764" y2="369" stroke="#F0F0F5" stroke-width="1"/>
+
+  <!-- Row 6: Search Trend -->
+  <circle cx="46" cy="385" r="10" fill="#F59E0B"/>
+  <text x="46" y="389" text-anchor="middle" fill="white" font-size="9" font-weight="700">6</text>
+  <text x="64" y="389" fill="#1A1A1A" font-size="10.5" font-weight="700">Search Trend (Growth)</text>
+  <text x="244" y="389" fill="#666" font-size="10">— rising, flat, or declining interest over time</text>
+  <rect x="690" y="377" width="72" height="17" rx="8" fill="#FFF6E5"/>
+  <text x="726" y="389" text-anchor="middle" fill="#B45309" font-size="8.5" font-weight="700">↑ → ↓</text>
+  <line x1="36" y1="400" x2="764" y2="400" stroke="#F0F0F5" stroke-width="1"/>
+
+  <!-- Row 7: SERP Features -->
+  <circle cx="46" cy="416" r="10" fill="#DC2626"/>
+  <text x="46" y="420" text-anchor="middle" fill="white" font-size="9" font-weight="700">7</text>
+  <text x="64" y="420" fill="#1A1A1A" font-size="10.5" font-weight="700">SERP Features</text>
+  <text x="205" y="420" fill="#666" font-size="10">— AI Overviews &amp; snippets that reduce real clicks</text>
+  <rect x="690" y="408" width="72" height="17" rx="8" fill="#FDEDEC"/>
+  <text x="726" y="420" text-anchor="middle" fill="#DC2626" font-size="8.5" font-weight="700">% CLICKS</text>
+
+  <!-- ================================================ -->
+  <!-- SECTION: PRIORITIZATION MATRIX -->
+  <!-- ================================================ -->
+  <text x="400" y="462" text-anchor="middle" fill="#4C4A75" font-size="9.5" letter-spacing="2.5" font-weight="700">KEYWORD PRIORITIZATION MATRIX</text>
+
+  <rect x="150" y="478" width="500" height="184" rx="10" fill="white" filter="url(#card-shadow)"/>
+
+  <!-- Quadrant fills -->
+  <rect x="160" y="488" width="240" height="82" fill="#EAFBEF"/>
+  <rect x="400" y="488" width="240" height="82" fill="#EEF2FF"/>
+  <rect x="160" y="570" width="240" height="82" fill="#FFF7E6"/>
+  <rect x="400" y="570" width="240" height="82" fill="#F3F4F6"/>
+
+  <!-- Divider lines -->
+  <line x1="400" y1="488" x2="400" y2="652" stroke="#D1D5DB" stroke-width="1.5"/>
+  <line x1="160" y1="570" x2="640" y2="570" stroke="#D1D5DB" stroke-width="1.5"/>
+  <rect x="160" y="488" width="480" height="164" fill="none" stroke="#D1D5DB" stroke-width="1.5"/>
+
+  <!-- Quadrant TL: Quick Wins -->
+  <text x="280" y="515" text-anchor="middle" fill="#166534" font-size="11.5" font-weight="700">✅ QUICK WINS</text>
+  <text x="280" y="532" text-anchor="middle" fill="#3F6B4C" font-size="9">High volume, low KD</text>
+  <text x="280" y="546" text-anchor="middle" fill="#3F6B4C" font-size="9">→ Target these first</text>
+
+  <!-- Quadrant TR: Strategic Bets -->
+  <text x="520" y="515" text-anchor="middle" fill="#3730A3" font-size="11.5" font-weight="700">🎯 STRATEGIC BETS</text>
+  <text x="520" y="532" text-anchor="middle" fill="#4B4A8C" font-size="9">High volume, high KD</text>
+  <text x="520" y="546" text-anchor="middle" fill="#4B4A8C" font-size="9">→ Build as linkable assets</text>
+
+  <!-- Quadrant BL: Long-Tail Wins -->
+  <text x="280" y="600" text-anchor="middle" fill="#B45309" font-size="11.5" font-weight="700">🌱 LONG-TAIL WINS</text>
+  <text x="280" y="617" text-anchor="middle" fill="#8A6425" font-size="9">Low volume, low KD</text>
+  <text x="280" y="631" text-anchor="middle" fill="#8A6425" font-size="9">→ Easy, steady traffic</text>
+
+  <!-- Quadrant BR: Deprioritize -->
+  <text x="520" y="600" text-anchor="middle" fill="#4B5563" font-size="11.5" font-weight="700">⏸ DEPRIORITIZE</text>
+  <text x="520" y="617" text-anchor="middle" fill="#6B7280" font-size="9">Low volume, high KD</text>
+  <text x="520" y="631" text-anchor="middle" fill="#6B7280" font-size="9">→ Rarely worth the effort</text>
+
+  <!-- Axis labels -->
+  <text x="400" y="670" text-anchor="middle" fill="#888" font-size="9.5">Keyword Difficulty (KD) →</text>
+  <text x="128" y="570" text-anchor="middle" fill="#888" font-size="9.5" transform="rotate(-90 128 570)">Volume / Traffic Potential →</text>
+
+  <!-- ================================================ -->
+  <!-- SECTION: BUSINESS POTENTIAL SCALE -->
+  <!-- ================================================ -->
+  <text x="400" y="700" text-anchor="middle" fill="#4C4A75" font-size="9.5" letter-spacing="2.5" font-weight="700">BUSINESS POTENTIAL SCALE (0–3)</text>
+
+  <rect x="20" y="712" width="760" height="86" rx="10" fill="white" filter="url(#card-shadow)"/>
+
+  <!-- 4 segments -->
+  <rect x="40" y="730" width="170" height="30" rx="6" fill="#9CA3AF"/>
+  <text x="125" y="750" text-anchor="middle" fill="white" font-size="14" font-weight="700">0</text>
+  <text x="125" y="775" text-anchor="middle" fill="#555" font-size="9" font-weight="600">No natural fit</text>
+
+  <rect x="216" y="730" width="170" height="30" rx="6" fill="#F59E0B"/>
+  <text x="301" y="750" text-anchor="middle" fill="white" font-size="14" font-weight="700">1</text>
+  <text x="301" y="775" text-anchor="middle" fill="#555" font-size="9" font-weight="600">Passing mention</text>
+
+  <rect x="392" y="730" width="170" height="30" rx="6" fill="#84CC16"/>
+  <text x="477" y="750" text-anchor="middle" fill="white" font-size="14" font-weight="700">2</text>
+  <text x="477" y="775" text-anchor="middle" fill="#555" font-size="9" font-weight="600">Good, honest fit</text>
+
+  <rect x="568" y="730" width="170" height="30" rx="6" fill="#16A34A"/>
+  <text x="653" y="750" text-anchor="middle" fill="white" font-size="14" font-weight="700">3</text>
+  <text x="653" y="775" text-anchor="middle" fill="#555" font-size="9" font-weight="600">Perfect solution</text>
+
+  <!-- Prioritize bracket over 2-3 -->
+  <line x1="392" y1="722" x2="738" y2="722" stroke="#16A34A" stroke-width="2"/>
+  <text x="565" y="718" text-anchor="middle" fill="#16A34A" font-size="9" font-weight="700">← Prioritize these →</text>
+
+  <!-- ================================================ -->
+  <!-- FOOTER: WORKFLOW LOOP -->
+  <!-- ================================================ -->
+  <rect y="816" width="800" height="90" fill="#241F5C"/>
+
+  <text x="400" y="838" text-anchor="middle" fill="white" font-size="11.5" font-weight="700" letter-spacing="1.5">THE KEYWORD RESEARCH WORKFLOW</text>
+
+  <text x="65" y="860" text-anchor="middle" fill="#A5A0F0" font-size="9" font-weight="700">BRAINSTORM</text>
+  <text x="65" y="873" text-anchor="middle" fill="#8B85BE" font-size="8">Seed Topics</text>
+  <text x="132" y="867" text-anchor="middle" fill="#544C99" font-size="14">›</text>
+
+  <text x="200" y="860" text-anchor="middle" fill="#A5A0F0" font-size="9" font-weight="700">EXPAND</text>
+  <text x="200" y="873" text-anchor="middle" fill="#8B85BE" font-size="8">Related Terms</text>
+  <text x="267" y="867" text-anchor="middle" fill="#544C99" font-size="14">›</text>
+
+  <text x="335" y="860" text-anchor="middle" fill="#A5A0F0" font-size="9" font-weight="700">ANALYZE</text>
+  <text x="335" y="873" text-anchor="middle" fill="#8B85BE" font-size="8">Pull Metrics</text>
+  <text x="402" y="867" text-anchor="middle" fill="#544C99" font-size="14">›</text>
+
+  <text x="470" y="860" text-anchor="middle" fill="#A5A0F0" font-size="9" font-weight="700">PRIORITIZE</text>
+  <text x="470" y="873" text-anchor="middle" fill="#8B85BE" font-size="8">Score &amp; Rank</text>
+  <text x="537" y="867" text-anchor="middle" fill="#544C99" font-size="14">›</text>
+
+  <text x="605" y="860" text-anchor="middle" fill="#A5A0F0" font-size="9" font-weight="700">MAP</text>
+  <text x="605" y="873" text-anchor="middle" fill="#8B85BE" font-size="8">To Content</text>
+  <text x="672" y="867" text-anchor="middle" fill="#544C99" font-size="14">›</text>
+
+  <text x="738" y="860" text-anchor="middle" fill="#FFD060" font-size="9" font-weight="700">TRACK</text>
+  <text x="738" y="873" text-anchor="middle" fill="#8B85BE" font-size="8">Refine Often</text>
+
+  <text x="400" y="898" text-anchor="middle" fill="#726BAE" font-size="9">© 2026 SmartGen SEO Guide Series  ·  smartgentools.com  ·  Keyword Research Guide by Sayad Md Bayezid Hosan</text>
+
+</svg>
