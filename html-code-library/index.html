@@ -12,10 +12,30 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <title>HTML Code Library - SmartGen</title>
+    <title>HTML Code Library - 79+ Free Generators | SmartGen</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Explore 79+ free HTML, CSS, and web design generators. Visually create code for tables, links, typography, animations, and more with SmartGen's client-side tools.">
+    <link rel="canonical" href="https://smartgentools.com/html-code-library/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="HTML Code Library - 79+ Free Generators | SmartGen">
+    <meta property="og:description" content="Visually generate HTML/CSS for web components. Fast, private, and production-ready code for developers and marketers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartgentools.com/html-code-library/">
+    <meta property="og:image" content="https://smartgentools.com/assets/images/smartgen-og-image.jpg">
+    <meta property="og:site_name" content="SmartGen">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HTML Code Library - 79+ Free Generators | SmartGen">
+    <meta name="twitter:description" content="Visually generate HTML/CSS for web components. Fast, private, and production-ready code for developers and marketers.">
+    <meta name="twitter:image" content="https://smartgentools.com/assets/images/smartgen-twitter-image.jpg">
+
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./animations.css">
+    
     <style>
         body { font-family: 'DM Sans', sans-serif; background-color: #0a1f1a !important; color: #d1fae5 !important; }
         .category-card { background: linear-gradient(135deg, #1e293b 0%, #0a1f1a 100%); border: 1px solid #1a5c45; border-radius: 12px; padding: 24px; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
@@ -24,84 +44,107 @@
         .tool-link:hover { background: #1e40af; color: #d1fae5; border-color: #34d399; }
         .header-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #1e293b 100%); border-bottom: 1px solid #1a5c45; }
         .panel { background-color: #1e293b !important; border: 1px solid #1a5c45; border-radius: 12px; padding: 20px; }
+        
+        /* FAQ Styling */
+        .faq-item { background:#1e293b; border:1px solid #1a5c45; border-radius:12px; overflow:hidden; margin-bottom: 1rem; }
+        .faq-item summary { cursor:pointer; padding:22px; list-style:none; position:relative; font-weight:700; color:#d1fae5; padding-right:60px; outline: none; }
+        .faq-item summary::-webkit-details-marker { display:none; }
+        .faq-item summary::after { content:"+"; position:absolute; right:22px; top:50%; transform:translateY(-50%); font-size:28px; color:#34d399; transition:all .3s ease; }
+        .faq-item[open] summary::after { content:"−"; }
+        .faq-content { padding:0 22px 22px; color:#9ae6b4; line-height:1.8; }
+        .faq-item[open] { border-color:#34d399; box-shadow:0 0 20px rgba(52,211,153,.08); }
+
+        /* Cookie Consent Banner Styling */
+        #cookie-consent-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e1e8ed; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 9999; display: none; padding: 1rem 0; }
+        .cookie-container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .cookie-text { flex: 1; min-width: 280px; margin: 0; font-size: 0.9rem; color: #4a5568; line-height: 1.5; }
+        .cookie-actions { display: flex; align-items: center; gap: 1rem; }
+        .cookie-btn { background: #0052cc; color: #ffffff; border: none; padding: 0.6rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .cookie-btn:hover { background: #003d99; }
+        .cookie-link { font-size: 0.9rem; color: #0052cc; text-decoration: none; font-weight: 500; }
+        .cookie-link:hover { text-decoration: underline; }
     </style>
 
-    <!-- Search Assets -->
     <script src="../config/ad-config.js" defer></script>
     <script src="../utils/ad-injector.js" defer></script>
     <script src="../assets/js/app.js" defer></script>
     <script src="../assets/js/search-data.js" defer></script>
     <script src="../assets/js/search.js" defer></script>
+    <script src="./icons.js" defer></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
-
-    <style>
-        /* Cookie Consent Banner Styling */
-        #cookie-consent-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #ffffff;
-            border-top: 1px solid #e1e8ed;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-            z-index: 9999;
-            display: none;
-            padding: 1rem 0;
+    
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the SmartGen HTML Code Library?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SmartGen is a comprehensive collection of over 79 HTML, CSS, design, typography, animation, and utility generators. It helps users create production-ready code without manual coding, empowering web developers, digital marketers, and non-technical users to generate, preview, and copy complex HTML/CSS components instantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are all SmartGen tools free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all generators and utilities within the SmartGen HTML Code Library are available free of charge. You can use them without any registration or subscription requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need coding experience to use SmartGen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, SmartGen is designed to be beginner-friendly. It utilizes intuitive visual controls, allowing users to generate code faster and improve productivity without needing prior coding knowledge."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use the generated code commercially?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. The HTML and CSS code generated by SmartGen can be freely used in personal projects, business websites, e-commerce stores, agency work, and client projects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the generated code mobile-friendly and SEO-friendly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, most generated code adheres to modern web standards, ensuring it works consistently across desktop, tablet, and mobile devices. SmartGen focuses on semantic HTML and best practices that help improve maintainability and search engine compatibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is SmartGen so fast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SmartGen prioritizes speed and privacy. Most code generation and live preview operations occur directly within your browser, eliminating unnecessary server delays and ensuring your data remains private."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SmartGen support WordPress and Shopify?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Generated HTML and CSS can be pasted into WordPress blocks, widgets, themes, and Shopify storefront elements, sections, and pages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many generators are available in SmartGen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SmartGen currently offers more than 79 generators and tools, with new utilities being added regularly to expand its capabilities."
+          }
         }
-        .cookie-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .cookie-text {
-            flex: 1;
-            min-width: 280px;
-            margin: 0;
-            font-size: 0.9rem;
-            color: #4a5568;
-            line-height: 1.5;
-        }
-        .cookie-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .cookie-btn {
-            background: #0052cc;
-            color: #ffffff;
-            border: none;
-            padding: 0.6rem 1.5rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .cookie-btn:hover {
-            background: #003d99;
-        }
-        .cookie-link {
-            font-size: 0.9rem;
-            color: #0052cc;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .cookie-link:hover {
-            text-decoration: underline;
-        }
-    </style>
-
-
-    <link rel="canonical" href="https://smartgentools.com/html-code-library/">
-    <script>
-        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
-            location.replace(`https:${location.href.substring(location.protocol.length)}`);
-        }
+      ]
+    }
     </script>
 </head>
 <body class="min-h-screen">
@@ -112,19 +155,19 @@
             <div class="flex flex-col md:flex-row items-center justify-between mb-8">
                 <div class="text-center md:text-left">
                     <h1 class="text-4xl font-bold text-blue-100 mb-2 flex items-center justify-center md:justify-start gap-3">
-                        <i data-lucide="library" class="w-8 h-8"></i> HTML Code Library
+                        <span id="header-icon"></span> HTML Code Library
                     </h1>
                     <p class="text-blue-300 text-lg">79+ Professional HTML/CSS Generators & Tools</p>
                 </div>
                 <div class="mt-6 md:mt-0 flex gap-4">
                     <a href="/" class="flex items-center gap-2 px-6 py-3 bg-blue-700 hover:bg-blue-600 text-blue-100 rounded-xl transition-all shadow-lg font-semibold">
-                        <i data-lucide="home" class="w-5 h-5"></i> Home
+                        <span id="home-icon"></span> Home
                     </a>
                 </div>
             </div>
             <div class="bg-blue-900/30 border border-blue-500/20 rounded-2xl p-6 backdrop-blur-sm">
                 <p class="text-blue-100 text-sm leading-relaxed">
-                    Welcome to the ultimate <strong>Visual to Code</strong> premium utility hub. Empowering web developers, digital marketers, and non-technical users to generate, preview, and copy complex HTML/CSS components instantly without writing a single line of code. All tools are 100% client-side for extreme speed and privacy.
+                    Welcome to the ultimate **Visual to Code** utility hub. The SmartGen HTML Code Library is a comprehensive collection of 79+ professional HTML and CSS generators designed for developers, marketers, agencies, students, and website owners. Empowering you to visually customize components, preview changes instantly, and generate production-ready code with a single click, SmartGen dramatically reduces development time while helping maintain clean and consistent code quality. All tools are 100% client-side for extreme speed and privacy.
                 </p>
             </div>
         </div>
@@ -132,25 +175,19 @@
 
     <main class="max-w-7xl mx-auto px-6 py-12">
         <!-- Quick Guidelines -->
-        <section class="mb-16 grid md:grid-cols-3 gap-6">
+        <section class="mb-16 grid md:grid-cols-3 gap-6 reveal-on-scroll">
             <div class="panel flex flex-col items-center text-center p-8">
-                <div class="bg-blue-800/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                    <i data-lucide="settings-2" class="w-6 h-6 text-blue-300"></i>
-                </div>
+                <div class="bg-blue-800/50 w-12 h-12 rounded-full flex items-center justify-center mb-4 text-blue-300" id="guide-icon-1"></div>
                 <h3 class="text-blue-100 font-bold mb-2">Customize</h3>
                 <p class="text-blue-400 text-xs">Use our intuitive controls to design your components exactly how you want them.</p>
             </div>
             <div class="panel flex flex-col items-center text-center p-8">
-                <div class="bg-blue-800/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                    <i data-lucide="eye" class="w-6 h-6 text-blue-300"></i>
-                </div>
+                <div class="bg-blue-800/50 w-12 h-12 rounded-full flex items-center justify-center mb-4 text-blue-300" id="guide-icon-2"></div>
                 <h3 class="text-blue-100 font-bold mb-2">Preview</h3>
                 <p class="text-blue-400 text-xs">See your changes in real-time with our live preview window before exporting.</p>
             </div>
             <div class="panel flex flex-col items-center text-center p-8">
-                <div class="bg-blue-800/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                    <i data-lucide="code" class="w-6 h-6 text-blue-300"></i>
-                </div>
+                <div class="bg-blue-800/50 w-12 h-12 rounded-full flex items-center justify-center mb-4 text-blue-300" id="guide-icon-3"></div>
                 <h3 class="text-blue-100 font-bold mb-2">Export</h3>
                 <p class="text-blue-400 text-xs">Copy the clean, optimized code or download it as a standalone HTML file.</p>
             </div>
@@ -160,9 +197,9 @@
         <div id="categories" class="space-y-16">
             
             <!-- 1. HTML Generators -->
-            <div class="category-section">
+            <div class="category-section reveal-on-scroll">
                 <div class="flex items-center gap-3 mb-6 border-b border-blue-800/50 pb-3">
-                    <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="wrench" class="w-6 h-6 text-blue-400"></i></div>
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 category-icon" data-icon="generators"></div>
                     <h2 class="text-2xl font-bold text-blue-100">Generators</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -202,9 +239,9 @@
             </div>
 
             <!-- 2. Background Codes -->
-            <div class="category-section">
+            <div class="category-section reveal-on-scroll">
                 <div class="flex items-center gap-3 mb-6 border-b border-blue-800/50 pb-3">
-                    <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="layout" class="w-6 h-6 text-blue-400"></i></div>
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 category-icon" data-icon="background"></div>
                     <h2 class="text-2xl font-bold text-blue-100">Background Codes</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -232,9 +269,9 @@
             </div>
 
             <!-- 3. Character Codes -->
-            <div class="category-section">
+            <div class="category-section reveal-on-scroll">
                 <div class="flex items-center gap-3 mb-6 border-b border-blue-800/50 pb-3">
-                    <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="type" class="w-6 h-6 text-blue-400"></i></div>
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 category-icon" data-icon="character"></div>
                     <h2 class="text-2xl font-bold text-blue-100">Character Codes</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -244,624 +281,232 @@
                     <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Em Dash</h3><a href="./character-codes/html-em-dash-code/" class="tool-link">Launch Tool</a></div>
                     <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML En Dash</h3><a href="./character-codes/html-en-dash-code/" class="tool-link">Launch Tool</a></div>
                     <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Euro Code</h3><a href="./character-codes/html-euro-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Heart Code</h3><a href="./character-codes/html-heart-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Space Code</h3><a href="./character-codes/html-space-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Special Characters</h3><a href="./character-codes/html-special-characters/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Star Code</h3><a href="./character-codes/html-star-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Symbols</h3><a href="./character-codes/html-symbols/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Tab Code</h3><a href="./character-codes/html-tab-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Pound Code</h3><a href="./character-codes/html-pound-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Registered</h3><a href="./character-codes/html-registered-trademark-code/" class="tool-link">Launch Tool</a></div>
                     <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Trademark</h3><a href="./character-codes/html-trademark-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">ISO 8859-1 Characters</h3><a href="./character-codes/iso-8859-1-characters/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">ISO Language Codes</h3><a href="./character-codes/iso-language-codes/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Mathematical Symbols</h3><a href="./character-codes/mathematical-symbols/" class="tool-link">Launch Tool</a></div>
                 </div>
             </div>
 
             <!-- 4. Color Codes -->
-            <div class="category-section">
+            <div class="category-section reveal-on-scroll">
                 <div class="flex items-center gap-3 mb-6 border-b border-blue-800/50 pb-3">
-                    <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="palette" class="w-6 h-6 text-blue-400"></i></div>
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 category-icon" data-icon="color"></div>
                     <h2 class="text-2xl font-bold text-blue-100">Color Codes</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Color Code Chart</h3><a href="./color-codes/color-code-chart/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Color Schemes</h3><a href="./color-codes/color-schemes/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Black Code</h3><a href="./color-codes/html-black-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Blue Code</h3><a href="./color-codes/html-blue-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Color Names</h3><a href="./color-codes/html-color-names/" class="tool-link">Launch Tool</a></div>
                     <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Color Picker</h3><a href="./color-codes/html-color-picker/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Green Code</h3><a href="./color-codes/html-green-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Red Code</h3><a href="./color-codes/html-red-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML White Code</h3><a href="./color-codes/html-white-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Color Schemes</h3><a href="./color-codes/html-color-schemes/" class="tool-link">Launch Tool</a></div>
                 </div>
             </div>
 
             <!-- 5. Editors -->
-            <div class="category-section">
+            <div class="category-section reveal-on-scroll">
                 <div class="flex items-center gap-3 mb-6 border-b border-blue-800/50 pb-3">
-                    <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="edit-3" class="w-6 h-6 text-blue-400"></i></div>
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 category-icon" data-icon="editors"></div>
                     <h2 class="text-2xl font-bold text-blue-100">Editors</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Bold Editor</h3><a href="./editors/html-bold-editor/" class="tool-link">Launch Tool</a></div>
                     <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Editor</h3><a href="./editors/html-editor/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Link Editor</h3><a href="./editors/html-link-editor/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Text Editor</h3><a href="./editors/html-text-editor/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Image Code Editor</h3><a href="./editors/image-code-editor/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Text Color Editor</h3><a href="./editors/text-color-editor/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Online HTML Editor</h3><a href="./editors/online-html-editor/" class="tool-link">Launch Tool</a></div>
                 </div>
             </div>
 
             <!-- 6. Image Codes -->
-            <div class="category-section">
+            <div class="category-section reveal-on-scroll">
                 <div class="flex items-center gap-3 mb-6 border-b border-blue-800/50 pb-3">
-                    <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="image" class="w-6 h-6 text-blue-400"></i></div>
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 category-icon" data-icon="image"></div>
                     <h2 class="text-2xl font-bold text-blue-100">Image Codes</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Background Image Code</h3><a href="./image-codes/background-image-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Favicon Code</h3><a href="./image-codes/html-favicon-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Image Borders</h3><a href="./image-codes/html-image-borders/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Repeat Image</h3><a href="./image-codes/repeat-image/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Image Border</h3><a href="./image-codes/html-image-border-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Image Code</h3><a href="./image-codes/html-image-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Image Link</h3><a href="./image-codes/html-image-link-code/" class="tool-link">Launch Tool</a></div>
                 </div>
             </div>
 
             <!-- 7. Link Codes -->
-            <div class="category-section">
+            <div class="category-section reveal-on-scroll">
                 <div class="flex items-center gap-3 mb-6 border-b border-blue-800/50 pb-3">
-                    <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="link" class="w-6 h-6 text-blue-400"></i></div>
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 category-icon" data-icon="link"></div>
                     <h2 class="text-2xl font-bold text-blue-100">Link Codes</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">CSS Hover Links</h3><a href="./link-codes/css-hover/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Email Link (Mailto)</h3><a href="./link-codes/email-link/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Image Link</h3><a href="./link-codes/html-image-link/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Open In New Window</h3><a href="./link-codes/open-in-new-window/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Remove Underline</h3><a href="./link-codes/remove-underline/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Email Link Code</h3><a href="./link-codes/email-link-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Link Code</h3><a href="./link-codes/html-link-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Link Hover Color</h3><a href="./link-codes/link-hover-color/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Link Without Underline</h3><a href="./link-codes/link-without-underline/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Open Link New Window</h3><a href="./link-codes/open-link-in-new-window/" class="tool-link">Launch Tool</a></div>
                 </div>
             </div>
 
             <!-- 8. Marquee Codes -->
-            <div class="category-section">
+            <div class="category-section reveal-on-scroll">
                 <div class="flex items-center gap-3 mb-6 border-b border-blue-800/50 pb-3">
-                    <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="move-horizontal" class="w-6 h-6 text-blue-400"></i></div>
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 category-icon" data-icon="marquee"></div>
                     <h2 class="text-2xl font-bold text-blue-100">Marquee Codes</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Bouncing Image</h3><a href="./marquee-codes/bouncing-image/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Bouncing Text</h3><a href="./marquee-codes/bouncing-text/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">CSS Marquee</h3><a href="./marquee-codes/css-marquee/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Marquee</h3><a href="./marquee-codes/html-marquee/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Scrolling Image</h3><a href="./marquee-codes/scrolling-image/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Scrolling Text</h3><a href="./marquee-codes/scrolling-text/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Slide In Image</h3><a href="./marquee-codes/slide-in-image/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Slide In Text</h3><a href="./marquee-codes/slide-in-text/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Bounce Marquee</h3><a href="./marquee-codes/bounce-marquee/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Marquee</h3><a href="./marquee-codes/html-marquee-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Marquee Behavior</h3><a href="./marquee-codes/marquee-behavior/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Marquee Direction</h3><a href="./marquee-codes/marquee-direction/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Marquee Speed</h3><a href="./marquee-codes/marquee-speed/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Scroll Marquee</h3><a href="./marquee-codes/scroll-marquee/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Slide Marquee</h3><a href="./marquee-codes/slide-marquee/" class="tool-link">Launch Tool</a></div>
                 </div>
             </div>
 
             <!-- 9. Scrollbox Codes -->
-            <div class="category-section">
+            <div class="category-section reveal-on-scroll">
                 <div class="flex items-center gap-3 mb-6 border-b border-blue-800/50 pb-3">
-                    <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="mouse-pointer-click" class="w-6 h-6 text-blue-400"></i></div>
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 category-icon" data-icon="scrollbox"></div>
                     <h2 class="text-2xl font-bold text-blue-100">Scrollbox Codes</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Scrollbox</h3><a href="./scrollbox-codes/html-scrollbox/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Scrollbox</h3><a href="./scrollbox-codes/html-scrollbox-code/" class="tool-link">Launch Tool</a></div>
                     <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Scrollbox Border</h3><a href="./scrollbox-codes/scrollbox-border/" class="tool-link">Launch Tool</a></div>
                     <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Scrollbox Color</h3><a href="./scrollbox-codes/scrollbox-color/" class="tool-link">Launch Tool</a></div>
                 </div>
             </div>
 
             <!-- 10. Templates -->
-            <div class="category-section">
+            <div class="category-section reveal-on-scroll">
                 <div class="flex items-center gap-3 mb-6 border-b border-blue-800/50 pb-3">
-                    <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="layout-template" class="w-6 h-6 text-blue-400"></i></div>
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 category-icon" data-icon="templates"></div>
                     <h2 class="text-2xl font-bold text-blue-100">Templates</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">CSS Templates</h3><a href="./templates/css-templates/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML5 Frames</h3><a href="./templates/html5-frames/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Layout Templates</h3><a href="./templates/layout-templates/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Website Templates</h3><a href="./templates/website-templates/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Templates</h3><a href="./templates/html-templates/" class="tool-link">Launch Tool</a></div>
                 </div>
             </div>
 
             <!-- 11. Text Codes -->
-            <div class="category-section">
+            <div class="category-section reveal-on-scroll">
                 <div class="flex items-center gap-3 mb-6 border-b border-blue-800/50 pb-3">
-                    <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="file-text" class="w-6 h-6 text-blue-400"></i></div>
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 category-icon" data-icon="text"></div>
                     <h2 class="text-2xl font-bold text-blue-100">Text Codes</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Font Code</h3><a href="./text-codes/font-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Bold</h3><a href="./text-codes/html-bold/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Underline Code</h3><a href="./text-codes/html-underline-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Table Background Color</h3><a href="./text-codes/table-background-color/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Table Border</h3><a href="./text-codes/table-border/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Table Color</h3><a href="./text-codes/table-color/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Table Text</h3><a href="./text-codes/table-text/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Text Code</h3><a href="./text-codes/text-code/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Text Color</h3><a href="./text-codes/text-color/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Bold Text Code</h3><a href="./text-codes/bold-text-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Text Code</h3><a href="./text-codes/html-text-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Italic Text Code</h3><a href="./text-codes/italic-text-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Strikethrough Text</h3><a href="./text-codes/strikethrough-text-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Underline Text Code</h3><a href="./text-codes/underline-text-code/" class="tool-link">Launch Tool</a></div>
                 </div>
             </div>
 
             <!-- 12. Textbox Codes -->
-            <div class="category-section">
+            <div class="category-section reveal-on-scroll">
                 <div class="flex items-center gap-3 mb-6 border-b border-blue-800/50 pb-3">
-                    <div class="bg-blue-500/20 p-2 rounded-lg"><i data-lucide="form-input" class="w-6 h-6 text-blue-400"></i></div>
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 category-icon" data-icon="textbox"></div>
                     <h2 class="text-2xl font-bold text-blue-100">Textbox Codes</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Textbox</h3><a href="./textbox-codes/html-textbox/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">HTML Textbox Code</h3><a href="./textbox-codes/html-textbox-code/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Textbox Background</h3><a href="./textbox-codes/textbox-background-color/" class="tool-link">Launch Tool</a></div>
                     <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Textbox Border</h3><a href="./textbox-codes/textbox-border/" class="tool-link">Launch Tool</a></div>
-                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Textbox Color</h3><a href="./textbox-codes/textbox-color/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Textbox Height</h3><a href="./textbox-codes/textbox-height/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Textbox Scrollbar</h3><a href="./textbox-codes/textbox-scrollbar/" class="tool-link">Launch Tool</a></div>
+                    <div class="category-card"><h3 class="text-lg font-semibold text-blue-100 mb-2">Textbox Width</h3><a href="./textbox-codes/textbox-width/" class="tool-link">Launch Tool</a></div>
                 </div>
             </div>
-            <!-- SEO CONTENT SECTION -->
-            <section class="smartgen-guide-section">
-  <div class="container">
-
-    <div class="section-header">
-      <h2>The Ultimate HTML Code Library</h2>
-      <h3>79+ Free Visual-to-Code Generators for Developers, Marketers & Creators</h3>
-      <p>
-        Welcome to the SmartGen HTML Code Library — your complete visual-to-code
-        ecosystem for generating clean, optimized, and production-ready HTML and
-        CSS without writing code manually. Whether you are a professional
-        frontend developer, a digital marketer, a blogger, or a beginner learning
-        web development, SmartGen helps you create beautiful web elements faster
-        with intuitive visual controls and real-time previews.
-      </p>
-    </div>
-
-    <div class="content-block">
-      <h3>Why Use SmartGen?</h3>
-
-      <p>
-        Modern web development moves quickly. Writing every HTML tag and CSS
-        property manually can slow down productivity and increase the likelihood
-        of errors. SmartGen eliminates repetitive work by automatically
-        generating clean code based on your visual selections.
-      </p>
-
-      <div class="feature-grid">
-        <div class="feature-card">
-          <h4>🚀 Faster Development</h4>
-          <p>
-            Generate professional HTML and CSS in seconds instead of spending
-            valuable time coding repetitive elements manually.
-          </p>
         </div>
 
-        <div class="feature-card">
-          <h4>✅ Error-Free Code</h4>
-          <p>
-            Avoid common syntax mistakes, missing tags, incorrect attributes,
-            and formatting issues with automatically generated code.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <h4>🎨 Live Visual Preview</h4>
-          <p>
-            Instantly see your changes while customizing elements, layouts,
-            animations, colors, and styles.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <h4>🌐 Cross-Browser Compatible</h4>
-          <p>
-            Generate modern HTML5 and CSS3 code that works consistently across
-            Chrome, Firefox, Safari, Edge, and mobile browsers.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="content-block">
-      <h3>How to Use the SmartGen Toolkit</h3>
-
-      <div class="steps">
-        <div class="step">
-          <h4>Step 1 — Select a Tool</h4>
-          <p>
-            Browse our growing collection of generators and choose the utility
-            that matches your project requirements.
-          </p>
-        </div>
-
-        <div class="step">
-          <h4>Step 2 — Customize Settings</h4>
-          <p>
-            Use sliders, color pickers, text fields, dropdown menus, and visual
-            controls to configure your element exactly how you want it.
-          </p>
-        </div>
-
-        <div class="step">
-          <h4>Step 3 — View Live Preview</h4>
-          <p>
-            Every modification updates instantly, allowing you to verify the
-            design before generating code.
-          </p>
-        </div>
-
-        <div class="step">
-          <h4>Step 4 — Copy & Deploy</h4>
-          <p>
-            Copy the generated HTML and CSS with a single click and paste it
-            directly into your website, CMS, template, or project.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="content-block">
-      <h3>Explore Our Tool Categories</h3>
-
-      <ul class="tool-list">
-        <li>
-          <strong>HTML Generators & Web Builders</strong> —
-          Tables, links, images, layouts, forms, and structural HTML elements.
-        </li>
-
-        <li>
-          <strong>Color & Design Tools</strong> —
-          Color pickers, gradients, backgrounds, palettes, and design helpers.
-        </li>
-
-        <li>
-          <strong>Animations & Interactive Elements</strong> —
-          Marquees, scrolling content, bounce effects, hover animations, and
-          visual enhancements.
-        </li>
-
-        <li>
-          <strong>Advanced Link Generators</strong> —
-          Mailto links, hover links, secure external links, and custom anchor
-          configurations.
-        </li>
-
-        <li>
-          <strong>Typography & Symbols</strong> —
-          Special characters, copyright symbols, text formatting, and content
-          utilities.
-        </li>
-
-        <li>
-          <strong>Templates & Layouts</strong> —
-          Ready-made website structures, CSS templates, and reusable code
-          components.
-        </li>
-      </ul>
-    </div>
-
-    <div class="content-block">
-      <h3>Why SmartGen Is Different</h3>
-
-      <p>
-        Unlike many online generators, SmartGen performs code generation
-        directly inside your browser. No waiting, no unnecessary server
-        processing, and no complex setup requirements.
-      </p>
-
-      <div class="benefits">
-        <div class="benefit">
-          <h4>⚡ Instant Performance</h4>
-          <p>
-            Real-time generation and previews without page reloads.
-          </p>
-        </div>
-
-        <div class="benefit">
-          <h4>🔒 Privacy First</h4>
-          <p>
-            Your inputs remain within your browser session and are not processed
-            by external servers.
-          </p>
-        </div>
-
-        <div class="benefit">
-          <h4>🛠 Developer Friendly</h4>
-          <p>
-            Clean, readable, and production-ready output suitable for modern web
-            projects.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="content-block faq">
-      <h3>Frequently Asked Questions</h3>
-
-      <h4>Is SmartGen free to use?</h4>
-      <p>
-        Yes. All generators and utilities are available without registration or
-        subscription requirements.
-      </p>
-
-      <h4>Do I need coding knowledge?</h4>
-      <p>
-        No. Beginners can use visual controls while experienced developers can
-        generate code faster and improve productivity.
-      </p>
-
-      <h4>Can I use the generated code commercially?</h4>
-      <p>
-        Yes. The generated HTML and CSS can be used in personal, business, and
-        commercial projects.
-      </p>
-
-      <h4>Is the code mobile-friendly?</h4>
-      <p>
-        Most generated code follows modern web standards and works across
-        desktop, tablet, and mobile devices.
-      </p>
-    </div>
-
-    <div class="cta">
-      <h3>Start Building Faster Today</h3>
-      <p>
-        Explore 79+ free HTML, CSS, design, typography, animation, and utility
-        generators. Create beautiful web components visually, generate clean
-        code instantly, and accelerate your development workflow with SmartGen.
-      </p>
-    </div>
-
-  </div>
-</section>
-<section class="mt-24 border-t border-blue-800/30 pt-16">
-    <div class="max-w-5xl mx-auto">
-
-        <div class="panel mb-12">
-            <h2 class="text-4xl font-bold text-blue-100 mb-6">
-                The Ultimate HTML Code Library: 79+ Free Visual-to-Code Generators
-            </h2>
-
-            <p class="text-blue-300 leading-8 mb-6">
-                Welcome to the SmartGen HTML Code Library, a complete collection of
-                professional HTML and CSS generators designed for developers,
-                marketers, agencies, students, and website owners. Instead of
-                manually writing repetitive code, SmartGen enables you to visually
-                customize components, preview changes instantly, and generate
-                production-ready code with a single click.
-            </p>
-
-            <p class="text-blue-300 leading-8 mb-6">
-                Whether you are creating responsive tables, advanced links,
-                typography effects, CSS gradients, animated marquees, image
-                elements, color palettes, templates, or scrollable containers,
-                SmartGen dramatically reduces development time while helping
-                maintain clean and consistent code quality.
-            </p>
-
-            <h3 class="text-2xl font-bold text-blue-100 mt-8 mb-4">
-                Why Use a Visual-to-Code Generator?
-            </h3>
-
-            <div class="grid md:grid-cols-2 gap-6 mt-6">
-
-                <div class="bg-blue-900/20 border border-blue-800 rounded-xl p-5">
-                    <h4 class="font-bold text-blue-100 mb-2">
-                        Zero Syntax Errors
-                    </h4>
-                    <p class="text-blue-400 text-sm">
-                        Generate valid HTML5 and CSS3 code automatically without
-                        worrying about missing tags, invalid nesting, or styling
-                        mistakes.
+        <!-- Merged Content & FAQ Section -->
+        <section class="mt-24 border-t border-blue-800/30 pt-16 reveal-on-scroll">
+            <div class="max-w-5xl mx-auto">
+                <div class="panel mb-12">
+                    <h2 class="text-4xl font-bold text-blue-100 mb-6">
+                        The Ultimate HTML Code Library: 79+ Free Visual-to-Code Generators
+                    </h2>
+                    <p class="text-blue-300 leading-8 mb-6">
+                        Welcome to the SmartGen HTML Code Library, a complete collection of professional HTML and CSS generators designed for developers, marketers, agencies, students, and website owners. Instead of manually writing repetitive code, SmartGen enables you to visually customize components, preview changes instantly, and generate production-ready code with a single click.
                     </p>
+                    <p class="text-blue-300 leading-8 mb-6">
+                        Whether you are creating responsive tables, advanced links, typography effects, CSS gradients, animated marquees, image elements, color palettes, templates, or scrollable containers, SmartGen dramatically reduces development time while helping maintain clean and consistent code quality. All tools are 100% client-side for extreme speed and privacy, ensuring your inputs remain within your browser session and are not processed by external servers.
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-blue-100 mt-8 mb-4">Why Use a Visual-to-Code Generator?</h3>
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div class="bg-blue-900/20 border border-blue-800 rounded-xl p-5">
+                            <h4 class="font-bold text-blue-100 mb-2">Zero Syntax Errors</h4>
+                            <p class="text-blue-400 text-sm">Generate valid HTML5 and CSS3 code automatically without worrying about missing tags, invalid nesting, or styling mistakes.</p>
+                        </div>
+                        <div class="bg-blue-900/20 border border-blue-800 rounded-xl p-5">
+                            <h4 class="font-bold text-blue-100 mb-2">Real-Time Preview</h4>
+                            <p class="text-blue-400 text-sm">Instantly visualize changes while adjusting colors, dimensions, typography, spacing, and animations.</p>
+                        </div>
+                        <div class="bg-blue-900/20 border border-blue-800 rounded-xl p-5">
+                            <h4 class="font-bold text-blue-100 mb-2">Faster Development</h4>
+                            <p class="text-blue-400 text-sm">Tasks that previously required extensive coding can now be completed in seconds using intuitive controls.</p>
+                        </div>
+                        <div class="bg-blue-900/20 border border-blue-800 rounded-xl p-5">
+                            <h4 class="font-bold text-blue-100 mb-2">Privacy First</h4>
+                            <p class="text-blue-400 text-sm">Your inputs remain within your browser session and are not processed by external servers.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-blue-900/20 border border-blue-800 rounded-xl p-5">
-                    <h4 class="font-bold text-blue-100 mb-2">
-                        Real-Time Preview
-                    </h4>
-                    <p class="text-blue-400 text-sm">
-                        Instantly visualize changes while adjusting colors,
-                        dimensions, typography, spacing, and animations.
-                    </p>
+                <!-- Merged FAQ -->
+                <h2 class="text-4xl font-bold text-center text-blue-100 mb-4">Frequently Asked Questions</h2>
+                <p class="text-center text-blue-400 mb-12">Everything you need to know about the SmartGen HTML Code Library.</p>
+                
+                <div class="space-y-4">
+                    <details class="faq-item">
+                        <summary>What is the SmartGen HTML Code Library?</summary>
+                        <div class="faq-content">
+                            SmartGen is a comprehensive collection of over 79 HTML, CSS, design, typography, animation, and utility generators. It helps users create production-ready code without manual coding, empowering web developers, digital marketers, and non-technical users to generate, preview, and copy complex HTML/CSS components instantly.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Are all SmartGen tools free to use?</summary>
+                        <div class="faq-content">
+                            Yes, all generators and utilities within the SmartGen HTML Code Library are available free of charge. You can use them without any registration or subscription requirements.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do I need coding experience to use SmartGen?</summary>
+                        <div class="faq-content">
+                            No, SmartGen is designed to be beginner-friendly. It utilizes intuitive visual controls, allowing users to generate code faster and improve productivity without needing prior coding knowledge.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can I use the generated code commercially?</summary>
+                        <div class="faq-content">
+                            Absolutely. The HTML and CSS code generated by SmartGen can be freely used in personal projects, business websites, e-commerce stores, agency work, and client projects.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is the generated code mobile-friendly and SEO-friendly?</summary>
+                        <div class="faq-content">
+                            Yes, most generated code adheres to modern web standards, ensuring it works consistently across desktop, tablet, and mobile devices. SmartGen focuses on semantic HTML and best practices that help improve maintainability and search engine compatibility.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Does SmartGen support WordPress and Shopify?</summary>
+                        <div class="faq-content">
+                            Yes. Generated HTML and CSS can be pasted into WordPress blocks, widgets, themes, and Shopify storefront elements, sections, and pages.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Why is SmartGen so fast?</summary>
+                        <div class="faq-content">
+                            SmartGen prioritizes speed and privacy. Most code generation and live preview operations occur directly within your browser, eliminating unnecessary server delays and ensuring your data remains private.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How many generators are available in SmartGen?</summary>
+                        <div class="faq-content">
+                            SmartGen currently offers more than 79 generators and tools, with new utilities being added regularly to expand its capabilities.
+                        </div>
+                    </details>
                 </div>
-
-                <div class="bg-blue-900/20 border border-blue-800 rounded-xl p-5">
-                    <h4 class="font-bold text-blue-100 mb-2">
-                        Faster Development
-                    </h4>
-                    <p class="text-blue-400 text-sm">
-                        Tasks that previously required extensive coding can now be
-                        completed in seconds using intuitive controls.
-                    </p>
-                </div>
-
-                <div class="bg-blue-900/20 border border-blue-800 rounded-xl p-5">
-                    <h4 class="font-bold text-blue-100 mb-2">
-                        Cross-Browser Compatibility
-                    </h4>
-                    <p class="text-blue-400 text-sm">
-                        Generate code that works consistently across Chrome,
-                        Firefox, Safari, Edge, and modern mobile browsers.
-                    </p>
-                </div>
-
             </div>
-
-            <h3 class="text-2xl font-bold text-blue-100 mt-10 mb-4">
-                How SmartGen Works
-            </h3>
-
-            <ol class="space-y-4 text-blue-300 leading-8">
-                <li><strong>Step 1:</strong> Select the generator you need.</li>
-                <li><strong>Step 2:</strong> Configure settings using visual controls.</li>
-                <li><strong>Step 3:</strong> Watch changes update instantly in the live preview.</li>
-                <li><strong>Step 4:</strong> Copy the generated code.</li>
-                <li><strong>Step 5:</strong> Paste into your website, CMS, theme, or project.</li>
-            </ol>
-
-            <h3 class="text-2xl font-bold text-blue-100 mt-10 mb-4">
-                Built for Developers, Marketers, and Beginners
-            </h3>
-
-            <p class="text-blue-300 leading-8">
-                SmartGen serves professional developers who need rapid prototyping,
-                digital marketers building landing pages, agencies managing client
-                projects, students learning web development, and entrepreneurs
-                launching websites without extensive technical experience.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<!-- ADVANCED FAQ SECTION -->
-<section class="mt-24 border-t border-blue-800/30 pt-16">
-    <div class="max-w-5xl mx-auto">
-
-        <h2 class="text-4xl font-bold text-center text-blue-100 mb-4">
-            Frequently Asked Questions
-        </h2>
-
-        <p class="text-center text-blue-400 mb-12">
-            Everything you need to know about the SmartGen HTML Code Library.
-        </p>
-
-        <div class="space-y-4">
-
-            <details class="faq-item">
-                <summary>What is SmartGen HTML Code Library?</summary>
-                <div class="faq-content">
-                    SmartGen is a collection of more than 79 HTML, CSS, design,
-                    typography, animation, and utility generators that help users
-                    create production-ready code without manual coding.
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary>Are all tools free to use?</summary>
-                <div class="faq-content">
-                    Yes. All generators are available free of charge and can be
-                    used without creating an account.
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary>Do I need coding experience?</summary>
-                <div class="faq-content">
-                    No. SmartGen is beginner-friendly and uses visual controls
-                    instead of manual coding.
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary>Can I use generated code commercially?</summary>
-                <div class="faq-content">
-                    Yes. Generated code can be used in personal projects, agency
-                    work, business websites, e-commerce stores, and client
-                    projects.
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary>Does SmartGen support WordPress?</summary>
-                <div class="faq-content">
-                    Yes. Generated HTML and CSS can be pasted into WordPress
-                    blocks, widgets, themes, and custom templates.
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary>Can I use SmartGen with Shopify?</summary>
-                <div class="faq-content">
-                    Absolutely. The generated code works with Shopify themes,
-                    sections, pages, and custom storefront elements.
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary>Is the generated code SEO friendly?</summary>
-                <div class="faq-content">
-                    Yes. SmartGen focuses on semantic HTML and modern coding
-                    practices that help improve maintainability and search engine
-                    compatibility.
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary>Why is SmartGen so fast?</summary>
-                <div class="faq-content">
-                    Most generation and preview operations occur directly in your
-                    browser, eliminating unnecessary delays.
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary>Which browsers are supported?</summary>
-                <div class="faq-content">
-                    Chrome, Firefox, Safari, Edge, Brave, Opera, and most modern
-                    mobile browsers.
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary>How many generators are available?</summary>
-                <div class="faq-content">
-                    SmartGen currently provides more than 79 generators and tools,
-                    with additional utilities added regularly.
-                </div>
-            </details>
-
-        </div>
-
-    </div>
-</section>
-
-<style>
-.faq-item{
-    background:#1e293b;
-    border:1px solid #1a5c45;
-    border-radius:12px;
-    overflow:hidden;
-}
-
-.faq-item summary{
-    cursor:pointer;
-    padding:22px;
-    list-style:none;
-    position:relative;
-    font-weight:700;
-    color:#d1fae5;
-    padding-right:60px;
-}
-
-.faq-item summary::-webkit-details-marker{
-    display:none;
-}
-
-.faq-item summary::after{
-    content:"+";
-    position:absolute;
-    right:22px;
-    top:50%;
-    transform:translateY(-50%);
-    font-size:28px;
-    color:#34d399;
-    transition:all .3s ease;
-}
-
-.faq-item[open] summary::after{
-    content:"−";
-}
-
-.faq-content{
-    padding:0 22px 22px;
-    color:#9ae6b4;
-    line-height:1.8;
-}
-
-.faq-item[open]{
-    border-color:#34d399;
-    box-shadow:0 0 20px rgba(52,211,153,.08);
-}
-</style>
-
-</main>
+        </section>
+    </main>
 
     <footer class="border-t border-blue-800/30 px-6 py-12 mt-24">
         <div class="max-w-7xl mx-auto text-center">
@@ -875,8 +520,35 @@
     </footer>
 
     <script>
-        // Initialize Lucide Icons for premium visual look
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Icons
+            if (window.SmartGenIcons) {
+                document.getElementById('header-icon').innerHTML = SmartGenIcons.generic;
+                document.getElementById('home-icon').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`;
+                document.getElementById('guide-icon-1').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>`;
+                document.getElementById('guide-icon-2').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>`;
+                document.getElementById('guide-icon-3').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`;
+
+                document.querySelectorAll('.category-icon').forEach(el => {
+                    const iconName = el.getAttribute('data-icon');
+                    if (SmartGenIcons[iconName]) {
+                        el.innerHTML = SmartGenIcons[iconName];
+                    }
+                });
+            }
+
+            // Scroll Reveal Animation
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+        });
     </script>
 
     <!-- Cookie Consent Banner -->
@@ -891,9 +563,5 @@
             </div>
         </div>
     </div>
-
-
-    <!-- Cookie logic handled by app.js -->
-
 </body>
 </html>
