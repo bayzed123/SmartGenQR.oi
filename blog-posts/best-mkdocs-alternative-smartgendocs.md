@@ -11,7 +11,7 @@ tags: [SmartGen, Documentation, MkDocs Alternative]
 <!--AUTHOR_PROFILE-->
 July 22, 2026 • Developer Tools • By [Sayad Md Bayezid Hosan](https://sayadbayezid.com)
 
-*** Are you searching for a modern, fast, and highly customizable **MkDocs alternative**? Meet **SmartGen Docs**, an open-source static site generator engineered specifically for developers and technical writers who want to build beautiful project documentation effortlessly.
+Are you searching for a modern, fast, and highly customizable **MkDocs alternative**? Meet **SmartGen Docs**, an open-source static site generator engineered specifically for developers and technical writers who want to build beautiful project documentation effortlessly.
 
 Created by Sayad Md Bayezid Hosan, [SmartGen Docs](https://docs.smartgentools.com) is designed to be the ultimate competitor in the static site generation space, offering seamless Markdown transformation, lightning-fast build times, and deep integration with the broader SmartGen platform ecosystem.
 
@@ -26,8 +26,9 @@ Welcome to the **Getting Started** section of SmartGen Docs. This guide is desig
 SmartGen Docs simplifies the process of creating professional, responsive documentation websites from Markdown files. By following the steps outlined in this section, you will learn how to install the necessary tools, initialize a new project, and deploy your documentation.
 
 ---
-![smartgen Docs Home Image](https://smartgentools/blog-posts/images/smartgen-home-overview.JPG)
+![smartgen Docs Home Image](https://smartgentools.com/blog-posts/images/smartgen-home-overview.JPG)
 
+---
 ## In This Section
 
 Explore the following topics to get started:
