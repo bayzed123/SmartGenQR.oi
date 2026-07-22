@@ -1,0 +1,70 @@
+<svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+
+  <!-- BACKGROUND -->
+  <rect width="800" height="440" fill="#FCFBFA"/>
+  <rect width="800" height="440" fill="none" stroke="#EEE" stroke-width="1"/>
+
+  <!-- TITLE -->
+  <text x="400" y="28" text-anchor="middle" fill="#1E1B4B" font-size="16" font-weight="700">Long-Tail vs. Head Keywords: The Trade-Off at a Glance</text>
+  <text x="400" y="47" text-anchor="middle" fill="#6B7280" font-size="11.5">Lower volume, easier to rank, and converts far better</text>
+
+  <!-- LEGEND -->
+  <rect x="255" y="58" width="14" height="14" rx="3" fill="#4338CA"/>
+  <text x="274" y="69" fill="#333" font-size="10.5">Head / Short-Tail Keywords</text>
+  <rect x="450" y="58" width="14" height="14" rx="3" fill="#F59E0B"/>
+  <text x="469" y="69" fill="#333" font-size="10.5">Long-Tail Keywords</text>
+
+  <!-- PLOT AXES -->
+  <line x1="80" y1="80" x2="80" y2="340" stroke="#9CA3AF" stroke-width="1.5"/>
+  <line x1="80" y1="340" x2="740" y2="340" stroke="#9CA3AF" stroke-width="1.5"/>
+
+  <!-- Gridlines + Y labels (0,25,50,75,100) -->
+  <line x1="80" y1="340" x2="740" y2="340" stroke="#EEE" stroke-width="1"/>
+  <line x1="80" y1="275" x2="740" y2="275" stroke="#EEE" stroke-width="1"/>
+  <line x1="80" y1="210" x2="740" y2="210" stroke="#EEE" stroke-width="1"/>
+  <line x1="80" y1="145" x2="740" y2="145" stroke="#EEE" stroke-width="1"/>
+  <line x1="80" y1="80"  x2="740" y2="80"  stroke="#EEE" stroke-width="1"/>
+  <text x="72" y="344" text-anchor="end" fill="#9CA3AF" font-size="9">0</text>
+  <text x="72" y="279" text-anchor="end" fill="#9CA3AF" font-size="9">25</text>
+  <text x="72" y="214" text-anchor="end" fill="#9CA3AF" font-size="9">50</text>
+  <text x="72" y="149" text-anchor="end" fill="#9CA3AF" font-size="9">75</text>
+  <text x="72" y="84"  text-anchor="end" fill="#9CA3AF" font-size="9">100</text>
+
+  <!-- ===================== GROUP 1: Share of Search Queries ===================== -->
+  <!-- Head = 30 -> height 78 (30*2.6) -->
+  <rect x="140" y="262" width="50" height="78" rx="4" fill="#4338CA"/>
+  <text x="165" y="253" text-anchor="middle" fill="#4338CA" font-size="11" font-weight="700">30%</text>
+  <!-- Long-tail = 70 -> height 182 -->
+  <rect x="195" y="158" width="50" height="182" rx="4" fill="#F59E0B"/>
+  <text x="220" y="149" text-anchor="middle" fill="#B45309" font-size="11" font-weight="700">70%</text>
+
+  <text x="192" y="362" text-anchor="middle" fill="#333" font-size="10.5" font-weight="600">Share of Search</text>
+  <text x="192" y="375" text-anchor="middle" fill="#333" font-size="10.5" font-weight="600">Queries</text>
+
+  <!-- ===================== GROUP 2: Avg Conversion Rate ===================== -->
+  <!-- Head = 11.45 -> height ~30 -->
+  <rect x="360" y="310" width="50" height="30" rx="4" fill="#4338CA"/>
+  <text x="385" y="301" text-anchor="middle" fill="#4338CA" font-size="11" font-weight="700">11.5%</text>
+  <!-- Long-tail = 36 -> height ~94 -->
+  <rect x="415" y="246" width="50" height="94" rx="4" fill="#F59E0B"/>
+  <text x="440" y="237" text-anchor="middle" fill="#B45309" font-size="11" font-weight="700">36%</text>
+
+  <text x="412" y="362" text-anchor="middle" fill="#333" font-size="10.5" font-weight="600">Avg. Conversion</text>
+  <text x="412" y="375" text-anchor="middle" fill="#333" font-size="10.5" font-weight="600">Rate</text>
+
+  <!-- ===================== GROUP 3: Typical Ranking Difficulty (illustrative) ===================== -->
+  <!-- Head = 78 -> height 203 -->
+  <rect x="580" y="137" width="50" height="203" rx="4" fill="#4338CA"/>
+  <text x="605" y="128" text-anchor="middle" fill="#4338CA" font-size="11" font-weight="700">High</text>
+  <!-- Long-tail = 22 -> height 57 -->
+  <rect x="635" y="283" width="50" height="57" rx="4" fill="#F59E0B"/>
+  <text x="660" y="274" text-anchor="middle" fill="#B45309" font-size="11" font-weight="700">Low</text>
+
+  <text x="632" y="362" text-anchor="middle" fill="#333" font-size="10.5" font-weight="600">Typical Ranking</text>
+  <text x="632" y="375" text-anchor="middle" fill="#333" font-size="10.5" font-weight="600">Difficulty (KD)</text>
+
+  <!-- Source / disclaimer note -->
+  <rect x="80" y="396" width="660" height="30" rx="7" fill="#F5F5F7"/>
+  <text x="410" y="415" text-anchor="middle" fill="#666" font-size="9.5">Query share &amp; conversion figures from published 2025–2026 industry research · Difficulty comparison is illustrative and varies by niche</text>
+
+</svg>
