@@ -25,6 +25,7 @@
 
 | Broken URL | Error Code |
 |---|---|
+| https://smartgentools.com/html-code-library/image-codes/background-image-code/ | 503 |
 | https://smartgentools.com/privacy-eeat-enhanced/ | 404 |
 | https://smartgentools.com/tool-content-template/ | 404 |
 
