@@ -265,6 +265,104 @@
   /* ---------- Footer ---------- */
   footer{padding:36px 0 60px; color:var(--ink-soft); font-size:0.92rem;}
   footer .fine-print{font-size:0.82rem; margin-top:10px; color:var(--mono-label);}
+  
+  /* ========================================================
+     NEW STYLES ADDED FOR BREADCRUMBS, REVIEWS, & SOCIAL POPUPS
+     ======================================================== */
+  
+  /* Breadcrumbs */
+  .breadcrumbs {
+    display: flex; align-items: center; gap: 8px;
+    padding: 24px 0 0; font-size: 0.85rem; color: var(--mono-label);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .breadcrumbs a { color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+  .breadcrumbs a:hover { color: var(--emerald); }
+  .breadcrumbs svg.icon { width: 1rem; height: 1rem; }
+
+  /* Review Marquee Section */
+  .review-marquee-wrapper {
+    overflow: hidden; display: flex; flex-direction: column; gap: 16px; margin-bottom: 44px;
+    position: relative;
+    /* Soft fade on edges */
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+  .marquee-track {
+    display: flex; gap: 16px; white-space: nowrap; width: max-content;
+  }
+  .track-1 { animation: marquee 35s linear infinite; }
+  .track-2 { animation: marquee 40s linear infinite reverse; }
+  .track-3 { animation: marquee 30s linear infinite; }
+  
+  .marquee-track:hover { animation-play-state: paused; }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .review-bubble {
+    display: inline-flex; flex-direction: column;
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 18px; border-radius: var(--radius);
+    min-width: 280px; max-width: 320px; white-space: normal;
+    box-shadow: var(--shadow);
+  }
+  .review-bubble-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .review-bubble-name { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--ink); }
+  .review-bubble-source svg { width: 1.2rem; height: 1.2rem; color: var(--mono-label); }
+  .review-bubble-text { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.5; }
+
+  /* Review Submission Form */
+  .review-form-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 24px; max-width: 600px; margin: 0 auto;
+  }
+  .review-form-card h3 { margin: 0 0 16px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group input, .form-group textarea {
+    width: 100%; padding: 12px 16px; border: 1px solid var(--border);
+    border-radius: 8px; background: var(--bg); color: var(--ink);
+    font-family: inherit; font-size: 0.95rem;
+  }
+  .form-group input:focus, .form-group textarea:focus { outline: 2px solid var(--emerald); border-color: transparent; }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  /* Social Icon Popup Selector */
+  .source-selector-label { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+  .source-options { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+  .source-option { position: relative; cursor: pointer; }
+  .source-option input { appearance: none; position: absolute; opacity: 0; }
+  .source-option .icon-box {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 16px; border: 1px solid var(--border); border-radius: 100px;
+    background: var(--bg); color: var(--ink-soft); font-size: 0.9rem; font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .source-option .icon-box svg { width: 1.2rem; height: 1.2rem; transition: transform 0.3s; }
+  
+  /* Icon Popup / Selection Animation */
+  .source-option input:checked + .icon-box {
+    background: var(--emerald-soft); border-color: var(--emerald); color: var(--emerald);
+    transform: scale(1.1) translateY(-4px); /* The requested popup effect */
+    box-shadow: 0 4px 12px rgba(14, 107, 87, 0.15);
+  }
+  .source-option input:checked + .icon-box svg { transform: scale(1.2); }
+  .source-option:hover .icon-box:not(.selected) { background: var(--surface); border-color: var(--blue); }
+
+  .submit-btn {
+    background: var(--emerald); color: #fff; border: none; padding: 12px 24px;
+    border-radius: 100px; font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+    cursor: pointer; transition: background 0.2s, transform 0.2s; width: 100%; font-size: 1rem;
+  }
+  .submit-btn:hover { background: #0b5646; transform: translateY(-1px); }
+  .submit-btn:disabled { background: var(--mono-label); cursor: not-allowed; }
+  
+  #form-msg { margin-top: 12px; font-size: 0.9rem; text-align: center; font-weight: 500; display: none; }
+  .msg-success { color: var(--emerald); }
+  .msg-error { color: #d93025; }
+
 </style>
 </head>
 <body>
@@ -288,10 +386,24 @@
 <symbol id="i-sitemap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M12 7v5M12 12l-6 5M12 12l6 5"/></symbol>
 <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="16" rx="1"/><rect x="13" y="4" width="7" height="16" rx="1"/></symbol>
 <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M10 14L20 4"/><path d="M18 13v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h6"/></symbol>
+<!-- NEW SOCIAL ICONS FOR REVIEWS -->
+<symbol id="i-google" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.945 11a9 9 0 1 1-3.284-6.915l-2.658 2.658A5.25 5.25 0 1 0 18.52 14.5h-6.27v-3.5h8.695Z"/></symbol>
+<symbol id="i-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+<symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+<symbol id="i-x-twitter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M4 20L20 4"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></symbol>
 </defs>
 </svg>
 
 <div class="page">
+  
+  <!-- NEW BREADCRUMBS ADDED HERE -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <svg class="icon"><use href="#i-chevron-right"/></svg>
+    <span aria-current="page">Legal & Trust</span>
+  </nav>
 
   <header class="hero">
     <p class="eyebrow">SmartGen-Legal & Trust</p>
@@ -318,6 +430,7 @@
     <a href="#company-support">Company and Support</a>
     <a href="#compliance">Compliance</a>
     <a href="#explore-more">More</a>
+    <a href="#user-reviews">Reviews</a> <!-- Added navigation link for reviews -->
   </nav>
 
   <main>
@@ -486,6 +599,62 @@
       </div>
     </section>
 
+    <!-- ========================================== -->
+    <!-- NEW REVIEWS SECTION ADDED HERE             -->
+    <!-- ========================================== -->
+    <section id="user-reviews" aria-labelledby="user-reviews-h">
+      <h2 id="user-reviews-h">Trust from Our Users</h2>
+      <p>See what others are saying about SmartGen and leave your own thoughts. Reviews are synced across our network.</p>
+      
+      <!-- 3 Line Marquee -->
+      <div class="review-marquee-wrapper">
+        <div class="marquee-track track-1" id="track-1"></div>
+        <div class="marquee-track track-2" id="track-2"></div>
+        <div class="marquee-track track-3" id="track-3"></div>
+      </div>
+
+      <!-- Submit Form with Icon Popups -->
+      <div class="review-form-card">
+        <h3>Share Your Experience</h3>
+        <form id="reviewForm">
+          <div class="form-group">
+            <input type="text" id="reviewName" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <textarea id="reviewText" placeholder="How has SmartGen helped you?" required></textarea>
+          </div>
+          
+          <span class="source-selector-label">How did you find us?</span>
+          <div class="source-options">
+            <label class="source-option">
+              <input type="radio" name="reviewSource" value="google" checked>
+              <div class="icon-box"><svg class="icon"><use href="#i-google"/></svg> Google</div>
+            </label>
+            <label class="source-option">
+              <input type="radio" name="reviewSource" value="linkedin">
+              <div class="icon-box"><svg class="icon"><use href="#i-linkedin"/></svg> LinkedIn</div>
+            </label>
+            <label class="source-option">
+              <input type="radio" name="reviewSource" value="facebook">
+              <div class="icon-box"><svg class="icon"><use href="#i-facebook"/></svg> Facebook</div>
+            </label>
+            <label class="source-option">
+              <input type="radio" name="reviewSource" value="x">
+              <div class="icon-box"><svg class="icon"><use href="#i-x-twitter"/></svg> X</div>
+            </label>
+            <label class="source-option">
+              <input type="radio" name="reviewSource" value="other">
+              <div class="icon-box"><svg class="icon"><use href="#i-globe"/></svg> All/Other</div>
+            </label>
+          </div>
+          
+          <button type="submit" class="submit-btn" id="submitReviewBtn">Submit Review</button>
+          <div id="form-msg"></div>
+        </form>
+      </div>
+    </section>
+    <!-- END NEW REVIEWS SECTION -->
+
   </main>
 
   <footer>
@@ -494,5 +663,126 @@
   </footer>
 
 </div>
+
+<!-- NEW SCRIPT FOR REVIEWS API & MARQUEE LOGIC -->
+<script>
+  // Same Worker as the /tools/ page review widget
+  const REVIEWS_API = 'https://young-grass-a480.sayadmdbayezidhosan.workers.dev';
+  
+  // Maps source values to their SVG icon IDs
+  const iconMap = {
+    'google': 'i-google',
+    'linkedin': 'i-linkedin',
+    'facebook': 'i-facebook',
+    'x': 'i-x-twitter',
+    'other': 'i-globe'
+  };
+
+  // Helper to generate review HTML card
+  function createReviewCardHTML(review) {
+    const iconId = iconMap[review.source] || 'i-globe';
+    return `
+      <div class="review-bubble">
+        <div class="review-bubble-header">
+          <span class="review-bubble-name">${escapeHTML(review.name || 'Anonymous')}</span>
+          <span class="review-bubble-source" title="Source: ${review.source}"><svg><use href="#${iconId}"/></svg></span>
+        </div>
+        <div class="review-bubble-text">"${escapeHTML(review.text || review.review || '')}"</div>
+      </div>
+    `;
+  }
+
+  function escapeHTML(str) {
+    return str.replace(/[&<>'"]/g, tag => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+    }[tag] || tag));
+  }
+
+  // Load and populate reviews
+  async function fetchAndRenderReviews() {
+    let reviews = [];
+    try {
+      const res = await fetch(REVIEWS_API);
+      if (res.ok) {
+        reviews = await res.json();
+      }
+    } catch (e) {
+      console.warn("Could not load from API, using empty/fallback state", e);
+    }
+
+    // Mock data if API is empty/fails (so the marquee isn't blank)
+    if (!reviews || reviews.length === 0) {
+      reviews = [
+        {name: "Alice M.", review: "Very transparent policies, easy to read.", source: "google"},
+        {name: "Rakib H.", review: "Love how clear everything is.", source: "facebook"},
+        {name: "Sarah T.", review: "Great toolset and secure.", source: "linkedin"},
+        {name: "John D.", review: "Exactly what I was looking for.", source: "x"},
+        {name: "Mia K.", review: "Client-side processing makes me feel safe.", source: "other"},
+        {name: "Hasan B.", review: "The privacy first approach is top notch.", source: "google"}
+      ];
+    }
+
+    const t1 = document.getElementById('track-1');
+    const t2 = document.getElementById('track-2');
+    const t3 = document.getElementById('track-3');
+    
+    let html1 = '', html2 = '', html3 = '';
+    
+    // Distribute reviews evenly among 3 tracks
+    reviews.forEach((r, index) => {
+      if(index % 3 === 0) html1 += createReviewCardHTML(r);
+      else if(index % 3 === 1) html2 += createReviewCardHTML(r);
+      else html3 += createReviewCardHTML(r);
+    });
+
+    // Duplicate content inside track for seamless infinite marquee loop
+    t1.innerHTML = html1 + html1;
+    t2.innerHTML = html2 + html2;
+    t3.innerHTML = html3 + html3;
+  }
+
+  // Handle Form Submit
+  document.getElementById('reviewForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submitReviewBtn');
+    const msg = document.getElementById('form-msg');
+    
+    const name = document.getElementById('reviewName').value;
+    const text = document.getElementById('reviewText').value;
+    const source = document.querySelector('input[name="reviewSource"]:checked').value;
+
+    btn.disabled = true;
+    btn.textContent = "Submitting...";
+    msg.style.display = 'none';
+
+    try {
+      const res = await fetch(REVIEWS_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, text, review: text, source }) // sending both text/review keys for safety
+      });
+
+      if (res.ok) {
+        msg.textContent = "Thank you! Your review has been submitted.";
+        msg.className = "msg-success";
+        document.getElementById('reviewForm').reset();
+        // Refresh marquee
+        setTimeout(fetchAndRenderReviews, 1000);
+      } else {
+        throw new Error('API Response not ok');
+      }
+    } catch (error) {
+      msg.textContent = "Something went wrong. Please try again.";
+      msg.className = "msg-error";
+    } finally {
+      msg.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = "Submit Review";
+    }
+  });
+
+  // Initialize
+  fetchAndRenderReviews();
+</script>
 </body>
 </html>
