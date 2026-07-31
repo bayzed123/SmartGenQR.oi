@@ -102,8 +102,22 @@
   svg.icon{width:1.3rem;height:1.3rem;flex-shrink:0;}
   .page{max-width:1080px;margin:0 auto;padding:0 20px;}
 
+  /* ---------- Header / Logo Area ---------- */
+  .site-header {
+    padding: 24px 0 0;
+    display: flex;
+    align-items: center;
+  }
+  .site-header a {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+  .site-header a:hover {
+    transform: translateY(-2px);
+  }
+
   /* ---------- Hero ---------- */
-  .hero{padding:56px 0 28px;}
+  .hero{padding:40px 0 28px;}
   .eyebrow{
     font-size:0.8rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
     color:var(--emerald); margin:0 0 14px;
@@ -267,13 +281,13 @@
   footer .fine-print{font-size:0.82rem; margin-top:10px; color:var(--mono-label);}
   
   /* ========================================================
-     NEW STYLES ADDED FOR BREADCRUMBS, REVIEWS, & SOCIAL POPUPS
+     STYLES FOR BREADCRUMBS, REVIEWS, & SOCIAL POPUPS
      ======================================================== */
   
   /* Breadcrumbs */
   .breadcrumbs {
     display: flex; align-items: center; gap: 8px;
-    padding: 24px 0 0; font-size: 0.85rem; color: var(--mono-label);
+    padding: 16px 0 0; font-size: 0.85rem; color: var(--mono-label);
     font-family: 'Space Grotesk', sans-serif;
   }
   .breadcrumbs a { color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
@@ -284,7 +298,6 @@
   .review-marquee-wrapper {
     overflow: hidden; display: flex; flex-direction: column; gap: 16px; margin-bottom: 44px;
     position: relative;
-    /* Soft fade on edges */
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
   }
@@ -345,7 +358,7 @@
   /* Icon Popup / Selection Animation */
   .source-option input:checked + .icon-box {
     background: var(--emerald-soft); border-color: var(--emerald); color: var(--emerald);
-    transform: scale(1.1) translateY(-4px); /* The requested popup effect */
+    transform: scale(1.1) translateY(-4px); 
     box-shadow: 0 4px 12px rgba(14, 107, 87, 0.15);
   }
   .source-option input:checked + .icon-box svg { transform: scale(1.2); }
@@ -386,7 +399,6 @@
 <symbol id="i-sitemap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M12 7v5M12 12l-6 5M12 12l6 5"/></symbol>
 <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="16" rx="1"/><rect x="13" y="4" width="7" height="16" rx="1"/></symbol>
 <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M10 14L20 4"/><path d="M18 13v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h6"/></symbol>
-<!-- NEW SOCIAL ICONS FOR REVIEWS -->
 <symbol id="i-google" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.945 11a9 9 0 1 1-3.284-6.915l-2.658 2.658A5.25 5.25 0 1 0 18.52 14.5h-6.27v-3.5h8.695Z"/></symbol>
 <symbol id="i-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
 <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
@@ -398,7 +410,24 @@
 
 <div class="page">
   
-  <!-- NEW BREADCRUMBS ADDED HERE -->
+  <!-- NEW HEADER WITH LINKED LOGO -->
+  <header class="site-header">
+    <a href="https://smartgentools.com/" aria-label="SmartGen Home">
+      <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#2563eb" />
+            <stop offset="100%" style="stop-color:#3b82f6" />
+          </linearGradient>
+        </defs>
+        <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
+        <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
+        <text x="65" y="42" font-family="Inter, sans-serif" font-weight="800" font-size="28" fill="#0f172a">Smart<tspan fill="#ff8800">Gen</tspan></text>
+      </svg>
+    </a>
+  </header>
+
+  <!-- BREADCRUMBS -->
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="/">Home</a>
     <svg class="icon"><use href="#i-chevron-right"/></svg>
@@ -430,7 +459,7 @@
     <a href="#company-support">Company and Support</a>
     <a href="#compliance">Compliance</a>
     <a href="#explore-more">More</a>
-    <a href="#user-reviews">Reviews</a> <!-- Added navigation link for reviews -->
+    <a href="#user-reviews">Reviews</a>
   </nav>
 
   <main>
@@ -599,9 +628,7 @@
       </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- NEW REVIEWS SECTION ADDED HERE             -->
-    <!-- ========================================== -->
+    <!-- REVIEWS SECTION -->
     <section id="user-reviews" aria-labelledby="user-reviews-h">
       <h2 id="user-reviews-h">Trust from Our Users</h2>
       <p>See what others are saying about SmartGen and leave your own thoughts. Reviews are synced across our network.</p>
@@ -653,7 +680,6 @@
         </form>
       </div>
     </section>
-    <!-- END NEW REVIEWS SECTION -->
 
   </main>
 
@@ -664,12 +690,10 @@
 
 </div>
 
-<!-- NEW SCRIPT FOR REVIEWS API & MARQUEE LOGIC -->
+<!-- REVIEWS API & MARQUEE LOGIC (NO MOCK DATA) -->
 <script>
-  // Same Worker as the /tools/ page review widget
   const REVIEWS_API = 'https://young-grass-a480.sayadmdbayezidhosan.workers.dev';
   
-  // Maps source values to their SVG icon IDs
   const iconMap = {
     'google': 'i-google',
     'linkedin': 'i-linkedin',
@@ -678,7 +702,6 @@
     'other': 'i-globe'
   };
 
-  // Helper to generate review HTML card
   function createReviewCardHTML(review) {
     const iconId = iconMap[review.source] || 'i-globe';
     return `
@@ -698,7 +721,6 @@
     }[tag] || tag));
   }
 
-  // Load and populate reviews
   async function fetchAndRenderReviews() {
     let reviews = [];
     try {
@@ -707,19 +729,19 @@
         reviews = await res.json();
       }
     } catch (e) {
-      console.warn("Could not load from API, using empty/fallback state", e);
+      console.warn("Could not load reviews from API", e);
     }
 
-    // Mock data if API is empty/fails (so the marquee isn't blank)
+    const marqueeWrapper = document.querySelector('.review-marquee-wrapper');
+    
+    // Check if there are real reviews
     if (!reviews || reviews.length === 0) {
-      reviews = [
-        {name: "Alice M.", review: "Very transparent policies, easy to read.", source: "google"},
-        {name: "Rakib H.", review: "Love how clear everything is.", source: "facebook"},
-        {name: "Sarah T.", review: "Great toolset and secure.", source: "linkedin"},
-        {name: "John D.", review: "Exactly what I was looking for.", source: "x"},
-        {name: "Mia K.", review: "Client-side processing makes me feel safe.", source: "other"},
-        {name: "Hasan B.", review: "The privacy first approach is top notch.", source: "google"}
-      ];
+      // Hide the marquee if no real reviews exist yet to prevent blank empty scrolling
+      if(marqueeWrapper) marqueeWrapper.style.display = 'none';
+      return; 
+    } else {
+      // Ensure it's visible when reviews are present
+      if(marqueeWrapper) marqueeWrapper.style.display = 'flex';
     }
 
     const t1 = document.getElementById('track-1');
@@ -728,20 +750,17 @@
     
     let html1 = '', html2 = '', html3 = '';
     
-    // Distribute reviews evenly among 3 tracks
     reviews.forEach((r, index) => {
       if(index % 3 === 0) html1 += createReviewCardHTML(r);
       else if(index % 3 === 1) html2 += createReviewCardHTML(r);
       else html3 += createReviewCardHTML(r);
     });
 
-    // Duplicate content inside track for seamless infinite marquee loop
     t1.innerHTML = html1 + html1;
     t2.innerHTML = html2 + html2;
     t3.innerHTML = html3 + html3;
   }
 
-  // Handle Form Submit
   document.getElementById('reviewForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = document.getElementById('submitReviewBtn');
@@ -759,14 +778,15 @@
       const res = await fetch(REVIEWS_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, text, review: text, source }) // sending both text/review keys for safety
+        body: JSON.stringify({ name, text, review: text, source })
       });
 
       if (res.ok) {
         msg.textContent = "Thank you! Your review has been submitted.";
         msg.className = "msg-success";
         document.getElementById('reviewForm').reset();
-        // Refresh marquee
+        
+        // Refresh the UI with new data
         setTimeout(fetchAndRenderReviews, 1000);
       } else {
         throw new Error('API Response not ok');
