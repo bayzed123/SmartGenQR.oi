@@ -27,3 +27,16 @@ Automatically maintained by `case_study_bot.py` — one entry is appended per co
 
 **Guidelines / notes:**
 - No specific flags for this update — reads as a routine, well-scoped change.
+
+---
+
+<!-- case-study-bot:sha:d3e54a65f2944b2aa91e1c402c45590a9041cb14 -->
+## Update — 2026-07-31T23:35:47+06:00 (commit `d3e54a6`)
+
+**Repository:** bayzed123/SmartGenQR.oi  
+**Author:** Sayad Md Bayezid Hosan
+
+**Summary:** Sayad Md Bayezid Hosan pushed a commit described as "Update index.html". It touched 1 file(s) (1 file changed, 8 insertions(+), 8 deletions(-)), including `smartgen-legal-info/index.html`.
+
+**Guidelines / notes:**
+- No specific flags for this update — reads as a routine, well-scoped change.
