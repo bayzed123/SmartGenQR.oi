@@ -1,615 +1,1003 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-    <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
-    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <link rel="canonical" href="https://smartgentools.com/qr-generator/">
-    <title>Generate QR Codes Fast - Free Custom QR Maker</title>
-    <meta name="description" content="Create custom QR codes for URLs, WiFi, and more. Generate and download instantly for free, perfect for sharing on social media, business cards, ...">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/chatbot.css">
-    <script src="../config/ad-config.js" defer></script>
-    <script src="../utils/ad-injector.js" defer></script>
-    <script src="../assets/js/app.js" defer></script>
-    <script src="../assets/js/chatbot.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-    <script type="application/ld+json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<link rel="preconnect" href="https://fundingchoicesmessages.google.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="canonical" href="https://smartgentools.com/qr-generator/">
+<title>Free QR Code Generator - 13 Types, Logo &amp; Colors</title>
+<meta name="description" content="Create WiFi, vCard, PayPal, WhatsApp &amp; 13 QR code types free. Add your logo, pick colors, live preview, instant download. No sign-up, no watermark, ever.">
+<link rel="stylesheet" href="../assets/css/chatbot.css">
+<script src="../config/ad-config.js" defer></script>
+<script src="../utils/ad-injector.js" defer></script>
+<script src="../assets/js/chatbot.js" defer></script>
+<script src="../assets/js/search-data.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Generate QR Codes Fast - Free Custom QR Maker",
-  "description": "Create custom QR codes for URLs, WiFi, and more. Generate and download instantly for free, perfect for sharing on social media, business cards, ...",
+  "name": "Free QR Code Generator - SmartGen",
+  "description": "Create WiFi, vCard, PayPal, WhatsApp and 13 QR code types free. Add your logo, pick colors, live preview, instant download. No sign-up, no watermark.",
   "url": "https://smartgentools.com/qr-generator/",
   "applicationCategory": "Utility",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "creator": {
-    "@type": "Organization",
-    "name": "SmartGen",
-    "url": "https://smartgentools.com/"
-  }
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "featureList": ["13 QR code types including WiFi, vCard, PayPal and App Store links","Custom logo embedding with safe error correction","Custom foreground color","Live preview while typing","PNG download","No account required"],
+  "creator": {"@type": "Organization", "name": "SmartGen", "url": "https://smartgentools.com/"}
 }
-    </script>
-    
-    
-    <script src="../assets/js/search-data.js" defer></script>
-    
-    <style>
-        .qr-type-tabs {
-            display: flex;
-            overflow-x: auto;
-            gap: 10px;
-            padding: 10px 0;
-            margin-bottom: 20px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .qr-type-tabs::-webkit-scrollbar { display: none; }
-        .qr-tab {
-            padding: 8px 16px;
-            background: #f1f5f9;
-            border-radius: 20px;
-            cursor: pointer;
-            white-space: nowrap;
-            font-weight: 500;
-            transition: all 0.3s;
-            border: 1px solid #e2e8f0;
-        }
-        .qr-tab.active {
-            background: #2563eb;
-            color: white;
-            border-color: #2563eb;
-        }
-        .dynamic-input-group { display: none; }
-        .dynamic-input-group.active { display: block; }
-        .preview-box {
-            text-align: center;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: #f8fafc;
-            border-radius: 12px;
-            border: 1px dashed #cbd5e1;
-        }
-    </style>
-    <meta property="og:title" content="Generate QR Codes Fast - Free Custom QR Maker">
-    <meta property="og:description" content="Create custom QR codes for URLs, WiFi, and more. Generate and download instantly for free, perfect for sharing on social media, business cards, ...">
-    <meta property="og:url" content="https://smartgentools.com/qr-generator/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://smartgentools.com/assets/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Generate QR Codes Fast - Free Custom QR Maker">
-    <meta name="twitter:description" content="Create custom QR codes for URLs, WiFi, and more. Generate and download instantly for free, perfect for sharing on social media, business cards, ...">
-    <meta name="twitter:image" content="https://smartgentools.com/assets/og-image.png">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "SmartGen", "item": "https://smartgentools.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://smartgentools.com/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "QR Code Generator", "item": "https://smartgentools.com/qr-generator/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to make a QR code with a logo and custom color",
+  "step": [
+    {"@type": "HowToStep", "name": "Pick a type", "text": "Choose what the code should do: open a URL, connect to WiFi, save a contact, request a payment, and more."},
+    {"@type": "HowToStep", "name": "Fill in the details", "text": "Type the destination or details for that type. The preview updates as you type."},
+    {"@type": "HowToStep", "name": "Brand it", "text": "Optionally add your logo to the center and pick a foreground color that matches your brand."},
+    {"@type": "HowToStep", "name": "Scan test, then download", "text": "Scan the preview with your own phone to confirm it reads correctly, then download the PNG."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Are these QR codes free forever, or do they expire?","acceptedAnswer":{"@type":"Answer","text":"They're static QR codes, generated entirely in your browser. The data is embedded directly in the code at creation, so there's no account, no expiration date, and no scan limit tied to a server on SmartGen's end."}},
+    {"@type":"Question","name":"What is the difference between a static and a dynamic QR code?","acceptedAnswer":{"@type":"Answer","text":"A static code has its destination baked in permanently. A dynamic code points to a short redirect link that you can repoint later without reprinting the code, usually through a paid service that also tracks scans. This tool creates static codes."}},
+    {"@type":"Question","name":"Will adding my logo break the QR code?","acceptedAnswer":{"@type":"Answer","text":"Not if it stays small. The code is generated with high error correction, which tolerates up to 30% obstruction, and the logo is capped at roughly 20% of the code's width with a white backdrop for contrast. Always scan the preview yourself before printing."}},
+    {"@type":"Question","name":"Can I use a custom color instead of black?","acceptedAnswer":{"@type":"Answer","text":"Yes, though keep it dark against the white background. Low contrast between the code and its background is the most common reason a QR code fails to scan."}},
+    {"@type":"Question","name":"Does this tool track who scans my QR code?","acceptedAnswer":{"@type":"Answer","text":"No. There's no analytics layer here, which also means there's nothing to configure or any account required. If you need scan counts or the ability to edit the destination after printing, that requires a dynamic QR service instead."}},
+    {"@type":"Question","name":"What image formats can I download?","acceptedAnswer":{"@type":"Answer","text":"PNG, generated instantly in your browser at 220x220 pixels, suitable for both digital use and standard print sizes."}},
+    {"@type":"Question","name":"Which QR code types are supported?","acceptedAnswer":{"@type":"Answer","text":"URL/Text, WiFi, vCard contact, WhatsApp, Email, SMS, Phone, Location, Event, Crypto, Social profile, PayPal payment, and App Store/Play Store download links."}},
+    {"@type":"Question","name":"Why won't my QR code scan?","acceptedAnswer":{"@type":"Answer","text":"The most common causes are low contrast between the code and background, a logo larger than about 25% of the code, or a printed size smaller than roughly 2cm. Test with your own phone camera before printing anything at scale."}}
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+<meta property="og:title" content="Free QR Code Generator - 13 Types, Logo &amp; Colors">
+<meta property="og:description" content="Create WiFi, vCard, PayPal, WhatsApp &amp; 13 QR code types free. Add your logo, pick colors, live preview, instant download.">
+<meta property="og:url" content="https://smartgentools.com/qr-generator/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://smartgentools.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free QR Code Generator - 13 Types, Logo &amp; Colors">
+<meta name="twitter:description" content="Create WiFi, vCard, PayPal, WhatsApp &amp; 13 QR code types free, with logo and color customization.">
+<meta name="twitter:image" content="https://smartgentools.com/assets/og-image.png">
+<style>
+/* =========================================================
+   QR CODE GENERATOR — standalone page, own design system
+   Real SmartGen brand: blue gradient + orange accent (from logo.svg)
+   No dependency on ../assets/css/style.css or app.js
+   ========================================================= */
+*{box-sizing:border-box;}
+:root{
+  --qg-blue-700:#1d4ed8;
+  --qg-blue-600:#2563eb;
+  --qg-blue-500:#3b82f6;
+  --qg-blue-50:#eff6ff;
+  --qg-ink:#0f172a;
+  --qg-ink-soft:#475569;
+  --qg-orange:#ff8800;
+  --qg-orange-ink:#8a4700;
+  --qg-mint:#16a34a;
+  --qg-coral:#dc2626;
+  --qg-line:#e2e8f0;
+  --qg-paper:#ffffff;
+  --qg-cloud:#f8fafc;
+  --qg-radius-lg:20px;
+  --qg-radius-md:14px;
+  --qg-radius-sm:9px;
+  --qg-font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --qg-font-mono:ui-monospace,'SF Mono','Cascadia Code',Consolas,monospace;
+  --qg-shadow-lg:0 20px 50px rgba(15,23,42,0.14);
+  --qg-shadow-sm:0 4px 16px rgba(15,23,42,0.08);
+}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:var(--qg-font);color:var(--qg-ink);background:var(--qg-paper);line-height:1.5;-webkit-font-smoothing:antialiased;}
+a{color:var(--qg-blue-600);}
+.qg-container{max-width:900px;margin:0 auto;padding:0 1.25rem;}
+.qg-wide{max-width:1160px;margin:0 auto;padding:0 1.25rem;}
+img,svg{max-width:100%;}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--qg-orange);outline-offset:2px;border-radius:6px;}
+
+/* ---------- Header + breadcrumb ---------- */
+.qg-header{border-bottom:1px solid var(--qg-line);background:var(--qg-paper);position:sticky;top:0;z-index:20;}
+.qg-header-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0;}
+.qg-logo-link{display:flex;align-items:center;line-height:0;}
+.qg-header-links{display:flex;gap:1.2rem;align-items:center;font-size:.9rem;font-weight:600;}
+.qg-header-links a{color:var(--qg-ink-soft);text-decoration:none;}
+.qg-header-links a:hover{color:var(--qg-blue-600);}
+.qg-breadcrumb{padding:.6rem 0;font-size:.82rem;color:var(--qg-ink-soft);}
+.qg-breadcrumb a{color:var(--qg-ink-soft);text-decoration:none;}
+.qg-breadcrumb a:hover{color:var(--qg-blue-600);text-decoration:underline;}
+.qg-breadcrumb span[aria-current]{color:var(--qg-ink);font-weight:600;}
+.qg-breadcrumb .sep{margin:0 .4rem;color:#cbd5e1;}
+
+/* ---------- Hero ---------- */
+.qg-hero{background:linear-gradient(155deg,var(--qg-blue-50),#ffffff 60%);padding:2.4rem 0 3rem;}
+.qg-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:center;}
+.qg-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--qg-font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--qg-blue-700);background:#dbeafe;border:1px solid #bfdbfe;padding:.35rem .75rem;border-radius:99px;margin-bottom:1.1rem;}
+.qg-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--qg-orange);}
+.qg-hero h1{font-size:clamp(1.9rem,4.2vw,2.9rem);line-height:1.1;margin:0 0 1rem;letter-spacing:-0.01em;font-weight:800;}
+.qg-hero h1 span{color:var(--qg-blue-600);}
+.qg-hero-sub{font-size:1.06rem;color:var(--qg-ink-soft);max-width:48ch;margin:0 0 1.5rem;line-height:1.65;}
+.qg-trust-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.8rem;}
+.qg-pill{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:600;color:var(--qg-ink);background:var(--qg-paper);border:1px solid var(--qg-line);padding:.4rem .8rem;border-radius:99px;}
+.qg-pill b{color:var(--qg-blue-600);}
+.qg-cta-row{display:flex;gap:.9rem;flex-wrap:wrap;}
+.qg-btn{font-weight:700;font-size:.98rem;padding:.85rem 1.6rem;border-radius:99px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:transform .18s ease,box-shadow .18s ease;text-decoration:none;}
+.qg-btn-primary{background:linear-gradient(135deg,var(--qg-blue-600),var(--qg-blue-500));color:#fff;box-shadow:var(--qg-shadow-sm);}
+.qg-btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(37,99,235,0.32);}
+.qg-btn-ghost{background:#fff;color:var(--qg-ink);border:1px solid var(--qg-line);}
+.qg-btn-ghost:hover{transform:translateY(-2px);border-color:var(--qg-blue-500);}
+.qg-hero-art{position:relative;}
+.qg-art-card{background:#fff;border:1px solid var(--qg-line);border-radius:var(--qg-radius-lg);padding:1.4rem;box-shadow:var(--qg-shadow-lg);}
+@media (max-width:860px){.qg-hero-grid{grid-template-columns:1fr;}.qg-hero-art{order:-1;max-width:340px;margin:0 auto;}}
+
+/* ---------- Tool console ---------- */
+.qg-console-wrap{padding:0 0 3rem;}
+.qg-console{background:#fff;border:1px solid var(--qg-line);border-radius:var(--qg-radius-lg);box-shadow:var(--qg-shadow-lg);padding:1.8rem;margin-top:-1.6rem;position:relative;z-index:2;}
+.qg-console-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1.2rem;flex-wrap:wrap;}
+.qg-console-head h2{font-size:1.25rem;margin:0;font-weight:800;}
+.qg-console-tag{font-family:var(--qg-font-mono);font-size:.72rem;color:var(--qg-ink-soft);background:var(--qg-cloud);padding:.3rem .6rem;border-radius:8px;}
+
+.qr-type-tabs{display:flex;overflow-x:auto;gap:.5rem;padding:.2rem 0 .9rem;margin-bottom:.4rem;scrollbar-width:thin;}
+.qr-tab{padding:.5rem 1rem;background:var(--qg-cloud);border-radius:99px;cursor:pointer;white-space:nowrap;font-weight:600;font-size:.88rem;transition:all .2s ease;border:1px solid var(--qg-line);}
+.qr-tab.active{background:var(--qg-blue-600);color:#fff;border-color:var(--qg-blue-600);}
+.dynamic-input-group{display:none;}
+.dynamic-input-group.active{display:block;animation:qgFade .2s ease;}
+@keyframes qgFade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.form-group{margin-bottom:.9rem;}
+.form-label{display:block;font-size:.82rem;font-weight:700;color:var(--qg-ink-soft);margin-bottom:.35rem;}
+.form-input{width:100%;padding:.7rem .9rem;border:1.5px solid var(--qg-line);border-radius:var(--qg-radius-sm);font-family:var(--qg-font);font-size:.95rem;color:var(--qg-ink);background:#fff;transition:border-color .15s ease;}
+.form-input:focus{border-color:var(--qg-blue-500);outline:none;}
+textarea.form-input{min-height:5rem;resize:vertical;}
+
+.qg-customize{border-top:1px dashed var(--qg-line);margin-top:1.4rem;padding-top:1.2rem;}
+.qg-customize summary{cursor:pointer;font-weight:700;font-size:.9rem;color:var(--qg-blue-700);list-style:none;display:flex;align-items:center;gap:.4rem;}
+.qg-customize summary::-webkit-details-marker{display:none;}
+.qg-customize summary .chev{transition:transform .2s ease;}
+.qg-customize[open] summary .chev{transform:rotate(90deg);}
+.qg-customize-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+@media (max-width:520px){.qg-customize-grid{grid-template-columns:1fr;}}
+.qg-color-row{display:flex;align-items:center;gap:.6rem;}
+input[type="color"]{width:44px;height:38px;padding:2px;border:1.5px solid var(--qg-line);border-radius:8px;cursor:pointer;background:#fff;}
+.qg-hint{font-size:.76rem;color:var(--qg-ink-soft);margin-top:.3rem;}
+.qg-file-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border:1.5px dashed var(--qg-line);border-radius:var(--qg-radius-sm);cursor:pointer;font-size:.86rem;font-weight:600;color:var(--qg-blue-700);background:var(--qg-blue-50);width:100%;}
+.qg-file-btn input{display:none;}
+.qg-logo-name{font-size:.78rem;color:var(--qg-ink-soft);margin-top:.4rem;}
+.qg-remove-logo{background:none;border:none;color:var(--qg-coral);font-size:.78rem;font-weight:700;cursor:pointer;padding:0;margin-top:.3rem;}
+
+.preview-box{text-align:center;margin:1.6rem 0 1rem;padding:1.6rem;background:var(--qg-cloud);border-radius:var(--qg-radius-md);border:1px dashed var(--qg-line);}
+#qrcode{display:inline-block;padding:1rem;background:#fff;border-radius:10px;box-shadow:var(--qg-shadow-sm);}
+.qg-preview-caption{margin-top:.8rem;font-size:.83rem;color:var(--qg-ink-soft);}
+
+/* ---------- How it works ---------- */
+.qg-how{background:var(--qg-ink);color:#e2e8f0;padding:3.6rem 0 4rem;margin-top:2rem;}
+.qg-how-head{text-align:center;max-width:600px;margin:0 auto 2.4rem;}
+.qg-how-head h2{font-size:clamp(1.5rem,2.8vw,2.1rem);margin:0 0 .6rem;color:#fff;font-weight:800;}
+.qg-how-head p{color:#94a3b8;line-height:1.6;margin:0;}
+.qg-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.qg-flow-step{padding:0 1rem;text-align:center;position:relative;}
+.qg-flow-num{font-family:var(--qg-font-mono);font-size:.75rem;background:var(--qg-orange);color:#2b1400;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto .9rem;position:relative;z-index:2;}
+.qg-flow-stage{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--qg-radius-md);padding:1.2rem 1rem;margin-bottom:1rem;min-height:140px;display:flex;align-items:center;justify-content:center;}
+.qg-flow-stage svg{width:100%;max-width:110px;height:auto;overflow:visible;}
+.qg-flow-step h3{font-size:.95rem;margin:0 0 .3rem;color:#fff;font-weight:700;}
+.qg-flow-step p{font-size:.8rem;color:#94a3b8;line-height:1.5;margin:0;}
+.qg-flow-line{position:absolute;top:13px;left:50%;width:100%;height:2px;z-index:1;}
+.qg-flow-line svg{width:100%;height:2px;overflow:visible;}
+.qg-flow-step:last-child .qg-flow-line{display:none;}
+@keyframes qgBeat{0%,4%{opacity:.3;transform:scale(.94);}8%,20%{opacity:1;transform:scale(1);}24%,100%{opacity:.3;transform:scale(.94);}}
+.qg-flow-step[data-beat="1"] .qg-flow-stage{animation:qgBeat 8s ease-in-out infinite;}
+.qg-flow-step[data-beat="2"] .qg-flow-stage{animation:qgBeat 8s ease-in-out infinite;animation-delay:2s;}
+.qg-flow-step[data-beat="3"] .qg-flow-stage{animation:qgBeat 8s ease-in-out infinite;animation-delay:4s;}
+.qg-flow-step[data-beat="4"] .qg-flow-stage{animation:qgBeat 8s ease-in-out infinite;animation-delay:6s;}
+.qg-flow-step[data-beat="1"] .qg-flow-num,.qg-flow-step[data-beat="2"] .qg-flow-num,.qg-flow-step[data-beat="3"] .qg-flow-num,.qg-flow-step[data-beat="4"] .qg-flow-num{animation:qgNumPulse 8s ease-in-out infinite;}
+.qg-flow-step[data-beat="2"] .qg-flow-num{animation-delay:2s;}
+.qg-flow-step[data-beat="3"] .qg-flow-num{animation-delay:4s;}
+.qg-flow-step[data-beat="4"] .qg-flow-num{animation-delay:6s;}
+@keyframes qgNumPulse{0%,4%{background:#334155;color:#94a3b8;}8%,20%{background:var(--qg-orange);color:#2b1400;box-shadow:0 0 0 6px rgba(255,136,0,0.18);}24%,100%{background:#334155;color:#94a3b8;}}
+.qg-dash{stroke-dasharray:6 8;animation:qgDashMove 1.6s linear infinite;}
+@keyframes qgDashMove{to{stroke-dashoffset:-28;}}
+.qg-pixels rect{animation:qgPixelIn 8s ease-in-out infinite;}
+@keyframes qgPixelIn{0%,24%{opacity:0;transform:scale(.4);}36%,100%{opacity:1;transform:scale(1);}}
+.qg-scan-ring{animation:qgScan 8s ease-in-out infinite;transform-origin:center;}
+@keyframes qgScan{0%,64%{opacity:0;transform:scale(.7);}76%,100%{opacity:1;transform:scale(1);}}
+@media (max-width:820px){.qg-flow{grid-template-columns:1fr;gap:1.4rem;}.qg-flow-line{display:none;}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;}}
+
+/* ---------- Long-form content ---------- */
+.qg-content{padding:3.6rem 0;}
+.qg-content .qg-container{max-width:760px;}
+.qg-content h2{font-size:clamp(1.4rem,2.4vw,1.85rem);margin:2.4rem 0 1rem;font-weight:800;padding-bottom:.55rem;border-bottom:2px solid var(--qg-line);}
+.qg-content h2:first-child{margin-top:0;}
+.qg-content h3{font-size:1.18rem;margin:1.6rem 0 .7rem;font-weight:700;}
+.qg-content p{line-height:1.75;margin:0 0 1.1rem;color:var(--qg-ink-soft);}
+.qg-content ul,.qg-content ol{line-height:1.8;margin:0 0 1.2rem;padding-left:1.3rem;color:var(--qg-ink-soft);}
+.qg-content li{margin-bottom:.4rem;}
+.qg-content strong{color:var(--qg-ink);}
+.qg-content code{background:var(--qg-cloud);border:1px solid var(--qg-line);border-radius:5px;padding:.05rem .4rem;font-family:var(--qg-font-mono);font-size:.88em;}
+.qg-toc{background:var(--qg-cloud);border:1px solid var(--qg-line);border-radius:var(--qg-radius-md);padding:1.3rem 1.5rem;margin-bottom:2rem;}
+.qg-toc p{font-weight:700;margin:0 0 .5rem;font-family:var(--qg-font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;}
+.qg-toc ol{margin:0;padding-left:1.1rem;columns:2;column-gap:1.5rem;}
+.qg-toc a{color:var(--qg-blue-700);text-decoration:none;font-size:.9rem;}
+.qg-toc a:hover{text-decoration:underline;}
+@media (max-width:600px){.qg-toc ol{columns:1;}}
+
+.qg-usecase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem;margin:1.6rem 0 2rem;}
+.qg-usecase{background:#fff;border:1px solid var(--qg-line);border-radius:var(--qg-radius-md);padding:1.2rem;box-shadow:var(--qg-shadow-sm);}
+.qg-usecase-tag{display:inline-block;font-family:var(--qg-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--qg-blue-700);background:var(--qg-blue-50);padding:.2rem .5rem;border-radius:6px;margin-bottom:.55rem;}
+.qg-usecase h4{margin:0 0 .35rem;font-size:.98rem;}
+.qg-usecase p{margin:0;font-size:.86rem;color:var(--qg-ink-soft);line-height:1.55;}
+
+.qg-example{background:linear-gradient(135deg,var(--qg-ink),#1e293b);color:#e2e8f0;border-radius:var(--qg-radius-md);padding:1.5rem 1.7rem;margin:1.6rem 0;}
+.qg-example p{color:#cbd5e1;margin:0 0 .6rem;}
+.qg-example p:last-child{margin-bottom:0;}
+.qg-example-label{font-family:var(--qg-font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--qg-orange);margin-bottom:.5rem;display:block;}
+
+.qg-reality{background:#fef2f2;border:1px solid #fecaca;border-left:5px solid var(--qg-coral);border-radius:var(--qg-radius-sm);padding:1.4rem 1.6rem;margin:2rem 0;}
+.qg-reality h3{margin-top:0;color:#991b1b;font-size:1.05rem;}
+.qg-reality ul{margin-bottom:0;}
+.qg-reality li{margin-bottom:.55rem;}
+
+.qg-glossary dt{font-weight:700;font-family:var(--qg-font-mono);font-size:.9rem;margin-top:.9rem;}
+.qg-glossary dd{margin:.25rem 0 0;color:var(--qg-ink-soft);line-height:1.6;}
+
+.qg-exercise{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--qg-radius-md);padding:1.5rem 1.7rem;margin:2rem 0;}
+.qg-exercise h3{margin-top:0;color:#166534;font-size:1.05rem;}
+.qg-exercise ol{margin-bottom:0;}
+.qg-exercise li{margin-bottom:.6rem;}
+
+.faq-container{margin-top:1rem;}
+.accordion-item{border:1px solid var(--qg-line);border-radius:var(--qg-radius-sm);margin-bottom:.65rem;overflow:hidden;}
+.accordion-header{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--qg-cloud);border:none;padding:.95rem 1.1rem;text-align:left;cursor:pointer;font-family:var(--qg-font);font-weight:700;font-size:.94rem;color:var(--qg-ink);}
+.accordion-icon{width:18px;height:18px;flex-shrink:0;position:relative;}
+.accordion-icon::before,.accordion-icon::after{content:'';position:absolute;background:var(--qg-blue-600);border-radius:2px;}
+.accordion-icon::before{width:18px;height:2px;top:8px;left:0;}
+.accordion-icon::after{width:2px;height:18px;top:0;left:8px;transition:transform .2s ease;}
+.accordion-item.open .accordion-icon::after{transform:scaleY(0);}
+.accordion-content{max-height:0;overflow:hidden;transition:max-height .25s ease;background:#fff;}
+.accordion-item.open .accordion-content{max-height:500px;}
+.accordion-content p{padding:0 1.1rem 1rem;margin:0;color:var(--qg-ink-soft);line-height:1.6;}
+
+.qg-review{margin:2.6rem 0;padding:2rem;background:linear-gradient(135deg,var(--qg-blue-600),var(--qg-blue-500));border-radius:var(--qg-radius-lg);color:#fff;text-align:center;}
+.qg-review h3{margin:0 0 .6rem;font-size:1.3rem;}
+.qg-review p{color:#dbeafe;max-width:52ch;margin:0 auto 1.2rem;line-height:1.6;}
+.qg-review a{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:var(--qg-blue-700);font-weight:700;padding:.75rem 1.5rem;border-radius:99px;text-decoration:none;}
+.qg-review a:hover{transform:translateY(-2px);}
+
+.qg-founder{margin-top:2.5rem;padding:1.8rem;background:var(--qg-cloud);border-radius:var(--qg-radius-lg);text-align:center;border:1px solid var(--qg-line);}
+.qg-founder p:first-child{font-style:italic;color:var(--qg-ink-soft);font-size:1rem;line-height:1.7;max-width:58ch;margin:0 auto 1rem;}
+.qg-founder p:last-child{font-weight:700;color:var(--qg-blue-700);margin:0;font-size:.85rem;}
+
+.qg-related{margin:2.6rem 0;padding:1.8rem;background:var(--qg-cloud);border-radius:var(--qg-radius-lg);border:1px solid var(--qg-line);}
+.qg-related h3{font-size:1.15rem;margin:0 0 1.2rem;}
+.qg-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;}
+.qg-related-card{text-decoration:none;color:inherit;display:flex;align-items:center;gap:.9rem;background:#fff;padding:.9rem;border-radius:var(--qg-radius-sm);border:1px solid var(--qg-line);transition:transform .18s ease,border-color .18s ease;}
+.qg-related-card:hover{transform:translateY(-3px);border-color:var(--qg-blue-500);}
+.qg-related-card h4{margin:0;font-size:.92rem;}
+.qg-related-card p{margin:.1rem 0 0;font-size:.76rem;color:var(--qg-ink-soft);}
+
+/* ---------- Footer ---------- */
+.qg-footer{background:var(--qg-ink);color:#94a3b8;padding:2.4rem 0;margin-top:2rem;}
+.qg-footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem;}
+.qg-footer-links{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.85rem;}
+.qg-footer-links a{color:#94a3b8;text-decoration:none;}
+.qg-footer-links a:hover{color:#fff;}
+.qg-footer small{display:block;margin-top:1.2rem;color:#64748b;font-size:.78rem;}
+
+/* ---------- Cookie banner ---------- */
+#cookie-consent-banner{position:fixed;bottom:0;left:0;width:100%;background:#fff;border-top:1px solid var(--qg-line);box-shadow:0 -2px 16px rgba(0,0,0,0.08);z-index:9999;display:none;padding:1rem 0;}
+.qg-cookie-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;max-width:1160px;margin:0 auto;padding:0 1.25rem;}
+.qg-cookie-row p{margin:0;font-size:.88rem;color:var(--qg-ink-soft);line-height:1.5;}
+.qg-cookie-row a{color:var(--qg-blue-700);font-weight:600;}
+#accept-cookies{background:var(--qg-blue-600);color:#fff;border:none;padding:.6rem 1.4rem;border-radius:99px;font-size:.88rem;font-weight:700;cursor:pointer;}
+</style>
 </head>
 <body>
-    
-    <header id="main-header"></header>
-    <main class="container">
-        <div class="tool-container">
-            <h1>Advanced All-in-One QR Code Generator</h1>
-            <p>Generate advanced QR codes with <strong>Real-time Live Preview</strong>. Supports <strong>11+ Multiple formats</strong> (WiFi, vCard, Crypto, etc.) with <strong>100% Client-side privacy</strong>.</p>
-            
-            <div class="qr-type-tabs" id="qr-type-tabs">
-                <div class="qr-tab active" data-type="url">🌐 URL / Text</div>
-                <div class="qr-tab" data-type="wifi">📶 WiFi</div>
-                <div class="qr-tab" data-type="vcard">📇 vCard</div>
-                <div class="qr-tab" data-type="whatsapp">💬 WhatsApp</div>
-                <div class="qr-tab" data-type="email">📧 Email</div>
-                <div class="qr-tab" data-type="sms">📱 SMS</div>
-                <div class="qr-tab" data-type="phone">📞 Phone</div>
-                <div class="qr-tab" data-type="location">📍 Location</div>
-                <div class="qr-tab" data-type="event">📅 Event</div>
-                <div class="qr-tab" data-type="crypto">₿ Crypto</div>
-                <div class="qr-tab" data-type="social">🔗 Social</div>
+<header class="qg-header">
+  <div class="qg-wide qg-header-row">
+    <a href="https://smartgentools.com/" class="qg-logo-link" aria-label="SmartGen home">
+      <svg width="160" height="48" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#2563eb" />
+            <stop offset="100%" style="stop-color:#3b82f6" />
+          </linearGradient>
+        </defs>
+        <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
+        <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
+        <text x="65" y="42" font-family="Inter, sans-serif" font-weight="800" font-size="28" fill="#0f172a">Smart<tspan fill="#ff8800">Gen</tspan></text>
+      </svg>
+    </a>
+    <nav class="qg-header-links">
+      <a href="https://smartgentools.com/tools/">All Tools</a>
+      <a href="https://smartgentools.com/blog/">Blog</a>
+    </nav>
+  </div>
+  <div class="qg-wide">
+    <nav class="qg-breadcrumb" aria-label="Breadcrumb">
+      <a href="https://smartgentools.com/">SmartGen</a><span class="sep">/</span><a href="https://smartgentools.com/tools/">Free Tools</a><span class="sep">/</span><span aria-current="page">QR Code Generator</span>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="qg-hero">
+  <div class="qg-wide qg-hero-grid">
+    <div>
+      <span class="qg-eyebrow"><span class="dot"></span> Free &middot; No sign-up &middot; 13 QR types</span>
+      <h1>The Free QR Code Generator With Your <span>Logo &amp; Colors</span> Built In</h1>
+      <p class="qg-hero-sub">WiFi, vCard, PayPal, WhatsApp, App Store links, and more &mdash; pick a type, fill it in, and watch your branded QR code build itself in real time.</p>
+      <div class="qg-trust-row">
+        <span class="qg-pill"><b>13</b>&nbsp;QR types</span>
+        <span class="qg-pill"><b>0</b>&nbsp;sign-up required</span>
+        <span class="qg-pill">Logo &amp; <b>color</b> built in</span>
+        <span class="qg-pill">No <b>watermark</b>, ever</span>
+      </div>
+      <div class="qg-cta-row">
+        <a href="#tool" class="qg-btn qg-btn-primary">Create a QR code &rarr;</a>
+        <a href="#how-it-works" class="qg-btn qg-btn-ghost">See how it works</a>
+      </div>
+    </div>
+    <div class="qg-hero-art" aria-hidden="true">
+      <div class="qg-art-card">
+        <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="208" height="208" rx="16" fill="#0f172a"/>
+          <g fill="#fff">
+            <rect x="24" y="24" width="46" height="46" rx="4"/><rect x="34" y="34" width="26" height="26" rx="3" fill="#0f172a"/><rect x="42" y="42" width="10" height="10" fill="#fff"/>
+            <rect x="150" y="24" width="46" height="46" rx="4"/><rect x="160" y="34" width="26" height="26" rx="3" fill="#0f172a"/><rect x="168" y="42" width="10" height="10" fill="#fff"/>
+            <rect x="24" y="150" width="46" height="46" rx="4"/><rect x="34" y="160" width="26" height="26" rx="3" fill="#0f172a"/><rect x="42" y="168" width="10" height="10" fill="#fff"/>
+            <rect x="88" y="30" width="10" height="10"/><rect x="106" y="30" width="10" height="10"/><rect x="88" y="48" width="10" height="10"/><rect x="124" y="48" width="10" height="10"/>
+            <rect x="88" y="88" width="10" height="10"/><rect x="106" y="88" width="10" height="10"/><rect x="124" y="88" width="10" height="10"/><rect x="142" y="88" width="10" height="10"/><rect x="160" y="88" width="10" height="10"/>
+            <rect x="88" y="106" width="10" height="10"/><rect x="124" y="106" width="10" height="10"/><rect x="160" y="106" width="10" height="10"/>
+            <rect x="106" y="124" width="10" height="10"/><rect x="142" y="124" width="10" height="10"/><rect x="88" y="142" width="10" height="10"/><rect x="124" y="142" width="10" height="10"/><rect x="160" y="142" width="10" height="10"/>
+            <rect x="106" y="160" width="10" height="10"/><rect x="142" y="160" width="10" height="10"/><rect x="88" y="178" width="10" height="10"/><rect x="106" y="178" width="10" height="10"/><rect x="142" y="178" width="10" height="10"/><rect x="178" y="178" width="10" height="10"/><rect x="178" y="124" width="10" height="10"/><rect x="178" y="106" width="10" height="10"/>
+          </g>
+          <circle cx="110" cy="110" r="26" fill="#fff"/>
+          <circle cx="110" cy="110" r="20" fill="#ff8800"/>
+          <text x="110" y="117" font-family="Inter,sans-serif" font-weight="800" font-size="14" fill="#fff" text-anchor="middle">SG</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TOOL CONSOLE ================= -->
+<section class="qg-console-wrap">
+  <div class="qg-container">
+    <div class="qg-console" id="tool">
+      <div class="qg-console-head">
+        <h2>Build your QR code</h2>
+        <span class="qg-console-tag">Live preview</span>
+      </div>
+
+      <div class="qr-type-tabs" id="qr-type-tabs">
+        <div class="qr-tab active" data-type="url">URL / Text</div>
+        <div class="qr-tab" data-type="wifi">WiFi</div>
+        <div class="qr-tab" data-type="vcard">vCard</div>
+        <div class="qr-tab" data-type="whatsapp">WhatsApp</div>
+        <div class="qr-tab" data-type="email">Email</div>
+        <div class="qr-tab" data-type="sms">SMS</div>
+        <div class="qr-tab" data-type="phone">Phone</div>
+        <div class="qr-tab" data-type="location">Location</div>
+        <div class="qr-tab" data-type="event">Event</div>
+        <div class="qr-tab" data-type="payment">Payment</div>
+        <div class="qr-tab" data-type="appstore">App Download</div>
+        <div class="qr-tab" data-type="crypto">Crypto</div>
+        <div class="qr-tab" data-type="social">Social</div>
+      </div>
+
+      <div id="input-container">
+        <div class="dynamic-input-group active" id="group-url">
+          <div class="form-group"><label class="form-label">URL or Text</label><input type="text" class="form-input qr-trigger" id="input-url" placeholder="https://example.com or your text"></div>
+        </div>
+        <div class="dynamic-input-group" id="group-wifi">
+          <div class="form-group"><label class="form-label">Network SSID</label><input type="text" class="form-input qr-trigger" id="wifi-ssid" placeholder="My WiFi Network"></div>
+          <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-input qr-trigger" id="wifi-pass" placeholder="Password"></div>
+          <div class="form-group"><label class="form-label">Encryption</label>
+            <select class="form-input qr-trigger" id="wifi-enc"><option value="WPA">WPA/WPA2</option><option value="WEP">WEP</option><option value="nopass">None</option></select>
+          </div>
+        </div>
+        <div class="dynamic-input-group" id="group-vcard">
+          <div class="form-group"><label class="form-label">Full Name</label><input type="text" class="form-input qr-trigger" id="vcard-name" placeholder="John Doe"></div>
+          <div class="form-group"><label class="form-label">Phone</label><input type="text" class="form-input qr-trigger" id="vcard-phone" placeholder="+1234567890"></div>
+          <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input qr-trigger" id="vcard-email" placeholder="john@example.com"></div>
+          <div class="form-group"><label class="form-label">Company</label><input type="text" class="form-input qr-trigger" id="vcard-company" placeholder="Company Name"></div>
+          <div class="form-group"><label class="form-label">Website</label><input type="text" class="form-input qr-trigger" id="vcard-web" placeholder="https://example.com"></div>
+        </div>
+        <div class="dynamic-input-group" id="group-whatsapp">
+          <div class="form-group"><label class="form-label">Phone Number (with country code)</label><input type="text" class="form-input qr-trigger" id="wa-phone" placeholder="1234567890"></div>
+          <div class="form-group"><label class="form-label">Message</label><textarea class="form-input qr-trigger" id="wa-msg" placeholder="Hello!"></textarea></div>
+        </div>
+        <div class="dynamic-input-group" id="group-email">
+          <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input qr-trigger" id="mail-to" placeholder="receiver@example.com"></div>
+          <div class="form-group"><label class="form-label">Subject</label><input type="text" class="form-input qr-trigger" id="mail-sub" placeholder="Subject"></div>
+          <div class="form-group"><label class="form-label">Body</label><textarea class="form-input qr-trigger" id="mail-body" placeholder="Message body"></textarea></div>
+        </div>
+        <div class="dynamic-input-group" id="group-sms">
+          <div class="form-group"><label class="form-label">Phone Number</label><input type="text" class="form-input qr-trigger" id="sms-phone" placeholder="1234567890"></div>
+          <div class="form-group"><label class="form-label">Message</label><textarea class="form-input qr-trigger" id="sms-msg" placeholder="Hello!"></textarea></div>
+        </div>
+        <div class="dynamic-input-group" id="group-phone">
+          <div class="form-group"><label class="form-label">Phone Number</label><input type="text" class="form-input qr-trigger" id="phone-num" placeholder="+1234567890"></div>
+        </div>
+        <div class="dynamic-input-group" id="group-location">
+          <div class="form-group"><label class="form-label">Latitude</label><input type="text" class="form-input qr-trigger" id="geo-lat" placeholder="40.7128"></div>
+          <div class="form-group"><label class="form-label">Longitude</label><input type="text" class="form-input qr-trigger" id="geo-long" placeholder="-74.0060"></div>
+        </div>
+        <div class="dynamic-input-group" id="group-event">
+          <div class="form-group"><label class="form-label">Event Title</label><input type="text" class="form-input qr-trigger" id="event-title" placeholder="Birthday Party"></div>
+          <div class="form-group"><label class="form-label">Start Date &amp; Time</label><input type="datetime-local" class="form-input qr-trigger" id="event-start"></div>
+          <div class="form-group"><label class="form-label">End Date &amp; Time</label><input type="datetime-local" class="form-input qr-trigger" id="event-end"></div>
+          <div class="form-group"><label class="form-label">Location</label><input type="text" class="form-input qr-trigger" id="event-loc" placeholder="123 Party St"></div>
+        </div>
+        <div class="dynamic-input-group" id="group-payment">
+          <div class="form-group"><label class="form-label">PayPal.Me Username</label><input type="text" class="form-input qr-trigger" id="pay-user" placeholder="yourname"></div>
+          <div class="form-group"><label class="form-label">Amount (optional)</label><input type="text" class="form-input qr-trigger" id="pay-amount" placeholder="e.g. 25"></div>
+          <p class="qg-hint">Builds a paypal.me link. Leave amount blank to let the payer choose.</p>
+        </div>
+        <div class="dynamic-input-group" id="group-appstore">
+          <div class="form-group"><label class="form-label">Store</label>
+            <select class="form-input qr-trigger" id="appstore-platform"><option value="ios">Apple App Store</option><option value="android">Google Play</option></select>
+          </div>
+          <div class="form-group"><label class="form-label">App Store Link</label><input type="text" class="form-input qr-trigger" id="appstore-url" placeholder="https://apps.apple.com/... or https://play.google.com/..."></div>
+          <p class="qg-hint">One QR opens one store link. For an audience on both platforms, make two codes &mdash; a single auto-detecting code needs a redirect service this tool doesn't use.</p>
+        </div>
+        <div class="dynamic-input-group" id="group-crypto">
+          <div class="form-group"><label class="form-label">Currency</label>
+            <select class="form-input qr-trigger" id="crypto-type"><option value="bitcoin">Bitcoin (BTC)</option><option value="ethereum">Ethereum (ETH)</option><option value="litecoin">Litecoin (LTC)</option><option value="dogecoin">Dogecoin (DOGE)</option></select>
+          </div>
+          <div class="form-group"><label class="form-label">Wallet Address</label><input type="text" class="form-input qr-trigger" id="crypto-addr" placeholder="Enter address"></div>
+        </div>
+        <div class="dynamic-input-group" id="group-social">
+          <div class="form-group"><label class="form-label">Platform</label>
+            <select class="form-input qr-trigger" id="social-platform"><option value="https://facebook.com/">Facebook</option><option value="https://instagram.com/">Instagram</option><option value="https://twitter.com/">Twitter / X</option><option value="https://linkedin.com/in/">LinkedIn</option><option value="https://github.com/">GitHub</option></select>
+          </div>
+          <div class="form-group"><label class="form-label">Username or URL</label><input type="text" class="form-input qr-trigger" id="social-user" placeholder="username"></div>
+        </div>
+      </div>
+
+      <details class="qg-customize">
+        <summary><span class="chev">&#9656;</span> Add your logo &amp; brand color (optional)</summary>
+        <div class="qg-customize-grid">
+          <div>
+            <label class="form-label">Center logo</label>
+            <label class="qg-file-btn">Choose image<input type="file" id="logo-input" accept="image/*"></label>
+            <div class="qg-logo-name" id="logo-name"></div>
+            <button type="button" class="qg-remove-logo" id="remove-logo" style="display:none;">Remove logo</button>
+          </div>
+          <div>
+            <label class="form-label">QR color</label>
+            <div class="qg-color-row">
+              <input type="color" id="qr-color" value="#000000">
+              <span class="qg-hint" style="margin-top:0;">Keep it dark for reliable scans</span>
             </div>
+          </div>
+        </div>
+      </details>
 
-            <div id="input-container">
-                <!-- URL / Text -->
-                <div class="dynamic-input-group active" id="group-url">
-                    <div class="form-group">
-                        <label class="form-label">URL or Text</label>
-                        <input type="text" class="form-input qr-trigger" id="input-url" placeholder="https://example.com or your text">
-                    </div>
-                </div>
+      <div class="preview-box">
+        <div id="qrcode"></div>
+        <p class="qg-preview-caption">Live preview &mdash; updates as you type. Scan it with your own phone before printing.</p>
+      </div>
 
-                <!-- WiFi -->
-                <div class="dynamic-input-group" id="group-wifi">
-                    <div class="form-group">
-                        <label class="form-label">Network SSID</label>
-                        <input type="text" class="form-input qr-trigger" id="wifi-ssid" placeholder="My WiFi Network">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-input qr-trigger" id="wifi-pass" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Encryption</label>
-                        <select class="form-input qr-trigger" id="wifi-enc">
-                            <option value="WPA">WPA/WPA2</option>
-                            <option value="WEP">WEP</option>
-                            <option value="nopass">None</option>
-                        </select>
-                    </div>
-                </div>
+      <button class="qg-btn qg-btn-primary" onclick="downloadQR()" style="width:100%;justify-content:center;">Download QR Code (PNG)</button>
+    </div>
+  </div>
+</section>
 
-                <!-- vCard -->
-                <div class="dynamic-input-group" id="group-vcard">
-                    <div class="form-group">
-                        <label class="form-label">Full Name</label>
-                        <input type="text" class="form-input qr-trigger" id="vcard-name" placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Phone</label>
-                        <input type="text" class="form-input qr-trigger" id="vcard-phone" placeholder="+1234567890">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-input qr-trigger" id="vcard-email" placeholder="john@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Company</label>
-                        <input type="text" class="form-input qr-trigger" id="vcard-company" placeholder="Company Name">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Website</label>
-                        <input type="text" class="form-input qr-trigger" id="vcard-web" placeholder="https://example.com">
-                    </div>
-                </div>
+<!-- ================= HOW IT WORKS (pure CSS/SVG) ================= -->
+<section class="qg-how" id="how-it-works">
+  <div class="qg-wide">
+    <div class="qg-how-head">
+      <h2>How it builds your QR code</h2>
+      <p>Four steps, all live in your browser &mdash; nothing to install, nothing sent to a server.</p>
+    </div>
+    <div class="qg-flow">
 
-                <!-- WhatsApp -->
-                <div class="dynamic-input-group" id="group-whatsapp">
-                    <div class="form-group">
-                        <label class="form-label">Phone Number (with country code)</label>
-                        <input type="text" class="form-input qr-trigger" id="wa-phone" placeholder="1234567890">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Message</label>
-                        <textarea class="form-input qr-trigger" id="wa-msg" placeholder="Hello!"></textarea>
-                    </div>
-                </div>
+      <div class="qg-flow-step" data-beat="1">
+        <div class="qg-flow-num">1</div>
+        <div class="qg-flow-stage" aria-hidden="true">
+          <svg viewBox="0 0 120 100" fill="none">
+            <rect x="10" y="34" width="26" height="20" rx="4" fill="#2563eb"/><rect x="40" y="34" width="26" height="20" rx="4" fill="#334155" stroke="#ff8800" stroke-width="1.5"/><rect x="70" y="34" width="26" height="20" rx="4" fill="#334155"/>
+            <path d="M53 58 v10" stroke="#ff8800" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="53" cy="72" r="3" fill="#ff8800"/>
+          </svg>
+        </div>
+        <h3>Pick a type</h3>
+        <p>URL, WiFi, contact card, payment link, and 9 more &mdash; choose what the scan should do.</p>
+        <div class="qg-flow-line" aria-hidden="true"><svg viewBox="0 0 100 2"><line x1="0" y1="1" x2="100" y2="1" stroke="#ff8800" stroke-width="2" class="qg-dash"/></svg></div>
+      </div>
 
-                <!-- Email -->
-                <div class="dynamic-input-group" id="group-email">
-                    <div class="form-group">
-                        <label class="form-label">Email Address</label>
-                        <input type="email" class="form-input qr-trigger" id="mail-to" placeholder="receiver@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Subject</label>
-                        <input type="text" class="form-input qr-trigger" id="mail-sub" placeholder="Subject">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Body</label>
-                        <textarea class="form-input qr-trigger" id="mail-body" placeholder="Message body"></textarea>
-                    </div>
-                </div>
+      <div class="qg-flow-step" data-beat="2">
+        <div class="qg-flow-num">2</div>
+        <div class="qg-flow-stage" aria-hidden="true">
+          <svg viewBox="0 0 120 100" fill="none">
+            <rect x="20" y="30" width="80" height="40" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+            <rect x="30" y="42" width="38" height="4" rx="2" fill="#3b82f6"/>
+            <rect x="30" y="52" width="24" height="4" rx="2" fill="#475569"/>
+            <rect x="70" y="42" width="3" height="10" fill="#ff8800"/>
+          </svg>
+        </div>
+        <h3>Fill in the details</h3>
+        <p>Type your info &mdash; the preview updates on every keystroke.</p>
+        <div class="qg-flow-line" aria-hidden="true"><svg viewBox="0 0 100 2"><line x1="0" y1="1" x2="100" y2="1" stroke="#3b82f6" stroke-width="2" class="qg-dash"/></svg></div>
+      </div>
 
-                <!-- SMS -->
-                <div class="dynamic-input-group" id="group-sms">
-                    <div class="form-group">
-                        <label class="form-label">Phone Number</label>
-                        <input type="text" class="form-input qr-trigger" id="sms-phone" placeholder="1234567890">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Message</label>
-                        <textarea class="form-input qr-trigger" id="sms-msg" placeholder="Hello!"></textarea>
-                    </div>
-                </div>
+      <div class="qg-flow-step" data-beat="3">
+        <div class="qg-flow-num">3</div>
+        <div class="qg-flow-stage" aria-hidden="true">
+          <svg viewBox="0 0 120 100" fill="none" class="qg-pixels">
+            <rect x="30" y="20" width="60" height="60" rx="4" fill="#0f172a"/>
+            <rect x="38" y="28" width="10" height="10" fill="#fff" style="animation-delay:0s"/>
+            <rect x="72" y="28" width="10" height="10" fill="#fff" style="animation-delay:.1s"/>
+            <rect x="38" y="62" width="10" height="10" fill="#fff" style="animation-delay:.2s"/>
+            <rect x="55" y="45" width="10" height="10" fill="#ff8800" style="animation-delay:.3s"/>
+            <rect x="72" y="62" width="10" height="10" fill="#fff" style="animation-delay:.4s"/>
+            <rect x="55" y="28" width="6" height="6" fill="#fff" style="animation-delay:.5s"/>
+            <rect x="55" y="66" width="6" height="6" fill="#fff" style="animation-delay:.6s"/>
+          </svg>
+        </div>
+        <h3>Brand it</h3>
+        <p>Drop your logo in the center and pick a color &mdash; error correction keeps it scannable.</p>
+        <div class="qg-flow-line" aria-hidden="true"><svg viewBox="0 0 100 2"><line x1="0" y1="1" x2="100" y2="1" stroke="#16a34a" stroke-width="2" class="qg-dash"/></svg></div>
+      </div>
 
-                <!-- Phone -->
-                <div class="dynamic-input-group" id="group-phone">
-                    <div class="form-group">
-                        <label class="form-label">Phone Number</label>
-                        <input type="text" class="form-input qr-trigger" id="phone-num" placeholder="+1234567890">
-                    </div>
-                </div>
+      <div class="qg-flow-step" data-beat="4">
+        <div class="qg-flow-num">4</div>
+        <div class="qg-flow-stage" aria-hidden="true">
+          <svg viewBox="0 0 120 100" fill="none">
+            <rect x="35" y="25" width="50" height="50" rx="6" fill="#0f172a"/>
+            <g class="qg-scan-ring">
+              <circle cx="60" cy="50" r="34" stroke="#16a34a" stroke-width="2" fill="none" stroke-dasharray="4 5"/>
+              <path d="M50 50 L57 58 L72 40" stroke="#16a34a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Scan &amp; download</h3>
+        <p>Test it with your own camera, then save the PNG.</p>
+      </div>
 
-                <!-- Location -->
-                <div class="dynamic-input-group" id="group-location">
-                    <div class="form-group">
-                        <label class="form-label">Latitude</label>
-                        <input type="text" class="form-input qr-trigger" id="geo-lat" placeholder="40.7128">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Longitude</label>
-                        <input type="text" class="form-input qr-trigger" id="geo-long" placeholder="-74.0060">
-                    </div>
-                </div>
+    </div>
+  </div>
+</section>
 
-                <!-- Event -->
-                <div class="dynamic-input-group" id="group-event">
-                    <div class="form-group">
-                        <label class="form-label">Event Title</label>
-                        <input type="text" class="form-input qr-trigger" id="event-title" placeholder="Birthday Party">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Start Date & Time</label>
-                        <input type="datetime-local" class="form-input qr-trigger" id="event-start">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">End Date & Time</label>
-                        <input type="datetime-local" class="form-input qr-trigger" id="event-end">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Location</label>
-                        <input type="text" class="form-input qr-trigger" id="event-loc" placeholder="123 Party St">
-                    </div>
-                </div>
+<!-- ================= LONG-FORM SEO CONTENT ================= -->
+<section class="qg-content">
+  <div class="qg-container">
 
-                <!-- Crypto -->
-                <div class="dynamic-input-group" id="group-crypto">
-                    <div class="form-group">
-                        <label class="form-label">Currency</label>
-                        <select class="form-input qr-trigger" id="crypto-type">
-                            <option value="bitcoin">Bitcoin (BTC)</option>
-                            <option value="ethereum">Ethereum (ETH)</option>
-                            <option value="litecoin">Litecoin (LTC)</option>
-                            <option value="dogecoin">Dogecoin (DOGE)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Wallet Address</label>
-                        <input type="text" class="form-input qr-trigger" id="crypto-addr" placeholder="Enter address">
-                    </div>
-                </div>
+    <div class="qg-toc" aria-label="Table of contents">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#what-is">What is a QR code generator?</a></li>
+        <li><a href="#step-by-step">Step-by-step guide</a></li>
+        <li><a href="#use-cases">Which type should you use?</a></li>
+        <li><a href="#glossary">QR code glossary</a></li>
+        <li><a href="#try-it">Try it yourself</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ol>
+    </div>
 
-                <!-- Social -->
-                <div class="dynamic-input-group" id="group-social">
-                    <div class="form-group">
-                        <label class="form-label">Platform</label>
-                        <select class="form-input qr-trigger" id="social-platform">
-                            <option value="https://facebook.com/">Facebook</option>
-                            <option value="https://instagram.com/">Instagram</option>
-                            <option value="https://twitter.com/">Twitter / X</option>
-                            <option value="https://linkedin.com/in/">LinkedIn</option>
-                            <option value="https://github.com/">GitHub</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Username or URL</label>
-                        <input type="text" class="form-input qr-trigger" id="social-user" placeholder="username">
-                    </div>
-                </div>
-            </div>
+    <h2 id="what-is">What Is a QR Code Generator?</h2>
+    <p>A <strong>QR code generator</strong> takes information &mdash; a web address, a WiFi password, a contact card, a payment link &mdash; and encodes it into a scannable square pattern that any phone camera can read. This one runs entirely in your browser: the QR image is built on your device using the open-source <code>qrcodejs</code> library, so nothing you type is sent to a server before the code appears.</p>
+    <p>What separates this <strong>free QR code generator</strong> from a bare-bones one is what happens after the pattern is generated: you can drop your own logo into the center and pick a foreground color that matches your brand, and both are applied with the error-correction headroom needed to keep the code reliably scannable.</p>
+    <h3>Static vs. Dynamic QR Codes</h3>
+    <p>This distinction matters more than most people realize before they print 500 flyers. A <strong>static QR code</strong> like the ones this tool makes has its destination locked in permanently at creation &mdash; there's no account behind it, and no server call needed to resolve it. A <strong>dynamic QR code</strong> instead points to a short redirect link, usually sold as part of a paid platform, that lets you change the destination later and see scan counts. If you might need to update the link after printing, that's the tradeoff to know about upfront; if the destination is final, static is simpler, free, and one less account to manage.</p>
 
-            <div class="preview-box">
-                <div id="qrcode" style="display: inline-block; padding: 1rem; background: white; border-radius: 8px;"></div>
-                <p style="margin-top: 10px; font-size: 0.85rem; color: #64748b;">Live Preview - Updates as you type</p>
-            </div>
+    <h2 id="step-by-step">How to Make a Branded QR Code (Step-by-Step)</h2>
+    <ol>
+      <li><strong>Choose a type.</strong> URL, WiFi, vCard, PayPal, App Store link, and 8 more are one tap away.</li>
+      <li><strong>Fill in the fields.</strong> The preview above the button updates on every keystroke.</li>
+      <li><strong>Open "Add your logo &amp; brand color."</strong> Upload a simple, high-contrast version of your logo and pick a foreground color.</li>
+      <li><strong>Scan it yourself.</strong> Point your own phone camera at the preview before you download or print anything.</li>
+      <li><strong>Download the PNG</strong> and drop it into your poster, business card, or packaging file.</li>
+    </ol>
 
-            <button class="btn btn-primary" onclick="downloadQR()" style="width: 100%;">Download QR Code</button>
+    <div class="qg-example">
+      <span class="qg-example-label">In practice</span>
+      <p>Say you're setting up a market stall and want people to pay by PayPal without typing your handle. Switch to the <strong>Payment</strong> tab, enter your PayPal.Me username, and optionally lock in an amount &mdash; the code opens straight to your payment screen when scanned.</p>
+      <p>Or say you're printing table cards for a cafe's WiFi. Switch to <strong>WiFi</strong>, enter the network name and password, and guests scan instead of typing a password with special characters on a phone keyboard.</p>
+    </div>
+
+    <div class="qg-reality">
+      <h3>Reality check &mdash; read this before you print</h3>
+      <ul>
+        <li><strong>This makes static codes.</strong> Once you download it, the destination can't be changed remotely &mdash; you'd need to print a new code. That's the right tradeoff for most personal and small-business use, but not for anything you expect to redirect later.</li>
+        <li><strong>Logos and color aren't free of risk.</strong> Error correction gives real headroom, but a logo over roughly 25% of the code's width, or a light color with weak contrast against white, can still cause scan failures on some phones. Test before you commit to a print run.</li>
+        <li><strong>There's no scan tracking.</strong> Nothing here logs who scanned your code or when. If that data matters for a campaign, you'll want a dynamic/analytics-based QR service instead of a static one.</li>
+        <li><strong>Print size matters.</strong> A good baseline is the 10:1 rule &mdash; the code's width should be at least a tenth of the distance people will scan it from. A code meant to be scanned from arm's length should be at least an inch or two wide; one on a highway billboard needs to be measured in feet.</li>
+      </ul>
+    </div>
+
+    <h2 id="use-cases">Which QR Code Type Should You Use?</h2>
+    <div class="qg-usecase-grid">
+      <div class="qg-usecase"><span class="qg-usecase-tag">Business</span><h4>WiFi for Guests</h4><p>Cafes, Airbnbs, and offices print a WiFi QR code so guests connect without typing a password full of symbols.</p></div>
+      <div class="qg-usecase"><span class="qg-usecase-tag">Networking</span><h4>vCard Contact Cards</h4><p>One scan saves your name, phone, email, and company straight into someone's contacts &mdash; no typos, no lost business card.</p></div>
+      <div class="qg-usecase"><span class="qg-usecase-tag">Payments</span><h4>PayPal &amp; Tips</h4><p>Market stalls, freelancers, and creators use a Payment QR code so people can pay without you reading out a username.</p></div>
+      <div class="qg-usecase"><span class="qg-usecase-tag">Apps</span><h4>App Store Downloads</h4><p>Point a poster or receipt straight to your app's store listing instead of asking people to search for it by name.</p></div>
+      <div class="qg-usecase"><span class="qg-usecase-tag">Marketing</span><h4>Trackable Campaign Links</h4><p>Pair your destination URL with tagged parameters from the <a href="https://smartgentools.com/utm-builder/">UTM Link Builder</a> before you generate the code, so scans show up clearly in your analytics.</p></div>
+      <div class="qg-usecase"><span class="qg-usecase-tag">Chat</span><h4>WhatsApp Conversations</h4><p>The WhatsApp type opens a chat with your number pre-filled. If you only need the link itself, without a QR code, the <a href="https://smartgentools.com/whatsapp-link/">WhatsApp Link Generator</a> builds just that.</p></div>
+    </div>
+    <p style="margin-top:-0.6rem;">Not sure which hex code matches your logo exactly? The <a href="https://smartgentools.com/color-palette-extractor/">Color Palette Extractor</a> can pull the precise colors from an image of your brand.</p>
+
+    <h2 id="glossary">QR Code Glossary</h2>
+    <dl class="qg-glossary">
+      <dt>Static QR code</dt><dd>A code with its destination encoded permanently at creation. What this tool generates.</dd>
+      <dt>Dynamic QR code</dt><dd>A code pointing to a redirect link you can repoint later, typically through a paid platform that also logs scans.</dd>
+      <dt>Error correction level</dt><dd>Built-in redundancy that lets a QR code stay readable even when part of it is damaged or covered. Four levels: L (~7% recoverable), M (~15%), Q (~25%), H (~30%). This tool uses H so a logo can safely sit in the center.</dd>
+      <dt>Finder patterns</dt><dd>The three large squares in the corners of a QR code that let a scanner detect its position and orientation. Never cover these with a logo.</dd>
+      <dt>Quiet zone</dt><dd>The blank white margin required around a QR code's edge. Cropping it too tight can stop cameras from recognizing the code at all.</dd>
+    </dl>
+
+    <div class="qg-exercise">
+      <h3 id="try-it">Try it yourself</h3>
+      <ol>
+        <li>Switch to the vCard tab and build a contact card with your own name and number, then scan it to confirm it saves correctly.</li>
+        <li>Open "Add your logo &amp; brand color," upload any small image, and watch it appear centered in the preview.</li>
+        <li>Switch to a light color in the color picker and try scanning it &mdash; then switch back to black and notice the difference in how quickly your camera locks on.</li>
+      </ol>
+    </div>
+
+    <section class="faq-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-container">
+
+        <div class="accordion-item">
+          <button class="accordion-header" type="button"><span>Are these QR codes free forever, or do they expire?</span><span class="accordion-icon"></span></button>
+          <div class="accordion-content"><p>They're static QR codes, generated entirely in your browser. The data is embedded directly in the code at creation, so there's no account, no expiration date, and no scan limit tied to a server on SmartGen's end.</p></div>
         </div>
 
-        
-        
+        <div class="accordion-item">
+          <button class="accordion-header" type="button"><span>What is the difference between a static and a dynamic QR code?</span><span class="accordion-icon"></span></button>
+          <div class="accordion-content"><p>A static code has its destination baked in permanently. A dynamic code points to a short redirect link that you can repoint later without reprinting the code, usually through a paid service that also tracks scans. This tool creates static codes.</p></div>
+        </div>
 
-        
+        <div class="accordion-item">
+          <button class="accordion-header" type="button"><span>Will adding my logo break the QR code?</span><span class="accordion-icon"></span></button>
+          <div class="accordion-content"><p>Not if it stays small. The code is generated with high error correction, which tolerates up to 30% obstruction, and the logo is capped at roughly 20% of the code's width with a white backdrop for contrast. Always scan the preview yourself before printing.</p></div>
+        </div>
 
-<article class="seo-content-container container mt-5 mb-5">
-            
-        </article>
-    
+        <div class="accordion-item">
+          <button class="accordion-header" type="button"><span>Can I use a custom color instead of black?</span><span class="accordion-icon"></span></button>
+          <div class="accordion-content"><p>Yes, though keep it dark against the white background. Low contrast between the code and its background is the most common reason a QR code fails to scan.</p></div>
+        </div>
 
-        <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px; border-left: 5px solid #2563eb; padding-left: 20px;">What is Qr Generator?</h3>
-            <p>At its core, a <strong>Qr Generator</strong> is a specialized utility designed to solve a specific digital problem with speed and accuracy. Our implementation focuses on three pillars: <strong>Security, Speed, and Simplicity</strong>. Unlike many other online tools that require account creation or store your sensitive data on remote servers, SmartGen's Qr Generator operates entirely within your browser.</p>
-            <p style="margin-top: 15px;">This means that when you use our Qr Generator, your data never leaves your device. This "Client-Side" approach is the gold standard for modern web utilities, providing you with absolute privacy and peace of mind while maintaining lightning-fast performance.</p>
-        </section>
+        <div class="accordion-item">
+          <button class="accordion-header" type="button"><span>Does this tool track who scans my QR code?</span><span class="accordion-icon"></span></button>
+          <div class="accordion-content"><p>No. There's no analytics layer here, which also means there's nothing to configure or any account required. If you need scan counts or the ability to edit the destination after printing, that requires a dynamic QR service instead.</p></div>
+        </div>
 
-        <section style="margin-bottom: 50px; background: #f8fafc; padding: 30px; border-radius: 20px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Why Choose SmartGen's Qr Generator?</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div style="padding: 15px;">
-                    <h4 style="color: #2563eb; margin-bottom: 10px;">🔒 100% Privacy</h4>
-                    <p style="font-size: 0.95rem;">No data is sent to any server. Everything happens locally in your browser.</p>
-                </div>
-                <div style="padding: 15px;">
-                    <h4 style="color: #2563eb; margin-bottom: 10px;">⚡ Instant Results</h4>
-                    <p style="font-size: 0.95rem;">Real-time processing ensures you see your output the moment you finish typing.</p>
-                </div>
-                <div style="padding: 15px;">
-                    <h4 style="color: #2563eb; margin-bottom: 10px;">🆓 Always Free</h4>
-                    <p style="font-size: 0.95rem;">No hidden costs, no premium versions, and no credit card required—ever.</p>
-                </div>
-            </div>
-        </section>
+        <div class="accordion-item">
+          <button class="accordion-header" type="button"><span>What image formats can I download?</span><span class="accordion-icon"></span></button>
+          <div class="accordion-content"><p>PNG, generated instantly in your browser at 220x220 pixels, suitable for both digital use and standard print sizes.</p></div>
+        </div>
 
-        <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Mastering the Workflow: How to Use the Tool</h3>
-            <p>Using our <strong>Qr Generator</strong> is designed to be frictionless. Follow these simple steps to achieve professional results in seconds:</p>
-            <ol style="margin-top: 20px; padding-left: 25px;">
-                <li style="margin-bottom: 15px;"><strong>Data Entry:</strong> Locate the primary input field. This is where you will paste or type the information you wish to process. Our tool supports various data formats and will automatically attempt to sanitize your input.</li>
-                <li style="margin-bottom: 15px;"><strong>Configuration:</strong> If the tool has optional settings (such as formatting options, security levels, or size adjustments), you will find them clearly labeled. Adjust these to meet your specific requirements.</li>
-                <li style="margin-bottom: 15px;"><strong>Live Preview:</strong> As you interact with the tool, watch the output area. Our "Live-Sync" technology updates the result instantaneously. There is no need to wait for a page refresh.</li>
-                <li style="margin-bottom: 15px;"><strong>Export & Implementation:</strong> Once you are satisfied with the result, use the "Copy to Clipboard" button for quick use, or the "Download" button to save the result locally for future reference.</li>
-            </ol>
-        </section>
+        <div class="accordion-item">
+          <button class="accordion-header" type="button"><span>Which QR code types are supported?</span><span class="accordion-icon"></span></button>
+          <div class="accordion-content"><p>URL/Text, WiFi, vCard contact, WhatsApp, Email, SMS, Phone, Location, Event, Crypto, Social profile, PayPal payment, and App Store/Play Store download links.</p></div>
+        </div>
 
-        <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Advanced Strategies for Professionals</h3>
-            <p>To truly get the most out of a <strong>Qr Generator</strong>, you should integrate it into your broader digital workflow. Here are several advanced strategies used by industry experts:</p>
-            <div style="margin-top: 25px;">
-                <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
-                    <h4 style="color: #1a202c; margin-bottom: 10px;">1. Automation Integration</h4>
-                    <p>While our tool is designed for manual use, the logic behind it is consistent with industry standards. Use it to prototype data structures or links before implementing them in your automated scripts or marketing campaigns.</p>
-                </div>
-                <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
-                    <h4 style="color: #1a202c; margin-bottom: 10px;">2. Quality Assurance (QA)</h4>
-                    <p>Always use the Qr Generator as a final verification step. Before deploying a campaign or pushing code to production, run your data through the tool to ensure everything is formatted correctly and free of common errors.</p>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <h4 style="color: #1a202c; margin-bottom: 10px;">3. Privacy-First Workflows</h4>
-                    <p>In an era of increasing data regulation (like GDPR and CCPA), using client-side tools like ours helps you maintain compliance by ensuring sensitive client data never touches a third-party server during the processing phase.</p>
-                </div>
-            </div>
-        </section>
+        <div class="accordion-item">
+          <button class="accordion-header" type="button"><span>Why won't my QR code scan?</span><span class="accordion-icon"></span></button>
+          <div class="accordion-content"><p>The most common causes are low contrast between the code and background, a logo larger than about 25% of the code, or a printed size smaller than roughly 2cm. Test with your own phone camera before printing anything at scale.</p></div>
+        </div>
 
-        <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Frequently Asked Questions (FAQ)</h3>
-            <div style="margin-top: 20px;">
-                <div style="margin-bottom: 25px;">
-                    <p style="font-weight: 700; color: #1a202c;">Q: Is there a limit to how many times I can use the Qr Generator?</p>
-                    <p style="color: #4a5568;">A: Absolutely not. SmartGen provides unlimited access to all our tools. You can process as much data as you need, as often as you need, without any restrictions.</p>
-                </div>
-                <div style="margin-bottom: 25px;">
-                    <p style="font-weight: 700; color: #1a202c;">Q: Do I need to install any software or browser extensions?</p>
-                    <p style="color: #4a5568;">A: No. Our Qr Generator is a 100% web-based utility. It runs in any modern browser without the need for additional plugins, ensuring a lightweight and secure experience.</p>
-                </div>
-                <div style="margin-bottom: 25px;">
-                    <p style="font-weight: 700; color: #1a202c;">Q: Can I use this tool on my mobile phone?</p>
-                    <p style="color: #4a5568;">A: Yes! SmartGen is fully responsive. The interface adjusts perfectly to smartphones and tablets, allowing you to work on the go with the same level of precision as a desktop computer.</p>
-                </div>
-            </div>
-        </section>
+      </div>
+    </section>
 
-        <footer style="margin-top: 60px; padding-top: 30px; border-top: 2px solid #edf2f7; text-align: center;">
-            <p style="font-style: italic; color: #0052cc;">"SmartGen is dedicated to empowering digital professionals with high-performance, privacy-focused tools. Our mission is to make the web a more efficient and secure place for everyone."</p>
-            <p style="margin-top: 20px; font-weight: 700; color: #2563eb;">— Sayad Md Bayezid Hosan, Founder of SmartGen</p>
-        </footer>
-
-    </article>
-
-<section class="related-tools-smart" style="margin: 3rem 0; padding: 2rem; background: #f8fafc; border-radius: 20px; border: 1px solid #e2e8f0;">
-    <h3 style="font-size: 1.5rem; color: #1e293b; margin-bottom: 1.5rem;">🛠️ Related Professional Tools</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-        
-        <a href="/utm-builder/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
-            <div style="font-size: 1.8rem;">🔗</div>
-            <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">UTM Link Builder</h4>
-                <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Marketing & Social Media</p>
-            </div>
-        </a>
-
-        <a href="/whatsapp-link/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
-            <div style="font-size: 1.8rem;">💬</div>
-            <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">WhatsApp Link</h4>
-                <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Marketing & Social Media</p>
-            </div>
-        </a>
-
-        <a href="/serp-preview-tool/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
-            <div style="font-size: 1.8rem;">🔍</div>
-            <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">SERP Preview Tool</h4>
-                <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">SEO & Content</p>
-            </div>
-        </a>
-
+    <div class="qg-review">
+      <h3>Was this useful?</h3>
+      <p>If this saved you a signup or a paid plan, a quick review helps other people find it too &mdash; it takes about thirty seconds.</p>
+      <a href="https://smartgentools.com/review/">Leave a quick review &rarr;</a>
     </div>
-</section>
 
-<section class="recommended-blogs-smart" style="margin: 3rem 0; padding: 2rem; background: #0f172a; border-radius: 20px; color: white;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <h3 style="font-size: 1.5rem; margin: 0;">📖 Recommended Reading</h3>
-        <a href="/blog/" style="color: #3b82f6; text-decoration: none; font-size: 0.9rem; font-weight: 600;">View All →</a>
+    <div class="qg-founder">
+      <p>"SmartGen is dedicated to empowering digital professionals with high-performance, privacy-conscious tools. Our mission is to make the web a more efficient and secure place for everyone."</p>
+      <p>&mdash; Sayad Md Bayezid Hosan, Founder of SmartGen</p>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-        
-        <a href="/blog/the-ultimate-advanced-all-in-one-qr-code-generator-free-secure-and-100percent-client-side/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
-            <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">Ultimate QR Code Guide</h4>
-                <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">Master the art of generating secure, advanced QR codes for business and personal use.</p>
-            </div>
-        </a>
 
-        <a href="/blog/how-to-optimize-your-website-for-google-adsense-approval-in-2026/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
-            <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">AdSense Approval Guide</h4>
-                <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">The definitive roadmap to getting your website approved for Google AdSense in 2026.</p>
-            </div>
-        </a>
-
-        <a href="/blog/top-10-essential-free-seo-tools-for-digital-marketers-in-2026/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
-            <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">Top 10 SEO Tools</h4>
-                <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">Boost your search rankings with these essential free SEO utilities.</p>
-            </div>
-        </a>
-
-    </div>
+  </div>
 </section>
-
-</section>
-
 </main>
 
-    <footer id="main-footer"></footer>
+<footer class="qg-footer">
+  <div class="qg-wide qg-footer-row">
+    <svg width="130" height="39" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-label="SmartGen">
+      <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#3b82f6" />
+      <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
+      <text x="65" y="42" font-family="Inter, sans-serif" font-weight="800" font-size="28" fill="#f8fafc">Smart<tspan fill="#ff8800">Gen</tspan></text>
+    </svg>
+    <nav class="qg-footer-links">
+      <a href="https://smartgentools.com/tools/">All Tools</a>
+      <a href="https://smartgentools.com/privacy/">Privacy</a>
+      <a href="https://smartgentools.com/terms/">Terms</a>
+      <a href="https://smartgentools.com/contact/">Contact</a>
+      <a href="https://smartgentools.com/review/">Review</a>
+    </nav>
+  </div>
+  <div class="qg-wide"><small>&copy; 2026 SmartGen. This QR code generator runs client-side in your browser.</small></div>
+</footer>
 
-    <script>
-        let currentType = 'url';
-        let qrcode = new QRCode(document.getElementById("qrcode"), {
-            width: 200,
-            height: 200,
-            correctLevel: QRCode.CorrectLevel.H
-        });
+<!-- Cookie Consent Banner (standalone — no app.js dependency) -->
+<div id="cookie-consent-banner">
+  <div class="qg-cookie-row">
+    <p>We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="https://smartgentools.com/privacy/">Privacy Policy</a>.</p>
+    <button id="accept-cookies" type="button">Accept</button>
+  </div>
+</div>
 
-        // Tab switching logic
-        document.querySelectorAll('.qr-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.qr-tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.dynamic-input-group').forEach(g => g.classList.remove('active'));
-                
-                tab.classList.add('active');
-                currentType = tab.getAttribute('data-type');
-                document.getElementById(`group-${currentType}`).classList.add('active');
-                generateQR();
-            });
-        });
-
-        function formatVCardDate(dateStr) {
-            if (!dateStr) return '';
-            return dateStr.replace(/[-:]/g, '') + '00';
-        }
-
-        function generateQR() {
-            let data = '';
-            
-            switch(currentType) {
-                case 'url':
-                    data = document.getElementById('input-url').value || 'https://smartgentools.com';
-                    break;
-                case 'wifi':
-                    const ssid = document.getElementById('wifi-ssid').value;
-                    const pass = document.getElementById('wifi-pass').value;
-                    const enc = document.getElementById('wifi-enc').value;
-                    data = `WIFI:T:${enc};S:${ssid};P:${pass};;`;
-                    break;
-                case 'vcard':
-                    const name = document.getElementById('vcard-name').value;
-                    const phone = document.getElementById('vcard-phone').value;
-                    const email = document.getElementById('vcard-email').value;
-                    const comp = document.getElementById('vcard-company').value;
-                    const web = document.getElementById('vcard-web').value;
-                    data = `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nTEL:${phone}\nEMAIL:${email}\nORG:${comp}\nURL:${web}\nEND:VCARD`;
-                    break;
-                case 'whatsapp':
-                    const waPhone = document.getElementById('wa-phone').value;
-                    const waMsg = encodeURIComponent(document.getElementById('wa-msg').value);
-                    data = `https://wa.me/${waPhone}?text=${waMsg}`;
-                    break;
-                case 'email':
-                    const mailTo = document.getElementById('mail-to').value;
-                    const mailSub = encodeURIComponent(document.getElementById('mail-sub').value);
-                    const mailBody = encodeURIComponent(document.getElementById('mail-body').value);
-                    data = `mailto:${mailTo}?subject=${mailSub}&body=${mailBody}`;
-                    break;
-                case 'sms':
-                    const smsPhone = document.getElementById('sms-phone').value;
-                    const smsMsg = document.getElementById('sms-msg').value;
-                    data = `smsto:${smsPhone}:${smsMsg}`;
-                    break;
-                case 'phone':
-                    data = `tel:${document.getElementById('phone-num').value}`;
-                    break;
-                case 'location':
-                    const lat = document.getElementById('geo-lat').value;
-                    const long = document.getElementById('geo-long').value;
-                    data = `geo:${lat},${long}`;
-                    break;
-                case 'event':
-                    const title = document.getElementById('event-title').value;
-                    const start = formatVCardDate(document.getElementById('event-start').value);
-                    const end = formatVCardDate(document.getElementById('event-end').value);
-                    const loc = document.getElementById('event-loc').value;
-                    data = `BEGIN:VEVENT\nSUMMARY:${title}\nDTSTART:${start}\nDTEND:${end}\nLOCATION:${loc}\nEND:VEVENT`;
-                    break;
-                case 'crypto':
-                    const cType = document.getElementById('crypto-type').value;
-                    const cAddr = document.getElementById('crypto-addr').value;
-                    data = `${cType}:${cAddr}`;
-                    break;
-                case 'social':
-                    const platform = document.getElementById('social-platform').value;
-                    const user = document.getElementById('social-user').value;
-                    data = platform + user;
-                    break;
-            }
-
-            if (data) {
-                qrcode.clear();
-                qrcode.makeCode(data);
-            }
-        }
-
-        // Live Preview Listeners
-        document.querySelectorAll('.qr-trigger').forEach(el => {
-            el.addEventListener('input', generateQR);
-            el.addEventListener('change', generateQR);
-        });
-
-        function downloadQR() {
-            const img = document.querySelector('#qrcode img');
-            if (img) {
-                const link = document.createElement('a');
-                link.download = `smartgen-qr-${currentType}.png`;
-                link.href = img.src;
-                link.click();
-            }
-        }
-        
-        // Initial generation
-        generateQR();
-    </script>
-
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e1e8ed; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 9999; display: none; padding: 1rem 0;">
-        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
-            <div style="flex: 1; min-width: 280px;">
-                <p style="margin: 0; font-size: 0.9rem; color: #4a5568; line-height: 1.5;">
-                    We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" style="color: #0052cc; text-decoration: underline;">Privacy Policy</a>.
-                </p>
-            </div>
-            <div style="display: flex; align-items: center; gap: 1rem;">
-                <a href="/privacy/" style="font-size: 0.9rem; color: #0052cc; text-decoration: none; font-weight: 500;">Learn More About Our Privacy Policy</a>
-                <button id="accept-cookies" style="background: #0052cc; color: #ffffff; border: none; padding: 0.6rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Accept</button>
-            </div>
-        </div>
-    </div>
-    <!-- Cookie logic handled by app.js -->
 <script>
-    // Lazy load Google Analytics on user interaction
-    (function() {
-        let gtag_loaded = false;
-        function loadGoogleAnalytics() {
-            if (gtag_loaded) return;
-            gtag_loaded = true;
-            
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-982HBP86V8');
-            
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
-            document.head.appendChild(script);
-        }
-        
-        // Trigger on first user interaction
-        ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
-            document.addEventListener(event, loadGoogleAnalytics, { once: true });
-        });
-    })();
+(function () {
+  "use strict";
+
+  var currentType = 'url';
+  var logoImage = null;
+  var qrColor = '#000000';
+  var container = document.getElementById('qrcode');
+  var qrcode = new QRCode(container, { width: 220, height: 220, colorDark: qrColor, colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.H });
+
+  document.querySelectorAll('.qr-tab').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      document.querySelectorAll('.qr-tab').forEach(function (t) { t.classList.remove('active'); });
+      document.querySelectorAll('.dynamic-input-group').forEach(function (g) { g.classList.remove('active'); });
+      tab.classList.add('active');
+      currentType = tab.getAttribute('data-type');
+      var group = document.getElementById('group-' + currentType);
+      if (group) { group.classList.add('active'); }
+      generateQR();
+    });
+  });
+
+  function formatVCardDate(dateStr) {
+    if (!dateStr) return '';
+    return dateStr.replace(/[-:]/g, '') + '00';
+  }
+
+  function buildData() {
+    var data = '';
+    switch (currentType) {
+      case 'url':
+        data = document.getElementById('input-url').value || 'https://smartgentools.com';
+        break;
+      case 'wifi': {
+        var ssid = document.getElementById('wifi-ssid').value;
+        var pass = document.getElementById('wifi-pass').value;
+        var enc = document.getElementById('wifi-enc').value;
+        data = 'WIFI:T:' + enc + ';S:' + ssid + ';P:' + pass + ';;';
+        break;
+      }
+      case 'vcard': {
+        var name = document.getElementById('vcard-name').value;
+        var phone = document.getElementById('vcard-phone').value;
+        var email = document.getElementById('vcard-email').value;
+        var comp = document.getElementById('vcard-company').value;
+        var web = document.getElementById('vcard-web').value;
+        data = 'BEGIN:VCARD\nVERSION:3.0\nFN:' + name + '\nTEL:' + phone + '\nEMAIL:' + email + '\nORG:' + comp + '\nURL:' + web + '\nEND:VCARD';
+        break;
+      }
+      case 'whatsapp': {
+        var waPhone = document.getElementById('wa-phone').value;
+        var waMsg = encodeURIComponent(document.getElementById('wa-msg').value);
+        data = 'https://wa.me/' + waPhone + '?text=' + waMsg;
+        break;
+      }
+      case 'email': {
+        var mailTo = document.getElementById('mail-to').value;
+        var mailSub = encodeURIComponent(document.getElementById('mail-sub').value);
+        var mailBody = encodeURIComponent(document.getElementById('mail-body').value);
+        data = 'mailto:' + mailTo + '?subject=' + mailSub + '&body=' + mailBody;
+        break;
+      }
+      case 'sms': {
+        var smsPhone = document.getElementById('sms-phone').value;
+        var smsMsg = document.getElementById('sms-msg').value;
+        data = 'smsto:' + smsPhone + ':' + smsMsg;
+        break;
+      }
+      case 'phone':
+        data = 'tel:' + document.getElementById('phone-num').value;
+        break;
+      case 'location': {
+        var lat = document.getElementById('geo-lat').value;
+        var lng = document.getElementById('geo-long').value;
+        data = 'geo:' + lat + ',' + lng;
+        break;
+      }
+      case 'event': {
+        var title = document.getElementById('event-title').value;
+        var start = formatVCardDate(document.getElementById('event-start').value);
+        var end = formatVCardDate(document.getElementById('event-end').value);
+        var loc = document.getElementById('event-loc').value;
+        data = 'BEGIN:VEVENT\nSUMMARY:' + title + '\nDTSTART:' + start + '\nDTEND:' + end + '\nLOCATION:' + loc + '\nEND:VEVENT';
+        break;
+      }
+      case 'payment': {
+        var payUser = document.getElementById('pay-user').value;
+        var payAmount = document.getElementById('pay-amount').value;
+        data = payAmount ? 'https://paypal.me/' + payUser + '/' + payAmount : 'https://paypal.me/' + payUser;
+        break;
+      }
+      case 'appstore': {
+        data = document.getElementById('appstore-url').value || 'https://smartgentools.com';
+        break;
+      }
+      case 'crypto': {
+        var cType = document.getElementById('crypto-type').value;
+        var cAddr = document.getElementById('crypto-addr').value;
+        data = cType + ':' + cAddr;
+        break;
+      }
+      case 'social': {
+        var platform = document.getElementById('social-platform').value;
+        var user = document.getElementById('social-user').value;
+        data = platform + user;
+        break;
+      }
+    }
+    return data;
+  }
+
+  function applyLogoOverlay() {
+    if (!logoImage) return;
+    var canvas = container.querySelector('canvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var size = canvas.width * 0.20;
+    var pad = size + 12;
+    var cx = canvas.width / 2;
+    var cy = canvas.height / 2;
+    ctx.fillStyle = '#ffffff';
+    var r = 8;
+    var x = cx - pad / 2, y = cy - pad / 2;
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + pad, y, x + pad, y + pad, r);
+    ctx.arcTo(x + pad, y + pad, x, y + pad, r);
+    ctx.arcTo(x, y + pad, x, y, r);
+    ctx.arcTo(x, y, x + pad, y, r);
+    ctx.closePath();
+    ctx.fill();
+    ctx.drawImage(logoImage, cx - size / 2, cy - size / 2, size, size);
+    var img = container.querySelector('img');
+    if (img) { img.src = canvas.toDataURL('image/png'); }
+  }
+
+  function generateQR() {
+    var data = buildData();
+    if (!data) return;
+    container.innerHTML = '';
+    qrcode = new QRCode(container, { width: 220, height: 220, colorDark: qrColor, colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.H });
+    qrcode.makeCode(data);
+    applyLogoOverlay();
+  }
+
+  document.querySelectorAll('.qr-trigger').forEach(function (el) {
+    el.addEventListener('input', generateQR);
+    el.addEventListener('change', generateQR);
+  });
+
+  var colorInput = document.getElementById('qr-color');
+  if (colorInput) {
+    colorInput.addEventListener('input', function () {
+      qrColor = colorInput.value;
+      generateQR();
+    });
+  }
+
+  var logoInput = document.getElementById('logo-input');
+  var logoNameEl = document.getElementById('logo-name');
+  var removeLogoBtn = document.getElementById('remove-logo');
+  if (logoInput) {
+    logoInput.addEventListener('change', function (e) {
+      var file = e.target.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function (ev) {
+        var img = new Image();
+        img.onload = function () {
+          logoImage = img;
+          if (logoNameEl) logoNameEl.textContent = file.name;
+          if (removeLogoBtn) removeLogoBtn.style.display = 'inline-block';
+          generateQR();
+        };
+        img.src = ev.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+  if (removeLogoBtn) {
+    removeLogoBtn.addEventListener('click', function () {
+      logoImage = null;
+      if (logoInput) logoInput.value = '';
+      if (logoNameEl) logoNameEl.textContent = '';
+      removeLogoBtn.style.display = 'none';
+      generateQR();
+    });
+  }
+
+  window.downloadQR = function () {
+    var img = document.querySelector('#qrcode img');
+    if (img) {
+      var link = document.createElement('a');
+      link.download = 'smartgen-qr-' + currentType + '.png';
+      link.href = img.src;
+      link.click();
+    }
+  };
+
+  var accordionHeaders = document.querySelectorAll('.accordion-header');
+  for (var a = 0; a < accordionHeaders.length; a++) {
+    accordionHeaders[a].addEventListener('click', function () {
+      var item = this.closest('.accordion-item');
+      if (item) { item.classList.toggle('open'); }
+    });
+  }
+
+  // Cookie consent — self-contained since this page doesn't load app.js
+  var banner = document.getElementById('cookie-consent-banner');
+  var acceptBtn = document.getElementById('accept-cookies');
+  try {
+    if (banner && !localStorage.getItem('sg_cookie_consent')) {
+      banner.style.display = 'block';
+    }
+  } catch (err) { /* localStorage unavailable, skip silently */ }
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', function () {
+      try { localStorage.setItem('sg_cookie_consent', '1'); } catch (err) {}
+      if (banner) banner.style.display = 'none';
+    });
+  }
+
+  generateQR();
+})();
 </script>
 
+<script>
+  // Lazy load Google Analytics on user interaction
+  (function () {
+    var gtagLoaded = false;
+    function loadGoogleAnalytics() {
+      if (gtagLoaded) return;
+      gtagLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-982HBP86V8');
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
+      document.head.appendChild(script);
+    }
+    ['touchstart', 'scroll', 'mousemove', 'click'].forEach(function (evt) {
+      document.addEventListener(evt, loadGoogleAnalytics, { once: true });
+    });
+  })();
+</script>
 </body>
 </html>
