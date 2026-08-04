@@ -373,24 +373,211 @@
             border: 2px solid rgba(255,255,255,0.1);
         }
 
-        /* Footer Links Enhancement */
-        .footer-links {
+        /* -------------------------------------
+           NEW MODERN DARK FOOTER STYLES 
+        --------------------------------------- */
+        .modern-dark-footer {
+            background-color: #111111;
+            color: #a0a0a0;
+            font-family: 'Inter', sans-serif;
+            margin-top: 4rem;
+        }
+        
+        .footer-top-bar {
+            border-bottom: 1px solid #2a2a2a;
+            padding: 3rem 0;
+        }
+        
+        .footer-top-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            padding: 4rem 0;
-            border-top: 1px solid var(--slate-100);
         }
-
-        .footer-links a {
-            color: var(--slate-600);
+        
+        .footer-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .footer-info-icon {
+            color: var(--accent);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        
+        .footer-info-text h4 {
+            color: #ffffff;
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .footer-info-text p, .footer-info-text a {
+            color: #a0a0a0;
+            margin: 0;
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            transition: color 0.3s;
+        }
+        
+        .footer-info-text a:hover {
+            color: var(--accent);
         }
 
-        .footer-links a:hover {
-            color: var(--primary);
+        .footer-main {
+            padding: 4rem 0;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+        }
+
+        .footer-brand p {
+            margin: 1.5rem 0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .footer-col h3 {
+            color: #ffffff;
+            margin-bottom: 2rem;
+            position: relative;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .footer-col h3::after {
+            content: "";
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #a0a0a0;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        /* Compact Dev Profiles Grid */
+        .dev-profiles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .dev-profiles-grid li { margin-bottom: 5px !important; }
+        .dev-profiles-grid li a { font-size: 0.85rem !important; }
+
+        .footer-socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #222222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-review-box {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border: 1px solid #333;
+        }
+        
+        .footer-review-box p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-review {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-review:hover {
+            background: #e67a00;
+        }
+
+        .footer-bottom-bar {
+            background: #0a0a0a;
+            padding: 1.5rem 0;
+            border-top: 1px solid #222;
+        }
+        
+        .footer-bottom-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom-flex p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-flex p span {
+            color: var(--accent);
+        }
+
+        .footer-bottom-links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #ffffff;
         }
 
         /* Animations */
@@ -415,6 +602,9 @@
         }
 
         /* Mobile Responsiveness fixes */
+        @media (max-width: 992px) {
+            .footer-main { grid-template-columns: 1fr 1fr; }
+        }
         @media (max-width: 768px) {
             .hero-section {
                 padding: 7rem 0 5rem;
@@ -431,6 +621,10 @@
             .category-card {
                 padding: 2rem;
             }
+            .footer-main { grid-template-columns: 1fr; gap: 2.5rem; }
+            .footer-bottom-flex { flex-direction: column; text-align: center; }
+            .footer-bottom-links a { margin: 0 10px; }
+            .footer-bottom-links { margin-top: 10px; }
         }
     </style>
 </head>
@@ -604,33 +798,132 @@
         </div>
     </section>
 
-    <!-- Footer Enhancement -->
-    <footer id="main-footer">
-        <div class="container">
-            <div class="footer-links">
-                <div>
-                    <h5 style="margin-bottom: 1rem;">Platform</h5>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="/about/">About Us</a></li>
-                        <li><a href="/contact/">Contact</a></li>
-                        <li><a href="/sitemap.xml">Sitemap (XML)</a></li>
-                    </ul>
+    <!-- NEW MODERN DARK FOOTER -->
+    <footer id="main-footer" class="modern-dark-footer">
+        <!-- Top Info Bar -->
+        <div class="footer-top-bar">
+            <div class="container footer-top-grid">
+                <!-- Location -->
+                <div class="footer-info-item">
+                    <div class="footer-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <div class="footer-info-text">
+                        <h4>Find us</h4>
+                        <a href="https://maps.app.goo.gl/4HJUjquV4dRVoXvm6?g_st=ic" target="_blank">Ghatail, Tangail, Bangladesh</a>
+                    </div>
                 </div>
-                <div>
-                    <h5 style="margin-bottom: 1rem;">Legal</h5>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="/privacy-policy/">Privacy Policy</a></li>
-                        <li><a href="/terms-of-service/">Terms of Service</a></li>
-                        <li><a href="/cookies/">Cookie Policy</a></li>
-                    </ul>
+                <!-- Phone -->
+                <div class="footer-info-item">
+                    <div class="footer-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <div class="footer-info-text">
+                        <h4>Call us</h4>
+                        <p>01519601517<br>+880 1518-740295</p>
+                    </div>
                 </div>
-                <div>
-                    <h5 style="margin-bottom: 1rem;">Resources</h5>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="/blog/">SmartGen Blog</a></li>
-                        <li><a href="/docs/">Documentation</a></li>
-                        <li><a href="https://github.com/bayzed123/SmartGenQR.oi">GitHub Repo</a></li>
-                    </ul>
+                <!-- Email -->
+                <div class="footer-info-item">
+                    <div class="footer-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <div class="footer-info-text">
+                        <h4>Mail us</h4>
+                        <a href="mailto:cwb.agency@outlook.com">cwb.agency@outlook.com</a><br>
+                        <a href="mailto:support@sayadbayezid.com">support@sayadbayezid.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer Links -->
+        <div class="container footer-main">
+            <!-- Brand Column -->
+            <div class="footer-col footer-brand">
+                <svg width="180" height="54" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#2563eb" />
+                        <stop offset="100%" style="stop-color:#3b82f6" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
+                    <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
+                    <text x="65" y="42" font-family="Inter, sans-serif" font-weight="800" font-size="28" fill="#ffffff">Smart<tspan fill="#ff8800">Gen</tspan></text>
+                </svg>
+                <p>An advanced digital utility platform bringing 131+ SEO tools, web generators, and dev docs. Operated by Connect with Bayezid.</p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/smartgenutility" class="footer-social-btn" target="_blank" aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://x.com/sayadbayezid?s=11" class="footer-social-btn" target="_blank" aria-label="X (Twitter)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sayadbayezid" class="footer-social-btn" target="_blank" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://github.com/Sayadbayezid" class="footer-social-btn" target="_blank" aria-label="Github">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="https://youtube.com/@connectwithbayezid" class="footer-social-btn" target="_blank" aria-label="Youtube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.13 1 12 1 12s0 3.87.46 5.58a2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.87 23 12 23 12s0-3.87-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Useful Links / Products -->
+            <div class="footer-col">
+                <h3>Our Tools</h3>
+                <ul>
+                    <li><a href="https://smartgentools.com/tools/">Free Tools</a></li>
+                    <li><a href="https://smartgentools.com/html-code-library/">HTML Code Library (80+)</a></li>
+                    <li><a href="https://smartleadgen-frontend.sayadmdbayezidhosan.workers.dev" target="_blank">Pro Lead Collector</a></li>
+                    <li><a href="https://connectwithbayezid.it.com" target="_blank">Automation Chatbots</a></li>
+                    <li><a href="https://www.genzfrontir.com" target="_blank">GenZ Frontier</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Resouces -->
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://smartgentools.com/smartgen-legal-info/">Trust Centre</a></li>
+                    <li><a href="https://smartgentools.com/privacy/">Privacy Policy</a></li>
+                    <li><a href="https://sayadbayezid.com/privacy-policy-meta-product.html">Meta Privacy</a></li>
+                    <li><a href="https://docs.smartgentools.com">Open Source Docs</a></li>
+                    <li><a href="https://smartgentools.com/blog/">Education Blog</a></li>
+                    <li><a href="https://smartgentools.com/help-center/">Help Center</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect & Review -->
+            <div class="footer-col">
+                <h3>Connect & Review</h3>
+                <ul class="dev-profiles-grid">
+                    <li><a href="https://sayadbayezid.com/" target="_blank">Meet Developer</a></li>
+                    <li><a href="https://pypi.org/user/Sayadbayezid/" target="_blank">PyPi Profile</a></li>
+                    <li><a href="https://g.dev/SayadBayezid" target="_blank">Google Dev</a></li>
+                    <li><a href="https://orcid.org/0009-0003-6568-6648" target="_blank">ORCID</a></li>
+                    <li><a href="https://stackoverflow.com/users/32930880/sayad-md-bayezid-hosan" target="_blank">StackOverflow</a></li>
+                    <li><a href="https://gitlab.com/Sayadbayezid" target="_blank">GitLab</a></li>
+                    <li><a href="https://linktr.ee/sayadbayezid" target="_blank">Linktr.ee (All)</a></li>
+                </ul>
+                <div class="footer-review-box">
+                    <p>Love using SmartGen? Share your experience with us!</p>
+                    <a href="https://smartgentools.com/review/" class="btn-review">Leave a Review</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="footer-bottom-bar">
+            <div class="container footer-bottom-flex">
+                <p>Copyright © 2026 SmartGen. Developed by <span>Sayad Md Bayezid Hosan</span>.</p>
+                <div class="footer-bottom-links">
+                    <a href="https://smartgentools.com">Home</a>
+                    <a href="https://smartgentools.com/about/">About Us</a>
+                    <a href="https://smartgentools.com/contact/">Contact Us</a>
                 </div>
             </div>
         </div>
