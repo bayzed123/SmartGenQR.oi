@@ -1,0 +1,1 @@
+"""SmartLeadGen backend package — search, enrichment, validation, and sheet writing."""
