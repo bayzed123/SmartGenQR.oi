@@ -13,7 +13,8 @@ tags:
   - SEO
   - Keyword Research
 ---
-July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+<!--AUTHOR_PROFILE-->
+July 01, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com)
 
 # MODULE 11: Analysis and Keyword Research — The Complete A to Z Mega Guide for Beginners
 
