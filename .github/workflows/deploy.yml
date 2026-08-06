@@ -36,9 +36,9 @@ jobs:
         run: npm run build
 
       - name: Inject Gemini API Key
-        run: sed -i 's|__GEMINI_API_KEY__|<LaTex>${{ secrets.GEMINI_API_KEY }}|g' assets/js/chatbot.js
+        run: sed -i "s/INJECT_GEMINI_API_KEY_HERE/${GEMINI_API_KEY}/g" assets/js/chatbot.js
         env:
-          GEMINI_API_KEY: $</LaTex>{{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
