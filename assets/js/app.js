@@ -110,114 +110,133 @@ function injectFooter() {
     if (!footer) return;
 
     footer.innerHTML = `
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand-section">
-                    <div class="footer-logo" style="margin-bottom: 1.5rem;">
-                        <a href="/" aria-label="SmartGen Home" style="display: block; text-decoration: none;">
-                            <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
-                              <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
-                              <text x="65" y="42" font-family="Inter, sans-serif" font-weight="800" font-size="28" fill="var(--navy, #0f172a)">Smart<tspan fill="#ff8800">Gen</tspan></text>
-                            </svg>
-                        </a>
+        <!-- Top Info Bar -->
+        <div class="footer-top-bar">
+            <div class="container footer-top-grid">
+                <!-- Location -->
+                <div class="footer-info-item">
+                    <div class="footer-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
-                    <p class="footer-description">Fast, secure, and 100% free client-side web utilities for developers, marketers, and everyday users.</p>
+                    <div class="footer-info-text">
+                        <h4>Find us</h4>
+                        <a href="https://maps.app.goo.gl/4HJUjquV4dRVoXvm6?g_st=ic" target="_blank">Auliabad, Kalihati, Tangail, Bangladesh</a>
+                    </div>
                 </div>
-                <div class="footer-quick-links-grid">
-                    <div class="footer-column">
-                        <h4 class="footer-accordion-trigger">Developer Tools <span class="accordion-icon"></span></h4>
-                        <ul class="footer-links">
-                            <li><a href="/qr-generator/">QR Code Generator</a></li>
-                            <li><a href="/html-code-preview/">Live HTML Previewer</a></li>
-                            <li><a href="/json-formatter-validator/">JSON Formatter & Validator</a></li>
-                            <li><a href="/uuid-generator/">UUID / GUID Generator</a></li>
-                            <li><a href="/ip-address-lookup/">IP Address Lookup</a></li>
-                            <li><a href="/url-encoder-decoder/">URL Encoder/Decoder</a></li>
-                            <li><a href="/hash-generator/">MD5/SHA Hash Generator</a></li>
-                            <li><a href="/image-to-base64/">Image to Base64</a></li>
-                            <li><a href="/base64-to-image/">Base64 to Image Decoder</a></li>
-                            <li><a href="/css-gradient-generator/">CSS Gradient Generator</a></li>
-                            <li><a href="/random-choice-picker/">Random Choice Picker</a></li>
-                            <li><a href="/text-to-changelog-json-generator/">Text to Changelog JSON Generator</a></li>
-                        </ul>
+                <!-- Phone -->
+                <div class="footer-info-item">
+                    <div class="footer-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     </div>
-                    <div class="footer-column">
-                        <h4 class="footer-accordion-trigger">SEO & Marketing <span class="accordion-icon"></span></h4>
-                        <ul class="footer-links">
-                            <li><a href="/blog-title-generator/">Blog Title Generator</a></li>
-                            <li><a href="/utm-builder/">Build UTM Links</a></li>
-                            <li><a href="/keyword-density-checker/">Keyword Density Checker</a></li>
-                            <li><a href="/robots-txt-generator/">Robots.txt Generator</a></li>
-                            <li><a href="/serp-preview-tool/">SERP Preview Tool</a></li>
-                            <li><a href="/schema-generator/">Schema Generator</a></li>
-                            <li><a href="/meta-tag-generator/">Meta Tag Generator</a></li>
-                            <li><a href="/youtube-thumbnail-downloader/">YouTube Thumbnail Downloader</a></li>
-                            <li><a href="/whatsapp-link/">WhatsApp Link Creator</a></li>
-                            <li><a href="/hashtag-generator/">Hashtag Generator</a></li>
-                            <li><a href="/mailto-generator/">Mailto Link Generator</a></li>
-                        </ul>
+                    <div class="footer-info-text">
+                        <h4>Call us</h4>
+                        <p>01519601517<br>+880 1518-740295</p>
                     </div>
-                    <div class="footer-column">
-                        <h4 class="footer-accordion-trigger">Daily Utilities <span class="accordion-icon"></span></h4>
-                        <ul class="footer-links">
-                            <li><a href="/age-calculator/">Age Calculator</a></li>
-                            <li><a href="/bmi-bmr-calculator/">BMI & BMR Calculator</a></li>
-                            <li><a href="/emi-calculator/">EMI Calculator</a></li>
-                            <li><a href="/percentage-calculator/">Percentage Calculator</a></li>
-                            <li><a href="/pomodoro-timer/">Pomodoro Timer</a></li>
-                            <li><a href="/secure-notepad/">Secure Notepad</a></li>
-                            <li><a href="/unit-converter/">Unit Converter</a></li>
-                            <li><a href="/image-compressor/">Image Compressor</a></li>
-                            <li><a href="/picture-url-generator/">Picture URL Generator</a></li>
-                            <li><a href="/fancy-font-generator/">Fancy Font Generator</a></li>
-                            <li><a href="/word-counter/">Word Counter Tool</a></li>
-                            <li><a href="/text-case-converter/">Text Case Converter</a></li>
-                            <li><a href="/password-generator/">Password Generator</a></li>
-                            <li><a href="/cpm-roi-calculator/">CPM & ROI Calculator</a></li>
-                            <li><a href="/color-palette-extractor/">Color Palette Extractor</a></li>
-                            <li><a href="/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
-                            <li><a href="/facebook-id-finder/">Facebook ID Finder</a></li>
-                        </ul>
+                </div>
+                <!-- Email -->
+                <div class="footer-info-item">
+                    <div class="footer-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     </div>
-                    <div class="footer-column">
-                        <h4 class="footer-accordion-trigger">📚 RESOURCES <span class="accordion-icon"></span></h4>
-                        <ul class="footer-links">
-                            <li><a href="/blog/" style="font-weight: 700; color: #2563eb;">📖 Read Our Blog</a></li>
-                            <li><a href="/about/">About Us</a></li>
-                            <li><a href="/contact/">Contact Support</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4 class="footer-accordion-trigger">Legal Info Generation <span class="accordion-icon"></span></h4>
-                        <ul class="footer-links">
-                            <li><a href="/privacy-policy-generator/">Privacy Policy Generator</a></li>
-                            <li><a href="/terms-conditions-generator/">Terms & Conditions Generator</a></li>
-                            <li><a href="/disclaimer-generator/">Disclaimer Generator</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4 class="footer-accordion-trigger">Legal & Info <span class="accordion-icon"></span></h4>
-                        <ul class="footer-links">
-                            <li><a href="/about/">About Us</a></li>
-                            <li><a href="/contact/">Contact Us</a></li>
-                            <li><a href="/privacy/">Privacy Policy</a></li>
-                            <li><a href="/terms/">Terms of Service</a></li>
-                            <li><a href="/disclaimer/">Disclaimer</a></li>
-                            <li><a href="/cookies/">Cookie Policy</a></li>
-                            <li><a href="/updates/">Updates & Changelog</a></li>
-                            <li><a href="/docs/">Developer Docs</a></li>
-                        </ul>
+                    <div class="footer-info-text">
+                        <h4>Mail us</h4>
+                        <a href="mailto:cwb.agency@outlook.com">cwb.agency@outlook.com</a><br>
+                        <a href="mailto:support@sayadbayezid.com">support@sayadbayezid.com</a><br>
+                         <a href="mailto:info@sayadbayezid.com">info@sayadbayezid.com</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-bottom-left">
-                    <p>&copy; 2026 SmartGen. Developed by <a href="https://sayadbayezid.com" target="_blank" rel="noopener noreferrer" class="developer-link">Sayad Md Bayezid Hosan</a> | <a href="/sitemap.xml" target="_blank" style="color: var(--text-secondary); text-decoration: none; margin-left: 5px;">Sitemap</a></p>
+        </div>
+
+        <!-- Main Footer Links -->
+        <div class="container footer-main">
+            <!-- Brand Column -->
+            <div class="footer-col footer-brand">
+                <svg width="180" height="54" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#2563eb" />
+                        <stop offset="100%" style="stop-color:#3b82f6" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
+                    <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
+                    <text x="65" y="42" font-family="Inter, sans-serif" font-weight="800" font-size="28" fill="#ffffff">Smart<tspan fill="#ff8800">Gen</tspan></text>
+                </svg>
+                <p>An advanced digital utility platform bringing 131+ SEO tools, web generators, and dev docs. Operated by Connect with Bayezid.</p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/smartgenutility" class="footer-social-btn" target="_blank" aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://x.com/sayadbayezid?s=11" class="footer-social-btn" target="_blank" aria-label="X (Twitter)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sayadbayezid" class="footer-social-btn" target="_blank" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://github.com/Sayadbayezid" class="footer-social-btn" target="_blank" aria-label="Github">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="https://youtube.com/@connectwithbayezid" class="footer-social-btn" target="_blank" aria-label="Youtube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.13 1 12 1 12s0 3.87.46 5.58a2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.87 23 12 23 12s0-3.87-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+                    </a>
                 </div>
-                <div class="footer-social-icons">
-                    <a href="https://github.com/bayzed123" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit our GitHub Repository"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
-                    <a href="https://linkedin.com/in/sayadbayezid" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit our LinkedIn Profile"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.731-2.004 1.438-.103.25-.129.599-.129.948v5.419h-3.554s.05-8.736 0-9.646h3.554v1.364c.429-.646 1.199-1.538 2.914-1.538 2.127 0 3.72 1.395 3.72 4.393v5.427zM5.337 8.855c-1.144 0-1.915-.758-1.915-1.704 0-.951.77-1.704 1.963-1.704 1.193 0 1.915.753 1.929 1.704 0 .946-.736 1.704-1.977 1.704zm1.582 11.597H3.635V9.859h3.284v10.593zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            </div>
+
+            <!-- Useful Links / Products -->
+            <div class="footer-col">
+                <h3>Our Tools</h3>
+                <ul>
+                    <li><a href="https://smartgentools.com/tools/">Free Tools</a></li>
+                    <li><a href="https://smartgentools.com/html-code-library/">HTML Code Library (80+)</a></li>
+                    <li><a href="https://smartleadgen-frontend.sayadmdbayezidhosan.workers.dev" target="_blank">Pro Lead Collector</a></li>
+                    <li><a href="https://connectwithbayezid.it.com" target="_blank">Automation Chatbots</a></li>
+                    <li><a href="https://www.genzfrontir.com" target="_blank">GenZ Frontier</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Resouces -->
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://smartgentools.com/smartgen-legal-info/">Trust Centre</a></li>
+                    <li><a href="https://smartgentools.com/privacy/">Privacy Policy</a></li>
+                    <li><a href="https://sayadbayezid.com/privacy-policy-meta-product.html">Meta Privacy</a></li>
+                    <li><a href="https://docs.smartgentools.com">Open Source Docs</a></li>
+                    <li><a href="https://smartgentools.com/blog/">Education Blog</a></li>
+                    <li><a href="https://smartgentools.com/help-center/">Help Center</a></li>
+                    <li><a href="https://smartgentools.com/docs/">Developerdocs</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect & Review -->
+            <div class="footer-col">
+                <h3>Connect & Review</h3>
+                <ul class="dev-profiles-grid">
+                    <li><a href="https://sayadbayezid.com/" target="_blank">Meet Developer</a></li>
+                    <li><a href="https://pypi.org/user/Sayadbayezid/" target="_blank">PyPi Profile</a></li>
+                    <li><a href="https://g.dev/SayadBayezid" target="_blank">Google Dev</a></li>
+                    <li><a href="https://orcid.org/0009-0003-6568-6648" target="_blank">ORCID</a></li>
+                    <li><a href="https://stackoverflow.com/users/32930880/sayad-md-bayezid-hosan" target="_blank">StackOverflow</a></li>
+                    <li><a href="https://gitlab.com/Sayadbayezid" target="_blank">GitLab</a></li>
+                    <li><a href="https://linktr.ee/sayadbayezid" target="_blank">Linktr.ee (All)</a></li>
+                </ul>
+                <div class="footer-review-box">
+                    <p>Love using SmartGen? Share your experience with us!</p>
+                    <a href="https://smartgentools.com/review/" class="btn-review">Leave a Review</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="footer-bottom-bar">
+            <div class="container footer-bottom-flex">
+                <p>Copyright © 2026 SmartGen. Developed by <span>Sayad Md Bayezid Hosan</span>.</p>
+                <div class="footer-bottom-links">
+                    <a href="https://smartgentools.com">Home</a>
+                    <a href="https://smartgentools.com/about/">About Us</a>
+                    <a href="https://smartgentools.com/contact/">Contact Us</a>
+                     <a href="https://smartgentools.com/sitemap.xml/">Sitemap</a>
                 </div>
             </div>
         </div>
