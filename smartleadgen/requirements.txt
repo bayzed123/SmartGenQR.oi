@@ -1,0 +1,7 @@
+streamlit>=1.38
+requests>=2.31
+beautifulsoup4>=4.12
+pandas>=2.2
+gspread>=6.1
+google-auth>=2.30
+phonenumbers>=8.13
