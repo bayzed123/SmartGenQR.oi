@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -34,11 +34,6 @@ jobs:
         
       - name: Build Blog HTML & JSON
         run: npm run build
-
-      - name: Inject Gemini API Key
-        run: sed -i "s/INJECT_GEMINI_API_KEY_HERE/${GEMINI_API_KEY}/g" assets/js/chatbot.js
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
