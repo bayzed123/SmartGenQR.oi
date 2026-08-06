@@ -14,7 +14,6 @@ import json
 from datetime import datetime
 
 import pandas as pd
-import requests
 import streamlit as st
 
 from backend.enrichment import enrich_website
@@ -67,59 +66,6 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
-# --------------------------------------------------------------------------
-# GA4 (best-effort — Streamlit doesn't give direct <head> control, so script
-# execution via markdown injection is not as reliable here as on the
-# Cloudflare frontend; treat this as supplementary, not authoritative).
-# --------------------------------------------------------------------------
-st.markdown(
-    """
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2X859FJZV"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-K2X859FJZV');
-    </script>
-    """,
-    unsafe_allow_html=True,
-)
-
-# --------------------------------------------------------------------------
-# Access gate — shares the same access-code pool as the Cloudflare version
-# (same backend, /api/streamlit/verify-code). No Cloudflare account needed
-# here — just an email + the code.
-# --------------------------------------------------------------------------
-CLOUDFLARE_API_BASE = "https://smartleadgen-api.sayadmdbayezidhosan.workers.dev"
-
-if not st.session_state.get("access_unlocked", False):
-    st.markdown("### 🔒 Enter your access code")
-    st.caption("Get an access code from support@sayadbayezid.com to use SmartLeadGen.")
-    gate_email = st.text_input("Your email", key="gate_email")
-    gate_code = st.text_input("Access code", placeholder="SMARTGENTOOLS-XXXXXXXXXXXXXXX", key="gate_code")
-    if st.button("Unlock", key="gate_unlock_btn"):
-        if not gate_email.strip() or not gate_code.strip():
-            st.warning("Enter both your email and the access code.")
-        else:
-            try:
-                resp = requests.post(
-                    f"{CLOUDFLARE_API_BASE}/api/streamlit/verify-code",
-                    json={"code": gate_code.strip(), "email": gate_email.strip()},
-                    timeout=10,
-                )
-                if resp.ok:
-                    st.session_state.access_unlocked = True
-                    st.rerun()
-                else:
-                    try:
-                        msg = resp.json().get("error", "That code isn't valid, or has already been used.")
-                    except Exception:
-                        msg = "That code isn't valid, or has already been used."
-                    st.error(msg)
-            except Exception as e:
-                st.error(f"Couldn't verify the code right now — check your connection and try again. ({e})")
-    st.stop()
 
 # --------------------------------------------------------------------------
 # Session state
