@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -24,28 +25,58 @@ jobs:
         run: |
           echo "TITLE=$(git log -1 --pretty=%s)" >> $GITHUB_OUTPUT
           echo "DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
-          echo "DESC=$(git log -1 --pretty=%b | tr -d '\n' | sed 's/"/\\"/g')" >> $GITHUB_OUTPUT
+          echo "DESC=$(git log-1 --pretty=%b | tr -d '\n' | sed 's/\"/\\\"/g' )" >> $GITHUB_OUTPUT
 
       - name: Update changelog.json
         run: |
           FILE="data/changelog.json"
           # Create file if it doesn't exist
           if [ ! -f "$FILE" ]; then echo "[]" > "$FILE"; fi
-          
+
           # Prepare new entry
           NEW_ENTRY=$(jq -n \
             --arg title "${{ steps.commit_info.outputs.TITLE }}" \
             --arg date "${{ steps.commit_info.outputs.DATE }}" \
             --arg desc "${{ steps.commit_info.outputs.DESC }}" \
             '{title: $title, date: $date, description: (if $desc == "" then "Platform improvement and optimization." else $desc end)}')
-          
-          # Append to top of array
+
+          # Append to top of array (atomic write)
           jq ". = [$NEW_ENTRY] + ." "$FILE" > temp.json && mv temp.json "$FILE"
 
       - name: Commit and Push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
+
+          # Configure commit author
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
+
+          # Stage the file
           git add data/changelog.json
-          git commit -m "chore: update changelog [skip ci]" || exit 0
-          git push
+
+          # If nothing staged, exit successfully.
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          # Create the commit
+          git commit -m "chore: update changelog [skip ci]"
+
+          # Use the workflow token for pushing (keeps auth explicit)
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+
+          # Fetch the latest remote branch and rebase local commit on top to avoid non-fast-forward
+          git fetch origin main
+
+          if git rebase origin/main; then
+            echo "Rebase successful, pushing changes..."
+            git push origin HEAD:main
+            echo "Push complete."
+          else
+            echo "::error::Rebase failed; aborting (will not force push). Please resolve conflicts manually."
+            git rebase --abort || true
+            exit 1
+          fi
