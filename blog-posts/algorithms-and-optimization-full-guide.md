@@ -1,29 +1,21 @@
 ⸻
 title: “Algorithms and Optimization: Complete Guide to Theory”
 description: “Learn algorithms, optimization, Big-O complexity, AI systems, research methods, and real-world optimization with practical examples.”
-date: 2026-08-09
+date: "2026-08-09"
 image: "blog-posts/images/algorithm-decision-pipeline.svg"
 author: “Sayad Md Bayezid Hosan”
 tags:
-
-* “Algorithms”
-* “Optimization”
-* “Algorithm Theory”
-* “Big O Complexity”
-* “Computer Science”
-* “Optimization Algorithms”
-* “Machine Learning”
-* “AI Algorithms”
-* “Operations Research”
-* “Mathematical Optimization”
-* “Mixed Integer Optimization”
-* “Constraint Programming”
-* “Algorithm Complexity”
-* “Google Research”
-* “Research Papers”
-* “Artificial Intelligence”
+“Algorithms”
+ “Optimization”
+ “Algorithm Theory”
+ “Big O Complexity”
+“Machine Learning”
+“Constraint Programming”
+   “Algorithm Complexity”
+ “Google Research”
+ “Research Papers”
+ “Artificial Intelligence”
     category: “Algorithms & Optimization”
-
 ⸻
 <!--AUTHOR_PROFILE-->
 # Algorithms and Optimization Explained: A Complete Guide to Theory, Research and Real-World Systems
