@@ -1,11 +1,11 @@
 ---
-title: "Algorithms and Optimization: Complete Guide to Theory"
+title: "Algorithms and Optimization Complete Guide to Theory"
 date: "2026-08-09"
 author: "Sayad Md Bayezid Hosan"
-description: "Learn algorithms and optimization from Big-O complexity to AI, mixed-integer optimization, research methods, and real-world systems."
+description: "Learn algorithm optimization, Big O complexity, AI optimization, research methods, and real world optimization systems."
 image: "https://smartgentools.com/blog-posts/images/algorithm-decision-pipeline.svg"
-tags: ["Algorithms", "Optimization", "Big O", "Computer Science", "AI", "Machine Learning", "Google Research", "Algorithm Theory", "Operations Research", "Technical Research"]
-category: "Algorithms & Optimization"
+tags: ["Algorithms", "Optimization", "Algorithm Optimization", "Big O Complexity", "Computer Science", "AI Optimization", "Machine Learning", "Google Research", "Algorithm Theory", "Operations Research"]
+category: "Algorithms and Optimization"
 ---
 <!--AUTHOR_PROFILE-->
 # Algorithms and Optimization Explained: A Complete Guide to Theory, Research and Real-World Systems
@@ -267,7 +267,7 @@ A handful of conceptual mistakes account for a disproportionate share of real-wo
 
 It's tempting to think of "add an algorithm" as a step that automatically produces a good decision. It doesn't — an algorithm is only ever as good as everything feeding into it:
 
-![Pipeline showing data flowing into a model, objective, and constraints, solved by an algorithm into a solution, validated, and turned into a decision](algorithm-decision-pipeline.svg "A weak link anywhere upstream produces a confidently wrong decision — the algorithm itself can be flawless and still fail")
+![Pipeline showing data flowing into a model, objective, and constraints, solved by an algorithm into a solution, validated, and turned into a decision](/algorithm-decision-pipeline.svg) "A weak link anywhere upstream produces a confidently wrong decision — the algorithm itself can be flawless and still fail")
 
 Every one of those links can independently break the final outcome. Bad or biased **data** produces a confidently wrong answer from a perfectly correct algorithm. A **model** that doesn't actually reflect how the real system behaves gets optimized beautifully — for the wrong reality. The wrong **objective** optimizes for the wrong thing, exactly as described in the mistakes section above. Missing **constraints** produce solutions that are mathematically valid and practically unusable. Even a genuinely excellent **algorithm** only searches within the space that the model, objective, and constraints defined for it — it cannot correct for a flaw upstream of itself. And a solution that skips **validation** carries every one of those earlier flaws straight through into a real decision, undetected.
 
@@ -403,7 +403,3 @@ Everything in this guide — Big-O notation, objective functions, Pareto frontie
 *   [Related Article 3](https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 *   [Related Article 4](https://smartgentools.com/blog/module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 *   [Related Article 5](https://smartgentools.com/blog/how-to-do-keyword-research-for-seo-complete-guide/)
-
-
-
-
