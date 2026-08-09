@@ -1,0 +1,73 @@
+<svg viewBox="0 0 920 460" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="cdTitle cdDesc">
+  <title id="cdTitle">Continuous, discrete, and mixed optimization compared</title>
+  <desc id="cdDesc">Three panels showing a continuous variable that can take any value in a range, a discrete variable limited to specific choices, and a mixed problem combining both.</desc>
+  <rect x="0" y="0" width="920" height="460" fill="#FBFBFA"/>
+  <text x="460" y="32" text-anchor="middle" font-size="19" font-weight="700" fill="#1E2A45">What kind of decision are you actually making?</text>
+  <text x="460" y="53" text-anchor="middle" font-size="12.5" fill="#64748B">The shape of your variables decides which optimization tools even apply</text>
+
+  <!-- Panel backgrounds -->
+  <rect x="30" y="80" width="270" height="330" rx="12" fill="#FFFFFF" stroke="#E2E5EB" stroke-width="1.5"/>
+  <rect x="325" y="80" width="270" height="330" rx="12" fill="#FFFFFF" stroke="#E2E5EB" stroke-width="1.5"/>
+  <rect x="620" y="80" width="270" height="330" rx="12" fill="#FFFFFF" stroke="#E2E5EB" stroke-width="1.5"/>
+
+  <!-- Panel 1: Continuous -->
+  <text x="165" y="112" text-anchor="middle" font-size="15" font-weight="700" fill="#1E2A45">Continuous</text>
+  <text x="165" y="132" text-anchor="middle" font-size="11" fill="#64748B">x can be any value in a range</text>
+  <path d="M60 300 Q165 190 270 300" fill="none" stroke="#1E2A45" stroke-width="2.5"/>
+  <line x1="60" y1="330" x2="270" y2="330" stroke="#64748B" stroke-width="1.5"/>
+  <rect x="60" y="300" width="210" height="30" fill="#D9A441" opacity="0.15"/>
+  <circle cx="165" cy="222" r="6" fill="#D9A441"/>
+  <text x="165" y="205" text-anchor="middle" font-size="10.5" fill="#8A6417" font-weight="700">optimum</text>
+  <text x="165" y="355" text-anchor="middle" font-size="10.5" fill="#64748B">feasible range</text>
+  <text x="165" y="385" text-anchor="middle" font-size="11" fill="#1E2A45">e.g. how much to spend,</text>
+  <text x="165" y="401" text-anchor="middle" font-size="11" fill="#1E2A45">what temperature to set</text>
+
+  <!-- Panel 2: Discrete -->
+  <text x="460" y="112" text-anchor="middle" font-size="15" font-weight="700" fill="#1E2A45">Discrete</text>
+  <text x="460" y="132" text-anchor="middle" font-size="11" fill="#64748B">x must be one specific choice</text>
+  <line x1="355" y1="270" x2="565" y2="270" stroke="#64748B" stroke-width="1.5"/>
+  <g>
+    <circle cx="375" cy="270" r="9" fill="#C7CEDB"/>
+    <circle cx="418" cy="270" r="9" fill="#C7CEDB"/>
+    <circle cx="461" cy="270" r="11" fill="#D9A441"/>
+    <circle cx="504" cy="270" r="9" fill="#C7CEDB"/>
+    <circle cx="547" cy="270" r="9" fill="#C7CEDB"/>
+  </g>
+  <text x="461" y="248" text-anchor="middle" font-size="10.5" fill="#8A6417" font-weight="700">chosen option</text>
+  <text x="460" y="355" text-anchor="middle" font-size="10.5" fill="#64748B">a finite set of options</text>
+  <text x="460" y="385" text-anchor="middle" font-size="11" fill="#1E2A45">e.g. which machines to buy,</text>
+  <text x="460" y="401" text-anchor="middle" font-size="11" fill="#1E2A45">which route to take</text>
+
+  <!-- Panel 3: Mixed -->
+  <text x="755" y="112" text-anchor="middle" font-size="15" font-weight="700" fill="#1E2A45">Mixed</text>
+  <text x="755" y="132" text-anchor="middle" font-size="11" fill="#64748B">some of both, at once</text>
+  <line x1="650" y1="320" x2="860" y2="320" stroke="#1E2A45" stroke-width="1.5"/>
+  <line x1="650" y1="320" x2="650" y2="170" stroke="#1E2A45" stroke-width="1.5"/>
+  <text x="755" y="340" text-anchor="middle" font-size="10" fill="#64748B">continuous axis (budget)</text>
+  <text x="632" y="245" text-anchor="middle" font-size="10" fill="#64748B" transform="rotate(-90 632 245)">discrete axis (count)</text>
+  <g stroke="#DADFE7" stroke-width="1">
+    <line x1="650" y1="290" x2="860" y2="290"/>
+    <line x1="650" y1="260" x2="860" y2="260"/>
+    <line x1="650" y1="230" x2="860" y2="230"/>
+    <line x1="650" y1="200" x2="860" y2="200"/>
+  </g>
+  <g fill="#C7CEDB">
+    <circle cx="690" cy="290" r="5"/>
+    <circle cx="730" cy="290" r="5"/>
+    <circle cx="770" cy="290" r="5"/>
+    <circle cx="690" cy="260" r="5"/>
+    <circle cx="730" cy="260" r="5"/>
+    <circle cx="810" cy="260" r="5"/>
+    <circle cx="690" cy="230" r="5"/>
+    <circle cx="770" cy="230" r="5"/>
+    <circle cx="810" cy="230" r="5"/>
+    <circle cx="730" cy="200" r="5"/>
+    <circle cx="770" cy="200" r="5"/>
+  </g>
+  <circle cx="770" cy="260" r="8" fill="#D9A441"/>
+  <text x="755" y="360" text-anchor="middle" font-size="10.5" fill="#64748B">valid combinations only</text>
+  <text x="755" y="390" text-anchor="middle" font-size="11" fill="#1E2A45">e.g. how many machines,</text>
+  <text x="755" y="406" text-anchor="middle" font-size="11" fill="#1E2A45">running for how many hours</text>
+
+  <text x="460" y="440" text-anchor="middle" font-size="11" fill="#9AA3B2">Most real infrastructure and scheduling problems are mixed &#8212; which is why solvers combine both worlds</text>
+</svg>

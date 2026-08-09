@@ -1,0 +1,86 @@
+<svg viewBox="0 0 920 700" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="ecoTitle ecoDesc">
+  <title id="ecoTitle">How algorithms and theory connects to Google's wider research ecosystem</title>
+  <desc id="ecoDesc">A hub and spoke map with Algorithms and Theory at the center, connected to ten related research areas: Athena, Algorithms and Optimization, Applied Science, Graph Mining, Health, Impact-Driven Research Innovation and Moonshots, Learning Theory, Market Algorithms, Network Infrastructure, and Operations Research.</desc>
+  <rect x="0" y="0" width="920" height="700" fill="#FBFBFA"/>
+  <text x="460" y="32" text-anchor="middle" font-size="18.5" font-weight="700" fill="#1E2A45">One foundation, many applied fields</text>
+  <text x="460" y="53" text-anchor="middle" font-size="12" fill="#64748B">These areas overlap constantly &#8212; they are not separate disciplines working in isolation</text>
+
+  <!-- connecting lines -->
+  <g stroke="#DADFE7" stroke-width="2">
+    <line x1="460" y1="360" x2="460" y2="120"/>
+    <line x1="460" y1="360" x2="613" y2="163"/>
+    <line x1="460" y1="360" x2="707" y2="285"/>
+    <line x1="460" y1="360" x2="707" y2="440"/>
+    <line x1="460" y1="360" x2="613" y2="562"/>
+    <line x1="460" y1="360" x2="460" y2="600"/>
+    <line x1="460" y1="360" x2="307" y2="562"/>
+    <line x1="460" y1="360" x2="213" y2="440"/>
+    <line x1="460" y1="360" x2="213" y2="285"/>
+    <line x1="460" y1="360" x2="307" y2="163"/>
+  </g>
+
+  <!-- hub -->
+  <rect x="368" y="317" width="184" height="86" rx="14" fill="#D9A441"/>
+  <text x="460" y="352" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1E2A45">ALGORITHMS</text>
+  <text x="460" y="369" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1E2A45">&amp; THEORY</text>
+  <text x="460" y="388" text-anchor="middle" font-size="9" fill="#5A4415">mathematical foundations</text>
+
+  <!-- satellites -->
+  <g font-size="10.5" font-weight="700" fill="#FBFBFA">
+    <!-- Athena -->
+    <rect x="382" y="91" width="156" height="58" rx="10" fill="#1E2A45"/>
+    <text x="460" y="112" text-anchor="middle">ATHENA</text>
+    <text x="460" y="128" text-anchor="middle" font-size="8" font-weight="400" fill="#C7CEDB">product-inspired algorithms &amp; AI</text>
+
+    <!-- Algorithms & Optimization -->
+    <rect x="535" y="134" width="156" height="58" rx="10" fill="#1E2A45"/>
+    <text x="613" y="153" text-anchor="middle" font-size="9.5">ALGORITHMS &amp;</text>
+    <text x="613" y="167" text-anchor="middle" font-size="9.5">OPTIMIZATION</text>
+    <text x="613" y="182" text-anchor="middle" font-size="7.8" font-weight="400" fill="#C7CEDB">markets, graphs, at scale</text>
+
+    <!-- Applied Science -->
+    <rect x="629" y="256" width="156" height="58" rx="10" fill="#1E2A45"/>
+    <text x="707" y="277" text-anchor="middle">APPLIED SCIENCE</text>
+    <text x="707" y="293" text-anchor="middle" font-size="8" font-weight="400" fill="#C7CEDB">CS meets physics &amp; biology</text>
+
+    <!-- Graph Mining -->
+    <rect x="629" y="411" width="156" height="58" rx="10" fill="#1E2A45"/>
+    <text x="707" y="432" text-anchor="middle">GRAPH MINING</text>
+    <text x="707" y="448" text-anchor="middle" font-size="8" font-weight="400" fill="#C7CEDB">the world's data, as networks</text>
+
+    <!-- Health -->
+    <rect x="535" y="533" width="156" height="58" rx="10" fill="#1E2A45"/>
+    <text x="613" y="554" text-anchor="middle">HEALTH</text>
+    <text x="613" y="570" text-anchor="middle" font-size="8" font-weight="400" fill="#C7CEDB">ML for more available care</text>
+
+    <!-- Impact-Driven -->
+    <rect x="366" y="571" width="188" height="58" rx="10" fill="#1E2A45"/>
+    <text x="460" y="590" text-anchor="middle" font-size="9">IMPACT-DRIVEN RESEARCH,</text>
+    <text x="460" y="603" text-anchor="middle" font-size="9">INNOVATION &amp; MOONSHOTS</text>
+    <text x="460" y="618" text-anchor="middle" font-size="7.8" font-weight="400" fill="#C7CEDB">long-horizon, large-scale impact</text>
+
+    <!-- Learning Theory -->
+    <rect x="229" y="533" width="156" height="58" rx="10" fill="#1E2A45"/>
+    <text x="307" y="554" text-anchor="middle">LEARNING THEORY</text>
+    <text x="307" y="570" text-anchor="middle" font-size="8" font-weight="400" fill="#C7CEDB">the math of what ML can learn</text>
+
+    <!-- Market Algorithms -->
+    <rect x="135" y="411" width="156" height="58" rx="10" fill="#1E2A45"/>
+    <text x="213" y="432" text-anchor="middle">MARKET ALGORITHMS</text>
+    <text x="213" y="448" text-anchor="middle" font-size="8" font-weight="400" fill="#C7CEDB">auctions, pricing, matching</text>
+
+    <!-- Network Infrastructure -->
+    <rect x="135" y="256" width="156" height="58" rx="10" fill="#1E2A45"/>
+    <text x="213" y="277" text-anchor="middle" font-size="9.5">NETWORK</text>
+    <text x="213" y="291" text-anchor="middle" font-size="9.5">INFRASTRUCTURE</text>
+    <text x="213" y="306" text-anchor="middle" font-size="7.8" font-weight="400" fill="#C7CEDB">the networks Google runs on</text>
+
+    <!-- Operations Research -->
+    <rect x="229" y="134" width="156" height="58" rx="10" fill="#1E2A45"/>
+    <text x="307" y="153" text-anchor="middle" font-size="9.5">OPERATIONS</text>
+    <text x="307" y="167" text-anchor="middle" font-size="9.5">RESEARCH</text>
+    <text x="307" y="182" text-anchor="middle" font-size="7.8" font-weight="400" fill="#C7CEDB">planning, scheduling, routing</text>
+  </g>
+
+  <text x="460" y="665" text-anchor="middle" font-size="10.5" fill="#9AA3B2">Based on Google Research's public research-area and team pages, research.google &#183; SmartGen Tools</text>
+</svg>

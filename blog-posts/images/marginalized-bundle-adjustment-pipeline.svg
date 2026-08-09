@@ -1,0 +1,80 @@
+<svg viewBox="0 0 920 430" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="mbaTitle mbaDesc">
+  <title id="mbaTitle">From multiple photos to consistent camera poses and a 3D scene</title>
+  <desc id="mbaDesc">Multiple images produce per-image monocular depth maps, treated as noisy dense evidence, resolved by marginalized bundle adjustment into consistent camera poses and a 3D reconstruction.</desc>
+  <defs>
+    <marker id="mbaArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748B"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="920" height="430" fill="#FBFBFA"/>
+  <text x="460" y="30" text-anchor="middle" font-size="18.5" font-weight="700" fill="#1E2A45">From several photos to one consistent 3D scene</text>
+  <text x="460" y="50" text-anchor="middle" font-size="12" fill="#64748B">Each camera sees the scene differently &#8212; the optimization has to reconcile all of them at once</text>
+
+  <!-- Illustrative motif: cameras around a point cloud -->
+  <g>
+    <!-- point cloud cluster -->
+    <g fill="#1E2A45">
+      <circle cx="452" cy="128" r="2.6"/><circle cx="462" cy="122" r="2.6"/><circle cx="470" cy="132" r="2.6"/>
+      <circle cx="458" cy="138" r="2.6"/><circle cx="446" cy="136" r="2.6"/><circle cx="466" cy="118" r="2.6"/>
+      <circle cx="440" cy="124" r="2.6"/><circle cx="476" cy="124" r="2.6"/><circle cx="454" cy="114" r="2.6"/>
+      <circle cx="464" cy="142" r="2.6"/><circle cx="434" cy="132" r="2.6"/><circle cx="480" cy="134" r="2.6"/>
+    </g>
+    <!-- cameras (small kites) with sightlines -->
+    <g stroke="#D9A441" stroke-width="1" stroke-dasharray="3,3" opacity="0.85">
+      <line x1="150" y1="90" x2="458" y2="128"/>
+      <line x1="150" y1="200" x2="452" y2="130"/>
+      <line x1="770" y1="90" x2="466" y2="126"/>
+      <line x1="770" y1="200" x2="462" y2="136"/>
+      <line x1="460" y1="60" x2="458" y2="120"/>
+    </g>
+    <g fill="#2F7C74">
+      <path d="M150 90 l-14 -9 v18 z" transform="rotate(20 150 90)"/>
+      <path d="M150 200 l-14 -9 v18 z" transform="rotate(-20 150 200)"/>
+      <path d="M770 90 l14 -9 v18 z" transform="rotate(-20 770 90)"/>
+      <path d="M770 200 l14 -9 v18 z" transform="rotate(20 770 200)"/>
+      <path d="M460 60 l-9 -14 h18 z"/>
+    </g>
+    <text x="150" y="72" text-anchor="middle" font-size="9.5" fill="#5C6B8A">camera 1</text>
+    <text x="150" y="222" text-anchor="middle" font-size="9.5" fill="#5C6B8A">camera 2</text>
+    <text x="770" y="72" text-anchor="middle" font-size="9.5" fill="#5C6B8A">camera 3</text>
+    <text x="770" y="222" text-anchor="middle" font-size="9.5" fill="#5C6B8A">camera N</text>
+  </g>
+
+  <!-- Flow row -->
+  <g font-size="10.5" font-weight="700">
+    <rect x="30" y="260" width="130" height="86" rx="9" fill="#1E2A45"/>
+    <text x="95" y="292" text-anchor="middle" fill="#FBFBFA">MULTIPLE</text>
+    <text x="95" y="307" text-anchor="middle" fill="#FBFBFA">IMAGES</text>
+    <text x="95" y="325" text-anchor="middle" fill="#C7CEDB" font-size="8.5" font-weight="400">a scene, several angles</text>
+
+    <path d="M165 303 H197" stroke="#64748B" stroke-width="2.2" marker-end="url(#mbaArr)"/>
+    <rect x="202" y="260" width="130" height="86" rx="9" fill="#1E2A45"/>
+    <text x="267" y="286" text-anchor="middle" fill="#FBFBFA">MONOCULAR</text>
+    <text x="267" y="301" text-anchor="middle" fill="#FBFBFA">DEPTH MAPS</text>
+    <text x="267" y="319" text-anchor="middle" fill="#C7CEDB" font-size="8.5" font-weight="400">one guess per image</text>
+
+    <path d="M337 303 H369" stroke="#64748B" stroke-width="2.2" marker-end="url(#mbaArr)"/>
+    <rect x="374" y="260" width="130" height="86" rx="9" fill="#1E2A45"/>
+    <text x="439" y="280" text-anchor="middle" fill="#FBFBFA">NOISY DENSE</text>
+    <text x="439" y="295" text-anchor="middle" fill="#FBFBFA">3D EVIDENCE</text>
+    <text x="439" y="313" text-anchor="middle" fill="#C7CEDB" font-size="8.5" font-weight="400">high-variance per pixel</text>
+
+    <path d="M509 303 H541" stroke="#64748B" stroke-width="2.2" marker-end="url(#mbaArr)"/>
+    <rect x="546" y="255" width="148" height="96" rx="9" fill="#D9A441"/>
+    <text x="620" y="278" text-anchor="middle" fill="#1E2A45">MARGINALIZED</text>
+    <text x="620" y="293" text-anchor="middle" fill="#1E2A45">BUNDLE</text>
+    <text x="620" y="308" text-anchor="middle" fill="#1E2A45">ADJUSTMENT</text>
+    <text x="620" y="325" text-anchor="middle" fill="#5A4415" font-size="8.5" font-weight="400">trusts the density, not</text>
+    <text x="620" y="337" text-anchor="middle" fill="#5A4415" font-size="8.5" font-weight="400">any single pixel</text>
+
+    <path d="M699 303 H731" stroke="#64748B" stroke-width="2.2" marker-end="url(#mbaArr)"/>
+    <rect x="736" y="260" width="150" height="86" rx="9" fill="#2F7C74"/>
+    <text x="811" y="284" text-anchor="middle" fill="#FBFBFA">CONSISTENT</text>
+    <text x="811" y="299" text-anchor="middle" fill="#FBFBFA">CAMERA POSES</text>
+    <text x="811" y="317" text-anchor="middle" fill="#D9ECE8" font-size="8.5" font-weight="400">+ 3D reconstruction</text>
+  </g>
+
+  <line x1="30" y1="368" x2="886" y2="368" stroke="#DADFE7" stroke-width="1"/>
+  <text x="460" y="392" text-anchor="middle" font-size="11.5" fill="#1E2A45" font-weight="700">RANSAC-inspired: individual points are noisy, but their distribution is informative</text>
+  <text x="460" y="412" text-anchor="middle" font-size="10" fill="#9AA3B2">Based on Zhu, Abdelkader, Matthews, Liu &amp; Chu, "Marginalized Bundle Adjustment," arXiv:2602.18906 (2026) &#183; SmartGen Tools</text>
+</svg>

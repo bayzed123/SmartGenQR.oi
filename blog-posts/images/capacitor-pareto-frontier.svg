@@ -1,0 +1,46 @@
+<svg viewBox="0 0 920 470" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="paretoTitle paretoDesc">
+  <title id="paretoTitle">A Pareto frontier for capacitor selection</title>
+  <desc id="paretoDesc">Scatter chart of cost versus board area for candidate capacitor combinations, with dominated options in gray and the Pareto-optimal frontier highlighted, showing there is no single best answer.</desc>
+  <rect x="0" y="0" width="920" height="470" fill="#FBFBFA"/>
+  <text x="460" y="30" text-anchor="middle" font-size="18.5" font-weight="700" fill="#1E2A45">Why there's no single "best" capacitor combination</text>
+  <text x="460" y="50" text-anchor="middle" font-size="12" fill="#64748B">Every point below is a valid design that meets the electrical requirements</text>
+
+  <!-- axes -->
+  <line x1="100" y1="80" x2="100" y2="380" stroke="#1E2A45" stroke-width="1.5"/>
+  <line x1="100" y1="380" x2="820" y2="380" stroke="#1E2A45" stroke-width="1.5"/>
+  <text x="460" y="410" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E2A45">Board area needed &#8594;</text>
+  <text x="50" y="230" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E2A45" transform="rotate(-90 50 230)">Cost &#8594;</text>
+
+  <!-- dominated points -->
+  <g fill="#C7CEDB">
+    <circle cx="200" cy="140" r="7"/><circle cx="235" cy="225" r="7"/><circle cx="300" cy="165" r="7"/>
+    <circle cx="325" cy="285" r="7"/><circle cx="400" cy="205" r="7"/><circle cx="420" cy="320" r="7"/>
+    <circle cx="480" cy="245" r="7"/><circle cx="550" cy="205" r="7"/><circle cx="560" cy="345" r="7"/>
+    <circle cx="620" cy="265" r="7"/><circle cx="680" cy="300" r="7"/><circle cx="700" cy="185" r="7"/>
+    <circle cx="740" cy="245" r="7"/><circle cx="300" cy="335" r="7"/><circle cx="470" cy="180" r="7"/>
+  </g>
+
+  <!-- Pareto frontier -->
+  <polyline points="160,110 250,180 360,240 500,290 650,330 760,355" fill="none" stroke="#D9A441" stroke-width="2.5" stroke-dasharray="1,0"/>
+  <g fill="#D9A441" stroke="#8A6417" stroke-width="1.5">
+    <circle cx="160" cy="110" r="8.5"/><circle cx="250" cy="180" r="8.5"/><circle cx="360" cy="240" r="8.5"/>
+    <circle cx="500" cy="290" r="8.5"/><circle cx="650" cy="330" r="8.5"/><circle cx="760" cy="355" r="8.5"/>
+  </g>
+
+  <!-- "better" annotation -->
+  <path d="M235 415 L145 400" stroke="#2F7C74" stroke-width="2" marker-end="url(#betterArr)"/>
+  <defs>
+    <marker id="betterArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2F7C74"/>
+    </marker>
+  </defs>
+  <text x="255" y="422" font-size="11" font-weight="700" fill="#2F7C74">lower-left = better (cheaper AND smaller)</text>
+
+  <!-- legend -->
+  <circle cx="640" cy="435" r="7" fill="#C7CEDB"/>
+  <text x="654" y="439" font-size="11" fill="#1E2A45">a dominated option (a frontier point beats it on both axes)</text>
+  <circle cx="640" cy="452" r="7.5" fill="#D9A441" stroke="#8A6417" stroke-width="1.5"/>
+  <text x="654" y="456" font-size="11" fill="#1E2A45">a Pareto-optimal option (no other point beats it on both axes)</text>
+
+  <text x="460" y="63" text-anchor="middle" font-size="10.5" fill="#9AA3B2"></text>
+</svg>

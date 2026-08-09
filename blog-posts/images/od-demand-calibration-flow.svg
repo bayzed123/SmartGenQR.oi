@@ -1,0 +1,65 @@
+<svg viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="odTitle odDesc">
+  <title id="odTitle">How sample segment counts help calibrate travel demand</title>
+  <desc id="odDesc">Unknown origin-destination demand, observed travel times, and sample segment counts feed a calibration and optimization step that produces a better estimate of true traffic demand.</desc>
+  <defs>
+    <marker id="odArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748B"/>
+    </marker>
+    <marker id="odArrAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D9A441"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="920" height="420" fill="#FBFBFA"/>
+  <text x="460" y="30" text-anchor="middle" font-size="18.5" font-weight="700" fill="#1E2A45">Turning partial road data into a full demand picture</text>
+  <text x="460" y="50" text-anchor="middle" font-size="12" fill="#64748B">Travel times alone leave many demand patterns looking identical &#8212; sparse counts break the tie</text>
+
+  <!-- small road motif -->
+  <g stroke="#C7CEDB" stroke-width="6" stroke-linecap="round">
+    <line x1="40" y1="330" x2="230" y2="330"/>
+  </g>
+  <g stroke="#FBFBFA" stroke-width="1.5" stroke-dasharray="8,8">
+    <line x1="40" y1="330" x2="230" y2="330"/>
+  </g>
+  <circle cx="150" cy="330" r="5" fill="#D9A441"/>
+  <text x="150" y="349" text-anchor="middle" font-size="9" fill="#8A6417">a sensor sees this segment only</text>
+
+  <!-- Inputs -->
+  <g font-size="12" font-weight="700">
+    <rect x="30" y="66" width="230" height="64" rx="9" fill="#1E2A45"/>
+    <text x="145" y="92" text-anchor="middle" fill="#FBFBFA">UNKNOWN OD DEMAND</text>
+    <text x="145" y="110" text-anchor="middle" fill="#C7CEDB" font-size="9.5" font-weight="400">what we're actually solving for</text>
+
+    <rect x="30" y="150" width="230" height="64" rx="9" fill="#1E2A45"/>
+    <text x="145" y="176" text-anchor="middle" fill="#FBFBFA">OBSERVED TRAVEL TIMES</text>
+    <text x="145" y="194" text-anchor="middle" fill="#C7CEDB" font-size="9.5" font-weight="400">path-level, but ambiguous alone</text>
+
+    <rect x="30" y="234" width="230" height="64" rx="9" fill="#D9A441"/>
+    <text x="145" y="260" text-anchor="middle" fill="#1E2A45">SAMPLE SEGMENT COUNTS</text>
+    <text x="145" y="278" text-anchor="middle" fill="#5A4415" font-size="9.5" font-weight="400">partial, but breaks the tie</text>
+  </g>
+
+  <!-- converging arrows -->
+  <path d="M265 98 Q330 98 330 148 Q330 182 380 182" fill="none" stroke="#64748B" stroke-width="2.2" marker-end="url(#odArr)"/>
+  <path d="M265 182 H380" fill="none" stroke="#64748B" stroke-width="2.2" marker-end="url(#odArr)"/>
+  <path d="M265 266 Q330 266 330 216 Q330 182 380 182" fill="none" stroke="#D9A441" stroke-width="2.2" marker-end="url(#odArrAmber)"/>
+
+  <!-- central box -->
+  <rect x="385" y="130" width="200" height="104" rx="10" fill="#2F7C74"/>
+  <text x="485" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="#FBFBFA">CALIBRATION /</text>
+  <text x="485" y="188" text-anchor="middle" font-size="14" font-weight="700" fill="#FBFBFA">OPTIMIZATION</text>
+  <text x="485" y="210" text-anchor="middle" font-size="9.5" fill="#D9ECE8">counts act as a</text>
+  <text x="485" y="223" text-anchor="middle" font-size="9.5" fill="#D9ECE8">regularization term</text>
+
+  <path d="M590 182 H642" stroke="#64748B" stroke-width="2.5" marker-end="url(#odArr)"/>
+
+  <!-- output -->
+  <rect x="647" y="140" width="243" height="84" rx="10" fill="#1E2A45"/>
+  <text x="768" y="172" text-anchor="middle" font-size="13" font-weight="700" fill="#FBFBFA">BETTER ESTIMATED</text>
+  <text x="768" y="190" text-anchor="middle" font-size="13" font-weight="700" fill="#FBFBFA">TRAFFIC DEMAND</text>
+  <text x="768" y="208" text-anchor="middle" font-size="9.5" fill="#C7CEDB" font-weight="400">closer to true OD and segment levels</text>
+
+  <line x1="30" y1="330" x2="30" y2="330"/>
+  <line x1="260" y1="360" x2="890" y2="360" stroke="#DADFE7" stroke-width="1"/>
+  <text x="460" y="384" text-anchor="middle" font-size="11.5" fill="#1E2A45" font-weight="700">Different demand patterns can produce nearly identical travel times</text>
+  <text x="460" y="404" text-anchor="middle" font-size="10" fill="#9AA3B2">Based on Alanqary et al., "Improving Simulation-Based OD Demand Calibration Using Sample Segment Counts Data," TRISTAN XII (2025) &#183; SmartGen Tools</text>
+</svg>

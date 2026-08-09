@@ -1,0 +1,65 @@
+<svg viewBox="0 0 920 430" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="sentTitle sentDesc">
+  <title id="sentTitle">Conceptual flow of a proactive, geo-contextual AI concierge</title>
+  <desc id="sentDesc">Documentation and historical support cases feed context analysis and friction detection, which drives proactive retrieval into a context-aware answer that deflects a support case before it is filed.</desc>
+  <defs>
+    <marker id="arrA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748B"/>
+    </marker>
+    <marker id="arrB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D9A441"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="920" height="430" fill="#FBFBFA"/>
+
+  <text x="460" y="32" text-anchor="middle" font-size="18.5" font-weight="700" fill="#1E2A45">A proactive support concierge, conceptually</text>
+  <text x="460" y="53" text-anchor="middle" font-size="12" fill="#64748B">Interception happens before the person ever opens a support ticket</text>
+
+  <!-- Top row: audit side -->
+  <g font-size="13.5" font-weight="700">
+    <rect x="40" y="88" width="180" height="66" rx="10" fill="#1E2A45"/>
+    <text x="130" y="115" text-anchor="middle" fill="#FBFBFA">DOCUMENTATION</text>
+    <text x="130" y="134" text-anchor="middle" fill="#C7CEDB" font-size="10" font-weight="400">what's written down</text>
+
+    <path d="M225 121 H267" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrA)"/>
+    <rect x="272" y="88" width="180" height="66" rx="10" fill="#1E2A45"/>
+    <text x="362" y="115" text-anchor="middle" fill="#FBFBFA">HISTORICAL CASES</text>
+    <text x="362" y="134" text-anchor="middle" fill="#C7CEDB" font-size="10" font-weight="400">what people actually asked</text>
+
+    <path d="M457 121 H499" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrA)"/>
+    <rect x="504" y="88" width="180" height="66" rx="10" fill="#1E2A45"/>
+    <text x="594" y="115" text-anchor="middle" fill="#FBFBFA">CONTEXT ANALYSIS</text>
+    <text x="594" y="134" text-anchor="middle" fill="#C7CEDB" font-size="10" font-weight="400">an LLM audits the gap</text>
+
+    <path d="M689 121 H731" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrA)"/>
+    <rect x="736" y="88" width="150" height="66" rx="10" fill="#D9A441"/>
+    <text x="811" y="112" text-anchor="middle" fill="#1E2A45">FRICTION</text>
+    <text x="811" y="128" text-anchor="middle" fill="#1E2A45">DETECTION</text>
+    <text x="811" y="145" text-anchor="middle" fill="#5A4415" font-size="9.5" font-weight="400">"Contextual Density" score</text>
+  </g>
+
+  <!-- Connector down -->
+  <path d="M811 154 V178 Q811 190 795 190 H735 Q719 190 719 202" fill="none" stroke="#D9A441" stroke-width="2.5" marker-end="url(#arrB)"/>
+
+  <!-- Bottom row: real-time side, right to left -->
+  <g font-size="13.5" font-weight="700">
+    <rect x="634" y="207" width="180" height="66" rx="10" fill="#D9A441"/>
+    <text x="724" y="234" text-anchor="middle" fill="#1E2A45">PROACTIVE RETRIEVAL</text>
+    <text x="724" y="253" text-anchor="middle" fill="#5A4415" font-size="10" font-weight="400">RAG, surfaced in-situ</text>
+
+    <path d="M629 240 H371" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrA)"/>
+    <rect x="177" y="207" width="194" height="66" rx="10" fill="#1E2A45"/>
+    <text x="274" y="234" text-anchor="middle" fill="#FBFBFA">CONTEXT-AWARE ANSWER</text>
+    <text x="274" y="253" text-anchor="middle" fill="#C7CEDB" font-size="10" font-weight="400">location-aware, in real time</text>
+  </g>
+
+  <path d="M172 240 H134" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrA)"/>
+  <rect x="40" y="207" width="94" height="66" rx="10" fill="#2F7C74"/>
+  <text x="87" y="234" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FBFBFA">CASE</text>
+  <text x="87" y="249" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FBFBFA">DEFLECTED</text>
+
+  <line x1="40" y1="305" x2="881" y2="305" stroke="#DADFE7" stroke-width="1"/>
+  <text x="460" y="332" text-anchor="middle" font-size="12.5" fill="#1E2A45" font-weight="700">Two engines, one goal: catch the question before it becomes a ticket</text>
+  <text x="460" y="354" text-anchor="middle" font-size="11" fill="#64748B">An offline audit engine finds where documentation is weakest; an online retrieval engine answers in the moment</text>
+  <text x="460" y="382" text-anchor="middle" font-size="10.5" fill="#9AA3B2">Based on the "SENTINEL" framework described in Choudhary &amp; Doyle, Google Research Technical Report (2026)</text>
+  <text x="460" y="405" text-anchor="middle" font-size="10" fill="#9AA3B2">SmartGen Tools &#183; smartgentools.com</text>
+</svg>
