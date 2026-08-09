@@ -1,22 +1,12 @@
-⸻
-title: “Algorithms and Optimization: Complete Guide to Theory”
-description: “Learn algorithms, optimization, Big-O complexity, AI systems, research methods, and real-world optimization with practical examples.”
+---
+title: "Algorithms and Optimization: Complete Guide to Theory"
 date: "2026-08-09"
-image: "blog-posts/images/algorithm-decision-pipeline.svg"
-author: “Sayad Md Bayezid Hosan”
-tags:
-“Algorithms”
- “Optimization”
- “Algorithm Theory”
- “Big O Complexity”
-“Machine Learning”
-“Constraint Programming”
-   “Algorithm Complexity”
- “Google Research”
- “Research Papers”
- “Artificial Intelligence”
-    category: “Algorithms & Optimization”
-⸻
+author: "Sayad Md Bayezid Hosan"
+description: "Learn algorithms and optimization from Big-O complexity to AI, mixed-integer optimization, research methods, and real-world systems."
+image: "https://smartgentools.com/blog-posts/images/algorithm-decision-pipeline.svg"
+tags: ["Algorithms", "Optimization", "Big O", "Computer Science", "AI", "Machine Learning", "Google Research", "Algorithm Theory", "Operations Research", "Technical Research"]
+category: "Algorithms & Optimization"
+---
 <!--AUTHOR_PROFILE-->
 # Algorithms and Optimization Explained: A Complete Guide to Theory, Research and Real-World Systems
 
@@ -112,7 +102,7 @@ A word on how these are framed: a "Technical Report" is Google's own internal-re
 
 **The key idea.** The paper proposes a framework called **SENTINEL**, built around two engines working together:
 
-![Architecture flow of a proactive AI concierge: documentation and historical cases feed context analysis and friction detection, driving proactive retrieval into a context-aware answer that deflects a support case](geo-contextual-ai-concierge-architecture.svg "SENTINEL's two-engine design — an offline audit that finds weak documentation, and an online assistant that answers before a ticket is filed")
+![Architecture flow of a proactive AI concierge: documentation and historical cases feed context analysis and friction detection, driving proactive retrieval into a context-aware answer that deflects a support case](https://smartgentools.com/blog-posts/geo-contextual-ai-concierge-architecture.svg) "SENTINEL's two-engine design — an offline audit that finds weak documentation, and an online assistant that answers before a ticket is filed")
 
 The first engine runs offline, using a large language model to audit documentation against real historical support cases, producing what the paper calls a "Contextual Density" score that flags exactly where documentation is thin relative to what people actually ask. The second engine runs in real time: a retrieval-augmented generation (RAG) system — meaning it looks up relevant information and grounds its answer in that retrieved content, rather than answering purely from what it learned during training — surfaced through a location-aware assistant window that appears at the point someone is actually stuck, before they've decided the problem is bad enough to escalate.
 
