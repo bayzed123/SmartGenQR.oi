@@ -43,6 +43,15 @@ ENABLE_AI_ROADMAP = "true"
 # KV, so a busy chatbot never eats the free plan's daily KV write allowance.
 CHAT_HOURLY_LIMIT = "40"
 
+# Gemini models. Kept here rather than in code so a quota change or a retired
+# model name is a config edit, not a deploy of new source.
+#   CHAT_MODEL     short grounded answers — flash-lite has the best free quota
+#   ROADMAP_MODEL  the premium 30-day plan — worth the stronger model
+# Check what your key can reach:
+#   curl -H "x-goog-api-key: $KEY" https://generativelanguage.googleapis.com/v1beta/models
+CHAT_MODEL = "gemini-flash-lite-latest"
+ROADMAP_MODEL = "gemini-flash-latest"
+
 # ---------------------------------------------------------------------------
 # Secrets — set with `npx wrangler secret put <NAME>`.
 #

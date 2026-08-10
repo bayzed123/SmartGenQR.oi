@@ -160,7 +160,23 @@ Both directions are covered by tests; run `npm test` after changing them.
 |---|---|---|
 | Worker URL | `window.SMARTGEN_API_BASE` in `assets/js/app.js`; a page `<meta name="smartgen-api">` overrides it | `https://smartgen-platforms.sayadmdbayezidhosan.workers.dev` |
 | `CHAT_HOURLY_LIMIT` | `wrangler.toml` `[vars]` | 40 |
+| `CHAT_MODEL` | `wrangler.toml` `[vars]` | `gemini-flash-lite-latest` |
 | `GEMINI_API_KEY` | **Cloudflare secret** | — |
+
+### Choosing the model
+
+Free-tier quota, not capability, is what decides whether the bot answers.
+`gemini-2.0-flash` and `gemini-2.0-flash-lite` return `RESOURCE_EXHAUSTED` on a
+new free project; the `-latest` aliases do not, and they also survive model
+retirements. If the bot starts falling back to retrieval-only, check the quota
+before assuming a bug:
+
+```bash
+curl -H "x-goog-api-key: $GEMINI_API_KEY" \
+  https://generativelanguage.googleapis.com/v1beta/models
+```
+
+Then set `CHAT_MODEL` to a model that responds — no code change needed.
 
 Without `GEMINI_API_KEY` the assistant still runs in retrieval-only mode: it
 matches tools and answers FAQs, it just does not write prose.

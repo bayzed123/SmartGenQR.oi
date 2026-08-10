@@ -6,9 +6,21 @@
  * passed in as the fallback, so an AI outage never produces an empty report.
  */
 
-const MODEL = 'gemini-2.0-flash';
-const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
-const TIMEOUT_MS = 25_000;
+/**
+ * The roadmap is the one place worth spending a stronger model on — it has to
+ * sequence real findings into a plan someone will follow. `-latest` tracks the
+ * current Flash release rather than pinning to a version that gets retired.
+ * Override with the ROADMAP_MODEL var.
+ *
+ * Newer Flash models spend output tokens on internal reasoning before writing,
+ * so the budget is well above what the JSON itself needs — too low and the
+ * response comes back empty with finishReason MAX_TOKENS.
+ */
+const DEFAULT_MODEL = 'gemini-flash-latest';
+const endpointFor = (model) =>
+  `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+const TIMEOUT_MS = 40_000;
+const MAX_OUTPUT_TOKENS = 6144;
 
 /**
  * @param {object} input
@@ -18,9 +30,12 @@ const TIMEOUT_MS = 25_000;
  * @param {object} input.psi          Core Web Vitals payload (may be unavailable)
  * @param {Array}  input.fallback     deterministic roadmap
  * @param {object|null} input.competitor
- * @param {string} apiKey
+ * @param {object} env  Worker env — supplies GEMINI_API_KEY and ROADMAP_MODEL
  */
-export async function generateRoadmap(input, apiKey) {
+export async function generateRoadmap(input, env) {
+  const apiKey = env.GEMINI_API_KEY;
+  const model = env.ROADMAP_MODEL || DEFAULT_MODEL;
+
   if (!apiKey) {
     return { available: false, source: 'deterministic', reason: 'No GEMINI_API_KEY configured.' };
   }
@@ -29,18 +44,18 @@ export async function generateRoadmap(input, apiKey) {
 
   let text;
   try {
-    const res = await fetch(`${ENDPOINT}?key=${encodeURIComponent(apiKey)}`, {
+    // Header rather than ?key= so the secret never lands in a URL.
+    const res = await fetch(endpointFor(model), {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
       signal: AbortSignal.timeout(TIMEOUT_MS),
       body: JSON.stringify({
         contents: [{ role: 'user', parts: [{ text: prompt }] }],
         generationConfig: {
           temperature: 0.4,
-          maxOutputTokens: 2048,
+          maxOutputTokens: MAX_OUTPUT_TOKENS,
           responseMimeType: 'application/json',
         },
-        safetySettings: [],
       }),
     });
 
@@ -49,7 +64,7 @@ export async function generateRoadmap(input, apiKey) {
       return {
         available: false,
         source: 'deterministic',
-        reason: `Gemini returned ${res.status}. ${detail.slice(0, 200)}`,
+        reason: `Gemini ${model} returned ${res.status}. ${detail.slice(0, 200)}`,
       };
     }
 
@@ -72,7 +87,7 @@ export async function generateRoadmap(input, apiKey) {
   return {
     available: true,
     source: 'gemini',
-    model: MODEL,
+    model,
     executiveSummary: String(parsed.executiveSummary || '').slice(0, 1200),
     quickWins: toStringArray(parsed.quickWins).slice(0, 5),
     roadmap: parsed.roadmap.slice(0, 4).map((week, i) => ({

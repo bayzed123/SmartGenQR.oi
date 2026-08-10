@@ -285,7 +285,7 @@ async function handlePremiumAudit(request, env, ctx) {
         psi,
         competitor: competitor && !competitor.error ? competitor : null,
       },
-      env.GEMINI_API_KEY
+      env
     );
     report.ai = ai.available ? ai : { ...ai, fallbackRoadmap: report.roadmap };
   } else {

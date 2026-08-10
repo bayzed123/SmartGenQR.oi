@@ -22,8 +22,15 @@ import {
   SITE,
 } from './knowledge.js';
 
-const MODEL = 'gemini-2.0-flash';
-const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
+/**
+ * Flash-lite is the right size for this job — short, grounded answers with a
+ * fixed JSON shape — and it has the most generous free-tier quota, which is
+ * what actually decides whether the bot answers or errors. Override with the
+ * CHAT_MODEL var if quotas or model names change.
+ */
+const DEFAULT_MODEL = 'gemini-flash-lite-latest';
+const endpointFor = (model) =>
+  `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 const TIMEOUT_MS = 20_000;
 
 const MAX_MESSAGE_CHARS = 600;
@@ -145,7 +152,7 @@ export async function answerQuestion(input, env) {
   }
 
   try {
-    const generated = await callGemini(message, hits, input, env.GEMINI_API_KEY);
+    const generated = await callGemini(message, hits, input, env);
     if (!generated) throw new Error('empty generation');
 
     if (generated.onTopic === false) {
@@ -180,7 +187,8 @@ export async function answerQuestion(input, env) {
 
 /* ------------------------------------------------------------- gemini */
 
-async function callGemini(message, hits, input, apiKey) {
+async function callGemini(message, hits, input, env) {
+  const model = env.CHAT_MODEL || DEFAULT_MODEL;
   const context = buildContextBlock(hits);
   const currentPage = typeof input.page === 'string' ? input.page.slice(0, 120) : '';
 
@@ -228,9 +236,11 @@ Reply with JSON only:
   }
   contents.push({ role: 'user', parts: [{ text: message }] });
 
-  const response = await fetch(`${ENDPOINT}?key=${encodeURIComponent(apiKey)}`, {
+  // Header rather than ?key= so the secret never lands in a URL, where it
+  // could end up in a log or an error message.
+  const response = await fetch(endpointFor(model), {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', 'x-goog-api-key': env.GEMINI_API_KEY },
     signal: AbortSignal.timeout(TIMEOUT_MS),
     body: JSON.stringify({
       system_instruction: { parts: [{ text: system }] },
@@ -244,7 +254,7 @@ Reply with JSON only:
   });
 
   if (!response.ok) {
-    throw new Error(`gemini ${response.status}: ${(await response.text()).slice(0, 160)}`);
+    throw new Error(`gemini ${model} ${response.status}: ${(await response.text()).slice(0, 160)}`);
   }
 
   const data = await response.json();
