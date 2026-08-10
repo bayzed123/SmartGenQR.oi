@@ -281,8 +281,17 @@ thing about the backend: its URL.
 
 **The distinction that matters:** a secret used *inside a CI job* is fine — the
 runner is a server. A secret substituted *into a file the site serves* is not,
-because a static site has no server to keep it on. That is why the Cloudflare
-deploy token belongs in GitHub and the Gemini key does not.
+because a static site has no server to keep it on.
+
+That gives two safe ways to get the application secrets into Cloudflare:
+
+1. **Directly** — `npx wrangler secret put NAME` from your machine.
+2. **Through CI** — add the same names as GitHub Actions secrets and
+   `deploy-worker.yml` pipes them into `wrangler secret put` on every deploy.
+   Nothing is written to disk and nothing reaches the published site.
+
+Route 2 needs no local tooling, so it is the easier path. What is never safe is
+substituting a key into `chatbot.js`, `audit.js` or any other served file.
 
 If a key is ever committed by accident, **rotate it** — deleting the commit is
 not enough, public repos are scraped within minutes.
