@@ -32,7 +32,6 @@ SmartGen Launch Update: HTML Marquee Generator is Now Live
 ---
 
 We Recently Launched the HTML Marquee Generator
-
 We’re excited to announce the release of the SmartGen HTML Marquee Generator — a simple yet powerful tool designed to help developers create beautiful scrolling text effects without writing complex code.
 
 Whether you’re building landing pages, announcements, promotional banners, news tickers, or dynamic website elements, our new generator makes the process fast and effortless.
