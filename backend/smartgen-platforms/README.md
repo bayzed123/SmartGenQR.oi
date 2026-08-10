@@ -28,6 +28,9 @@ client's site; the paywall then lands exactly when intent is highest. It also
 keeps usage inside Cloudflare's free KV write allowance. Change it with the
 `FREE_AUDIT_LIMIT` var — no code edit needed.
 
+Visitors are identified by a SHA-256 of IP + user-agent + accept-language.
+No cookie, no login.
+
 ---
 
 ## Cost
@@ -43,11 +46,14 @@ Everything runs on free tiers:
 | Google Sheets API | free | lead storage |
 | GitHub Pages | free | the frontend |
 
-Each audit costs ~2 KV writes, so the free plan comfortably covers ~500
-audits/day. The one limit worth watching is the free plan's **10 ms CPU per
-request**; the crawler caps parsed HTML at 400 KB to stay inside it. If you
-ever see `Error 1102` (CPU exceeded) on very large sites, the Workers Paid
-plan at $5/month lifts it — nothing in the code needs to change.
+Each audit costs 3 KV writes (burst counter, quota counter, and the report
+cache on a miss), so the free plan comfortably covers ~300 audits/day — well
+past the point where the tool is paying for itself.
+
+The one limit worth watching is the free plan's **10 ms CPU per request**; the
+crawler caps parsed HTML at 400 KB to stay inside it. If you ever see
+`Error 1102` (CPU exceeded) on very large sites, the Workers Paid plan at
+$5/month lifts it — nothing in the code needs to change.
 
 ---
 

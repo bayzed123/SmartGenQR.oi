@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 
 import { CHECKS, CATEGORIES, categoryCounts, checkCatalogue } from '../src/checks/registry.js';
 import { runChecks, scoreResults, predictImpact, buildRoadmap } from '../src/checks/runner.js';
+import { buildReport, buildComparison } from '../src/lib/report.js';
 import { parseDocument } from '../src/lib/parse.js';
 import { normalizeTargetUrl } from '../src/lib/http.js';
 
@@ -219,6 +220,35 @@ test('the deterministic roadmap assigns each issue to exactly one week', () => {
   assert.ok(roadmap.length > 0);
   const ids = roadmap.flatMap((w) => w.tasks.map((t) => t.id));
   assert.equal(ids.length, new Set(ids).size, 'a task was scheduled in two different weeks');
+});
+
+/* --------------------------------------------- competitor comparison */
+
+test('identical sites produce a comparison with no phantom wins', () => {
+  const report = buildReport(contextFrom(GOOD_HTML), 'free');
+  const comparison = buildComparison(report, contextFrom(GOOD_HTML));
+
+  assert.equal(comparison.gap, 0);
+  assert.deepEqual(comparison.competitorWins, []);
+  assert.deepEqual(comparison.clientWins, []);
+});
+
+test('comparison surfaces exactly the checks the competitor passes and we fail', () => {
+  const weak = contextFrom(BAD_HTML, { isHttps: false });
+  const report = buildReport(weak, 'free');
+  const comparison = buildComparison(report, contextFrom(GOOD_HTML));
+
+  assert.ok(comparison.score > comparison.clientScore);
+  assert.ok(comparison.competitorWins.includes('SSL Certificate (HTTPS)'));
+  assert.ok(comparison.competitorWins.includes('Homepage Not Noindexed'));
+  assert.equal(comparison.clientWins.length, 0);
+
+  // Every listed win must be a check the client genuinely failed.
+  for (const label of comparison.competitorWins) {
+    const mine = report.results.find((r) => r.label === label);
+    assert.ok(mine, `${label} is not a check the client ran`);
+    assert.notEqual(mine.status, 'pass', `${label} was listed as a gap but the client passed it`);
+  }
 });
 
 /* ------------------------------------------------------- SSRF guard */

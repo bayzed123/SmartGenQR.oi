@@ -3,8 +3,8 @@
  * from. Everything is fetched here, once, so no check performs its own I/O.
  *
  * Subrequest budget matters: Cloudflare's free plan allows 50 subrequests per
- * invocation. The free tier costs ~8, premium ~16, and a premium run with a
- * competitor ~24. Comfortably inside the limit.
+ * invocation. The free tier costs ~9, premium ~16, and a premium run with a
+ * competitor and all enrichments ~28. Comfortably inside the limit.
  */
 
 import { safeFetch, probe, normalizeTargetUrl } from './http.js';
@@ -45,29 +45,7 @@ export async function buildAuditContext(rawUrl, opts = {}) {
   const doc = parseDocument(html, home.finalUrl);
   markFooterLinks(doc);
 
-  // ---- always-on probes (free tier included) ----------------------------
-  const [robots, indexPhp, defaults] = await Promise.all([
-    safeFetch(`${origin}/robots.txt`, { accept: 'text/plain,*/*' }),
-    probe(`${origin}/index.php`),
-    Promise.all(DEFAULT_WP_PATHS.map((p) => probe(origin + p))),
-  ]);
-
-  const robotsText = robots.ok && /text\/plain|text\//i.test(robots.contentType) ? robots.body : '';
-  const robotsSitemaps = [...robotsText.matchAll(/^\s*sitemap:\s*(\S+)/gim)].map((m) => m[1].trim());
-
-  const sitemapCandidates = dedupe([
-    ...robotsSitemaps,
-    ...doc.links.filter((l) => l.href && /sitemap.*\.xml$/i.test(l.href)).map((l) => l.href),
-    `${origin}/sitemap.xml`,
-    `${origin}/sitemap_index.xml`,
-  ]).slice(0, 2);
-
-  const sitemapProbes = await Promise.all(
-    sitemapCandidates.map(async (url) => {
-      const res = await probe(url);
-      return { url, status: res.status, ok: res.ok, fromRobots: robotsSitemaps.includes(url) };
-    })
-  );
+  const siteWide = await probeSiteWide(origin, doc);
 
   const ctx = {
     input: rawUrl,
@@ -84,19 +62,7 @@ export async function buildAuditContext(rawUrl, opts = {}) {
     htmlBytes: home.body.length,
     truncated: home.body.length > PARSE_BYTE_CAP,
     doc,
-    robots: {
-      status: robots.status,
-      ok: robots.ok,
-      text: robotsText,
-      sitemaps: robotsSitemaps,
-    },
-    sitemaps: sitemapProbes,
-    indexPhp: { status: indexPhp.status, redirects: indexPhp.redirects, finalUrl: indexPhp.finalUrl },
-    defaultContent: {
-      helloWorld: defaults[0].status,
-      samplePage: defaults[1].status,
-      uncategorized: defaults[2].status,
-    },
+    ...siteWide,
     // Filled in below only when deep === true.
     variants: null,
     trailingSlash: null,
@@ -134,8 +100,13 @@ export async function buildAuditContext(rawUrl, opts = {}) {
 }
 
 /**
- * A cheap context used only for competitor benchmarking — homepage + robots,
- * no variant probing. Keeps a side-by-side comparison affordable.
+ * Context for competitor benchmarking: the same evidence the free tier
+ * collects, minus the premium-only probes.
+ *
+ * It deliberately runs the *full* site-wide probe set rather than a cheaper
+ * subset. Skipping them would make the competitor silently fail the sitemap
+ * checks and silently pass the default-content checks, which would quietly
+ * bias every side-by-side comparison we sell.
  */
 export async function buildLightContext(rawUrl) {
   const target = normalizeTargetUrl(rawUrl);
@@ -152,8 +123,7 @@ export async function buildLightContext(rawUrl) {
   const doc = parseDocument(html, home.finalUrl);
   markFooterLinks(doc);
 
-  const robots = await safeFetch(`${finalUrl.origin}/robots.txt`, { accept: 'text/plain,*/*' });
-  const robotsText = robots.ok ? robots.body : '';
+  const siteWide = await probeSiteWide(finalUrl.origin, doc);
 
   return {
     input: rawUrl,
@@ -168,17 +138,9 @@ export async function buildLightContext(rawUrl) {
     headers: headerSnapshot(home.headers),
     responseMs: home.timingMs,
     htmlBytes: home.body.length,
-    truncated: false,
+    truncated: home.body.length > PARSE_BYTE_CAP,
     doc,
-    robots: {
-      status: robots.status,
-      ok: robots.ok,
-      text: robotsText,
-      sitemaps: [...robotsText.matchAll(/^\s*sitemap:\s*(\S+)/gim)].map((m) => m[1].trim()),
-    },
-    sitemaps: [],
-    indexPhp: { status: 0, redirects: [], finalUrl: '' },
-    defaultContent: { helloWorld: 0, samplePage: 0, uncategorized: 0 },
+    ...siteWide,
     variants: null,
     trailingSlash: null,
     about: null,
@@ -189,6 +151,47 @@ export async function buildLightContext(rawUrl) {
 }
 
 /* ------------------------------------------------------------ internals */
+
+/**
+ * The site-wide evidence every free-tier check needs: robots.txt, sitemap
+ * reachability, /index.php, and the WordPress demo content. Shared by the
+ * audit context and the competitor context so both are scored on equal terms.
+ */
+async function probeSiteWide(origin, doc) {
+  const [robots, indexPhp, defaults] = await Promise.all([
+    safeFetch(`${origin}/robots.txt`, { accept: 'text/plain,*/*' }),
+    probe(`${origin}/index.php`),
+    Promise.all(DEFAULT_WP_PATHS.map((p) => probe(origin + p))),
+  ]);
+
+  const robotsText = robots.ok && /text\/plain|text\//i.test(robots.contentType) ? robots.body : '';
+  const robotsSitemaps = [...robotsText.matchAll(/^\s*sitemap:\s*(\S+)/gim)].map((m) => m[1].trim());
+
+  const sitemapCandidates = dedupe([
+    ...robotsSitemaps,
+    ...doc.links.filter((l) => l.href && /sitemap.*\.xml$/i.test(l.href)).map((l) => l.href),
+    `${origin}/sitemap.xml`,
+    `${origin}/sitemap_index.xml`,
+  ]).slice(0, 2);
+
+  const sitemaps = await Promise.all(
+    sitemapCandidates.map(async (url) => {
+      const res = await probe(url);
+      return { url, status: res.status, ok: res.ok, fromRobots: robotsSitemaps.includes(url) };
+    })
+  );
+
+  return {
+    robots: { status: robots.status, ok: robots.ok, text: robotsText, sitemaps: robotsSitemaps },
+    sitemaps,
+    indexPhp: { status: indexPhp.status, redirects: indexPhp.redirects, finalUrl: indexPhp.finalUrl },
+    defaultContent: {
+      helloWorld: defaults[0].status,
+      samplePage: defaults[1].status,
+      uncategorized: defaults[2].status,
+    },
+  };
+}
 
 function headerSnapshot(headers) {
   const out = {};
