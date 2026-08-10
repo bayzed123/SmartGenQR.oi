@@ -181,6 +181,15 @@ const TOOLS_INDEX = [
         icon: '🏦'
     },
     {
+        id: 'seo-audit-tool',
+        title: 'SEO Audit Tool',
+        category: 'SEO & Content',
+        keywords: ['seo', 'audit', 'checker', 'analyzer', 'website', 'health', 'score', 'eeat', 'e-e-a-t', 'technical seo', 'site audit'],
+        description: 'Score any website out of 100 across 27 free SEO and E-E-A-T checks.',
+        url: './seo-audit-tool/',
+        icon: '📊'
+    },
+    {
         id: 'serp-preview-tool',
         title: 'SERP Preview Tool',
         category: 'SEO & Content',

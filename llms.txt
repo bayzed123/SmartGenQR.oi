@@ -11,6 +11,7 @@ SmartGen is a modern, fast, and privacy-focused utility platform built for profe
 ## Tool Categories
 
 ### SEO Tools
+- **SEO Audit Tool**: Score any website out of 100 across 27 free technical, E-E-A-T and trust-signal checks (72 in the premium report). Server-side crawl via the SmartGen Platforms API; 3 free audits per visitor per day, no signup.
 - **Meta Tag Generator**: Create SEO-optimized meta tags for websites.
 - **Schema Markup Generator**: Generate JSON-LD structured data for search engines.
 - **Sitemap Finder & Downloader**: Discover and download XML sitemaps.

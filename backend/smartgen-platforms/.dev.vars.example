@@ -1,0 +1,19 @@
+# Copy to `.dev.vars` for local `wrangler dev`. NEVER commit `.dev.vars`.
+# In production these are set with: npx wrangler secret put <NAME>
+
+# Google service account JSON, flattened to a single line.
+# Share your leads spreadsheet with the service account's client_email
+# (Editor access) or writes will 403.
+GOOGLE_SERVICE_ACCOUNT_JSON={"type":"service_account","project_id":"...","private_key_id":"...","private_key":"-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n","client_email":"smartgen-leads@example.iam.gserviceaccount.com","client_id":"...","token_uri":"https://oauth2.googleapis.com/token"}
+
+# https://developers.google.com/speed/docs/insights/v5/get-started
+PAGESPEED_API_KEY=
+
+# https://aistudio.google.com/apikey
+GEMINI_API_KEY=
+
+# Any long random string — protects /api/admin/*
+ADMIN_TOKEN=
+
+# Any long random string — signs premium unlock tokens
+PREMIUM_UNLOCK_SECRET=

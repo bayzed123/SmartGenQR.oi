@@ -1,0 +1,19 @@
+{
+  "name": "smartgen-platforms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SmartGen Platforms — Cloudflare Worker backend powering the SmartGen SEO Audit Tool (72 checks, Core Web Vitals, AI roadmap, lead capture).",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "kv:create": "wrangler kv namespace create SMARTGEN_AUDIT_KV",
+    "test": "node --test \"test/*.test.js\"",
+    "mint-token": "node scripts/mint-unlock-token.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.20.0"
+  }
+}
