@@ -31,8 +31,8 @@ PAYMENTS_ENABLED = "false"
 # can never be edited into a cheaper checkout).
 PREMIUM_PRICE_USD = "99"
 
-# Google Sheet that receives every lead. Just the spreadsheet id from the URL.
-LEADS_SHEET_ID = ""
+# Tab name inside the leads spreadsheet. The spreadsheet id itself is a SECRET
+# (see below) — this repo is public, so it must not be committed here.
 LEADS_SHEET_TAB = "Leads"
 
 # Turn individual premium enrichments on/off without redeploying code.
@@ -40,9 +40,15 @@ ENABLE_PAGESPEED = "true"
 ENABLE_AI_ROADMAP = "true"
 
 # ---------------------------------------------------------------------------
-# Secrets — set with `npx wrangler secret put <NAME>` (never commit these):
+# Secrets — set with `npx wrangler secret put <NAME>`.
+#
+# These live ONLY in Cloudflare's encrypted store. Never put them in this file,
+# in the frontend, or in GitHub (repo files or Actions secrets): the site is a
+# static page on GitHub Pages, so anything GitHub knows ends up downloadable by
+# every visitor.
 #
 #   GOOGLE_SERVICE_ACCOUNT_JSON   full service-account .json, pasted as one line
+#   LEADS_SHEET_ID                spreadsheet id from the Google Sheet URL
 #   PAGESPEED_API_KEY             Google PageSpeed Insights API key
 #   GEMINI_API_KEY                Google AI Studio (Gemini) API key
 #   ADMIN_TOKEN                   bearer token for /api/admin/* endpoints

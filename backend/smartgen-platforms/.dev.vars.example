@@ -1,5 +1,12 @@
 # Copy to `.dev.vars` for local `wrangler dev`. NEVER commit `.dev.vars`.
 # In production these are set with: npx wrangler secret put <NAME>
+#
+# These belong in Cloudflare only — never in GitHub. This repo is public, and
+# the frontend is a static page, so anything GitHub holds is downloadable.
+
+# Spreadsheet id from your leads Google Sheet URL:
+# https://docs.google.com/spreadsheets/d/<THIS_PART>/edit
+LEADS_SHEET_ID=
 
 # Google service account JSON, flattened to a single line.
 # Share your leads spreadsheet with the service account's client_email
