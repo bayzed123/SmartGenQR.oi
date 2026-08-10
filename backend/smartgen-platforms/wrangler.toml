@@ -1,0 +1,56 @@
+name = "smartgen-platforms"
+main = "src/index.js"
+compatibility_date = "2026-01-15"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+# ---------------------------------------------------------------------------
+# KV — quota / rate limiting + short-lived report cache.
+# These namespaces already exist on the SmartGen Cloudflare account.
+# ---------------------------------------------------------------------------
+[[kv_namespaces]]
+binding = "AUDIT_KV"
+id = "c4787a835bbb48f0bd1ed5cf03f23d49"          # SMARTGEN_AUDIT_KV
+preview_id = "db7cc5a006634b71bb4f7d15a082f4e5"  # SMARTGEN_AUDIT_KV_preview
+
+# ---------------------------------------------------------------------------
+# Public (non-secret) configuration. Secrets go in `wrangler secret put`.
+# ---------------------------------------------------------------------------
+[vars]
+# Comma-separated list of origins allowed to call this API.
+ALLOWED_ORIGINS = "https://smartgentools.com,https://www.smartgentools.com,http://localhost:8080,http://127.0.0.1:8080"
+
+# Free audits allowed per visitor per rolling 24h window.
+FREE_AUDIT_LIMIT = "3"
+
+# Master switch for the paid flow. Keep "false" until Stripe/LemonSqueezy is
+# live — premium requests are then captured as leads instead of charged.
+PAYMENTS_ENABLED = "false"
+
+# Premium price shown in API responses (kept server-side so the frontend
+# can never be edited into a cheaper checkout).
+PREMIUM_PRICE_USD = "99"
+
+# Google Sheet that receives every lead. Just the spreadsheet id from the URL.
+LEADS_SHEET_ID = ""
+LEADS_SHEET_TAB = "Leads"
+
+# Turn individual premium enrichments on/off without redeploying code.
+ENABLE_PAGESPEED = "true"
+ENABLE_AI_ROADMAP = "true"
+
+# ---------------------------------------------------------------------------
+# Secrets — set with `npx wrangler secret put <NAME>` (never commit these):
+#
+#   GOOGLE_SERVICE_ACCOUNT_JSON   full service-account .json, pasted as one line
+#   PAGESPEED_API_KEY             Google PageSpeed Insights API key
+#   GEMINI_API_KEY                Google AI Studio (Gemini) API key
+#   ADMIN_TOKEN                   bearer token for /api/admin/* endpoints
+#   PREMIUM_UNLOCK_SECRET         HMAC key used to sign premium unlock tokens
+# ---------------------------------------------------------------------------
+
+[observability]
+enabled = true
+
+[placement]
+mode = "smart"

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://smartgen-platforms.smartgentools.workers.dev" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <link rel="canonical" href="https://smartgentools.com/seo-audit-tool/">
+
+    <title>Free SEO Audit Tool — Instant Website SEO Checker (72 Checks)</title>
+    <meta name="description" content="Run a free SEO audit of any website in seconds. Our SEO checker tests 27 free checks — SSL, schema, E-E-A-T pages, footer trust signals, broken links — and scores your site out of 100. No signup, no credit card.">
+    <meta name="keywords" content="free seo audit tool, seo audit, website seo checker, seo checker, site audit tool, seo analyzer, website audit, e-e-a-t audit, technical seo audit, free website analysis">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+    <!-- Backend: SmartGen Platforms Worker. Change this one line to repoint the API. -->
+    <meta name="smartgen-api" content="https://smartgen-platforms.smartgentools.workers.dev">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./audit.css">
+    <script src="../config/ad-config.js" defer></script>
+    <script src="../utils/ad-injector.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/search-data.js" defer></script>
+    <script src="./audit.js" defer></script>
+
+    <meta property="og:title" content="Free SEO Audit Tool — Instant Website SEO Checker (72 Checks)">
+    <meta property="og:description" content="Score any website out of 100 in seconds. 27 free SEO and E-E-A-T checks, no signup required.">
+    <meta property="og:url" content="https://smartgentools.com/seo-audit-tool/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://smartgentools.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free SEO Audit Tool — Instant Website SEO Checker">
+    <meta name="twitter:description" content="Score any website out of 100 in seconds. 27 free SEO and E-E-A-T checks, no signup required.">
+    <meta name="twitter:image" content="https://smartgentools.com/assets/og-image.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "SmartGen SEO Audit Tool",
+          "description": "Free SEO audit tool that scores any website out of 100 across 27 technical, E-E-A-T and trust-signal checks, with a 72-check premium report.",
+          "url": "https://smartgentools.com/seo-audit-tool/",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "All",
+          "browserRequirements": "Requires JavaScript",
+          "offers": [
+            { "@type": "Offer", "name": "Free SEO Audit", "price": "0", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "Premium SEO Audit", "price": "99", "priceCurrency": "USD" }
+          ],
+          "featureList": [
+            "27 free SEO checks across 9 categories",
+            "Overall website health score out of 100",
+            "E-E-A-T trust signal analysis",
+            "Google Core Web Vitals (premium)",
+            "AI-generated 30-day SEO roadmap (premium)",
+            "Competitor side-by-side benchmark (premium)",
+            "White-label PDF report for agencies (premium)"
+          ],
+          "creator": {
+            "@type": "Organization",
+            "name": "SmartGen",
+            "url": "https://smartgentools.com/"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://smartgentools.com/" },
+            { "@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://smartgentools.com/tools/" },
+            { "@type": "ListItem", "position": 3, "name": "SEO Audit Tool", "item": "https://smartgentools.com/seo-audit-tool/" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is this SEO audit tool really free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. You get 3 full free audits every 24 hours with no account, no credit card and no trial period. Each free audit runs 27 checks and gives you a health score out of 100 plus your priority fixes. The 72-check premium audit is a separate paid report."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many free SEO audits can I run per day?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Three per day. That is enough to audit your own site, a competitor and a client site in one session. The limit resets every 24 hours."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need to install anything or verify my domain?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The audit works on any publicly reachable website. There is no plugin, no DNS record and no Search Console connection required — just paste the URL."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is E-E-A-T and why does this tool check it?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "E-E-A-T stands for Experience, Expertise, Authoritativeness and Trustworthiness — the qualities Google's Search Quality Rater Guidelines use to judge a site. In practice it shows up as concrete on-page signals: an About page with a real story, named authors, a physical address, a privacy policy, and consistent business details. 30 of our 72 checks test exactly these signals."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What does the premium SEO audit include that the free one does not?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "45 additional checks including all 9 About-page checks, Google Core Web Vitals from real Chrome user data, an AI-written 30-day action roadmap, a competitor side-by-side benchmark, a traffic impact prediction, a white-label PDF report for agencies, and a 30-minute strategy call."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can agencies white-label the report?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The premium report accepts your agency name, logo, contact details and accent colour, and can hide SmartGen branding entirely, so you can deliver it to your own clients."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="container audit-tool">
+
+        <!-- ============================================ HERO + SCANNER -->
+        <section class="audit-hero">
+            <h1>Free SEO Audit Tool</h1>
+            <p class="lede">
+                Paste any URL and get a real SEO health score in about 20 seconds. We test SSL, schema markup,
+                E-E-A-T trust pages, footer signals, broken images and 22 more ranking factors — then tell you
+                exactly what to fix first.
+            </p>
+
+            <div class="badge-row">
+                <span class="audit-badge">⚡ Results in ~20 seconds</span>
+                <span class="audit-badge">🔓 No signup, no credit card</span>
+                <span class="audit-badge">✅ 27 checks free</span>
+                <span class="audit-badge">🏆 72 checks in the full audit</span>
+            </div>
+
+            <form id="scanForm" class="scan-form" novalidate>
+                <label class="sr-only" for="siteUrl">Website URL to audit</label>
+                <input
+                    type="url"
+                    id="siteUrl"
+                    name="siteUrl"
+                    inputmode="url"
+                    autocomplete="url"
+                    spellcheck="false"
+                    placeholder="yourwebsite.com"
+                    required>
+                <button type="submit" id="scanButton" class="btn-scan">Run Free Audit</button>
+            </form>
+
+            <p class="scan-meta" id="quotaLine"></p>
+
+            <div class="audit-progress" id="auditProgress" hidden>
+                <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+                <p class="progress-label" id="progressLabel" role="status" aria-live="polite"></p>
+            </div>
+
+            <p class="form-status is-error" id="scanError" role="alert" hidden style="max-width:44rem;margin:1rem auto 0;"></p>
+        </section>
+
+        <!-- ================================================== RESULTS -->
+        <section class="audit-results" id="auditResults" aria-live="polite" hidden>
+            <div class="score-panel" id="scorePanel"></div>
+            <div class="category-grid" id="categoryGrid"></div>
+
+            <div class="results-section" id="impactBox" hidden></div>
+            <div class="results-section" id="topIssuesSection"></div>
+
+            <div class="results-section">
+                <h3>Full check breakdown</h3>
+                <div class="catalogue" id="allChecksBody"></div>
+                <p style="margin-top:1.2rem;text-align:right;">
+                    <button type="button" id="printReport" class="tier-cta ghost">🖨️ Print / Save as PDF</button>
+                </p>
+            </div>
+
+            <div class="locked-panel" id="lockedPanel" hidden></div>
+        </section>
+
+        <!-- ================================================ LEAD FORM -->
+        <section class="lead-card" id="leadCard" hidden>
+            <h3 style="margin-top:0;">📬 Get the full written report by email</h3>
+            <p style="color:var(--text-secondary);">
+                We will send your complete audit — every check, every fix, in priority order — within 24 hours.
+                No spam, and you can unsubscribe from any email.
+            </p>
+
+            <form id="leadForm" novalidate>
+                <div class="lead-grid">
+                    <div class="field">
+                        <label for="leadName">Full Name</label>
+                        <input type="text" id="leadName" name="fullName" autocomplete="name" required>
+                    </div>
+                    <div class="field">
+                        <label for="leadEmail">Email Address</label>
+                        <input type="email" id="leadEmail" name="email" autocomplete="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="leadWebsite">Website URL</label>
+                        <input type="url" id="leadWebsite" name="websiteUrl" autocomplete="url">
+                    </div>
+                    <div class="field">
+                        <label for="leadCountry">Country</label>
+                        <select id="leadCountry" name="country">
+                            <option value="">Select your country</option>
+                            <option>Bangladesh</option><option>India</option><option>Pakistan</option>
+                            <option>United States</option><option>United Kingdom</option><option>Canada</option>
+                            <option>Australia</option><option>United Arab Emirates</option><option>Saudi Arabia</option>
+                            <option>Qatar</option><option>Kuwait</option><option>Oman</option><option>Bahrain</option>
+                            <option>Malaysia</option><option>Singapore</option><option>Indonesia</option>
+                            <option>Philippines</option><option>Vietnam</option><option>Thailand</option>
+                            <option>Japan</option><option>South Korea</option><option>China</option>
+                            <option>Sri Lanka</option><option>Nepal</option><option>Maldives</option>
+                            <option>Germany</option><option>France</option><option>Netherlands</option>
+                            <option>Spain</option><option>Italy</option><option>Portugal</option>
+                            <option>Ireland</option><option>Belgium</option><option>Switzerland</option>
+                            <option>Austria</option><option>Sweden</option><option>Norway</option>
+                            <option>Denmark</option><option>Finland</option><option>Poland</option>
+                            <option>Romania</option><option>Turkey</option><option>Greece</option>
+                            <option>Russia</option><option>Ukraine</option>
+                            <option>South Africa</option><option>Nigeria</option><option>Kenya</option>
+                            <option>Ghana</option><option>Egypt</option><option>Morocco</option>
+                            <option>Brazil</option><option>Mexico</option><option>Argentina</option>
+                            <option>Chile</option><option>Colombia</option><option>New Zealand</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="leadWhatsapp">WhatsApp Number <span class="hint">(optional)</span></label>
+                        <input type="tel" id="leadWhatsapp" name="whatsapp" autocomplete="tel" placeholder="+880 1XXX XXXXXX">
+                    </div>
+                    <div class="field">
+                        <label id="contactPrefLabel">Preferred Contact Method</label>
+                        <div class="contact-toggle" role="radiogroup" aria-labelledby="contactPrefLabel">
+                            <label><input type="radio" name="preferredContact" value="email" checked> 📧 Email</label>
+                            <label><input type="radio" name="preferredContact" value="whatsapp"> 💬 WhatsApp</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="captchaAnswer">Security check — <span id="captchaQuestion">…</span></label>
+                        <input type="number" id="captchaAnswer" name="captchaAnswer" inputmode="numeric" required>
+                    </div>
+                </div>
+
+                <!-- Honeypot: hidden from people, irresistible to bots. -->
+                <div class="honeypot" aria-hidden="true">
+                    <label for="companyWebsite">Leave this field empty</label>
+                    <input type="text" id="companyWebsite" name="company_website" tabindex="-1" autocomplete="off">
+                </div>
+
+                <p style="margin-top:1.2rem;">
+                    <button type="submit" id="leadSubmit" class="tier-cta primary">Email Me The Full Report</button>
+                </p>
+
+                <p class="form-status" id="leadStatus" role="status" hidden></p>
+
+                <p class="form-note">
+                    We store your details to send this report and occasional SEO tips. Read our
+                    <a href="/privacy/">Privacy Policy</a>. No credit card needed.
+                </p>
+            </form>
+        </section>
+
+        <!-- ================================================== PRICING -->
+        <section class="audit-section" id="pricing">
+            <div class="section-head">
+                <h2>Free vs Premium</h2>
+                <p>The free audit tells you <em>what</em> is broken. The premium audit tells you what it costs you,
+                   what to do about it, and in what order.</p>
+            </div>
+
+            <div class="tier-cards">
+                <div class="tier-card">
+                    <h3>Free SEO Audit</h3>
+                    <p style="color:var(--text-secondary);margin:0;">Instant snapshot of your site's health.</p>
+                    <p class="tier-price">$0<small> / forever</small></p>
+                    <ul>
+                        <li><span>✅</span><span><strong>27 checks</strong> across 9 categories</span></li>
+                        <li><span>✅</span><span>Health score out of 100 and a letter grade</span></li>
+                        <li><span>✅</span><span>Your top 5 priority fixes, with instructions</span></li>
+                        <li><span>✅</span><span>Full written report by email</span></li>
+                        <li><span>✅</span><span>3 audits every 24 hours</span></li>
+                        <li><span>➖</span><span>Core Web Vitals, AI roadmap, competitor benchmark</span></li>
+                    </ul>
+                    <a class="tier-cta ghost" href="#siteUrl">Run a free audit</a>
+                </div>
+
+                <div class="tier-card is-featured">
+                    <h3>Premium SEO Audit</h3>
+                    <p style="color:var(--text-secondary);margin:0;">The full picture, plus the plan to fix it.</p>
+                    <p class="tier-price">$99<small> / one-off</small></p>
+                    <ul>
+                        <li><span>⭐</span><span><strong>All 72 checks</strong>, including 9 About-page checks</span></li>
+                        <li><span>⭐</span><span>Google <strong>Core Web Vitals</strong> — LCP, INP, CLS from real users</span></li>
+                        <li><span>⭐</span><span>AI-written <strong>30-day action roadmap</strong></span></li>
+                        <li><span>⭐</span><span><strong>Competitor benchmark</strong> side by side</span></li>
+                        <li><span>⭐</span><span>Traffic <strong>impact prediction</strong></span></li>
+                        <li><span>⭐</span><span><strong>White-label PDF</strong> — your logo, your brand</span></li>
+                        <li><span>⭐</span><span>30-minute <strong>strategy call</strong></span></li>
+                    </ul>
+                    <a class="tier-cta primary" href="/contact/?subject=Premium%20SEO%20Audit">Request the full audit</a>
+                    <p class="form-note" style="text-align:center;">Currently invite-only while we finish onboarding. Ask for access.</p>
+                </div>
+            </div>
+
+            <div class="pricing-table-wrap">
+                <table class="pricing-table">
+                    <caption class="sr-only">Free versus premium SEO audit checks by category</caption>
+                    <thead>
+                        <tr><th scope="col">Category</th><th scope="col">Free</th><th scope="col">Premium</th></tr>
+                    </thead>
+                    <tbody id="pricingRows">
+                        <tr><td>🔒 Authority &amp; Technical</td><td>4</td><td>10</td></tr>
+                        <tr><td>🏗️ Schema Markup</td><td>1</td><td>4</td></tr>
+                        <tr><td>📄 E-E-A-T Pages</td><td>4</td><td>7</td></tr>
+                        <tr><td>🦶 Footer E-E-A-T</td><td>4</td><td>10</td></tr>
+                        <tr><td>📱 Social Presence</td><td>2</td><td>8</td></tr>
+                        <tr><td>🎨 UX Elements</td><td>3</td><td>5</td></tr>
+                        <tr><td>👥 About Us Page</td><td>0</td><td>9</td></tr>
+                        <tr><td>🏠 Homepage Checks</td><td>4</td><td>5</td></tr>
+                        <tr><td>✅ E-E-A-T On-Site</td><td>5</td><td>14</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td>Total Checks</td><td>27</td><td>72</td></tr>
+                        <tr><td>Core Web Vitals</td><td>—</td><td>✓</td></tr>
+                        <tr><td>AI 30-Day Roadmap</td><td>—</td><td>✓</td></tr>
+                        <tr><td>Competitor Benchmark</td><td>—</td><td>✓</td></tr>
+                        <tr><td>White-Label PDF</td><td>—</td><td>✓</td></tr>
+                        <tr><td>Strategy Call</td><td>—</td><td>✓</td></tr>
+                        <tr><td>Price</td><td>$0</td><td>$99</td></tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- ================================== PREMIUM FEATURE HIGHLIGHTS -->
+        <section class="audit-section">
+            <div class="section-head">
+                <h2>What makes the premium report different</h2>
+                <p>Five things a checklist alone cannot give you.</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <h3 style="margin-top:0;font-size:1.05rem;">⚡ Google Core Web Vitals</h3>
+                    <p class="cat-detail">Real-user LCP, INP and CLS pulled straight from Google's PageSpeed Insights API,
+                       scored against Google's own thresholds — not a synthetic guess.</p>
+                </div>
+                <div class="category-card">
+                    <h3 style="margin-top:0;font-size:1.05rem;">🗓️ AI 30-day roadmap</h3>
+                    <p class="cat-detail">Every failure is turned into a week-by-week plan: Week 1 technical, Week 2 trust pages,
+                       Week 3 schema and footer, Week 4 on-page polish. Written from your findings, never generic advice.</p>
+                </div>
+                <div class="category-card">
+                    <h3 style="margin-top:0;font-size:1.05rem;">🥊 Competitor benchmark</h3>
+                    <p class="cat-detail">Add a competitor URL and see both scores side by side, category by category,
+                       with the exact checks they pass and you do not.</p>
+                </div>
+                <div class="category-card">
+                    <h3 style="margin-top:0;font-size:1.05rem;">📈 Impact prediction</h3>
+                    <p class="cat-detail">A modelled organic-traffic range for fixing what we found, plus the score you should
+                       reach. Honest ranges, never invented promises.</p>
+                </div>
+                <div class="category-card">
+                    <h3 style="margin-top:0;font-size:1.05rem;">🏷️ White-label PDF</h3>
+                    <p class="cat-detail">Agencies can put their own logo, colours and contact details on the report and hide
+                       SmartGen branding entirely — deliver it as your own deliverable.</p>
+                </div>
+                <div class="category-card">
+                    <h3 style="margin-top:0;font-size:1.05rem;">📞 Strategy call</h3>
+                    <p class="cat-detail">A 30-minute call to walk through the roadmap, agree priorities and answer the
+                       "but what about…" questions a document cannot.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== ALL 72 CHECKS -->
+        <section class="audit-section">
+            <div class="section-head">
+                <h2>All 72 SEO Checks</h2>
+                <p>Every test we run, in full. ✅ = included free · ⭐ = premium only.</p>
+            </div>
+
+            <div class="catalogue" id="catalogueBody">
+                <details open>
+                    <summary>🔒 Authority &amp; Technical<span class="counts">4 free · 10 total</span></summary>
+                    <div class="cat-body">
+                        <div class="cat-row"><span>✅</span><div><strong>SSL Certificate (HTTPS)<span class="tier-chip free">Free</span></strong><span>Website uses a secure HTTPS connection</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Has Favicon<span class="tier-chip free">Free</span></strong><span>Website has a favicon defined</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Has Logo Image<span class="tier-chip free">Free</span></strong><span>Logo detected in header/navigation</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Sitemap Link Present<span class="tier-chip free">Free</span></strong><span>XML sitemap linked or discoverable</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Semantic HTML Tags<span class="tier-chip premium">Premium</span></strong><span>Uses header, nav, main, article, section, footer</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Robots.txt Has Sitemap<span class="tier-chip premium">Premium</span></strong><span>Robots.txt contains a Sitemap directive</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Open Graph Tags<span class="tier-chip premium">Premium</span></strong><span>OG meta tags for social sharing</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Preferred Version Check<span class="tier-chip premium">Premium</span></strong><span>Only one URL variant returns 200 (www vs non-www, http vs https)</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Trailing Slash Check<span class="tier-chip premium">Premium</span></strong><span>Pages redirect consistently with/without trailing slash</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Canonical Tag Set<span class="tier-chip premium">Premium</span></strong><span>Canonical URL defined for the page</span></div></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🏗️ Schema Markup<span class="counts">1 free · 4 total</span></summary>
+                    <div class="cat-body">
+                        <div class="cat-row"><span>✅</span><div><strong>Organization Schema<span class="tier-chip free">Free</span></strong><span>Business/company structured data</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>WebSite Schema<span class="tier-chip premium">Premium</span></strong><span>Site-level schema with potential search action</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>FAQ Schema<span class="tier-chip premium">Premium</span></strong><span>FAQPage markup for rich snippets</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>SiteNavigation Schema<span class="tier-chip premium">Premium</span></strong><span>Navigation element markup</span></div></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📄 E-E-A-T Pages<span class="counts">4 free · 7 total</span></summary>
+                    <div class="cat-body">
+                        <div class="cat-row"><span>✅</span><div><strong>Privacy Policy Page<span class="tier-chip free">Free</span></strong><span>Link to privacy policy found</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Terms of Service Page<span class="tier-chip free">Free</span></strong><span>Link to terms of service found</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>About Us Page<span class="tier-chip free">Free</span></strong><span>Link to about page found</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Contact Us Page<span class="tier-chip free">Free</span></strong><span>Link to contact page found</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Authors/Team Page<span class="tier-chip premium">Premium</span></strong><span>Link to authors or team page found</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Editorial Guidelines<span class="tier-chip premium">Premium</span></strong><span>Link to editorial guidelines found</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>HTML Sitemap<span class="tier-chip premium">Premium</span></strong><span>Link to HTML sitemap found</span></div></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🦶 Footer E-E-A-T<span class="counts">4 free · 10 total</span></summary>
+                    <div class="cat-body">
+                        <div class="cat-row"><span>✅</span><div><strong>Copyright Notice<span class="tier-chip free">Free</span></strong><span>Copyright text found in footer</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Copyright Current Year<span class="tier-chip free">Free</span></strong><span>Copyright shows current/recent year</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Physical Address<span class="tier-chip premium">Premium</span></strong><span>Address information in footer</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Contact Email<span class="tier-chip free">Free</span></strong><span>Email address visible</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Phone Number<span class="tier-chip premium">Premium</span></strong><span>Phone number visible</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Social Links in Footer<span class="tier-chip free">Free</span></strong><span>Social media links present (2+ platforms)</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>DMCA Badge<span class="tier-chip premium">Premium</span></strong><span>DMCA protection badge/link</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Footer Menu Links<span class="tier-chip premium">Premium</span></strong><span>Footer links to About, Contact, Terms (3+ essential links)</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Short Website Description<span class="tier-chip premium">Premium</span></strong><span>Footer contains a brief site description</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Parent Company Listed<span class="tier-chip premium">Premium</span></strong><span>Parent company or business entity mentioned</span></div></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📱 Social Presence<span class="counts">2 free · 8 total</span></summary>
+                    <div class="cat-body">
+                        <div class="cat-row"><span>✅</span><div><strong>Twitter/X Link<span class="tier-chip free">Free</span></strong><span>Twitter profile linked</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Facebook Link<span class="tier-chip free">Free</span></strong><span>Facebook page linked</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>LinkedIn Link<span class="tier-chip premium">Premium</span></strong><span>LinkedIn profile linked</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>YouTube Link<span class="tier-chip premium">Premium</span></strong><span>YouTube channel linked</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Instagram Link<span class="tier-chip premium">Premium</span></strong><span>Instagram profile linked</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Pinterest Link<span class="tier-chip premium">Premium</span></strong><span>Pinterest profile linked</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>TikTok Link<span class="tier-chip premium">Premium</span></strong><span>TikTok profile linked</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>RSS Feed<span class="tier-chip premium">Premium</span></strong><span>RSS feed available</span></div></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🎨 UX Elements<span class="counts">3 free · 5 total</span></summary>
+                    <div class="cat-body">
+                        <div class="cat-row"><span>✅</span><div><strong>Search Functionality<span class="tier-chip free">Free</span></strong><span>Search bar/form present</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Back to Top Button<span class="tier-chip premium">Premium</span></strong><span>Scroll to top button</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>External Links New Tab<span class="tier-chip premium">Premium</span></strong><span>External links open in new tab (&gt;50% threshold)</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Images Have Alt Text<span class="tier-chip free">Free</span></strong><span>All images have alt attributes</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>No Missing Images<span class="tier-chip free">Free</span></strong><span>No broken image references detected</span></div></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>👥 About Us Page<span class="counts">0 free · 9 total</span></summary>
+                    <div class="cat-body">
+                        <div class="cat-row"><span>⭐</span><div><strong>Parent Company Described<span class="tier-chip premium">Premium</span></strong><span>Parent company or business entity is described</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Our Story Section<span class="tier-chip premium">Premium</span></strong><span>Contains an "Our Story" or history section</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Who We Are Section<span class="tier-chip premium">Premium</span></strong><span>Contains a "Who We Are" section</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>What We Do Section<span class="tier-chip premium">Premium</span></strong><span>Contains a "What We Do" section</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Trusted Source Statement<span class="tier-chip premium">Premium</span></strong><span>Contains trust or credibility statement</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Team Photos in Workspace<span class="tier-chip premium">Premium</span></strong><span>Team or office photos present (3+ images)</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Mailing Address Listed<span class="tier-chip premium">Premium</span></strong><span>Physical mailing address on about page</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Social Proof Displayed<span class="tier-chip premium">Premium</span></strong><span>Testimonials, reviews, or awards displayed</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Featured Websites Linked<span class="tier-chip premium">Premium</span></strong><span>Links to featured or partner websites</span></div></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🏠 Homepage Checks<span class="counts">4 free · 5 total</span></summary>
+                    <div class="cat-body">
+                        <div class="cat-row"><span>✅</span><div><strong>index.php Redirects to Home<span class="tier-chip free">Free</span></strong><span>index.php properly 301 redirects to homepage</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Homepage Not Noindexed<span class="tier-chip free">Free</span></strong><span>Homepage is indexable by search engines</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Homepage Title Not "Home"<span class="tier-chip free">Free</span></strong><span>Title tag is descriptive, not just "Home"</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Homepage Content Visible<span class="tier-chip free">Free</span></strong><span>Homepage has substantial visible content (100+ words)</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>No Homepage Redirect Chains<span class="tier-chip premium">Premium</span></strong><span>Homepage loads without multiple redirects</span></div></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>✅ E-E-A-T On-Site<span class="counts">5 free · 14 total</span></summary>
+                    <div class="cat-body">
+                        <div class="cat-row"><span>✅</span><div><strong>Remove Default Content<span class="tier-chip free">Free</span></strong><span>Default /hello-world/ post and /sample-page/ are removed</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Configure Uncategorized Category<span class="tier-chip free">Free</span></strong><span>Default /uncategorized/ category is removed or renamed</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>No Read More Buttons<span class="tier-chip premium">Premium</span></strong><span>Use title links instead of "Read More" buttons</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>No Headings Before H1<span class="tier-chip free">Free</span></strong><span>H2–H6 should not appear before the first H1 tag</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>No Empty # Links<span class="tier-chip free">Free</span></strong><span>No placeholder href="#" links on the page</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Links Look Like Links<span class="tier-chip premium">Premium</span></strong><span>Links should have underline or distinct colour styling</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>No Content as Background Images<span class="tier-chip premium">Premium</span></strong><span>Important images should use img tags, not CSS backgrounds</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>No Sentence Headings<span class="tier-chip premium">Premium</span></strong><span>Headings should be concise (max 100 chars)</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>No Duplicate Functionality Plugins<span class="tier-chip premium">Premium</span></strong><span>No multiple cache or SEO plugins detected</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>GTM Not in Body<span class="tier-chip premium">Premium</span></strong><span>Google Tag Manager code should be in &lt;head&gt;, not &lt;body&gt;</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>External Links Not All Nofollow<span class="tier-chip premium">Premium</span></strong><span>Some external links should be followed for link equity</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>No Staging URLs in Menu<span class="tier-chip premium">Premium</span></strong><span>Menu links should not point to staging/dev URLs</span></div></div>
+                        <div class="cat-row"><span>⭐</span><div><strong>Menu/Footer Links Not Nofollow<span class="tier-chip premium">Premium</span></strong><span>Navigation links should not have nofollow attribute</span></div></div>
+                        <div class="cat-row"><span>✅</span><div><strong>Robots Sitemap Not Broken<span class="tier-chip free">Free</span></strong><span>XML sitemap URL in robots.txt is accessible</span></div></div>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- ============================================== SEO CONTENT -->
+        <article class="seo-content-container">
+
+            <section style="margin-bottom:50px;">
+                <h2 style="font-size:1.8rem;color:var(--text-primary);margin-bottom:20px;border-left:5px solid #2563eb;padding-left:20px;">What is an SEO audit?</h2>
+                <p>An <strong>SEO audit</strong> is a structured health check of a website against the signals search engines
+                   actually use to decide who ranks. It is not a keyword report and it is not a traffic dashboard — it is a
+                   diagnosis. A good audit answers three questions in order: <em>Can Google reach and index this site? Does
+                   Google have reason to trust it? And is the on-page experience good enough to keep the ranking once it
+                   is earned?</em></p>
+                <p style="margin-top:15px;">Our <strong>free SEO audit tool</strong> answers all three. It fetches your homepage
+                   the way a crawler does, follows your redirects, reads your robots.txt and sitemap, probes the URLs that
+                   commonly break, and scores 27 signals across nine categories. The premium report extends that to 72 checks
+                   and adds Core Web Vitals, an AI-written roadmap and a competitor benchmark.</p>
+            </section>
+
+            <section style="margin-bottom:50px;background:var(--card-bg,#f8fafc);padding:30px;border-radius:20px;border:1px solid var(--border,#e2e8f0);">
+                <h2 style="font-size:1.8rem;color:var(--text-primary);margin-bottom:20px;">Why we made 3 audits per day free</h2>
+                <p>Most "free" SEO checkers give you a teasing score and a paywall. We went the other way: the free tier is
+                   a complete, usable audit — score, category breakdown, every failing check, and the fix for each one.</p>
+                <p style="margin-top:15px;">Three per day is deliberate. One audit is not enough to prove a tool is worth
+                   trusting. Five or more and there is no reason to ever pay. Three lets you check your own site, size up a
+                   competitor, and run a client's domain in a single sitting — which is exactly how people actually use an
+                   audit tool. The counter resets every 24 hours, and no account is required.</p>
+            </section>
+
+            <section style="margin-bottom:50px;">
+                <h2 style="font-size:1.8rem;color:var(--text-primary);margin-bottom:20px;">How to use this SEO checker</h2>
+                <ol style="margin-top:20px;padding-left:25px;">
+                    <li style="margin-bottom:15px;"><strong>Paste your URL.</strong> Any format works —
+                        <code>example.com</code>, <code>www.example.com</code> or the full <code>https://</code> address.
+                        We resolve redirects and audit the page a crawler actually lands on.</li>
+                    <li style="margin-bottom:15px;"><strong>Read your score first, categories second.</strong> The number out
+                        of 100 is weighted by impact, so a missing SSL certificate costs far more than a missing RSS feed.
+                        The category bars show you which area is dragging the score down.</li>
+                    <li style="margin-bottom:15px;"><strong>Work the priority list top to bottom.</strong> Issues are sorted
+                        by severity, and each one carries the specific fix — the tag to add, the redirect to write, the page
+                        to publish.</li>
+                    <li style="margin-bottom:15px;"><strong>Re-run after you ship.</strong> Fix a batch, deploy, then audit
+                        again to confirm the score moved. Results are cached for six hours, so leave a gap after deploying.</li>
+                    <li style="margin-bottom:15px;"><strong>Save the report.</strong> Use "Print / Save as PDF" for a clean
+                        copy, or request the emailed version for the full written write-up.</li>
+                </ol>
+            </section>
+
+            <section style="margin-bottom:50px;">
+                <h2 style="font-size:1.8rem;color:var(--text-primary);margin-bottom:20px;">What E-E-A-T looks like in practice</h2>
+                <p>Google's Search Quality Rater Guidelines talk about <strong>Experience, Expertise, Authoritativeness and
+                   Trustworthiness</strong>, which sounds abstract until you translate it into markup. In practice E-E-A-T is
+                   a set of things that are either on your page or not:</p>
+                <div style="margin-top:25px;">
+                    <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border,#e2e8f0);">
+                        <h3 style="color:var(--text-primary);margin-bottom:10px;font-size:1.1rem;">1. Someone real is behind this site</h3>
+                        <p>An About page with a founding story, named authors with credentials, team photos, and a legal
+                           entity in the footer. We run 16 checks on this alone.</p>
+                    </div>
+                    <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border,#e2e8f0);">
+                        <h3 style="color:var(--text-primary);margin-bottom:10px;font-size:1.1rem;">2. You can be contacted and held accountable</h3>
+                        <p>A branded email address, a phone number, a physical address, a privacy policy and terms of service.
+                           These are also the exact signals AdSense reviewers look for.</p>
+                    </div>
+                    <div style="margin-bottom:20px;">
+                        <h3 style="color:var(--text-primary);margin-bottom:10px;font-size:1.1rem;">3. The site is maintained</h3>
+                        <p>A current copyright year, no leftover <code>/hello-world/</code> demo posts, no staging URLs in the
+                           menu, no placeholder <code>href="#"</code> links, no duplicate SEO plugins fighting each other.
+                           Neglect is measurable, and Google measures it.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-bottom:50px;">
+                <h2 style="font-size:1.8rem;color:var(--text-primary);margin-bottom:20px;">Frequently Asked Questions</h2>
+                <div style="margin-top:20px;">
+                    <div style="margin-bottom:25px;">
+                        <h3 style="font-weight:700;color:var(--text-primary);font-size:1.05rem;">Is this SEO audit tool really free?</h3>
+                        <p style="color:var(--text-secondary);">Yes. Three full audits every 24 hours, no account, no credit card,
+                           no trial that quietly expires. Each free audit runs 27 checks and returns a score out of 100 plus your
+                           priority fixes.</p>
+                    </div>
+                    <div style="margin-bottom:25px;">
+                        <h3 style="font-weight:700;color:var(--text-primary);font-size:1.05rem;">Do I need to verify my domain or install a plugin?</h3>
+                        <p style="color:var(--text-secondary);">No. The audit works on any publicly reachable site. There is no DNS
+                           record, no plugin and no Search Console connection — which also means you can audit competitors.</p>
+                    </div>
+                    <div style="margin-bottom:25px;">
+                        <h3 style="font-weight:700;color:var(--text-primary);font-size:1.05rem;">How accurate is the score?</h3>
+                        <p style="color:var(--text-secondary);">Every check is a direct observation of your live HTML, headers,
+                           robots.txt and sitemap — nothing is estimated. The score itself is a weighted model we designed:
+                           critical issues like a noindex homepage cost far more than cosmetic ones. Treat the number as a
+                           priority signal, and the individual checks as the ground truth.</p>
+                    </div>
+                    <div style="margin-bottom:25px;">
+                        <h3 style="font-weight:700;color:var(--text-primary);font-size:1.05rem;">Does it audit my whole site or just the homepage?</h3>
+                        <p style="color:var(--text-secondary);">The free audit analyses your homepage in depth and probes
+                           site-wide resources — robots.txt, your XML sitemap, <code>/index.php</code>, and the URLs that commonly
+                           break. The premium audit additionally fetches and scores your About page against nine dedicated checks.</p>
+                    </div>
+                    <div style="margin-bottom:25px;">
+                        <h3 style="font-weight:700;color:var(--text-primary);font-size:1.05rem;">Can agencies white-label the report?</h3>
+                        <p style="color:var(--text-secondary);">Yes — that is a core premium feature. Add your agency name, logo,
+                           contact details and accent colour, and optionally hide SmartGen branding entirely, then deliver the PDF
+                           to your own clients.</p>
+                    </div>
+                    <div style="margin-bottom:25px;">
+                        <h3 style="font-weight:700;color:var(--text-primary);font-size:1.05rem;">Is my website data stored?</h3>
+                        <p style="color:var(--text-secondary);">Audit results are cached for six hours so a repeat scan of the same
+                           domain is instant, then discarded. We only keep your contact details if you choose to request the emailed
+                           report. See our <a href="/privacy/">Privacy Policy</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer style="margin-top:60px;padding-top:30px;border-top:2px solid var(--border,#edf2f7);text-align:center;">
+                <p style="font-style:italic;color:#0052cc;">"Most SEO tools sell you a number. We would rather hand you the
+                   list of things to fix and the order to fix them in."</p>
+                <p style="margin-top:20px;font-weight:700;color:#2563eb;">— Sayad Md Bayezid Hosan, Founder of SmartGen</p>
+            </footer>
+        </article>
+
+        <section class="related-tools-smart" style="margin: 3rem 0; padding: 2rem; background: #f8fafc; border-radius: 20px; border: 1px solid #e2e8f0;">
+            <h2 style="font-size: 1.5rem; color: #1e293b; margin-bottom: 1.5rem;">🛠️ Related Professional Tools</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <a href="/keyword-density-checker/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7;">
+                    <div style="font-size: 1.8rem;">📊</div>
+                    <div>
+                        <h3 style="margin: 0; font-size: 1rem; color: #0f172a;">Keyword Density Checker</h3>
+                        <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">SEO &amp; Content</p>
+                    </div>
+                </a>
+                <a href="/serp-preview-tool/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7;">
+                    <div style="font-size: 1.8rem;">🔍</div>
+                    <div>
+                        <h3 style="margin: 0; font-size: 1rem; color: #0f172a;">SERP Preview Tool</h3>
+                        <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">SEO &amp; Content</p>
+                    </div>
+                </a>
+                <a href="/schema-generator/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7;">
+                    <div style="font-size: 1.8rem;">🏗️</div>
+                    <div>
+                        <h3 style="margin: 0; font-size: 1rem; color: #0f172a;">Schema Generator</h3>
+                        <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Developer &amp; Technical</p>
+                    </div>
+                </a>
+                <a href="/sitemap-finder-and-downloader/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7;">
+                    <div style="font-size: 1.8rem;">🗺️</div>
+                    <div>
+                        <h3 style="margin: 0; font-size: 1rem; color: #0f172a;">Sitemap Finder</h3>
+                        <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Developer &amp; Technical</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e1e8ed; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 9999; display: none; padding: 1rem 0;">
+        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+            <div style="flex: 1; min-width: 280px;">
+                <p style="margin: 0; font-size: 0.9rem; color: #4a5568; line-height: 1.5;">
+                    We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" style="color: #0052cc; text-decoration: underline;">Privacy Policy</a>.
+                </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="/privacy/" style="font-size: 0.9rem; color: #0052cc; text-decoration: none; font-weight: 500;">Learn More About Our Privacy Policy</a>
+                <button id="accept-cookies" style="background: #0052cc; color: #ffffff; border: none; padding: 0.6rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer;">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lazy load Google Analytics on first user interaction
+        (function() {
+            let gtag_loaded = false;
+            function loadGoogleAnalytics() {
+                if (gtag_loaded) return;
+                gtag_loaded = true;
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-982HBP86V8');
+
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
+                document.head.appendChild(script);
+            }
+
+            ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
+                document.addEventListener(event, loadGoogleAnalytics, { once: true });
+            });
+        })();
+    </script>
+</body>
+</html>

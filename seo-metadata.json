@@ -301,6 +301,24 @@
         "Amortization schedule"
       ]
     },
+    "seo-audit-tool": {
+      "title": "Free SEO Audit Tool - Instant Website SEO Checker (72 Checks)",
+      "description": "Run a free SEO audit of any website in seconds. 27 free checks covering SSL, schema, E-E-A-T pages, footer trust signals and broken links, scored out of 100.",
+      "keywords": "free seo audit tool, seo audit, website seo checker, seo checker, site audit tool, seo analyzer, technical seo audit, e-e-a-t audit",
+      "ogTitle": "Free SEO Audit Tool - Instant Website SEO Checker (72 Checks)",
+      "ogDescription": "Score any website out of 100 in seconds. 27 free SEO and E-E-A-T checks, no signup required.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "BusinessApplication",
+      "features": [
+        "27 free SEO checks across 9 categories",
+        "Website health score out of 100",
+        "E-E-A-T trust signal analysis",
+        "Core Web Vitals (premium)",
+        "AI 30-day SEO roadmap (premium)",
+        "Competitor benchmark (premium)",
+        "White-label PDF report (premium)"
+      ]
+    },
     "serp-preview-tool": {
       "title": "SERP Preview Tool - Optimize Google Snippets",
       "description": "Preview how your page appears in Google search results. Optimize meta titles and descriptions for better CTR, enhancing your visibility, ...",
