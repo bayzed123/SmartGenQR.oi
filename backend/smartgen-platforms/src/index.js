@@ -21,6 +21,8 @@
  *   POST /api/audit               free audit — 27 checks, instant
  *   POST /api/audit/premium       full audit — 72 checks + CWV + AI + competitor
  *   POST /api/lead                store a lead in Google Sheets
+ *   POST /api/chat                SmartGen AI Assistant (grounded, site-scoped)
+ *   GET  /api/chat/suggestions    opening greeting + starter questions
  *   POST /api/admin/init-sheet    one-time header row (requires ADMIN_TOKEN)
  */
 
@@ -35,9 +37,12 @@ import {
   getQuota,
   consumeQuota,
   burstLimit,
+  cacheRateLimit,
   cacheReport,
   readCachedReport,
 } from './lib/quota.js';
+import { answerQuestion } from './lib/chat.js';
+import { SITE, TOOLS } from './lib/knowledge.js';
 
 const VERSION = '1.0.0';
 
@@ -86,6 +91,8 @@ async function route(url, request, env, ctx) {
         'POST /api/audit',
         'POST /api/audit/premium',
         'POST /api/lead',
+        'POST /api/chat',
+        'GET /api/chat/suggestions',
       ],
     });
   }
@@ -100,7 +107,12 @@ async function route(url, request, env, ctx) {
         pagespeed: env.ENABLE_PAGESPEED !== 'false' && Boolean(env.PAGESPEED_API_KEY),
         gemini: env.ENABLE_AI_ROADMAP !== 'false' && Boolean(env.GEMINI_API_KEY),
         sheets: Boolean(env.LEADS_SHEET_ID && env.GOOGLE_SERVICE_ACCOUNT_JSON),
+        chatbot: Boolean(env.GEMINI_API_KEY),
         paymentsEnabled: env.PAYMENTS_ENABLED === 'true',
+      },
+      knowledge: {
+        tools: TOOLS.length,
+        generatedAt: SITE.generatedAt,
       },
       freeAuditLimit: Number(env.FREE_AUDIT_LIMIT || 3),
     });
@@ -133,6 +145,29 @@ async function route(url, request, env, ctx) {
 
   if (path === '/api/lead' && request.method === 'POST') {
     return handleLead(request, env, ctx);
+  }
+
+  if (path === '/api/chat' && request.method === 'POST') {
+    return handleChat(request, env);
+  }
+
+  if (path === '/api/chat/suggestions' && request.method === 'GET') {
+    return json(
+      {
+        ok: true,
+        greeting: `Hi! I'm the SmartGen assistant. Ask me about any of our ${SITE.toolCount} free tools.`,
+        suggestions: [
+          'What tools do you have?',
+          'Is my data safe?',
+          'Do you have an SEO audit tool?',
+          'How do I compress an image?',
+        ],
+        toolCount: SITE.toolCount,
+        categories: SITE.categories,
+      },
+      200,
+      { 'Cache-Control': 'public, max-age=3600' }
+    );
   }
 
   if (path === '/api/admin/init-sheet' && request.method === 'POST') {
@@ -250,7 +285,7 @@ async function handlePremiumAudit(request, env, ctx) {
         psi,
         competitor: competitor && !competitor.error ? competitor : null,
       },
-      env.GEMINI_API_KEY
+      env
     );
     report.ai = ai.available ? ai : { ...ai, fallbackRoadmap: report.roadmap };
   } else {
@@ -267,6 +302,69 @@ async function handlePremiumAudit(request, env, ctx) {
   }
 
   return json({ ok: true, report });
+}
+
+/* ------------------------------------------------------------- chat */
+
+async function handleChat(request, env) {
+  const body = await readJson(request);
+  const message = String(body.message || '').trim();
+
+  if (!message) {
+    return json({ ok: false, error: 'Ask me something about SmartGen Tools.' }, 400);
+  }
+  if (message.length > 600) {
+    return json(
+      { ok: false, error: 'That question is a bit long — try trimming it to a sentence or two.' },
+      400
+    );
+  }
+
+  // Cache-API counters: no KV writes, so a busy chatbot cannot exhaust the
+  // free plan's daily write allowance.
+  const key = await visitorKey(request);
+  const perMinute = await cacheRateLimit(`chat-min:${key}`, 8, 60);
+  if (!perMinute.ok) {
+    return json(
+      {
+        ok: false,
+        code: 'rate_limited',
+        error: `You're going a bit fast — try again in ${perMinute.resetsInSeconds}s.`,
+      },
+      429
+    );
+  }
+
+  const perHour = await cacheRateLimit(`chat-hour:${key}`, Number(env.CHAT_HOURLY_LIMIT || 40), 3600);
+  if (!perHour.ok) {
+    return json(
+      {
+        ok: false,
+        code: 'rate_limited',
+        error: `You've reached this hour's message limit. It resets in about ${Math.ceil(
+          perHour.resetsInSeconds / 60
+        )} minutes — meanwhile, every tool is at ${SITE.tools}.`,
+      },
+      429
+    );
+  }
+
+  const history = Array.isArray(body.history)
+    ? body.history
+        .filter((t) => t && typeof t.content === 'string')
+        .map((t) => ({ role: t.role === 'assistant' ? 'assistant' : 'user', content: t.content }))
+    : [];
+
+  const result = await answerQuestion({ message, history, page: body.page }, env);
+
+  return json({
+    ok: true,
+    answer: result.answer,
+    sources: result.sources,
+    followUps: result.followUps,
+    kind: result.kind,
+    remaining: perHour.remaining,
+  });
 }
 
 /* ------------------------------------------------------------- lead */

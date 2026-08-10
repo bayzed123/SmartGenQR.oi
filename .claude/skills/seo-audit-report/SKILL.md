@@ -41,7 +41,7 @@ curl -s -X POST "$SMARTGEN_API/api/audit/premium" \
   -d '{"url":"client.com","competitorUrl":"rival.com","strategy":"mobile"}' > report.json
 ```
 
-`$SMARTGEN_API` defaults to `https://smartgen-platforms.smartgentools.workers.dev`.
+`$SMARTGEN_API` defaults to `https://smartgen-platforms.sayadmdbayezidhosan.workers.dev`.
 
 The response envelope is `{ ok, report }` — the renderer accepts either the
 envelope or the bare `report` object.

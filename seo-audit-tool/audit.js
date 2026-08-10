@@ -8,12 +8,14 @@
 
   /* ------------------------------------------------------------ config */
 
-  // Point this at your deployed Worker. Overridable per-environment with
-  // <meta name="smartgen-api" content="https://…"> in the page head.
+  // Configured once in assets/js/app.js; a page-level <meta> can override it.
   var API_BASE = (function () {
     var meta = document.querySelector('meta[name="smartgen-api"]');
-    var configured = meta && meta.getAttribute('content');
-    return (configured || 'https://smartgen-platforms.smartgentools.workers.dev').replace(/\/+$/, '');
+    var configured =
+      (meta && meta.getAttribute('content')) ||
+      window.SMARTGEN_API_BASE ||
+      'https://smartgen-platforms.sayadmdbayezidhosan.workers.dev';
+    return configured.replace(/\/+$/, '');
   })();
 
   var STATUS_ICON = { pass: '✅', warn: '⚠️', fail: '❌', skip: '➖' };

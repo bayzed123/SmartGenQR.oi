@@ -1,0 +1,143 @@
+name: Deploy SmartGen Platforms Worker
+
+# Deploys the Cloudflare Worker that powers the SEO Audit Tool and the AI
+# assistant. This is the one place GitHub secrets are legitimate: they are used
+# inside the runner to authenticate `wrangler deploy` and are never written
+# into any file the site serves.
+#
+# Required repository secrets:
+#   CLOUDFLARE_API_TOKEN   token with "Edit Cloudflare Workers" permission
+#   CLOUDFLARE_ACCOUNT_ID  your account id
+#
+# Optional — set these and the deploy will also push them into Cloudflare's
+# secret store for you, so you never have to install wrangler locally:
+#   GEMINI_API_KEY
+#   GOOGLE_SERVICE_ACCOUNT_JSON   the whole .json on one line
+#   LEADS_SHEET_ID
+#   PAGESPEED_API_KEY
+#   ADMIN_TOKEN
+#   PREMIUM_UNLOCK_SECRET
+#
+# These are safe as GitHub secrets because they are only ever read inside this
+# runner and piped straight into `wrangler secret put`. They are never written
+# into a file the website serves — that distinction is the whole point. An
+# unset secret is skipped, leaving whatever Cloudflare already holds.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/smartgen-platforms/**'
+      - '.github/workflows/deploy-worker.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-smartgen-platforms
+  cancel-in-progress: false
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install
+        working-directory: backend/smartgen-platforms
+        run: npm install --no-audit --no-fund
+
+      - name: Run tests
+        working-directory: backend/smartgen-platforms
+        run: npm test
+
+      - name: Verify the chatbot knowledge index is in sync
+        run: |
+          node scripts/build-chatbot-knowledge.js
+          if ! git diff --quiet -- backend/smartgen-platforms/src/knowledge/site-index.js; then
+            echo "::error::The chatbot knowledge index is stale. Run 'npm run build-chatbot' and commit the result."
+            git diff --stat -- backend/smartgen-platforms/src/knowledge/site-index.js
+            exit 1
+          fi
+          echo "Knowledge index matches the site."
+
+  deploy:
+    name: Deploy
+    needs: test
+    runs-on: ubuntu-latest
+    # Skip cleanly on forks, which have no access to the secrets.
+    if: github.repository == 'bayzed123/SmartGenQR.oi'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install
+        working-directory: backend/smartgen-platforms
+        run: npm install --no-audit --no-fund
+
+      - name: Deploy to Cloudflare
+        working-directory: backend/smartgen-platforms
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler deploy
+
+      # Idempotent: re-running simply re-sets the same values. Secrets that are
+      # not configured in GitHub are skipped, so this never clears anything.
+      - name: Sync application secrets into Cloudflare
+        working-directory: backend/smartgen-platforms
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          LEADS_SHEET_ID: ${{ secrets.LEADS_SHEET_ID }}
+          PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          PREMIUM_UNLOCK_SECRET: ${{ secrets.PREMIUM_UNLOCK_SECRET }}
+        run: |
+          set -euo pipefail
+
+          sync() {
+            name="$1"
+            value="$(printenv "$name" || true)"
+            if [ -z "$value" ]; then
+              echo "· $name — not set in GitHub secrets, leaving Cloudflare as-is"
+              return 0
+            fi
+            # printf, not echo: no trailing newline gets stored with the value.
+            printf '%s' "$value" | npx wrangler secret put "$name" >/dev/null 2>&1
+            echo "✓ $name — stored in Cloudflare"
+          }
+
+          sync GEMINI_API_KEY
+          sync GOOGLE_SERVICE_ACCOUNT_JSON
+          sync LEADS_SHEET_ID
+          sync PAGESPEED_API_KEY
+          sync ADMIN_TOKEN
+          sync PREMIUM_UNLOCK_SECRET
+
+      - name: Smoke test the deployment
+        env:
+          # Override with a repository variable if you move the Worker to a
+          # custom domain (Settings → Secrets and variables → Actions → Variables).
+          WORKER_URL: ${{ vars.WORKER_URL || 'https://smartgen-platforms.sayadmdbayezidhosan.workers.dev' }}
+        run: |
+          echo "Checking $WORKER_URL/api/health"
+          for i in 1 2 3 4 5; do
+            body=$(curl -sS --max-time 20 "$WORKER_URL/api/health" || true)
+            if echo "$body" | grep -q '"ok":true'; then
+              echo "$body"
+              exit 0
+            fi
+            echo "Health check attempt $i failed, retrying in $((i * 4))s…"
+            sleep $((i * 4))
+          done
+          echo "::error::The Worker did not report healthy after deploying."
+          exit 1

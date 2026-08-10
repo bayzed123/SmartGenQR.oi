@@ -1,290 +1,195 @@
-# SmartGen FAQ Chatbot - Implementation Guide
-
-## Overview
-
-The SmartGen FAQ Chatbot is a **client-side, privacy-first intelligent assistant** that helps users find answers to frequently asked questions about SmartGen. It runs entirely in the browser with no server-side processing, maintaining the platform's commitment to user privacy and data security.
-
-## Features
-
-✨ **Smart Features:**
-- **Intelligent Matching**: Uses advanced keyword matching and similarity algorithms to find the most relevant FAQ answers
-- **Dynamic Link Integration**: Automatically fetches and parses `sitemap.xml` to provide up-to-date links to tools, articles, and contact pages.
-- **Fallback Responses**: Provides contextual suggestions when exact matches aren't found
-- **Conversation History**: Tracks conversation history for debugging and improvement
-- **Quick Replies**: Offers common questions as quick-reply buttons for faster navigation
-- **Dynamic Theme Support**: Automatically adapts to light and dark themes
-- **Fully Responsive**: Works seamlessly on desktop, tablet, and mobile devices, with improved mobile UI display.
-- **Zero Dependencies**: Pure JavaScript, no external libraries required
-- **Privacy-First**: All processing happens locally; no data is sent to servers
-
-## File Structure
-
-```
-SmartGenQR.oi/
-├── data/
-│   └── faq.json                 # FAQ data file
-├── assets/
-│   ├── js/
-│   │   └── chatbot.js           # Main chatbot logic
-│   └── css/
-│       └── chatbot.css          # Chatbot styling
-└── index.html                   # Updated with chatbot links
-└── sitemap.xml                  # Used for dynamic link integration
-```
-
-## Components
-
-### 1. FAQ Data (`data/faq.json`)
-
-Stores all frequently asked questions and answers in a structured JSON format.
-
-**Structure:**
-```json
-{
-  "faqs": [
-    {
-      "id": 1,
-      "category": "General",
-      "question": "What is SmartGen?",
-      "answer": "SmartGen is an all-in-one digital and web utility platform..."
-    }
-  ]
-}
-```
-
-**Fields:**
-- `id`: Unique identifier for the FAQ
-- `category`: Category for grouping (General, Privacy, Tools, Technical, etc.)
-- `question`: The FAQ question
-- `answer`: The comprehensive answer
-
-### 2. Chatbot Logic (`assets/js/chatbot.js`)
-
-The main JavaScript file containing the `SmartGenChatbot` class with the following methods:
-
-**Key Methods:**
-
-- **`init()`**: Initializes the chatbot, loads FAQ data, loads sitemap data, creates UI, and attaches event listeners
-- **`loadFAQ()`**: Asynchronously loads FAQ data from `faq.json`
-- **`loadSitemap()`**: Asynchronously fetches and parses `sitemap.xml` to extract URLs and titles.
-- **`extractTitleFromPath(path)`**: Extracts a user-friendly title from a given URL path.
-- **`createChatbotUI()`**: Dynamically creates the chatbot HTML structure
-- **`attachEventListeners()`**: Binds event handlers for user interactions
-- **`findBestAnswer(userQuery)`**: Searches FAQs and sitemap data, returning the most relevant answer or link.
-- **`calculateWordSimilarity(query, text)`**: Calculates relevance score based on word matching
-- **`generateFallbackResponse(userQuery)`**: Provides contextual suggestions when no exact match is found
-- **`addMessageToChat(message, sender)`**: Adds messages to the chat display, supporting HTML for links.
-
-**Matching Algorithm:**
-
-The chatbot uses a multi-level matching strategy:
-
-1. **Exact Match** (Score: 100): Query exactly matches a question
-2. **Full Word Match** (Score: 80): Question contains all query words
-3. **Reverse Word Match** (Score: 70): Query contains all question words
-4. **Partial Word Matching** (Score: 0-60): Calculates similarity based on word overlap
-5. **Category Bonus** (Score: +10): Adds points if category matches query
-6. **Sitemap Link Matching**: Searches sitemap data for relevant page titles or paths.
-
-If no strong FAQ match is found, the chatbot prioritizes relevant sitemap links. If neither provides a strong match, it provides contextual suggestions based on query keywords.
-
-### 3. Chatbot Styling (`assets/css/chatbot.css`)
-
-Comprehensive CSS styling that:
-- Matches SmartGen's design system (colors, typography, spacing)
-- Supports both light and dark themes
-- Provides smooth animations and transitions
-- Includes responsive design for all screen sizes, with specific fixes for mobile display to ensure the chatbot window opens correctly within the viewport.
-- Follows accessibility best practices
-
-**Key Components:**
-- Floating toggle button with animation
-- Expandable chat window with smooth transitions
-- Styled message bubbles (user vs. bot)
-- Quick reply buttons
-- Input field with send button
-- Scrollable message container
-
-## How to Use
-
-### For Users
-
-1. **Open the Chatbot**: Click the floating chat button (💬) in the bottom-right corner
-2. **Ask a Question**: Type your question in the input field
-3. **Send Message**: Press Enter or click the send button (➤)
-4. **Quick Replies**: Click any quick-reply button to ask common questions
-5. **Close Chat**: Click the close button (✕) to minimize the chatbot
-
-### For Developers
-
-#### Adding New FAQs
-
-1. Open `data/faq.json`
-2. Add a new object to the `faqs` array:
-
-```json
-{
-  "id": 21,
-  "category": "Your Category",
-  "question": "Your question here?",
-  "answer": "Your comprehensive answer here."
-}
-```
-
-3. Save the file. The chatbot will automatically load the new FAQ on the next page refresh.
-
-#### Customizing Appearance
-
-Edit `assets/css/chatbot.css` to modify:
-- Colors: Update CSS variables in `.smartgen-chatbot-container`
-- Size: Adjust `.chatbot-window` width/height
-- Position: Modify `.chatbot-widget` bottom/right values
-- Animations: Update `@keyframes` sections
-
-#### Modifying Chatbot Behavior
-
-Edit `assets/js/chatbot.js` to:
-- Adjust matching algorithm thresholds in `findBestAnswer()`
-- Customize fallback responses in `generateFallbackResponse()`
-- Add new event listeners in `attachEventListeners()`
-- Change initial greeting message in `createChatbotUI()`
-
-## Matching Algorithm Details
-
-### Example Matching Scenarios
-
-**Scenario 1: Exact Match (FAQ)**
-- User Query: "What is SmartGen?"
-- Best Match: FAQ with question "What is SmartGen?"
-- Score: 100 ✓ (Answer returned)
-
-**Scenario 2: Partial Match (FAQ)**
-- User Query: "Is data safe?"
-- Best Match: FAQ with question "Is my data safe on SmartGen?"
-- Score: 75 ✓ (Answer returned)
-
-**Scenario 3: Sitemap Link Match (Tool)**
-- User Query: "QR code generator"
-- Best Match: Sitemap entry for `/qr-generator/`
-- Response: "I found something related: [QR Generator](https://smartgentools.com/qr-generator/). Does this help?"
-
-**Scenario 4: Sitemap Link Match (Blog Post)**
-- User Query: "latest blog about sitemaps"
-- Best Match: Sitemap entry for `/blog/the-ultimate-guide-to-sitemaps-how-to-create-optimize-and-boost-your-seo/`
-- Response: "I found something related: [The Ultimate Guide to Sitemaps](https://smartgentools.com/blog/the-ultimate-guide-to-sitemaps-how-to-create-optimize-and-boost-your-seo/). Does this help?"
-
-**Scenario 5: Keyword-Based Fallback (Contact Page)**
-- User Query: "how to contact you"
-- Best Match: Sitemap entry for `/contact/`
-- Response: "You can reach us through our [Contact Us page](https://smartgentools.com/contact/)."
-
-## Robustness Features
-
-### Error Handling
-
-- **FAQ Loading Failure**: If `faq.json` fails to load, the chatbot displays a helpful error message
-- **Sitemap Loading Failure**: If `sitemap.xml` fails to load, the chatbot continues with available FAQ data.
-- **Empty Queries**: Prevents sending empty messages
-- **Missing Data**: Provides fallback responses when FAQs or sitemap links are unavailable
-- **Network Issues**: Gracefully handles network errors during data loading
-
-### Fallback Responses
-
-The chatbot intelligently generates contextual suggestions based on query keywords:
-
-- **Tool-related queries**: Suggests exploring the Tools directory
-- **Cost/pricing queries**: Confirms SmartGen is 100% free
-- **Privacy/security queries**: Explains the privacy-first architecture
-- **Account queries**: Clarifies no account is needed
-- **Bug/error queries**: Directs to GitHub for issue reporting
-- **Contribution queries**: Explains the open-source contribution process
-- **Mobile/device queries**: Confirms responsive design support
-- **Offline queries**: Explains offline functionality
-- **Default**: Provides a generic helpful response
-
-### Performance Optimization
-
-- **Lazy Loading**: FAQ and sitemap data are loaded asynchronously
-- **Efficient Matching**: Uses optimized string comparison algorithms
-- **DOM Efficiency**: Minimal DOM manipulation
-- **CSS Optimization**: Uses CSS variables for dynamic theming
-- **No External Dependencies**: Pure JavaScript for faster loading
-
-## Browser Compatibility
-
-- Chrome/Edge: ✓ Full support
-- Firefox: ✓ Full support
-- Safari: ✓ Full support
-- Opera: ✓ Full support
-- IE 11: ✗ Not supported (uses ES6+ features)
-
-## Accessibility
-
-- **Keyboard Navigation**: Full keyboard support (Tab, Enter, Escape)
-- **ARIA Labels**: Proper labels for screen readers
-- **Focus Management**: Clear focus indicators
-- **Color Contrast**: Meets WCAG AA standards
-- **Mobile Friendly**: Touch-friendly button sizes
-
-## Troubleshooting
-
-### Chatbot Not Appearing
-
-1. Check browser console for errors (F12 → Console tab)
-2. Verify `chatbot.js` and `chatbot.css` are properly linked in `index.html`
-3. Ensure `data/faq.json` and `sitemap.xml` exist and are accessible
-4. Check that JavaScript is enabled in browser
-
-### Chatbot Not Responding
-
-1. Verify `data/faq.json` and `sitemap.xml` are in the correct locations
-2. Check JSON and XML file syntax (use online validators)
-3. Open browser console to see detailed error messages
-4. Try refreshing the page
-
-### Styling Issues
-
-1. Check if CSS file is loading (Network tab in DevTools)
-2. Verify CSS variables are properly defined
-3. Check for CSS conflicts with existing styles
-4. Clear browser cache and refresh
-5. **Mobile Display**: Ensure the chatbot window is not cut off on smaller screens. Adjust `assets/css/chatbot.css` media queries if needed.
-
-### Matching Not Working
-
-1. Verify FAQ data and sitemap data are loaded (check Network tab)
-2. Try rephrasing questions differently
-3. Check if keywords exist in FAQ data or sitemap titles/paths
-4. Review the matching algorithm logic in `chatbot.js`
-
-## Future Enhancements
-
-Potential improvements for future versions:
-
-- **AI-Powered Matching**: Integrate with LLM for better understanding
-- **Analytics**: Track common questions and user satisfaction
-- **Multi-Language Support**: Translate FAQs to multiple languages
-- **Sentiment Analysis**: Detect user frustration and escalate appropriately
-- **Learning System**: Improve matching based on user feedback
-- **Integration**: Connect with support tickets or email systems
-- **Voice Support**: Add voice input/output capabilities
-- **Caching**: Implement service workers for offline FAQ and sitemap access
-
-## Support
-
-For issues, suggestions, or contributions:
-
-1. **Report Issues**: Open an issue on GitHub
-2. **Suggest Features**: Use the "Request a Tool" page
-3. **Contribute**: Submit pull requests with improvements
-4. **Contact**: Use the Contact Us page for direct communication
-
-## License
-
-This chatbot is part of SmartGen and follows the same open-source license as the main project.
+# SmartGen AI Assistant — Implementation Guide
+
+The chat widget that answers visitors' questions about SmartGen Tools.
+
+It is **grounded**: every answer is built from the real tool catalogue, the FAQ
+and the sitemap, and every link it hands out points at a page that actually
+exists. It is **scoped**: it answers questions about SmartGen and politely
+declines everything else. And it is **safe**: the AI key lives in Cloudflare,
+never in the browser.
 
 ---
 
-**Version**: 1.1.0  
-**Last Updated**: July 2026  
-**Maintained by**: SmartGen Team
+## Architecture
+
+```
+Browser                       Cloudflare Worker                Google
+┌──────────────────┐          ┌─────────────────────┐          ┌──────────┐
+│ assets/js/       │  POST    │ /api/chat           │          │ Gemini   │
+│   chatbot.js     │─────────▶│  ├ rate limit       │─────────▶│ 2.0      │
+│                  │          │  ├ retrieval        │          │ Flash    │
+│ no API key       │◀─────────│  ├ scope gate       │◀─────────│          │
+│ ever             │  answer  │  └ id → URL resolve │          └──────────┘
+└──────────────────┘  +links  └─────────────────────┘
+                                        │
+                                        ▼
+                              src/knowledge/site-index.js
+                              (126 tools · 90 FAQs · 110 pages)
+```
+
+### Why the key moved
+
+Earlier versions of `chatbot.js` held a placeholder for a build step to
+substitute the Gemini key into. On a static GitHub Pages site that means the
+key ships inside a JavaScript file every visitor can download and reuse. There
+is no way to hide a key in client-side code — so the model call moved behind
+the Worker, where `GEMINI_API_KEY` is a Cloudflare secret.
+
+**Never put an API key in this repository or in GitHub Actions secrets for the
+frontend.** See the table in `SEO_AUDIT_TOOL.md` § "Where the API keys live".
+
+---
+
+## How an answer is produced
+
+1. **Rate limit.** 8 messages/minute and 40/hour per visitor, counted in the
+   Cloudflare Cache API — no KV writes, so the chatbot cannot exhaust the free
+   plan's daily write allowance.
+
+2. **Retrieval.** The question is tokenised (stop words removed, light
+   stemming, a synonym map for everyday phrasings like "shrink" → "compress")
+   and scored against every tool, FAQ and key page with a field-weighted TF-IDF.
+
+3. **Scope gate.** Genuine SmartGen questions score 69–800 on this corpus;
+   off-topic ones top out near 39. Anything below a score of 50, or with less
+   than 34% of its words present in the index, is declined **before** any model
+   call — which also means off-topic traffic costs nothing.
+
+4. **Shortcuts.** Two kinds of question never reach the model:
+   - An exact FAQ match is returned verbatim.
+   - "What tools do you have?" gets a generated catalogue tour.
+
+5. **Grounded generation.** Only the retrieved entries go into the prompt. The
+   model is told to reference tools **by id**, never to write a URL. The Worker
+   then resolves those ids against the real catalogue — an id the model
+   invented resolves to nothing and is dropped. This is why the bot cannot
+   hallucinate a tool or a link.
+
+6. **Graceful degradation.** If Gemini is down or unconfigured, retrieval alone
+   still answers "which tool do I need?" properly. The visitor never sees an
+   error where an answer belongs.
+
+---
+
+## Files
+
+| Path | Role |
+|---|---|
+| `assets/js/chatbot.js` | The widget. No key, no secrets. Calls the Worker. |
+| `assets/css/chatbot.css` | Styling, including the source cards and dark mode. |
+| `data/faq.json` | 90 policy/general Q&A entries — the human-written knowledge. |
+| `assets/js/search-data.js` | The tool catalogue (shared with site search). |
+| `scripts/build-chatbot-knowledge.js` | Compiles the two above + sitemap into the Worker's index. |
+| `backend/smartgen-platforms/src/knowledge/site-index.js` | Generated. Do not edit. |
+| `backend/smartgen-platforms/src/lib/knowledge.js` | Retrieval and grounding. |
+| `backend/smartgen-platforms/src/lib/chat.js` | Scope gate, prompt, id resolution. |
+| `backend/smartgen-platforms/test/chat.test.js` | 12 tests covering retrieval, scoping and grounding. |
+
+The widget loads **site-wide**, lazily: `assets/js/app.js` injects it once the
+browser is idle or on the first interaction, so pages where nobody opens the
+chat pay nothing for it at load time.
+
+---
+
+## Keeping the knowledge current
+
+After adding a tool, publishing pages, or editing the FAQ:
+
+```bash
+npm run build-chatbot     # regenerates the Worker's index
+git add backend/smartgen-platforms/src/knowledge/site-index.js
+```
+
+CI fails the build if the index is stale, so this cannot silently drift. It
+also runs as part of `npm run build`.
+
+Adding a tool to `assets/js/search-data.js` is enough — the chatbot picks it up
+from there, so there is no second catalogue to maintain.
+
+### Adding an FAQ
+
+Append to `data/faq.json`:
+
+```json
+{
+  "id": 91,
+  "category": "Tools",
+  "question": "Can I use SmartGen tools offline?",
+  "answer": "Most tools run entirely in your browser, so once the page has loaded they keep working without a connection."
+}
+```
+
+Keep the question phrased the way a visitor would type it — exact matches are
+returned verbatim, without a model call, which is both faster and free.
+
+---
+
+## Teaching it new vocabulary
+
+If visitors ask for something using words the catalogue does not contain, add a
+synonym in `backend/smartgen-platforms/src/lib/knowledge.js`:
+
+```js
+const SYNONYMS = {
+  shrink: ['compressor', 'compress'],
+  // "make my picture smaller" should find the Image Compressor
+};
+```
+
+Then add the phrasing to the retrieval test in `test/chat.test.js` so it stays
+working.
+
+---
+
+## Tuning the scope gate
+
+`MIN_SCORE` and `MIN_COVERAGE` in `src/lib/chat.js` decide what counts as a
+SmartGen question.
+
+- Bot refusing legitimate questions → lower `MIN_SCORE`, or add the phrasing to
+  `SITE_INTENT`.
+- Bot answering unrelated questions → raise `MIN_SCORE`.
+
+Both directions are covered by tests; run `npm test` after changing them.
+
+---
+
+## Configuration
+
+| Setting | Where | Default |
+|---|---|---|
+| Worker URL | `window.SMARTGEN_API_BASE` in `assets/js/app.js`; a page `<meta name="smartgen-api">` overrides it | `https://smartgen-platforms.sayadmdbayezidhosan.workers.dev` |
+| `CHAT_HOURLY_LIMIT` | `wrangler.toml` `[vars]` | 40 |
+| `CHAT_MODEL` | `wrangler.toml` `[vars]` | `gemini-flash-lite-latest` |
+| `GEMINI_API_KEY` | **Cloudflare secret** | — |
+
+### Choosing the model
+
+Free-tier quota, not capability, is what decides whether the bot answers.
+`gemini-2.0-flash` and `gemini-2.0-flash-lite` return `RESOURCE_EXHAUSTED` on a
+new free project; the `-latest` aliases do not, and they also survive model
+retirements. If the bot starts falling back to retrieval-only, check the quota
+before assuming a bug:
+
+```bash
+curl -H "x-goog-api-key: $GEMINI_API_KEY" \
+  https://generativelanguage.googleapis.com/v1beta/models
+```
+
+Then set `CHAT_MODEL` to a model that responds — no code change needed.
+
+Without `GEMINI_API_KEY` the assistant still runs in retrieval-only mode: it
+matches tools and answers FAQs, it just does not write prose.
+
+---
+
+## Testing
+
+```bash
+cd backend/smartgen-platforms && npm test
+```
+
+Covers: everyday phrasings resolving to the right tool, ranking, every
+retrieved URL being real, off-topic refusal, on-topic rescue, FAQ shortcuts,
+oversized input, and the guarantee that nothing outside the catalogue can reach
+the prompt.

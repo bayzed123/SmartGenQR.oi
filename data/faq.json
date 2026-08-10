@@ -300,7 +300,6 @@
     "question": "How do I ensure my QR code is scannable?",
     "answer": "Keep your input data concise and ensure good contrast between your QR code and the background. Our live preview at https://smartgentools.com/qr-generator/ helps you verify the output instantly."
   },
-  [
   {
     "id": 51,
     "category": "QR Generator",
@@ -480,7 +479,7 @@
     "category": "JSON Formatter",
     "question": "Where can I access the JSON Formatter & Validator?",
     "answer": "You can access the tool anytime at https://smartgentools.com/json-formatter-validator/ for secure and instant JSON processing."
-  },[
+  },
   {
     "id": 81,
     "category": "JSON Formatter",
@@ -542,3 +541,4 @@
     "answer": "Our mission is to empower digital professionals with high-performance, secure, and privacy-focused tools that make the web more efficient for everyone."
   }
 ]
+}

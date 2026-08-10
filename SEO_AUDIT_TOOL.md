@@ -83,9 +83,16 @@ The API base lives in **one place** — the `<meta name="smartgen-api">` tag in
 | `src/lib/pagespeed.js` | Core Web Vitals from PageSpeed Insights |
 | `src/lib/gemini.js` | AI executive summary + 30-day roadmap |
 | `src/lib/sheets.js` | Service-account JWT → Sheets API row append |
-| `src/lib/quota.js` | Anonymous per-visitor quota, burst brake, report cache |
-| `test/registry.test.js` | 13 tests: registry invariants, scoring, roadmap, SSRF guard |
+| `src/lib/quota.js` | Anonymous per-visitor quota, burst brake, report cache, Cache-API rate limiter |
+| `src/lib/chat.js` | AI assistant: scope gate, grounded prompt, tool-id resolution |
+| `src/lib/knowledge.js` | TF-IDF retrieval over tools, FAQs and pages |
+| `src/knowledge/site-index.js` | Generated catalogue — `npm run build-chatbot` |
+| `test/registry.test.js` | 15 tests: registry invariants, scoring, roadmap, competitor fairness, SSRF guard |
+| `test/chat.test.js` | 12 tests: retrieval accuracy, scoping, grounding guarantees |
 | `scripts/mint-unlock-token.mjs` | Mints premium unlock tokens |
+
+The same Worker serves the site-wide AI assistant — see `CHATBOT_README.md`.
+One deployment, one Gemini key, two products.
 
 ### Report deliverable — `.claude/skills/seo-audit-report/`
 
@@ -105,6 +112,9 @@ The API base lives in **one place** — the `<meta name="smartgen-api">` tag in
 | `sitemap.xml` | URL at priority 0.9 |
 | `llms.txt` | Listed under SEO Tools |
 | `seo-metadata.json` | Title/description/keywords/features |
+| `assets/js/app.js` | Lazy-loads the AI assistant on every page |
+| `scripts/build-chatbot-knowledge.js` | Compiles the assistant's knowledge index |
+| `.github/workflows/deploy-worker.yml` | Tests + deploys the Worker on push to main |
 
 ---
 
@@ -246,7 +256,49 @@ curl -X POST "$API/api/admin/init-sheet" -H "Authorization: Bearer $ADMIN_TOKEN"
 
 ---
 
-## 7. Deploy
+## 7. Where the API keys live — Cloudflare, never GitHub
+
+This repository is **public** and the frontend is a **static page** on GitHub
+Pages. Anything GitHub holds — a repo file *or* an Actions secret — ends up in a
+file the browser downloads, because for a static site "build time" means
+"written into the file". So every credential lives in Cloudflare's encrypted
+secret store, and the Worker reads it at runtime.
+
+| Value | Where | Why |
+|---|---|---|
+| `GOOGLE_SERVICE_ACCOUNT_JSON` | Cloudflare secret | write access to your Sheet |
+| `LEADS_SHEET_ID` | Cloudflare secret | identifies your leads spreadsheet |
+| `PAGESPEED_API_KEY` | Cloudflare secret | billable quota |
+| `GEMINI_API_KEY` | Cloudflare secret | billable quota; also powers the AI assistant |
+| `ADMIN_TOKEN` | Cloudflare secret | guards `/api/admin/*` |
+| `PREMIUM_UNLOCK_SECRET` | Cloudflare secret | forges premium access if leaked |
+| `ALLOWED_ORIGINS`, `FREE_AUDIT_LIMIT`, `PAYMENTS_ENABLED`, `PREMIUM_PRICE_USD`, `LEADS_SHEET_TAB`, `CHAT_HOURLY_LIMIT` | `wrangler.toml` `[vars]` (committed) | not secret — config the public can see without harm |
+| The Worker URL | GitHub, in `seo-audit-tool/index.html` | public by design; every visitor's browser calls it |
+| `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` | **GitHub Actions secrets** | the one legitimate GitHub use — they authenticate `wrangler deploy` inside the CI runner and never reach a published file |
+
+The Worker never returns a secret to the browser. The frontend knows exactly one
+thing about the backend: its URL.
+
+**The distinction that matters:** a secret used *inside a CI job* is fine — the
+runner is a server. A secret substituted *into a file the site serves* is not,
+because a static site has no server to keep it on.
+
+That gives two safe ways to get the application secrets into Cloudflare:
+
+1. **Directly** — `npx wrangler secret put NAME` from your machine.
+2. **Through CI** — add the same names as GitHub Actions secrets and
+   `deploy-worker.yml` pipes them into `wrangler secret put` on every deploy.
+   Nothing is written to disk and nothing reaches the published site.
+
+Route 2 needs no local tooling, so it is the easier path. What is never safe is
+substituting a key into `chatbot.js`, `audit.js` or any other served file.
+
+If a key is ever committed by accident, **rotate it** — deleting the commit is
+not enough, public repos are scraped within minutes.
+
+---
+
+## 8. Deploy
 
 ### Backend
 
@@ -260,14 +312,13 @@ npx wrangler login
 #   SMARTGEN_AUDIT_KV_preview  db7cc5a006634b71bb4f7d15a082f4e5
 
 npx wrangler secret put GOOGLE_SERVICE_ACCOUNT_JSON   # the whole .json, one line
+npx wrangler secret put LEADS_SHEET_ID                # id from the Google Sheet URL
 npx wrangler secret put PAGESPEED_API_KEY
 npx wrangler secret put GEMINI_API_KEY
 npx wrangler secret put ADMIN_TOKEN
 npx wrangler secret put PREMIUM_UNLOCK_SECRET
 
-# Set LEADS_SHEET_ID in wrangler.toml → [vars]
-
-npm test          # 13 tests must pass
+npm test          # 15 tests must pass
 npx wrangler deploy
 ```
 
@@ -291,7 +342,7 @@ curl -s -X POST "$API/api/audit" -H 'Content-Type: application/json' \
 
 ---
 
-## 8. Turning on payments
+## 9. Turning on payments
 
 Everything paid is behind one switch. Until you flip it, `/api/audit/premium`
 still requires a signed unlock token, so it is never open to the internet.
@@ -318,7 +369,7 @@ server-side, so the frontend cannot be edited into a cheaper checkout.
 
 ---
 
-## 9. Cost & limits
+## 10. Cost & limits
 
 | Service | Free allowance | Expected use | Headroom |
 |---|---|---|---|
@@ -338,7 +389,7 @@ Watch it live with `npx wrangler tail`.
 
 ---
 
-## 10. Security
+## 11. Security
 
 - **SSRF** — every target URL and every redirect hop is re-validated. Loopback,
   RFC1918, CGNAT, link-local (including the `169.254.169.254` cloud metadata
@@ -357,7 +408,7 @@ Watch it live with `npx wrangler tail`.
 
 ---
 
-## 11. Launch checklist
+## 12. Launch checklist
 
 - [ ] `npm test` passes in `backend/smartgen-platforms`
 - [ ] Worker deployed; `/api/health` shows every integration `true`
@@ -378,13 +429,14 @@ Watch it live with `npx wrangler tail`.
 
 ১. **KV তৈরি হয়ে গেছে** — `wrangler.toml`-এ id বসানো আছে, কিছু করতে হবে না।
 
-২. **সিক্রেট সেট করুন** (`backend/smartgen-platforms` ফোল্ডার থেকে):
-   `GOOGLE_SERVICE_ACCOUNT_JSON`, `PAGESPEED_API_KEY`, `GEMINI_API_KEY`,
-   `ADMIN_TOKEN`, `PREMIUM_UNLOCK_SECRET` — সব `npx wrangler secret put <NAME>` দিয়ে।
+২. **সিক্রেট সেট করুন — শুধু Cloudflare-এ, GitHub-এ কখনো না।** রিপো public আর
+   ফ্রন্টএন্ড static, তাই GitHub যা জানে তা ভিজিটরও ডাউনলোড করতে পারে।
+   `backend/smartgen-platforms` ফোল্ডার থেকে `npx wrangler secret put <NAME>` দিয়ে:
+   `GOOGLE_SERVICE_ACCOUNT_JSON`, `LEADS_SHEET_ID`, `PAGESPEED_API_KEY`,
+   `GEMINI_API_KEY`, `ADMIN_TOKEN`, `PREMIUM_UNLOCK_SECRET`।
 
-৩. **Google Sheet** তৈরি করে তার id `wrangler.toml`-এর `LEADS_SHEET_ID`-তে বসান,
-   আর service account-এর `client_email`-কে ওই sheet-এ **Editor** হিসেবে share করুন।
-   এই share না করলে Sheets API 403 দেবে।
+৩. **Google Sheet** তৈরি করে service account-এর `client_email`-কে ওই sheet-এ
+   **Editor** হিসেবে share করুন। এই share না করলে Sheets API 403 দেবে।
 
 ৪. **Deploy**: `npx wrangler deploy` → যে URL পাবেন সেটি
    `seo-audit-tool/index.html`-এর `<meta name="smartgen-api">`-এ বসিয়ে push করুন।

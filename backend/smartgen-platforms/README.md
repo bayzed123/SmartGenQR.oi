@@ -57,6 +57,31 @@ $5/month lifts it — nothing in the code needs to change.
 
 ---
 
+## Where each value lives
+
+**Every API key goes in Cloudflare. None go in GitHub.** This repository is
+public and the frontend is a static page on GitHub Pages, so anything GitHub
+holds — a repo file *or* an Actions secret — ends up in a file the browser
+downloads. GitHub Actions secrets only help at build time, and for a static
+site "build time" means "written into the file".
+
+| Value | Where | Why |
+|---|---|---|
+| `GOOGLE_SERVICE_ACCOUNT_JSON` | Cloudflare secret | write access to your Sheet |
+| `LEADS_SHEET_ID` | Cloudflare secret | identifies your leads spreadsheet |
+| `PAGESPEED_API_KEY` | Cloudflare secret | billable quota |
+| `GEMINI_API_KEY` | Cloudflare secret | billable quota |
+| `ADMIN_TOKEN` | Cloudflare secret | guards `/api/admin/*` |
+| `PREMIUM_UNLOCK_SECRET` | Cloudflare secret | forges premium access if leaked |
+| `ALLOWED_ORIGINS`, `FREE_AUDIT_LIMIT`, `PAYMENTS_ENABLED`, `PREMIUM_PRICE_USD`, `LEADS_SHEET_TAB` | `wrangler.toml` `[vars]` (committed) | not secret — config the public can see without harm |
+| The Worker URL | GitHub, in `seo-audit-tool/index.html` | public by design; every visitor's browser calls it |
+
+The Worker never returns a secret to the browser. The frontend only ever knows
+one thing about the backend: its URL.
+
+If you accidentally commit a key, rotate it — deleting the commit is not enough,
+public repos are scraped within minutes.
+
 ## Deploy
 
 ```bash
@@ -71,16 +96,15 @@ npx wrangler login
 #      SMARTGEN_AUDIT_KV_preview  db7cc5a006634b71bb4f7d15a082f4e5
 #    (Nothing to do — listed here so you can verify in the dashboard.)
 
-# 3. Set the secrets
+# 3. Set the secrets — Cloudflare only, never GitHub (see below)
 npx wrangler secret put GOOGLE_SERVICE_ACCOUNT_JSON   # paste the whole .json on one line
+npx wrangler secret put LEADS_SHEET_ID                # id from the Google Sheet URL
 npx wrangler secret put PAGESPEED_API_KEY
 npx wrangler secret put GEMINI_API_KEY
 npx wrangler secret put ADMIN_TOKEN                   # any long random string
 npx wrangler secret put PREMIUM_UNLOCK_SECRET         # any long random string
 
-# 4. Put your spreadsheet id in wrangler.toml → [vars] LEADS_SHEET_ID
-
-# 5. Ship it
+# 4. Ship it
 npx wrangler deploy
 ```
 
