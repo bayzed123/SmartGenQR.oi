@@ -4,9 +4,10 @@
   "description": "Premium automated blog builder for SmartGen",
   "main": "scripts/build-blog.js",
   "scripts": {
-    "build": "npm run build-blog && npm run build-docs",
+    "build": "npm run build-blog && npm run build-docs && npm run build-chatbot",
     "build-docs": "node scripts/docs-build.js",
-    "build-blog": "node scripts/build-blog.js"
+    "build-blog": "node scripts/build-blog.js",
+    "build-chatbot": "node scripts/build-chatbot-knowledge.js"
   },
   "dependencies": {
     "front-matter": "^4.0.2",

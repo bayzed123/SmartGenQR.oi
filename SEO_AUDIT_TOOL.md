@@ -83,9 +83,16 @@ The API base lives in **one place** — the `<meta name="smartgen-api">` tag in
 | `src/lib/pagespeed.js` | Core Web Vitals from PageSpeed Insights |
 | `src/lib/gemini.js` | AI executive summary + 30-day roadmap |
 | `src/lib/sheets.js` | Service-account JWT → Sheets API row append |
-| `src/lib/quota.js` | Anonymous per-visitor quota, burst brake, report cache |
+| `src/lib/quota.js` | Anonymous per-visitor quota, burst brake, report cache, Cache-API rate limiter |
+| `src/lib/chat.js` | AI assistant: scope gate, grounded prompt, tool-id resolution |
+| `src/lib/knowledge.js` | TF-IDF retrieval over tools, FAQs and pages |
+| `src/knowledge/site-index.js` | Generated catalogue — `npm run build-chatbot` |
 | `test/registry.test.js` | 15 tests: registry invariants, scoring, roadmap, competitor fairness, SSRF guard |
+| `test/chat.test.js` | 12 tests: retrieval accuracy, scoping, grounding guarantees |
 | `scripts/mint-unlock-token.mjs` | Mints premium unlock tokens |
+
+The same Worker serves the site-wide AI assistant — see `CHATBOT_README.md`.
+One deployment, one Gemini key, two products.
 
 ### Report deliverable — `.claude/skills/seo-audit-report/`
 
@@ -105,6 +112,9 @@ The API base lives in **one place** — the `<meta name="smartgen-api">` tag in
 | `sitemap.xml` | URL at priority 0.9 |
 | `llms.txt` | Listed under SEO Tools |
 | `seo-metadata.json` | Title/description/keywords/features |
+| `assets/js/app.js` | Lazy-loads the AI assistant on every page |
+| `scripts/build-chatbot-knowledge.js` | Compiles the assistant's knowledge index |
+| `.github/workflows/deploy-worker.yml` | Tests + deploys the Worker on push to main |
 
 ---
 
@@ -259,14 +269,20 @@ secret store, and the Worker reads it at runtime.
 | `GOOGLE_SERVICE_ACCOUNT_JSON` | Cloudflare secret | write access to your Sheet |
 | `LEADS_SHEET_ID` | Cloudflare secret | identifies your leads spreadsheet |
 | `PAGESPEED_API_KEY` | Cloudflare secret | billable quota |
-| `GEMINI_API_KEY` | Cloudflare secret | billable quota |
+| `GEMINI_API_KEY` | Cloudflare secret | billable quota; also powers the AI assistant |
 | `ADMIN_TOKEN` | Cloudflare secret | guards `/api/admin/*` |
 | `PREMIUM_UNLOCK_SECRET` | Cloudflare secret | forges premium access if leaked |
-| `ALLOWED_ORIGINS`, `FREE_AUDIT_LIMIT`, `PAYMENTS_ENABLED`, `PREMIUM_PRICE_USD`, `LEADS_SHEET_TAB` | `wrangler.toml` `[vars]` (committed) | not secret — config the public can see without harm |
+| `ALLOWED_ORIGINS`, `FREE_AUDIT_LIMIT`, `PAYMENTS_ENABLED`, `PREMIUM_PRICE_USD`, `LEADS_SHEET_TAB`, `CHAT_HOURLY_LIMIT` | `wrangler.toml` `[vars]` (committed) | not secret — config the public can see without harm |
 | The Worker URL | GitHub, in `seo-audit-tool/index.html` | public by design; every visitor's browser calls it |
+| `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` | **GitHub Actions secrets** | the one legitimate GitHub use — they authenticate `wrangler deploy` inside the CI runner and never reach a published file |
 
 The Worker never returns a secret to the browser. The frontend knows exactly one
 thing about the backend: its URL.
+
+**The distinction that matters:** a secret used *inside a CI job* is fine — the
+runner is a server. A secret substituted *into a file the site serves* is not,
+because a static site has no server to keep it on. That is why the Cloudflare
+deploy token belongs in GitHub and the Gemini key does not.
 
 If a key is ever committed by accident, **rotate it** — deleting the commit is
 not enough, public repos are scraped within minutes.

@@ -92,6 +92,54 @@ export async function readCachedReport(env, domain, tier) {
   }
 }
 
+/**
+ * Rate limiting that costs nothing.
+ *
+ * The chatbot is chatty by nature, and one KV write per message would eat the
+ * free plan's 1,000 writes/day. The Cache API has no write quota, so counters
+ * live there instead. Cache is per-colo rather than global, which is fine for
+ * a brake — a visitor is normally pinned to one colo, and the worst case is
+ * that a travelling user gets a slightly higher allowance.
+ *
+ * @returns {{ok:boolean, used:number, limit:number, remaining:number, resetsInSeconds:number}}
+ */
+export async function cacheRateLimit(key, limit, windowSeconds) {
+  const bucket = Math.floor(Date.now() / (windowSeconds * 1000));
+  const resetsInSeconds = windowSeconds - Math.floor((Date.now() / 1000) % windowSeconds);
+  // Cache keys must look like URLs; this host is never actually requested.
+  const cacheKey = new Request(`https://ratelimit.smartgen.internal/${key}/${bucket}`);
+  const cache = caches.default;
+
+  let used = 0;
+  try {
+    const hit = await cache.match(cacheKey);
+    if (hit) used = Number(await hit.text()) || 0;
+  } catch {
+    // A cache miss or read error just means "no usage recorded yet".
+  }
+
+  const next = used + 1;
+  try {
+    await cache.put(
+      cacheKey,
+      new Response(String(next), {
+        headers: { 'Cache-Control': `max-age=${windowSeconds}`, 'Content-Type': 'text/plain' },
+      })
+    );
+  } catch {
+    // If we cannot record usage we let the request through rather than
+    // locking everyone out on a cache hiccup.
+  }
+
+  return {
+    ok: next <= limit,
+    used: next,
+    limit,
+    remaining: Math.max(0, limit - next),
+    resetsInSeconds,
+  };
+}
+
 /** Coarse abuse brake: max N audits per minute from one visitor. */
 export async function burstLimit(env, key, max = 4) {
   if (!env.AUDIT_KV) return { ok: true };

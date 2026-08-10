@@ -1,0 +1,94 @@
+name: Deploy SmartGen Platforms Worker
+
+# Deploys the Cloudflare Worker that powers the SEO Audit Tool and the AI
+# assistant. This is the one place GitHub secrets are legitimate: they are used
+# inside the runner to authenticate `wrangler deploy` and are never written
+# into any file the site serves.
+#
+# Required repository secrets:
+#   CLOUDFLARE_API_TOKEN   token with "Edit Cloudflare Workers" permission
+#   CLOUDFLARE_ACCOUNT_ID  your account id
+#
+# Application secrets (GEMINI_API_KEY, GOOGLE_SERVICE_ACCOUNT_JSON,
+# LEADS_SHEET_ID, PAGESPEED_API_KEY, ADMIN_TOKEN, PREMIUM_UNLOCK_SECRET) are
+# NOT set here. They live in Cloudflare's own secret store via
+# `wrangler secret put`, so they never pass through GitHub at all.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/smartgen-platforms/**'
+      - '.github/workflows/deploy-worker.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-smartgen-platforms
+  cancel-in-progress: false
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install
+        working-directory: backend/smartgen-platforms
+        run: npm install --no-audit --no-fund
+
+      - name: Run tests
+        working-directory: backend/smartgen-platforms
+        run: npm test
+
+      - name: Verify the chatbot knowledge index is in sync
+        run: |
+          node scripts/build-chatbot-knowledge.js
+          if ! git diff --quiet -- backend/smartgen-platforms/src/knowledge/site-index.js; then
+            echo "::error::The chatbot knowledge index is stale. Run 'npm run build-chatbot' and commit the result."
+            git diff --stat -- backend/smartgen-platforms/src/knowledge/site-index.js
+            exit 1
+          fi
+          echo "Knowledge index matches the site."
+
+  deploy:
+    name: Deploy
+    needs: test
+    runs-on: ubuntu-latest
+    # Skip cleanly on forks, which have no access to the secrets.
+    if: github.repository == 'bayzed123/SmartGenQR.oi'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install
+        working-directory: backend/smartgen-platforms
+        run: npm install --no-audit --no-fund
+
+      - name: Deploy to Cloudflare
+        working-directory: backend/smartgen-platforms
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler deploy
+
+      - name: Smoke test the deployment
+        run: |
+          for i in 1 2 3 4 5; do
+            body=$(curl -sS --max-time 20 "https://smartgen-platforms.smartgentools.workers.dev/api/health" || true)
+            if echo "$body" | grep -q '"ok":true'; then
+              echo "$body"
+              exit 0
+            fi
+            echo "Health check attempt $i failed, retrying in $((i * 4))s…"
+            sleep $((i * 4))
+          done
+          echo "::error::The Worker did not report healthy after deploying."
+          exit 1

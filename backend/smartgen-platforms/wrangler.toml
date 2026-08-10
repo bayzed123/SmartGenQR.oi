@@ -39,6 +39,10 @@ LEADS_SHEET_TAB = "Leads"
 ENABLE_PAGESPEED = "true"
 ENABLE_AI_ROADMAP = "true"
 
+# Chatbot messages allowed per visitor per hour. Counted in the Cache API, not
+# KV, so a busy chatbot never eats the free plan's daily KV write allowance.
+CHAT_HOURLY_LIMIT = "40"
+
 # ---------------------------------------------------------------------------
 # Secrets — set with `npx wrangler secret put <NAME>`.
 #

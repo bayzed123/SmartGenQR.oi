@@ -471,3 +471,91 @@
         display: none;
     }
 }
+
+/* ==========================================================================
+   Grounded answers — tool cards the assistant links to, plus a11y helper.
+   Added alongside the Worker-backed assistant.
+   ========================================================================== */
+
+.chatbot-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.chatbot-sources {
+    display: grid;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+}
+
+.chatbot-source {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--chatbot-border);
+    border-radius: 8px;
+    background: var(--chatbot-bg, #ffffff);
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.chatbot-source:hover {
+    border-color: var(--chatbot-primary);
+    transform: translateY(-1px);
+}
+
+.chatbot-source-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--chatbot-primary);
+}
+
+.chatbot-source-meta {
+    font-size: 0.72rem;
+    color: var(--chatbot-text-muted);
+}
+
+[data-theme="dark"] .chatbot-source {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="dark"] .chatbot-source-title {
+    color: var(--chatbot-accent);
+}
+
+.message-content p {
+    margin: 0 0 0.5rem;
+}
+
+.message-content p:last-child {
+    margin-bottom: 0;
+}
+
+.message-content code {
+    background: rgba(37, 99, 235, 0.1);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+
+.chatbot-send-btn:disabled {
+    opacity: 0.5;
+    cursor: progress;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chatbot-typing-indicator span {
+        animation: none;
+    }
+    .chatbot-source:hover {
+        transform: none;
+    }
+}

@@ -3,7 +3,49 @@ document.addEventListener('DOMContentLoaded', () => {
     injectFooter();
     initTheme();
     initAccordion();
+    loadChatbot();
 });
+
+/**
+ * Bring the SmartGen assistant to every page, without paying for it on load.
+ *
+ * The widget and its stylesheet are fetched only once the browser is idle (or
+ * on the first real interaction), so Core Web Vitals stay untouched on pages
+ * where nobody opens the chat. Pages that already include chatbot.js directly
+ * are skipped.
+ */
+function loadChatbot() {
+    if (document.querySelector('script[src*="chatbot.js"]')) return;
+    if (document.getElementById('smartgen-chatbot')) return;
+
+    const root = document.querySelector('script[src*="assets/js/app.js"]');
+    const base = root ? root.getAttribute('src').replace(/app\.js.*$/, '') : '/assets/js/';
+
+    let started = false;
+    const start = () => {
+        if (started) return;
+        started = true;
+
+        const style = document.createElement('link');
+        style.rel = 'stylesheet';
+        style.href = `${base}../css/chatbot.css`;
+        document.head.appendChild(style);
+
+        const script = document.createElement('script');
+        script.src = `${base}chatbot.js`;
+        script.defer = true;
+        document.body.appendChild(script);
+    };
+
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(start, { timeout: 4000 });
+    } else {
+        setTimeout(start, 2500);
+    }
+    ['pointerdown', 'keydown'].forEach((event) =>
+        document.addEventListener(event, start, { once: true, passive: true })
+    );
+}
 
 function injectNavbar() {
     const header = document.getElementById('main-header');
