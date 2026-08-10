@@ -158,7 +158,7 @@ Both directions are covered by tests; run `npm test` after changing them.
 
 | Setting | Where | Default |
 |---|---|---|
-| Worker URL | `<meta name="smartgen-api">`, else the built-in default | `https://smartgen-platforms.smartgentools.workers.dev` |
+| Worker URL | `window.SMARTGEN_API_BASE` in `assets/js/app.js`; a page `<meta name="smartgen-api">` overrides it | `https://smartgen-platforms.sayadmdbayezidhosan.workers.dev` |
 | `CHAT_HOURLY_LIMIT` | `wrangler.toml` `[vars]` | 40 |
 | `GEMINI_API_KEY` | **Cloudflare secret** | — |
 

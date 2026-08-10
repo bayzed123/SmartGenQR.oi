@@ -80,9 +80,14 @@ jobs:
         run: npx wrangler deploy
 
       - name: Smoke test the deployment
+        env:
+          # Override with a repository variable if you move the Worker to a
+          # custom domain (Settings → Secrets and variables → Actions → Variables).
+          WORKER_URL: ${{ vars.WORKER_URL || 'https://smartgen-platforms.sayadmdbayezidhosan.workers.dev' }}
         run: |
+          echo "Checking $WORKER_URL/api/health"
           for i in 1 2 3 4 5; do
-            body=$(curl -sS --max-time 20 "https://smartgen-platforms.smartgentools.workers.dev/api/health" || true)
+            body=$(curl -sS --max-time 20 "$WORKER_URL/api/health" || true)
             if echo "$body" | grep -q '"ok":true'; then
               echo "$body"
               exit 0

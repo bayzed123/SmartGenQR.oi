@@ -1,3 +1,16 @@
+/**
+ * THE single place the SmartGen backend URL is configured.
+ *
+ * The SEO Audit Tool and the AI assistant both read this. Change it here and
+ * both follow. An individual page can still override it with
+ * <meta name="smartgen-api" content="https://…">.
+ *
+ * This must match the Worker's deployed URL, which `wrangler deploy` prints:
+ *   https://<worker-name>.<your-workers.dev-subdomain>.workers.dev
+ */
+window.SMARTGEN_API_BASE =
+    window.SMARTGEN_API_BASE || 'https://smartgen-platforms.sayadmdbayezidhosan.workers.dev';
+
 document.addEventListener('DOMContentLoaded', () => {
     injectNavbar();
     injectFooter();
