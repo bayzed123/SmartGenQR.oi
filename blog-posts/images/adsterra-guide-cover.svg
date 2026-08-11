@@ -1,0 +1,61 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif" role="img" aria-labelledby="covTitle covDesc">
+  <title id="covTitle">SmartGen Tools — Adsterra Publisher Guide cover image</title>
+  <desc id="covDesc">Brand cover graphic for the Adsterra monetization guide, in SmartGen's blue and orange diagonal style with the SmartGen logo mark and three fact badges.</desc>
+  <defs>
+    <linearGradient id="blueBlock" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A56E8"/>
+      <stop offset="100%" stop-color="#123FB0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="630" fill="#FFFFFF"/>
+
+  <!-- diagonal blue block -->
+  <polygon points="0,0 500,0 400,630 0,630" fill="url(#blueBlock)"/>
+  <!-- orange seam accent -->
+  <polygon points="500,0 524,0 424,630 400,630" fill="#FF8A1F"/>
+  <!-- corner accents -->
+  <polygon points="1060,0 1200,0 1200,54" fill="#FF8A1F"/>
+  <polygon points="960,630 1200,630 1200,566" fill="#FF8A1F"/>
+
+  <!-- logo mark -->
+  <rect x="118" y="118" width="150" height="150" rx="28" fill="none" stroke="#FFFFFF" stroke-width="6" transform="rotate(-8 193 193)"/>
+  <polygon points="215,148 168,236 198,236 175,290 245,206 210,206 232,148" fill="#FFFFFF"/>
+  <polygon points="215,148 200,196 232,196 218,236 245,206 210,206" fill="#FF8A1F"/>
+  <text x="193" y="330" text-anchor="middle" font-size="34" font-weight="800" fill="#FFFFFF">Smart<tspan fill="#FF8A1F">Gen</tspan></text>
+  <text x="193" y="360" text-anchor="middle" font-size="15" fill="#CFE0FF">smartgentools.com</text>
+
+  <!-- headline -->
+  <text x="470" y="230" font-size="27" font-weight="700" fill="#5C6B8A">MONETIZATION GUIDE</text>
+  <text x="468" y="285" font-size="52" font-weight="800" fill="#12203F">Adsterra Publisher</text>
+  <text x="468" y="345" font-size="52" font-weight="800" fill="#12203F">Guide, A to Z</text>
+  <text x="470" y="390" font-size="21" fill="#5C6B8A">How ad-network monetization actually works — and how to start</text>
+
+  <!-- fact badges -->
+  <g font-size="16" font-weight="700">
+    <rect x="470" y="435" width="230" height="46" rx="23" fill="#1A56E8"/>
+    <circle cx="500" cy="458" r="10" fill="#FFFFFF"/>
+    <text x="500" y="463" text-anchor="middle" font-size="12" fill="#1A56E8" font-weight="800">i</text>
+    <text x="520" y="464" fill="#FFFFFF" font-size="15">No Traffic Minimum</text>
+
+    <circle cx="745" cy="458" r="23" fill="#FFFFFF" stroke="#FF8A1F" stroke-width="2.5"/>
+    <text x="745" y="464" text-anchor="middle" font-size="18" fill="#FF8A1F">$</text>
+    <text x="778" y="464" fill="#12203F" font-size="15">Free to Join</text>
+
+    <circle cx="928" cy="458" r="23" fill="#1A56E8"/>
+    <text x="928" y="464" text-anchor="middle" font-size="16" fill="#FFFFFF">7d</text>
+    <text x="961" y="464" fill="#12203F" font-size="15">Weekly Payouts</text>
+  </g>
+
+  <!-- simple revenue motif -->
+  <g transform="translate(470,500)">
+    <line x1="0" y1="90" x2="330" y2="90" stroke="#DADFE7" stroke-width="2"/>
+    <rect x="10" y="55" width="26" height="35" rx="3" fill="#CFE0FF"/>
+    <rect x="55" y="40" width="26" height="50" rx="3" fill="#9FC1FF"/>
+    <rect x="100" y="24" width="26" height="66" rx="3" fill="#1A56E8"/>
+    <rect x="145" y="8" width="26" height="82" rx="3" fill="#FF8A1F"/>
+    <path d="M195 60 L235 30 L270 46 L320 6" fill="none" stroke="#12203F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="320,6 296,10 316,26" fill="#12203F"/>
+    <text x="0" y="112" font-size="14" fill="#9AA3B2">Publisher earnings, illustrative</text>
+  </g>
+</svg>
