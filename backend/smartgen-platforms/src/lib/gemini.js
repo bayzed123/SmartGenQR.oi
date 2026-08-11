@@ -101,6 +101,113 @@ export async function generateRoadmap(input, env) {
   };
 }
 
+/**
+ * SERP Preview Tool — "Suggest with AI". Turns a topic (and optionally the
+ * visitor's rough draft) into 3 ready-to-use title/description pairs sized
+ * to what Google actually displays, so the visitor picks one instead of
+ * guessing at character counts.
+ *
+ * Uses CHAT_MODEL rather than ROADMAP_MODEL: this is a short, cheap,
+ * high-frequency call (every visitor typing into a free tool), not the rare
+ * paid-report generation the stronger/slower model is reserved for.
+ *
+ * @param {object} input
+ * @param {string} input.topic               what the page is about (required)
+ * @param {string} [input.url]               the page's URL, for context
+ * @param {string} [input.existingTitle]     the visitor's current draft
+ * @param {string} [input.existingDescription]
+ * @param {object} env
+ */
+export async function suggestSerpCopy(input, env) {
+  const apiKey = env.GEMINI_API_KEY;
+  const model = env.CHAT_MODEL || 'gemini-flash-lite-latest';
+
+  if (!apiKey) {
+    return { available: false, reason: 'AI suggestions are not configured on the server yet.' };
+  }
+
+  const topic = String(input.topic || '').trim();
+  if (!topic) {
+    return { available: false, reason: 'Describe what the page is about first.' };
+  }
+
+  const prompt = buildSerpPrompt({
+    topic: topic.slice(0, 300),
+    url: String(input.url || '').trim().slice(0, 200),
+    existingTitle: String(input.existingTitle || '').trim().slice(0, 200),
+    existingDescription: String(input.existingDescription || '').trim().slice(0, 400),
+  });
+
+  let text;
+  try {
+    const res = await fetch(endpointFor(model), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
+      signal: AbortSignal.timeout(20_000),
+      body: JSON.stringify({
+        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+        generationConfig: { temperature: 0.7, maxOutputTokens: 1024, responseMimeType: 'application/json' },
+      }),
+    });
+
+    if (!res.ok) {
+      const detail = await res.text().catch(() => '');
+      return { available: false, reason: `Gemini ${model} returned ${res.status}. ${detail.slice(0, 200)}` };
+    }
+
+    const json = await res.json();
+    text = json?.candidates?.[0]?.content?.parts?.map((p) => p.text).join('') || '';
+  } catch (err) {
+    return {
+      available: false,
+      reason: err?.name === 'TimeoutError' ? 'Gemini timed out.' : `Gemini request failed: ${err.message}`,
+    };
+  }
+
+  const parsed = safeJson(text);
+  const variants = Array.isArray(parsed?.variants) ? parsed.variants : null;
+  if (!variants || variants.length === 0) {
+    return { available: false, reason: 'Gemini returned an unusable response.' };
+  }
+
+  return {
+    available: true,
+    model,
+    variants: variants.slice(0, 3).map((v) => ({
+      title: String(v.title || '').slice(0, 70),
+      description: String(v.description || '').slice(0, 200),
+      angle: String(v.angle || '').slice(0, 60),
+    })),
+  };
+}
+
+function buildSerpPrompt({ topic, url, existingTitle, existingDescription }) {
+  const draftLine =
+    existingTitle || existingDescription
+      ? `Their current draft — improve on this, don't ignore it:\nTitle: ${existingTitle || '(none)'}\nDescription: ${
+          existingDescription || '(none)'
+        }`
+      : 'They have not written a draft yet.';
+
+  return `You are an SEO copywriter writing Google search-result snippets (the <title> tag and meta description) for this page.
+
+Page topic: ${topic}
+${url ? `Page URL: ${url}` : ''}
+${draftLine}
+
+RULES
+- Title: under 60 characters so it never truncates in Google's search results. Front-load the main keyword. No clickbait, no ALL CAPS, no keyword stuffing.
+- Description: 140-160 characters. A genuine reason to click, not a keyword list. Plain sentence(s), no quotation marks.
+- Give exactly 3 variants with a clearly different angle each (e.g. benefit-led, keyword-led, question-led).
+
+Return ONLY JSON matching this shape:
+{
+  "variants": [
+    { "angle": "short label for this variant's angle", "title": "...", "description": "..." }
+  ]
+}`;
+}
+
 function buildPrompt({ domain, score, issues, psi, competitor }) {
   const issueLines = issues
     .slice(0, 25)

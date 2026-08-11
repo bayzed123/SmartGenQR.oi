@@ -15,6 +15,10 @@ name: Deploy SmartGen Platforms Worker
 #   GOOGLE_SERVICE_ACCOUNT_JSON   the whole .json on one line
 #   LEADS_SHEET_ID
 #   PAGESPEED_API_KEY
+#   GOOGLE_CSE_API_KEY            Google Custom Search JSON API key (rank checker)
+#   GOOGLE_CSE_ID                 Programmable Search Engine id ("cx") — create one at
+#                                 https://programmablesearchengine.google.com/
+#                                 with "Search the entire web" turned on
 #   ADMIN_TOKEN
 #   PREMIUM_UNLOCK_SECRET
 #
@@ -99,6 +103,8 @@ jobs:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           LEADS_SHEET_ID: ${{ secrets.LEADS_SHEET_ID }}
           PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+          GOOGLE_CSE_API_KEY: ${{ secrets.GOOGLE_CSE_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
           ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           PREMIUM_UNLOCK_SECRET: ${{ secrets.PREMIUM_UNLOCK_SECRET }}
         run: |
@@ -120,6 +126,8 @@ jobs:
           sync GOOGLE_SERVICE_ACCOUNT_JSON
           sync LEADS_SHEET_ID
           sync PAGESPEED_API_KEY
+          sync GOOGLE_CSE_API_KEY
+          sync GOOGLE_CSE_ID
           sync ADMIN_TOKEN
           sync PREMIUM_UNLOCK_SECRET
 

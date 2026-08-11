@@ -96,6 +96,111 @@
         [data-theme="dark"] .serp-url { color: #bdc1c6; }
         [data-theme="dark"] .serp-title { color: #8ab4f8; }
         [data-theme="dark"] .serp-description { color: #bdc1c6; }
+
+        /* ---------- AI Suggest & Rank Check ---------- */
+        .serp-tool-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin: 1.75rem 0;
+        }
+        .serp-tool-box h2 {
+            font-size: 1.15rem;
+            margin: 0 0 0.35rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .serp-tool-box p.hint {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0 0 1rem;
+        }
+        .serp-inline-row {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .serp-inline-row .form-input { flex: 1; min-width: 220px; margin-bottom: 0; }
+        .serp-tool-box .btn { white-space: nowrap; }
+        .serp-status {
+            font-size: 0.88rem;
+            margin-top: 0.75rem;
+            color: var(--text-secondary);
+        }
+        .serp-status.is-error { color: var(--error); }
+        .serp-status.is-success { color: var(--success); }
+        .suggestion-list {
+            display: grid;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .suggestion-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.9rem 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--slate-50, #f8fafc);
+        }
+        [data-theme="dark"] .suggestion-card { background: rgba(255,255,255,0.03); }
+        .suggestion-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        .suggestion-card .angle {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: var(--primary);
+            background: rgba(37, 99, 235, 0.1);
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            margin-bottom: 0.5rem;
+        }
+        .suggestion-card .s-title { color: #1a0dab; font-size: 1.05rem; margin-bottom: 0.2rem; }
+        [data-theme="dark"] .suggestion-card .s-title { color: #8ab4f8; }
+        .suggestion-card .s-desc { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5; }
+        .suggestion-card .s-apply { font-size: 0.78rem; color: var(--primary); margin-top: 0.5rem; font-weight: 600; }
+        .rank-result-card {
+            margin-top: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.1rem;
+        }
+        .rank-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 1rem;
+            background: var(--success);
+            color: #fff;
+        }
+        .rank-badge.not-found { background: var(--slate-300, #cbd5e1); color: var(--text-primary); }
+        .rank-result-top { display: flex; align-items: center; gap: 0.85rem; }
+        .rank-result-list { margin-top: 0.9rem; font-size: 0.85rem; color: var(--text-secondary); }
+        .rank-result-list ol { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+        .rank-result-list li { margin-bottom: 0.3rem; }
+        .rank-result-list li.is-you { color: var(--success); font-weight: 700; }
+        .serp-spinner {
+            display: inline-block;
+            width: 14px; height: 14px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: serp-spin 0.7s linear infinite;
+            vertical-align: -2px;
+            margin-right: 6px;
+        }
+        @keyframes serp-spin { to { transform: rotate(360deg); } }
     </style>
     
     
@@ -118,7 +223,18 @@
         <div class="tool-container">
             <h1>Google SERP Snippet Preview</h1>
             <p>Optimize your website's appearance in Google search results for higher click-through rates.</p>
-            
+
+            <div class="serp-tool-box" id="ai-suggest-box">
+                <h2>✨ Suggest Title &amp; Description with AI</h2>
+                <p class="hint">Tell it what the page is about — it writes 3 ready-to-use title/description pairs sized to Google's real limits. Click one to fill the fields below.</p>
+                <div class="serp-inline-row">
+                    <input type="text" id="ai-topic" class="form-input" placeholder="e.g. a free QR code generator for URLs and WiFi">
+                    <button type="button" class="btn btn-primary" id="ai-suggest-btn" onclick="requestAiSuggestions()">Suggest with AI</button>
+                </div>
+                <div id="ai-suggest-status" class="serp-status" hidden></div>
+                <div id="ai-suggest-results" class="suggestion-list"></div>
+            </div>
+
             <div class="form-group">
                 <label class="form-label">Page Title</label>
                 <input type="text" id="page-title" class="form-input" placeholder="Enter page title" value="SmartGen - All-in-One Digital & Web Utility Platform" oninput="updatePreview()">
@@ -141,6 +257,17 @@
                 <div id="preview-title" class="serp-title">SmartGen - All-in-One Digital & Web Utility Platform</div>
                 <div id="preview-description" class="serp-description">SmartGen provides free online tools like QR generators, SEO tools, and text utilities. All-in-one platform for developers and creators.</div>
             </div>
+
+            <div class="serp-tool-box" id="rank-check-box">
+                <h2>📈 Check Your Google Ranking</h2>
+                <p class="hint">See where the Page URL above currently ranks in Google's top 10 for a keyword.</p>
+                <div class="serp-inline-row">
+                    <input type="text" id="rank-keyword" class="form-input" placeholder="Keyword to check, e.g. free qr code generator">
+                    <button type="button" class="btn btn-primary" id="rank-check-btn" onclick="requestRankCheck()">Check Ranking</button>
+                </div>
+                <div id="rank-check-status" class="serp-status" hidden></div>
+                <div id="rank-check-result"></div>
+            </div>
         </div>
 
         
@@ -156,7 +283,7 @@
 <section style="margin-bottom: 50px;">
             <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px; border-left: 5px solid #2563eb; padding-left: 20px;">What Is a SERP Preview Tool?</h3>
             <p>A <strong>SERP preview tool</strong> shows exactly how your page's title and description will render as a search result on Google — before you publish, so you can catch a truncated title or a description that gets cut off mid-sentence instead of finding out after the page is already live.</p>
-            <p style="margin-top: 15px;">Enter your title, URL, and meta description, and see a live, accurate preview of your Google search snippet as you type.</p>
+            <p style="margin-top: 15px;">Enter your title, URL, and meta description, and see a live, accurate preview of your Google search snippet as you type. Stuck on wording? Click <strong>Suggest with AI</strong> to have Gemini write three ready-to-use title/description pairs from a one-line description of the page. Already published? Use <strong>Check Your Google Ranking</strong> to see where that URL currently sits in Google's top 10 for a target keyword.</p>
         </section>
 
         <section style="margin-bottom: 50px; background: #f8fafc; padding: 30px; border-radius: 20px;">
@@ -165,15 +292,19 @@
                 <div style="padding: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">👁️ See It Before You Publish</h4><p style="font-size: 0.95rem;">Catch truncation and awkward wrapping before your page goes live, not after.</p></div>
                 <div style="padding: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">📏 Real Pixel-Width Truncation</h4><p style="font-size: 0.95rem;">Matches how Google actually cuts off long titles and descriptions, not a rough character count.</p></div>
                 <div style="padding: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">⚡ Live as You Type</h4><p style="font-size: 0.95rem;">The preview updates instantly with every edit.</p></div>
+                <div style="padding: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">✨ AI-Written Starting Points</h4><p style="font-size: 0.95rem;">No more staring at a blank field — Gemini drafts three distinct angles sized to Google's real limits.</p></div>
+                <div style="padding: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">📈 Real Ranking Data</h4><p style="font-size: 0.95rem;">Check where your page actually sits in Google's top 10 for a keyword, powered by Google's own Custom Search API.</p></div>
             </div>
         </section>
 
         <section style="margin-bottom: 50px;">
             <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">How to Preview Your Google Search Snippet</h3>
             <ol style="margin-top: 20px; padding-left: 25px;">
-                <li style="margin-bottom: 15px;"><strong>Enter your Page Title</strong> — the exact text from your <code>&lt;title&gt;</code> tag.</li>
-                <li style="margin-bottom: 15px;"><strong>Enter your Page URL</strong> — shown as the green breadcrumb path under the title in results.</li>
+                <li style="margin-bottom: 15px;"><strong>Enter your Page Title</strong> — the exact text from your <code>&lt;title&gt;</code> tag, or click a card from <strong>Suggest with AI</strong> to fill it automatically.</li>
+                <li style="margin-bottom: 15px;"><strong>Enter your Page URL</strong> — shown as the green breadcrumb path under the title in results, and used as the domain when you check ranking.</li>
                 <li style="margin-bottom: 15px;"><strong>Enter your Meta Description</strong> — watch the preview to see exactly where it would truncate.</li>
+                <li style="margin-bottom: 15px;"><strong>Optional: Suggest with AI</strong> — type a one-line description of the page (e.g. "a free QR code generator") and get three ready-to-use title/description pairs, each with a different angle.</li>
+                <li style="margin-bottom: 15px;"><strong>Optional: Check Your Google Ranking</strong> — enter a target keyword to see whether the Page URL above is already ranking in Google's top 10 for it, and what's currently outranking it.</li>
             </ol>
         </section>
 
@@ -191,7 +322,9 @@
             <div style="margin-top: 20px;">
                 <div style="margin-bottom: 25px;"><p style="font-weight: 700; color: #1a202c;">Q: Why does my title get cut off even though it's under 60 characters?</p><p style="color: #4a5568;">A: Google truncates by pixel width, not character count — wide characters (like "W" or "M") take more space than narrow ones (like "i" or "l"), so the exact cutoff point varies by which letters are used.</p></div>
                 <div style="margin-bottom: 25px;"><p style="font-weight: 700; color: #1a202c;">Q: Does Google always use my written meta description?</p><p style="color: #4a5568;">A: Not always — Google sometimes generates its own snippet from page content if it judges that more relevant to the specific search query. Writing a strong, accurate description still improves the odds yours is used.</p></div>
-                <div style="margin-bottom: 25px;"><p style="font-weight: 700; color: #1a202c;">Q: Does this tool check my actual live page, or just what I type here?</p><p style="color: #4a5568;">A: It previews exactly what you type in — pair it with SmartGen's Meta Tag Generator to produce the actual HTML tags to publish.</p></div>
+                <div style="margin-bottom: 25px;"><p style="font-weight: 700; color: #1a202c;">Q: Does this tool check my actual live page, or just what I type here?</p><p style="color: #4a5568;">A: The preview itself renders exactly what you type in — pair it with SmartGen's Meta Tag Generator to produce the actual HTML tags to publish. The ranking checker is different: it queries live Google search results for the keyword you enter.</p></div>
+                <div style="margin-bottom: 25px;"><p style="font-weight: 700; color: #1a202c;">Q: How does "Suggest with AI" work, and is it free?</p><p style="color: #4a5568;">A: It sends your one-line topic description to Google's Gemini model, which writes three title/description pairs already sized to Google's real display limits. It's free to use, with a fair-use hourly limit per visitor to keep it available for everyone.</p></div>
+                <div style="margin-bottom: 25px;"><p style="font-weight: 700; color: #1a202c;">Q: Why does the ranking checker only look at the top 10 results?</p><p style="color: #4a5568;">A: It's powered by the Google Custom Search API, which has a limited free daily quota shared across every visitor to this page — checking only the first page of results keeps that quota usable for everyone instead of one search burning through it. If your page isn't in the top 10, it's outside first-page results for that keyword.</p></div>
             </div>
         </section>
 
@@ -293,6 +426,192 @@
 
         // Initial preview
         window.addEventListener('load', updatePreview);
+    </script>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // Same resolution order as assets/js/chatbot.js — configured once in
+        // app.js, overridable per-page via a <meta name="smartgen-api"> tag.
+        var API_BASE = (function () {
+            var meta = document.querySelector('meta[name="smartgen-api"]');
+            var configured =
+                (meta && meta.getAttribute('content')) ||
+                window.SMARTGEN_API_BASE ||
+                'https://smartgen-platforms.sayadmdbayezidhosan.workers.dev';
+            return configured.replace(/\/+$/, '');
+        })();
+
+        function esc(value) {
+            return String(value == null ? '' : value).replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+
+        function setStatus(el, message, kind) {
+            el.hidden = !message;
+            el.textContent = message || '';
+            el.classList.remove('is-error', 'is-success');
+            if (kind) el.classList.add('is-' + kind);
+        }
+
+        async function postJson(path, body) {
+            let res;
+            try {
+                res = await fetch(API_BASE + path, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body),
+                });
+            } catch {
+                throw new Error("Couldn't reach the server — check your connection and try again.");
+            }
+            let data;
+            try {
+                data = await res.json();
+            } catch {
+                throw new Error('The server sent back something unexpected. Try again in a moment.');
+            }
+            if (!res.ok && res.status !== 200) {
+                throw new Error(data.error || 'That request failed. Try again in a moment.');
+            }
+            return data;
+        }
+
+        /* ------------------------------------------------- AI suggestions */
+
+        window.requestAiSuggestions = async function () {
+            const topic = document.getElementById('ai-topic').value.trim();
+            const status = document.getElementById('ai-suggest-status');
+            const results = document.getElementById('ai-suggest-results');
+            const btn = document.getElementById('ai-suggest-btn');
+
+            results.innerHTML = '';
+            if (!topic) {
+                setStatus(status, 'Describe what the page is about first — e.g. "a free QR code generator".', 'error');
+                return;
+            }
+
+            btn.disabled = true;
+            const originalLabel = btn.textContent;
+            btn.innerHTML = '<span class="serp-spinner"></span>Thinking…';
+            setStatus(status, '');
+
+            try {
+                const data = await postJson('/api/serp/suggest', {
+                    topic: topic,
+                    url: document.getElementById('page-url').value.trim(),
+                    existingTitle: document.getElementById('page-title').value.trim(),
+                    existingDescription: document.getElementById('meta-description').value.trim(),
+                });
+
+                if (!data.ok) {
+                    setStatus(status, data.error || "AI suggestions aren't available right now.", 'error');
+                    return;
+                }
+
+                results.innerHTML = data.variants
+                    .map(function (v, i) {
+                        return (
+                            '<div class="suggestion-card" tabindex="0" role="button" data-index="' + i + '">' +
+                            (v.angle ? '<span class="angle">' + esc(v.angle) + '</span>' : '') +
+                            '<div class="s-title">' + esc(v.title) + '</div>' +
+                            '<div class="s-desc">' + esc(v.description) + '</div>' +
+                            '<div class="s-apply">Click to use this →</div>' +
+                            '</div>'
+                        );
+                    })
+                    .join('');
+
+                results.querySelectorAll('.suggestion-card').forEach(function (card) {
+                    var apply = function () {
+                        var v = data.variants[Number(card.dataset.index)];
+                        document.getElementById('page-title').value = v.title;
+                        document.getElementById('meta-description').value = v.description;
+                        updatePreview();
+                        setStatus(status, 'Applied — feel free to tweak it further.', 'success');
+                        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    };
+                    card.addEventListener('click', apply);
+                    card.addEventListener('keydown', function (e) {
+                        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); apply(); }
+                    });
+                });
+            } catch (err) {
+                setStatus(status, err.message || 'Something went wrong. Try again in a moment.', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = originalLabel;
+            }
+        };
+
+        /* ------------------------------------------------------ rank check */
+
+        window.requestRankCheck = async function () {
+            const keyword = document.getElementById('rank-keyword').value.trim();
+            const domain = document.getElementById('page-url').value.trim();
+            const status = document.getElementById('rank-check-status');
+            const result = document.getElementById('rank-check-result');
+            const btn = document.getElementById('rank-check-btn');
+
+            result.innerHTML = '';
+            if (!domain) {
+                setStatus(status, 'Fill in the Page URL above first.', 'error');
+                return;
+            }
+            if (!keyword) {
+                setStatus(status, 'Enter a keyword to check ranking for.', 'error');
+                return;
+            }
+
+            btn.disabled = true;
+            const originalLabel = btn.textContent;
+            btn.innerHTML = '<span class="serp-spinner"></span>Checking…';
+            setStatus(status, '');
+
+            try {
+                const data = await postJson('/api/serp/rank', { domain: domain, keyword: keyword });
+
+                if (!data.ok) {
+                    setStatus(status, data.error || "Ranking check isn't available right now.", 'error');
+                    return;
+                }
+
+                setStatus(status, '');
+                const found = data.position != null;
+                const listItems = (data.topResults || [])
+                    .map(function (r) {
+                        var isYou = found && r.position === data.position;
+                        return (
+                            '<li class="' + (isYou ? 'is-you' : '') + '">' +
+                            r.position + '. ' + esc(r.title || r.url) + (isYou ? ' — this page' : '') +
+                            '</li>'
+                        );
+                    })
+                    .join('');
+
+                result.innerHTML =
+                    '<div class="rank-result-card">' +
+                    '<div class="rank-result-top">' +
+                    '<span class="rank-badge' + (found ? '' : ' not-found') + '">' + (found ? '#' + data.position : '—') + '</span>' +
+                    '<div>' +
+                    '<strong>' + (found
+                        ? esc(data.domain) + ' ranks #' + data.position + ' for "' + esc(data.keyword) + '"'
+                        : esc(data.domain) + ' is not in the top ' + data.checked + ' for "' + esc(data.keyword) + '"') +
+                    '</strong>' +
+                    '<div style="color:var(--text-secondary);font-size:0.85rem;margin-top:0.2rem;">Checked the top ' + data.checked + ' Google results.</div>' +
+                    '</div></div>' +
+                    (listItems ? '<div class="rank-result-list"><ol>' + listItems + '</ol></div>' : '') +
+                    '</div>';
+            } catch (err) {
+                setStatus(status, err.message || 'Something went wrong. Try again in a moment.', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = originalLabel;
+            }
+        };
+    })();
     </script>
 
 <!-- Cookie Consent Banner -->

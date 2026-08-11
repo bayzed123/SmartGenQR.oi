@@ -49,6 +49,13 @@ ENABLE_AI_ROADMAP = "true"
 # KV, so a busy chatbot never eats the free plan's daily KV write allowance.
 CHAT_HOURLY_LIMIT = "40"
 
+# Google Custom Search JSON API free tier is 100 queries/day for the WHOLE
+# project, shared across every visitor — not per visitor. The SERP Preview
+# Tool's rank checker stops serving new checks once this many have run today
+# (site-wide), leaving headroom below the hard 100 for the site owner's own
+# testing. See src/lib/rank.js.
+CSE_DAILY_LIMIT = "80"
+
 # Gemini models. Kept here rather than in code so a quota change or a retired
 # model name is a config edit, not a deploy of new source.
 #   CHAT_MODEL     short grounded answers — flash-lite has the best free quota
@@ -70,6 +77,10 @@ ROADMAP_MODEL = "gemini-flash-latest"
 #   LEADS_SHEET_ID                spreadsheet id from the Google Sheet URL
 #   PAGESPEED_API_KEY             Google PageSpeed Insights API key
 #   GEMINI_API_KEY                Google AI Studio (Gemini) API key
+#   GOOGLE_CSE_API_KEY            Google Custom Search JSON API key (rank checker)
+#   GOOGLE_CSE_ID                 Programmable Search Engine id ("cx"), with
+#                                 "Search the entire web" turned on — create one at
+#                                 https://programmablesearchengine.google.com/
 #   ADMIN_TOKEN                   bearer token for /api/admin/* endpoints
 #   PREMIUM_UNLOCK_SECRET         HMAC key used to sign premium unlock tokens
 # ---------------------------------------------------------------------------
