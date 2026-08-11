@@ -157,6 +157,21 @@ jobs:
                       if relative_path.startswith('blog/') and relative_path != 'blog/index.html':
                           continue
 
+                      # Skip client-side redirect stubs (e.g. legacy
+                      # folder-style URLs like html-code-library/foo/index.html
+                      # that just bounce to the real html-code-library/foo.html
+                      # page). A sitemap should only ever list the final
+                      # destination URL, never a page whose whole job is to
+                      # redirect away from itself.
+                      if relative_path.endswith('/index.html') and relative_path != 'index.html':
+                          try:
+                              with open(full_path, 'r', encoding='utf-8') as rf:
+                                  head = rf.read(2048)
+                              if 'http-equiv="refresh"' in head:
+                                  continue
+                          except Exception:
+                              pass
+
                       # Homepage
                       if relative_path == 'index.html':
                           clean_url = f'{BASE_URL}/'
