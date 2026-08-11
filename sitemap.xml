@@ -391,6 +391,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smartgentools.com/docs/smartgen-api-docs-plan/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smartgentools.com/docs/vite-config-quick-reference/</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
