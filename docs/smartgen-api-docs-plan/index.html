@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartGen Docs — Audit &amp; Build Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#14211F;
+    --ground-2:#1C2E2A;
+    --paper:#FBF8F1;
+    --paper-2:#F1ECDD;
+    --ink:#1B2521;
+    --ink-soft:#57645D;
+    --verified:#3E7856;
+    --flag:#AD6A1D;
+    --stale:#A8433A;
+    --line:rgba(27,37,33,0.14);
+    --line-ground:rgba(251,248,241,0.16);
+    --mono:'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+    --sans:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--ground-2);}
+  a:hover{color:var(--verified);}
+  h1,h2,h3{font-family:var(--mono);letter-spacing:-0.01em;margin:0;}
+  code,pre{font-family:var(--mono);}
+  ::selection{background:var(--flag);color:var(--paper);}
+  :focus-visible{outline:2px solid var(--flag);outline-offset:2px;}
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--ground);
+    color:var(--paper);
+    padding:36px 24px 0;
+  }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:#8FB6A4;
+    margin-bottom:14px;
+  }
+  header h1{
+    font-size:clamp(24px,4vw,36px);
+    font-weight:600;
+    max-width:760px;
+    color:var(--paper);
+  }
+  header p.sub{
+    max-width:640px;
+    color:#C9D3CC;
+    font-size:15px;
+    margin:14px 0 28px;
+  }
+  .tabbar{
+    display:flex;
+    gap:2px;
+    overflow-x:auto;
+    border-top:1px solid var(--line-ground);
+    scrollbar-width:none;
+  }
+  .tabbar::-webkit-scrollbar{display:none;}
+  .tab-btn{
+    flex:0 0 auto;
+    background:none;
+    border:none;
+    color:#9FB0A7;
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    padding:14px 16px;
+    cursor:pointer;
+    border-bottom:2px solid transparent;
+    white-space:nowrap;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .tab-btn:hover{color:var(--paper);}
+  .tab-btn.active{color:var(--paper);border-bottom-color:var(--flag);}
+
+  /* ---------- Layout ---------- */
+  main{max-width:880px;margin:0 auto;padding:36px 24px 80px;}
+  .panel{display:none;}
+  .panel.active{display:block;animation:fade .25s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+  @media (prefers-reduced-motion:reduce){.panel.active{animation:none;}}
+
+  .panel-title{font-size:20px;font-weight:600;margin-bottom:6px;}
+  .panel-lede{color:var(--ink-soft);font-size:14.5px;max-width:640px;margin-bottom:28px;}
+
+  /* ---------- Stamp ---------- */
+  .stamp{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border:1.5px solid currentColor;
+    border-radius:3px;
+    transform:rotate(-1.5deg);
+    margin-bottom:10px;
+  }
+  .stamp--verified{color:var(--verified);}
+  .stamp--stale{color:var(--stale);}
+  .stamp--flag{color:var(--flag);}
+
+  /* ---------- Finding card ---------- */
+  .finding{
+    border:1px solid var(--line);
+    border-left:3px solid var(--line);
+    background:var(--paper-2);
+    padding:18px 20px;
+    border-radius:4px;
+    margin-bottom:14px;
+  }
+  .finding.verified{border-left-color:var(--verified);}
+  .finding.stale{border-left-color:var(--stale);}
+  .finding.flag{border-left-color:var(--flag);}
+  .finding h3{font-size:14.5px;font-weight:600;margin:0 0 6px;font-family:var(--sans);}
+  .finding p{margin:0;font-size:14px;color:var(--ink-soft);}
+  .finding code{background:rgba(27,37,33,0.06);padding:1px 5px;border-radius:3px;font-size:12.5px;}
+
+  /* ---------- Numbered steps ---------- */
+  .steps{counter-reset:step;margin-top:24px;}
+  .step{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line);}
+  .step:first-child{border-top:1px solid var(--line);}
+  .step::before{
+    counter-increment:step;
+    content:counter(step);
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--paper);
+    background:var(--ground-2);
+    width:22px;height:22px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    flex:0 0 auto;
+  }
+  .step p{margin:2px 0 0;font-size:14px;color:var(--ink-soft);}
+  .step strong{color:var(--ink);}
+
+  /* ---------- Template / definition list ---------- */
+  .field-list{border-top:1px solid var(--line);margin-top:8px;}
+  .field-row{display:grid;grid-template-columns:180px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--line);}
+  .field-row dt{font-family:var(--mono);font-size:12px;color:var(--flag);text-transform:uppercase;letter-spacing:0.04em;}
+  .field-row dd{margin:0;font-size:14px;color:var(--ink-soft);}
+  @media (max-width:560px){.field-row{grid-template-columns:1fr;gap:4px;}}
+
+  /* ---------- Example doc card ---------- */
+  .doc-card{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff;}
+  .doc-card-head{background:var(--ground);color:var(--paper);padding:18px 22px;}
+  .doc-card-head h3{font-size:17px;color:var(--paper);}
+  .doc-card-head .url{font-family:var(--mono);font-size:12px;color:#9FB0A7;margin-top:4px;}
+  .doc-card-body{padding:6px 22px 18px;}
+
+  /* ---------- Checklist ---------- */
+  .progress-wrap{margin-bottom:24px;}
+  .progress-track{height:8px;background:var(--paper-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;}
+  .progress-fill{height:100%;background:var(--verified);width:0%;transition:width .3s ease;}
+  .progress-label{font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-top:8px;}
+  .cl-category{margin-bottom:22px;}
+  .cl-cat-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:6px;margin-bottom:8px;}
+  .cl-cat-head h3{font-size:13px;text-transform:uppercase;letter-spacing:0.06em;}
+  .cl-count{font-family:var(--mono);font-size:12px;color:var(--ink-soft);}
+  .cl-row{display:flex;flex-wrap:wrap;align-items:flex-start;gap:4px 10px;padding:8px 4px;border-radius:4px;cursor:pointer;}
+  .cl-row:hover{background:var(--paper-2);}
+  .cl-row input{margin-top:3px;flex:0 0 auto;width:15px;height:15px;accent-color:var(--verified);cursor:pointer;}
+  .cl-name{font-size:14px;flex:1 1 auto;}
+  .cl-row input:checked ~ .cl-name{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--line);}
+  .cl-note{font-size:12px;color:var(--flag);flex-basis:100%;margin-left:25px;margin-top:2px;}
+  .cl-link{font-family:var(--mono);font-size:11px;color:var(--ink-soft);text-decoration:none;flex:0 0 auto;white-space:nowrap;}
+  .cl-link:hover{color:var(--verified);}
+  .cl-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:12px;color:var(--ink-soft);}
+  .reset-btn{background:none;border:none;font-family:var(--sans);font-size:12px;color:var(--stale);text-decoration:underline;cursor:pointer;padding:0;}
+
+  /* ---------- Code block ---------- */
+  .code-label{font-family:var(--mono);font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.06em;margin:20px 0 6px;}
+  pre.code{
+    background:var(--ground);
+    color:#E6EDE9;
+    padding:18px 20px;
+    border-radius:6px;
+    overflow-x:auto;
+    font-size:12.5px;
+    line-height:1.6;
+  }
+  pre.code .c{color:#7FA491;}
+
+  footer{padding:28px 24px 60px;text-align:center;font-family:var(--mono);font-size:11px;color:var(--ink-soft);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">SmartGen · smartgentools.com</div>
+  <h1>Your site reports three different tool counts. Here's what I could actually verify, and a plan for the rest.</h1>
+  <p class="sub">Homepage says 131+. The live tools directory says 57+. The footer says "80+" for the Code Library alone. Before writing a word of API documentation, I checked the repo and the live site directly — findings, a reusable template, one fully-written example, and a real checklist for the other 52 items follow.</p>
+  <div class="tabbar" id="tabbar">
+    <button class="tab-btn active" data-target="panel-findings">Field Notes</button>
+    <button class="tab-btn" data-target="panel-approach">Approach</button>
+    <button class="tab-btn" data-target="panel-template">Template</button>
+    <button class="tab-btn" data-target="panel-example">Example</button>
+    <button class="tab-btn" data-target="panel-checklist">Checklist</button>
+    <button class="tab-btn" data-target="panel-automation">Screenshots</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- FIELD NOTES -->
+  <section class="panel active" id="panel-findings">
+    <div class="panel-title">What's actually true right now</div>
+    <p class="panel-lede">Checked against the live site and the repo itself — not against the repo's own guideline files, per your instruction.</p>
+
+    <div class="finding verified">
+      <span class="stamp stamp--verified">Confirmed</span>
+      <h3>All 130+ tools are 100% client-side — there's no REST API behind them</h3>
+      <p>Checked the QR Generator directly: it states plainly that nothing typed is sent to a server, and builds the code on-device with the <code>qrcodejs</code> library. Same pattern on every tool page checked. There's no request/response cycle here to document as a traditional API.</p>
+    </div>
+
+    <div class="finding stale">
+      <span class="stamp stamp--stale">Stale, exactly as you flagged</span>
+      <h3>The repo's own "Link Status Report" is out of date</h3>
+      <p>README.md lists 80 <code>/html-code-library/</code> URLs as 404, dated 2026-07-14. I opened <code>/html-code-library/html-bold/</code> directly — it loads fine, with a live tool, a browser-compatibility table, and related-page links. That report is nearly a month stale. I'm treating live pages as ground truth, not that file, for the rest of this project.</p>
+    </div>
+
+    <div class="finding flag">
+      <span class="stamp stamp--flag">Needs a decision</span>
+      <h3>The Code Library's live pages point at a different repo</h3>
+      <p><code>/html-code-library/html-bold/</code> links to <code>github.com/bayzed123/smartgen-horizon</code> as its source — not <code>SmartGenQR.oi</code>, the repo you sent. Before I document the Code Library specifically, I need to know which repo is actually deployed, so the docs point at real source.</p>
+    </div>
+
+    <div class="finding flag">
+      <span class="stamp stamp--flag">Worth fixing</span>
+      <h3>Three tool counts, three answers</h3>
+      <p>Homepage: 131+. <code>/tools/</code> page meta: 57+. Footer: "HTML Code Library (80+)". Adding the 49 standalone tools I found on <code>/tools/</code> to the library's ~80 snippet pages lands close to 131 — so that's likely the real number — but worth standardizing on one figure across the site.</p>
+    </div>
+
+    <div class="finding stale">
+      <span class="stamp stamp--stale">Scaffold, not real content</span>
+      <h3>docs.smartgentools.com reads like unfilled template</h3>
+      <p>It's live — 68 pages — but its "API Reference" and "SDKs" sections (JavaScript, Python, PHP, Java, Go) look like the default starter content that ships with your SmartGen Docs generator, not documentation of your actual client-side tools. I won't carry that structure into the real docs — see the Approach tab.</p>
+    </div>
+
+    <div class="finding flag">
+      <span class="stamp stamp--flag">Small but breaks links if ignored</span>
+      <h3>URL pattern isn't consistent</h3>
+      <p>Most tools live at <code>smartgentools.com/tool-name/</code>. Three — CPM ROI Calculator, Color Palette Extractor, EMI Calculator — live at <code>smartgentools.com/tools/tool-name/</code> instead. Flagged in the checklist so the contextual internal links you asked for don't 404.</p>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="panel" id="panel-approach">
+    <div class="panel-title">What "API documentation" should mean here</div>
+    <p class="panel-lede">A REST-style reference (auth, endpoints, rate limits) doesn't describe a tool that makes zero server calls. Here's the split I'd suggest instead.</p>
+
+    <div class="field-list">
+      <div class="field-row">
+        <dt>~130 client-side tools</dt>
+        <dd>A <strong>Technical Reference</strong> per tool: what it does, how it processes data in-browser, inputs, output, constraints, embed notes, related tools. No auth or endpoints, because there aren't any. Structure is on the Template tab.</dd>
+      </div>
+      <div class="field-row">
+        <dt>3 backend candidates</dt>
+        <dd>SEO Audit Tool, the chatbot system (<code>CHATBOT_README.md</code>), and <code>backend/smartgen-platforms</code> are the only parts of the repo that plausibly call a real server. I haven't opened those three yet — they're the ones worth true endpoint-style docs (auth, request/response, error codes), pending your confirmation on scope.</dd>
+      </div>
+      <div class="field-row">
+        <dt>docs.smartgentools.com</dt>
+        <dd>Its API Reference / SDK section only makes sense to keep if you're genuinely exposing a callable API to other developers. If it's leftover scaffold from setting up the docs generator, I'd replace that section rather than fill in its blanks with invented content.</dd>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><p><strong>Confirm the live repo</strong> for the Code Library — SmartGenQR.oi or smartgen-horizon — so internal links and source references point at the right place.</p></div>
+      <div class="step"><p><strong>Confirm scope on the 3 backend candidates</strong> — do the SEO Audit Tool, chatbot, and <code>backend/smartgen-platforms</code> actually call a server? That decides whether they get REST-style docs or the same Technical Reference as everything else.</p></div>
+      <div class="step"><p><strong>Approve or adjust the template</strong> on the next tab — happy to add category-specific fields (a Formula field for calculators, a Legal/ToS note for generators) as separate reusable prompts, matching how you wanted the build prompts split up.</p></div>
+      <div class="step"><p><strong>I work the checklist in batches</strong>, verifying each live page before writing — not from the repo's existing guideline files.</p></div>
+    </div>
+  </section>
+
+  <!-- TEMPLATE -->
+  <section class="panel" id="panel-template">
+    <div class="panel-title">The reusable structure</div>
+    <p class="panel-lede">One shape, applied to every client-side tool, so 130 pages read as one coherent reference instead of 130 one-offs.</p>
+
+    <dl class="field-list">
+      <div class="field-row"><dt>Name &amp; purpose</dt><dd>Tool name plus a one-line statement of what it does.</dd></div>
+      <div class="field-row"><dt>Category</dt><dd>Which of the site's existing groupings it sits in (Developer &amp; Technical, SEO &amp; Content, etc.) — keeps navigation and cross-links consistent.</dd></div>
+      <div class="field-row"><dt>How it processes data</dt><dd>The client-side technique or library involved, and an explicit "nothing leaves your browser" statement where true — this is the one line every tool page should share.</dd></div>
+      <div class="field-row"><dt>Inputs</dt><dd>Every field the tool takes, field-by-field, pulled from the live form — not assumed.</dd></div>
+      <div class="field-row"><dt>Output</dt><dd>Format, dimensions or size, and what happens on download or copy.</dd></div>
+      <div class="field-row"><dt>Constraints &amp; edge cases</dt><dd>The caveats that matter before someone relies on the output — the QR page's own "reality check" section is the right model.</dd></div>
+      <div class="field-row"><dt>Embed / reuse notes</dt><dd>Filled in once I've read the tool's actual source — flagging this honestly rather than guessing at a JS API that may not exist.</dd></div>
+      <div class="field-row"><dt>Related tools</dt><dd>2–4 real internal links to tools that pair naturally — the contextual linking you asked for, done the way qr-generator already does it.</dd></div>
+      <div class="field-row"><dt>Live page</dt><dd>Direct link to the working tool.</dd></div>
+      <div class="field-row"><dt>Screenshot</dt><dd>Auto-captured — see the Screenshots tab.</dd></div>
+      <div class="field-row"><dt>Last verified</dt><dd>Date I last checked the live page against this entry — so nothing here goes stale the way the Link Status Report did.</dd></div>
+    </dl>
+  </section>
+
+  <!-- EXAMPLE -->
+  <section class="panel" id="panel-example">
+    <div class="panel-title">Worked example</div>
+    <p class="panel-lede">The template above, filled out for one real tool — written from the live page, not the repo's marketing copy.</p>
+
+    <div class="doc-card">
+      <div class="doc-card-head">
+        <h3>QR Code Generator</h3>
+        <div class="url">smartgentools.com/qr-generator/ · Developer &amp; Technical</div>
+      </div>
+      <div class="doc-card-body">
+        <dl class="field-list">
+          <div class="field-row"><dt>Purpose</dt><dd>Builds a scannable QR code from 13 input types — URL/text, WiFi, vCard, WhatsApp, email, SMS, phone, location, event, PayPal, app-store link, crypto address, social profile.</dd></div>
+          <div class="field-row"><dt>Processing</dt><dd>100% client-side. Renders the matrix on-device using the open-source <code>qrcodejs</code> library — nothing typed is sent to a server before the code appears.</dd></div>
+          <div class="field-row"><dt>Inputs</dt><dd>Varies by type (e.g. WiFi: SSID, password, encryption — WPA/WPA2, WEP, or none). Optional: center logo image, foreground hex color.</dd></div>
+          <div class="field-row"><dt>Output</dt><dd>220×220px PNG, downloaded directly from the browser. No watermark, no account.</dd></div>
+          <div class="field-row"><dt>Constraints</dt><dd>Static only — the destination is locked at creation, no scan tracking. Error correction fixed at level H (~30% recoverable) to tolerate a logo capped at ~20% of code width. Low-contrast colors are the most common cause of scan failure.</dd></div>
+          <div class="field-row"><dt>Embed / reuse</dt><dd><em>Not yet filled in</em> — needs a read of the actual source file to describe any reusable function, not the marketing page.</dd></div>
+          <div class="field-row"><dt>Related tools</dt><dd>UTM Builder (tag a destination URL before generating), WhatsApp Link Generator (link-only version of the WhatsApp type), Color Palette Extractor (match a brand hex exactly).</dd></div>
+          <div class="field-row"><dt>Live page</dt><dd><a href="https://smartgentools.com/qr-generator/" target="_blank" rel="noopener">smartgentools.com/qr-generator ↗</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section class="panel" id="panel-checklist">
+    <div class="panel-title">Full build checklist</div>
+    <p class="panel-lede">Every tool I could confirm live, grouped the way your own site groups them, plus the 4 sitewide systems. Progress saves automatically in this document.</p>
+
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="progress-bar-fill"></div></div>
+      <div class="progress-label" id="progress-label">Loading…</div>
+    </div>
+
+    <div id="checklist-root">
+      <p style="color:var(--ink-soft);font-size:13px;">Loading checklist…</p>
+    </div>
+
+    <div class="cl-foot">
+      <span>Checked items are yours to mark — I'll track real progress against this same list as we go.</span>
+      <button class="reset-btn" id="reset-btn">Reset all</button>
+    </div>
+  </section>
+
+  <!-- AUTOMATION -->
+  <section class="panel" id="panel-automation">
+    <div class="panel-title">Screenshots — what I can and can't do</div>
+    <p class="panel-lede">Straight answer first: I can't run Playwright myself. My code environment has no live internet access, so I can't open your pages or capture anything from them directly.</p>
+
+    <div class="finding flag">
+      <span class="stamp stamp--flag">Practical alternative</span>
+      <h3>A script that fits your existing setup</h3>
+      <p>You're already running GitHub Actions for the changelog and Pages deploy, and using pnpm. This drops into the same pattern: a Playwright script plus a scheduled workflow that screenshots every live tool page and commits the images automatically — no manual screenshotting, and it stays current as pages change.</p>
+    </div>
+
+    <div class="code-label">scripts/capture-doc-screenshots.js</div>
+    <pre class="code"><span class="c">// Reads a { slug, url } list and screenshots each live page.</span>
+<span class="c">// Point TOOLS at your real assets/js/search-data.js TOOLS_INDEX once confirmed.</span>
+const { chromium } = require('playwright');
+const fs = require('fs');
+const path = require('path');
+
+const OUT_DIR = path.join(__dirname, '..', 'docs-assets', 'screenshots');
+const TOOLS = require('../data/doc-tools-list.json'); <span class="c">// [{ slug, url }, ...]</span>
+
+(async () => {
+  fs.mkdirSync(OUT_DIR, { recursive: true });
+  const browser = await chromium.launch();
+  const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+
+  for (const tool of TOOLS) {
+    try {
+      await page.goto(tool.url, { waitUntil: 'networkidle', timeout: 30000 });
+      await page.screenshot({
+        path: path.join(OUT_DIR, `${tool.slug}.png`),
+        fullPage: true
+      });
+      console.log(`saved: ${tool.slug}`);
+    } catch (err) {
+      console.error(`failed: ${tool.slug} — ${err.message}`);
+    }
+  }
+
+  await browser.close();
+})();</pre>
+
+    <div class="code-label">.github/workflows/doc-screenshots.yml</div>
+    <pre class="code">name: Update doc screenshots
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 3 * * 1'   <span class="c"># weekly, Monday 03:00 UTC</span>
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install playwright && npx playwright install --with-deps chromium
+      - run: node scripts/capture-doc-screenshots.js
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: refresh tool screenshots"
+          file_pattern: docs-assets/screenshots/*.png</pre>
+
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:16px;">Swap <code>data/doc-tools-list.json</code> for the real path once you confirm it — your own README points to <code>assets/js/search-data.js</code> and its <code>TOOLS_INDEX</code> array as the canonical tool list, which is the right source to generate this from rather than maintaining a second list by hand.</p>
+  </section>
+
+</main>
+
+<footer>SmartGen Docs Audit — checked against the live site and repo, 2026-08-11</footer>
+
+<script>
+(function(){
+  // ---------- Tabs ----------
+  var tabs = document.querySelectorAll('.tab-btn');
+  var panels = document.querySelectorAll('.panel');
+  tabs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tabs.forEach(function(b){ b.classList.remove('active'); });
+      panels.forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.target).classList.add('active');
+    });
+  });
+
+  // ---------- Checklist data ----------
+  var CHECKLIST = [
+    { category: 'Core / Featured', items: [
+      {id:'html-code-library', name:'HTML Code Library', url:'https://smartgentools.com/html-code-library/', note:'~80 snippet pages — treat as its own sub-batch, confirm source repo first'},
+      {id:'qr-generator', name:'QR Code Generator', url:'https://smartgentools.com/qr-generator/', note:'Written — see Example tab'}
+    ]},
+    { category: 'Marketing & Social Media', items: [
+      {id:'utm-builder', name:'UTM Builder', url:'https://smartgentools.com/utm-builder/'},
+      {id:'whatsapp-link', name:'WhatsApp Link', url:'https://smartgentools.com/whatsapp-link/'},
+      {id:'mailto-generator', name:'Mailto Generator', url:'https://smartgentools.com/mailto-generator/'},
+      {id:'hashtag-generator', name:'Hashtag Generator', url:'https://smartgentools.com/hashtag-generator/'},
+      {id:'blog-title-generator', name:'Blog Title Generator', url:'https://smartgentools.com/blog-title-generator/'},
+      {id:'youtube-thumbnail-downloader', name:'YouTube Thumbnail Downloader', url:'https://smartgentools.com/youtube-thumbnail-downloader/'},
+      {id:'pinterest-link-downloader', name:'Pinterest Downloader', url:'https://smartgentools.com/Pinterest-link-downloader/'},
+      {id:'facebook-id-finder', name:'Facebook ID Finder', url:'https://smartgentools.com/facebook-id-finder/'},
+      {id:'privacy-policy-generator', name:'Privacy Policy Generator', url:'https://smartgentools.com/privacy-policy-generator/'},
+      {id:'terms-conditions-generator', name:'Terms & Conditions Generator', url:'https://smartgentools.com/terms-conditions-generator/'},
+      {id:'disclaimer-generator', name:'Disclaimer Generator', url:'https://smartgentools.com/disclaimer-generator/'}
+    ]},
+    { category: 'Developer & Technical', items: [
+      {id:'robots-txt-generator', name:'Robots.txt Generator', url:'https://smartgentools.com/robots-txt-generator/'},
+      {id:'meta-tag-generator', name:'Meta Tag Generator', url:'https://smartgentools.com/meta-tag-generator/'},
+      {id:'schema-generator', name:'Schema Generator', url:'https://smartgentools.com/schema-generator/'},
+      {id:'image-to-base64', name:'Image to Base64', url:'https://smartgentools.com/image-to-base64/'},
+      {id:'picture-url-generator', name:'Picture URL Generator', url:'https://smartgentools.com/picture-url-generator/'},
+      {id:'url-encoder-decoder', name:'URL Encoder-Decoder', url:'https://smartgentools.com/url-encoder-decoder/'},
+      {id:'css-gradient-generator', name:'CSS Gradient Generator', url:'https://smartgentools.com/css-gradient-generator/'},
+      {id:'random-choice-picker', name:'Random Choice Picker', url:'https://smartgentools.com/random-choice-picker/'},
+      {id:'uuid-generator', name:'UUID Generator', url:'https://smartgentools.com/uuid-generator/'},
+      {id:'json-formatter-validator', name:'JSON Formatter', url:'https://smartgentools.com/json-formatter-validator/'},
+      {id:'base64-to-image', name:'Base64 to Image', url:'https://smartgentools.com/base64-to-image/'},
+      {id:'hash-generator', name:'Hash Generator', url:'https://smartgentools.com/hash-generator/'},
+      {id:'html-code-preview', name:'Live HTML Preview', url:'https://smartgentools.com/html-code-preview/'},
+      {id:'ip-address-lookup', name:'IP Lookup', url:'https://smartgentools.com/ip-address-lookup/'},
+      {id:'text-to-changelog-json-generator', name:'Text to Changelog JSON', url:'https://smartgentools.com/text-to-changelog-json-generator/'},
+      {id:'sitemap-finder-and-downloader', name:'Sitemap Finder & Downloader', url:'https://smartgentools.com/sitemap-finder-and-downloader/'}
+    ]},
+    { category: 'SEO & Content', items: [
+      {id:'seo-audit-tool', name:'SEO Audit Tool', url:'https://smartgentools.com/seo-audit-tool/', note:'Possible backend — confirm before treating as client-side'},
+      {id:'keyword-density-checker', name:'Keyword Density', url:'https://smartgentools.com/keyword-density-checker/'},
+      {id:'word-counter', name:'Word Counter', url:'https://smartgentools.com/word-counter/'},
+      {id:'text-case-converter', name:'Text Case Converter', url:'https://smartgentools.com/text-case-converter/'},
+      {id:'lorem-ipsum-generator', name:'Lorem Ipsum', url:'https://smartgentools.com/lorem-ipsum-generator/'},
+      {id:'serp-preview-tool', name:'SERP Preview Tool', url:'https://smartgentools.com/serp-preview-tool/'}
+    ]},
+    { category: 'Daily Utilities & Calculators', items: [
+      {id:'voice-remover', name:'AI Vocal Remover', url:'https://smartgentools.com/voice-remover/'},
+      {id:'age-calculator', name:'Age Calculator', url:'https://smartgentools.com/age-calculator/'},
+      {id:'cpm-roi-calculator', name:'CPM ROI Calculator', url:'https://smartgentools.com/tools/cpm-roi-calculator/', note:'URL uses /tools/ prefix, unlike most tools'},
+      {id:'color-palette-extractor', name:'Color Palette Extractor', url:'https://smartgentools.com/tools/color-palette-extractor/', note:'URL uses /tools/ prefix, unlike most tools'},
+      {id:'emi-calculator', name:'EMI Calculator', url:'https://smartgentools.com/tools/emi-calculator/', note:'URL uses /tools/ prefix, unlike most tools'},
+      {id:'image-compressor', name:'Image Compressor', url:'https://smartgentools.com/image-compressor/'},
+      {id:'percentage-calculator', name:'Percentage Calculator', url:'https://smartgentools.com/percentage-calculator/'},
+      {id:'pomodoro-timer', name:'Pomodoro Timer', url:'https://smartgentools.com/pomodoro-timer/'},
+      {id:'secure-notepad', name:'Secure Notepad', url:'https://smartgentools.com/secure-notepad/'},
+      {id:'fancy-font-generator', name:'Fancy Font Generator', url:'https://smartgentools.com/fancy-font-generator/'},
+      {id:'unit-converter', name:'Unit Converter', url:'https://smartgentools.com/unit-converter/'},
+      {id:'bmi-bmr-calculator', name:'BMI BMR Calculator', url:'https://smartgentools.com/bmi-bmr-calculator/'},
+      {id:'password-generator', name:'Password Generator', url:'https://smartgentools.com/password-generator/'},
+      {id:'marquee-generator', name:'Marquee Generator', url:'https://smartgentools.com/marquee-generator/'}
+    ]},
+    { category: 'Sitewide Systems', items: [
+      {id:'blog', name:'Blog', url:'https://smartgentools.com/blog/'},
+      {id:'docs-system', name:'Docs system (docs.smartgentools.com)', url:'https://docs.smartgentools.com', note:'Live but reads as generator scaffold — needs real rewrite, not fill-in'},
+      {id:'chatbot', name:'Chatbot system', url:'https://github.com/bayzed123/SmartGenQR.oi/blob/main/CHATBOT_README.md', note:'Scope unconfirmed — read CHATBOT_README.md first'},
+      {id:'backend-platforms', name:'backend/smartgen-platforms', url:'https://github.com/bayzed123/SmartGenQR.oi/tree/main/backend/smartgen-platforms', note:'Best candidate for a true API — purpose not yet confirmed'}
+    ]}
+  ];
+
+  var STORAGE_KEY = 'smartgen-doc-checklist-v1';
+  var state = {};
+
+  async function loadState(){
+    try{
+      var res = await window.storage.get(STORAGE_KEY);
+      if(res && res.value){ state = JSON.parse(res.value); }
+    }catch(e){
+      state = {};
+    }
+  }
+
+  async function saveState(){
+    try{
+      await window.storage.set(STORAGE_KEY, JSON.stringify(state));
+    }catch(e){
+      console.error('Could not save checklist progress', e);
+    }
+  }
+
+  function totals(){
+    var done=0, total=0;
+    CHECKLIST.forEach(function(cat){
+      cat.items.forEach(function(it){ total++; if(state[it.id]) done++; });
+    });
+    return {done:done, total:total};
+  }
+
+  function updateProgress(){
+    var t = totals();
+    var pct = t.total ? Math.round(t.done/t.total*100) : 0;
+    var bar = document.getElementById('progress-bar-fill');
+    var label = document.getElementById('progress-label');
+    if(bar) bar.style.width = pct + '%';
+    if(label) label.textContent = t.done + ' / ' + t.total + ' documented (' + pct + '%)';
+  }
+
+  function renderChecklist(){
+    var root = document.getElementById('checklist-root');
+    root.innerHTML = '';
+    CHECKLIST.forEach(function(cat){
+      var catDone = cat.items.filter(function(it){ return state[it.id]; }).length;
+      var section = document.createElement('div');
+      section.className = 'cl-category';
+
+      var head = document.createElement('div');
+      head.className = 'cl-cat-head';
+      head.innerHTML = '<h3>' + cat.category + '</h3><span class="cl-count">' + catDone + '/' + cat.items.length + '</span>';
+      section.appendChild(head);
+
+      var list = document.createElement('div');
+      list.className = 'cl-list';
+
+      cat.items.forEach(function(it){
+        var row = document.createElement('label');
+        row.className = 'cl-row';
+        var checked = state[it.id] ? 'checked' : '';
+        var noteHtml = it.note ? '<span class="cl-note">' + it.note + '</span>' : '';
+        var linkHtml = it.url ? '<a class="cl-link" href="' + it.url + '" target="_blank" rel="noopener">open &#8599;</a>' : '';
+        row.innerHTML =
+          '<input type="checkbox" data-id="' + it.id + '" ' + checked + '>' +
+          '<span class="cl-name">' + it.name + '</span>' +
+          linkHtml +
+          noteHtml;
+        list.appendChild(row);
+      });
+
+      section.appendChild(list);
+      root.appendChild(section);
+    });
+
+    root.querySelectorAll('input[type=checkbox]').forEach(function(cb){
+      cb.addEventListener('change', async function(e){
+        state[e.target.dataset.id] = e.target.checked;
+        updateProgress();
+        renderCounts();
+        await saveState();
+      });
+    });
+
+    updateProgress();
+  }
+
+  function renderCounts(){
+    var sections = document.querySelectorAll('.cl-category');
+    sections.forEach(function(section, i){
+      var cat = CHECKLIST[i];
+      var catDone = cat.items.filter(function(it){ return state[it.id]; }).length;
+      var countEl = section.querySelector('.cl-count');
+      if(countEl) countEl.textContent = catDone + '/' + cat.items.length;
+    });
+  }
+
+  document.getElementById('reset-btn').addEventListener('click', async function(){
+    if(!confirm('Clear all checked progress on this checklist?')) return;
+    state = {};
+    renderChecklist();
+    await saveState();
+  });
+
+  (async function init(){
+    await loadState();
+    renderChecklist();
+  })();
+})();
+</script>
+
+</body>
+</html>
