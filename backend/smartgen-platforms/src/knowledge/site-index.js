@@ -17,7 +17,7 @@ export const SITE = {
   "contact": "https://smartgentools.com/contact/",
   "founder": "Sayad Md Bayezid Hosan",
   "operator": "Connect with Bayezid",
-  "toolCount": 126,
+  "toolCount": 128,
   "blogPostCount": 37,
   "categories": [
     "Daily Utilities & Calculators",
@@ -27,7 +27,7 @@ export const SITE = {
     "Resources",
     "SEO & Content"
   ],
-  "sourceHash": "1071c1d0efa4"
+  "sourceHash": "d8d3c5484633"
 };
 
 export const TOOLS = [
@@ -357,14 +357,18 @@ export const TOOLS = [
     "id": "serp-preview-tool",
     "title": "SERP Preview Tool",
     "category": "SEO & Content",
-    "description": "Preview how your page appears in Google search.",
+    "description": "Preview your Google snippet, get AI-written title and description suggestions, and check your keyword ranking.",
     "url": "https://smartgentools.com/serp-preview-tool/",
     "keywords": [
       "serp",
       "preview",
       "google",
       "search",
-      "snippet"
+      "snippet",
+      "ai title generator",
+      "meta description generator",
+      "rank checker",
+      "keyword ranking"
     ],
     "icon": "🔍"
   },
@@ -757,7 +761,7 @@ export const TOOLS = [
     "title": "Bouncing Image",
     "category": "HTML Code Library",
     "description": "Create bouncing image animations using HTML and CSS.",
-    "url": "https://smartgentools.com/html-code-library/marquee-codes/bouncing-image/",
+    "url": "https://smartgentools.com/html-code-library/bouncing-image.html",
     "keywords": [
       "bouncing image",
       "animated image",
@@ -771,7 +775,7 @@ export const TOOLS = [
     "title": "Bouncing Text",
     "category": "HTML Code Library",
     "description": "Create bouncing text effects with HTML and CSS.",
-    "url": "https://smartgentools.com/html-code-library/marquee-codes/bouncing-text/",
+    "url": "https://smartgentools.com/html-code-library/bouncing-text.html",
     "keywords": [
       "bouncing text",
       "animated text",
@@ -785,7 +789,7 @@ export const TOOLS = [
     "title": "CSS Marquee",
     "category": "HTML Code Library",
     "description": "Modern CSS marquee effects without deprecated tags.",
-    "url": "https://smartgentools.com/html-code-library/marquee-codes/css-marquee/",
+    "url": "https://smartgentools.com/html-code-library/css-marquee.html",
     "keywords": [
       "css marquee",
       "scrolling text css",
@@ -799,7 +803,7 @@ export const TOOLS = [
     "title": "HTML Marquee",
     "category": "HTML Code Library",
     "description": "Classic HTML marquee examples and alternatives.",
-    "url": "https://smartgentools.com/html-code-library/marquee-codes/html-marquee/",
+    "url": "https://smartgentools.com/html-code-library/html-marquee.html",
     "keywords": [
       "html marquee",
       "marquee tag",
@@ -813,7 +817,7 @@ export const TOOLS = [
     "title": "Scrolling Image",
     "category": "HTML Code Library",
     "description": "Create scrolling image effects using HTML and CSS.",
-    "url": "https://smartgentools.com/html-code-library/marquee-codes/scrolling-image/",
+    "url": "https://smartgentools.com/html-code-library/scrolling-image.html",
     "keywords": [
       "scrolling image",
       "moving image",
@@ -827,7 +831,7 @@ export const TOOLS = [
     "title": "Scrolling Text",
     "category": "HTML Code Library",
     "description": "Build scrolling text effects for websites.",
-    "url": "https://smartgentools.com/html-code-library/marquee-codes/scrolling-text/",
+    "url": "https://smartgentools.com/html-code-library/scrolling-text.html",
     "keywords": [
       "scrolling text",
       "moving text",
@@ -841,7 +845,7 @@ export const TOOLS = [
     "title": "Slide In Image",
     "category": "HTML Code Library",
     "description": "Create slide-in image animations with HTML and CSS.",
-    "url": "https://smartgentools.com/html-code-library/marquee-codes/slide-in-image/",
+    "url": "https://smartgentools.com/html-code-library/slide-in-image.html",
     "keywords": [
       "slide in image",
       "image animation",
@@ -855,7 +859,7 @@ export const TOOLS = [
     "title": "Slide In Text",
     "category": "HTML Code Library",
     "description": "Create animated slide-in text effects.",
-    "url": "https://smartgentools.com/html-code-library/marquee-codes/slide-in-text/",
+    "url": "https://smartgentools.com/html-code-library/slide-in-text.html",
     "keywords": [
       "slide in text",
       "text animation",
@@ -869,7 +873,7 @@ export const TOOLS = [
     "title": "HTML Scrollbox",
     "category": "HTML Code Library",
     "description": "Create scrollable content areas using HTML and CSS.",
-    "url": "https://smartgentools.com/html-code-library/scrollbox-codes/html-scrollbox/",
+    "url": "https://smartgentools.com/html-code-library/html-scrollbox.html",
     "keywords": [
       "html scrollbox",
       "scrollable box",
@@ -883,7 +887,7 @@ export const TOOLS = [
     "title": "Scrollbox Border",
     "category": "HTML Code Library",
     "description": "Customize borders for HTML scrollboxes.",
-    "url": "https://smartgentools.com/html-code-library/scrollbox-codes/scrollbox-border/",
+    "url": "https://smartgentools.com/html-code-library/scrollbox-border.html",
     "keywords": [
       "scrollbox border",
       "scroll box border",
@@ -897,7 +901,7 @@ export const TOOLS = [
     "title": "Scrollbox Color",
     "category": "HTML Code Library",
     "description": "Customize scrollbox colors and appearance.",
-    "url": "https://smartgentools.com/html-code-library/scrollbox-codes/scrollbox-color/",
+    "url": "https://smartgentools.com/html-code-library/scrollbox-color.html",
     "keywords": [
       "scrollbox color",
       "scroll box color",
@@ -911,7 +915,7 @@ export const TOOLS = [
     "title": "CSS Templates",
     "category": "HTML Code Library",
     "description": "Ready-to-use CSS templates for websites and web projects.",
-    "url": "https://smartgentools.com/html-code-library/templates/css-templates/",
+    "url": "https://smartgentools.com/html-code-library/css-templates.html",
     "keywords": [
       "css templates",
       "website css templates",
@@ -925,7 +929,7 @@ export const TOOLS = [
     "title": "HTML5 Frames",
     "category": "HTML Code Library",
     "description": "HTML5 frame and layout examples for modern websites.",
-    "url": "https://smartgentools.com/html-code-library/templates/html5-frames/",
+    "url": "https://smartgentools.com/html-code-library/html5-frames.html",
     "keywords": [
       "html5 frames",
       "html frame layouts",
@@ -939,7 +943,7 @@ export const TOOLS = [
     "title": "Layout Templates",
     "category": "HTML Code Library",
     "description": "Prebuilt HTML layout templates for websites.",
-    "url": "https://smartgentools.com/html-code-library/templates/layout-templates/",
+    "url": "https://smartgentools.com/html-code-library/layout-templates.html",
     "keywords": [
       "layout templates",
       "website layouts",
@@ -953,7 +957,7 @@ export const TOOLS = [
     "title": "Website Templates",
     "category": "HTML Code Library",
     "description": "Website template examples for fast web development.",
-    "url": "https://smartgentools.com/html-code-library/templates/website-templates/",
+    "url": "https://smartgentools.com/html-code-library/website-templates.html",
     "keywords": [
       "website templates",
       "html website templates",
@@ -967,7 +971,7 @@ export const TOOLS = [
     "title": "Font Code",
     "category": "HTML Code Library",
     "description": "HTML font styling and typography code examples.",
-    "url": "https://smartgentools.com/html-code-library/text-codes/font-code/",
+    "url": "https://smartgentools.com/html-code-library/font-code.html",
     "keywords": [
       "font code",
       "html font code",
@@ -981,7 +985,7 @@ export const TOOLS = [
     "title": "HTML Bold",
     "category": "HTML Code Library",
     "description": "Make text bold using HTML tags and CSS.",
-    "url": "https://smartgentools.com/html-code-library/text-codes/html-bold/",
+    "url": "https://smartgentools.com/html-code-library/html-bold.html",
     "keywords": [
       "html bold",
       "bold text html",
@@ -995,7 +999,7 @@ export const TOOLS = [
     "title": "HTML Underline Code",
     "category": "HTML Code Library",
     "description": "Underline text using HTML and CSS techniques.",
-    "url": "https://smartgentools.com/html-code-library/text-codes/html-underline-code/",
+    "url": "https://smartgentools.com/html-code-library/html-underline-code.html",
     "keywords": [
       "html underline code",
       "underline text html",
@@ -1009,7 +1013,7 @@ export const TOOLS = [
     "title": "Table Background Color",
     "category": "HTML Code Library",
     "description": "Customize table background colors with HTML and CSS.",
-    "url": "https://smartgentools.com/html-code-library/text-codes/table-background-color/",
+    "url": "https://smartgentools.com/html-code-library/table-background-color.html",
     "keywords": [
       "table background color",
       "html table color",
@@ -1023,7 +1027,7 @@ export const TOOLS = [
     "title": "Table Border",
     "category": "HTML Code Library",
     "description": "Create and customize table borders in HTML.",
-    "url": "https://smartgentools.com/html-code-library/text-codes/table-border/",
+    "url": "https://smartgentools.com/html-code-library/table-border.html",
     "keywords": [
       "table border",
       "html table border",
@@ -1037,7 +1041,7 @@ export const TOOLS = [
     "title": "Table Color",
     "category": "HTML Code Library",
     "description": "Apply colors to HTML tables for better presentation.",
-    "url": "https://smartgentools.com/html-code-library/text-codes/table-color/",
+    "url": "https://smartgentools.com/html-code-library/table-color.html",
     "keywords": [
       "table color",
       "html table colors",
@@ -1051,7 +1055,7 @@ export const TOOLS = [
     "title": "Table Text",
     "category": "HTML Code Library",
     "description": "Format and style text within HTML tables.",
-    "url": "https://smartgentools.com/html-code-library/text-codes/table-text/",
+    "url": "https://smartgentools.com/html-code-library/table-text.html",
     "keywords": [
       "table text",
       "html table text",
@@ -1065,7 +1069,7 @@ export const TOOLS = [
     "title": "Text Code",
     "category": "HTML Code Library",
     "description": "General HTML text formatting and styling examples.",
-    "url": "https://smartgentools.com/html-code-library/text-codes/text-code/",
+    "url": "https://smartgentools.com/html-code-library/text-code.html",
     "keywords": [
       "text code",
       "html text code",
@@ -1079,7 +1083,7 @@ export const TOOLS = [
     "title": "Text Color",
     "category": "HTML Code Library",
     "description": "Change text colors using HTML and CSS.",
-    "url": "https://smartgentools.com/html-code-library/text-codes/text-color/",
+    "url": "https://smartgentools.com/html-code-library/text-color.html",
     "keywords": [
       "text color",
       "html text color",
@@ -1093,7 +1097,7 @@ export const TOOLS = [
     "title": "HTML Textbox",
     "category": "HTML Code Library",
     "description": "Create HTML textboxes and input fields.",
-    "url": "https://smartgentools.com/html-code-library/textbox-codes/html-textbox/",
+    "url": "https://smartgentools.com/html-code-library/html-textbox.html",
     "keywords": [
       "html textbox",
       "input textbox",
@@ -1107,7 +1111,7 @@ export const TOOLS = [
     "title": "Textbox Border",
     "category": "HTML Code Library",
     "description": "Customize textbox borders with CSS.",
-    "url": "https://smartgentools.com/html-code-library/textbox-codes/textbox-border/",
+    "url": "https://smartgentools.com/html-code-library/textbox-border.html",
     "keywords": [
       "textbox border",
       "input border css",
@@ -1121,7 +1125,7 @@ export const TOOLS = [
     "title": "Textbox Color",
     "category": "HTML Code Library",
     "description": "Style textbox colors using HTML and CSS.",
-    "url": "https://smartgentools.com/html-code-library/textbox-codes/textbox-color/",
+    "url": "https://smartgentools.com/html-code-library/textbox-color.html",
     "keywords": [
       "textbox color",
       "input color css",
@@ -1135,7 +1139,7 @@ export const TOOLS = [
     "title": "Background Image Code",
     "category": "HTML Code Library",
     "description": "HTML and CSS background image code examples and customization options.",
-    "url": "https://smartgentools.com/html-code-library/image-codes/background-image-code/",
+    "url": "https://smartgentools.com/html-code-library/background-image-code.html",
     "keywords": [
       "background image code",
       "html background image",
@@ -1149,7 +1153,7 @@ export const TOOLS = [
     "title": "HTML Favicon Code",
     "category": "HTML Code Library",
     "description": "Add and customize favicons using HTML favicon code.",
-    "url": "https://smartgentools.com/html-code-library/image-codes/html-favicon-code/",
+    "url": "https://smartgentools.com/html-code-library/html-favicon-code.html",
     "keywords": [
       "html favicon code",
       "favicon html",
@@ -1163,7 +1167,7 @@ export const TOOLS = [
     "title": "HTML Image Borders",
     "category": "HTML Code Library",
     "description": "Create and customize image borders using HTML and CSS.",
-    "url": "https://smartgentools.com/html-code-library/image-codes/html-image-borders/",
+    "url": "https://smartgentools.com/html-code-library/html-image-borders.html",
     "keywords": [
       "html image borders",
       "image border css",
@@ -1177,7 +1181,7 @@ export const TOOLS = [
     "title": "Repeat Image",
     "category": "HTML Code Library",
     "description": "Repeat images horizontally, vertically, or in both directions.",
-    "url": "https://smartgentools.com/html-code-library/image-codes/repeat-image/",
+    "url": "https://smartgentools.com/html-code-library/repeat-image.html",
     "keywords": [
       "repeat image",
       "background repeat image",
@@ -1191,7 +1195,7 @@ export const TOOLS = [
     "title": "CSS Hover",
     "category": "HTML Code Library",
     "description": "Create interactive hover effects using CSS.",
-    "url": "https://smartgentools.com/html-code-library/link-codes/css-hover/",
+    "url": "https://smartgentools.com/html-code-library/css-hover.html",
     "keywords": [
       "css hover",
       "hover effect",
@@ -1205,7 +1209,7 @@ export const TOOLS = [
     "title": "Email Link",
     "category": "HTML Code Library",
     "description": "Create clickable email links using mailto HTML code.",
-    "url": "https://smartgentools.com/html-code-library/link-codes/email-link/",
+    "url": "https://smartgentools.com/html-code-library/email-link.html",
     "keywords": [
       "email link",
       "mailto link",
@@ -1219,7 +1223,7 @@ export const TOOLS = [
     "title": "HTML Image Link",
     "category": "HTML Code Library",
     "description": "Turn images into clickable hyperlinks with HTML.",
-    "url": "https://smartgentools.com/html-code-library/link-codes/html-image-link/",
+    "url": "https://smartgentools.com/html-code-library/html-image-link.html",
     "keywords": [
       "html image link",
       "linked image",
@@ -1233,7 +1237,7 @@ export const TOOLS = [
     "title": "Open In New Window",
     "category": "HTML Code Library",
     "description": "Open hyperlinks in a new browser tab or window.",
-    "url": "https://smartgentools.com/html-code-library/link-codes/open-in-new-window/",
+    "url": "https://smartgentools.com/html-code-library/open-in-new-window.html",
     "keywords": [
       "open in new window",
       "target blank",
@@ -1247,7 +1251,7 @@ export const TOOLS = [
     "title": "Remove Underline",
     "category": "HTML Code Library",
     "description": "Remove link underlines using CSS and HTML.",
-    "url": "https://smartgentools.com/html-code-library/link-codes/remove-underline/",
+    "url": "https://smartgentools.com/html-code-library/remove-underline.html",
     "keywords": [
       "remove underline",
       "css text decoration",
@@ -1261,7 +1265,7 @@ export const TOOLS = [
     "title": "HTML Bold Editor",
     "category": "HTML Code Library",
     "description": "Create and edit bold HTML text with a visual editor.",
-    "url": "https://smartgentools.com/html-code-library/editors/html-bold-editor/",
+    "url": "https://smartgentools.com/html-code-library/html-bold-editor.html",
     "keywords": [
       "html bold editor",
       "bold text editor",
@@ -1275,7 +1279,7 @@ export const TOOLS = [
     "title": "HTML Editor",
     "category": "HTML Code Library",
     "description": "Online HTML editor for creating and testing HTML code.",
-    "url": "https://smartgentools.com/html-code-library/editors/html-editor/",
+    "url": "https://smartgentools.com/html-code-library/html-editor.html",
     "keywords": [
       "html editor",
       "online html editor",
@@ -1289,7 +1293,7 @@ export const TOOLS = [
     "title": "HTML Link Editor",
     "category": "HTML Code Library",
     "description": "Create and edit HTML hyperlinks with ease.",
-    "url": "https://smartgentools.com/html-code-library/editors/html-link-editor/",
+    "url": "https://smartgentools.com/html-code-library/html-link-editor.html",
     "keywords": [
       "html link editor",
       "anchor tag editor",
@@ -1303,7 +1307,7 @@ export const TOOLS = [
     "title": "HTML Text Editor",
     "category": "HTML Code Library",
     "description": "Edit and format text content using HTML.",
-    "url": "https://smartgentools.com/html-code-library/editors/html-text-editor/",
+    "url": "https://smartgentools.com/html-code-library/html-text-editor.html",
     "keywords": [
       "html text editor",
       "text formatting editor",
@@ -1317,7 +1321,7 @@ export const TOOLS = [
     "title": "Image Code Editor",
     "category": "HTML Code Library",
     "description": "Generate and edit HTML image code quickly.",
-    "url": "https://smartgentools.com/html-code-library/editors/image-code-editor/",
+    "url": "https://smartgentools.com/html-code-library/image-code-editor.html",
     "keywords": [
       "image code editor",
       "html image editor",
@@ -1331,7 +1335,7 @@ export const TOOLS = [
     "title": "Text Color Editor",
     "category": "HTML Code Library",
     "description": "Customize text colors and generate HTML color code.",
-    "url": "https://smartgentools.com/html-code-library/editors/text-color-editor/",
+    "url": "https://smartgentools.com/html-code-library/text-color-editor.html",
     "keywords": [
       "text color editor",
       "html text color",
@@ -1345,7 +1349,7 @@ export const TOOLS = [
     "title": "Gradient Generator",
     "category": "HTML Code Library",
     "description": "Generate CSS and HTML gradient backgrounds instantly.",
-    "url": "https://smartgentools.com/html-code-library/generators/gradient-generator/",
+    "url": "https://smartgentools.com/html-code-library/gradient-generator.html",
     "keywords": [
       "gradient generator",
       "css gradient generator",
@@ -1359,7 +1363,7 @@ export const TOOLS = [
     "title": "HTML Bold Generator",
     "category": "HTML Code Library",
     "description": "Generate bold text HTML code automatically.",
-    "url": "https://smartgentools.com/html-code-library/generators/html-bold-generator/",
+    "url": "https://smartgentools.com/html-code-library/html-bold-generator.html",
     "keywords": [
       "html bold generator",
       "bold text generator",
@@ -1373,7 +1377,7 @@ export const TOOLS = [
     "title": "HTML Italic Generator",
     "category": "HTML Code Library",
     "description": "Generate italic HTML text code instantly.",
-    "url": "https://smartgentools.com/html-code-library/generators/html-italic-generator/",
+    "url": "https://smartgentools.com/html-code-library/html-italic-generator.html",
     "keywords": [
       "html italic generator",
       "italic text generator",
@@ -1387,7 +1391,7 @@ export const TOOLS = [
     "title": "HTML Link Generator",
     "category": "HTML Code Library",
     "description": "Create HTML hyperlinks automatically.",
-    "url": "https://smartgentools.com/html-code-library/generators/html-link-generator/",
+    "url": "https://smartgentools.com/html-code-library/html-link-generator.html",
     "keywords": [
       "html link generator",
       "anchor tag generator",
@@ -1401,7 +1405,7 @@ export const TOOLS = [
     "title": "HTML Table Generator",
     "category": "HTML Code Library",
     "description": "Generate responsive HTML tables quickly.",
-    "url": "https://smartgentools.com/html-code-library/generators/html-table-generator/",
+    "url": "https://smartgentools.com/html-code-library/html-table-generator.html",
     "keywords": [
       "html table generator",
       "table creator",
@@ -1415,7 +1419,7 @@ export const TOOLS = [
     "title": "Image Code Generator",
     "category": "HTML Code Library",
     "description": "Generate HTML image embed code automatically.",
-    "url": "https://smartgentools.com/html-code-library/generators/image-code-generator/",
+    "url": "https://smartgentools.com/html-code-library/image-code-generator.html",
     "keywords": [
       "image code generator",
       "html image code",
@@ -1429,7 +1433,7 @@ export const TOOLS = [
     "title": "Text Color Generator",
     "category": "HTML Code Library",
     "description": "Generate HTML text color code instantly.",
-    "url": "https://smartgentools.com/html-code-library/generators/text-color-generator/",
+    "url": "https://smartgentools.com/html-code-library/text-color-generator.html",
     "keywords": [
       "text color generator",
       "html color generator",
@@ -1443,7 +1447,7 @@ export const TOOLS = [
     "title": "Text Generator",
     "category": "HTML Code Library",
     "description": "Generate formatted HTML text content.",
-    "url": "https://smartgentools.com/html-code-library/generators/text-generator/",
+    "url": "https://smartgentools.com/html-code-library/text-generator.html",
     "keywords": [
       "text generator",
       "html text generator",
@@ -1457,7 +1461,7 @@ export const TOOLS = [
     "title": "HTML Heart Code",
     "category": "HTML Code Library",
     "description": "HTML heart symbol codes, entities, and examples.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/html-heart-code/",
+    "url": "https://smartgentools.com/html-code-library/html-heart-code.html",
     "keywords": [
       "html heart code",
       "heart symbol html",
@@ -1471,7 +1475,7 @@ export const TOOLS = [
     "title": "HTML Space Code",
     "category": "HTML Code Library",
     "description": "HTML space character codes and spacing examples.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/html-space-code/",
+    "url": "https://smartgentools.com/html-code-library/html-space-code.html",
     "keywords": [
       "html space code",
       "non breaking space",
@@ -1485,7 +1489,7 @@ export const TOOLS = [
     "title": "HTML Special Characters",
     "category": "HTML Code Library",
     "description": "Collection of HTML special characters and entity codes.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/html-special-characters/",
+    "url": "https://smartgentools.com/html-code-library/html-special-characters.html",
     "keywords": [
       "html special characters",
       "special symbols html",
@@ -1499,7 +1503,7 @@ export const TOOLS = [
     "title": "HTML Star Code",
     "category": "HTML Code Library",
     "description": "HTML star symbol codes and usage examples.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/html-star-code/",
+    "url": "https://smartgentools.com/html-code-library/html-star-code.html",
     "keywords": [
       "html star code",
       "star symbol html",
@@ -1513,7 +1517,7 @@ export const TOOLS = [
     "title": "HTML Symbols",
     "category": "HTML Code Library",
     "description": "Browse popular HTML symbols and character entities.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/html-symbols/",
+    "url": "https://smartgentools.com/html-code-library/html-symbols.html",
     "keywords": [
       "html symbols",
       "symbol codes html",
@@ -1527,7 +1531,7 @@ export const TOOLS = [
     "title": "HTML Tab Code",
     "category": "HTML Code Library",
     "description": "Methods for creating tab spacing in HTML.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/html-tab-code/",
+    "url": "https://smartgentools.com/html-code-library/html-tab-code.html",
     "keywords": [
       "html tab code",
       "tab character html",
@@ -1541,7 +1545,7 @@ export const TOOLS = [
     "title": "HTML Trademark Code",
     "category": "HTML Code Library",
     "description": "Trademark symbol HTML codes and examples.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/html-trademark-code/",
+    "url": "https://smartgentools.com/html-code-library/html-trademark-code.html",
     "keywords": [
       "html trademark code",
       "tm symbol html",
@@ -1555,7 +1559,7 @@ export const TOOLS = [
     "title": "ISO 8859-1 Characters",
     "category": "HTML Code Library",
     "description": "Reference for ISO 8859-1 HTML character entities.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/iso-8859-1-characters/",
+    "url": "https://smartgentools.com/html-code-library/iso-8859-1-characters.html",
     "keywords": [
       "iso 8859 1 characters",
       "latin1 characters",
@@ -1569,7 +1573,7 @@ export const TOOLS = [
     "title": "ISO Language Codes",
     "category": "HTML Code Library",
     "description": "ISO language code reference for HTML and web development.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/iso-language-codes/",
+    "url": "https://smartgentools.com/html-code-library/iso-language-codes.html",
     "keywords": [
       "iso language codes",
       "language codes",
@@ -1583,7 +1587,7 @@ export const TOOLS = [
     "title": "Color Code Chart",
     "category": "HTML Code Library",
     "description": "Comprehensive HTML color code chart and reference.",
-    "url": "https://smartgentools.com/html-code-library/color-codes/color-code-chart/",
+    "url": "https://smartgentools.com/html-code-library/color-code-chart.html",
     "keywords": [
       "color code chart",
       "html color chart",
@@ -1597,7 +1601,7 @@ export const TOOLS = [
     "title": "Color Schemes",
     "category": "HTML Code Library",
     "description": "Popular color schemes for websites and UI design.",
-    "url": "https://smartgentools.com/html-code-library/color-codes/color-schemes/",
+    "url": "https://smartgentools.com/html-code-library/color-schemes.html",
     "keywords": [
       "color schemes",
       "css color schemes",
@@ -1611,7 +1615,7 @@ export const TOOLS = [
     "title": "HTML Black Code",
     "category": "HTML Code Library",
     "description": "HTML black color code references and examples.",
-    "url": "https://smartgentools.com/html-code-library/color-codes/html-black-code/",
+    "url": "https://smartgentools.com/html-code-library/html-black-code.html",
     "keywords": [
       "html black code",
       "black color code",
@@ -1625,7 +1629,7 @@ export const TOOLS = [
     "title": "HTML Blue Code",
     "category": "HTML Code Library",
     "description": "HTML blue color code reference and usage examples.",
-    "url": "https://smartgentools.com/html-code-library/color-codes/html-blue-code/",
+    "url": "https://smartgentools.com/html-code-library/html-blue-code.html",
     "keywords": [
       "html blue code",
       "blue color code",
@@ -1639,7 +1643,7 @@ export const TOOLS = [
     "title": "HTML Color Picker",
     "category": "HTML Code Library",
     "description": "Interactive HTML color picker and color selection tool.",
-    "url": "https://smartgentools.com/html-code-library/color-codes/html-color-picker/",
+    "url": "https://smartgentools.com/html-code-library/html-color-picker.html",
     "keywords": [
       "html color picker",
       "css color picker",
@@ -1653,7 +1657,7 @@ export const TOOLS = [
     "title": "HTML Green Code",
     "category": "HTML Code Library",
     "description": "HTML green color codes and examples.",
-    "url": "https://smartgentools.com/html-code-library/color-codes/html-green-code/",
+    "url": "https://smartgentools.com/html-code-library/html-green-code.html",
     "keywords": [
       "html green code",
       "green color code",
@@ -1667,7 +1671,7 @@ export const TOOLS = [
     "title": "HTML Red Code",
     "category": "HTML Code Library",
     "description": "HTML red color code references and examples.",
-    "url": "https://smartgentools.com/html-code-library/color-codes/html-red-code/",
+    "url": "https://smartgentools.com/html-code-library/html-red-code.html",
     "keywords": [
       "html red code",
       "red color code",
@@ -1681,7 +1685,7 @@ export const TOOLS = [
     "title": "HTML White Code",
     "category": "HTML Code Library",
     "description": "HTML white color codes and implementation examples.",
-    "url": "https://smartgentools.com/html-code-library/color-codes/html-white-code/",
+    "url": "https://smartgentools.com/html-code-library/html-white-code.html",
     "keywords": [
       "html white code",
       "white color code",
@@ -1691,7 +1695,7 @@ export const TOOLS = [
     "icon": "⚪"
   },
   {
-    "id": "html-code-library",
+    "id": "html-code-library-index",
     "title": "HTML Code Library",
     "category": "HTML Code Library",
     "description": "HTML Code Library resources.",
@@ -1709,7 +1713,7 @@ export const TOOLS = [
     "title": "Background Color",
     "category": "HTML Code Library",
     "description": "Background Color code.",
-    "url": "https://smartgentools.com/html-code-library/background-codes/background-color/",
+    "url": "https://smartgentools.com/html-code-library/background-color.html",
     "keywords": [
       "background color"
     ],
@@ -1720,7 +1724,7 @@ export const TOOLS = [
     "title": "Background Image",
     "category": "HTML Code Library",
     "description": "Background Image code.",
-    "url": "https://smartgentools.com/html-code-library/background-codes/background-image/",
+    "url": "https://smartgentools.com/html-code-library/background-image.html",
     "keywords": [
       "background image"
     ],
@@ -1731,7 +1735,7 @@ export const TOOLS = [
     "title": "Background Position",
     "category": "HTML Code Library",
     "description": "Background Position code.",
-    "url": "https://smartgentools.com/html-code-library/background-codes/background-position/",
+    "url": "https://smartgentools.com/html-code-library/background-position.html",
     "keywords": [
       "background position"
     ],
@@ -1742,7 +1746,7 @@ export const TOOLS = [
     "title": "Background Repeat",
     "category": "HTML Code Library",
     "description": "Background Repeat code.",
-    "url": "https://smartgentools.com/html-code-library/background-codes/background-repeat/",
+    "url": "https://smartgentools.com/html-code-library/background-repeat.html",
     "keywords": [
       "background repeat"
     ],
@@ -1753,7 +1757,7 @@ export const TOOLS = [
     "title": "Fixed Background",
     "category": "HTML Code Library",
     "description": "Fixed Background code.",
-    "url": "https://smartgentools.com/html-code-library/background-codes/fixed-background/",
+    "url": "https://smartgentools.com/html-code-library/fixed-background.html",
     "keywords": [
       "fixed background"
     ],
@@ -1764,7 +1768,7 @@ export const TOOLS = [
     "title": "Greek Characters",
     "category": "HTML Code Library",
     "description": "Greek Characters code.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/greek-characters/",
+    "url": "https://smartgentools.com/html-code-library/greek-characters.html",
     "keywords": [
       "greek characters"
     ],
@@ -1775,7 +1779,7 @@ export const TOOLS = [
     "title": "HTML Ampersand Code",
     "category": "HTML Code Library",
     "description": "HTML Ampersand Code.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/html-ampersand-code/",
+    "url": "https://smartgentools.com/html-code-library/html-ampersand-code.html",
     "keywords": [
       "html ampersand code",
       "ampersand"
@@ -1787,7 +1791,7 @@ export const TOOLS = [
     "title": "HTML Copyright Code",
     "category": "HTML Code Library",
     "description": "HTML Copyright Code.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/html-copyright-code/",
+    "url": "https://smartgentools.com/html-code-library/html-copyright-code.html",
     "keywords": [
       "html copyright code",
       "copyright"
@@ -1799,7 +1803,7 @@ export const TOOLS = [
     "title": "HTML Em Dash Code",
     "category": "HTML Code Library",
     "description": "HTML Em Dash Code.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/html-em-dash-code/",
+    "url": "https://smartgentools.com/html-code-library/html-em-dash-code.html",
     "keywords": [
       "html em dash code",
       "em dash"
@@ -1811,7 +1815,7 @@ export const TOOLS = [
     "title": "HTML En Dash Code",
     "category": "HTML Code Library",
     "description": "HTML En Dash Code.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/html-en-dash-code/",
+    "url": "https://smartgentools.com/html-code-library/html-en-dash-code.html",
     "keywords": [
       "html en dash code",
       "en dash"
@@ -1823,12 +1827,45 @@ export const TOOLS = [
     "title": "HTML Euro Code",
     "category": "HTML Code Library",
     "description": "HTML Euro Code.",
-    "url": "https://smartgentools.com/html-code-library/character-codes/html-euro-code/",
+    "url": "https://smartgentools.com/html-code-library/html-euro-code.html",
     "keywords": [
       "html euro code",
       "euro symbol"
     ],
     "icon": "€"
+  },
+  {
+    "id": "marquee-generator",
+    "title": "Marquee Generator",
+    "category": "Developer & Technical",
+    "description": "Build classic scrolling marquee text and images with modern CSS animation fallback.",
+    "url": "https://smartgentools.com/marquee-generator/",
+    "keywords": [
+      "marquee",
+      "scrolling text",
+      "scrolling image",
+      "html marquee",
+      "generator",
+      "animation"
+    ],
+    "icon": "🔄"
+  },
+  {
+    "id": "pinterest-link-downloader",
+    "title": "Pinterest Downloader",
+    "category": "Marketing & Social Media",
+    "description": "Save Pinterest photos, videos, and GIFs in original quality, no watermark, no login.",
+    "url": "https://smartgentools.com/Pinterest-link-downloader/",
+    "keywords": [
+      "pinterest",
+      "downloader",
+      "video",
+      "image",
+      "gif",
+      "pin",
+      "save"
+    ],
+    "icon": "📌"
   }
 ];
 
@@ -2408,12 +2445,6 @@ export const KEY_PAGES = [
     "title": "Disclaimer"
   },
   {
-    "url": "https://smartgentools.com/docs/",
-    "path": "/docs/",
-    "section": "docs",
-    "title": "Docs"
-  },
-  {
     "url": "https://smartgentools.com/docs/about-the-team-and-contribution/",
     "path": "/docs/about-the-team-and-contribution/",
     "section": "docs",
@@ -2528,346 +2559,358 @@ export const KEY_PAGES = [
     "title": "Help Center"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/background-color.html",
-    "path": "/html-code-library/background-color.html",
+    "url": "https://smartgentools.com/html-code-library/background-codes/background-color/",
+    "path": "/html-code-library/background-codes/background-color/",
     "section": "html-library",
-    "title": "Background Color.Html"
+    "title": "Background Color"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/background-image-code.html",
-    "path": "/html-code-library/background-image-code.html",
+    "url": "https://smartgentools.com/html-code-library/background-codes/background-image/",
+    "path": "/html-code-library/background-codes/background-image/",
     "section": "html-library",
-    "title": "Background Image Code.Html"
+    "title": "Background Image"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/background-image.html",
-    "path": "/html-code-library/background-image.html",
+    "url": "https://smartgentools.com/html-code-library/background-codes/background-position/",
+    "path": "/html-code-library/background-codes/background-position/",
     "section": "html-library",
-    "title": "Background Image.Html"
+    "title": "Background Position"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/background-position.html",
-    "path": "/html-code-library/background-position.html",
+    "url": "https://smartgentools.com/html-code-library/background-codes/background-repeat/",
+    "path": "/html-code-library/background-codes/background-repeat/",
     "section": "html-library",
-    "title": "Background Position.Html"
+    "title": "Background Repeat"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/background-repeat.html",
-    "path": "/html-code-library/background-repeat.html",
+    "url": "https://smartgentools.com/html-code-library/background-codes/fixed-background/",
+    "path": "/html-code-library/background-codes/fixed-background/",
     "section": "html-library",
-    "title": "Background Repeat.Html"
+    "title": "Fixed Background"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/bouncing-image.html",
-    "path": "/html-code-library/bouncing-image.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/greek-characters/",
+    "path": "/html-code-library/character-codes/greek-characters/",
     "section": "html-library",
-    "title": "Bouncing Image.Html"
+    "title": "Greek Characters"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/bouncing-text.html",
-    "path": "/html-code-library/bouncing-text.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/html-ampersand-code/",
+    "path": "/html-code-library/character-codes/html-ampersand-code/",
     "section": "html-library",
-    "title": "Bouncing Text.Html"
+    "title": "Html Ampersand Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/color-code-chart.html",
-    "path": "/html-code-library/color-code-chart.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/html-copyright-code/",
+    "path": "/html-code-library/character-codes/html-copyright-code/",
     "section": "html-library",
-    "title": "Color Code Chart.Html"
+    "title": "Html Copyright Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/color-schemes.html",
-    "path": "/html-code-library/color-schemes.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/html-em-dash-code/",
+    "path": "/html-code-library/character-codes/html-em-dash-code/",
     "section": "html-library",
-    "title": "Color Schemes.Html"
+    "title": "Html Em Dash Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/css-hover.html",
-    "path": "/html-code-library/css-hover.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/html-en-dash-code/",
+    "path": "/html-code-library/character-codes/html-en-dash-code/",
     "section": "html-library",
-    "title": "Css Hover.Html"
+    "title": "Html En Dash Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/css-marquee.html",
-    "path": "/html-code-library/css-marquee.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/html-euro-code/",
+    "path": "/html-code-library/character-codes/html-euro-code/",
     "section": "html-library",
-    "title": "Css Marquee.Html"
+    "title": "Html Euro Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/css-templates.html",
-    "path": "/html-code-library/css-templates.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/html-heart-code/",
+    "path": "/html-code-library/character-codes/html-heart-code/",
     "section": "html-library",
-    "title": "Css Templates.Html"
+    "title": "Html Heart Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/email-link.html",
-    "path": "/html-code-library/email-link.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/html-space-code/",
+    "path": "/html-code-library/character-codes/html-space-code/",
     "section": "html-library",
-    "title": "Email Link.Html"
+    "title": "Html Space Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/fixed-background.html",
-    "path": "/html-code-library/fixed-background.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/html-special-characters/",
+    "path": "/html-code-library/character-codes/html-special-characters/",
     "section": "html-library",
-    "title": "Fixed Background.Html"
+    "title": "Html Special Characters"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/font-code.html",
-    "path": "/html-code-library/font-code.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/html-star-code/",
+    "path": "/html-code-library/character-codes/html-star-code/",
     "section": "html-library",
-    "title": "Font Code.Html"
+    "title": "Html Star Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/gradient-generator.html",
-    "path": "/html-code-library/gradient-generator.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/html-symbols/",
+    "path": "/html-code-library/character-codes/html-symbols/",
     "section": "html-library",
-    "title": "Gradient Generator.Html"
+    "title": "Html Symbols"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/greek-characters.html",
-    "path": "/html-code-library/greek-characters.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/html-tab-code/",
+    "path": "/html-code-library/character-codes/html-tab-code/",
     "section": "html-library",
-    "title": "Greek Characters.Html"
+    "title": "Html Tab Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-ampersand-code.html",
-    "path": "/html-code-library/html-ampersand-code.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/html-trademark-code/",
+    "path": "/html-code-library/character-codes/html-trademark-code/",
     "section": "html-library",
-    "title": "Html Ampersand Code.Html"
+    "title": "Html Trademark Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-black-code.html",
-    "path": "/html-code-library/html-black-code.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/iso-8859-1-characters/",
+    "path": "/html-code-library/character-codes/iso-8859-1-characters/",
     "section": "html-library",
-    "title": "Html Black Code.Html"
+    "title": "Iso 8859 1 Characters"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-blue-code.html",
-    "path": "/html-code-library/html-blue-code.html",
+    "url": "https://smartgentools.com/html-code-library/character-codes/iso-language-codes/",
+    "path": "/html-code-library/character-codes/iso-language-codes/",
     "section": "html-library",
-    "title": "Html Blue Code.Html"
+    "title": "Iso Language Codes"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-bold-editor.html",
-    "path": "/html-code-library/html-bold-editor.html",
+    "url": "https://smartgentools.com/html-code-library/color-codes/color-code-chart/",
+    "path": "/html-code-library/color-codes/color-code-chart/",
     "section": "html-library",
-    "title": "Html Bold Editor.Html"
+    "title": "Color Code Chart"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-bold-generator.html",
-    "path": "/html-code-library/html-bold-generator.html",
+    "url": "https://smartgentools.com/html-code-library/color-codes/color-schemes/",
+    "path": "/html-code-library/color-codes/color-schemes/",
     "section": "html-library",
-    "title": "Html Bold Generator.Html"
+    "title": "Color Schemes"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-bold.html",
-    "path": "/html-code-library/html-bold.html",
+    "url": "https://smartgentools.com/html-code-library/color-codes/html-black-code/",
+    "path": "/html-code-library/color-codes/html-black-code/",
     "section": "html-library",
-    "title": "Html Bold.Html"
+    "title": "Html Black Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-color-picker.html",
-    "path": "/html-code-library/html-color-picker.html",
+    "url": "https://smartgentools.com/html-code-library/color-codes/html-blue-code/",
+    "path": "/html-code-library/color-codes/html-blue-code/",
     "section": "html-library",
-    "title": "Html Color Picker.Html"
+    "title": "Html Blue Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-copyright-code.html",
-    "path": "/html-code-library/html-copyright-code.html",
+    "url": "https://smartgentools.com/html-code-library/color-codes/html-color-picker/",
+    "path": "/html-code-library/color-codes/html-color-picker/",
     "section": "html-library",
-    "title": "Html Copyright Code.Html"
+    "title": "Html Color Picker"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-editor.html",
-    "path": "/html-code-library/html-editor.html",
+    "url": "https://smartgentools.com/html-code-library/color-codes/html-green-code/",
+    "path": "/html-code-library/color-codes/html-green-code/",
     "section": "html-library",
-    "title": "Html Editor.Html"
+    "title": "Html Green Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-em-dash-code.html",
-    "path": "/html-code-library/html-em-dash-code.html",
+    "url": "https://smartgentools.com/html-code-library/color-codes/html-red-code/",
+    "path": "/html-code-library/color-codes/html-red-code/",
     "section": "html-library",
-    "title": "Html Em Dash Code.Html"
+    "title": "Html Red Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-en-dash-code.html",
-    "path": "/html-code-library/html-en-dash-code.html",
+    "url": "https://smartgentools.com/html-code-library/color-codes/html-white-code/",
+    "path": "/html-code-library/color-codes/html-white-code/",
     "section": "html-library",
-    "title": "Html En Dash Code.Html"
+    "title": "Html White Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-euro-code.html",
-    "path": "/html-code-library/html-euro-code.html",
+    "url": "https://smartgentools.com/html-code-library/editors/html-bold-editor/",
+    "path": "/html-code-library/editors/html-bold-editor/",
     "section": "html-library",
-    "title": "Html Euro Code.Html"
+    "title": "Html Bold Editor"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-favicon-code.html",
-    "path": "/html-code-library/html-favicon-code.html",
+    "url": "https://smartgentools.com/html-code-library/editors/html-editor/",
+    "path": "/html-code-library/editors/html-editor/",
     "section": "html-library",
-    "title": "Html Favicon Code.Html"
+    "title": "Html Editor"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-green-code.html",
-    "path": "/html-code-library/html-green-code.html",
+    "url": "https://smartgentools.com/html-code-library/editors/html-link-editor/",
+    "path": "/html-code-library/editors/html-link-editor/",
     "section": "html-library",
-    "title": "Html Green Code.Html"
+    "title": "Html Link Editor"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-heart-code.html",
-    "path": "/html-code-library/html-heart-code.html",
+    "url": "https://smartgentools.com/html-code-library/editors/html-text-editor/",
+    "path": "/html-code-library/editors/html-text-editor/",
     "section": "html-library",
-    "title": "Html Heart Code.Html"
+    "title": "Html Text Editor"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-image-borders.html",
-    "path": "/html-code-library/html-image-borders.html",
+    "url": "https://smartgentools.com/html-code-library/editors/image-code-editor/",
+    "path": "/html-code-library/editors/image-code-editor/",
     "section": "html-library",
-    "title": "Html Image Borders.Html"
+    "title": "Image Code Editor"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-image-link.html",
-    "path": "/html-code-library/html-image-link.html",
+    "url": "https://smartgentools.com/html-code-library/editors/text-color-editor/",
+    "path": "/html-code-library/editors/text-color-editor/",
     "section": "html-library",
-    "title": "Html Image Link.Html"
+    "title": "Text Color Editor"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-italic-generator.html",
-    "path": "/html-code-library/html-italic-generator.html",
+    "url": "https://smartgentools.com/html-code-library/generators/gradient-generator/",
+    "path": "/html-code-library/generators/gradient-generator/",
     "section": "html-library",
-    "title": "Html Italic Generator.Html"
+    "title": "Gradient Generator"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-link-editor.html",
-    "path": "/html-code-library/html-link-editor.html",
+    "url": "https://smartgentools.com/html-code-library/generators/html-bold-generator/",
+    "path": "/html-code-library/generators/html-bold-generator/",
     "section": "html-library",
-    "title": "Html Link Editor.Html"
+    "title": "Html Bold Generator"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-link-generator.html",
-    "path": "/html-code-library/html-link-generator.html",
+    "url": "https://smartgentools.com/html-code-library/generators/html-italic-generator/",
+    "path": "/html-code-library/generators/html-italic-generator/",
     "section": "html-library",
-    "title": "Html Link Generator.Html"
+    "title": "Html Italic Generator"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-marquee.html",
-    "path": "/html-code-library/html-marquee.html",
+    "url": "https://smartgentools.com/html-code-library/generators/html-link-generator/",
+    "path": "/html-code-library/generators/html-link-generator/",
     "section": "html-library",
-    "title": "Html Marquee.Html"
+    "title": "Html Link Generator"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-red-code.html",
-    "path": "/html-code-library/html-red-code.html",
+    "url": "https://smartgentools.com/html-code-library/generators/html-table-generator/",
+    "path": "/html-code-library/generators/html-table-generator/",
     "section": "html-library",
-    "title": "Html Red Code.Html"
+    "title": "Html Table Generator"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-scrollbox.html",
-    "path": "/html-code-library/html-scrollbox.html",
+    "url": "https://smartgentools.com/html-code-library/generators/image-code-generator/",
+    "path": "/html-code-library/generators/image-code-generator/",
     "section": "html-library",
-    "title": "Html Scrollbox.Html"
+    "title": "Image Code Generator"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-space-code.html",
-    "path": "/html-code-library/html-space-code.html",
+    "url": "https://smartgentools.com/html-code-library/generators/text-color-generator/",
+    "path": "/html-code-library/generators/text-color-generator/",
     "section": "html-library",
-    "title": "Html Space Code.Html"
+    "title": "Text Color Generator"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-special-characters.html",
-    "path": "/html-code-library/html-special-characters.html",
+    "url": "https://smartgentools.com/html-code-library/generators/text-generator/",
+    "path": "/html-code-library/generators/text-generator/",
     "section": "html-library",
-    "title": "Html Special Characters.Html"
+    "title": "Text Generator"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-star-code.html",
-    "path": "/html-code-library/html-star-code.html",
+    "url": "https://smartgentools.com/html-code-library/image-codes/background-image-code/",
+    "path": "/html-code-library/image-codes/background-image-code/",
     "section": "html-library",
-    "title": "Html Star Code.Html"
+    "title": "Background Image Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-symbols.html",
-    "path": "/html-code-library/html-symbols.html",
+    "url": "https://smartgentools.com/html-code-library/image-codes/html-favicon-code/",
+    "path": "/html-code-library/image-codes/html-favicon-code/",
     "section": "html-library",
-    "title": "Html Symbols.Html"
+    "title": "Html Favicon Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-tab-code.html",
-    "path": "/html-code-library/html-tab-code.html",
+    "url": "https://smartgentools.com/html-code-library/image-codes/html-image-borders/",
+    "path": "/html-code-library/image-codes/html-image-borders/",
     "section": "html-library",
-    "title": "Html Tab Code.Html"
+    "title": "Html Image Borders"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-table-generator.html",
-    "path": "/html-code-library/html-table-generator.html",
+    "url": "https://smartgentools.com/html-code-library/image-codes/repeat-image/",
+    "path": "/html-code-library/image-codes/repeat-image/",
     "section": "html-library",
-    "title": "Html Table Generator.Html"
+    "title": "Repeat Image"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-text-editor.html",
-    "path": "/html-code-library/html-text-editor.html",
+    "url": "https://smartgentools.com/html-code-library/link-codes/css-hover/",
+    "path": "/html-code-library/link-codes/css-hover/",
     "section": "html-library",
-    "title": "Html Text Editor.Html"
+    "title": "Css Hover"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-textbox.html",
-    "path": "/html-code-library/html-textbox.html",
+    "url": "https://smartgentools.com/html-code-library/link-codes/email-link/",
+    "path": "/html-code-library/link-codes/email-link/",
     "section": "html-library",
-    "title": "Html Textbox.Html"
+    "title": "Email Link"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-trademark-code.html",
-    "path": "/html-code-library/html-trademark-code.html",
+    "url": "https://smartgentools.com/html-code-library/link-codes/html-image-link/",
+    "path": "/html-code-library/link-codes/html-image-link/",
     "section": "html-library",
-    "title": "Html Trademark Code.Html"
+    "title": "Html Image Link"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-underline-code.html",
-    "path": "/html-code-library/html-underline-code.html",
+    "url": "https://smartgentools.com/html-code-library/link-codes/open-in-new-window/",
+    "path": "/html-code-library/link-codes/open-in-new-window/",
     "section": "html-library",
-    "title": "Html Underline Code.Html"
+    "title": "Open In New Window"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html-white-code.html",
-    "path": "/html-code-library/html-white-code.html",
+    "url": "https://smartgentools.com/html-code-library/link-codes/remove-underline/",
+    "path": "/html-code-library/link-codes/remove-underline/",
     "section": "html-library",
-    "title": "Html White Code.Html"
+    "title": "Remove Underline"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/html5-frames.html",
-    "path": "/html-code-library/html5-frames.html",
+    "url": "https://smartgentools.com/html-code-library/marquee-codes/bouncing-image/",
+    "path": "/html-code-library/marquee-codes/bouncing-image/",
     "section": "html-library",
-    "title": "Html5 Frames.Html"
+    "title": "Bouncing Image"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/image-code-editor.html",
-    "path": "/html-code-library/image-code-editor.html",
+    "url": "https://smartgentools.com/html-code-library/marquee-codes/bouncing-text/",
+    "path": "/html-code-library/marquee-codes/bouncing-text/",
     "section": "html-library",
-    "title": "Image Code Editor.Html"
+    "title": "Bouncing Text"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/image-code-generator.html",
-    "path": "/html-code-library/image-code-generator.html",
+    "url": "https://smartgentools.com/html-code-library/marquee-codes/css-marquee/",
+    "path": "/html-code-library/marquee-codes/css-marquee/",
     "section": "html-library",
-    "title": "Image Code Generator.Html"
+    "title": "Css Marquee"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/iso-8859-1-characters.html",
-    "path": "/html-code-library/iso-8859-1-characters.html",
+    "url": "https://smartgentools.com/html-code-library/marquee-codes/html-marquee/",
+    "path": "/html-code-library/marquee-codes/html-marquee/",
     "section": "html-library",
-    "title": "Iso 8859 1 Characters.Html"
+    "title": "Html Marquee"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/iso-language-codes.html",
-    "path": "/html-code-library/iso-language-codes.html",
+    "url": "https://smartgentools.com/html-code-library/marquee-codes/scrolling-image/",
+    "path": "/html-code-library/marquee-codes/scrolling-image/",
     "section": "html-library",
-    "title": "Iso Language Codes.Html"
+    "title": "Scrolling Image"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/layout-templates.html",
-    "path": "/html-code-library/layout-templates.html",
+    "url": "https://smartgentools.com/html-code-library/marquee-codes/scrolling-text/",
+    "path": "/html-code-library/marquee-codes/scrolling-text/",
     "section": "html-library",
-    "title": "Layout Templates.Html"
+    "title": "Scrolling Text"
+  },
+  {
+    "url": "https://smartgentools.com/html-code-library/marquee-codes/slide-in-image/",
+    "path": "/html-code-library/marquee-codes/slide-in-image/",
+    "section": "html-library",
+    "title": "Slide In Image"
+  },
+  {
+    "url": "https://smartgentools.com/html-code-library/marquee-codes/slide-in-text/",
+    "path": "/html-code-library/marquee-codes/slide-in-text/",
+    "section": "html-library",
+    "title": "Slide In Text"
   },
   {
     "url": "https://smartgentools.com/html-code-library/marquee-generator.html",
@@ -2876,130 +2919,118 @@ export const KEY_PAGES = [
     "title": "Marquee Generator.Html"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/open-in-new-window.html",
-    "path": "/html-code-library/open-in-new-window.html",
+    "url": "https://smartgentools.com/html-code-library/scrollbox-codes/html-scrollbox/",
+    "path": "/html-code-library/scrollbox-codes/html-scrollbox/",
     "section": "html-library",
-    "title": "Open In New Window.Html"
+    "title": "Html Scrollbox"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/remove-underline.html",
-    "path": "/html-code-library/remove-underline.html",
+    "url": "https://smartgentools.com/html-code-library/scrollbox-codes/scrollbox-border/",
+    "path": "/html-code-library/scrollbox-codes/scrollbox-border/",
     "section": "html-library",
-    "title": "Remove Underline.Html"
+    "title": "Scrollbox Border"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/repeat-image.html",
-    "path": "/html-code-library/repeat-image.html",
+    "url": "https://smartgentools.com/html-code-library/scrollbox-codes/scrollbox-color/",
+    "path": "/html-code-library/scrollbox-codes/scrollbox-color/",
     "section": "html-library",
-    "title": "Repeat Image.Html"
+    "title": "Scrollbox Color"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/scrollbox-border.html",
-    "path": "/html-code-library/scrollbox-border.html",
+    "url": "https://smartgentools.com/html-code-library/templates/css-templates/",
+    "path": "/html-code-library/templates/css-templates/",
     "section": "html-library",
-    "title": "Scrollbox Border.Html"
+    "title": "Css Templates"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/scrollbox-color.html",
-    "path": "/html-code-library/scrollbox-color.html",
+    "url": "https://smartgentools.com/html-code-library/templates/html5-frames/",
+    "path": "/html-code-library/templates/html5-frames/",
     "section": "html-library",
-    "title": "Scrollbox Color.Html"
+    "title": "Html5 Frames"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/scrolling-image.html",
-    "path": "/html-code-library/scrolling-image.html",
+    "url": "https://smartgentools.com/html-code-library/templates/layout-templates/",
+    "path": "/html-code-library/templates/layout-templates/",
     "section": "html-library",
-    "title": "Scrolling Image.Html"
+    "title": "Layout Templates"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/scrolling-text.html",
-    "path": "/html-code-library/scrolling-text.html",
+    "url": "https://smartgentools.com/html-code-library/templates/website-templates/",
+    "path": "/html-code-library/templates/website-templates/",
     "section": "html-library",
-    "title": "Scrolling Text.Html"
+    "title": "Website Templates"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/slide-in-image.html",
-    "path": "/html-code-library/slide-in-image.html",
+    "url": "https://smartgentools.com/html-code-library/text-codes/font-code/",
+    "path": "/html-code-library/text-codes/font-code/",
     "section": "html-library",
-    "title": "Slide In Image.Html"
+    "title": "Font Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/slide-in-text.html",
-    "path": "/html-code-library/slide-in-text.html",
+    "url": "https://smartgentools.com/html-code-library/text-codes/html-bold/",
+    "path": "/html-code-library/text-codes/html-bold/",
     "section": "html-library",
-    "title": "Slide In Text.Html"
+    "title": "Html Bold"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/table-background-color.html",
-    "path": "/html-code-library/table-background-color.html",
+    "url": "https://smartgentools.com/html-code-library/text-codes/html-underline-code/",
+    "path": "/html-code-library/text-codes/html-underline-code/",
     "section": "html-library",
-    "title": "Table Background Color.Html"
+    "title": "Html Underline Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/table-border.html",
-    "path": "/html-code-library/table-border.html",
+    "url": "https://smartgentools.com/html-code-library/text-codes/table-background-color/",
+    "path": "/html-code-library/text-codes/table-background-color/",
     "section": "html-library",
-    "title": "Table Border.Html"
+    "title": "Table Background Color"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/table-color.html",
-    "path": "/html-code-library/table-color.html",
+    "url": "https://smartgentools.com/html-code-library/text-codes/table-border/",
+    "path": "/html-code-library/text-codes/table-border/",
     "section": "html-library",
-    "title": "Table Color.Html"
+    "title": "Table Border"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/table-text.html",
-    "path": "/html-code-library/table-text.html",
+    "url": "https://smartgentools.com/html-code-library/text-codes/table-color/",
+    "path": "/html-code-library/text-codes/table-color/",
     "section": "html-library",
-    "title": "Table Text.Html"
+    "title": "Table Color"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/text-code.html",
-    "path": "/html-code-library/text-code.html",
+    "url": "https://smartgentools.com/html-code-library/text-codes/table-text/",
+    "path": "/html-code-library/text-codes/table-text/",
     "section": "html-library",
-    "title": "Text Code.Html"
+    "title": "Table Text"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/text-color-editor.html",
-    "path": "/html-code-library/text-color-editor.html",
+    "url": "https://smartgentools.com/html-code-library/text-codes/text-code/",
+    "path": "/html-code-library/text-codes/text-code/",
     "section": "html-library",
-    "title": "Text Color Editor.Html"
+    "title": "Text Code"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/text-color-generator.html",
-    "path": "/html-code-library/text-color-generator.html",
+    "url": "https://smartgentools.com/html-code-library/text-codes/text-color/",
+    "path": "/html-code-library/text-codes/text-color/",
     "section": "html-library",
-    "title": "Text Color Generator.Html"
+    "title": "Text Color"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/text-color.html",
-    "path": "/html-code-library/text-color.html",
+    "url": "https://smartgentools.com/html-code-library/textbox-codes/html-textbox/",
+    "path": "/html-code-library/textbox-codes/html-textbox/",
     "section": "html-library",
-    "title": "Text Color.Html"
+    "title": "Html Textbox"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/text-generator.html",
-    "path": "/html-code-library/text-generator.html",
+    "url": "https://smartgentools.com/html-code-library/textbox-codes/textbox-border/",
+    "path": "/html-code-library/textbox-codes/textbox-border/",
     "section": "html-library",
-    "title": "Text Generator.Html"
+    "title": "Textbox Border"
   },
   {
-    "url": "https://smartgentools.com/html-code-library/textbox-border.html",
-    "path": "/html-code-library/textbox-border.html",
+    "url": "https://smartgentools.com/html-code-library/textbox-codes/textbox-color/",
+    "path": "/html-code-library/textbox-codes/textbox-color/",
     "section": "html-library",
-    "title": "Textbox Border.Html"
-  },
-  {
-    "url": "https://smartgentools.com/html-code-library/textbox-color.html",
-    "path": "/html-code-library/textbox-color.html",
-    "section": "html-library",
-    "title": "Textbox Color.Html"
-  },
-  {
-    "url": "https://smartgentools.com/html-code-library/website-templates.html",
-    "path": "/html-code-library/website-templates.html",
-    "section": "html-library",
-    "title": "Website Templates.Html"
+    "title": "Textbox Color"
   },
   {
     "url": "https://smartgentools.com/privacy/",
