@@ -112,7 +112,7 @@ async function route(url, request, env, ctx) {
       },
       knowledge: {
         tools: TOOLS.length,
-        generatedAt: SITE.generatedAt,
+        sourceHash: SITE.sourceHash,
       },
       freeAuditLimit: Number(env.FREE_AUDIT_LIMIT || 3),
     });
