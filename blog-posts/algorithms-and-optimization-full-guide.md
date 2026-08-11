@@ -41,7 +41,7 @@ Two algorithms can produce the exact same correct answer and still be worlds apa
 
 The shorthand for this is **Big-O notation**. You don't need the formal math to get the intuition — you just need to see how differently these curves behave as `n` (the input size) grows:
 
-![Line chart comparing O(1), O(log n), O(n), O(n log n) and O(n squared) growth curves](algorithm-complexity-growth-chart.svg "Not all 'slow' is the same kind of slow — how five common complexity classes grow as input size increases")
+![Line chart comparing O(1), O(log n), O(n), O(n log n) and O(n squared) growth curves](https://smartgentools.com/blog-posts/images/algorithm-complexity-growth-chart.svg "Not all 'slow' is the same kind of slow — how five common complexity classes grow as input size increases")
 
 - **O(1)** — constant time. Looking up a value by its exact address. Doesn't care how big the dataset is.
 - **O(log n)** — logarithmic. Binary search: repeatedly cutting the remaining space in half. Barely notices growth.
@@ -61,13 +61,13 @@ A few core ideas recur across almost every optimization problem you'll encounter
 
 **Feasible region and optimal solutions.** The feasible region is simply every combination of decision-variable values that satisfies all your constraints at once. The optimal solution is the best point *within* that region — not the best point in the abstract, which is a distinction that trips up a lot of beginners. A solution that ignores a constraint isn't a better answer; it's not an answer at all.
 
-**Local versus global optima.** A local optimum is the best solution in its immediate neighborhood — nothing nearby is better — but somewhere else entirely in the feasible region, a genuinely better solution might exist. A global optimum is the best solution, full stop, anywhere in the feasible region. Many real-world optimization algorithms can only guarantee they've found a local optimum, because searching for a provable global one can be far more computationally expensive — sometimes prohibitively so.
+**Local versus global optima.** A local optimum is the best solution in its immediate neighborhood — nothing nearby is better — but somewhere else entirely in the feasible region, a genuinely better solution might exist. A global optimum is the best solution, full stop, anywhere in the feasible region. Many real-world optimization algorithms can only guarantee they've found a local optimum, because searching for a provable global one can be far more computationally expensive — sometimes prohibitively so. A concrete picture: imagine adjusting a delivery route by swapping two stops at a time. You might reach an arrangement where no single swap improves it — a local optimum — while a completely different route structure, reachable only by rearranging several stops at once, would have been shorter. The algorithm never sees that better route because it only ever looked one swap away.
 
-**Convex versus non-convex optimization.** A convex problem is, loosely, one shaped like a single smooth bowl — any local optimum you find is automatically the global optimum, which makes convex problems reliably solvable. Most real engineering, machine-learning, and logistics problems are non-convex — bumpy, with many local dips — which is precisely why so much of applied optimization research is about *managing* that difficulty rather than eliminating it.
+**Convex versus non-convex optimization.** A convex problem is, loosely, one shaped like a single smooth bowl — any local optimum you find is automatically the global optimum, which makes convex problems reliably solvable. Most real engineering, machine-learning, and logistics problems are non-convex — bumpy, with many local dips — which is precisely why so much of applied optimization research is about *managing* that difficulty rather than eliminating it. Picture the difference physically: a convex problem is a marble rolling in a single mixing bowl — wherever it settles is the lowest point, guaranteed. A non-convex problem is a marble rolling across an egg carton — it settles into *a* dip reliably, but has no way of knowing whether a deeper dip exists three cups over.
 
 **Where variables live** shapes which family of tools even applies:
 
-![Three-panel comparison of continuous, discrete, and mixed optimization variables](continuous-vs-discrete-optimization.svg "Continuous, discrete, and mixed optimization — the shape of your variables decides which tools apply")
+![Three-panel comparison of continuous, discrete, and mixed optimization variables](https://smartgentools.com/blog-posts/images/continuous-vs-discrete-optimization.svg "Continuous, discrete, and mixed optimization — the shape of your variables decides which tools apply")
 
 - **Linear programming (LP)** handles continuous variables with a linear objective and linear constraints — the most tractable, best-understood corner of optimization.
 - **Integer programming (IP)** restricts some or all variables to whole numbers — how many trucks, how many servers, which route — which is a small-sounding change that makes the problem dramatically harder to solve in general.
@@ -102,7 +102,7 @@ A word on how these are framed: a "Technical Report" is Google's own internal-re
 
 **The key idea.** The paper proposes a framework called **SENTINEL**, built around two engines working together:
 
-![Architecture flow of a proactive AI concierge: documentation and historical cases feed context analysis and friction detection, driving proactive retrieval into a context-aware answer that deflects a support case](https://smartgentools.com/blog-posts/geo-contextual-ai-concierge-architecture.svg) "SENTINEL's two-engine design — an offline audit that finds weak documentation, and an online assistant that answers before a ticket is filed")
+![Architecture flow of a proactive AI concierge: documentation and historical cases feed context analysis and friction detection, driving proactive retrieval into a context-aware answer that deflects a support case](https://smartgentools.com/blog-posts/images/geo-contextual-ai-concierge-architecture.svg "SENTINEL's two-engine design — an offline audit that finds weak documentation, and an online assistant that answers before a ticket is filed")
 
 The first engine runs offline, using a large language model to audit documentation against real historical support cases, producing what the paper calls a "Contextual Density" score that flags exactly where documentation is thin relative to what people actually ask. The second engine runs in real time: a retrieval-augmented generation (RAG) system — meaning it looks up relevant information and grounds its answer in that retrieved content, rather than answering purely from what it learned during training — surfaced through a location-aware assistant window that appears at the point someone is actually stuck, before they've decided the problem is bad enough to escalate.
 
@@ -118,7 +118,7 @@ The first engine runs offline, using a large language model to audit documentati
 
 **The key idea.** The paper's proposed method, **Marginalized Bundle Adjustment (MBA)**, takes inspiration from RANSAC — a classical, decades-old technique for fitting a model to data that contains a lot of outliers, by repeatedly testing small random subsets rather than trusting every point equally.
 
-![Pipeline from multiple images to monocular depth maps, treated as noisy dense evidence, resolved by marginalized bundle adjustment into consistent camera poses and a 3D reconstruction](marginalized-bundle-adjustment-pipeline.svg "The core insight: individual depth pixels are noisy, but their overall distribution is informative")
+![Pipeline from multiple images to monocular depth maps, treated as noisy dense evidence, resolved by marginalized bundle adjustment into consistent camera poses and a 3D reconstruction](https://smartgentools.com/blog-posts/images/marginalized-bundle-adjustment-pipeline.svg "The core insight: individual depth pixels are noisy, but their overall distribution is informative")
 
 The insight is that even though any *single* pixel's depth estimate can't be fully trusted, the *distribution* of depth estimates across many pixels and many images carries real signal. Technically, the method treats the projective error at each point as part of a residual error distribution, and optimizes camera poses to maximize the area under that distribution's cumulative curve — a way of leaning on the density and shape of the noisy evidence as a whole, rather than any individual noisy measurement.
 
@@ -134,7 +134,7 @@ The insight is that even though any *single* pixel's depth estimate can't be ful
 
 **The key idea.** The paper's contribution is to bring in a second, different kind of signal: sparse **segment counts** — partial, sampled vehicle counts on individual road segments, distinct from complete, exhaustive traffic counts — used not as the primary fitting target, but as a **regularization term** folded into the optimization.
 
-![Unknown OD demand, observed travel times, and sample segment counts feeding a calibration and optimization step that produces a better estimate of true traffic demand](od-demand-calibration-flow.svg "Sparse segment counts don't replace travel-time data — they break the tie between demand patterns that look identical otherwise")
+![Unknown OD demand, observed travel times, and sample segment counts feeding a calibration and optimization step that produces a better estimate of true traffic demand](https://smartgentools.com/blog-posts/images/od-demand-calibration-flow.svg "Sparse segment counts don't replace travel-time data — they break the tie between demand patterns that look identical otherwise")
 
 Regularization, in plain terms, is the practice of adding an extra term to an optimization problem specifically to rule out solutions that technically fit the main data but are implausible for some other reason — here, plausibility relative to the sampled counts. The formulation is built to preserve the *distribution* of the observed segment counts while still optimizing demand to match observed path-level travel times, giving the optimizer a second, independent axis of evidence to disambiguate between demand patterns that travel-time data alone can't tell apart.
 
@@ -150,7 +150,7 @@ Regularization, in plain terms, is the practice of adding an extra term to an op
 
 **The key idea.** The paper frames this explicitly as a multi-objective, constrained optimization problem — some variables continuous, some inherently discrete (you can't buy half a capacitor), which places it squarely in the mixed-integer territory introduced earlier in this guide. Rather than looking for one "best" answer, the framework surfaces the **Pareto frontier** — the set of combinations where no other option is strictly better on *both* cost and board area at once.
 
-![Scatter chart of cost versus board area for candidate capacitor combinations, with dominated options in gray and the Pareto-optimal frontier highlighted in amber](capacitor-pareto-frontier.svg "Every point on the frontier is a legitimately different, legitimately correct trade-off — there is no single right answer")
+![Scatter chart of cost versus board area for candidate capacitor combinations, with dominated options in gray and the Pareto-optimal frontier highlighted in amber](https://smartgentools.com/blog-posts/images/capacitor-pareto-frontier.svg "Every point on the frontier is a legitimately different, legitimately correct trade-off — there is no single right answer")
 
 This is worth sitting with, because the Pareto-frontier idea shows up constantly once you know to look for it: a point is "dominated" if some other option beats it on every objective simultaneously — that dominated point is never worth choosing. A point is "Pareto-optimal" if no such better-on-every-axis alternative exists; improving it on one objective necessarily costs you on the other. The frontier is the full set of those Pareto-optimal points, and the paper's honest framing is that the tool narrows an enormous catalog down to that frontier and hands the trade-off decision to the human designer — it doesn't pretend to remove the judgment call, just to make sure the designer is choosing among the options that are actually worth choosing among.
 
@@ -162,7 +162,7 @@ This is worth sitting with, because the Pareto-frontier idea shows up constantly
 
 All five case studies above sit inside Google Research's "Algorithms and Theory" research area — but that area doesn't operate as an island. It's one node in a genuinely interconnected map of teams, and understanding the shape of that map explains *why* research this different in surface topic (enterprise support, 3D vision, traffic simulation, hardware design, programming-language tooling) keeps coming from the same broad research tradition.
 
-![Hub-and-spoke map with Algorithms and Theory at the center, connected to Athena, Algorithms and Optimization, Applied Science, Graph Mining, Health, Impact-Driven Research Innovation and Moonshots, Learning Theory, Market Algorithms, Network Infrastructure, and Operations Research](algorithms-research-ecosystem-map.svg "These fields overlap constantly in practice — they are not separate disciplines working in isolation")
+![Hub-and-spoke map with Algorithms and Theory at the center, connected to Athena, Algorithms and Optimization, Applied Science, Graph Mining, Health, Impact-Driven Research Innovation and Moonshots, Learning Theory, Market Algorithms, Network Infrastructure, and Operations Research](https://smartgentools.com/blog-posts/images/algorithms-research-ecosystem-map.svg "These fields overlap constantly in practice — they are not separate disciplines working in isolation")
 
 A few of these connections are worth spelling out rather than just naming:
 
@@ -222,6 +222,20 @@ Whether you're reading a paper or facing your own real optimization problem at w
 
 Steps 9 and 11 are the ones beginners skip most often, and they're arguably the most important two on the list. A mathematically optimal solution that ignores a real constraint you forgot to formalize, or that no one can actually implement, isn't a useful answer — it's an elegant answer to a subtly wrong question.
 
+## A Worked Example: Formulating a Real Problem
+
+Frameworks click faster with a concrete run-through, so here's a small one, worked all the way to a checked answer.
+
+A bakery makes two products: sourdough loaves and baguettes. Each sourdough loaf needs 2 hours of oven time and 3 units of flour, and earns $8 profit; each baguette needs 1 hour of oven time and 1 unit of flour, and earns $3 profit. The bakery has 20 oven-hours and 24 units of flour available today. How many of each should it bake?
+
+Running this through the framework above: the *decision* is how many of each to bake; the *variables* are S (sourdough) and B (baguettes), both non-negative; the *objective* is to maximize 8S + 3B; the *constraints* are 2S + B ≤ 20 (oven capacity) and 3S + B ≤ 24 (flour supply). Because you can't bake a fraction of a loaf, S and B have to be whole numbers — which quietly makes this an integer program, not a plain linear one, exactly the distinction covered earlier in this guide.
+
+For a problem this small, you can *solve* it by checking the corners of the feasible region — the points where constraints intersect. Baking only baguettes maxes out at 20 of them ($60 profit); baking only sourdough maxes out at 8 loaves ($64 profit); but baking 4 sourdough loaves and 12 baguettes uses the oven and the flour completely (2×4+12=20, 3×4+12=24) and earns $68 — better than either extreme, and in fact the optimal answer.
+
+*Validating* it is quick: both constraints are satisfied exactly, and neither variable is negative. A one-line *sensitivity* check matters too — if a flour delivery fell a few units short, this exact plan would become infeasible, which is worth knowing before committing the day's schedule to it. And the *practical usefulness* check is the one a formula can't answer for you: can the bakery actually sell 12 baguettes and 4 sourdough loaves today, and does it have the staff-hours to bake that specific mix? The optimization gives you the best answer to the problem as stated — it's still on you to make sure the problem was stated completely.
+
+That's the entire discipline this guide has been building toward, worked from a blank page to a checked answer in eleven small steps.
+
 ## Comparing the Major Optimization Approaches
 
 | Approach | Main idea | Strength | Limitation | Typical use |
@@ -267,7 +281,7 @@ A handful of conceptual mistakes account for a disproportionate share of real-wo
 
 It's tempting to think of "add an algorithm" as a step that automatically produces a good decision. It doesn't — an algorithm is only ever as good as everything feeding into it:
 
-![Pipeline showing data flowing into a model, objective, and constraints, solved by an algorithm into a solution, validated, and turned into a decision](/algorithm-decision-pipeline.svg) "A weak link anywhere upstream produces a confidently wrong decision — the algorithm itself can be flawless and still fail")
+![Pipeline showing data flowing into a model, objective, and constraints, solved by an algorithm into a solution, validated, and turned into a decision](https://smartgentools.com/blog-posts/images/algorithm-decision-pipeline.svg "A weak link anywhere upstream produces a confidently wrong decision — the algorithm itself can be flawless and still fail")
 
 Every one of those links can independently break the final outcome. Bad or biased **data** produces a confidently wrong answer from a perfectly correct algorithm. A **model** that doesn't actually reflect how the real system behaves gets optimized beautifully — for the wrong reality. The wrong **objective** optimizes for the wrong thing, exactly as described in the mistakes section above. Missing **constraints** produce solutions that are mathematically valid and practically unusable. Even a genuinely excellent **algorithm** only searches within the space that the model, objective, and constraints defined for it — it cannot correct for a flaw upstream of itself. And a solution that skips **validation** carries every one of those earlier flaws straight through into a real decision, undetected.
 
@@ -275,7 +289,13 @@ This is the single most important mental model in this entire guide: when an "AI
 
 ## Real-World Applications
 
-The same pattern — problem, algorithmic formulation, objective, constraints, result — shows up across an enormous range of fields once you know to look for it:
+The same pattern — problem, algorithmic formulation, objective, constraints, result — shows up across an enormous range of fields once you know to look for it. Two are worth walking through end-to-end, since they connect straight back to the case studies above:
+
+**Transportation, concretely:** the problem is estimating how many people are actually traveling between each pair of zones in a city — recognizable from Case Study 3. The algorithmic formulation treats this as a demand-calibration problem; the objective is matching observed travel times and segment counts as closely as possible; the constraints are the physical road network and the requirement that estimated trip counts stay non-negative; the result is a calibrated OD matrix planners can actually simulate against.
+
+**Hardware design, concretely:** the problem is choosing a combination of components — recognizable from Case Study 4. The algorithmic formulation is a multi-objective, mixed-integer optimization; the objective is minimizing cost and board area at the same time; the constraints are the electrical requirements the design has to meet; the result isn't one single answer but a Pareto frontier, handed to an engineer to make the final trade-off call.
+
+The rest of the table below follows that identical shape — only the specific nouns change:
 
 | Domain | Problem | What's typically optimized | Typical constraints |
 |---|---|---|---|
@@ -387,12 +407,22 @@ Typically against benchmark datasets or synthetic test cases with a known ground
 **What is a Pareto frontier?**
 It's the set of solutions to a multi-objective problem where no option is strictly better than another on every objective at once — improving one goal necessarily costs you on another. It represents legitimate trade-offs, not one single best answer.
 
+**What's the difference between an algorithm and a model?**
+An algorithm is the step-by-step method itself. A model is the simplified representation of a real system that the algorithm operates on or is trained against — the road network a routing algorithm searches, or the mathematical relationship a machine-learning algorithm fits to data. A good algorithm applied to a bad model still produces an unreliable answer, which is the same lesson the decision-pipeline section above makes in more general terms.
+
+**Is optimization the same as machine learning?**
+No, though they're closely linked. Machine learning typically *uses* optimization internally — training a model usually means optimizing its parameters to minimize an error function — but optimization is the older, broader field, and most classical optimization (routing, scheduling, resource allocation) doesn't involve any learning from data at all.
+
 **How can beginners learn algorithm theory?**
 Start with the foundational vocabulary this guide builds — complexity, objective functions, constraints, feasible regions — before jumping into any specific algorithm family. Once those concepts are solid, reading real research papers (using the framework in this guide) becomes a genuinely learnable habit rather than an intimidating wall of notation.
 
 ## Conclusion
 
 Everything in this guide — Big-O notation, objective functions, Pareto frontiers, RANSAC-inspired robustness, regularization as a way to break a tie — is really one idea wearing a lot of different outfits: define precisely what you're choosing, define precisely what "better" means, respect the rules you're actually bound by, and be honest about what your solution has and hasn't proven. The five papers this guide walked through solve wildly different problems — enterprise support, 3D reconstruction, city traffic, circuit boards, programming-language tooling — using exactly that same underlying discipline. That discipline, more than any single algorithm, is the actual skill worth taking away.
+
+---
+
+*Written for the SmartGen Tools blog by Sayad Md Bayezid Hosan.*
 
 ---
 <!--AUTHOR_FOOTER-->
