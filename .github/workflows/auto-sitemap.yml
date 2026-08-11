@@ -102,7 +102,7 @@ jobs:
           for current_root, dirs, files in os.walk('.'):
 
               # Ignore hidden directories
-              dirs[:] = [d for d in dirs if not d.startswith('.')]
+              dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ('_includes', 'node_modules', 'backend')]
 
               for file in files:
                   full_path = os.path.join(current_root, file)
@@ -170,10 +170,17 @@ jobs:
                           priority = '0.8'
                           changefreq = 'weekly'
 
-                      # Normal HTML pages
+                      # Normal HTML pages (standalone file, not folder/index.html).
+                      # GitHub Pages serves these at their literal path — it does
+                      # NOT resolve a trailing-slash folder URL for them the way it
+                      # does for an index.html. Keep the .html extension instead of
+                      # rewriting to a folder-style URL, or the resulting sitemap
+                      # entry 404s. (This previously produced ~79 dead links under
+                      # html-code-library/, e.g. .../background-color/ instead of
+                      # the real .../background-color.html — confirmed by matching
+                      # every entry against the checked-out file tree.)
                       else:
-                          html_path = relative_path[:-5]
-                          clean_url = f'{BASE_URL}/{html_path}/'
+                          clean_url = f'{BASE_URL}/{relative_path}'
                           priority = '0.8'
                           changefreq = 'weekly'
                           
@@ -185,7 +192,12 @@ jobs:
                   # -----------------------------
                   # STRICT DUPLICATE PREVENTION
                   # -----------------------------
-                  normalized_url = clean_url.strip().rstrip('/') + '/'
+                  # Don't force a trailing slash onto standalone .html URLs — that
+                  # would silently re-break the fix above (.../foo.html would
+                  # become .../foo.html/, a second dead link).
+                  normalized_url = clean_url.strip()
+                  if not normalized_url.endswith('.html'):
+                      normalized_url = normalized_url.rstrip('/') + '/'
 
                   # Skip if already exists
                   if normalized_url in unique_urls:

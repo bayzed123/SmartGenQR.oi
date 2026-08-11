@@ -18,6 +18,14 @@
     --slate-900: #0f172a;
     --white: #ffffff;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Status colors — referenced via var(--success)/var(--error)/var(--warning)
+       across ~19 tool pages (e.g. password-generator's "Copy Password" button)
+       but never defined, so those elements silently resolved to a transparent
+       background with white-on-white text instead of failing loudly. */
+    --success: #16a34a;
+    --error: #dc2626;
+    --warning: #f59e0b;
     
     /* Theme variables for components */
     --text-primary: #0f172a;
@@ -960,4 +968,123 @@ body {
     .sidebar-overlay {
         display: none !important;
     }
+}
+
+/* ==================== TOOL WIDGET STYLES ====================
+   ~49 tool pages (password-generator, utm-builder, hash-generator, and
+   the like) share this markup — .tool-container wrapping .form-group /
+   .form-label / .form-input / .form-textarea, plus a plain .btn base
+   under .btn-primary / .btn-secondary — but none of it had CSS behind
+   it, so every one of those pages rendered as bare, unstyled browser
+   form controls (default borders, no padding, no card) instead of the
+   designed tool UI. This is the missing half of that design system;
+   .btn-primary / .btn-secondary already existed above but need the
+   base .btn rules (padding, radius, cursor) they were always meant to
+   pair with. */
+.tool-container {
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--border, var(--slate-200));
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 24px -8px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="dark"] .tool-container {
+    background: #1e293b;
+    border-color: var(--border, #334155);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary, var(--navy));
+    margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea,
+select.form-input {
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-primary, var(--navy));
+    background: var(--card-bg, #fff);
+    border: 1.5px solid var(--slate-200);
+    border-radius: 10px;
+    padding: 0.7rem 0.9rem;
+    transition: var(--transition);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-textarea {
+    background: #0f172a;
+    border-color: #334155;
+    color: var(--text-primary);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-input[readonly],
+.form-textarea[readonly] {
+    background: var(--slate-50);
+    cursor: default;
+}
+
+[data-theme="dark"] .form-input[readonly],
+[data-theme="dark"] .form-textarea[readonly] {
+    background: #1e293b;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 90px;
+    line-height: 1.5;
+}
+
+/* Range inputs need their own treatment — box/border styling doesn't
+   apply to the native slider track the way it does to a text input. */
+input.form-input[type="range"] {
+    padding: 0;
+    border: none;
+    background: transparent;
+    accent-color: var(--primary);
+    height: 1.5rem;
+}
+
+.form-hint {
+    font-size: 0.8rem;
+    color: var(--text-secondary, var(--slate-600));
+    margin-top: 0.4rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    transition: var(--transition);
 }
