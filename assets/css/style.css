@@ -72,7 +72,12 @@ body {
 }
 
 #main-header .container {
-    max-width: 1200px;
+    /* Wider than the site's normal 1200px content container -- the nav grew
+       to 9 links and needed the extra room to avoid overflowing at every
+       desktop width (the old 1200px cap meant it never actually fit once
+       viewport width exceeded ~1250px, since the container simply stopped
+       growing there). */
+    max-width: 1360px;
     margin: 0 auto;
     padding: 0 1.5rem;
     display: flex;
@@ -141,17 +146,18 @@ body {
 
 #nav-links {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.25rem;
     align-items: center;
+    justify-content: flex-end;
     flex: 1;
-    margin: 0 2rem;
+    margin: 0 1.5rem;
 }
 
 #nav-links a {
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.7rem;
     border-radius: 8px;
     transition: all 0.2s;
     white-space: nowrap;
@@ -164,6 +170,36 @@ body {
 
 [data-theme="dark"] #nav-links a:hover {
     background: rgba(37, 99, 235, 0.1);
+}
+
+/* Nav-specific breakpoint, deliberately separate from the .mobile-only /
+   .desktop-only classes used below (max-width:768px / min-width:769px) --
+   those two are shared, overloaded utility classes also used for ad-unit
+   swapping on ~50 blog/docs pages, so widening them to fit the 9-link nav
+   would shift unrelated ad layouts too. These ID selectors target only the
+   nav toggle and out-specificity the shared class rules regardless of
+   source order, so this is safe to add independently. 1180px is where the
+   nav (9 links at 1360px header container width) actually stops overflowing --
+   measured, not guessed. */
+@media (max-width: 1180px) {
+    #nav-links {
+        display: none;
+    }
+
+    #mobile-menu-toggle {
+        display: flex !important;
+    }
+
+    /* The general min-width:769px rule below force-hides .mobile-sidebar /
+       .sidebar-overlay by class; ID selectors out-specificity that so the
+       sidebar can still open via its .active class in the 769-1180px gap. */
+    #mobile-sidebar.active {
+        display: block !important;
+    }
+
+    #sidebar-overlay.active {
+        display: block !important;
+    }
 }
 
 /* Dropdown Styles */

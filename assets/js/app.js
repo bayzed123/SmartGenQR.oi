@@ -80,6 +80,7 @@ function injectNavbar() {
                     <a href="/">Home</a>
                     <a href="/blog/">Blog</a>
                     <a href="/tools/">All Tools</a>
+                    <a href="/paid-tools/">Paid Tools</a>
                     <a href="/html-code-library/">HTML Library</a>
                     <a href="/docs/">Docs</a>
                     <a href="/smartgen-legal-info/">Legal Info</a>
@@ -102,6 +103,7 @@ function injectNavbar() {
                 <a href="/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🏠 Home</a>
                 <a href="/blog/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">📝 Blog</a>
                 <a href="/tools/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🛠️ All Tools</a>
+                <a href="/paid-tools/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">💎 Paid Tools</a>
                 <a href="/html-code-library/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">💻 HTML Code Library</a>
                 <a href="/docs/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">📑 Developer Docs</a>
                 <a href="/smartgen-legal-info/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">⚖️ Legal Info</a>
@@ -224,6 +226,7 @@ function injectFooter() {
                 <h3>Our Tools</h3>
                 <ul>
                     <li><a href="https://smartgentools.com/tools/">Free Tools</a></li>
+                    <li><a href="https://smartgentools.com/paid-tools/">Paid Tools</a></li>
                     <li><a href="https://smartgentools.com/html-code-library/">HTML Code Library (80+)</a></li>
                     <li><a href="https://smartleadgen-frontend.sayadmdbayezidhosan.workers.dev" target="_blank">Pro Lead Collector</a></li>
                     <li><a href="https://connectwithbayezid.it.com" target="_blank">Automation Chatbots</a></li>
