@@ -1,7 +1,7 @@
 ![logo](assets/img/logo.svg)
 # SmartGen: All-in-One Digital & Web Utility Platform
 
-[![Auto Changelog Status](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/auto-changelog.yml/badge.svg)](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/auto-changelog.yml) [![Pages Build Deployment](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/pages/pages-build-deployment)
+[![Auto Changelog Status](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/changelog.yml/badge.svg)](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/changelog.yml) [![Pages Build Deployment](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/pages/pages-build-deployment)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/bayzed123/SmartGenQR.oi)
 
