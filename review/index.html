@@ -82,8 +82,8 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:600; letter-spacing:-.2px
 header.site{ position:sticky; top:0; z-index:40; backdrop-filter:blur(14px); background:rgba(8,9,12,.72); border-bottom:1px solid var(--border); }
 .nav-row{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
 .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
-.brand-mark{ width:34px; height:34px; border-radius:10px; background:linear-gradient(145deg,var(--cyan),#0e7490); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:700; color:#04222a; }
-.brand-name{ font-family:var(--font-display); font-weight:700; font-size:16px; }
+.brand-mark{ width:34px; height:auto; display:block; }
+.brand-name{ font-family:var(--font-display); font-weight:700; font-size:16px; color:var(--text); }
 .back-link{ display:flex; align-items:center; gap:6px; font-size:13.5px; color:var(--text-muted); text-decoration:none; }
 .back-link svg{ width:15px; height:15px; }
 .back-link:hover{ color:var(--text); }
@@ -108,7 +108,7 @@ header.site{ position:sticky; top:0; z-index:40; backdrop-filter:blur(14px); bac
 <header class="site">
   <div class="container nav-row">
     <a class="brand" href="https://smartgentools.com/">
-      <span class="brand-mark">S</span>
+      <img class="brand-mark" src="https://smartgentools.com/assets/img/logo-mark-96.png" width="34" height="33" alt="" loading="eager" decoding="async">
       <span class="brand-name">SmartGen</span>
     </a>
     <a class="back-link" href="https://smartgentools.com/tools/">
