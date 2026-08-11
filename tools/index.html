@@ -124,7 +124,7 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; letter-spacing:-.
 
 /* ---------- header ---------- */
 header.site{ position:sticky; top:0; z-index:40; backdrop-filter:blur(14px); background:rgba(8,9,12,.72); border-bottom:1px solid var(--border); }
-.nav-row{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+.nav-row{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; position:relative; }
 .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
 .brand-mark{ width:34px; height:auto; display:block; }
 .brand-name{ font-family:var(--font-display); font-weight:700; font-size:16px; }
@@ -132,7 +132,14 @@ header.site{ position:sticky; top:0; z-index:40; backdrop-filter:blur(14px); bac
 .nav-links a{ text-decoration:none; transition:color .2s ease; }
 .nav-links a:hover{ color:var(--text); }
 .nav-cta{ background:var(--cyan); color:#04222a; padding:9px 16px; border-radius:999px; font-weight:600; font-size:13.5px; text-decoration:none; }
-@media (max-width:720px){ .nav-links{ display:none; } }
+.nav-menu-toggle{ display:none; background:none; border:none; color:var(--text); font-size:22px; line-height:1; cursor:pointer; padding:4px 6px; }
+@media (max-width:880px){
+  .nav-links{ display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:flex-start; gap:0; background:#0b0d12; border-bottom:1px solid var(--border); padding:8px 0; }
+  .nav-links.open{ display:flex; }
+  .nav-links a{ width:100%; padding:12px 22px; }
+  .nav-links a:hover{ background:rgba(255,255,255,.04); }
+  .nav-menu-toggle{ display:inline-block; }
+}
 
 /* ---------- hero ---------- */
 .hero{ padding:64px 0 30px; text-align:center; }
@@ -342,15 +349,38 @@ footer.site{ border-top:1px solid var(--border); padding:44px 0 60px; }
       <img class="brand-mark" src="https://smartgentools.com/assets/img/logo-icon.svg" width="37" height="33" alt="" loading="eager" decoding="async">
       <span class="brand-name">SmartGen</span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="https://smartgentools.com/">Home</a>
       <a href="https://smartgentools.com/blog/">Blog</a>
       <a href="https://smartgentools.com/tools/">All Tools</a>
-      <a href="https://smartgentools.com/about/">About</a>
+      <a href="https://smartgentools.com/html-code-library/">HTML Library</a>
+      <a href="https://smartgentools.com/docs/">Docs</a>
+      <a href="https://smartgentools.com/smartgen-legal-info/">Legal Info</a>
+      <a href="https://smartgentools.com/about/">About Us</a>
+      <a href="https://smartgentools.com/contact/">Contact Us</a>
     </nav>
+    <button type="button" class="nav-menu-toggle" id="navMenuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">☰</button>
     <a class="nav-cta" href="#all-tools">Browse tools</a>
   </div>
 </header>
+
+<script>
+(function(){
+  var toggle = document.getElementById('navMenuToggle');
+  var nav = document.getElementById('navLinks');
+  if (!toggle || !nav) return;
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 
 <main>
   <section class="hero container">
