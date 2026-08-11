@@ -732,6 +732,224 @@ body {
     box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15);
 }
 
+/* ==================== FOOTER STYLES ====================
+   injectFooter() in app.js (assets/js/app.js) builds this markup on every
+   page that has an empty <footer id="main-footer"></footer> — these rules
+   are the only thing that turns it from a bare, unstyled list of links
+   (default browser bullets, default blue underlines, black text on white)
+   into the dark footer it was designed to be. Styled on #main-footer
+   directly, not the .modern-dark-footer class some pages add to the empty
+   <footer> tag by hand, so it renders the same everywhere regardless of
+   which markup a given page started with. */
+#main-footer {
+    background: var(--navy);
+    color: var(--slate-300);
+    margin-top: 3rem;
+}
+
+#main-footer a {
+    color: var(--slate-300);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+#main-footer a:hover {
+    color: var(--white);
+}
+
+.footer-top-bar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2rem 0;
+}
+
+.footer-top-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.footer-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+}
+
+.footer-info-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(37, 99, 235, 0.18);
+    color: var(--primary-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-info-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-info-text h4 {
+    margin: 0 0 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--white);
+}
+
+.footer-info-text a,
+.footer-info-text p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+    gap: 2.5rem;
+    padding: 3rem 0;
+}
+
+.footer-col h3 {
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 1.1rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.footer-col ul li {
+    font-size: 0.88rem;
+}
+
+.footer-brand p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+    max-width: 34ch;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.footer-social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--slate-300);
+}
+
+.footer-social-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.dev-profiles-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem !important;
+}
+
+.footer-review-box {
+    margin-top: 1.5rem;
+    padding: 1.1rem;
+    border-radius: 12px;
+    background: rgba(255, 136, 0, 0.08);
+    border: 1px solid rgba(255, 136, 0, 0.22);
+}
+
+.footer-review-box p {
+    font-size: 0.85rem;
+    margin: 0 0 0.75rem;
+    color: var(--slate-300);
+}
+
+.btn-review {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--navy) !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 8px;
+}
+
+.btn-review:hover {
+    background: #ffa733;
+    color: var(--navy) !important;
+}
+
+.footer-bottom-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.4rem 0;
+}
+
+.footer-bottom-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.footer-bottom-flex p {
+    margin: 0;
+    font-size: 0.82rem;
+}
+
+.footer-bottom-flex p span {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+}
+
+@media (max-width: 900px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-top-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 /* Hide mobile menu on desktop */
 @media (min-width: 769px) {
     .mobile-only {

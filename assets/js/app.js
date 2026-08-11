@@ -68,18 +68,9 @@ function injectNavbar() {
     header.innerHTML = `
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo" aria-label="SmartGen Home" style="display: flex; align-items: center; text-decoration: none;">
-                    <svg width="180" height="54" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                      <defs>
-                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" style="stop-color:#2563eb" />
-                          <stop offset="100%" style="stop-color:#3b82f6" />
-                        </linearGradient>
-                      </defs>
-                      <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
-                      <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
-                      <text x="65" y="42" font-family="Inter, sans-serif" font-weight="800" font-size="28" fill="var(--navy, #0f172a)">Smart<tspan fill="#ff8800">Gen</tspan></text>
-                    </svg>
+                <a href="/" class="logo" aria-label="SmartGen Home" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                    <img src="/assets/img/logo-icon.svg" width="44" height="40" alt="" style="display: block; height: 40px; width: auto;" loading="eager" decoding="async">
+                    <span style="font-family: Inter, sans-serif; font-weight: 800; font-size: 24px; line-height: 1; color: var(--navy, #0f172a);">Smart<span style="color:#ff8800;">Gen</span></span>
                 </a>
                 <div class="header-actions">
                     <button id="theme-toggle" class="icon-btn" title="Toggle Theme">🌓</button>
@@ -100,12 +91,9 @@ function injectNavbar() {
 
         <aside id="mobile-sidebar" class="mobile-sidebar">
             <div class="sidebar-header">
-                <a href="/" class="sidebar-logo" aria-label="SmartGen Home" style="display: flex; align-items: center; text-decoration: none;">
-                    <svg width="180" height="54" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
-                      <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
-                      <text x="65" y="42" font-family="Inter, sans-serif" font-weight="800" font-size="28" fill="var(--navy, #0f172a)">Smart<tspan fill="#ff8800">Gen</tspan></text>
-                    </svg>
+                <a href="/" class="sidebar-logo" aria-label="SmartGen Home" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                    <img src="/assets/img/logo-icon.svg" width="44" height="40" alt="" style="display: block; height: 40px; width: auto;" loading="eager" decoding="async">
+                    <span style="font-family: Inter, sans-serif; font-weight: 800; font-size: 24px; line-height: 1; color: var(--navy, #0f172a);">Smart<span style="color:#ff8800;">Gen</span></span>
                 </a>
                 <button id="sidebar-close" class="sidebar-close-btn" title="Close Menu">✕</button>
             </div>
@@ -207,17 +195,10 @@ function injectFooter() {
         <div class="container footer-main">
             <!-- Brand Column -->
             <div class="footer-col footer-brand">
-                <svg width="180" height="54" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#2563eb" />
-                        <stop offset="100%" style="stop-color:#3b82f6" />
-                        </linearGradient>
-                    </defs>
-                    <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
-                    <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
-                    <text x="65" y="42" font-family="Inter, sans-serif" font-weight="800" font-size="28" fill="#ffffff">Smart<tspan fill="#ff8800">Gen</tspan></text>
-                </svg>
+                <a href="/" aria-label="SmartGen Home" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; margin-bottom: 12px;">
+                    <img src="/assets/img/logo-icon.svg" width="49" height="44" alt="" style="display: block; height: 44px; width: auto;" loading="lazy" decoding="async">
+                    <span style="font-family: Inter, sans-serif; font-weight: 800; font-size: 26px; line-height: 1; color: #ffffff;">Smart<span style="color:#ff8800;">Gen</span></span>
+                </a>
                 <p>An advanced digital utility platform bringing 131+ SEO tools, web generators, and dev docs. Operated by Connect with Bayezid.</p>
                 <div class="footer-socials">
                     <a href="https://www.facebook.com/smartgenutility" class="footer-social-btn" target="_blank" aria-label="Facebook">
