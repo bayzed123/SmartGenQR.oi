@@ -19,6 +19,7 @@ import {
   directFaqMatch,
   resolveTool,
   TOOLS,
+  FAQS,
   SITE,
 } from './knowledge.js';
 
@@ -58,8 +59,44 @@ const MIN_SOURCE_SCORE = 40;
  * Questions about SmartGen itself. These often consist almost entirely of
  * stop words ("what can you do?"), so retrieval scores them at zero — the
  * pattern rescues them before the scope gate rejects them.
+ *
+ * Deliberately NOT included: a bare "are you" — that substring also matches
+ * plain small talk like "how are you", which SMALL_TALK_INTENT below handles
+ * with a friendly reply instead of dumping the tool catalogue on someone who
+ * was just being polite. Self-referential questions ("are you a bot?") are
+ * their own pattern, SELF_REFERENTIAL_INTENT.
  */
-const SITE_INTENT = /\b(smartgen|smartgentools|your (site|website|tools|company|team|price|pricing)|this (site|website|tool)|who (made|built|owns|runs)|are you|what can (you|i) do)\b/i;
+const SITE_INTENT = /\b(smartgen|smartgentools|your (site|website|tools|company|team|price|pricing)|this (site|website|tool)|who (made|built|owns|runs)|what can (you|i) do)\b/i;
+
+/**
+ * "What is SmartGen?" and its phrasings. Handled as its own intent rather than
+ * through retrieval because "smartgen"/"smartgentools" are deliberately in
+ * knowledge.js's STOP_WORDS (they appear in almost every tool description, so
+ * keeping them would drown out real signal) — which means these questions
+ * tokenize to nothing and retrieval alone can never find the matching FAQ.
+ */
+const ABOUT_INTENT =
+  /\bwhat\s+(is|are)\s+smartgen(tools)?\b|\bwho\s+(is|are)\s+smartgen(tools)?\b|\bwhat\s+does\s+smartgen(tools)?\s+do\b|\btell\s+me\s+about\s+smartgen(tools)?\b/i;
+
+/** "Are you a real person / a bot / an AI?" — answered directly, not as small talk. */
+const SELF_REFERENTIAL_INTENT = /\bare\s+you\s+(a\s+|an\s+)?(bot|ai|robot|human|real|person|smartgen)\b/i;
+
+/** "Who built/runs/owns this?" — answered with the real founder, not the catalogue. */
+const WHO_BUILT_INTENT =
+  /\bwho\s+(built|made|owns|runs|created|develops?|develop(ed|s)|is\s+behind)\s+(smartgen(tools)?|you|this(\s+(site|tool|platform))?)\b/i;
+
+/**
+ * Plain conversational noise: greetings, thanks, farewells, "how are you".
+ * None of these carry retrieval signal (the words simply are not in the tool
+ * catalogue), so without this check they fall straight through to the
+ * off-topic refusal — which reads as broken on the very first thing most
+ * visitors type. Gated on a low retrieval score in answerQuestion() so it
+ * never swallows a real question that happens to open with "hi".
+ */
+const SMALL_TALK_INTENT =
+  /^\s*(hi+|hello+|hey+|hiya|yo|howdy|greetings|good\s?(morning|afternoon|evening|day))(\s+(there|smartgen|team))?[\s!.,]*$|\bhow\s*('s|\s+is)?\s*it\s*going\b|\bhow\s+are\s+you\b|\bwhat'?s\s+up\b/i;
+const THANKS_INTENT = /\b(thanks|thank\s*you|thx|ty|appreciate\s*it|cheers)\b/i;
+const FAREWELL_INTENT = /^\s*(bye+|goodbye|see\s*y(a|ou)|later|take\s*care|good\s?night)[\s!.,]*$/i;
 
 /** "Show me everything you've got" — answered from the catalogue, no model. */
 const BROWSE_INTENT =
@@ -71,6 +108,14 @@ const OUR_PAGE_INTENT = /\b(your|smartgen'?s|the site'?s|this site'?s)\b/i;
 const OFF_TOPIC_REPLY = `I'm the SmartGen assistant, so I can only help with SmartGen Tools — our ${SITE.toolCount} free utilities, how they work, privacy, or where to find something on the site.
 
 Try asking me things like "how do I compress an image?", "do you have an SEO audit tool?", or "is my data safe?"`;
+
+const ALL_TOOLS_SOURCE = {
+  id: 'all-tools',
+  title: `All ${SITE.toolCount} SmartGen tools`,
+  url: SITE.tools,
+  category: 'Directory',
+  description: 'Browse every tool by category.',
+};
 
 /**
  * @param {object} input
@@ -87,20 +132,67 @@ export async function answerQuestion(input, env) {
 
   const hits = searchKnowledge(message);
   const looksLikeSiteQuestion = SITE_INTENT.test(message);
+  const weakRetrieval = hits.topScore < MIN_SCORE;
+
+  // ---- conversational noise: greetings, thanks, farewells, "how are you" -
+  // Gated on weak retrieval so a real question that happens to open with "hi"
+  // (e.g. "hi, how do I compress an image") still gets answered properly —
+  // that query's score comes from "compress"/"image", well above the floor.
+  if (weakRetrieval) {
+    if (SELF_REFERENTIAL_INTENT.test(message)) {
+      return reply(
+        "I'm the SmartGen AI Assistant — software, not a person, but I know this site well. What are you trying to do? I can point you at the right tool.",
+        { kind: 'small_talk', followUps: defaultFollowUps() }
+      );
+    }
+    if (FAREWELL_INTENT.test(message)) {
+      return reply('Take care! Come back anytime you need a free tool. 👋', {
+        kind: 'small_talk',
+        followUps: [],
+      });
+    }
+    if (THANKS_INTENT.test(message)) {
+      return reply("You're welcome! Let me know if you need help finding anything else.", {
+        kind: 'small_talk',
+        followUps: defaultFollowUps(),
+      });
+    }
+    if (SMALL_TALK_INTENT.test(message)) {
+      return reply(
+        `👋 Hi there! I'm doing well, thanks for asking. I'm here to help you find the right tool among our ${SITE.toolCount} free utilities — what are you working on?`,
+        { kind: 'small_talk', followUps: defaultFollowUps() }
+      );
+    }
+  }
+
+  // ---- "who built/runs this?" — answer with the real founder, not the
+  // catalogue. Checked before SITE_INTENT's generic fallback, which would
+  // otherwise catch the same "who built|made|owns|runs" wording and dump the
+  // tool list on someone who asked a simple factual question.
+  if (WHO_BUILT_INTENT.test(message)) {
+    return reply(
+      `SmartGen is built by **${SITE.founder}** and operated by **${SITE.operator}**. It's a privacy-first platform with ${SITE.toolCount} free tools — no login required, everything runs in your browser.`,
+      { kind: 'about', sources: [ALL_TOOLS_SOURCE], followUps: defaultFollowUps() }
+    );
+  }
+
+  // ---- "what is smartgen?" — its own intent; see ABOUT_INTENT for why ----
+  if (ABOUT_INTENT.test(message)) {
+    // Raw FAQS entries (unlike the scored documents searchKnowledge returns)
+    // carry the text in `answer`, not `body` — easy to mix up between the two.
+    const about = FAQS.find((f) => /^what is smartgen\??$/i.test(f.question.trim()));
+    return reply(about ? about.answer : catalogueOverview(), {
+      kind: 'about',
+      sources: [ALL_TOOLS_SOURCE],
+      followUps: ['What tools do you have?', 'Is SmartGen really free?', 'Is my data safe?'],
+    });
+  }
 
   // ---- "what have you got?" is answered from the catalogue --------------
   if (BROWSE_INTENT.test(message) && hits.topScore < 150) {
     return reply(catalogueOverview(), {
       kind: 'catalogue',
-      sources: [
-        {
-          id: 'all-tools',
-          title: `All ${SITE.toolCount} SmartGen tools`,
-          url: SITE.tools,
-          category: 'Directory',
-          description: 'Browse every tool by category.',
-        },
-      ],
+      sources: [ALL_TOOLS_SOURCE],
       followUps: ['Do you have an SEO audit tool?', 'How do I compress an image?', 'Is my data safe?'],
     });
   }
@@ -114,20 +206,13 @@ export async function answerQuestion(input, env) {
     });
   }
 
-  // "What can you do?" and friends: about us, but matching no document. The
-  // catalogue tour is a better answer than anything a model would improvise.
+  // "Who built you?", "what's your pricing?" and friends: about us, but
+  // matching no document. The catalogue tour is a better answer than
+  // anything a model would improvise with an empty context block.
   if (!onTopic && looksLikeSiteQuestion) {
     return reply(catalogueOverview(), {
       kind: 'catalogue',
-      sources: [
-        {
-          id: 'all-tools',
-          title: `All ${SITE.toolCount} SmartGen tools`,
-          url: SITE.tools,
-          category: 'Directory',
-          description: 'Browse every tool by category.',
-        },
-      ],
+      sources: [ALL_TOOLS_SOURCE],
       followUps: defaultFollowUps(),
     });
   }
