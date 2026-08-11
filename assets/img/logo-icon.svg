@@ -1,0 +1,7 @@
+<svg width="51" height="46" viewBox="7 7 51 46" xmlns="http://www.w3.org/2000/svg">
+  <!-- SmartGen icon mark only (no wordmark), cropped from logo.svg so it can be
+       paired with a separately-coloured "SmartGen" text span — needed because
+       logo.svg's own text is baked in navy and disappears on a dark footer. -->
+  <path d="M10 30 Q10 10 30 10 L45 10 Q55 10 55 20 L55 25 L45 25 L45 20 Q45 18 40 18 L30 18 Q20 18 20 30 Q20 42 30 42 L40 42 Q45 42 45 40 L45 35 L55 35 L55 40 Q55 50 45 50 L30 50 Q10 50 10 30" fill="#2563eb" />
+  <path d="M32 15 L45 30 L35 30 L40 45 L27 30 L37 30 Z" fill="#ff8800" />
+</svg>

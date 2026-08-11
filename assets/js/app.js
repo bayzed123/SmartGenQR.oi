@@ -69,7 +69,7 @@ function injectNavbar() {
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo" aria-label="SmartGen Home" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-                    <img src="/assets/img/logo-mark-96.png" width="40" height="39" alt="" style="display: block; height: 40px; width: auto;" loading="eager" decoding="async">
+                    <img src="/assets/img/logo-icon.svg" width="44" height="40" alt="" style="display: block; height: 40px; width: auto;" loading="eager" decoding="async">
                     <span style="font-family: Inter, sans-serif; font-weight: 800; font-size: 24px; line-height: 1; color: var(--navy, #0f172a);">Smart<span style="color:#ff8800;">Gen</span></span>
                 </a>
                 <div class="header-actions">
@@ -92,7 +92,7 @@ function injectNavbar() {
         <aside id="mobile-sidebar" class="mobile-sidebar">
             <div class="sidebar-header">
                 <a href="/" class="sidebar-logo" aria-label="SmartGen Home" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-                    <img src="/assets/img/logo-mark-96.png" width="40" height="39" alt="" style="display: block; height: 40px; width: auto;" loading="eager" decoding="async">
+                    <img src="/assets/img/logo-icon.svg" width="44" height="40" alt="" style="display: block; height: 40px; width: auto;" loading="eager" decoding="async">
                     <span style="font-family: Inter, sans-serif; font-weight: 800; font-size: 24px; line-height: 1; color: var(--navy, #0f172a);">Smart<span style="color:#ff8800;">Gen</span></span>
                 </a>
                 <button id="sidebar-close" class="sidebar-close-btn" title="Close Menu">✕</button>
@@ -196,7 +196,7 @@ function injectFooter() {
             <!-- Brand Column -->
             <div class="footer-col footer-brand">
                 <a href="/" aria-label="SmartGen Home" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; margin-bottom: 12px;">
-                    <img src="/assets/img/logo-mark-96.png" width="44" height="43" alt="" style="display: block; height: 44px; width: auto;" loading="lazy" decoding="async">
+                    <img src="/assets/img/logo-icon.svg" width="49" height="44" alt="" style="display: block; height: 44px; width: auto;" loading="lazy" decoding="async">
                     <span style="font-family: Inter, sans-serif; font-weight: 800; font-size: 26px; line-height: 1; color: #ffffff;">Smart<span style="color:#ff8800;">Gen</span></span>
                 </a>
                 <p>An advanced digital utility platform bringing 131+ SEO tools, web generators, and dev docs. Operated by Connect with Bayezid.</p>
