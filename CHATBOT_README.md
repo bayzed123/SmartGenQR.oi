@@ -50,22 +50,36 @@ frontend.** See the table in `SEO_AUDIT_TOOL.md` § "Where the API keys live".
    stemming, a synonym map for everyday phrasings like "shrink" → "compress")
    and scored against every tool, FAQ and key page with a field-weighted TF-IDF.
 
-3. **Scope gate.** Genuine SmartGen questions score 69–800 on this corpus;
+3. **Small talk, first.** Greetings, thanks, farewells and "how are you"
+   never carry retrieval signal — those words simply aren't in the tool
+   catalogue — so without a dedicated check they either fall through to the
+   off-topic refusal ("hi" gets rejected) or, worse, get mistaken for a real
+   site question and answered with a full catalogue dump. `SMALL_TALK_INTENT`,
+   `THANKS_INTENT` and `FAREWELL_INTENT` catch these before anything else
+   runs, gated on a low retrieval score so a real question that happens to
+   open with "hi" (e.g. "hi, how do I compress an image?") still gets a real
+   answer — that query's score comes from "compress"/"image", not "hi".
+
+4. **Scope gate.** Genuine SmartGen questions score 69–800 on this corpus;
    off-topic ones top out near 39. Anything below a score of 50, or with less
    than 34% of its words present in the index, is declined **before** any model
    call — which also means off-topic traffic costs nothing.
 
-4. **Shortcuts.** Two kinds of question never reach the model:
+5. **Shortcuts.** Several kinds of question never reach the model:
    - An exact FAQ match is returned verbatim.
    - "What tools do you have?" gets a generated catalogue tour.
+   - "What is SmartGen?" / "who built you?" get direct answers built from the
+     site's own facts — not retrieval, because "smartgen" itself is a
+     deliberate stop word (see below) so these questions score zero and would
+     otherwise never find their own FAQ.
 
-5. **Grounded generation.** Only the retrieved entries go into the prompt. The
+6. **Grounded generation.** Only the retrieved entries go into the prompt. The
    model is told to reference tools **by id**, never to write a URL. The Worker
    then resolves those ids against the real catalogue — an id the model
    invented resolves to nothing and is dropped. This is why the bot cannot
    hallucinate a tool or a link.
 
-6. **Graceful degradation.** If Gemini is down or unconfigured, retrieval alone
+7. **Graceful degradation.** If Gemini is down or unconfigured, retrieval alone
    still answers "which tool do I need?" properly. The visitor never sees an
    error where an answer belongs.
 

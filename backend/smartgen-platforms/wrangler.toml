@@ -33,7 +33,13 @@ PREMIUM_PRICE_USD = "99"
 
 # Tab name inside the leads spreadsheet. The spreadsheet id itself is a SECRET
 # (see below) — this repo is public, so it must not be committed here.
-LEADS_SHEET_TAB = "Leads"
+#
+# Must match a real tab in that spreadsheet exactly, including case and
+# spacing — the Sheets API rejects the whole append with a range error
+# otherwise, silently failing every "email me the report" submission. The
+# header row was written to a tab named "SmartGen SEO Lead"; if you rename it
+# or point LEADS_SHEET_ID at a different sheet, update this to match.
+LEADS_SHEET_TAB = "SmartGen SEO Lead"
 
 # Turn individual premium enrichments on/off without redeploying code.
 ENABLE_PAGESPEED = "true"

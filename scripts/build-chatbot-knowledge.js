@@ -17,6 +17,7 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
+const crypto = require('node:crypto');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'backend/smartgen-platforms/src/knowledge/site-index.js');
@@ -179,7 +180,17 @@ export const SITE = ${JSON.stringify(
       toolCount: tools.length,
       blogPostCount: blogCount,
       categories,
-      generatedAt: new Date().toISOString(),
+      // Content hash, not a timestamp. CI regenerates this file on every run
+      // and fails the build if it differs from the committed version — a
+      // wall-clock timestamp would differ on every single run regardless of
+      // whether the actual tools/FAQs/pages changed, so the check could never
+      // pass. Hashing the emitted data instead makes the file byte-identical
+      // whenever the source content is byte-identical.
+      sourceHash: crypto
+        .createHash('sha256')
+        .update(JSON.stringify({ tools, faqs, keyPages }))
+        .digest('hex')
+        .slice(0, 12),
     },
     null,
     2

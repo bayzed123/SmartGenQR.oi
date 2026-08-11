@@ -109,6 +109,77 @@ test('empty and oversized input are handled without throwing', async () => {
   assert.ok(long.answer.length > 0);
 });
 
+/* ------------------------------------------------------------ small talk */
+//
+// All of these previously fell through to either the off-topic refusal or
+// (worse) a full catalogue dump, because greetings/thanks/"how are you"
+// tokenize to nothing the retrieval index recognises, and "are you" was
+// being matched by the generic SITE_INTENT pattern meant for "are you a
+// bot?"-style questions. A live-key run against real Gemini surfaced this;
+// these lock the fix in without needing a network call.
+
+test('greetings get a warm reply, not a refusal or a catalogue dump', async () => {
+  for (const message of ['hi', 'hello', 'hey', 'hiya', 'good morning', 'hello there']) {
+    const result = await answerQuestion({ message }, NO_AI);
+    assert.equal(result.kind, 'small_talk', `"${message}" should be small talk`);
+    assert.ok(result.answer.length > 0);
+    assert.doesNotMatch(result.answer, /free tools, all no-signup/, 'must not be the catalogue tour');
+    assert.doesNotMatch(result.answer, /I'm the SmartGen assistant, so I can only help/, 'must not be the refusal');
+  }
+});
+
+test('"how are you" is small talk, not a catalogue dump', async () => {
+  // This was the sharpest bug: SITE_INTENT's bare "are you" matched the "are
+  // you" inside "how are you", and with zero retrieval score it fell into the
+  // "on-topic but no document" branch, which returns the full tool catalogue.
+  const result = await answerQuestion({ message: 'how are you' }, NO_AI);
+  assert.equal(result.kind, 'small_talk');
+  assert.doesNotMatch(result.answer, /free tools, all no-signup/);
+});
+
+test('thanks and farewells are acknowledged, not refused', async () => {
+  for (const message of ['thanks', 'thank you', 'thx', 'cheers']) {
+    const result = await answerQuestion({ message }, NO_AI);
+    assert.equal(result.kind, 'small_talk', `"${message}"`);
+    assert.match(result.answer, /welcome/i);
+  }
+  for (const message of ['bye', 'goodbye', 'see ya']) {
+    const result = await answerQuestion({ message }, NO_AI);
+    assert.equal(result.kind, 'small_talk', `"${message}"`);
+  }
+});
+
+test('a real question that happens to open with a greeting is still answered', async () => {
+  const result = await answerQuestion({ message: 'hi there, is my data safe' }, NO_AI);
+  assert.notEqual(result.kind, 'small_talk');
+  assert.match(result.answer, /privacy-first|locally|browser/i);
+});
+
+test('self-referential questions get a direct answer, not small talk noise', async () => {
+  const result = await answerQuestion({ message: 'are you a bot' }, NO_AI);
+  assert.equal(result.kind, 'small_talk');
+  assert.match(result.answer, /SmartGen AI Assistant/);
+});
+
+test('"what is smartgen" answers from the real FAQ, not an empty or generic reply', async () => {
+  // Regression: this intent looked up FAQS.find(...).body, but raw FAQ
+  // entries carry the text in `.answer` — the bug shipped an `undefined`
+  // answer to every visitor who asked, silently, until a live-key run caught it.
+  for (const message of ['what is smartgen', 'what is smartgentools?', 'tell me about smartgen']) {
+    const result = await answerQuestion({ message }, NO_AI);
+    assert.equal(result.kind, 'about', `"${message}"`);
+    assert.equal(typeof result.answer, 'string');
+    assert.match(result.answer, /all-in-one digital and web utility platform/, `"${message}"`);
+  }
+});
+
+test('"who built you" names the real founder, not the catalogue', async () => {
+  const result = await answerQuestion({ message: 'who built you' }, NO_AI);
+  assert.equal(result.kind, 'about');
+  assert.match(result.answer, /Sayad Md Bayezid Hosan/);
+  assert.doesNotMatch(result.answer, /free tools, all no-signup/);
+});
+
 /* ------------------------------------------------------------ catalogue */
 
 test('the generated index covers the whole site', () => {

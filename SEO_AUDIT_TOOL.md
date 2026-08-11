@@ -248,6 +248,24 @@ policy" becomes a single spreadsheet filter.
 spreadsheet with the service account's `client_email` as an **Editor**. Missing
 that share step is the cause of nearly every 403 from the Sheets API.
 
+**The tab name matters as much as the sheet id.** `LEADS_SHEET_TAB` in
+`wrangler.toml` must exactly match a real tab in the spreadsheet — the Sheets
+API rejects the whole append with a range error otherwise, and it fails
+*silently* from the visitor's point of view: the audit still completes, the
+lead form still says "sent", and nothing lands anywhere. It defaults to
+`"SmartGen SEO Lead"` to match the tab already in use; if you point
+`LEADS_SHEET_ID` at a different spreadsheet or rename the tab, update this
+value to match, or every lead capture will fail. Verify with:
+
+```bash
+curl -X POST "$API/api/lead" -H 'Content-Type: application/json' \
+  -d '{"lead":{"fullName":"Test","email":"you@example.com"},"captcha":{"a":1,"b":1,"answer":2}}'
+```
+
+A `{"ok":true,"stored":true}` response and a new row in the sheet confirm the
+tab name is correct; `{"stored":false}` with a logged Sheets error (visible in
+`wrangler tail`) means it doesn't match.
+
 Write the header row once:
 
 ```bash
