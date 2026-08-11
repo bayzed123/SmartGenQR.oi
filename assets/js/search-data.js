@@ -1248,6 +1248,22 @@ const TOOLS_INDEX = [
 }
 	];
 
+// Site sections that aren't individual tools -- used by assets/js/search.js so
+// global search can surface "All Tools", "Docs", etc. alongside tool matches,
+// not just the 137 entries above.
+const PAGES_INDEX = [
+    { id: 'tools-hub', title: 'All Tools', keywords: ['tools', 'all tools', 'browse', 'directory'], description: 'Browse and search every SmartGen tool by category.', url: './tools/', icon: '🛠️' },
+    { id: 'html-code-library-hub', title: 'HTML Code Library', keywords: ['html', 'css', 'code library', 'snippets', 'generators'], description: '80+ free HTML/CSS generators, editors, and copy-paste reference pages.', url: './html-code-library/', icon: '📚' },
+    { id: 'docs-hub', title: 'Developer Docs', keywords: ['docs', 'documentation', 'developer', 'api'], description: 'Guides and reference docs for building with SmartGen.', url: './docs/', icon: '📑' },
+    { id: 'blog-hub', title: 'Blog', keywords: ['blog', 'articles', 'guides', 'education'], description: 'In-depth SEO and marketing guides from the SmartGen team.', url: './blog/', icon: '📝' },
+    { id: 'paid-tools-hub', title: 'Paid Tools', keywords: ['paid', 'premium', 'automation', 'lead collector', 'chatbot'], description: 'SmartGen\'s premium automation and marketing products.', url: './paid-tools/', icon: '💎' },
+    { id: 'seo-audit-tool-page', title: 'SEO Audit Tool', keywords: ['seo audit', 'website audit', 'core web vitals'], description: 'A full 72-point SEO audit of any website, free.', url: './seo-audit-tool/', icon: '📊' },
+    { id: 'legal-info-hub', title: 'Legal Info / Trust Centre', keywords: ['legal', 'trust', 'privacy', 'terms', 'reviews'], description: 'Privacy policy, terms, and everything about how SmartGen operates.', url: './smartgen-legal-info/', icon: '⚖️' },
+    { id: 'about-page', title: 'About Us', keywords: ['about', 'company', 'founder', 'mission'], description: 'Who builds SmartGen and why.', url: './about/', icon: '📄' },
+    { id: 'contact-page', title: 'Contact Us', keywords: ['contact', 'support', 'email', 'help'], description: 'Get in touch with the SmartGen team.', url: './contact/', icon: '📩' },
+    { id: 'review-page', title: 'Leave a Review', keywords: ['review', 'rating', 'feedback', 'testimonial'], description: 'Share your experience using SmartGen.', url: './review/', icon: '⭐' },
+];
+
 // Search function
 function searchTools(query) {
     if (!query || query.trim().length === 0) {

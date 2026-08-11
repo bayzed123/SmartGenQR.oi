@@ -195,6 +195,133 @@
             border: 1px solid var(--slate-100);
             text-align: left;
         }
+
+        .search-results-header {
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--slate-100);
+        }
+
+        .search-results-count {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--slate-600);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .search-results-group + .search-results-group {
+            border-top: 1px solid var(--slate-100);
+        }
+
+        .search-results-group-label {
+            padding: 10px 20px 2px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--primary);
+        }
+
+        .search-result-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: background 0.15s ease;
+        }
+
+        .search-result-item:hover,
+        .search-result-item:focus-visible {
+            background: var(--slate-50);
+        }
+
+        .search-result-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: var(--slate-50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .search-result-content {
+            min-width: 0;
+        }
+
+        .search-result-title {
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--navy);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .search-result-category {
+            font-size: 0.78rem;
+            color: var(--slate-600);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .search-no-results {
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .search-no-results p {
+            color: var(--slate-600);
+            margin-bottom: 10px;
+        }
+
+        .search-request-link {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .search-request-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Explore quick links, under the search bar */
+        .search-explore-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: -1.8rem auto 3rem;
+            animation: fadeInUp 0.8s ease-out 0.55s both;
+        }
+
+        .search-explore-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--slate-200);
+            color: var(--slate-600);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .search-explore-links a:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: white;
+            transform: translateY(-2px);
+        }
         /* --------------------------------- */
 
         .cta-group {
@@ -661,7 +788,7 @@
             </p>
 
             <!-- Premium Search Bar -->
-            <div class="premium-search-container">
+            <div class="premium-search-container" id="live-search-container">
                 <div class="search-box">
                     <span class="search-icon">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -669,12 +796,19 @@
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
                     </span>
-                    <input type="text" id="search-input" class="search-input" placeholder="Search for tools, docs, or guides..." autocomplete="off">
-                    <button id="search-clear-btn" class="clear-btn" style="display: none;">✕</button>
+                    <input type="text" id="search-input" class="search-input" placeholder="Search tools, docs, blog posts..." autocomplete="off">
+                    <button id="search-clear" class="clear-btn" style="display: none;">✕</button>
                 </div>
                 <div id="search-results" class="search-results-dropdown"></div>
             </div>
             <!-- End Premium Search Bar -->
+
+            <!-- Explore quick links -->
+            <div class="search-explore-links">
+                <a href="/tools/">🛠️ Explore All Tools</a>
+                <a href="/docs/">📑 Developer Docs</a>
+                <a href="/blog/">📝 Education Blog</a>
+            </div>
 
             <div class="cta-group">
                 <a href="#tools" class="btn-main btn-primary">
