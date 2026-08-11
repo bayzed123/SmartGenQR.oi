@@ -770,6 +770,29 @@
         </div>
     </section>
 
+    <!-- Reviews (auto-rendered, live from the same backend as /review/ and /tools/) -->
+    <section class="section-padding" aria-labelledby="home-reviews-heading">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="home-reviews-heading">What people are saying about SmartGen</h2>
+                <p class="hero-subtitle">Real feedback from real users — read it, or add your own in under a minute.</p>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:28px;">
+                <div style="font-size:2.5rem; font-weight:800; color:var(--navy); line-height:1;" id="home-rating-num">–</div>
+                <div>
+                    <div id="home-rating-stars" style="color:#f59e0b; display:flex; gap:2px;" aria-hidden="true"></div>
+                    <div id="home-rating-total" style="color:var(--slate-600); font-size:0.85rem; margin-top:4px;">No reviews yet</div>
+                </div>
+                <a href="https://smartgentools.com/review/" class="btn-primary" style="margin-left:auto; text-decoration:none; padding:10px 20px; border-radius:8px; font-weight:600; font-size:0.9rem;">Leave a Review</a>
+            </div>
+
+            <div id="home-reviews-list" class="category-grid">
+                <div style="grid-column: 1/-1; text-align: center; color: var(--slate-600); padding: 2rem;">Loading reviews…</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Style Guide -->
     <section class="container section-padding">
         <div class="style-guide-section">
@@ -930,6 +953,7 @@
     <script src="./assets/js/search-data.js" defer></script>
     <script src="./assets/js/search.js" defer></script>
     <script src="./assets/js/chatbot.js" defer></script>
+    <script src="./assets/js/home-reviews.js" defer></script>
 
     <script>
         // Smooth scroll
