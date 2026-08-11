@@ -130,16 +130,21 @@
  <body data-template-id="__page-root" class="min-h-screen w-full">
   <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
   <header class="border-b border-emerald-800/50 px-6 py-4">
-   <div class="max-w-6xl mx-auto flex items-center justify-between">
+   <div class="max-w-6xl mx-auto flex items-center justify-between flex-wrap gap-3">
     <div class="flex items-center gap-3">
      <a href="https://smartgentools.com/" aria-label="SmartGen Home" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
       <img src="https://smartgentools.com/assets/img/logo-icon.svg" width="31" height="28" alt="" style="display:block;height:28px;width:auto;" loading="eager" decoding="async">
      </a>
      <h1 data-template-id="app-title" class="canva-text font-bold text-lg text-emerald-200">SmartGen Marquee Generator</h1>
     </div>
-    <button id="reset-btn" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-800 text-emerald-100 hover:bg-emerald-700 transition-colors text-sm font-medium">
-        <i data-lucide="rotate-ccw" style="width:14px;height:14px"></i> Reset
-    </button>
+    <nav class="flex items-center gap-4 text-sm font-medium" aria-label="Site">
+     <a href="https://smartgentools.com/tools/" class="text-emerald-300 hover:text-emerald-100 transition-colors">All Tools</a>
+     <a href="https://smartgentools.com/html-code-library/" class="text-emerald-300 hover:text-emerald-100 transition-colors">HTML Library</a>
+     <a href="https://smartgentools.com/blog/" class="text-emerald-300 hover:text-emerald-100 transition-colors">Blog</a>
+     <button id="reset-btn" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-800 text-emerald-100 hover:bg-emerald-700 transition-colors text-sm font-medium">
+         <i data-lucide="rotate-ccw" style="width:14px;height:14px"></i> Reset
+     </button>
+    </nav>
    </div>
   </header>
   <main class="max-w-6xl mx-auto p-6">
@@ -487,6 +492,8 @@
             <p style="margin-top: 16px; font-size: 0.85rem;">
                 <a href="https://smartgentools.com/" style="color:#2563eb;text-decoration:none;">Home</a> ·
                 <a href="https://smartgentools.com/tools/" style="color:#2563eb;text-decoration:none;">All Tools</a> ·
+                <a href="https://smartgentools.com/smartgen-legal-info/" style="color:#2563eb;text-decoration:none;">Legal Info</a> ·
+                <a href="https://smartgentools.com/contact/" style="color:#2563eb;text-decoration:none;">Contact</a> ·
                 <a href="https://smartgentools.com/review/" style="color:#2563eb;text-decoration:none;">Leave a Review</a>
             </p>
         </footer>

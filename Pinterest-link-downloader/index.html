@@ -9,16 +9,14 @@
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0c0a0d">
 
-<!-- Update this canonical to match wherever this page actually lives on smartgentools.com -->
-<link rel="canonical" href="https://www.smartgentools.com/pinterest-downloader/">
+<link rel="canonical" href="https://smartgentools.com/Pinterest-link-downloader/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SmartGen Tools">
 <meta property="og:title" content="PinFetch Pro – Pinterest Video & Image Downloader">
 <meta property="og:description" content="Download Pinterest photos, videos, and looping GIFs in original quality, free and watermark-free.">
-<meta property="og:url" content="https://www.smartgentools.com/pinterest-downloader/">
-<!-- Swap in a real 1200x630 preview image on your server -->
-<meta property="og:image" content="https://www.smartgentools.com/assets/pinfetch-pro-cover.jpg">
+<meta property="og:url" content="https://smartgentools.com/Pinterest-link-downloader/">
+<meta property="og:image" content="https://smartgentools.com/assets/img/smartgen-logo-ref.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PinFetch Pro – Pinterest Video & Image Downloader">
 <meta name="twitter:description" content="Free Pinterest photo, video and GIF downloader. No login, no watermark.">
@@ -28,7 +26,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "PinFetch Pro",
-  "url": "https://www.smartgentools.com/pinterest-downloader/",
+  "url": "https://smartgentools.com/Pinterest-link-downloader/",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any (web browser)",
   "description": "Free browser tool to download Pinterest photos, videos and looping GIFs in original quality with no watermark.",
@@ -40,7 +38,7 @@
   "publisher": {
     "@type": "Organization",
     "name": "SmartGen Tools",
-    "url": "https://www.smartgentools.com/"
+    "url": "https://smartgentools.com/"
   }
 }
 </script>
@@ -49,9 +47,9 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.smartgentools.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.smartgentools.com/tools/" },
-    { "@type": "ListItem", "position": 3, "name": "Pinterest Downloader", "item": "https://www.smartgentools.com/pinterest-downloader/" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://smartgentools.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://smartgentools.com/tools/" },
+    { "@type": "ListItem", "position": 3, "name": "Pinterest Downloader", "item": "https://smartgentools.com/Pinterest-link-downloader/" }
   ]
 }
 </script>
@@ -123,7 +121,10 @@
 
   /* ---------- Header ---------- */
   header.site{ padding:22px 20px 8px; }
-  .brand-row{ max-width:640px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+  .brand-row{ max-width:640px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .site-links{ display:flex; align-items:center; gap:16px; font-size:13px; }
+  .site-links a{ color:var(--text-muted); text-decoration:none; }
+  .site-links a:hover{ color:var(--gold); }
   .brand-link{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); }
   .brand-mark{
     width:34px; height:34px; border-radius:50%;
@@ -321,6 +322,9 @@
   footer{ padding:40px 20px 60px; text-align:center; }
   footer p{ font-size:12.5px; color:var(--text-faint); max-width:480px; margin:0 auto 8px; }
   footer a{ color:var(--text-muted); }
+  .footer-links{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:6px 14px; font-size:13px; margin:0 0 16px; }
+  .footer-links a{ color:var(--text-muted); text-decoration:none; }
+  .footer-links a:hover{ color:var(--gold); }
 
   .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
 </style>
@@ -335,13 +339,21 @@
 
 <header class="site">
   <div class="brand-row">
-    <a class="brand-link" href="https://www.smartgentools.com/">
+    <a class="brand-link" href="https://smartgentools.com/">
       <span class="brand-mark">P</span>
       <span class="brand-name">PinFetch Pro<small>by SmartGen Tools</small></span>
     </a>
+    <nav class="site-links" aria-label="Site">
+      <a href="https://smartgentools.com/tools/">All Tools</a>
+      <a href="https://smartgentools.com/html-code-library/">HTML Library</a>
+      <a href="https://smartgentools.com/blog/">Blog</a>
+    </nav>
+  </div>
+  <div class="brand-row" style="margin-top:6px;">
     <nav class="crumbs" aria-label="Breadcrumb">
-      <a href="https://www.smartgentools.com/">Home</a> /
-      <a href="https://www.smartgentools.com/tools/">Tools</a>
+      <a href="https://smartgentools.com/">Home</a> /
+      <a href="https://smartgentools.com/tools/">Tools</a> /
+      <span aria-current="page">Pinterest Downloader</span>
     </nav>
   </div>
 </header>
@@ -528,8 +540,16 @@
 </main>
 
 <footer>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="https://smartgentools.com/">Home</a>
+    <a href="https://smartgentools.com/tools/">All Tools</a>
+    <a href="https://smartgentools.com/privacy/">Privacy</a>
+    <a href="https://smartgentools.com/smartgen-legal-info/">Legal Info</a>
+    <a href="https://smartgentools.com/contact/">Contact</a>
+    <a href="https://smartgentools.com/review/">Review</a>
+  </nav>
   <p>PinFetch Pro is an independent tool by SmartGen Tools and isn't affiliated with or endorsed by Pinterest. All downloaded media belongs to its original creator.</p>
-  <p><a href="https://www.smartgentools.com/tools/">← Back to all SmartGen tools</a></p>
+  <p>&copy; 2026 SmartGen. <a href="https://smartgentools.com/tools/">← Back to all SmartGen tools</a></p>
 </footer>
 
 <script>

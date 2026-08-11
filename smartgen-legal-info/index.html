@@ -342,6 +342,15 @@
   .form-group input:focus, .form-group textarea:focus { outline: 2px solid var(--emerald); border-color: transparent; }
   .form-group textarea { resize: vertical; min-height: 100px; }
 
+  /* Star rating selector */
+  .rating-selector-label { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; display: block; }
+  .star-input { display: flex; gap: 6px; margin-bottom: 16px; }
+  .star-input button { background: none; border: none; cursor: pointer; color: var(--mono-label); padding: 2px; transition: transform 0.15s ease; }
+  .star-input button:hover { transform: scale(1.15); }
+  .star-input button svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+  .star-input button.active { color: var(--emerald); }
+  .star-input button.active svg { fill: currentColor; }
+
   /* Social Icon Popup Selector */
   .source-selector-label { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; display: block; }
   .source-options { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
@@ -405,6 +414,7 @@
 <symbol id="i-x-twitter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M4 20L20 4"/></symbol>
 <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></symbol>
 <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.4 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.4 9.3l6-.7L12 3z" stroke-linejoin="round"/></symbol>
 </defs>
 </svg>
 
@@ -635,13 +645,22 @@
       <div class="review-form-card">
         <h3>Share Your Experience</h3>
         <form id="reviewForm">
+          <span class="rating-selector-label">Your rating</span>
+          <div class="star-input" id="starInput" role="radiogroup" aria-label="Rating">
+            <button type="button" data-v="1" aria-label="1 star"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></button>
+            <button type="button" data-v="2" aria-label="2 stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></button>
+            <button type="button" data-v="3" aria-label="3 stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></button>
+            <button type="button" data-v="4" aria-label="4 stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></button>
+            <button type="button" data-v="5" aria-label="5 stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></button>
+          </div>
+
           <div class="form-group">
             <input type="text" id="reviewName" placeholder="Your Name" required>
           </div>
           <div class="form-group">
             <textarea id="reviewText" placeholder="How has SmartGen helped you?" required></textarea>
           </div>
-          
+
           <span class="source-selector-label">How did you find us?</span>
           <div class="source-options">
             <label class="source-option">
@@ -683,8 +702,14 @@
 
 <!-- REVIEWS API & MARQUEE LOGIC (NO MOCK DATA) -->
 <script>
+  // Same backend as the homepage and /review/'s widgets — reviews submitted
+  // here show up everywhere, since all three share one KV store. The API
+  // requires an explicit ?action= on every call (list / submit) and the
+  // POST body shape is { name, rating, comment } — NOT { text, source } —
+  // this previously sent the wrong shape to the wrong route and every
+  // submission failed. See /review/index.html for the reference contract.
   const REVIEWS_API = 'https://young-grass-a480.sayadmdbayezidhosan.workers.dev';
-  
+
   const iconMap = {
     'google': 'i-google',
     'linkedin': 'i-linkedin',
@@ -693,21 +718,30 @@
     'other': 'i-globe'
   };
 
+  function starsHTML(rating) {
+    let out = '';
+    for (let i = 1; i <= 5; i++) {
+      out += '<svg width="14" height="14" viewBox="0 0 24 24" fill="' + (i <= rating ? 'currentColor' : 'none') + '" stroke="currentColor" stroke-width="1.6"><use href="#i-star"/></svg>';
+    }
+    return out;
+  }
+
   function createReviewCardHTML(review) {
-    const iconId = iconMap[review.source] || 'i-globe';
+    const iconId = iconMap[review.source] || 'i-google';
     return `
       <div class="review-bubble">
         <div class="review-bubble-header">
           <span class="review-bubble-name">${escapeHTML(review.name || 'Anonymous')}</span>
-          <span class="review-bubble-source" title="Source: ${review.source}"><svg><use href="#${iconId}"/></svg></span>
+          ${review.source ? `<span class="review-bubble-source" title="Source: ${escapeHTML(review.source)}"><svg><use href="#${iconId}"/></svg></span>` : ''}
         </div>
-        <div class="review-bubble-text">"${escapeHTML(review.text || review.review || '')}"</div>
+        <div class="review-bubble-stars" style="display:flex;gap:2px;color:#f59e0b;margin-bottom:6px;">${starsHTML(review.rating || 0)}</div>
+        <div class="review-bubble-text">"${escapeHTML(review.comment || '')}"</div>
       </div>
     `;
   }
 
   function escapeHTML(str) {
-    return str.replace(/[&<>'"]/g, tag => ({
+    return String(str == null ? '' : str).replace(/[&<>'"]/g, tag => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
     }[tag] || tag));
   }
@@ -715,21 +749,26 @@
   async function fetchAndRenderReviews() {
     let reviews = [];
     try {
-      const res = await fetch(REVIEWS_API);
+      const res = await fetch(REVIEWS_API + '?action=list');
       if (res.ok) {
-        reviews = await res.json();
+        const data = await res.json();
+        reviews = data.reviews || [];
       }
     } catch (e) {
       console.warn("Could not load reviews from API", e);
     }
 
+    renderMarquee(reviews);
+  }
+
+  function renderMarquee(reviews) {
     const marqueeWrapper = document.querySelector('.review-marquee-wrapper');
-    
+
     // Check if there are real reviews
     if (!reviews || reviews.length === 0) {
       // Hide the marquee if no real reviews exist yet to prevent blank empty scrolling
       if(marqueeWrapper) marqueeWrapper.style.display = 'none';
-      return; 
+      return;
     } else {
       // Ensure it's visible when reviews are present
       if(marqueeWrapper) marqueeWrapper.style.display = 'flex';
@@ -738,9 +777,9 @@
     const t1 = document.getElementById('track-1');
     const t2 = document.getElementById('track-2');
     const t3 = document.getElementById('track-3');
-    
+
     let html1 = '', html2 = '', html3 = '';
-    
+
     reviews.forEach((r, index) => {
       if(index % 3 === 0) html1 += createReviewCardHTML(r);
       else if(index % 3 === 1) html2 += createReviewCardHTML(r);
@@ -752,35 +791,56 @@
     t3.innerHTML = html3 + html3;
   }
 
+  const starInput = document.getElementById('starInput');
+  let selectedStars = 0;
+  starInput.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      selectedStars = Number(btn.dataset.v);
+      starInput.querySelectorAll('button').forEach(b => b.classList.toggle('active', Number(b.dataset.v) <= selectedStars));
+    });
+  });
+
   document.getElementById('reviewForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = document.getElementById('submitReviewBtn');
     const msg = document.getElementById('form-msg');
-    
-    const name = document.getElementById('reviewName').value;
-    const text = document.getElementById('reviewText').value;
+
+    const name = document.getElementById('reviewName').value.trim();
+    const comment = document.getElementById('reviewText').value.trim();
     const source = document.querySelector('input[name="reviewSource"]:checked').value;
+
+    if (!name || !comment || selectedStars === 0) {
+      msg.textContent = "Please add your name, a comment, and pick a star rating.";
+      msg.className = "msg-error";
+      msg.style.display = 'block';
+      return;
+    }
 
     btn.disabled = true;
     btn.textContent = "Submitting...";
     msg.style.display = 'none';
 
     try {
-      const res = await fetch(REVIEWS_API, {
+      const res = await fetch(REVIEWS_API + '?action=submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, text, review: text, source })
+        body: JSON.stringify({ name, rating: selectedStars, comment, source })
       });
+      const data = await res.json().catch(() => ({}));
 
-      if (res.ok) {
+      if (res.ok && !data.error) {
         msg.textContent = "Thank you! Your review has been submitted.";
         msg.className = "msg-success";
         document.getElementById('reviewForm').reset();
-        
-        // Refresh the UI with new data
-        setTimeout(fetchAndRenderReviews, 1000);
+        selectedStars = 0;
+        starInput.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+
+        // The API returns the updated list on a successful submit, so the
+        // marquee can update immediately without a second round trip.
+        if (Array.isArray(data.reviews)) renderMarquee(data.reviews);
+        else setTimeout(fetchAndRenderReviews, 1000);
       } else {
-        throw new Error('API Response not ok');
+        throw new Error(data.error || 'API response not ok');
       }
     } catch (error) {
       msg.textContent = "Something went wrong. Please try again.";

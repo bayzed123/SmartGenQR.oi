@@ -23,6 +23,8 @@
  *   POST /api/lead                store a lead in Google Sheets
  *   POST /api/chat                SmartGen AI Assistant (grounded, site-scoped)
  *   GET  /api/chat/suggestions    opening greeting + starter questions
+ *   POST /api/serp/suggest        AI title/description suggestions (Gemini)
+ *   POST /api/serp/rank           keyword ranking lookup (Google Custom Search)
  *   POST /api/admin/init-sheet    one-time header row (requires ADMIN_TOKEN)
  */
 
@@ -30,7 +32,8 @@ import { buildAuditContext, buildLightContext } from './lib/crawl.js';
 import { buildReport, buildComparison, buildWhiteLabel } from './lib/report.js';
 import { checkCatalogue, categoryCounts } from './checks/registry.js';
 import { fetchCoreWebVitals } from './lib/pagespeed.js';
-import { generateRoadmap } from './lib/gemini.js';
+import { generateRoadmap, suggestSerpCopy } from './lib/gemini.js';
+import { checkRanking } from './lib/rank.js';
 import { appendLead, ensureHeaderRow } from './lib/sheets.js';
 import {
   visitorKey,
@@ -93,6 +96,8 @@ async function route(url, request, env, ctx) {
         'POST /api/lead',
         'POST /api/chat',
         'GET /api/chat/suggestions',
+        'POST /api/serp/suggest',
+        'POST /api/serp/rank',
       ],
     });
   }
@@ -108,6 +113,8 @@ async function route(url, request, env, ctx) {
         gemini: env.ENABLE_AI_ROADMAP !== 'false' && Boolean(env.GEMINI_API_KEY),
         sheets: Boolean(env.LEADS_SHEET_ID && env.GOOGLE_SERVICE_ACCOUNT_JSON),
         chatbot: Boolean(env.GEMINI_API_KEY),
+        serpSuggestions: Boolean(env.GEMINI_API_KEY),
+        rankChecker: Boolean(env.GOOGLE_CSE_API_KEY && env.GOOGLE_CSE_ID),
         paymentsEnabled: env.PAYMENTS_ENABLED === 'true',
       },
       knowledge: {
@@ -168,6 +175,14 @@ async function route(url, request, env, ctx) {
       200,
       { 'Cache-Control': 'public, max-age=3600' }
     );
+  }
+
+  if (path === '/api/serp/suggest' && request.method === 'POST') {
+    return handleSerpSuggest(request, env);
+  }
+
+  if (path === '/api/serp/rank' && request.method === 'POST') {
+    return handleSerpRank(request, env);
   }
 
   if (path === '/api/admin/init-sheet' && request.method === 'POST') {
@@ -364,6 +379,86 @@ async function handleChat(request, env) {
     followUps: result.followUps,
     kind: result.kind,
     remaining: perHour.remaining,
+  });
+}
+
+/* --------------------------------------------------------- serp tool */
+
+async function handleSerpSuggest(request, env) {
+  const body = await readJson(request);
+  const topic = String(body.topic || '').trim();
+  if (!topic) {
+    return json({ ok: false, error: 'Describe what the page is about first.' }, 400);
+  }
+
+  const key = await visitorKey(request);
+  const limit = await cacheRateLimit(`serp-suggest:${key}`, 12, 3600);
+  if (!limit.ok) {
+    return json(
+      {
+        ok: false,
+        code: 'rate_limited',
+        error: `You're going a bit fast — try again in ${Math.ceil(limit.resetsInSeconds / 60)} minute(s).`,
+      },
+      429
+    );
+  }
+
+  const result = await suggestSerpCopy(
+    {
+      topic,
+      url: body.url,
+      existingTitle: body.existingTitle,
+      existingDescription: body.existingDescription,
+    },
+    env
+  );
+
+  if (!result.available) {
+    return json({ ok: false, error: result.reason }, 200);
+  }
+
+  return json({ ok: true, model: result.model, variants: result.variants });
+}
+
+async function handleSerpRank(request, env) {
+  const body = await readJson(request);
+  const domain = String(body.domain || body.url || '').trim();
+  const keyword = String(body.keyword || '').trim();
+  if (!domain) return json({ ok: false, error: 'Enter the page URL to check first.' }, 400);
+  if (!keyword) return json({ ok: false, error: 'Enter a keyword to check ranking for.' }, 400);
+
+  const key = await visitorKey(request);
+
+  // Stricter than everything else: Custom Search's free tier is 100
+  // queries/day for the whole project, so a single visitor must not be able
+  // to spend a meaningful share of it alone.
+  const perVisitorDay = await cacheRateLimit(`serp-rank:${key}`, 8, 24 * 60 * 60);
+  if (!perVisitorDay.ok) {
+    return json(
+      {
+        ok: false,
+        code: 'rate_limited',
+        error: "You've used today's ranking checks. This resets in about 24 hours.",
+      },
+      429
+    );
+  }
+
+  const result = await checkRanking({ domain, keyword }, env);
+
+  if (!result.available) {
+    return json({ ok: false, error: result.reason, code: result.code }, 200);
+  }
+
+  return json({
+    ok: true,
+    keyword: result.keyword,
+    domain: result.domain,
+    position: result.position,
+    inTop10: result.inTop10,
+    checked: result.checked,
+    topResults: result.topResults,
   });
 }
 
