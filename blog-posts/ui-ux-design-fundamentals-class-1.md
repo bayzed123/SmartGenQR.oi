@@ -3,7 +3,7 @@ title: "UI/UX Design Course Fundamentals"
 description: "Class 01 of the UI/UX Design Course covers the fundamentals — what UI/UX design is, color theory, color psychology, typography, and core design principles."
 keywords: "UI UX design fundamentals, what is UI UX design, color theory for designers, color psychology in design, typography for UI design, UI UX design principles, WCAG contrast ratio, beginner UI UX design course, SmartGen, UI UX design course class 01"
 date: 2026-08-14
-image: "blog-posts/images/ui-ux-design-course-class-01-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-01-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
