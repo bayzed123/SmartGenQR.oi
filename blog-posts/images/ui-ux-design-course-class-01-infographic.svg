@@ -1,0 +1,263 @@
+<svg viewBox="0 0 800 1080" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+
+  <defs>
+    <filter id="card-shadow" x="-4%" y="-4%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="rgba(76,29,149,0.10)"/>
+    </filter>
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#5B21B6;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#3B1878;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="stats-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B1878;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#2A1155;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="800" height="1080" fill="#FAF8FF"/>
+
+  <!-- ================================================ -->
+  <!-- HEADER                                           -->
+  <!-- ================================================ -->
+  <rect width="800" height="118" fill="url(#header-grad)"/>
+  <circle cx="748" cy="20" r="90" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="762" cy="112" r="55" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="28" cy="92" r="64" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- Icon: overlapping color-theory dots -->
+  <rect x="20" y="20" width="68" height="68" rx="10" fill="rgba(255,255,255,0.16)"/>
+  <circle cx="45" cy="48" r="13" fill="#F97316" opacity="0.92"/>
+  <circle cx="63" cy="48" r="13" fill="#3B82F6" opacity="0.92"/>
+  <circle cx="54" cy="64" r="13" fill="#FACC15" opacity="0.92"/>
+
+  <!-- Header Titles -->
+  <text x="106" y="44" fill="white" font-size="21" font-weight="700" letter-spacing="-0.3">UI/UX Design Fundamentals</text>
+  <text x="106" y="70" fill="rgba(255,255,255,0.88)" font-size="13">Class 01 — Color, Psychology, Typography &amp; Principles</text>
+  <text x="106" y="96" fill="rgba(255,255,255,0.62)" font-size="11">SmartGen UI/UX Design Course  ·  smartgentools.com  ·  By Sayad Md Bayezid Hosan</text>
+
+  <!-- ================================================ -->
+  <!-- STATS STRIP                                      -->
+  <!-- ================================================ -->
+  <rect y="118" width="800" height="56" fill="url(#stats-grad)"/>
+
+  <text x="133" y="143" text-anchor="middle" fill="white" font-size="17" font-weight="700">4.5 : 1</text>
+  <text x="133" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">WCAG AA Minimum Text Contrast</text>
+
+  <line x1="266" y1="127" x2="266" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="400" y="143" text-anchor="middle" fill="white" font-size="17" font-weight="700">8% / 0.5%</text>
+  <text x="400" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">Men / Women With Color Blindness</text>
+
+  <line x1="533" y1="127" x2="533" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="667" y="143" text-anchor="middle" fill="white" font-size="17" font-weight="700">~50ms</text>
+  <text x="667" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">To Form a First Visual Impression</text>
+
+  <!-- ================================================ -->
+  <!-- SECTION LABEL                                    -->
+  <!-- ================================================ -->
+  <text x="400" y="194" text-anchor="middle" fill="#7C5CBF" font-size="9.5" letter-spacing="2.5" font-weight="700">5 FOUNDATIONS OF UI/UX DESIGN</text>
+
+  <!-- ================================================ -->
+  <!-- CARD 1: What Is UI/UX Design?                    -->
+  <!-- ================================================ -->
+  <rect x="20" y="204" width="372" height="170" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="204" width="5" height="170" rx="2.5" fill="#7C3AED"/>
+  <circle cx="63" cy="230" r="18" fill="#7C3AED"/>
+  <text x="63" y="236" text-anchor="middle" fill="white" font-size="14" font-weight="700">1</text>
+  <text x="89" y="226" fill="#1A1A1A" font-size="13.5" font-weight="700">What Is UI/UX Design?</text>
+  <text x="89" y="242" fill="#7C3AED" font-size="8.5" font-weight="700" letter-spacing="0.6">TWO JOBS, ONE SHARED GOAL</text>
+  <line x1="32" y1="256" x2="381" y2="256" stroke="#EDE4FB" stroke-width="1"/>
+
+  <circle cx="40" cy="273" r="3.5" fill="#7C3AED"/>
+  <text x="50" y="277" fill="#333" font-size="10.5" font-weight="600">UI = what it looks like — color, layout, buttons</text>
+  <circle cx="40" cy="293" r="3.5" fill="#7C3AED"/>
+  <text x="50" y="297" fill="#333" font-size="10.5" font-weight="600">UX = how it works — flow, usability, emotion</text>
+  <circle cx="40" cy="313" r="3.5" fill="#7C3AED"/>
+  <text x="50" y="317" fill="#333" font-size="10.5" font-weight="600">Great products need both, moving together</text>
+
+  <rect x="32" y="334" width="348" height="28" rx="7" fill="#F5F0FE"/>
+  <text x="206" y="352" text-anchor="middle" fill="#7C3AED" font-size="10" font-weight="700">50ms — how fast users form a first visual opinion</text>
+
+  <!-- ================================================ -->
+  <!-- CARD 2: Color Theory                             -->
+  <!-- ================================================ -->
+  <rect x="408" y="204" width="372" height="170" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="204" width="5" height="170" rx="2.5" fill="#8B5CF6"/>
+  <circle cx="451" cy="230" r="18" fill="#8B5CF6"/>
+  <text x="451" y="236" text-anchor="middle" fill="white" font-size="14" font-weight="700">2</text>
+  <text x="477" y="226" fill="#1A1A1A" font-size="13.5" font-weight="700">Color Theory</text>
+  <text x="477" y="242" fill="#8B5CF6" font-size="8.5" font-weight="700" letter-spacing="0.6">THE DESIGNER'S FOUNDATION</text>
+  <line x1="420" y1="256" x2="769" y2="256" stroke="#EDE4FB" stroke-width="1"/>
+
+  <circle cx="428" cy="273" r="3.5" fill="#8B5CF6"/>
+  <text x="438" y="277" fill="#333" font-size="10.5" font-weight="600">Wheel: primary, secondary &amp; tertiary hues</text>
+  <circle cx="428" cy="293" r="3.5" fill="#8B5CF6"/>
+  <text x="438" y="297" fill="#333" font-size="10.5" font-weight="600">5 harmonies: complementary, analogous, triadic...</text>
+  <circle cx="428" cy="313" r="3.5" fill="#8B5CF6"/>
+  <text x="438" y="317" fill="#333" font-size="10.5" font-weight="600">The 60-30-10 rule keeps any UI balanced</text>
+
+  <rect x="420" y="334" width="348" height="28" rx="7" fill="#F5F0FE"/>
+  <text x="594" y="352" text-anchor="middle" fill="#8B5CF6" font-size="10" font-weight="700">Work in HEX / RGB / HSL — never CMYK — on screen</text>
+
+  <!-- ================================================ -->
+  <!-- CARD 3: Color Psychology                         -->
+  <!-- ================================================ -->
+  <rect x="20" y="384" width="372" height="170" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="384" width="5" height="170" rx="2.5" fill="#A855F7"/>
+  <circle cx="63" cy="410" r="18" fill="#A855F7"/>
+  <text x="63" y="416" text-anchor="middle" fill="white" font-size="14" font-weight="700">3</text>
+  <text x="89" y="406" fill="#1A1A1A" font-size="13.5" font-weight="700">Color Psychology</text>
+  <text x="89" y="422" fill="#A855F7" font-size="8.5" font-weight="700" letter-spacing="0.6">WHY COLORS MAKE US FEEL THINGS</text>
+  <line x1="32" y1="436" x2="381" y2="436" stroke="#F3E8FE" stroke-width="1"/>
+
+  <circle cx="40" cy="453" r="3.5" fill="#A855F7"/>
+  <text x="50" y="457" fill="#333" font-size="10.5" font-weight="600">Red = urgency · Blue = trust · Green = growth</text>
+  <circle cx="40" cy="473" r="3.5" fill="#A855F7"/>
+  <text x="50" y="477" fill="#333" font-size="10.5" font-weight="600">Meaning shifts by culture &amp; context — always test it</text>
+  <circle cx="40" cy="493" r="3.5" fill="#A855F7"/>
+  <text x="50" y="497" fill="#333" font-size="10.5" font-weight="600">Never use color alone to signal meaning</text>
+
+  <rect x="32" y="514" width="348" height="28" rx="7" fill="#FAF0FE"/>
+  <text x="206" y="532" text-anchor="middle" fill="#A855F7" font-size="10" font-weight="700">~300M people worldwide have a color vision deficiency</text>
+
+  <!-- ================================================ -->
+  <!-- CARD 4: Typography                               -->
+  <!-- ================================================ -->
+  <rect x="408" y="384" width="372" height="170" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="384" width="5" height="170" rx="2.5" fill="#6D28D9"/>
+  <circle cx="451" cy="410" r="18" fill="#6D28D9"/>
+  <text x="451" y="416" text-anchor="middle" fill="white" font-size="14" font-weight="700">4</text>
+  <text x="477" y="406" fill="#1A1A1A" font-size="13.5" font-weight="700">Typography</text>
+  <text x="477" y="422" fill="#6D28D9" font-size="8.5" font-weight="700" letter-spacing="0.6">GIVING YOUR INTERFACE A VOICE</text>
+  <line x1="420" y1="436" x2="769" y2="436" stroke="#EDE4FB" stroke-width="1"/>
+
+  <circle cx="428" cy="453" r="3.5" fill="#6D28D9"/>
+  <text x="438" y="457" fill="#333" font-size="10.5" font-weight="600">Serif, sans-serif, monospace &amp; display fonts</text>
+  <circle cx="428" cy="473" r="3.5" fill="#6D28D9"/>
+  <text x="438" y="477" fill="#333" font-size="10.5" font-weight="600">Build hierarchy with size + weight, not color</text>
+  <circle cx="428" cy="493" r="3.5" fill="#6D28D9"/>
+  <text x="438" y="497" fill="#333" font-size="10.5" font-weight="600">Limit most interfaces to 2–3 fonts, max</text>
+
+  <rect x="420" y="514" width="348" height="28" rx="7" fill="#F3EEFC"/>
+  <text x="594" y="532" text-anchor="middle" fill="#6D28D9" font-size="10" font-weight="700">50–75 chars/line · ~1.5× line-height · 16px+ body</text>
+
+  <!-- ================================================ -->
+  <!-- CARD 5: Core Design Principles (full width)      -->
+  <!-- ================================================ -->
+  <rect x="20" y="568" width="760" height="140" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="568" width="5" height="140" rx="2.5" fill="#4C1D95"/>
+
+  <circle cx="63" cy="592" r="18" fill="#4C1D95"/>
+  <text x="63" y="598" text-anchor="middle" fill="white" font-size="14" font-weight="700">5</text>
+  <text x="89" y="590" fill="#1A1A1A" font-size="13.5" font-weight="700">Core UI/UX Design Principles</text>
+  <text x="89" y="606" fill="#4C1D95" font-size="8.5" font-weight="700" letter-spacing="0.6">WHERE COLOR, TYPE &amp; PSYCHOLOGY BECOME ONE PRACTICE</text>
+
+  <line x1="32" y1="620" x2="768" y2="620" stroke="#EDE4FB" stroke-width="1"/>
+
+  <!-- 3-column bullets -->
+  <circle cx="46" cy="638" r="3.5" fill="#4C1D95"/>
+  <text x="56" y="642" fill="#333" font-size="10" font-weight="600">Visual Hierarchy — guide the eye first</text>
+  <text x="56" y="657" fill="#333" font-size="10" font-weight="600">Consistency — same element, same behavior</text>
+
+  <circle cx="306" cy="638" r="3.5" fill="#4C1D95"/>
+  <text x="316" y="642" fill="#333" font-size="10" font-weight="600">Contrast — WCAG AA: 4.5:1 text · 3:1 UI</text>
+  <text x="316" y="657" fill="#333" font-size="10" font-weight="600">Feedback &amp; Affordance — every action responds</text>
+
+  <circle cx="566" cy="638" r="3.5" fill="#4C1D95"/>
+  <text x="576" y="642" fill="#333" font-size="10" font-weight="600">Simplicity — Hick's Law: fewer choices, faster</text>
+  <text x="576" y="657" fill="#333" font-size="10" font-weight="600">White Space — breathing room reads as clarity</text>
+
+  <rect x="32" y="676" width="736" height="24" rx="6" fill="#F1EBFB"/>
+  <text x="400" y="692" text-anchor="middle" fill="#4C1D95" font-size="9.5" font-weight="700">Grounded in Jakob Nielsen's 10 Usability Heuristics (1994) — still the industry standard</text>
+
+  <!-- ================================================ -->
+  <!-- COLOR WHEEL + 60-30-10 PANEL                     -->
+  <!-- ================================================ -->
+  <rect x="20" y="722" width="760" height="232" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="722" width="760" height="34" rx="11" fill="#5B21B6"/>
+  <rect x="20" y="740" width="760" height="16" fill="#5B21B6"/>
+  <text x="400" y="744" text-anchor="middle" fill="white" font-size="12" font-weight="700" letter-spacing="0.4">COLOR THEORY IN PRACTICE — THE WHEEL &amp; THE 60-30-10 RULE</text>
+
+  <!-- Color wheel (left half) -->
+  <polygon points="170,773 226,806 226,871 170,903 114,871 114,806" fill="none" stroke="#E9E4F5" stroke-width="1.5"/>
+
+  <circle cx="170" cy="773" r="16" fill="#EF4444"/>
+  <text x="170" y="750" text-anchor="middle" fill="#DC2626" font-size="10" font-weight="700">RED</text>
+
+  <circle cx="226" cy="806" r="12" fill="#F97316"/>
+  <text x="246" y="802" text-anchor="start" fill="#EA580C" font-size="9" font-weight="600">Orange</text>
+
+  <circle cx="226" cy="871" r="12" fill="#FACC15"/>
+  <text x="246" y="875" text-anchor="start" fill="#CA8A04" font-size="9" font-weight="600">Yellow</text>
+
+  <circle cx="170" cy="903" r="16" fill="#22C55E"/>
+  <text x="170" y="927" text-anchor="middle" fill="#16A34A" font-size="10" font-weight="700">GREEN</text>
+
+  <circle cx="114" cy="871" r="12" fill="#3B82F6"/>
+  <text x="94" y="875" text-anchor="end" fill="#2563EB" font-size="9" font-weight="600">Blue</text>
+
+  <circle cx="114" cy="806" r="12" fill="#A855F7"/>
+  <text x="94" y="802" text-anchor="end" fill="#9333EA" font-size="9" font-weight="600">Purple</text>
+
+  <text x="170" y="940" text-anchor="middle" font-size="8.5" fill="#6B7280">
+    <tspan font-weight="700" fill="#DC2626">Primary</tspan> R·Y·B &#160;&#160;·&#160;&#160; <tspan font-weight="700" fill="#EA580C">Secondary</tspan> O·G·P
+  </text>
+
+  <!-- Divider -->
+  <line x1="332" y1="770" x2="332" y2="940" stroke="#F0EBFA" stroke-width="1.5"/>
+
+  <!-- 60-30-10 rule (right half) -->
+  <text x="358" y="778" fill="#4C1D95" font-size="11" font-weight="700" letter-spacing="0.4">THE 60-30-10 RULE</text>
+  <text x="358" y="794" fill="#6B7280" font-size="9.5">Balance any interface with exactly three colors:</text>
+
+  <!-- Percentage labels -->
+  <text x="460" y="815" text-anchor="middle" fill="#6B7280" font-size="10" font-weight="700">60%</text>
+  <text x="611" y="815" text-anchor="middle" fill="#7C3AED" font-size="10" font-weight="700">30%</text>
+  <text x="680" y="815" text-anchor="middle" fill="#B45309" font-size="10" font-weight="700">10%</text>
+
+  <!-- Bar -->
+  <rect x="358" y="820" width="204" height="42" fill="#E5E7EB" stroke="white" stroke-width="2"/>
+  <rect x="562" y="820" width="102" height="42" fill="#A78BFA" stroke="white" stroke-width="2"/>
+  <rect x="664" y="820" width="34" height="42" fill="#FBBF24" stroke="white" stroke-width="2"/>
+
+  <!-- Meaning labels -->
+  <text x="460" y="878" text-anchor="middle" fill="#6B7280" font-size="8.5">Dominant / Background</text>
+  <text x="611" y="878" text-anchor="middle" fill="#6B7280" font-size="8.5">Secondary / Supporting</text>
+  <text x="680" y="878" text-anchor="middle" fill="#6B7280" font-size="8.5">Accent / CTA</text>
+
+  <rect x="358" y="896" width="340" height="36" rx="6" fill="#F8F6FD"/>
+  <text x="368" y="911" fill="#6B7280" font-size="8.5">Example: light gray background (60%) + purple</text>
+  <text x="368" y="924" fill="#6B7280" font-size="8.5">nav/cards (30%) + gold CTA button (10%)</text>
+
+  <!-- ================================================ -->
+  <!-- FOOTER: UI/UX Course Roadmap Loop                -->
+  <!-- ================================================ -->
+  <rect y="968" width="800" height="80" fill="#2A1155"/>
+
+  <text x="400" y="988" text-anchor="middle" fill="white" font-size="11.5" font-weight="700" letter-spacing="1.5">THE SMARTGEN UI/UX DESIGN COURSE ROADMAP</text>
+
+  <text x="96" y="1008" text-anchor="middle" fill="#FBBF24" font-size="9" font-weight="700">FUNDAMENTALS</text>
+  <text x="96" y="1021" text-anchor="middle" fill="#B9A8D9" font-size="8">Color, Type, Principles</text>
+  <text x="172" y="1015" text-anchor="middle" fill="#6B4FA0" font-size="14">›</text>
+
+  <text x="248" y="1008" text-anchor="middle" fill="#C4B5FD" font-size="9" font-weight="700">FIGMA</text>
+  <text x="248" y="1021" text-anchor="middle" fill="#B9A8D9" font-size="8">Interface &amp; Components</text>
+  <text x="324" y="1015" text-anchor="middle" fill="#6B4FA0" font-size="14">›</text>
+
+  <text x="400" y="1008" text-anchor="middle" fill="#C4B5FD" font-size="9" font-weight="700">UX PROCESS</text>
+  <text x="400" y="1021" text-anchor="middle" fill="#B9A8D9" font-size="8">Research &amp; Wireframes</text>
+  <text x="476" y="1015" text-anchor="middle" fill="#6B4FA0" font-size="14">›</text>
+
+  <text x="552" y="1008" text-anchor="middle" fill="#C4B5FD" font-size="9" font-weight="700">APPLIED DESIGN</text>
+  <text x="552" y="1021" text-anchor="middle" fill="#B9A8D9" font-size="8">Dashboards &amp; Web</text>
+  <text x="628" y="1015" text-anchor="middle" fill="#6B4FA0" font-size="14">›</text>
+
+  <text x="704" y="1008" text-anchor="middle" fill="#C4B5FD" font-size="9" font-weight="700">FREELANCING</text>
+  <text x="704" y="1021" text-anchor="middle" fill="#B9A8D9" font-size="8">Portfolio &amp; Clients</text>
+
+  <!-- Copyright -->
+  <text x="400" y="1042" text-anchor="middle" fill="#6B4FA0" font-size="9">© 2026 SmartGen UI/UX Design Course  ·  smartgentools.com  ·  Class 01 by Sayad Md Bayezid Hosan</text>
+
+</svg>
