@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: preserve blog dates and images in sitemap",
+    "date": "2026-08-14T21:13:54Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: place blog cover under blog-posts images",
     "date": "2026-08-14T21:00:43Z",
     "description": "Platform improvement and optimization."
