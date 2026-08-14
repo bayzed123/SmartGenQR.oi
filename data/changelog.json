@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: add raster cover image for social previews",
+    "date": "2026-08-14T20:55:18Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: resolve LinkedIn member identity automatically",
     "date": "2026-08-14T20:50:10Z",
     "description": "Platform improvement and optimization."
