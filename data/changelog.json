@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: place blog cover under blog-posts images",
+    "date": "2026-08-14T21:00:43Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: add raster cover image for social previews",
     "date": "2026-08-14T20:55:18Z",
     "description": "Platform improvement and optimization."
