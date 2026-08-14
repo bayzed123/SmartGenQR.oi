@@ -628,6 +628,20 @@ function updateSitemap(posts) {
 
   let sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
   const today = new Date().toISOString().split('T')[0];
+  const imageNamespace = 'http://www.google.com/schemas/sitemap-image/1.1';
+  const escapeXml = value => String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+
+  if (!sitemapContent.includes('xmlns:image=')) {
+    sitemapContent = sitemapContent.replace(
+      /<urlset([^>]*)>/,
+      `<urlset$1 xmlns:image="${imageNamespace}">`
+    );
+  }
 
   // Remove existing blog entries to avoid duplicates
   // This regex finds <url> blocks that contain /blog/ in the <loc> tag
@@ -661,11 +675,17 @@ function updateSitemap(posts) {
         postDate = post.date.split('T')[0];
       }
     }
+    const imageUrl = post.image && !post.image.endsWith('/assets/images/blog-default.jpg')
+      ? (post.image.startsWith('http') ? post.image : `${SITE_URL}/${post.image.replace(/^\//, '')}`)
+      : '';
+    const imageEntry = imageUrl
+      ? `\n    <image:image>\n      <image:loc>${escapeXml(imageUrl)}</image:loc>\n    </image:image>`
+      : '';
     blogEntries += `  <url>
     <loc>${SITE_URL}/blog/${post.slug}/</loc>
     <lastmod>${postDate}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.7</priority>${imageEntry}
   </url>\n`;
   });
 
