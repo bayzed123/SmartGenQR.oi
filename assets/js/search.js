@@ -75,6 +75,22 @@ function initLiveSearch() {
         }, 120);
     });
 
+    // Deep-linkable search: /?q=qr+code prefills and runs the search on load.
+    // This is what the homepage's WebSite/SearchAction structured data points
+    // at, so it has to genuinely work -- declaring a search endpoint that
+    // does nothing would just be a false claim in the markup.
+    const initialQuery = new URLSearchParams(window.location.search).get('q');
+    if (initialQuery && initialQuery.trim()) {
+        searchInput.value = initialQuery;
+        if (clearBtn) clearBtn.style.display = 'flex';
+        loadBlogIndex();
+        (async () => {
+            const results = await runSearch(initialQuery);
+            displaySearchResults(results, searchResults, initialQuery);
+            searchResults.style.display = 'block';
+        })();
+    }
+
     if (clearBtn) {
         clearBtn.addEventListener('click', () => {
             searchInput.value = '';
