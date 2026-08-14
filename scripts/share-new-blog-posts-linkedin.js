@@ -3,15 +3,15 @@
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
-const token = process.env.LINKEDIN_ACCESS_TOKEN;
-const personId = process.env.LINKEDIN_PERSON_ID;
+
+// The repository secret named LINKEDIN_PERSON_ID currently stores the access token.
+const token = process.env.LINKEDIN_PERSON_ID;
 const before = process.env.GITHUB_EVENT_BEFORE;
 const sha = process.env.GITHUB_SHA || 'HEAD';
 const siteUrl = 'https://smartgentools.com';
-const linkedinVersion = process.env.LINKEDIN_VERSION || '202607';
 
-if (!token || !personId) {
-  throw new Error('Required GitHub secrets are missing: LINKEDIN_ACCESS_TOKEN and LINKEDIN_PERSON_ID.');
+if (!token) {
+  throw new Error('The GitHub secret LINKEDIN_PERSON_ID is missing. It must contain the LinkedIn access token.');
 }
 
 function changedBlogFiles() {
@@ -36,12 +36,13 @@ function frontMatter(source) {
   const match = source.match(/^---\s*\n([\s\S]*?)\n---\s*\n/);
   const attributes = {};
   if (!match) return attributes;
+
   for (const line of match[1].split(/\r?\n/)) {
     const separator = line.indexOf(':');
     if (separator === -1) continue;
     const key = line.slice(0, separator).trim();
     let value = line.slice(separator + 1).trim();
-    value = value.replace(/^['\"]|['\"]$/g, '');
+    value = value.replace(/^['"]|['"]$/g, '');
     attributes[key] = value;
   }
   return attributes;
@@ -56,43 +57,83 @@ function slugify(value) {
     .replace(/^-+|-+$/g, '');
 }
 
-async function publish(post) {
-  const response = await fetch('https://api.linkedin.com/rest/posts', {
-    method: 'POST',
+async function linkedinRequest(url, options = {}) {
+  const response = await fetch(url, {
+    ...options,
     headers: {
       Authorization: `Bearer ${token}`,
+      ...(options.headers || {}),
+    },
+  });
+  const body = await response.text();
+  let data = {};
+  try {
+    data = body ? JSON.parse(body) : {};
+  } catch (_) {
+    data = { raw: body };
+  }
+
+  if (!response.ok) {
+    const detail = body ? body.slice(0, 1000) : 'empty response';
+    throw new Error(`LinkedIn API returned HTTP ${response.status} for ${url}: ${detail}`);
+  }
+  return data;
+}
+
+async function resolvePersonId() {
+  // OIDC tokens expose the member subject through the official userinfo endpoint.
+  try {
+    const profile = await linkedinRequest('https://api.linkedin.com/v2/userinfo');
+    if (profile.sub) return profile.sub;
+  } catch (userinfoError) {
+    // Some older Share on LinkedIn tokens have member-profile permission instead.
+    try {
+      const profile = await linkedinRequest('https://api.linkedin.com/v2/me');
+      if (profile.id) return profile.id;
+    } catch (_) {
+      throw new Error(
+        `${userinfoError.message}. LinkedIn did not return a member ID. The token must include the OpenID Connect profile permission, or a separate member ID secret is required.`
+      );
+    }
+  }
+
+  throw new Error('LinkedIn userinfo did not contain a member subject (sub), so a person URN could not be created.');
+}
+
+async function publish(post, personId) {
+  const response = await linkedinRequest('https://api.linkedin.com/v2/ugcPosts', {
+    method: 'POST',
+    headers: {
       'Content-Type': 'application/json',
-      'Linkedin-Version': linkedinVersion,
       'X-Restli-Protocol-Version': '2.0.0',
     },
     body: JSON.stringify({
       author: `urn:li:person:${personId}`,
-      commentary: `${post.title}\n\n${post.description}\n\nRead the full article: ${post.url}`.slice(0, 3000),
-      visibility: 'PUBLIC',
-      distribution: {
-        feedDistribution: 'MAIN_FEED',
-        targetEntities: [],
-        thirdPartyDistributionChannels: [],
-      },
-      content: {
-        article: {
-          source: post.url,
-          title: post.title,
-          description: post.description,
+      lifecycleState: 'PUBLISHED',
+      specificContent: {
+        'com.linkedin.ugc.ShareContent': {
+          shareCommentary: {
+            text: `${post.title}\n\n${post.description}\n\nRead the full article: ${post.url}`.slice(0, 3000),
+          },
+          shareMediaCategory: 'ARTICLE',
+          media: [
+            {
+              status: 'READY',
+              originalUrl: post.url,
+              title: { text: post.title },
+              description: { text: post.description },
+            },
+          ],
         },
       },
-      lifecycleState: 'PUBLISHED',
-      isReshareDisabledByAuthor: false,
+      visibility: {
+        'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC',
+      },
     }),
   });
 
-  const body = await response.text();
-  if (!response.ok) {
-    throw new Error(`LinkedIn API returned HTTP ${response.status}: ${body.slice(0, 1000)}`);
-  }
-
   console.log(`Published to LinkedIn: ${post.title}`);
-  if (body) console.log(`LinkedIn response: ${body.slice(0, 500)}`);
+  if (response.id) console.log(`LinkedIn post ID: ${response.id}`);
 }
 
 (async () => {
@@ -102,6 +143,7 @@ async function publish(post) {
     return;
   }
 
+  const personId = await resolvePersonId();
   for (const file of files) {
     const source = fs.readFileSync(path.resolve(file), 'utf8');
     const attributes = frontMatter(source);
@@ -112,7 +154,7 @@ async function publish(post) {
       description: cleanText(attributes.description, `Read the latest SmartGen article: ${title}`),
       url: `${siteUrl}/blog/${slug}/`,
     };
-    await publish(post);
+    await publish(post, personId);
   }
 })().catch((error) => {
   console.error(error.message);
