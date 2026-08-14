@@ -168,36 +168,60 @@ async function initBlogArchive() {
     return;
   }
 
-  // Fixed Premium Categories + Dynamic Tags
-  const allTags = new Set(['All', 'Tools Blog', 'Open Source Guidelines', 'Daily Tech Blog']);
+  // Tags, ranked by how many posts actually use them. The old version put
+  // every tag on the site into this bar as its own pill -- 160+ of them,
+  // most used by exactly one post -- which is what produced the wall of
+  // chips several screens tall. Only the most-used tags earn a spot in the
+  // default row now; the long tail is still fully searchable via the
+  // search box above, so nothing is lost, just decluttered.
+  const TOP_TAG_COUNT = 10;
+  const tagCounts = new Map();
   posts.forEach(post => {
     if (post.tags && Array.isArray(post.tags)) {
-      post.tags.forEach(tag => allTags.add(tag));
+      post.tags.forEach(tag => tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1));
     }
   });
+  const sortedTags = Array.from(tagCounts.keys()).sort(
+    (a, b) => tagCounts.get(b) - tagCounts.get(a) || a.localeCompare(b)
+  );
+  const topTags = sortedTags.slice(0, TOP_TAG_COUNT);
+  const restTags = sortedTags.slice(TOP_TAG_COUNT);
 
   // Render filter buttons
-  renderFilters(Array.from(allTags));
+  renderFilters(topTags, restTags);
 
   // Render all posts initially
   renderPosts(posts);
 
-  // Filter event listeners
-  filterContainer.addEventListener('click', (e) => {
-    if (e.target.classList.contains('filter-tag')) {
-      const selectedTag = e.target.getAttribute('data-tag');
+  // Filter event listeners. Delegated from the shared parent, not
+  // filterContainer itself -- the "more topics" panel renders as a sibling
+  // right after #blog-filters (so it can collapse independently of the
+  // horizontal-scroll strip), which would put it outside filterContainer's
+  // own subtree.
+  filterContainer.parentElement.addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-tag');
+    if (!btn) return;
 
-      // Update active state
-      document.querySelectorAll('.filter-tag').forEach(btn => btn.classList.remove('active'));
-      e.target.classList.add('active');
-
-      // Filter and render
-      const filteredPosts = selectedTag === 'All'
-        ? posts
-        : posts.filter(post => post.tags && post.tags.includes(selectedTag));
-
-      renderPosts(filteredPosts);
+    if (btn.classList.contains('filter-tag-more')) {
+      const moreRow = document.getElementById('blog-filters-more');
+      if (moreRow) moreRow.classList.toggle('is-open');
+      btn.classList.toggle('active');
+      btn.textContent = moreRow && moreRow.classList.contains('is-open') ? 'Fewer Topics ▴' : 'More Topics ▾';
+      return;
     }
+
+    const selectedTag = btn.getAttribute('data-tag');
+
+    // Update active state
+    document.querySelectorAll('.filter-tag:not(.filter-tag-more)').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Filter and render
+    const filteredPosts = selectedTag === 'All'
+      ? posts
+      : posts.filter(post => post.tags && post.tags.includes(selectedTag));
+
+    renderPosts(filteredPosts);
   });
 
   // Search functionality
@@ -215,15 +239,37 @@ async function initBlogArchive() {
 }
 
 /**
- * Render filter buttons
+ * Render filter buttons: "All" + the top-used tags as a single scrollable
+ * row, plus an optional "More Topics" toggle that reveals the long tail
+ * (still click-to-filter, just tucked away instead of always visible).
  */
-function renderFilters(tags) {
+function renderFilters(topTags, restTags) {
   const filterContainer = document.getElementById('blog-filters');
-  filterContainer.innerHTML = tags.map(tag => `
-    <button class="filter-tag ${tag === 'All' ? 'active' : ''}" data-tag="${tag}">
-      ${tag}
-    </button>
-  `).join('');
+  const topRow = ['All', ...topTags]
+    .map(tag => `<button class="filter-tag ${tag === 'All' ? 'active' : ''}" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`)
+    .join('');
+
+  const moreToggle = restTags.length
+    ? `<button type="button" class="filter-tag filter-tag-more">More Topics ▾</button>`
+    : '';
+
+  filterContainer.innerHTML = topRow + moreToggle;
+
+  // The long tail renders as a separate, collapsed-by-default wrapped panel
+  // right below the scroll strip, not merged into it -- so it never pushes
+  // that strip back into a wall.
+  const existingMoreRow = document.getElementById('blog-filters-more');
+  if (existingMoreRow) existingMoreRow.remove();
+
+  if (restTags.length) {
+    const moreRow = document.createElement('div');
+    moreRow.id = 'blog-filters-more';
+    moreRow.className = 'blog-filters-more';
+    moreRow.innerHTML = restTags
+      .map(tag => `<button class="filter-tag" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`)
+      .join('');
+    filterContainer.insertAdjacentElement('afterend', moreRow);
+  }
 }
 
 /**

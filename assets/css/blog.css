@@ -84,16 +84,40 @@
   background: var(--blog-glass-bg);
 }
 
+/* A single-row, horizontally-scrollable strip -- this used to be a plain
+   flex-wrap list that rendered every tag on the site (160+, most used by
+   exactly one post) as its own pill, producing a wall of chips several
+   screens tall on mobile. blog.js now only ever hands this a curated,
+   frequency-sorted set, and the layout itself no longer wraps, so it can't
+   regress back into a wall even if that set grows. */
 .blog-filters {
   display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
   margin-top: 2rem;
+  padding: 4px 2px 12px;
+  scrollbar-width: thin;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 16px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 16px), transparent);
+}
+
+@media (min-width: 900px) {
+  .blog-filters {
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
 }
 
 .filter-tag {
-  padding: 10px 24px;
+  flex: 0 0 auto;
+  padding: 10px 22px;
   border-radius: 50px;
   background: var(--blog-glass-bg);
   border: 2px solid var(--blog-glass-border);
@@ -104,6 +128,7 @@
   font-size: 0.95rem;
   color: var(--blog-text-primary);
   font-family: 'Inter', sans-serif;
+  white-space: nowrap;
 }
 
 .filter-tag:hover {
@@ -118,6 +143,35 @@
   border-color: var(--blog-primary);
   box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
   transform: translateY(-4px);
+}
+
+.filter-tag.filter-tag-more {
+  background: transparent;
+  border-style: dashed;
+  color: var(--blog-text-secondary);
+}
+
+/* The long-tail tag panel: collapsed (hidden) by default, toggled open by
+   the "More Topics" chip. Unlike .blog-filters, this one is allowed to
+   wrap -- it's opt-in, so a few extra rows here don't hurt the page's
+   first impression the way the old always-visible wall did. */
+.blog-filters-more {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 900px;
+  margin: 0 auto 1rem;
+  padding: 0 1rem;
+}
+
+.blog-filters-more.is-open {
+  display: flex;
+}
+
+.blog-filters-more .filter-tag {
+  padding: 7px 16px;
+  font-size: 0.85rem;
 }
 
 .blog-grid {
