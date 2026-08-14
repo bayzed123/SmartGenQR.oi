@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: migrate LinkedIn article sharing to Posts API",
+    "date": "2026-08-14T20:00:44Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: use LinkedIn member author URN",
     "date": "2026-08-14T19:59:21Z",
     "description": "Platform improvement and optimization."
