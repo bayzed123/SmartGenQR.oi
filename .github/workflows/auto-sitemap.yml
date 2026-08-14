@@ -172,6 +172,21 @@ jobs:
                           except Exception:
                               pass
 
+                      # Skip legacy nested html-code-library pages that
+                      # duplicate a flat html-code-library/<slug>.html page's
+                      # content (e.g. html-code-library/character-codes/foo/
+                      # index.html vs html-code-library/foo.html). These
+                      # aren't redirect stubs -- they're full old copies of the
+                      # same tool, left over from an earlier URL structure --
+                      # so the http-equiv="refresh" check above doesn't catch
+                      # them. Submitting both to Google is exactly the kind of
+                      # duplicate-content pattern that gets flagged; only the
+                      # flat page (their own canonical target) belongs here.
+                      if relative_path.startswith('html-code-library/') and relative_path.count('/') >= 3:
+                          slug = os.path.basename(current_root)
+                          if os.path.exists(f'html-code-library/{slug}.html'):
+                              continue
+
                       # Homepage
                       if relative_path == 'index.html':
                           clean_url = f'{BASE_URL}/'

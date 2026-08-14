@@ -61,65 +61,6 @@
             margin-bottom: 2rem;
             display: block;
         }
-        /* Cookie Consent Banner Styling */
-        #cookie-consent-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #ffffff;
-            border-top: 1px solid #e1e8ed;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-            z-index: 9999;
-            display: none;
-            padding: 1rem 0;
-        }
-        .cookie-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .cookie-text {
-            flex: 1;
-            min-width: 280px;
-            margin: 0;
-            font-size: 0.9rem;
-            color: #4a5568;
-            line-height: 1.5;
-        }
-        .cookie-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .cookie-btn {
-            background: #0052cc;
-            color: #ffffff;
-            border: none;
-            padding: 0.6rem 1.5rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .cookie-btn:hover {
-            background: #003d99;
-        }
-        .cookie-link {
-            font-size: 0.9rem;
-            color: #0052cc;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .cookie-link:hover {
-            text-decoration: underline;
-        }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
 </head>
@@ -128,7 +69,7 @@
     <main class="container">
         <section class="tool-container" style="margin-top: 2rem;">
             <h1 style="margin-bottom: 1.5rem;">Comprehensive Privacy Policy for SmartGen</h1>
-            <span class="last-updated">Last Updated: May 29, 2026</span>
+            <span class="last-updated">Last Updated: August 14, 2026</span>
 
             <div class="content-body">
                 <p>At SmartGen (<a href="https://smartgentools.com">smartgentools.com</a>), we are deeply committed to protecting the privacy of our users. This Comprehensive Privacy Policy outlines the types of information we collect, how we use it, the stringent measures we take to safeguard your data, and your rights concerning your personal information. Our commitment extends to full compliance with global data protection regulations, including the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA), as well as the strict requirements set forth by Google AdSense for publishers.</p>
@@ -195,6 +136,23 @@
                 <h3>3.4. Other Third-Party Services</h3>
                 <p>SmartGen may use other third-party services for analytics, security, or to enhance website functionality. These third parties may also use cookies and similar tracking technologies. We only engage with reputable third-party service providers who adhere to high standards of data protection and privacy. We encourage you to review the privacy policies of these third parties for more information on their data practices.</p>
 
+                <h3>3.5. Blog Comments &amp; Ratings</h3>
+                <p>Blog posts on SmartGen include an optional star-rating and review feature so readers can share feedback on a specific article. If you choose to leave a rating or review, we collect:</p>
+                <ul>
+                    <li><strong>Your star rating (1–5)</strong> and the <strong>review text</strong> you write.</li>
+                    <li><strong>A display name</strong>, which is entirely optional — if you leave it blank, your review is shown publicly as "Anonymous Reader".</li>
+                    <li><strong>A submission timestamp</strong>, and a coarse, non-identifying visitor signature used only to apply a daily submission limit and block automated spam. We do not require an account, login, or email address to leave a review.</li>
+                </ul>
+                <p>Submitted ratings and review text are displayed publicly beneath the blog post they were left on, together with the post's average rating. Reviews are stored per post — a review on one article is never shown on another — and are retained until you ask us to remove one, which you can do at any time using the contact details in Section 11. This review system is separate from the general testimonials shown on our tools directory and legal-info pages, which use their own independent storage.</p>
+
+                <h3>3.6. Blog Newsletter Sign-Up</h3>
+                <p>Blog posts and the blog homepage include a "Join the SmartGen Community" sign-up form. If you submit your email address there, we collect and store:</p>
+                <ul>
+                    <li><strong>Your email address</strong>, so we can send you new blog posts and occasional SmartGen updates.</li>
+                    <li>The page you signed up from and the date of sign-up, used only to understand which content drives sign-ups.</li>
+                </ul>
+                <p>Unlike our main contact/audit forms, this sign-up does not require your name. We do not sell or share this email address with third parties, and we do not use it for anything beyond blog-update emails and responding to any support request you send us. If you'd like your email removed from our list at any time, contact us using the details in Section 11 and we will remove it promptly.</p>
+
                 <h2>4. How We Use Your Information</h2>
                 <p>The limited information we collect is used for the following purposes:</p>
                 <ul>
@@ -211,6 +169,7 @@
                 <h2>5. Data Retention</h2>
                 <p>SmartGen retains collected information only for as long as necessary to fulfill the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements. Generally, log file data and anonymized analytics data are retained for a period of up to 26 months, in line with standard industry practices and Google Analytics data retention policies. Information related to advertising cookies is retained according to the policies of our advertising partners (e.g., Google AdSense).</p>
                 <p>Since we do not collect or store personal data input into our client-side tools, there is no retention period for such data on our servers.</p>
+                <p>Blog reviews (Section 3.5) are retained indefinitely, as they're public content tied to a specific post, until you request removal. Newsletter email addresses (Section 3.6) are retained until you unsubscribe or request removal.</p>
 
                 <h2>6. Data Security</h2>
                 <p>The security of your data is paramount to us. While SmartGen's client-side processing model inherently minimizes server-side data exposure, for the limited data we do handle (e.g., log files, anonymized analytics), we implement robust security measures. These include:</p>
@@ -271,19 +230,8 @@
     </main>
     <footer id="main-footer"></footer>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent-banner">
-        <div class="cookie-container">
-            <p class="cookie-text">
-                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" class="cookie-link">Privacy Policy</a>.
-            </p>
-            <div class="cookie-actions">
-                <a href="/privacy/" class="cookie-link">SmartGen Privacy Policy</a>
-                <button id="accept-cookies" class="cookie-btn">Accept</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cookie logic handled by app.js -->
+    <!-- The sitewide cookie consent banner (assets/js/app.js, injectCookieConsent)
+         handles this page automatically -- it used to be duplicated here as static
+         markup with no working accept/decline handler at all. -->
 </body>
 </html>

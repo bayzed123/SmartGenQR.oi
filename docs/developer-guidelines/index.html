@@ -557,6 +557,78 @@ This resolves the issue where new blog posts were not discoverable by search eng
       });
     </script>
 <script src="https://pl30322061.effectivecpmnetwork.com/f1/52/ca/f152ca4aaee504006bf6b462c2535ea8.js"></script>
+
+<!-- Cookie Consent Banner (standalone -- this page doesn't load assets/js/app.js) -->
+<style>
+    #cookie-consent-banner {
+        position: fixed; left: 50%; bottom: 1.25rem; transform: translate(-50%, 140%);
+        width: min(680px, calc(100% - 2rem)); z-index: 10000;
+        background: #12141a; color: #e8eaf0;
+        border: 1px solid rgba(37, 99, 235, 0.25); border-radius: 18px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        padding: 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start;
+        font-family: inherit; opacity: 0;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+    }
+    #cookie-consent-banner.is-visible { transform: translate(-50%, 0); opacity: 1; }
+    #cookie-consent-banner .cc-icon { font-size: 1.9rem; line-height: 1; flex-shrink: 0; }
+    #cookie-consent-banner .cc-body { flex: 1; min-width: 0; }
+    #cookie-consent-banner h3 { margin: 0 0 0.4rem; font-size: 1.05rem; font-weight: 700; }
+    #cookie-consent-banner p { margin: 0; font-size: 0.88rem; line-height: 1.55; opacity: 0.8; }
+    #cookie-consent-banner a { color: #2563eb; font-weight: 600; text-decoration: none; }
+    #cookie-consent-banner a:hover { text-decoration: underline; }
+    #cookie-consent-banner .cc-actions { display: flex; gap: 0.6rem; margin-top: 1rem; flex-wrap: wrap; }
+    #cookie-consent-banner button {
+        border-radius: 50px; padding: 0.6rem 1.4rem; font-size: 0.85rem; font-weight: 700;
+        cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; border: none;
+    }
+    #cookie-consent-banner button:hover { transform: translateY(-2px); }
+    #cookie-consent-banner #cc-accept {
+        background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff;
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+    }
+    #cookie-consent-banner #cc-decline {
+        background: transparent; color: #9aa0b2;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    @media (max-width: 560px) {
+        #cookie-consent-banner { flex-direction: column; padding: 1.25rem; bottom: 0; border-radius: 18px 18px 0 0; width: 100%; left: 0; transform: translateY(140%); }
+        #cookie-consent-banner.is-visible { transform: translateY(0); }
+    }
+</style>
+<div id="cookie-consent-banner" role="region" aria-label="Cookie consent">
+    <span class="cc-icon" aria-hidden="true">🍪</span>
+    <div class="cc-body">
+        <h3>We value your privacy</h3>
+        <p>
+            We use cookies to keep the site running smoothly, understand how it's used, and — with
+            your consent — show relevant ads. Read our <a href="/privacy/">Privacy Policy</a> to learn more.
+        </p>
+        <div class="cc-actions">
+            <button type="button" id="cc-accept">Accept All</button>
+            <button type="button" id="cc-decline">Decline</button>
+        </div>
+    </div>
+</div>
+<script>
+(function () {
+    if (localStorage.getItem('sg-cookies-accepted') || localStorage.getItem('sg-cookies-declined')) {
+        var b = document.getElementById('cookie-consent-banner');
+        if (b) b.remove();
+        return;
+    }
+    var banner = document.getElementById('cookie-consent-banner');
+    if (!banner) return;
+    requestAnimationFrame(function () { banner.classList.add('is-visible'); });
+    function dismiss(key) {
+        localStorage.setItem(key, '1');
+        banner.classList.remove('is-visible');
+        setTimeout(function () { banner.remove(); }, 500);
+    }
+    document.getElementById('cc-accept').addEventListener('click', function () { dismiss('sg-cookies-accepted'); });
+    document.getElementById('cc-decline').addEventListener('click', function () { dismiss('sg-cookies-declined'); });
+})();
+</script>
 </body>
 </html>
 <div class="ad-cls-wrapper" id="ad-wrapper-native_banner" style="min-height: auto; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">

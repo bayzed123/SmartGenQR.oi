@@ -208,6 +208,19 @@ function generatePostHTML(post) {
     }
     </script>
 
+    <!-- JSON-LD BreadcrumbList Schema (rich-result breadcrumb trail) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "${SITE_URL}/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "${SITE_URL}/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "${post.title.replace(/"/g, '\\"')}", "item": "${SITE_URL}/blog/${post.slug}/" }
+        ]
+    }
+    </script>
+
     <!-- Fonts & Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -313,6 +326,7 @@ function generatePostHTML(post) {
     
     <!-- Scripts -->
     <script src="../../assets/js/app.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
     <script src="../../assets/js/blog.js" defer></script>
 
     <!-- Google AdSense Code -->
@@ -322,6 +336,13 @@ function generatePostHTML(post) {
     <header id="main-header"></header>
 
     <main class="blog-post-container">
+        <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span class="blog-breadcrumb-sep">/</span>
+            <a href="/blog/">Blog</a>
+            <span class="blog-breadcrumb-sep">/</span>
+            <span class="blog-breadcrumb-current">${post.title}</span>
+        </nav>
         <article class="blog-post-article reveal-up">
             <header class="blog-post-header">
                 <div class="blog-post-meta">
@@ -371,10 +392,12 @@ function generatePostHTML(post) {
         <section class="newsletter-section reveal-up" style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 5rem 2rem; border-radius: 30px; margin: 4rem auto; max-width: 900px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
             <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
             <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
-            <form action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
-                <input type="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
-                <button type="submit" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
+            <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                <input type="email" name="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
             </form>
+            <p class="newsletter-feedback" role="status" aria-live="polite"></p>
         </section>
 
         <!-- Related Posts Section -->
@@ -568,10 +591,12 @@ function generateArchiveHTML() {
             <h2 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
             <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox every week.</p>
             
-            <form action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
-                <input type="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
-                <button type="submit" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe Now</button>
+            <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                <input type="email" name="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe Now</button>
             </form>
+            <p class="newsletter-feedback" role="status" aria-live="polite"></p>
             <p style="font-size: 0.8rem; color: #999; margin-top: 1.5rem;">No spam, ever. Unsubscribe at any time.</p>
         </section>
 

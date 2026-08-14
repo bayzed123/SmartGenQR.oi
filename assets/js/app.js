@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initAccordion();
     loadChatbot();
+    injectCookieConsent();
 });
 
 /**
@@ -275,7 +276,7 @@ function injectFooter() {
                     <a href="https://smartgentools.com">Home</a>
                     <a href="https://smartgentools.com/about/">About Us</a>
                     <a href="https://smartgentools.com/contact/">Contact Us</a>
-                     <a href="https://smartgentools.com/sitemap.xml/">Sitemap</a>
+                     <a href="https://smartgentools.com/sitemap.xml">Sitemap</a>
                 </div>
             </div>
         </div>
@@ -339,4 +340,92 @@ function toggleTheme() {
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
+}
+
+/**
+ * Sitewide cookie consent banner.
+ *
+ * A handful of pages (tools/index.html and friends) already carry their own
+ * hand-written copy of this banner from before app.js existed on every page.
+ * This function is a no-op wherever that's already present, so it never
+ * shows a second banner -- it only fills the gap on pages that had none at
+ * all (the homepage, every blog post, docs pages that load app.js, etc.).
+ * Both this version and the legacy embedded ones read/write the same
+ * `sg-cookies-accepted` localStorage key, so accepting once anywhere on the
+ * site is remembered everywhere.
+ */
+function injectCookieConsent() {
+    if (document.getElementById('cookie-consent-banner')) return;
+    if (localStorage.getItem('sg-cookies-accepted') || localStorage.getItem('sg-cookies-declined')) return;
+
+    const style = document.createElement('style');
+    style.id = 'cookie-consent-styles';
+    style.textContent = `
+        #cookie-consent-banner {
+            position: fixed; left: 50%; bottom: 1.25rem; transform: translate(-50%, 140%);
+            width: min(680px, calc(100% - 2rem)); z-index: 10000;
+            background: var(--card-bg, #12141a); color: var(--text-primary, #e8eaf0);
+            border: 1px solid rgba(37, 99, 235, 0.25); border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            padding: 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start;
+            font-family: inherit; opacity: 0;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+        }
+        #cookie-consent-banner.is-visible { transform: translate(-50%, 0); opacity: 1; }
+        #cookie-consent-banner .cc-icon { font-size: 1.9rem; line-height: 1; flex-shrink: 0; }
+        #cookie-consent-banner .cc-body { flex: 1; min-width: 0; }
+        #cookie-consent-banner h3 { margin: 0 0 0.4rem; font-size: 1.05rem; font-weight: 700; }
+        #cookie-consent-banner p { margin: 0; font-size: 0.88rem; line-height: 1.55; opacity: 0.8; }
+        #cookie-consent-banner a { color: #2563eb; font-weight: 600; text-decoration: none; }
+        #cookie-consent-banner a:hover { text-decoration: underline; }
+        #cookie-consent-banner .cc-actions { display: flex; gap: 0.6rem; margin-top: 1rem; flex-wrap: wrap; }
+        #cookie-consent-banner button {
+            border-radius: 50px; padding: 0.6rem 1.4rem; font-size: 0.85rem; font-weight: 700;
+            cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; border: none;
+        }
+        #cookie-consent-banner button:hover { transform: translateY(-2px); }
+        #cookie-consent-banner #cc-accept {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+        }
+        #cookie-consent-banner #cc-decline {
+            background: transparent; color: var(--text-secondary, #9aa0b2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        @media (max-width: 560px) {
+            #cookie-consent-banner { flex-direction: column; padding: 1.25rem; bottom: 0; border-radius: 18px 18px 0 0; width: 100%; left: 0; transform: translateY(140%); }
+            #cookie-consent-banner.is-visible { transform: translateY(0); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    const banner = document.createElement('div');
+    banner.id = 'cookie-consent-banner';
+    banner.setAttribute('role', 'region');
+    banner.setAttribute('aria-label', 'Cookie consent');
+    banner.innerHTML = `
+        <span class="cc-icon" aria-hidden="true">🍪</span>
+        <div class="cc-body">
+            <h3>We value your privacy</h3>
+            <p>
+                We use cookies to keep the site running smoothly, understand how it's used, and — with
+                your consent — show relevant ads. Read our <a href="/privacy/">Privacy Policy</a> to learn more.
+            </p>
+            <div class="cc-actions">
+                <button type="button" id="cc-accept">Accept All</button>
+                <button type="button" id="cc-decline">Decline</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(banner);
+
+    requestAnimationFrame(() => banner.classList.add('is-visible'));
+
+    const dismiss = (key) => {
+        localStorage.setItem(key, '1');
+        banner.classList.remove('is-visible');
+        setTimeout(() => banner.remove(), 500);
+    };
+    document.getElementById('cc-accept').addEventListener('click', () => dismiss('sg-cookies-accepted'));
+    document.getElementById('cc-decline').addEventListener('click', () => dismiss('sg-cookies-declined'));
 }

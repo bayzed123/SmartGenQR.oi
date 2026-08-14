@@ -25,6 +25,8 @@
  *   GET  /api/chat/suggestions    opening greeting + starter questions
  *   POST /api/serp/suggest        AI title/description suggestions (Gemini)
  *   POST /api/serp/rank           keyword ranking lookup (Google Custom Search)
+ *   GET  /api/reviews             a blog post's reviews + average rating
+ *   POST /api/reviews             submit a review for a blog post
  *   POST /api/admin/init-sheet    one-time header row (requires ADMIN_TOKEN)
  */
 
@@ -35,6 +37,7 @@ import { fetchCoreWebVitals } from './lib/pagespeed.js';
 import { generateRoadmap, suggestSerpCopy } from './lib/gemini.js';
 import { checkRanking } from './lib/rank.js';
 import { appendLead, ensureHeaderRow } from './lib/sheets.js';
+import { listReviews, submitReview } from './lib/reviews.js';
 import {
   visitorKey,
   getQuota,
@@ -98,6 +101,8 @@ async function route(url, request, env, ctx) {
         'GET /api/chat/suggestions',
         'POST /api/serp/suggest',
         'POST /api/serp/rank',
+        'GET /api/reviews',
+        'POST /api/reviews',
       ],
     });
   }
@@ -115,6 +120,7 @@ async function route(url, request, env, ctx) {
         chatbot: Boolean(env.GEMINI_API_KEY),
         serpSuggestions: Boolean(env.GEMINI_API_KEY),
         rankChecker: Boolean(env.GOOGLE_CSE_API_KEY && env.GOOGLE_CSE_ID),
+        blogReviews: Boolean(env.AUDIT_KV),
         paymentsEnabled: env.PAYMENTS_ENABLED === 'true',
       },
       knowledge: {
@@ -183,6 +189,14 @@ async function route(url, request, env, ctx) {
 
   if (path === '/api/serp/rank' && request.method === 'POST') {
     return handleSerpRank(request, env);
+  }
+
+  if (path === '/api/reviews' && request.method === 'GET') {
+    return handleReviewsList(url, env);
+  }
+
+  if (path === '/api/reviews' && request.method === 'POST') {
+    return handleReviewsSubmit(request, env);
   }
 
   if (path === '/api/admin/init-sheet' && request.method === 'POST') {
@@ -462,6 +476,47 @@ async function handleSerpRank(request, env) {
   });
 }
 
+/* -------------------------------------------------------- blog reviews */
+
+async function handleReviewsList(url, env) {
+  const slug = String(url.searchParams.get('slug') || '').trim();
+  const result = await listReviews(env, slug);
+  if (!result.ok) return json(result, 400);
+  return json(result, 200, { 'Cache-Control': 'public, max-age=60' });
+}
+
+async function handleReviewsSubmit(request, env) {
+  const body = await readJson(request);
+
+  // Honeypot -- real visitors never fill a hidden field.
+  if (String(body.company_website || '').trim()) {
+    return json({ ok: true, stored: false, spam: true });
+  }
+
+  const key = await visitorKey(request);
+  const limit = await cacheRateLimit(`review-submit:${key}`, 5, 24 * 60 * 60);
+  if (!limit.ok) {
+    return json(
+      {
+        ok: false,
+        code: 'rate_limited',
+        error: "You've submitted a few reviews already today. Try again tomorrow.",
+      },
+      429
+    );
+  }
+
+  const result = await submitReview(env, {
+    slug: body.slug,
+    name: body.name,
+    rating: body.rating,
+    comment: body.comment,
+  });
+
+  if (!result.ok) return json(result, result.skipped ? 200 : 400);
+  return json(result, 200);
+}
+
 /* ------------------------------------------------------------- lead */
 
 async function handleLead(request, env, ctx) {
@@ -472,8 +527,16 @@ async function handleLead(request, env, ctx) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
     return json({ ok: false, error: 'A valid email address is required.' }, 400);
   }
-  if (!String(lead.fullName || '').trim()) {
+
+  // A blog newsletter signup is email-only by design -- asking for a name
+  // there is exactly the extra friction that kills subscribe-rate. Every
+  // other lead type (audit reports, contact forms) still requires one.
+  const isNewsletter = lead.leadType === 'newsletter_subscribe';
+  if (!isNewsletter && !String(lead.fullName || '').trim()) {
     return json({ ok: false, error: 'Your name is required.' }, 400);
+  }
+  if (isNewsletter && !String(lead.fullName || '').trim()) {
+    lead.fullName = 'Newsletter Subscriber';
   }
 
   // Honeypot — real visitors never fill a hidden field.

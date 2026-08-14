@@ -63,66 +63,6 @@
             display: block;
             font-weight: 500;
         }
-        
-        /* Cookie Consent Banner Styling */
-        #cookie-consent-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #ffffff;
-            border-top: 1px solid #e1e8ed;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-            z-index: 9999;
-            display: none;
-            padding: 1rem 0;
-        }
-        .cookie-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .cookie-text {
-            flex: 1;
-            min-width: 280px;
-            margin: 0;
-            font-size: 0.9rem;
-            color: #4a5568;
-            line-height: 1.5;
-        }
-        .cookie-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .cookie-btn {
-            background: #0052cc;
-            color: #ffffff;
-            border: none;
-            padding: 0.6rem 1.5rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .cookie-btn:hover {
-            background: #003d99;
-        }
-        .cookie-link {
-            font-size: 0.9rem;
-            color: #0052cc;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .cookie-link:hover {
-            text-decoration: underline;
-        }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
 </head>
@@ -131,7 +71,7 @@
     <main class="container">
         <section class="tool-container" style="margin-top: 2rem;">
             <h1 style="margin-bottom: 0.5rem;">Comprehensive Cookie Policy for SmartGen</h1>
-            <span class="last-updated">Last Updated: May 29, 2026</span>
+            <span class="last-updated">Last Updated: August 14, 2026</span>
 
             <div class="content-body">
                 <p>This Cookie Policy explains how SmartGen (<a href="https://smartgentools.com">smartgentools.com</a>) uses cookies and similar technologies to recognize you when you visit our website. It explains what these technologies are, why we use them, and your rights to control our use of them. This policy is designed to be fully compliant with global data protection regulations, including GDPR, CCPA, and Google AdSense requirements.</p>
@@ -179,7 +119,7 @@
                 <p>For more information on how to control cookies, check your browserâs help material or visit <a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer">www.allaboutcookies.org</a>.</p>
 
                 <h2>5. Cookie Consent Mechanism</h2>
-                <p>SmartGen employs a clear and user-friendly cookie consent mechanism (a pop-up banner) that appears upon your first visit to our website. This banner informs you about our use of cookies and provides options to accept or learn more about our Cookie Policy. By clicking "Accept" or continuing to browse our site after seeing the banner, you consent to our use of cookies as described in this policy. This mechanism ensures compliance with GDPR and other relevant privacy regulations requiring explicit consent for non-essential cookies.</p>
+                <p>SmartGen employs a clear and user-friendly cookie consent mechanism (a pop-up banner) that appears upon your first visit to our website, and on every page until you respond to it. This banner informs you about our use of cookies and lets you either "Accept All" or "Decline". Choosing "Accept All" consents to our use of cookies as described in this policy; choosing "Decline" is remembered too, so you are not asked again on other pages. This mechanism ensures compliance with GDPR and other relevant privacy regulations requiring explicit consent for non-essential cookies.</p>
 
                 <h2>6. Changes to Our Cookie Policy</h2>
                 <p>We may update our Cookie Policy from time to time to reflect changes to the cookies we use or for other operational, legal, or regulatory reasons. Please re-visit this Cookie Policy regularly to stay informed about our use of cookies and related technologies. The date at the top of this Cookie Policy indicates when it was last updated.</p>
@@ -191,23 +131,13 @@
     </main>
     <footer id="main-footer"></footer>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent-banner">
-        <div class="cookie-container">
-            <p class="cookie-text">
-                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" class="cookie-link">Privacy Policy</a> and <a href="/cookies/" class="cookie-link">Cookie Policy</a>.
-            </p>
-            <div class="cookie-actions">
-                <a href="/privacy/" class="cookie-link">Learn More</a>
-                <button id="accept-cookies" class="cookie-btn">Accept</button>
-            </div>
-        </div>
-    </div>
+    <!-- The sitewide cookie consent banner (assets/js/app.js, injectCookieConsent)
+         handles this page automatically -- it used to be duplicated here as static
+         markup with no working accept/decline handler at all. -->
 
     <!-- Optimization Scripts -->
     <script src="../config/ad-config.js" defer></script>
     <script src="../utils/ad-injector.js" defer></script>
     <script src="../assets/js/app.js" defer></script>
-    <!-- Cookie logic handled by app.js -->
 </body>
 </html>
