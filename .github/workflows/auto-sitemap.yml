@@ -58,8 +58,10 @@ jobs:
           BASE_URL = "https://smartgentools.com"
           SITEMAP_FILE = "sitemap.xml"
           NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
+          IMAGE_NAMESPACE = "http://www.google.com/schemas/sitemap-image/1.1"
 
           ET.register_namespace('', NAMESPACE)
+          ET.register_namespace('image', IMAGE_NAMESPACE)
 
           # Create URLSET root
           urlset = ET.Element(f'{{{NAMESPACE}}}urlset')
@@ -119,6 +121,7 @@ jobs:
                           continue
                           
                       title = ""
+                      image_url = ""
                       with open(full_path, 'r', encoding='utf-8') as f:
                           content = f.read()
                       
@@ -128,6 +131,7 @@ jobs:
                           try:
                               fm_data = yaml.safe_load(match.group(1)) or {}
                               title = fm_data.get('title', '')
+                              image_url = fm_data.get('image', '') or ''
                           except Exception:
                               pass
                       
@@ -139,12 +143,15 @@ jobs:
                       priority = '0.8'
                       changefreq = 'weekly'
                       
-                      # Verify if the built HTML page actually exists
-                      expected_html_path = os.path.join('blog', blog_slug, 'index.html')
-                      if not os.path.exists(expected_html_path):
-                          continue
-                          
+                      # The deployment workflow builds blog HTML separately and may run
+                      # concurrently. Include the Markdown post now so the sitemap does not
+                      # miss a newly published article during that deployment window.
                       lastmod_date = get_git_lastmod(full_path)
+
+                      # Include the article’s declared cover image in the image sitemap.
+                      # Relative image paths are resolved against the public site root.
+                      if image_url and not re.match(r'^https?://', str(image_url)):
+                          image_url = f'{BASE_URL}/{str(image_url).lstrip("/")}'
 
                   # -----------------------------
                   # 2. STATIC HTML PROCESSING
@@ -237,7 +244,8 @@ jobs:
                       'loc': normalized_url,
                       'lastmod': lastmod_date,
                       'changefreq': changefreq,
-                      'priority': priority
+                      'priority': priority,
+                      'image': image_url if relative_path.startswith('blog-posts/') and file.endswith('.md') else ''
                   }
 
           # Sort URLs alphabetically
@@ -258,6 +266,11 @@ jobs:
 
               priority_element = ET.SubElement(url_element, f'{{{NAMESPACE}}}priority')
               priority_element.text = item['priority']
+
+              if item.get('image'):
+                  image_element = ET.SubElement(url_element, f'{{{IMAGE_NAMESPACE}}}image')
+                  image_loc_element = ET.SubElement(image_element, f'{{{IMAGE_NAMESPACE}}}loc')
+                  image_loc_element.text = item['image']
 
           # Generate pretty XML
           raw_xml = ET.tostring(urlset, encoding='utf-8')
