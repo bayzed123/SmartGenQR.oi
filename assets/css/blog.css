@@ -247,6 +247,48 @@
   padding: 6rem 2rem 4rem;
 }
 
+/* Rich-result breadcrumb trail -- mirrors the BreadcrumbList JSON-LD in
+   <head> so the visible page and what Google shows in search agree. */
+.blog-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--blog-text-light);
+}
+
+.blog-breadcrumb a {
+  color: var(--blog-text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.blog-breadcrumb a:hover {
+  color: var(--blog-primary);
+  text-decoration: underline;
+}
+
+.blog-breadcrumb .blog-breadcrumb-sep {
+  opacity: 0.6;
+}
+
+.blog-breadcrumb .blog-breadcrumb-current {
+  color: var(--blog-text-primary);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 320px;
+}
+
+@media (max-width: 640px) {
+  .blog-breadcrumb .blog-breadcrumb-current {
+    max-width: 180px;
+  }
+}
+
 .blog-post-article {
   background: var(--blog-glass-bg);
   border: 1px solid var(--blog-glass-border);

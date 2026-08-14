@@ -57,6 +57,18 @@
         }
     }
     </script>
+    <!-- JSON-LD BreadcrumbList Schema (rich-result breadcrumb trail) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://smartgentools.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://smartgentools.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "How to Optimize Your Website for Google AdSense Approval in 2026: The Mega Guide", "item": "https://smartgentools.com/blog/how-to-optimize-your-website-for-google-adsense-approval-in-2026-the-mega-guide/" }
+        ]
+    }
+    </script>
 
     <!-- Fonts & Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
@@ -173,6 +185,13 @@
     <header id="main-header"></header>
 
     <main class="blog-post-container">
+        <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span class="blog-breadcrumb-sep">/</span>
+            <a href="/blog/">Blog</a>
+            <span class="blog-breadcrumb-sep">/</span>
+            <span class="blog-breadcrumb-current">How to Optimize Your Website for Google AdSense Approval in 2026: The Mega Guide</span>
+        </nav>
         <article class="blog-post-article reveal-up">
             <header class="blog-post-header">
                 <div class="blog-post-meta">
