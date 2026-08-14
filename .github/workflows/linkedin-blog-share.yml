@@ -36,7 +36,10 @@ jobs:
 
       - name: Publish newly added blog posts to LinkedIn
         env:
+          LINKEDIN_CLIENT_ID: ${{ secrets.LINKEDIN_CLIENT_ID }}
+          LINKEDIN_CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
           LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
+          LINKEDIN_MEMBER_ID: ${{ secrets.LINKEDIN_MEMBER_ID }}
           GITHUB_EVENT_BEFORE: ${{ github.event.before }}
           GITHUB_SHA: ${{ github.sha }}
           LINKEDIN_POST_PATH: ${{ inputs.post_path }}

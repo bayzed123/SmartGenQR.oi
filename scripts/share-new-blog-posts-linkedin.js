@@ -4,8 +4,9 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 
-// The repository secret named LINKEDIN_PERSON_ID currently stores the access token.
+// LINKEDIN_PERSON_ID stores the OAuth access token; LINKEDIN_MEMBER_ID stores the posting member ID.
 const token = process.env.LINKEDIN_PERSON_ID;
+const memberId = process.env.LINKEDIN_MEMBER_ID;
 const before = process.env.GITHUB_EVENT_BEFORE;
 const sha = process.env.GITHUB_SHA || 'HEAD';
 const siteUrl = 'https://smartgentools.com';
@@ -13,8 +14,8 @@ const dryRun = process.env.LINKEDIN_DRY_RUN === 'true';
 const manualPath = process.env.LINKEDIN_POST_PATH;
 const linkedinVersion = process.env.LINKEDIN_VERSION || '202607';
 
-if (!token && !dryRun) {
-  throw new Error('The GitHub secret LINKEDIN_PERSON_ID is missing. It must contain the LinkedIn access token.');
+if ((!token || !memberId) && !dryRun) {
+  throw new Error('Required GitHub secrets are missing: LINKEDIN_PERSON_ID must contain the access token and LINKEDIN_MEMBER_ID must contain the numeric member ID.');
 }
 
 function changedBlogFiles() {
@@ -84,26 +85,6 @@ async function linkedinRequest(url, options = {}) {
   return data;
 }
 
-async function resolvePersonId() {
-  // OIDC tokens expose the member subject through the official userinfo endpoint.
-  try {
-    const profile = await linkedinRequest('https://api.linkedin.com/v2/userinfo');
-    if (profile.sub) return profile.sub;
-  } catch (userinfoError) {
-    // Some older Share on LinkedIn tokens have member-profile permission instead.
-    try {
-      const profile = await linkedinRequest('https://api.linkedin.com/v2/me');
-      if (profile.id) return profile.id;
-    } catch (_) {
-      throw new Error(
-        `${userinfoError.message}. LinkedIn did not return a member ID. The token must include the OpenID Connect profile permission, or a separate member ID secret is required.`
-      );
-    }
-  }
-
-  throw new Error('LinkedIn userinfo did not contain a member subject (sub), so a person URN could not be created.');
-}
-
 async function publish(post, personId) {
   if (dryRun) {
     console.log(`[DRY RUN] Would publish: ${post.title}`);
@@ -159,7 +140,7 @@ async function publish(post, personId) {
   }
 
   console.log(`Found ${files.length} newly added blog post(s): ${files.join(', ')}`);
-  const personId = dryRun ? 'dry-run-person' : await resolvePersonId();
+  const personId = dryRun ? 'dry-run-person' : memberId;
   for (const file of files) {
     const source = fs.readFileSync(path.resolve(file), 'utf8');
     const attributes = frontMatter(source);
