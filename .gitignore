@@ -1,3 +1,24 @@
 node_modules/
 
-
+# ---------------------------------------------------------------------------
+# Credentials — this repository is PUBLIC. Anything matched here would be
+# downloadable by every visitor the moment it was pushed, so service-account
+# keys, tokens and .env files must never be committed. They belong in
+# Cloudflare's encrypted secret store (`wrangler secret put`) or in GitHub
+# Actions secrets — never in a file in this tree.
+# ---------------------------------------------------------------------------
+*service-account*.json
+*service_account*.json
+*-credentials.json
+*credentials*.json
+gcp-key*.json
+*.pem
+*.p12
+*.pfx
+*.key
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+secrets/

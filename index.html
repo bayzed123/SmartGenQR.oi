@@ -5,7 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartGen - The Privacy-First Web Utility Platform</title>
     <meta name="description" content="131+ free, client-side web utilities. SEO tools, QR generators, and developer docs with zero data tracking.">
-    
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://smartgentools.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SmartGen">
+    <meta property="og:title" content="SmartGen - The Privacy-First Web Utility Platform">
+    <meta property="og:description" content="131+ free, client-side web utilities. SEO tools, QR generators, and developer docs with zero data tracking.">
+    <meta property="og:url" content="https://smartgentools.com/">
+    <meta property="og:image" content="https://smartgentools.com/assets/img/logo.svg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SmartGen - The Privacy-First Web Utility Platform">
+    <meta name="twitter:description" content="131+ free, client-side web utilities. SEO tools, QR generators, and developer docs with zero data tracking.">
+    <meta name="twitter:image" content="https://smartgentools.com/assets/img/logo.svg">
+
+    <!-- Organization + founder. This is the site's primary entity definition:
+         every other page's schema references SmartGen, but the homepage is
+         where Google expects to resolve the organization itself, and it had
+         no structured data at all until now. -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://smartgentools.com/#organization",
+        "name": "SmartGen",
+        "alternateName": "SmartGen Tools",
+        "url": "https://smartgentools.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://smartgentools.com/assets/img/logo.svg",
+            "caption": "SmartGen"
+        },
+        "description": "A free, privacy-first platform of 130+ browser-based web utilities for developers, marketers, and everyday users.",
+        "founder": {
+            "@type": "Person",
+            "@id": "https://sayadbayezid.com/#person",
+            "name": "Sayad Md Bayezid Hosan",
+            "jobTitle": "Founder",
+            "url": "https://sayadbayezid.com",
+            "sameAs": [
+                "https://sayadbayezid.com",
+                "https://www.sayadbayezid.com",
+                "https://www.connectwithbayezid.it.com",
+                "https://www.linkedin.com/in/sayadbayezid",
+                "https://github.com/bayzed123",
+                "https://github.com/sayadbayezid",
+                "https://www.crunchbase.com/person/sayad-md-bayezid-hosan",
+                "https://orcid.org/0009-0003-6568-6648"
+            ]
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "cwb.agency@outlook.com",
+            "contactType": "customer support",
+            "url": "https://smartgentools.com/contact/"
+        }
+    }
+    </script>
+
+    <!-- WebSite + site-wide search action -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://smartgentools.com/#website",
+        "name": "SmartGen",
+        "url": "https://smartgentools.com/",
+        "description": "131+ free, client-side web utilities. SEO tools, QR generators, and developer docs with zero data tracking.",
+        "publisher": { "@id": "https://smartgentools.com/#organization" },
+        "inLanguage": "en",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://smartgentools.com/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

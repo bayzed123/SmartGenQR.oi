@@ -14,11 +14,106 @@ window.SMARTGEN_API_BASE =
 document.addEventListener('DOMContentLoaded', () => {
     injectNavbar();
     injectFooter();
+    injectGlobalNavFallback();
     initTheme();
     initAccordion();
     loadChatbot();
     injectCookieConsent();
 });
+
+/**
+ * Global navigation for pages that don't have the standard #main-header /
+ * #main-footer mount points.
+ *
+ * Whole sections of this site were built as self-contained pages with their
+ * own header markup -- most of the HTML Code Library (150+ pages) and the
+ * docs pages. Their navigation only ever linked to their own section index
+ * and in-page anchors, so a visitor (or a reviewer) landing on any of them
+ * had no route to Home, Blog, About, Contact, or the policy pages. That's a
+ * real dead end, and "readers can't find your pages" is exactly the kind of
+ * navigation problem an ad-network site review flags.
+ *
+ * Rather than rewrite every one of those pages' bespoke layouts, this adds a
+ * slim global bar above whatever header they already have, plus a matching
+ * link strip at the very bottom. Pages that DO have #main-header are
+ * untouched -- they already get the full navbar from injectNavbar().
+ */
+function injectGlobalNavFallback() {
+    if (document.getElementById('main-header')) return;      // real navbar already present
+    if (document.getElementById('global-nav-fallback')) return; // never double-inject
+
+    // A page that already links out to the wider site in its own chrome
+    // doesn't need this (e.g. /tools/, /qr-generator/ ship a full nav).
+    const SECTIONS = [
+        ['/', 'Home'],
+        ['/tools/', 'All Tools'],
+        ['/html-code-library/', 'HTML Library'],
+        ['/blog/', 'Blog'],
+        ['/docs/', 'Docs'],
+        ['/paid-tools/', 'Paid Tools'],
+        ['/about/', 'About'],
+        ['/contact/', 'Contact'],
+    ];
+
+    const style = document.createElement('style');
+    style.textContent = `
+        #global-nav-fallback {
+            background: #0f172a; color: #e2e8f0; font-family: Inter, -apple-system, sans-serif;
+            border-bottom: 1px solid rgba(255,255,255,.12); position: relative; z-index: 9000;
+        }
+        #global-nav-fallback .gnf-inner {
+            max-width: 1200px; margin: 0 auto; padding: 8px 16px;
+            display: flex; align-items: center; gap: 18px;
+            overflow-x: auto; scrollbar-width: none;
+        }
+        #global-nav-fallback .gnf-inner::-webkit-scrollbar { display: none; }
+        #global-nav-fallback .gnf-brand {
+            font-weight: 800; font-size: 15px; text-decoration: none; color: #fff;
+            white-space: nowrap; flex: 0 0 auto;
+        }
+        #global-nav-fallback .gnf-brand span { color: #ff8800; }
+        #global-nav-fallback a.gnf-link {
+            color: #cbd5e1; text-decoration: none; font-size: 13.5px; font-weight: 500;
+            white-space: nowrap; flex: 0 0 auto; padding: 2px 0;
+        }
+        #global-nav-fallback a.gnf-link:hover { color: #fff; text-decoration: underline; }
+        #global-footer-fallback {
+            background: #0f172a; color: #94a3b8; font-family: Inter, -apple-system, sans-serif;
+            padding: 28px 16px; text-align: center; font-size: 13px;
+            border-top: 1px solid rgba(255,255,255,.12);
+        }
+        #global-footer-fallback nav {
+            display: flex; flex-wrap: wrap; gap: 10px 20px;
+            justify-content: center; margin-bottom: 14px;
+        }
+        #global-footer-fallback a { color: #cbd5e1; text-decoration: none; }
+        #global-footer-fallback a:hover { color: #fff; text-decoration: underline; }
+    `;
+    document.head.appendChild(style);
+
+    const bar = document.createElement('div');
+    bar.id = 'global-nav-fallback';
+    bar.innerHTML =
+        '<div class="gnf-inner">' +
+        '<a class="gnf-brand" href="/">Smart<span>Gen</span></a>' +
+        SECTIONS.map(([href, label]) => `<a class="gnf-link" href="${href}">${label}</a>`).join('') +
+        '</div>';
+    document.body.insertBefore(bar, document.body.firstChild);
+
+    const foot = document.createElement('div');
+    foot.id = 'global-footer-fallback';
+    foot.innerHTML =
+        '<nav aria-label="Site links">' +
+        SECTIONS.concat([
+            ['/privacy/', 'Privacy Policy'],
+            ['/terms/', 'Terms'],
+            ['/cookies/', 'Cookie Policy'],
+            ['/disclaimer/', 'Disclaimer'],
+        ]).map(([href, label]) => `<a href="${href}">${label}</a>`).join('') +
+        '</nav>' +
+        `<div>&copy; ${new Date().getFullYear()} SmartGen — free, privacy-first web tools.</div>`;
+    document.body.appendChild(foot);
+}
 
 /**
  * Bring the SmartGen assistant to every page, without paying for it on load.
