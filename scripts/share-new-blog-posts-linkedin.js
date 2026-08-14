@@ -99,7 +99,7 @@ async function publish(post, personId) {
       'X-Restli-Protocol-Version': '2.0.0',
     },
     body: JSON.stringify({
-      author: `urn:li:person:${personId}`,
+      author: `urn:li:member:${personId}`,
       lifecycleState: 'PUBLISHED',
       specificContent: {
         'com.linkedin.ugc.ShareContent': {
