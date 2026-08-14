@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: add SEO-friendly content writing guide",
+    "date": "2026-08-14T18:54:37Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: use person secret as LinkedIn access token",
     "date": "2026-08-14T18:31:19Z",
     "description": "Platform improvement and optimization."
