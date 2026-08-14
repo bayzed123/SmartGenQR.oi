@@ -66,7 +66,7 @@ async function linkedinRequest(url, options = {}) {
     ...options,
     headers: {
       Authorization: `Bearer ${token}`,
-      'Linkedin-Version': linkedinVersion,
+      ...(url.includes('/rest/') ? { 'Linkedin-Version': linkedinVersion } : {}),
       ...(options.headers || {}),
     },
   });
@@ -92,7 +92,7 @@ async function publish(post, personId) {
     return;
   }
 
-  const response = await linkedinRequest('https://api.linkedin.com/rest/posts', {
+  const response = await linkedinRequest('https://api.linkedin.com/v2/ugcPosts', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -100,22 +100,26 @@ async function publish(post, personId) {
     },
     body: JSON.stringify({
       author: `urn:li:person:${personId}`,
-      commentary: `${post.title}\n\n${post.description}\n\nRead the full article: ${post.url}`.slice(0, 3000),
-      visibility: 'PUBLIC',
-      distribution: {
-        feedDistribution: 'MAIN_FEED',
-        targetEntities: [],
-        thirdPartyDistributionChannels: [],
-      },
-      content: {
-        article: {
-          source: post.url,
-          title: post.title,
-          description: post.description,
+      lifecycleState: 'PUBLISHED',
+      specificContent: {
+        'com.linkedin.ugc.ShareContent': {
+          shareCommentary: {
+            text: `${post.title}\n\n${post.description}\n\nRead the full article: ${post.url}`.slice(0, 3000),
+          },
+          shareMediaCategory: 'ARTICLE',
+          media: [
+            {
+              status: 'READY',
+              originalUrl: post.url,
+              title: { text: post.title },
+              description: { text: post.description },
+            },
+          ],
         },
       },
-      lifecycleState: 'PUBLISHED',
-      isReshareDisabledByAuthor: false,
+      visibility: {
+        'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC',
+      },
     }),
   });
 
