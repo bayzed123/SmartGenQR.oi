@@ -122,6 +122,7 @@ jobs:
                           
                       title = ""
                       image_url = ""
+                      published_date = ""
                       with open(full_path, 'r', encoding='utf-8') as f:
                           content = f.read()
                       
@@ -132,6 +133,7 @@ jobs:
                               fm_data = yaml.safe_load(match.group(1)) or {}
                               title = fm_data.get('title', '')
                               image_url = fm_data.get('image', '') or ''
+                              published_date = str(fm_data.get('date', '') or '')
                           except Exception:
                               pass
                       
@@ -146,7 +148,12 @@ jobs:
                       # The deployment workflow builds blog HTML separately and may run
                       # concurrently. Include the Markdown post now so the sitemap does not
                       # miss a newly published article during that deployment window.
-                      lastmod_date = get_git_lastmod(full_path)
+                      # Preserve the article’s declared publication date when available.
+                      # This prevents sitemap regeneration from changing historical dates.
+                      if re.match(r'^\d{4}-\d{2}-\d{2}$', published_date):
+                          lastmod_date = published_date
+                      else:
+                          lastmod_date = get_git_lastmod(full_path)
 
                       # Include the article’s declared cover image in the image sitemap.
                       # Relative image paths are resolved against the public site root.
