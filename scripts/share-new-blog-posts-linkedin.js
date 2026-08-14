@@ -9,8 +9,9 @@ const token = process.env.LINKEDIN_PERSON_ID;
 const before = process.env.GITHUB_EVENT_BEFORE;
 const sha = process.env.GITHUB_SHA || 'HEAD';
 const siteUrl = 'https://smartgentools.com';
+const dryRun = process.env.LINKEDIN_DRY_RUN === 'true';
 
-if (!token) {
+if (!token && !dryRun) {
   throw new Error('The GitHub secret LINKEDIN_PERSON_ID is missing. It must contain the LinkedIn access token.');
 }
 
@@ -24,7 +25,7 @@ function changedBlogFiles() {
     }
   }
 
-  return execFileSync('git', ['diff', '--diff-filter=A', '--name-only', before, sha, '--', 'blog-posts/**/*.md'], { encoding: 'utf8' })
+  return execFileSync('git', ['diff', '--diff-filter=A', '--name-only', before, sha, '--', 'blog-posts/'], { encoding: 'utf8' })
     .split('\n').filter((file) => file.startsWith('blog-posts/') && file.endsWith('.md'));
 }
 
@@ -101,6 +102,12 @@ async function resolvePersonId() {
 }
 
 async function publish(post, personId) {
+  if (dryRun) {
+    console.log(`[DRY RUN] Would publish: ${post.title}`);
+    console.log(`[DRY RUN] Article URL: ${post.url}`);
+    return;
+  }
+
   const response = await linkedinRequest('https://api.linkedin.com/v2/ugcPosts', {
     method: 'POST',
     headers: {
@@ -143,7 +150,8 @@ async function publish(post, personId) {
     return;
   }
 
-  const personId = await resolvePersonId();
+  console.log(`Found ${files.length} newly added blog post(s): ${files.join(', ')}`);
+  const personId = dryRun ? 'dry-run-person' : await resolvePersonId();
   for (const file of files) {
     const source = fs.readFileSync(path.resolve(file), 'utf8');
     const attributes = frontMatter(source);
