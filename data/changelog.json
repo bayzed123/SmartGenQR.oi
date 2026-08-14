@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: detect newly added blog posts in action",
+    "date": "2026-08-14T18:59:18Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: add SEO-friendly content writing guide",
     "date": "2026-08-14T18:54:37Z",
     "description": "Platform improvement and optimization."
