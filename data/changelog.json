@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: use LinkedIn member secret for author",
+    "date": "2026-08-14T19:29:53Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: add LinkedIn API version header",
     "date": "2026-08-14T19:06:16Z",
     "description": "Platform improvement and optimization."
