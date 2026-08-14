@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: resolve LinkedIn member identity automatically",
+    "date": "2026-08-14T20:50:10Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: use Share on LinkedIn UGC endpoint",
     "date": "2026-08-14T20:01:28Z",
     "description": "Platform improvement and optimization."
