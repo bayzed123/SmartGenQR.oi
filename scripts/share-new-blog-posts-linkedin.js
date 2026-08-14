@@ -82,7 +82,7 @@ async function linkedinRequest(url, options = {}) {
     const detail = body ? body.slice(0, 1000) : 'empty response';
     throw new Error(`LinkedIn API returned HTTP ${response.status} for ${url}: ${detail}`);
   }
-  return data;
+  return { data, headers: response.headers };
 }
 
 async function publish(post, personId) {
@@ -92,39 +92,36 @@ async function publish(post, personId) {
     return;
   }
 
-  const response = await linkedinRequest('https://api.linkedin.com/v2/ugcPosts', {
+  const response = await linkedinRequest('https://api.linkedin.com/rest/posts', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'X-Restli-Protocol-Version': '2.0.0',
     },
     body: JSON.stringify({
-      author: `urn:li:member:${personId}`,
-      lifecycleState: 'PUBLISHED',
-      specificContent: {
-        'com.linkedin.ugc.ShareContent': {
-          shareCommentary: {
-            text: `${post.title}\n\n${post.description}\n\nRead the full article: ${post.url}`.slice(0, 3000),
-          },
-          shareMediaCategory: 'ARTICLE',
-          media: [
-            {
-              status: 'READY',
-              originalUrl: post.url,
-              title: { text: post.title },
-              description: { text: post.description },
-            },
-          ],
+      author: `urn:li:person:${personId}`,
+      commentary: `${post.title}\n\n${post.description}\n\nRead the full article: ${post.url}`.slice(0, 3000),
+      visibility: 'PUBLIC',
+      distribution: {
+        feedDistribution: 'MAIN_FEED',
+        targetEntities: [],
+        thirdPartyDistributionChannels: [],
+      },
+      content: {
+        article: {
+          source: post.url,
+          title: post.title,
+          description: post.description,
         },
       },
-      visibility: {
-        'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC',
-      },
+      lifecycleState: 'PUBLISHED',
+      isReshareDisabledByAuthor: false,
     }),
   });
 
+  const postId = response.headers.get('x-restli-id');
   console.log(`Published to LinkedIn: ${post.title}`);
-  if (response.id) console.log(`LinkedIn post ID: ${response.id}`);
+  if (postId) console.log(`LinkedIn post ID: ${postId}`);
 }
 
 (async () => {
