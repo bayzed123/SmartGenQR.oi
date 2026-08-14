@@ -3,7 +3,7 @@ title: "Algorithm Updates and Analysis — The Complete A to Z Mega Guide for Be
 description: "A complete, deeply detailed, beginner-friendly A to Z guide to Google algorithm updates — what an algorithm update actually is, the real role and story behind every major named update (Panda, Penguin, Pirate, Hummingbird, Pigeon, RankBrain, Possum, Fred, Medic, and BERT), how Google penalties actually work and how they differ from ordinary ranking drops, and exactly how to prevent your own website from ever being caught by one."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 13, Algorithm Updates, Google Algorithm, Panda, Penguin, Pirate, Hummingbird, Pigeon, RankBrain, Possum, Fred, Medic, BERT, Google Penalties, E-E-A-T, SEO Penalty Recovery"
 date: 2026-07-02
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-algorithm-updates-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/module-algorithm-updates-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -20,7 +20,7 @@ July 02, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, deeply detailed, beginner-friendly A to Z guide to Google algorithm updates — what an algorithm update actually is, the real role and story behind every major named update (Panda, Penguin, Pirate, Hummingbird, Pigeon, RankBrain, Possum, Fred, Medic, and BERT), how Google penalties actually work and how they differ from an ordinary ranking drop, and exactly how to prevent your own website from ever being caught by one.
 
-![MODULE 13: Algorithm Updates and Analysis — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-algorithm-updates-cover.svg)
+![MODULE 13: Algorithm Updates and Analysis — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/module-algorithm-updates-cover.svg)
 
 ---
 
@@ -303,7 +303,7 @@ If you take only one thing from this entire module, let it be this: across more 
 
 Below is an original infographic built specifically for this guide, laying out all ten major algorithm updates in the order they happened, from Panda in 2011 through BERT in 2019 and the ongoing core updates that have continued ever since.
 
-![The Google Algorithm Timeline — ten major updates from Panda through BERT, showing what each one targeted](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-algorithm-updates-infographic.svg)
+![The Google Algorithm Timeline — ten major updates from Panda through BERT, showing what each one targeted](https://smartgentools.com/blog-posts/images/module-algorithm-updates-infographic.svg)
 
 ---
 

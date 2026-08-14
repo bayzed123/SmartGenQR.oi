@@ -3,7 +3,7 @@ title: "YouTube Marketing — The Complete A to Z Mega Guide for Beginners - Sma
 description: "A complete, practical guide to YouTube marketing for beginners — channel setup, video SEO, content strategy, audience growth, monetization, YouTube Ads, and analytics"
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 9, YouTube Marketing, YouTube SEO, YouTube Ads, Video Marketing, smartgen"
 date: 2026-07-01
-image: "assets/images/module9-youtube-marketing-infographic.svg"
+image: "https://smartgentools.com/blog-posts/images/module9-youtube-marketing-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -21,7 +21,7 @@ July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, practical guide to YouTube marketing for beginners — setting up and optimizing a channel that gets found, creating videos the algorithm wants to surface, understanding YouTube SEO from titles to end screens, growing a real subscriber base, monetizing your content, running YouTube Ads through Google Ads, and reading your analytics so you always know what is actually working versus what only looks like it is.
 
-![MODULE 9: YouTube Marketing — The Complete A to Z Mega Guide for Beginners](assets/images/module9-youtube-marketing-infographic.svg)
+![MODULE 9: YouTube Marketing — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/module9-youtube-marketing-infographic.svg)
 
 ---
 
@@ -463,7 +463,7 @@ The answers change what you should create next month. That is the point.
 
 Below is an original infographic built specifically for this guide, mapping out the YouTube marketing system from initial channel setup through SEO, content strategy, monetization, advertising, and analytics. It was created for this module and is free to use with attribution back to this article.
 
-![YouTube Marketing Framework — channel setup, SEO, content strategy, monetization, ads, and analytics for beginners 2026](assets/images/module9-youtube-marketing-infographic.svg)
+![YouTube Marketing Framework — channel setup, SEO, content strategy, monetization, ads, and analytics for beginners 2026](https://smartgentools.com/blog-posts/images/module9-youtube-marketing-infographic.svg)
 
 ---
 

@@ -3,7 +3,7 @@ title: "What Is Python? A Complete Beginner Guide"
 description: "What Python actually is, its history and versions, why beginners choose it, real-world uses, top frameworks, and how to run your first code today."
 keywords: "SmartGen, Python Course, Class 02, What is Python, Python for beginners, Python history, Python versions, Python 3.14, Python frameworks, learn Python, run Python code"
 date: 2026-07-14
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-02-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/python-course-class-02-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -18,7 +18,7 @@ July 14, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, step-by-step beginner's guide to Python — what Python actually is, its full history from 1991 to today's Python 3.14, why so many beginners choose it as their first language, the real-world applications and industries built on it, the most popular frameworks and libraries, and exactly how to run your first line of Python code and understand what happens when you do.
 
- ![What Is Python? A Complete Beginner Guide — cover image](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-02-cover.svg)
+ ![What Is Python? A Complete Beginner Guide — cover image](https://smartgentools.com/blog-posts/images/python-course-class-02-cover.svg)
 
 ---
 
@@ -75,7 +75,7 @@ Search around and you'll find references to "Python 2" and "Python 3" that sound
 
 ### The Solution: The Real Timeline
 
-![Python's Journey: 1991 to Today — from Guido van Rossum's first release through Python 2, the Python 3 reset, and today's Python 3.14](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-02-timeline-infographic.svg)
+![Python's Journey: 1991 to Today — from Guido van Rossum's first release through Python 2, the Python 3 reset, and today's Python 3.14](https://smartgentools.com/blog-posts/images/python-course-class-02-timeline-infographic.svg)
 
 Python was created by **Guido van Rossum** and first released in **1991**. The name has nothing to do with the snake — van Rossum was reading scripts from the British comedy group **Monty Python's Flying Circus** at the time and simply liked the name.
 
@@ -115,7 +115,7 @@ With dozens of programming languages competing for a beginner's first choice, it
 
 ### The Solution: Five Genuinely Different Paths
 
-![What People Actually Build With Python — web development, data science, AI and machine learning, automation, and game development](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-02-applications-infographic.svg)
+![What People Actually Build With Python — web development, data science, AI and machine learning, automation, and game development](https://smartgentools.com/blog-posts/images/python-course-class-02-applications-infographic.svg)
 
 **Web development** — full websites and APIs, from a small personal project to platforms operating at massive global scale. **Data science** — cleaning, analyzing, and visualizing real-world data to answer genuine business questions. **AI and machine learning** — training models that predict, classify, recommend, and generate, currently one of the fastest-growing areas of the entire field. **Automation and scripting** — handling repetitive, boring tasks automatically, often the very first genuinely useful thing a beginner builds. **Game development** — particularly strong for 2D games and fast prototyping.
 

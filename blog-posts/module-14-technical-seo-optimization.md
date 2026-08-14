@@ -3,7 +3,7 @@ title: "Technical SEO Optimization — The Complete A to Z Mega Guide for Beginn
 description: "A complete, deeply detailed, beginner-friendly A to Z guide to technical SEO — how to run a full technical SEO audit, how to optimize website speed and Core Web Vitals (LCP, INP, CLS), how mobile-first indexing and responsive design actually work, how to structure a website for maximum crawlability, and exactly how to implement schema markup and structured data correctly in 2026."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 14, Technical SEO, Technical SEO Audit, Website Speed Optimization, Core Web Vitals, Mobile-Friendly SEO, Mobile-First Indexing, Site Architecture, Crawlability, Schema Markup, Structured Data, E-E-A-T"
 date: 2026-07-04
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-14-technical-seo-optimization-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/module-14-technical-seo-optimization-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -22,7 +22,7 @@ July 04, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, deeply detailed, beginner-friendly A to Z guide to technical SEO — how to run a full technical SEO audit the way a professional actually would, how to optimize your website's speed and Core Web Vitals (LCP, INP, and CLS) so it passes Google's real-user performance thresholds, how mobile-first indexing and responsive design genuinely work under the hood, how to structure a website so search engines can crawl and index it efficiently, and exactly how to implement schema markup and structured data correctly in 2026 — including which schema types still earn rich results and which ones Google has quietly retired.
 
-![MODULE 14: Technical SEO Optimization — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-14-technical-seo-optimization-cover.svg)
+![MODULE 14: Technical SEO Optimization — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/module-14-technical-seo-optimization-cover.svg)
 
 ---
 
@@ -76,7 +76,7 @@ Google's own quality guidelines ask a simple question about every page it ranks:
 
 **Trustworthiness.** Every recommendation in this module can be implemented with free, official tools — nothing here depends on a paid audit or an unverifiable black-box score. Where SmartGen's own Schema Generator is recommended in Section 5, that recommendation comes with an explicit, upfront statement about exactly what happens to your data when you use it, not a buried line in a separate policy you'd have to go looking for.
 
-![Why technical SEO is the foundation beneath on-page and off-page SEO — SmartGen Module 14](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-14-technical-seo-optimization-foundation.svg)
+![Why technical SEO is the foundation beneath on-page and off-page SEO — SmartGen Module 14](https://smartgentools.com/blog-posts/images/module-14-technical-seo-optimization-foundation.svg)
 
 ---
 
@@ -501,7 +501,7 @@ A quick reference for the terms used throughout this module, in one place:
 
 Below is an original infographic built specifically for this guide, mapping the complete technical SEO system covered in this module — from the crawl-render-index-rank pipeline, through Core Web Vitals thresholds, mobile-first indexing, site architecture fundamentals, and the current, accurate state of schema markup in 2026.
 
-![Technical SEO Optimization infographic — technical audit, Core Web Vitals, mobile-first indexing, site architecture, and schema markup for beginners 2026](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-14-technical-seo-optimization-infographic.svg)
+![Technical SEO Optimization infographic — technical audit, Core Web Vitals, mobile-first indexing, site architecture, and schema markup for beginners 2026](https://smartgentools.com/blog-posts/images/module-14-technical-seo-optimization-infographic.svg)
 
 ---
 
@@ -511,7 +511,7 @@ In this module, we covered technical SEO as the foundational pillar beneath ever
 
 **Practice exercise:** This week, run a mini-audit on your own site using only free tools. Check your Core Web Vitals report in Google Search Console and note which URL group, if any, is flagged "Needs Improvement" or "Poor." Run your homepage through the mobile usability check inside Search Console. Then generate one piece of Organization schema for your own site using [SmartGen's Schema Generator](https://smartgentools.com/schema-generator/) and validate it in Google's Rich Results Test. Write down the single biggest issue you find across all three checks — that becomes the first item on your technical SEO to-do list.
 
-![Module 14 visual summary — 5 technical SEO pillars covered: audit, Core Web Vitals, mobile-first, architecture, schema](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-14-technical-seo-optimization-summary.svg)
+![Module 14 visual summary — 5 technical SEO pillars covered: audit, Core Web Vitals, mobile-first, architecture, schema](https://smartgentools.com/blog-posts/images/module-14-technical-seo-optimization-summary.svg)
 
 ---
 

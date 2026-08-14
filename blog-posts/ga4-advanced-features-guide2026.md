@@ -3,7 +3,7 @@ title: "Customization and Advanced Features — The Complete A to Z Mega Guide f
 description: "A complete, step-by-step A to Z guide to advanced Google Analytics work — how to set up Google Tag Manager from scratch, how to build custom dimensions and custom metrics in GA4, how to use real-time analytics and GA4 intelligence events to catch problems and opportunities early, and how to analyze data, spot genuine trends, and turn it all into data-driven reports and recommendations someone can actually act on."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 18, Google Tag Manager, how to set up Google Tag Manager, GTM tags triggers variables, GA4 custom dimensions tutorial, GA4 custom metrics, real-time analytics GA4, GA4 intelligence insights, data-driven decision making, identifying trends in analytics, data-driven marketing reports, Google Analytics 4 advanced features"
 date: 2026-07-10
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-customization-advanced-features-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/module-customization-advanced-features-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -21,7 +21,7 @@ July 10, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, step-by-step A to Z guide to advanced Google Analytics work — how to set up Google Tag Manager from scratch, how to build custom dimensions and custom metrics in GA4, how to use real-time analytics and GA4 intelligence events to catch problems and opportunities early, and how to analyze data, spot genuine trends, and turn it all into data-driven reports and recommendations someone can actually act on.
 
-![MODULE 18: Customization and Advanced Features — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-customization-advanced-features-cover.svg)
+![MODULE 18: Customization and Advanced Features — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/module-customization-advanced-features-cover.svg)
 
 ---
 
@@ -106,7 +106,7 @@ GTM offers many trigger types, but a small handful cover the overwhelming majori
 - **Scroll Depth** fires once a visitor scrolls past a percentage threshold you set (commonly 25%, 50%, 75%, and 90%), letting you measure how far people actually read down a long guide like this one.
 - **YouTube Video** fires based on video milestones — start, progress percentages, and completion — genuinely useful if you're embedding the video content covered back in Module 15.
 
-![How Google Tag Manager Fits the Picture — from a visitor's click on your site through GTM into Google Analytics 4 and your reports](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-customization-advanced-features-gtm-infographic.svg)
+![How Google Tag Manager Fits the Picture — from a visitor's click on your site through GTM into Google Analytics 4 and your reports](https://smartgentools.com/blog-posts/images/module-customization-advanced-features-gtm-infographic.svg)
 
 ### Step-by-Step: Setting Up Your First GTM Container
 
@@ -315,7 +315,7 @@ For a simple, recurring report like the one above, a short written summary or a 
 
 Just as Module 8 and Module 12 both built the case for a simple, recurring monthly review habit, the same discipline applies here at the reporting level. Build a consistent cadence — monthly is a reasonable default for most small businesses — rather than only producing a report reactively when something goes wrong. A consistent rhythm of small, honest, action-oriented reports, built up over many months, will teach you far more about your real audience than any single deep-dive report ever could on its own.
 
-![The Data-to-Decision Cycle — Collect, Analyze, Identify Trends, Report and Recommend, Decide and Act, then collect again](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-customization-advanced-features-data-cycle-infographic.svg)
+![The Data-to-Decision Cycle — Collect, Analyze, Identify Trends, Report and Recommend, Decide and Act, then collect again](https://smartgentools.com/blog-posts/images/module-customization-advanced-features-data-cycle-infographic.svg)
 
 ---
 

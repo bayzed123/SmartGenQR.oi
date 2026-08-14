@@ -3,7 +3,7 @@ title: "On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginner
 description: "A complete, practical A to Z guide to on-page SEO optimization — conducting audits, optimizing title tags, meta descriptions, headers, images, URLs, internal links, 301 redirects, XML sitemaps, robots.txt, and monitoring page performance for real search results."
 keywords: "SmartGen, SEO, On-Page SEO, On-Page Optimization, Title Tag, Meta Description, Canonical Tag, Header Tag, XML Sitemap, Robots.txt, 301 Redirect, 404 Error Page, Internal Linking, Page Speed, Schema Markup, SmartGen Tools"
 date: 2026-07-02
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/on-page-seo-optimization-infographic.svg"
+image: "https://smartgentools.com/blog-posts/images/on-page-seo-optimization-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -23,7 +23,7 @@ July 02, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayez
 
 A complete, practical A to Z guide to on-page SEO optimization — conducting audits that reveal exactly what needs fixing, optimizing every HTML element from title tags to header structure, handling images and video correctly so they help rather than hurt your rankings, building a clean URL and internal link architecture, managing 301 redirects and 404 error pages, creating XML sitemaps and robots.txt files, and monitoring page performance so your results compound over time.
 
-![On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/on-page-seo-optimization-infographic.svg)
+![On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/on-page-seo-optimization-infographic.svg)
 
 ---
 
@@ -400,7 +400,7 @@ All four tools below are completely free, require no login and no registration, 
 
 The infographic below maps the complete on-page SEO optimization workflow — from initial audit through each optimization layer to performance monitoring and iteration. Created exclusively for this guide.
 
-![On-Page SEO Optimization Framework — 7-step workflow from audit to monitoring](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/on-page-seo-optimization-infographic.svg)
+![On-Page SEO Optimization Framework — 7-step workflow from audit to monitoring](https://smartgentools.com/blog-posts/images/on-page-seo-optimization-infographic.svg)
 
 ---
 

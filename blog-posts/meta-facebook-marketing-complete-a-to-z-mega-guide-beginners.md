@@ -3,7 +3,7 @@ title: "MODULE 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide f
 description: "The complete beginner-to-advanced guide to Meta (Facebook) Marketing: Page vs Profile vs Group, Facebook Marketplace and product catalogue, creating a Business Page, Business Manager and Ads Manager, every type of Facebook advertising explained, and how to create your first ad campaign step by step."
 keywords: "facebook marketing, meta marketing, facebook page vs profile vs group, facebook marketplace, facebook product catalogue, how to create facebook business page, business manager facebook, business suite facebook, ads manager facebook, facebook advertising types, facebook ad campaign, facebook ads for beginners, smartgen"
 date: 2026-06-30
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module4-meta-facebook-marketing-infographic.svg"
+image: "https://smartgentools.com/blog-posts/images/module4-meta-facebook-marketing-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -212,7 +212,7 @@ The Pixel is an essential tool for serious Facebook advertisers, but it deserves
 
 Below is an original infographic summarizing the Meta marketing ecosystem covered in this module — how Pages, Business Manager, Business Suite, Ads Manager, and Ad Accounts all connect together. This graphic was created specifically for this guide and is completely free of copyright restrictions.
 
-![Meta Facebook Marketing ecosystem — Page, Business Manager, Business Suite, Ads Manager, and Ad Account relationships](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module4-meta-facebook-marketing-infographic.svg)
+![Meta Facebook Marketing ecosystem — Page, Business Manager, Business Suite, Ads Manager, and Ad Account relationships](https://smartgentools.com/blog-posts/images/module4-meta-facebook-marketing-infographic.svg)
 
 ---
 

@@ -3,7 +3,7 @@ title: "Email Marketing — The Complete A to Z Mega Guide for Beginners - Smart
 description: "A complete, deeply detailed, beginner-friendly A to Z guide to email marketing — building and managing email lists the right way, campaign strategy, crafting content that actually gets opened, email automation and drip flows, the metrics and KPIs that matter in 2026, choosing the right tools, solving the deliverability challenges every sender now faces, and putting it all together into one real email marketing plan."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 16, Email Marketing, Email List Building, Email Campaign Strategy, Email Automation, Email Marketing Metrics, Email Marketing KPIs, Email Marketing Software, Email Deliverability, Email Marketing Plan, E-E-A-T"
 date: 2026-07-09
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-16-email-marketing-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/module-16-email-marketing-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -22,7 +22,7 @@ July 10, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, deeply detailed, beginner-friendly A to Z guide to email marketing — building and managing an email list the right way from day one, planning campaign strategy that actually maps to real goals, crafting content that gets opened and clicked rather than ignored, setting up the automation flows that consistently outperform one-off sends, understanding which metrics and KPIs actually matter now that open rate can no longer be trusted on its own, choosing the right tools for your stage of growth, solving the deliverability challenges that have quietly gotten stricter over the past two years, and pulling every piece into one real, working email marketing plan.
 
-![MODULE 16: Email Marketing — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-16-email-marketing-cover.svg)
+![MODULE 16: Email Marketing — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/module-16-email-marketing-cover.svg)
 
 ---
 
@@ -308,7 +308,7 @@ The single biggest failure mode for a beginner's email marketing plan isn't writ
 
 Below is an original infographic built specifically for this guide, mapping the complete email marketing system covered in this module — from list building and strategy, through content, automation, the metrics that actually matter in 2026, and the deliverability requirements every sender now has to meet.
 
-![Email Marketing infographic — list building, campaign strategy, automation, metrics, and deliverability for beginners 2026](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-16-email-marketing-infographic.svg)
+![Email Marketing infographic — list building, campaign strategy, automation, metrics, and deliverability for beginners 2026](https://smartgentools.com/blog-posts/images/module-16-email-marketing-infographic.svg)
 
 ---
 
