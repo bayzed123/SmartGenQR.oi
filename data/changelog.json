@@ -1,5 +1,10 @@
 [
   {
+    "title": "refactor: colocate verified blog images",
+    "date": "2026-08-14T21:31:27Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Delete blog-post/images/seo-friendly-content-workflow.svg",
     "date": "2026-08-14T21:16:35Z",
     "description": "Platform improvement and optimization."
