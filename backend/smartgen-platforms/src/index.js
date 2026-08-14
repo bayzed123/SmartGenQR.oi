@@ -472,8 +472,16 @@ async function handleLead(request, env, ctx) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
     return json({ ok: false, error: 'A valid email address is required.' }, 400);
   }
-  if (!String(lead.fullName || '').trim()) {
+
+  // A blog newsletter signup is email-only by design -- asking for a name
+  // there is exactly the extra friction that kills subscribe-rate. Every
+  // other lead type (audit reports, contact forms) still requires one.
+  const isNewsletter = lead.leadType === 'newsletter_subscribe';
+  if (!isNewsletter && !String(lead.fullName || '').trim()) {
     return json({ ok: false, error: 'Your name is required.' }, 400);
+  }
+  if (isNewsletter && !String(lead.fullName || '').trim()) {
+    lead.fullName = 'Newsletter Subscriber';
   }
 
   // Honeypot — real visitors never fill a hidden field.
