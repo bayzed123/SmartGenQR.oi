@@ -7,6 +7,11 @@ on:
     paths:
       - 'blog-posts/**/*.md'
   workflow_dispatch:
+    inputs:
+      post_path:
+        description: 'Optional blog Markdown path to publish for a live test'
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -34,4 +39,5 @@ jobs:
           LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
           GITHUB_EVENT_BEFORE: ${{ github.event.before }}
           GITHUB_SHA: ${{ github.sha }}
+          LINKEDIN_POST_PATH: ${{ inputs.post_path }}
         run: node scripts/share-new-blog-posts-linkedin.js

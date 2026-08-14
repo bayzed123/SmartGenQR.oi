@@ -10,6 +10,7 @@ const before = process.env.GITHUB_EVENT_BEFORE;
 const sha = process.env.GITHUB_SHA || 'HEAD';
 const siteUrl = 'https://smartgentools.com';
 const dryRun = process.env.LINKEDIN_DRY_RUN === 'true';
+const manualPath = process.env.LINKEDIN_POST_PATH;
 
 if (!token && !dryRun) {
   throw new Error('The GitHub secret LINKEDIN_PERSON_ID is missing. It must contain the LinkedIn access token.');
@@ -144,7 +145,12 @@ async function publish(post, personId) {
 }
 
 (async () => {
-  const files = changedBlogFiles();
+  let files = changedBlogFiles();
+  if (manualPath && fs.existsSync(manualPath)) {
+    console.log(`Manual test requested for: ${manualPath}`);
+    files = [manualPath];
+  }
+
   if (!files.length) {
     console.log('No newly added blog posts found in this push.');
     return;
