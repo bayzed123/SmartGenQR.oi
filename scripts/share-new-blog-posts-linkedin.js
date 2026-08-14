@@ -11,6 +11,7 @@ const sha = process.env.GITHUB_SHA || 'HEAD';
 const siteUrl = 'https://smartgentools.com';
 const dryRun = process.env.LINKEDIN_DRY_RUN === 'true';
 const manualPath = process.env.LINKEDIN_POST_PATH;
+const linkedinVersion = process.env.LINKEDIN_VERSION || '202607';
 
 if (!token && !dryRun) {
   throw new Error('The GitHub secret LINKEDIN_PERSON_ID is missing. It must contain the LinkedIn access token.');
@@ -64,6 +65,7 @@ async function linkedinRequest(url, options = {}) {
     ...options,
     headers: {
       Authorization: `Bearer ${token}`,
+      'Linkedin-Version': linkedinVersion,
       ...(options.headers || {}),
     },
   });
