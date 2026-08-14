@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await initBlogArchive();
   } else if (relatedPostsGrid) {
     await initRelatedPosts();
+    initReviews();
   }
 
   // Present on both the archive page and every single post page.
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 // Configured once in assets/js/app.js; a page-level <meta> can override it.
 // Same resolution order as chatbot.js / seo-audit-tool/audit.js so every
 // frontend that talks to the Worker agrees on where it lives.
-const NEWSLETTER_API_BASE = (function () {
+const BLOG_API_BASE = (function () {
   const meta = document.querySelector('meta[name="smartgen-api"]');
   const configured =
     (meta && meta.getAttribute('content')) ||
@@ -82,7 +83,7 @@ function handleNewsletterSubmit(e) {
   if (emailInput) emailInput.disabled = true;
   setFeedback('', null);
 
-  fetch(NEWSLETTER_API_BASE + '/api/lead', {
+  fetch(BLOG_API_BASE + '/api/lead', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -401,4 +402,213 @@ function escapeHtml(text) {
 function formatDate(dateStr) {
   const options = { year: 'numeric', month: 'short', day: 'numeric' };
   return new Date(dateStr).toLocaleDateString('en-US', options);
+}
+
+/* ==========================================
+   PER-POST RATINGS & REVIEWS
+   ========================================== */
+
+const REVIEW_AVATAR_COLORS = ['#2563eb', '#ff3b5c', '#f59e0b', '#7c3aed', '#16a34a', '#fb923c', '#0ea5e9', '#ec4899'];
+
+function reviewStarSVGs(filled, total) {
+  total = total || 5;
+  let out = '';
+  for (let i = 1; i <= total; i++) {
+    out +=
+      '<svg viewBox="0 0 24 24" fill="' +
+      (i <= filled ? 'currentColor' : 'none') +
+      '" stroke="currentColor" stroke-width="1.6"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+  }
+  return out;
+}
+
+function reviewAvatarFor(name) {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  const color = REVIEW_AVATAR_COLORS[Math.abs(hash) % REVIEW_AVATAR_COLORS.length];
+  const initial = (name.trim()[0] || '?').toUpperCase();
+  return { color, initial };
+}
+
+/**
+ * Adds a "Rate & Review This Post" section near the bottom of a blog post:
+ * average rating + count, a star-picker submission form, and the review
+ * list, all backed by the Worker's per-post /api/reviews endpoint (a
+ * separate store from the sitewide testimonial widget on /review/ and
+ * /tools/, which has no concept of "which page" a review belongs to).
+ */
+function initReviews() {
+  const slugMatch = window.location.pathname.match(/\/blog\/([^/]+)\/?$/);
+  const slug = slugMatch ? slugMatch[1] : null;
+  if (!slug) return;
+
+  const anchor =
+    document.querySelector('.related-tools-mini') || document.querySelector('.blog-related-posts');
+  if (!anchor) return;
+
+  anchor.insertAdjacentHTML(
+    'afterend',
+    `<section class="blog-reviews reveal-up" data-post-slug="${slug}">
+      <h2 class="blog-reviews-title">⭐ Rate &amp; Review This Post</h2>
+      <div class="blog-reviews-summary">
+        <div>
+          <div class="blog-reviews-avg" id="reviewsAvg">–</div>
+        </div>
+        <div>
+          <div class="blog-reviews-stars" id="reviewsStarsBig">${reviewStarSVGs(0)}</div>
+          <div class="blog-reviews-count" id="reviewsCount">No reviews yet</div>
+        </div>
+      </div>
+      <form class="blog-review-form" id="reviewForm">
+        <h4>Share your thoughts</h4>
+        <div class="blog-review-star-input" id="reviewStarInput">
+          ${[1, 2, 3, 4, 5]
+            .map((v) => `<button type="button" data-v="${v}" aria-label="${v} star${v > 1 ? 's' : ''}">${reviewStarSVGs(1, 1)}</button>`)
+            .join('')}
+        </div>
+        <div class="blog-review-form-row">
+          <input type="text" id="reviewName" placeholder="Your name (optional)" maxlength="60">
+        </div>
+        <div class="blog-review-form-row">
+          <textarea id="reviewComment" placeholder="What did you think of this post?" maxlength="800" required></textarea>
+        </div>
+        <input type="text" id="reviewHoneypot" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" class="newsletter-hp">
+        <button type="submit" id="reviewSubmitBtn">Submit Review</button>
+        <p class="blog-review-feedback" id="reviewFeedback" role="status" aria-live="polite"></p>
+      </form>
+      <div class="blog-review-list" id="reviewList">
+        <p class="blog-review-empty">Loading reviews…</p>
+      </div>
+    </section>`
+  );
+
+  setTimeout(handleScrollReveal, 50);
+  wireReviewForm(slug);
+  loadReviews(slug);
+}
+
+function wireReviewForm(slug) {
+  const form = document.getElementById('reviewForm');
+  const starInput = document.getElementById('reviewStarInput');
+  const feedback = document.getElementById('reviewFeedback');
+  let selectedStars = 0;
+
+  starInput.querySelectorAll('button').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      selectedStars = Number(btn.dataset.v);
+      starInput.querySelectorAll('button').forEach((b) => {
+        const active = Number(b.dataset.v) <= selectedStars;
+        b.classList.toggle('active', active);
+        b.innerHTML = reviewStarSVGs(active ? 1 : 0, 1);
+      });
+    });
+  });
+
+  const setFeedback = (message, kind) => {
+    feedback.textContent = message;
+    feedback.classList.remove('is-success', 'is-error');
+    if (kind) feedback.classList.add(kind);
+  };
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('reviewName').value.trim();
+    const comment = document.getElementById('reviewComment').value.trim();
+    const honeypot = document.getElementById('reviewHoneypot').value;
+    const button = document.getElementById('reviewSubmitBtn');
+
+    if (selectedStars === 0) {
+      setFeedback('Please choose a star rating.', 'is-error');
+      return;
+    }
+    if (comment.length < 3) {
+      setFeedback('Please write a short review before submitting.', 'is-error');
+      return;
+    }
+
+    button.disabled = true;
+    const originalText = button.textContent;
+    button.textContent = 'Submitting…';
+    setFeedback('', null);
+
+    fetch(BLOG_API_BASE + '/api/reviews', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        slug: slug,
+        name: name,
+        rating: selectedStars,
+        comment: comment,
+        company_website: honeypot,
+      }),
+    })
+      .then((res) => res.json().catch(() => ({ ok: false, error: 'The server returned an unreadable response.' })))
+      .then((data) => {
+        if (data && data.ok) {
+          setFeedback('✅ Thanks for the review!', 'is-success');
+          form.reset();
+          selectedStars = 0;
+          starInput.querySelectorAll('button').forEach((b) => {
+            b.classList.remove('active');
+            b.innerHTML = reviewStarSVGs(0, 1);
+          });
+          loadReviews(slug);
+        } else {
+          setFeedback((data && data.error) || 'Something went wrong. Please try again.', 'is-error');
+        }
+      })
+      .catch(() => setFeedback('Network error — please check your connection and try again.', 'is-error'))
+      .finally(() => {
+        button.disabled = false;
+        button.textContent = originalText;
+      });
+  });
+}
+
+function loadReviews(slug) {
+  const listEl = document.getElementById('reviewList');
+  fetch(BLOG_API_BASE + '/api/reviews?slug=' + encodeURIComponent(slug))
+    .then((res) => res.json())
+    .then((data) => renderReviews(data.reviews || [], data.average || 0))
+    .catch(() => {
+      if (listEl) listEl.innerHTML = '<p class="blog-review-empty">Reviews are being set up — check back soon.</p>';
+    });
+}
+
+function renderReviews(reviews, average) {
+  const avgEl = document.getElementById('reviewsAvg');
+  const starsEl = document.getElementById('reviewsStarsBig');
+  const countEl = document.getElementById('reviewsCount');
+  const listEl = document.getElementById('reviewList');
+  if (!avgEl || !starsEl || !countEl || !listEl) return;
+
+  if (reviews.length === 0) {
+    avgEl.textContent = '–';
+    starsEl.innerHTML = reviewStarSVGs(0);
+    countEl.textContent = 'No reviews yet';
+    listEl.innerHTML = '<p class="blog-review-empty">No reviews yet — be the first to share yours!</p>';
+    return;
+  }
+
+  avgEl.textContent = average.toFixed(1);
+  starsEl.innerHTML = reviewStarSVGs(Math.round(average));
+  countEl.textContent = 'based on ' + reviews.length + (reviews.length === 1 ? ' review' : ' reviews');
+
+  listEl.innerHTML = reviews
+    .map((r) => {
+      const avatar = reviewAvatarFor(r.name);
+      return `
+    <div class="blog-review-card">
+      <div class="blog-review-avatar" style="background:${avatar.color}">${avatar.initial}</div>
+      <div class="blog-review-body">
+        <div class="blog-review-top">
+          <span class="blog-review-name">${escapeHtml(r.name)}</span>
+          <span class="blog-reviews-stars">${reviewStarSVGs(r.rating)}</span>
+        </div>
+        <div class="blog-review-date">${r.date ? formatDate(r.date) : ''}</div>
+        <p class="blog-review-comment">${escapeHtml(r.comment)}</p>
+      </div>
+    </div>`;
+    })
+    .join('');
 }

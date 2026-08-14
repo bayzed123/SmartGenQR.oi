@@ -604,6 +604,215 @@
   color: var(--blog-text-secondary);
 }
 
+/* ============ PER-POST REVIEWS ============ */
+
+.blog-reviews {
+  margin-top: 3rem;
+}
+
+.blog-reviews-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--blog-text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.blog-reviews-summary {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: var(--blog-glass-bg);
+  border: 1px solid var(--blog-glass-border);
+  border-radius: 16px;
+  margin-bottom: 1.75rem;
+}
+
+.blog-reviews-avg {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--blog-text-primary);
+  line-height: 1;
+}
+
+.blog-reviews-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.blog-reviews-stars svg {
+  width: 18px;
+  height: 18px;
+  color: #f59e0b;
+}
+
+.blog-reviews-count {
+  font-size: 0.85rem;
+  color: var(--blog-text-secondary);
+  margin-top: 0.2rem;
+}
+
+.blog-review-form {
+  background: var(--blog-glass-bg);
+  border: 1px solid var(--blog-glass-border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.blog-review-form h4 {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--blog-text-primary);
+}
+
+.blog-review-star-input {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 1rem;
+}
+
+.blog-review-star-input button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--blog-text-light);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.blog-review-star-input button svg {
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+}
+
+.blog-review-star-input button:hover,
+.blog-review-star-input button.active {
+  color: #f59e0b;
+  transform: scale(1.1);
+}
+
+.blog-review-form-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.blog-review-form input[type="text"],
+.blog-review-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--blog-glass-border);
+  background: transparent;
+  color: var(--blog-text-primary);
+  font-family: inherit;
+  font-size: 0.92rem;
+  resize: vertical;
+}
+
+.blog-review-form textarea {
+  min-height: 90px;
+}
+
+.blog-review-form button[type="submit"] {
+  background: linear-gradient(135deg, var(--blog-primary), var(--blog-secondary));
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.75rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.blog-review-form button[type="submit"]:hover {
+  transform: translateY(-2px);
+}
+
+.blog-review-form button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.blog-review-feedback {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-height: 1.2em;
+}
+
+.blog-review-feedback.is-success { color: #16a34a; }
+.blog-review-feedback.is-error { color: #dc2626; }
+
+.blog-review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.blog-review-card {
+  display: flex;
+  gap: 0.9rem;
+  padding: 1.25rem;
+  background: var(--blog-glass-bg);
+  border: 1px solid var(--blog-glass-border);
+  border-radius: 14px;
+}
+
+.blog-review-avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.blog-review-body { flex: 1; min-width: 0; }
+
+.blog-review-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+
+.blog-review-name {
+  font-weight: 700;
+  color: var(--blog-text-primary);
+  font-size: 0.92rem;
+}
+
+.blog-review-date {
+  font-size: 0.78rem;
+  color: var(--blog-text-light);
+}
+
+.blog-review-comment {
+  margin: 0.3rem 0 0;
+  color: var(--blog-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.blog-review-empty {
+  color: var(--blog-text-light);
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
 /* ============ NEWSLETTER FORM (real submit-handler feedback) ============ */
 
 /* Honeypot -- present in the DOM and tabbable-off for bots, invisible and
