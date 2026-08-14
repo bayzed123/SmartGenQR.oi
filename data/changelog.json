@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: add LinkedIn API version header",
+    "date": "2026-08-14T19:06:16Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: support manual LinkedIn article test",
     "date": "2026-08-14T19:05:23Z",
     "description": "Platform improvement and optimization."
