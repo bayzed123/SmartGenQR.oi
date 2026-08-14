@@ -8,7 +8,7 @@ tags:
   - Content Marketing
   - Search Intent
   - Digital Marketing
-image: "https://smartgentools.com/blog-post/images/seo-friendly-content-workflow.svg"
+image: "https://smartgentools.com/blog-post/images/seo-friendly-content-workflow.png"
 author: "Sayad Md Bayezid Hosan"
 category: "Search Engine Optimization"
 ---
@@ -19,7 +19,7 @@ Writing content that performs well in search does not require you to become a fu
 
 This guide shows you how to create that process. It starts before you write a headline and continues after publication, when you study what readers actually do on the page. The goal is not to write for an algorithm instead of people. The goal is to make genuinely useful content easier for people and search engines to discover, understand, and trust.
 
-![SEO-friendly content workflow showing the path from search intent to useful content, optimization, publication, and improvement](https://smartgentools.com/blog-post/images/seo-friendly-content-workflow.svg)
+![SEO-friendly content workflow showing the path from search intent to useful content, optimization, publication, and improvement](https://smartgentools.com/blog-post/images/seo-friendly-content-workflow.png)
 
 ## What SEO-friendly content really means
 
