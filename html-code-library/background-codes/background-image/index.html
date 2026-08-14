@@ -372,20 +372,6 @@
 
         function update() {
             const url = $("bg-img-code").value; const code = `<body style="background-image: url('${url}');">
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent-banner">
-        <div class="cookie-container">
-            <p class="cookie-text">
-                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" class="cookie-link">Privacy Policy</a> and <a href="/cookies/" class="cookie-link">Cookie Policy</a>.
-            </p>
-            <div class="cookie-actions">
-                <a href="/privacy/" class="cookie-link">Learn More</a>
-                <button id="accept-cookies" class="cookie-btn">Accept</button>
-            </div>
-        </div>
-    </div>
-
-
     <!-- Cookie logic handled by app.js -->
 
 </body>`; $("code-output").textContent = code; $("preview-box").style.backgroundImage = `url(${url})`;
