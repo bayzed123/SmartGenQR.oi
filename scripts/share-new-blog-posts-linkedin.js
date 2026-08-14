@@ -14,8 +14,8 @@ const dryRun = process.env.LINKEDIN_DRY_RUN === 'true';
 const manualPath = process.env.LINKEDIN_POST_PATH;
 const linkedinVersion = process.env.LINKEDIN_VERSION || '202607';
 
-if ((!token || !memberId) && !dryRun) {
-  throw new Error('Required GitHub secrets are missing: LINKEDIN_PERSON_ID must contain the access token and LINKEDIN_MEMBER_ID must contain the numeric member ID.');
+if (!token && !dryRun) {
+  throw new Error('Required GitHub secret is missing: LINKEDIN_PERSON_ID must contain the OAuth access token.');
 }
 
 function changedBlogFiles() {
@@ -85,6 +85,24 @@ async function linkedinRequest(url, options = {}) {
   return { data, headers: response.headers };
 }
 
+async function resolvePersonId() {
+  if (dryRun) return 'dry-run-person';
+
+  try {
+    const profile = await linkedinRequest('https://api.linkedin.com/v2/userinfo');
+    if (profile.data && profile.data.sub) {
+      console.log('LinkedIn member identity resolved automatically from the active OAuth token.');
+      return profile.data.sub;
+    }
+  } catch (error) {
+    if (!memberId) throw error;
+    console.log('Automatic identity lookup was unavailable; using LINKEDIN_MEMBER_ID fallback.');
+  }
+
+  if (memberId) return memberId;
+  throw new Error('LinkedIn did not return a member identity and LINKEDIN_MEMBER_ID is not configured.');
+}
+
 async function publish(post, personId) {
   if (dryRun) {
     console.log(`[DRY RUN] Would publish: ${post.title}`);
@@ -141,7 +159,7 @@ async function publish(post, personId) {
   }
 
   console.log(`Found ${files.length} newly added blog post(s): ${files.join(', ')}`);
-  const personId = dryRun ? 'dry-run-person' : memberId;
+  const personId = await resolvePersonId();
   for (const file of files) {
     const source = fs.readFileSync(path.resolve(file), 'utf8');
     const attributes = frontMatter(source);
