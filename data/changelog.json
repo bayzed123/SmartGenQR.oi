@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: support manual LinkedIn article test",
+    "date": "2026-08-14T19:05:23Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: detect newly added blog posts in action",
     "date": "2026-08-14T18:59:18Z",
     "description": "Platform improvement and optimization."
