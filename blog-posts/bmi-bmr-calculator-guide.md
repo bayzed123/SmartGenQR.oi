@@ -6,6 +6,7 @@ description: "Calculate your BMI and BMR instantly with SmartGen's free online c
 image: "https://i.ibb.co/ksgMbpZj/IMG-5653.jpg"
 tags: ["BMI Calculator", "BMR Calculator", "Body Mass Index", "Basal Metabolic Rate", "Calorie Calculator", "Weight Loss", "Health & Fitness", "Free Health Tool"]
 category: "Health & Fitness Tools"
+slug: "bmi-and-bmr-calculator-the-complete-guide-to-body-mass-index-and-basal-metabolic-rate-in-2026"
 ---
 
 > ✅ **Fact-Checked by Sayad Md Bayezid Hosan** — Health & Fitness Researcher, Digital Tool Developer & Founder of SmartGen Tools | Last Updated: June 27, 2026

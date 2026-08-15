@@ -6,6 +6,7 @@ date: "2026-05-28"
 image: "https://i.ibb.co/vv4wXW0C/IMG-4064.jpg"
 author: "SmartGen Editorial Team"
 tags: ["AI Tools", "SmartGen"]
+slug: "smartgen-ai-vocal-remover-the-vision-behind-100percent-free-private-audio-stem-splitting"
 ---
 # SmartGen AI Vocal Remover: The Vision Behind 100% Free, Private Audio Stem Splitting
 

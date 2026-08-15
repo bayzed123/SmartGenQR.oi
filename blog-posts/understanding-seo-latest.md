@@ -7,6 +7,7 @@ tags:
   - Programmatic SEO
   - Technical SEO
   - XML Sitemap
+date: "2026-07-14"
 ---
 
 # Dynamic Sitemap Generation with Real-time Updates: A Programmatic SEO Approach

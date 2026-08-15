@@ -51,10 +51,18 @@ function readBlogPosts() {
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { attributes, body } = matter(fileContent);
 
-    const slug = slugify(attributes.title || file.replace('.md', ''), {
-      lower: true,
-      strict: true,
-    });
+    // A post's URL is normally derived from its title, but a title can be
+    // reworded long after the page is live and indexed. Deriving the slug
+    // again at that point silently publishes the post at a NEW URL and
+    // strands the old one as an orphaned duplicate -- which is how several
+    // posts here ended up with two near-identical URLs. An explicit
+    // `slug:` in the front matter pins the URL so the title stays editable.
+    const slug = attributes.slug
+      ? String(attributes.slug).trim()
+      : slugify(attributes.title || file.replace('.md', ''), {
+          lower: true,
+          strict: true,
+        });
 
     posts.push({
       slug,

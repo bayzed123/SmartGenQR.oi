@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is Python? A Complete Beginner Guide - SmartGen Blog</title>
+    <meta name="description" content="What Python actually is, its history and versions, why beginners choose it, real-world uses, top frameworks, and how to run your first code today.">
+    <meta name="author" content="Sayad Md Bayezid Hosan">
+    <meta name="keywords" content="SmartGen, Python Course, Class 02, Python, Programming, Beginners">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="What Is Python? A Complete Beginner Guide">
+    <meta property="og:description" content="What Python actually is, its history and versions, why beginners choose it, real-world uses, top frameworks, and how to run your first code today.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-02-cover.svg">
+    <meta property="og:url" content="https://smartgentools.com/blog/what-is-python-a-complete-beginner-guide/">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="Tue Jul 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)">
+    <meta property="article:author" content="Sayad Md Bayezid Hosan">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is Python? A Complete Beginner Guide">
+    <meta name="twitter:description" content="What Python actually is, its history and versions, why beginners choose it, real-world uses, top frameworks, and how to run your first code today.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-02-cover.svg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://smartgentools.com/blog/what-is-python-a-complete-beginner-guide/">
+    
+    <!-- HTTPS Redirect Script -->
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace('https:' + location.href.substring(location.protocol.length));
+        }
+    </script>
+    
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "What Is Python? A Complete Beginner Guide",
+        "description": "What Python actually is, its history and versions, why beginners choose it, real-world uses, top frameworks, and how to run your first code today.",
+        "image": "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-02-cover.svg",
+        "datePublished": "Tue Jul 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "author": {
+            "@type": "Person",
+            "name": "Sayad Md Bayezid Hosan",
+            "url": "https://smartgentools.com/about/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "SmartGen",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://smartgentools.com/assets/images/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <!-- JSON-LD BreadcrumbList Schema (rich-result breadcrumb trail) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://smartgentools.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://smartgentools.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "What Is Python? A Complete Beginner Guide", "item": "https://smartgentools.com/blog/what-is-python-a-complete-beginner-guide/" }
+        ]
+    }
+    </script>
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/blog.css">
+    <link rel="stylesheet" href="../../assets/css/ads.css">
+    
+    <!-- Inline Styles for Print and Share Modal -->
+    <style>
+        /* Print Styles */
+        @media print {
+            header, footer, .newsletter-section, .blog-related-posts, #print-button, #share-button, #main-header, #main-footer, .share-modal {
+                display: none !important;
+            }
+            body { background: white; color: black; }
+            .blog-post-container { max-width: 100%; padding: 0; }
+            .blog-post-article { box-shadow: none; border: none; }
+            .blog-post-title { page-break-after: avoid; }
+            .blog-post-content { color: black; }
+            .blog-post-content a { color: #0066cc; text-decoration: underline; }
+            img { max-width: 100%; height: auto; page-break-inside: avoid; }
+            h2, h3, h4 { page-break-after: avoid; page-break-inside: avoid; }
+            p { orphans: 3; widows: 3; }
+            pre { background: #f5f5f5 !important; border: 1px solid #ddd !important; page-break-inside: avoid; }
+        }
+
+        /* Share Modal Styles */
+        .share-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .share-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .share-modal-content {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            max-width: 350px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        .share-modal.show .share-modal-content {
+            transform: translateY(0);
+        }
+        .share-close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 28px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .share-close:hover { color: #000; }
+        .share-modal h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+            font-size: 1.5rem;
+        }
+        .share-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .share-btn {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .share-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+        .share-btn.fb { background: #1877F2; }
+        .share-btn.tw { background: #000000; }
+        .share-btn.li { background: #0A66C2; }
+        .share-btn.wa { background: #25D366; }
+        .share-btn.copy { background: #4b5563; }
+    </style>
+    
+    <!-- Scripts -->
+    <script src="../../assets/js/app.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/blog.js" defer></script>
+
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="blog-post-container">
+        <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span class="blog-breadcrumb-sep">/</span>
+            <a href="/blog/">Blog</a>
+            <span class="blog-breadcrumb-sep">/</span>
+            <span class="blog-breadcrumb-current">What Is Python? A Complete Beginner Guide</span>
+        </nav>
+        <article class="blog-post-article reveal-up">
+            <header class="blog-post-header">
+                <div class="blog-post-meta">
+                    <time datetime="Tue Jul 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)">July 14, 2026</time>
+                    <span class="meta-separator">•</span>
+                    <span class="blog-post-category">General</span>
+                    <span class="meta-separator">•</span>
+                    <span class="blog-post-author">By Sayad Md Bayezid Hosan</span>
+                </div>
+                <h1 class="blog-post-title">What Is Python? A Complete Beginner Guide</h1>
+
+<div class="header-ads-container">
+  <div class="desktop-only"><div class="ad-cls-wrapper" id="ad-wrapper-leaderboard728x90" style="min-height: 90px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f9d4f2f3a29a9dcfb43dddf1fd33eb88',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f9d4f2f3a29a9dcfb43dddf1fd33eb88/invoke.js"></script>
+</div></div>
+  <div class="mobile-only"><div class="ad-cls-wrapper" id="ad-wrapper-mobile320x50" style="min-height: 50px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : '6af746fdd2244652b728e73b1a70db61',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>
+</div></div>
+</div>
+                <p class="blog-post-excerpt">What Python actually is, its history and versions, why beginners choose it, real-world uses, top frameworks, and how to run your first code today.</p>
+            </header>
+
+            <!-- Author Profile Section - Right after title (Auto-inserted if not manually placed) -->
+            
+
+            <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-02-cover.svg" alt="What Is Python? A Complete Beginner Guide" class="blog-post-featured-image reveal-up delay-100">
+
+            <div class="blog-post-content reveal-up delay-200">
+                <!-- Slim Minimalist Author Profile Box -->
+<div class="author-box" style="display: flex; align-items: center; margin: 2rem 0; padding: 0.75rem 0; gap: 0.75rem;">
+    <!-- Profile Picture -->
+    <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/smartgentools-blog-bayezid-profile.jpg" 
+         alt="Sayad Md Bayezid Hosan" 
+         style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+    
+    <!-- Info -->
+    <div class="author-info" style="flex: 1;">
+        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
+    </div>
+</div>
+
+<p>July 14, 2026 • General • By <a href="www.sayadbayezid.com">Sayad Md Bayezid Hosan</a></p>
+<p>A complete, step-by-step beginner&#39;s guide to Python — what Python actually is, its full history from 1991 to today&#39;s Python 3.14, why so many beginners choose it as their first language, the real-world applications and industries built on it, the most popular frameworks and libraries, and exactly how to run your first line of Python code and understand what happens when you do.</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+<p> <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-02-cover.svg" alt="What Is Python? A Complete Beginner Guide — cover image"></p>
+<hr>
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#what-is-python">What Is Python?</a></li>
+<li><a href="#history-versions-and-evolution">History, Versions, and Evolution</a></li>
+<li><a href="#why-learn-python">Why Learn Python?</a></li>
+<li><a href="#applications-and-use-cases">Applications and Use Cases</a></li>
+<li><a href="#popular-frameworks-and-libraries">Popular Frameworks and Libraries</a></li>
+<li><a href="#running-python-code-and-understanding-its-execution">Running Python Code and Understanding Its Execution</a></li>
+<li><a href="#quick-reference-glossary">Quick-Reference Glossary</a></li>
+<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+</ol>
+<p><em>(Tap any line to jump straight to that section.)</em></p>
+<hr>
+<h2>Continuing From Class 01</h2>
+<p>This class builds directly on <a href="https://smartgentools.com/blog/python-course-class-01-orientation-and-setup/">Class 01: Orientation and Setup</a> — if you haven&#39;t already got Python installed on your computer, that&#39;s the place to start before running the code examples below.</p>
+<hr>
+<h2>What Is Python?</h2>
+<h3>The Problem</h3>
+<p>You&#39;ve heard &quot;learn Python&quot; recommended everywhere — for jobs, for AI, for automating boring tasks — but nobody actually stopped to explain what Python <em>is</em>, in plain language, before telling you to go learn it.</p>
+<h3>The Solution: A Plain-Language Definition</h3>
+<p><strong>Python</strong> is a high-level, general-purpose programming language known for code that reads almost like plain English. &quot;High-level&quot; means it hides most of the complicated technical detail a computer actually needs, letting you focus on solving your actual problem instead of managing memory or low-level machine instructions by hand. &quot;General-purpose&quot; means it isn&#39;t built for just one job — the same language builds websites, analyzes data, automates tasks, and trains AI models, all covered fully in Section 4.</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+<p>Here&#39;s the entire, complete, real, runnable difference in action — this single line is a fully working Python program:</p>
+<pre><code class="language-python">print(&quot;Hello, World!&quot;)
+</code></pre>
+<p>Save that single line in a file, run it (Section 6 shows you exactly how), and it prints <code>Hello, World!</code> to your screen. No extra setup code, no complicated boilerplate — just the instruction itself.</p>
+<h3>Common Mistake to Avoid</h3>
+<p>Assuming Python&#39;s simple appearance means it&#39;s &quot;less powerful&quot; than more complex-looking languages. Simplicity in Python is a deliberate design choice, not a limitation — the same language builds everything from quick personal scripts to systems running at massive scale, covered fully in Section 4.</p>
+<hr>
+<h2>History, Versions, and Evolution</h2>
+<h3>The Problem</h3>
+<p>Search around and you&#39;ll find references to &quot;Python 2&quot; and &quot;Python 3&quot; that sound incompatible, plus a confusing string of version numbers — and nobody wants to accidentally learn an outdated version by mistake.</p>
+<h3>The Solution: The Real Timeline</h3>
+<p><img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-02-timeline-infographic.svg" alt="Python&#39;s Journey: 1991 to Today — from Guido van Rossum&#39;s first release through Python 2, the Python 3 reset, and today&#39;s Python 3.14"></p>
+<p>Python was created by <strong>Guido van Rossum</strong> and first released in <strong>1991</strong>. The name has nothing to do with the snake — van Rossum was reading scripts from the British comedy group <strong>Monty Python&#39;s Flying Circus</strong> at the time and simply liked the name.</p>
+<p><strong>Python 2.0</strong> arrived in 2000, adding features like list comprehensions and a cycle-detecting garbage collector, and it became hugely popular over the following decade. <strong>Python 3.0</strong>, released in 2008, was a deliberate, intentionally-not-fully-backward-compatible reset — fixing design inconsistencies (particularly around text and Unicode handling) that couldn&#39;t be fixed cleanly within Python 2 itself. This created a genuinely long transition period where both versions were in active, parallel use. <strong>Python 2 officially reached end of life on January 1, 2020</strong> and no longer receives any updates, including security fixes — any tutorial still teaching Python 2 syntax today is teaching a retired version.</p>
+<p>As of this writing, <strong>Python 3.14</strong> is the current stable release, with <strong>Python 3.13</strong> still extremely common and fully supported in production environments. Every version since Python 3.0 has stayed within that same Python 3 family — the syntax you&#39;ll learn in this course applies directly across all of them.</p>
+<h3>Common Mistake to Avoid</h3>
+<p>Following an old tutorial that uses Python 2 syntax (most visibly, <code>print &quot;Hello&quot;</code> without parentheses, instead of the Python 3 <code>print(&quot;Hello&quot;)</code> you saw in Section 1). If you see that older syntax anywhere, you&#39;re looking at retired, unsupported material.</p>
+<hr>
+<h2>Why Learn Python?</h2>
+<h3>The Problem</h3>
+<p>With dozens of programming languages competing for a beginner&#39;s first choice, it&#39;s fair to ask why Python specifically deserves your time over any other option.</p>
+<h3>The Solution: Four Genuine, Concrete Reasons</h3>
+<p><strong>Readability lowers the barrier to actually finishing your first project.</strong> Python&#39;s clean, close-to-English syntax means beginners spend less time fighting confusing punctuation and more time solving the actual problem in front of them.</p>
+<p><strong>The community and job market are both enormous.</strong> Python consistently ranks among the most widely used programming languages in the world, meaning an answer to nearly any beginner question already exists, and Python skills appear across a genuinely wide range of job listings, well beyond software engineering alone.</p>
+<p><strong>One language covers remarkably different careers</strong>, as Section 4 covers in full — you can go from this exact class straight into web development, data analysis, or automation without switching languages.</p>
+<p><strong>The library ecosystem means you rarely start from zero.</strong> Section 5 covers the specific frameworks, but the underlying point is this: whatever you&#39;re trying to build, there&#39;s very likely already a well-tested Python library that does most of the hard work for you.</p>
+<hr>
+<h2>Applications and Use Cases</h2>
+<h3>The Problem</h3>
+<p>&quot;Python can do anything&quot; is technically true and completely unhelpful — you need to actually see the real, distinct careers and projects it powers to understand where you might be headed.</p>
+<h3>The Solution: Five Genuinely Different Paths</h3>
+<p><img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-02-applications-infographic.svg" alt="What People Actually Build With Python — web development, data science, AI and machine learning, automation, and game development"></p>
+<p><strong>Web development</strong> — full websites and APIs, from a small personal project to platforms operating at massive global scale. <strong>Data science</strong> — cleaning, analyzing, and visualizing real-world data to answer genuine business questions. <strong>AI and machine learning</strong> — training models that predict, classify, recommend, and generate, currently one of the fastest-growing areas of the entire field. <strong>Automation and scripting</strong> — handling repetitive, boring tasks automatically, often the very first genuinely useful thing a beginner builds. <strong>Game development</strong> — particularly strong for 2D games and fast prototyping.</p>
+<h3>Common Mistake to Avoid</h3>
+<p>Feeling like you need to pick one single path before you&#39;ve even finished this course. Section 6 gets you running real code today; which of these five directions you specialize in can wait until you&#39;ve built a genuine feel for the language itself.</p>
+<hr>
+<h2>Popular Frameworks and Libraries</h2>
+<h3>The Problem</h3>
+<p>Python itself is just the core language — the frameworks and libraries built on top of it are what actually let you build real, complete projects quickly, and a beginner needs to know which names actually matter.</p>
+<h3>The Solution: The Names Worth Knowing, Mapped to Section 4</h3>
+<p>For <strong>web development</strong>: <strong>Django</strong>, a full-featured framework handling almost everything a large site needs out of the box; <strong>Flask</strong>, a lighter, more flexible alternative for smaller projects; and <strong>FastAPI</strong>, a newer framework built specifically for fast, modern APIs.</p>
+<p>For <strong>data science</strong>: <strong>Pandas</strong>, for organizing and analyzing structured, table-like data; and <strong>NumPy</strong>, for fast numerical computing underneath it.</p>
+<p>For <strong>AI and machine learning</strong>: <strong>TensorFlow</strong> and <strong>PyTorch</strong>, the two dominant deep learning frameworks, alongside <strong>scikit-learn</strong> for more traditional machine learning tasks.</p>
+<p>For <strong>game development</strong>: <strong>Pygame</strong>, the standard starting point for 2D games in Python.</p>
+<p>For <strong>automation and scripting</strong>: much of this runs on Python&#39;s own built-in standard library, supplemented by libraries like <strong>Requests</strong> (for talking to websites and APIs) and <strong>BeautifulSoup</strong> (for reading and extracting data from web pages).</p>
+<h3>Common Mistake to Avoid</h3>
+<p>Trying to learn a framework like Django before you&#39;re genuinely comfortable with core Python itself. Every framework in this section is built on top of the fundamentals this course is teaching first — skipping ahead usually just means backtracking later.</p>
+<hr>
+<h2>Running Python Code and Understanding Its Execution</h2>
+<h3>The Problem</h3>
+<p>You understand what Python is conceptually, but you haven&#39;t actually run a single line of it yet — and that gap between &quot;reading about it&quot; and &quot;doing it&quot; is exactly where most beginners stall out.</p>
+<h3>The Solution: Three Ways to Run Python, Step by Step</h3>
+<h3>Step-by-Step: Using the Interactive Shell (REPL)</h3>
+<p>The fastest way to try Python with zero setup beyond installation is the <strong>REPL</strong> (Read-Eval-Print Loop) — an interactive shell that runs one line at a time.</p>
+<ol>
+<li>Open your terminal or command prompt.</li>
+<li>Type <code>python3</code> (or <code>python</code> on some Windows setups) and press Enter.</li>
+<li>You&#39;ll see a prompt like this, confirming your installed version:</li>
+</ol>
+<pre><code>Python 3.14.0 (main, Oct  7 2025, 00:00:00)
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</code></pre>
+<ol start="4">
+<li>Type a line of code directly and press Enter to see it run immediately:</li>
+</ol>
+<pre><code class="language-python">&gt;&gt;&gt; print(&quot;Hello, World!&quot;)
+Hello, World!
+&gt;&gt;&gt; 2 + 2
+4
+</code></pre>
+<ol start="5">
+<li>Type <code>exit()</code> and press Enter to leave the shell.</li>
+</ol>
+<h3>Step-by-Step: Writing and Running a Real Script</h3>
+<ol>
+<li>Open any plain text editor and create a new file named exactly <code>hello.py</code>.</li>
+<li>Copy this complete, working example into it:</li>
+</ol>
+<pre><code class="language-python"># hello.py
+name = input(&quot;What is your name? &quot;)
+print(f&quot;Hello, {name}! Welcome to Python.&quot;)
+</code></pre>
+<ol start="3">
+<li>Save the file.</li>
+<li>Open your terminal, navigate to the folder containing <code>hello.py</code>, and run:</li>
+</ol>
+<pre><code>python3 hello.py
+</code></pre>
+<ol start="5">
+<li>Type your name when prompted, and press Enter to see your personalized greeting printed back.</li>
+</ol>
+<h3>Understanding What Actually Happens When Your Code Runs</h3>
+<p>Python is an <strong>interpreted language</strong>, which means there&#39;s no separate, manual &quot;compile&quot; step you have to run yourself before your code works, unlike some other languages. Behind the scenes, the standard Python interpreter (called <strong>CPython</strong>) first translates your <code>.py</code> source file into an intermediate form called <strong>bytecode</strong> — Python often caches this bytecode in a hidden <code>__pycache__</code> folder so it doesn&#39;t have to redo that translation step every single time you run the same unchanged file. That bytecode then runs on the <strong>Python Virtual Machine</strong>, which executes it one instruction at a time, top to bottom, which is exactly why <code>print()</code> statements run in the order they appear in your file.</p>
+<h3>Common Mistake to Avoid</h3>
+<p>Editing your script in a plain text editor, then forgetting to save the file before running it again from the terminal — one of the most common &quot;why isn&#39;t my change showing up&quot; moments every beginner runs into at least once.</p>
+<hr>
+<h2>Quick-Reference Glossary</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Plain-Language Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Interpreter</td>
+<td>The program that reads and runs your Python code directly</td>
+</tr>
+<tr>
+<td>REPL</td>
+<td>An interactive shell that runs code one line at a time</td>
+</tr>
+<tr>
+<td>CPython</td>
+<td>The standard, most widely used Python interpreter</td>
+</tr>
+<tr>
+<td>Bytecode</td>
+<td>An intermediate form of your code the interpreter actually runs</td>
+</tr>
+<tr>
+<td>Script</td>
+<td>A saved <code>.py</code> file containing Python code to run as a whole</td>
+</tr>
+<tr>
+<td>Library / Framework</td>
+<td>Pre-built code you can reuse instead of writing from scratch</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Class Summary</h2>
+<p>In this class, we covered what Python actually is in plain language, its real history from Guido van Rossum&#39;s 1991 release through the Python 2 to Python 3 transition and today&#39;s Python 3.14, four genuine reasons beginners choose it, five real career paths it supports, the specific frameworks and libraries tied to each one, and exactly how to run Python code yourself using both the interactive REPL and a saved script — plus what&#39;s actually happening behind the scenes when you do.</p>
+<p><strong>Practice exercise:</strong> Open your terminal, start the REPL as shown in Section 6, and try three simple calculations (like <code>5 * 7</code>, <code>10 / 3</code>, and <code>&quot;Python &quot; + &quot;is fun&quot;</code>). Then create your own version of <code>hello.py</code>, modifying the message to include one more piece of information about yourself, and run it as a script from the terminal.</p>
+<hr>
+<h2>Frequently Asked Questions</h2>
+<p><strong>Which Python version should I actually install?</strong><br>Python 3.14, the current stable release covered in Section 2, is the right default for a new learner today. Python 3.13 remains a completely acceptable, widely-used alternative if a specific course or tool you&#39;re following recommends it.</p>
+<p><strong>Do I need to understand bytecode to write good Python code?</strong><br>No — Section 6&#39;s explanation is there to remove the mystery of what &quot;running&quot; code actually means, not because you need to manage it directly. Beginners can write fully working programs without ever touching bytecode themselves.</p>
+<p><strong>Is Python only for people who want to become professional programmers?</strong><br>Not at all — the automation and scripting path from Section 4 is genuinely useful for anyone who wants to save time on repetitive computer tasks, regardless of their actual job title.</p>
+<p><strong>What&#39;s the real difference between a library and a framework?</strong><br>A library (like Requests) is a tool you call when you need it; a framework (like Django) is a more complete structure that calls your code within its own rules — both are covered by name in Section 5.</p>
+<p><strong>Can I skip the REPL and just write scripts?</strong><br>Sure, once you&#39;re comfortable — but the REPL from Section 6 remains genuinely useful throughout your entire coding future for quickly testing a small idea without creating a whole file for it.</p>
+<hr>
+<!-- Premium Author Footer Box - SEO & E-E-A-T Optimized -->
+<div style="margin-top: 4rem; border-top: 2px solid #e2e8f0; padding-top: 3rem;">
+  <p style="text-align: center; color: #64748b; font-size: 0.95rem; margin-bottom: 2rem; font-style: italic; font-weight: 500;">
+    — Written by <strong style="color: #1e293b;">Sayad Md Bayezid Hosan</strong> for the SmartGen blog
+  </p>
+
+  <div style="max-width: 700px; margin: 0 auto; padding: 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); text-align: center; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+    
+    <!-- Profile Image with Verification Badge -->
+    <div style="position: relative; display: inline-block; margin-bottom: 1.5rem;">
+      <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/smartgen-founder.jpg" 
+           alt="Sayad Md Bayezid Hosan - Tech Entrepreneur & Full-Stack Developer" 
+           style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid #2563eb; object-fit: cover; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);">
+      <span style="position: absolute; bottom: 0; right: 0; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 18px; border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" title="Verified Author">✓</span>
+    </div>
+    
+    <!-- Author Name & Title -->
+    <h2 style="margin: 1rem 0 0.5rem 0; font-size: 1.8rem; color: #1e293b; font-weight: 800; font-family: 'Poppins', sans-serif;">Sayad Md Bayezid Hosan</h2>
+    <p style="margin: 0 0 1.5rem 0; color: #2563eb; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px;">Founder & Tech Entrepreneur | Full-Stack Developer</p>
+    
+    <!-- Expertise Tags -->
+    <div style="margin: 1.5rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+      <span style="background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 100%); color: #166534; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #a7f3d0;">Full-stack Developer</span>
+      <span style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); color: #1e40af; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #93c5fd;">Digital Marketer</span>
+      <span style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #92400e; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #fcd34d;">SEO Expert</span>
+      <span style="background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); color: #5b21b6; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #c4b5fd;">Tech Writer</span>
+    </div>
+    
+    <!-- Bio -->
+    <p style="color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; padding: 0 0.5rem;">
+      Full-stack Web Developer, Digital Marketing Strategist, and Tech Entrepreneur with 5+ years of experience delivering innovative digital solutions. Specializing in web development, AI integration, strategic digital marketing, and tech entrepreneurship. As a leading Tech Provider, I help audiences navigate digital platforms safely through permission-based technical solutions and digital business asset management.
+    </p>
+
+    <!-- Credentials & Achievements -->
+    <div style="background: #f0f9ff; border-left: 3px solid #0284c7; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: left;">
+      <p style="margin: 0; color: #0c4a6e; font-size: 0.9rem; font-weight: 600;">Credentials & Expertise:</p>
+      <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0; color: #475569; font-size: 0.9rem; line-height: 1.6;">
+        <li>Founder of CWB Agency & GenZFrontier</li>
+        <li>Final-year English Student at Northern University Bangladesh</li>
+        <li>Specialized in AI-powered web development & content strategy</li>
+        <li>Published author on tech, digital marketing & entrepreneurship</li>
+      </ul>
+    </div>
+    
+    <!-- Social Links & External Profiles -->
+    <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem;">
+      <a href="https://github.com/Sayadbayezid" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1f2937; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="GitHub Profile" onmouseover="this.style.background='#111827'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#1f2937'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0 1 12 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/bayezidhosan" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1877f2; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="Facebook Profile" onmouseover="this.style.background='#0a66c2'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#1877f2'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.988h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.891h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/sayadbayezid" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0077b5; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="LinkedIn Profile" onmouseover="this.style.background='#005885'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#0077b5'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      </a>
+      <a href="https://www.sayadbayezid.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #10b981; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="Personal Website" onmouseover="this.style.background='#059669'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#10b981'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      </a>
+      <a href="https://smartgentools.com/about/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #f59e0b; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="SmartGen About" onmouseover="this.style.background='#d97706'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#f59e0b'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </a>
+      <a href="https://orcid.org/0009-0003-6568-6648" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #a6ce39; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="ORCID Profile" onmouseover="this.style.background='#8ab81f'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#a6ce39'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/></svg>
+      </a>
+    </div>
+
+    <!-- CTA Button -->
+    <a href="https://smartgentools.com/about/" style="display: inline-block; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37, 99, 235, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(37, 99, 235, 0.3)';">
+      Learn More About Me
+    </a>
+  </div>
+</div>
+
+<p>** Related article<br><a href="https://smartgentools.com/blog/python-course-class-01-orientation-and-setup/">Class 01: Orientation and Setup</a><br><em>This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your development journey, visit <a href="https://www.smartgentools.com">smartgentools.com</a>.</em></p>
+
+            </div>
+
+            <!-- Adsterra In-Content Ads (Auto-injected) -->
+            <div id="adsterra-in-content-container"></div>
+
+            <div class="ad-cls-wrapper" id="ad-wrapper-native_banner" style="min-height: auto; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
+<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>
+</div>
+<footer class="blog-post-footer reveal-up delay-300">
+                <div class="blog-post-tags">
+                    <span class="blog-tag">SmartGen</span><span class="blog-tag">Python Course</span><span class="blog-tag">Class 02</span><span class="blog-tag">Python</span><span class="blog-tag">Programming</span><span class="blog-tag">Beginners</span>
+                </div>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button id="print-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #2563eb; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" title="Print or download this article as PDF">
+                        <span>🖨️</span>
+                        <span>Print / Download</span>
+                    </button>
+                    <button id="share-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #6b7280; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" title="Share this article">
+                        <span>📤</span>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </footer>
+        </article>
+
+        <!-- Author Footer Section - E-E-A-T Signal (After Article, Auto-inserted if not manually placed) -->
+        
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section reveal-up" style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 5rem 2rem; border-radius: 30px; margin: 4rem auto; max-width: 900px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
+            <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
+            <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
+            <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                <input type="email" name="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
+            </form>
+            <p class="newsletter-feedback" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Related Posts Section -->
+        <section class="blog-related-posts reveal-up" data-post-slug="what-is-python-a-complete-beginner-guide" data-post-tags="SmartGen,Python Course,Class 02,Python,Programming,Beginners">
+            <h2 class="related-posts-title">📚 Related Posts</h2>
+            <div id="related-posts-grid" class="blog-grid">
+                <!-- Related posts will be injected by JS -->
+            </div>
+        </section>
+    </main>
+
+<aside class="sidebar desktop-only">
+  <div class="ad-cls-wrapper sticky" style="min-height: 600px; position: sticky; top: 20px;"><script>
+  atOptions = {
+    'key' : '96e8bb0db46b2c8ef669fa310ed45f8b',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script></div>
+</aside>
+
+
+    <footer id="main-footer"></footer>
+
+    <!-- Custom Share Modal -->
+    <div id="shareModal" class="share-modal">
+        <div class="share-modal-content">
+            <span class="share-close">&times;</span>
+            <h3>Share this article</h3>
+            <div class="share-buttons">
+                <button onclick="shareTo('facebook')" class="share-btn fb">📘 Facebook</button>
+                <button onclick="shareTo('twitter')" class="share-btn tw">𝕏 Twitter</button>
+                <button onclick="shareTo('linkedin')" class="share-btn li">💼 LinkedIn</button>
+                <button onclick="shareTo('whatsapp')" class="share-btn wa">💬 WhatsApp</button>
+                <button onclick="shareTo('copy')" class="share-btn copy">🔗 Copy Link</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Print & Download Functionality
+            const printBtn = document.getElementById('print-button');
+            if (printBtn) {
+                printBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.print();
+                });
+            }
+            
+            // Share Modal Functionality
+            const shareBtn = document.getElementById('share-button');
+            const modal = document.getElementById('shareModal');
+            const closeBtn = document.querySelector('.share-close');
+            
+            if (shareBtn && modal) {
+                shareBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.classList.add('show');
+                });
+                
+                closeBtn.addEventListener('click', function() {
+                    modal.classList.remove('show');
+                });
+                
+                // Close modal when clicking outside
+                window.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.classList.remove('show');
+                    }
+                });
+            }
+        });
+
+        // Social Sharing Logic
+        function shareTo(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'facebook':
+                    shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+                    break;
+                case 'twitter':
+                    shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+                    break;
+                case 'linkedin':
+                    shareUrl = 'https://www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + title;
+                    break;
+                case 'whatsapp':
+                    shareUrl = 'https://api.whatsapp.com/send?text=' + title + ' ' + url;
+                    break;
+                case 'copy':
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        alert('✅ Link copied to clipboard!');
+                    }).catch(err => {
+                        console.error('Failed to copy: ', err);
+                    });
+                    return; // Exit early for copy
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=500,scrollbars=no,resizable=no');
+            }
+        }
+    </script>
+<script src="https://pl30322061.effectivecpmnetwork.com/f1/52/ca/f152ca4aaee504006bf6b462c2535ea8.js"></script>
+</body>
+</html>

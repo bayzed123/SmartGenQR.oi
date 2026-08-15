@@ -5,6 +5,7 @@ time: "02:12 AM +06"
 meta_description: "Release notes for SmartGen Tools v3.3.1. Explore the newly integrated HTML Code Library featuring 80+ modular utilities, generators, and templates for front-end web development."
 e_eta: "Immediate Deployment / Live"
 image: "https://i.ibb.co/hJrgn52m/IMG-5451.jpg"
+slug: "smartgen-tools-release-v331-html-code-library-integration"
 ---
 
 # Release v3.3.1: HTML Code Library Integration

@@ -12,6 +12,8 @@ Tags:
 - setup.py to pyproject.toml
 - pyproject.toml license
 - pypi
+tags: ["Python", "PyPI", "Packaging", "pyproject.toml", "Developer Tools"]
+image: "https://smartgentools.com/assets/images/blog-default.jpg"
 ---
 <!--AUTHOR_PROFILE-->
 

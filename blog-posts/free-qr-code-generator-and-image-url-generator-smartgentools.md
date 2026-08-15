@@ -6,6 +6,7 @@ tags:
 - Qr code Generator
 - Anylink qr code generator
 - smartgentools
+date: "2026-08-14"
 ---
 <!--AUTHOR_PROFILE-->
 General • By [Sayad Md Bayezid Hosan](https://sayadbayezid.com)
