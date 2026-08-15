@@ -3,7 +3,7 @@ title: "Analysis and Keyword Research — The Complete A to Z Mega Guide for Beg
 description: "A complete, practical A to Z guide to keyword research and analysis for beginners — the real role keywords play in SEO, the different types of keywords and what each one is actually good for, how to research and analyze keywords using Google Keyword Planner, how to pick the right keyword for a specific project, and how to analyze a competitor's website to find keyword opportunities they're already winning."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 11, Keyword Research, Keyword Analysis, Types of Keywords, Google Keyword Planner, Competitor Keyword Analysis, SEO"
 date: 2026-07-01
-image: "https://i.ibb.co/jk5V0CVN/IMG-6099.jpg"
+image: "https://smartgentools.com/blog-posts/images/keyword-research-analysis-framework.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -20,7 +20,7 @@ July 01, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayez
 
 A complete, practical A to Z guide to keyword research and analysis for beginners — the real role keywords play in SEO, the different types of keywords and what each one is actually good for, how to research and analyze keywords using Google Keyword Planner, how to pick the right keyword for a specific project, and how to analyze a competitor's website to find keyword opportunities they're already winning.
 
-![MODULE 11: Analysis and Keyword Research — The Complete A to Z Mega Guide for Beginners](https://i.ibb.co/jk5V0CVN/IMG-6099.jpg)
+![MODULE 11: Analysis and Keyword Research — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/keyword-research-analysis-framework.svg)
 
 ---
 
