@@ -11,8 +11,12 @@
 window.SMARTGEN_API_BASE =
     window.SMARTGEN_API_BASE || 'https://smartgen-platforms.sayadmdbayezidhosan.workers.dev';
 
-// GA4 property for smartgentools.com. Defined here so there is exactly one
-// place to change it, rather than the ~45 pages that used to hard-code it.
+// GA4 for smartgentools.com. Defined here so there is exactly one place to
+// change it, rather than the ~45 pages that used to hard-code it.
+//   Measurement ID : G-982HBP86V8   (public; appears in the page source)
+//   GA4 property   : properties/538210008  ("SmartGenTools")
+// The property id is what the Analytics Data API needs; recorded here so it
+// does not have to be rediscovered through the Admin API every time.
 const SMARTGEN_GA4_ID = 'G-982HBP86V8';
 
 document.addEventListener('DOMContentLoaded', () => {
