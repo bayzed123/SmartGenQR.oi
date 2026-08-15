@@ -11,6 +11,7 @@ tags:
   - Class 07
   - Python
   - Data Structures
+slug: "python-data-structures-explained-lists-to-dicts"
 ---
 <!--AUTHOR_PROFILE-->
 July 15, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)

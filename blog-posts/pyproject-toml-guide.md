@@ -4,14 +4,13 @@ description: "A complete pyproject.toml tutorial: every field explained with exa
 keyword: "pyproject.toml,pypi, python"
 date: 2026-07-22
 image: "https://smartgentools.com/blog-posts/images/pyproject-toml-guide-cover.svg"
-Tags: 
-- pyproject.toml 
-- examplepyproject.toml 
-- tutorial
-- python packaging guide
-- setup.py to pyproject.toml
-- pyproject.toml license
-- pypi
+tags:
+  - "pyproject.toml"
+  - "Python Packaging"
+  - "PyPI"
+  - "Python"
+  - "Developer Tools"
+slug: "pyproject-toml-guide-write-configure-and-fix-common-pypi-errors2026"
 ---
 <!--AUTHOR_PROFILE-->
 

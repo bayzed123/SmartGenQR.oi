@@ -978,26 +978,13 @@ input[type="color"]{width:44px;height:38px;padding:2px;border:1.5px solid var(--
 })();
 </script>
 
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8"></script>
 <script>
-  // Lazy load Google Analytics on user interaction
-  (function () {
-    var gtagLoaded = false;
-    function loadGoogleAnalytics() {
-      if (gtagLoaded) return;
-      gtagLoaded = true;
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-982HBP86V8');
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
-      document.head.appendChild(script);
-    }
-    ['touchstart', 'scroll', 'mousemove', 'click'].forEach(function (evt) {
-      document.addEventListener(evt, loadGoogleAnalytics, { once: true });
-    });
-  })();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-982HBP86V8');
 </script>
 </body>
 </html>

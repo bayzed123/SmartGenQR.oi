@@ -7,6 +7,7 @@ image: https://www.smartgentools.com/blog-posts/images/smartgen-home-overview.JP
 author: Sayad Md Bayezid Hosan
 tags: [SmartGen, Documentation, MkDocs Alternative]
 
+slug: "best-mkdocs-alternative-smartgendocs"
 ---
 <!--AUTHOR_PROFILE-->
 July 22, 2026 • Developer Tools • By [Sayad Md Bayezid Hosan](https://sayadbayezid.com)

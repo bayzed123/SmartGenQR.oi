@@ -11,6 +11,7 @@ tags:
   - Digital Marketing Course
   - Online Marketing
   - Beginner Guide
+slug: "introduction-to-online-digital-marketing-a-beginners-guide"
 ---
 <!--AUTHOR_PROFILE-->
 ## What Is Online Digital Marketing?

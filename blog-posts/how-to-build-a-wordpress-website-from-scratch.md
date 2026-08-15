@@ -13,6 +13,7 @@ tags:
   - WordPress Tutorial
   - SEO Theme
   - WordPress Plugins
+slug: "how-to-build-a-wordpress-website-from-scratch"
 ---
 <!--AUTHOR_PROFILE-->
 July 14, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)

@@ -12,6 +12,7 @@ tags:
   - Python
   - Loops
   - Strings
+slug: "python-loop-exercises-and-string-basics-guide"
 ---
 <!--AUTHOR_PROFILE-->
 July 15, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)

@@ -11,6 +11,7 @@ tags:
 image: "https://smartgentools.com/blog-posts/images/seo-friendly-content-workflow.png"
 author: "Sayad Md Bayezid Hosan"
 category: "Search Engine Optimization"
+slug: "write-seo-friendly-content-without-being-an-seo-expert"
 ---
 
 # Write SEO-Friendly Content Without Being an SEO Expert

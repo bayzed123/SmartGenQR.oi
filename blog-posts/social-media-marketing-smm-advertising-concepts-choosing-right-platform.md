@@ -14,6 +14,7 @@ tags:
   - SMM
   - Social Media Advertising
   - Target Audience
+slug: "module-3-social-media-marketing-smm-social-media-advertising-concepts-and-choosing-the-right-platform-for-your-audience"
 ---
 
 -

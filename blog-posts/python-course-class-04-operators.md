@@ -11,6 +11,7 @@ tags:
   - Class 04
   - Python
   - Operators
+slug: "master-python-operators-step-by-step-guide"
 ---
 <!--AUTHOR_PROFILE-->
 July 15, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)

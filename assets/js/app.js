@@ -11,6 +11,14 @@
 window.SMARTGEN_API_BASE =
     window.SMARTGEN_API_BASE || 'https://smartgen-platforms.sayadmdbayezidhosan.workers.dev';
 
+// GA4 for smartgentools.com. Defined here so there is exactly one place to
+// change it, rather than the ~45 pages that used to hard-code it.
+//   Measurement ID : G-982HBP86V8   (public; appears in the page source)
+//   GA4 property   : properties/538210008  ("SmartGenTools")
+// The property id is what the Analytics Data API needs; recorded here so it
+// does not have to be rediscovered through the Admin API every time.
+const SMARTGEN_GA4_ID = 'G-982HBP86V8';
+
 document.addEventListener('DOMContentLoaded', () => {
     injectNavbar();
     injectFooter();
@@ -19,7 +27,56 @@ document.addEventListener('DOMContentLoaded', () => {
     initAccordion();
     loadChatbot();
     injectCookieConsent();
+    initAnalytics();
 });
+
+/**
+ * Google Analytics 4.
+ *
+ * Two separate bugs were losing most of this site's traffic data:
+ *
+ *  1. Only 47 of 388 pages had any analytics tag at all. The homepage,
+ *     every blog post and the whole HTML Code Library were invisible.
+ *  2. The pages that DID have it only loaded gtag after a `touchstart`,
+ *     `scroll`, `mousemove` or `click`. A visitor who landed, read, and
+ *     left without interacting was never counted -- which is exactly the
+ *     bounce traffic you most need to measure, and on mobile `mousemove`
+ *     never fires at all.
+ *
+ * app.js is already on 301 of 386 real pages, so loading GA here fixes
+ * coverage everywhere at once with no extra request. The tag is loaded
+ * immediately rather than on interaction: the script is `async`, so it
+ * does not block rendering, and undercounting real visits to protect a
+ * synthetic Lighthouse number is a bad trade.
+ */
+function initAnalytics() {
+    if (!SMARTGEN_GA4_ID) return;
+
+    // A handful of pages still carry their own inline gtag snippet.
+    // Loading a second one would double-count every pageview.
+    if (window.__smartgenGaLoaded) return;
+    if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
+
+    // Honour an explicit cookie refusal from injectCookieConsent().
+    try {
+        if (localStorage.getItem('sg-cookies-declined')) return;
+    } catch (e) {
+        // localStorage can throw in private mode; fall through and load.
+    }
+
+    window.__smartgenGaLoaded = true;
+
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${SMARTGEN_GA4_ID}`;
+    document.head.appendChild(s);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = window.gtag || gtag;
+    gtag('js', new Date());
+    gtag('config', SMARTGEN_GA4_ID);
+}
 
 /**
  * Global navigation for pages that don't have the standard #main-header /

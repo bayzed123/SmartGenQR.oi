@@ -657,19 +657,22 @@ footer.site{ border-top:1px solid var(--border); padding:44px 0 60px; }
 <script>
 document.getElementById('yearNow').textContent = new Date().getFullYear();
 
-/* ---------- lazy-load Google Analytics ---------- */
+/* ---------- Google Analytics (GA4) ----------
+   Loaded on page load, not on first interaction: gating it behind
+   touchstart/scroll/mousemove/click meant visitors who never interacted
+   were never counted at all. The tag is async, so this still does not
+   block rendering. */
 (function(){
-  let loaded = false;
-  function loadGA(){
-    if (loaded) return; loaded = true;
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date()); gtag('config', 'G-982HBP86V8');
-    const s = document.createElement('script');
-    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
-    document.head.appendChild(s);
-  }
-  ['touchstart','scroll','mousemove','click'].forEach(e => document.addEventListener(e, loadGA, { once:true }));
+  if (window.__smartgenGaLoaded) return;
+  try { if (localStorage.getItem('sg-cookies-declined')) return; } catch (e) {}
+  window.__smartgenGaLoaded = true;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = window.gtag || gtag;
+  gtag('js', new Date()); gtag('config', 'G-982HBP86V8');
+  var s = document.createElement('script');
+  s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
+  document.head.appendChild(s);
 })();
 
 /* ---------- cookie consent ---------- */

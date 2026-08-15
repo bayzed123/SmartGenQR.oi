@@ -16,6 +16,7 @@ tags:
   - Instagram
   - LinkedIn
   - Pinterest
+slug: "module-2-social-media-optimization-smo-complete-beginners-guide-to-platforms-hashtags-content-and-strong-profiles"
 ---
 
 ## Welcome to Module 2

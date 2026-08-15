@@ -128,19 +128,27 @@ jobs:
                       
                       # Read title from Front-matter
                       match = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
+                      pinned_slug = ''
                       if match:
                           try:
                               fm_data = yaml.safe_load(match.group(1)) or {}
                               title = fm_data.get('title', '')
                               image_url = fm_data.get('image', '') or ''
                               published_date = str(fm_data.get('date', '') or '')
+                              pinned_slug = str(fm_data.get('slug', '') or '').strip()
                           except Exception:
                               pass
-                      
+
                       if not title:
                           title = file.replace('.md', '')
 
-                      blog_slug = slugify(title)
+                      # Respect an explicit `slug:` exactly as scripts/build-blog.js
+                      # does. Deriving the URL from the title here instead would
+                      # silently drop every post whose title has been reworded
+                      # since publication -- the generator would look for a
+                      # directory that does not exist, skip it, and quietly leave
+                      # the live page out of the sitemap.
+                      blog_slug = pinned_slug or slugify(title)
                       clean_url = f'{BASE_URL}/blog/{blog_slug}/'
                       priority = '0.8'
                       changefreq = 'weekly'

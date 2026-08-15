@@ -13,6 +13,7 @@ tags:
   - Instagram Marketing
   - Instagram Ads
   - Influencer Marketing
+slug: "module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners"
 ---
 
 ## Welcome to Module 5: Instagram Marketing

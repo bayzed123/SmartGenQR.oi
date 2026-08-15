@@ -12,6 +12,7 @@ tags:
   - Python
   - Programming
   - Beginners
+slug: "what-is-python-a-complete-beginner-guide"
 ---
 <!--AUTHOR_PROFILE-->
 July 14, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)

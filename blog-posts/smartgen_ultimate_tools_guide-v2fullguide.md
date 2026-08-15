@@ -6,6 +6,7 @@ date: "2026-05-29"
 image: "https://i.ibb.co/NnSFXr37/IMG-4076.jpg"
 author: "Sayad Md Bayezid Hosan"
 tags: ["Web Tools", "SmartGen", "Productivity"]
+slug: "the-ultimate-guide-to-smartgen-tools-40-free-utilities-for-developers-marketers-and-creators"
 ---
 # The Ultimate Master Guide to SmartGen Tools
 
