@@ -12,6 +12,7 @@ tags:
   - Python
   - Input Output
   - Loops
+slug: "python-io-break-continue-and-pass-guide"
 ---
 <!--AUTHOR_PROFILE-->
 

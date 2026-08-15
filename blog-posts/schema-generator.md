@@ -5,6 +5,7 @@ date: 2026-06-16
 author: "Sayad Md Bayezid Hosan"
 canonical_url: "https://smartgentools.com/schema-generator/"
 tags: ["schema generator", "json-ld creator", "seo tools", "structured data", "rich snippets"]
+slug: "free-schema-markup-generator-create-json-ld-structured-data-instantly"
 ---
 
 ## The Problem: The Complexity of Manual Structured Data

@@ -4,6 +4,7 @@ description: "Learn how to use a UTM link builder to track your marketing campai
 image: "https://i.ibb.co/WqNHgyw/IMG-4319.jpg"
 date: "2026-07-14"
 tags: ["SmartGen", "UTM Parameters", "Campaign Tracking", "Digital Marketing", "Google Analytics"]
+slug: "master-your-marketing-the-ultimate-guide-to-the-utm-campaign-link-builder"
 ---
 
 

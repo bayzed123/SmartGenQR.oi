@@ -11,6 +11,7 @@ tags:
   - HTML Marquee
   - Web Development
   - Developer Tools
+slug: "smartgen-launches-html-marquee-generator"
 ---
 SmartGen Launch Update: HTML Marquee Generator is Now Live
 ---

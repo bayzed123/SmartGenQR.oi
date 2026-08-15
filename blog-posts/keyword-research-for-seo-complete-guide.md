@@ -14,6 +14,7 @@ tags:
   - Search Volume
   - CPC
   - SEO Metrics
+slug: "how-to-do-keyword-research-for-seo-complete-guide"
 ---
 <!--AUTHOR_PROFILE-->
 July 22, 2026 • General • By [Sayad Md Bayezid Hosan](https://sayadbayezid.com)

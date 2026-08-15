@@ -12,6 +12,7 @@ tags:
   - Python
   - Conditionals
   - Loops
+slug: "python-loops-and-conditionals-step-by-step"
 ---
 <!--AUTHOR_PROFILE-->
 July 15, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)

@@ -14,6 +14,7 @@ Tags:
 - pypi
 tags: ["Python", "PyPI", "Packaging", "pyproject.toml", "Developer Tools"]
 image: "https://smartgentools.com/assets/images/blog-default.jpg"
+slug: "pyproject-toml-guide-write-configure-and-fix-common-pypi-errors2026"
 ---
 <!--AUTHOR_PROFILE-->
 

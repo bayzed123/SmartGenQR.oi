@@ -15,6 +15,7 @@ tags:
   - Facebook Ads
   - Business Manager
   - Ads Manager
+slug: "module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners"
 ---
 
 ## Welcome to Module 4: Meta (Facebook) Marketing

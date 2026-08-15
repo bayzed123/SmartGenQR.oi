@@ -8,6 +8,7 @@ date: "2026-05-28"
 image: "https://i.ibb.co/svS3qbVG/IMG-4784.jpg"
 author: "SmartGen Editorial Team"
 tags: ["Facebook Automation'',AI Tools", "SmartGen"]
+slug: "facebook-post-share-automation-system-is-built-on-a-browser-extension"
 ---
 # 🚀 Cross-Platform Workflow Automation — Coming Soon
 

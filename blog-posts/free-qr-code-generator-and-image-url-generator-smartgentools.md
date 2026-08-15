@@ -7,6 +7,7 @@ tags:
 - Anylink qr code generator
 - smartgentools
 date: "2026-08-14"
+slug: "free-qr-code-generator-and-pocture-url-generator-smartgentools"
 ---
 <!--AUTHOR_PROFILE-->
 General • By [Sayad Md Bayezid Hosan](https://sayadbayezid.com)

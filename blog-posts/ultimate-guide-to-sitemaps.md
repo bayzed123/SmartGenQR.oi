@@ -6,6 +6,7 @@ date: "2026-05-31"
 image: "https://i.ibb.co/TDGfjVC1/IMG-4284.jpg"
 author: "Sayad Md Bayezid Hosan"
 tags: ["SEO", "SmartGen", "Webmaster"]
+slug: "the-ultimate-guide-to-sitemaps-how-to-create-optimize-and-boost-your-seo"
 ---
 
 # The Ultimate Guide to Sitemaps: How to Create, Optimize, and Boost Your SEO

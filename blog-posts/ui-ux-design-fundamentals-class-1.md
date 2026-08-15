@@ -14,6 +14,7 @@ tags:
   - Typography
   - Design Principles
   - Design for Beginners
+slug: "uiux-design-course-fundamentals"
 ---
 <!--AUTHOR_PROFILE-->
 August 14, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com)

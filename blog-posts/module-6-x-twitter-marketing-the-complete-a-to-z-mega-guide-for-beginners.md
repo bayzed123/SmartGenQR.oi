@@ -13,6 +13,7 @@ tags:
   - X Marketing
   - Twitter Marketing
   - X Ads
+slug: "module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners"
 ---
 
 ## Welcome to Module 6: X (Formerly Twitter) Marketing

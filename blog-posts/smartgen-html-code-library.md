@@ -11,6 +11,7 @@ tags:
   - "Release Notes"
 image: "https://i.ibb.co/qMqwVFWv/IMG-5260.jpg"
 author: "SmartGen Editorial Team"
+slug: "building-the-smartgen-html-code-library-79-visual-to-code-tools"
 ---
 # 🚀 SmartGen HTML Code Library – Mega Developer Guide
 

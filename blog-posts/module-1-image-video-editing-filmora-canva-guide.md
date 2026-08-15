@@ -15,6 +15,7 @@ tags:
   - Video Editing
   - Image Editing
   - Content Creation
+slug: "module-1-basic-image-and-video-editing-complete-guide-to-filmora-and-canva-for-beginners"
 ---
 <!--AUTHOR_PROFILE-->
 ## Welcome to Module 1

@@ -74,6 +74,9 @@ function readBlogPosts() {
       image: attributes.image || `${SITE_URL}/assets/images/blog-default.jpg`,
       author: attributes.author || AUTHOR_NAME,
       category: attributes.category || 'General',
+      // Old URLs this post used to live at. Each becomes a redirect stub so
+      // an address that is already indexed never starts returning a 404.
+      redirectFrom: [].concat(attributes.redirect_from || attributes.redirectFrom || []),
     });
   });
 
@@ -135,6 +138,92 @@ function replaceManualTags(htmlContent, authorProfileBox, authorFooterBox) {
   }
   
   return processedContent;
+}
+
+/**
+ * Compare this build's slugs against the previous blog.json and make sure no
+ * published URL is ever abandoned.
+ *
+ * A post is matched to its previous self by title first (the stable identity
+ * when only the slug was edited) and by slug otherwise. If the URL changed,
+ * the old directory is rewritten as a redirect to the new one.
+ *
+ * Also honours an explicit `redirect_from:` list in front matter, for old
+ * URLs that predate blog.json or came from another site structure.
+ *
+ * @returns {Array<{from: string, to: string, reason: string}>}
+ */
+function reconcileSlugs(posts) {
+  const blogJsonPath = path.join(BLOG_OUTPUT_DIR, 'blog.json');
+  let previous = [];
+  try {
+    if (fs.existsSync(blogJsonPath)) {
+      previous = JSON.parse(fs.readFileSync(blogJsonPath, 'utf8'));
+    }
+  } catch (err) {
+    console.warn(`⚠️  Could not read previous blog.json (${err.message}); skipping URL-move check.`);
+    return [];
+  }
+
+  const prevByTitle = new Map(previous.map(p => [String(p.title || '').trim(), p.slug]));
+  const currentSlugs = new Set(posts.map(p => p.slug));
+  const moved = [];
+
+  for (const post of posts) {
+    // 1. Slug changed for a post we already published under another URL.
+    const before = prevByTitle.get(String(post.title || '').trim());
+    if (before && before !== post.slug) {
+      moved.push({ from: before, to: post.slug, reason: 'slug changed' });
+    }
+
+    // 2. Explicitly declared historical URLs.
+    const declared = Array.isArray(post.redirectFrom) ? post.redirectFrom : [];
+    for (const old of declared) {
+      const slug = String(old).trim().replace(/^\/+|\/+$/g, '').replace(/^blog\//, '');
+      if (slug && slug !== post.slug) {
+        moved.push({ from: slug, to: post.slug, reason: 'redirect_from' });
+      }
+    }
+  }
+
+  for (const { from, to, reason } of moved) {
+    if (currentSlugs.has(from)) {
+      console.warn(`⚠️  Refusing to redirect /blog/${from}/ -> /blog/${to}/ (${reason}): ` +
+                   `another live post already uses that URL.`);
+      continue;
+    }
+    const dir = path.join(BLOG_OUTPUT_DIR, from);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'index.html'), redirectStub(from, to));
+    console.log(`↪️  Redirect kept: /blog/${from}/ -> /blog/${to}/  (${reason})`);
+  }
+
+  if (moved.length === 0) {
+    console.log('✅ URL check: no published blog URL moved in this build.\n');
+  } else {
+    console.log(`\n⚠️  ${moved.length} blog URL(s) moved; redirects written so nothing 404s.\n`);
+  }
+  return moved;
+}
+
+/** A crawlable client-side redirect, matching the stubs used elsewhere in this repo. */
+function redirectStub(fromSlug, toSlug) {
+  const target = `${SITE_URL}/blog/${toSlug}/`;
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Moved: ${toSlug} | SmartGen Blog</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="${target}">
+<meta http-equiv="refresh" content="0; url=${target}">
+<script>location.replace(${JSON.stringify(target)});</script>
+</head>
+<body>
+<p>This post has moved to <a href="${target}">${target}</a>.</p>
+</body>
+</html>
+`;
 }
 
 /**
@@ -621,7 +710,11 @@ function generateArchiveHTML() {
  * Generate blog.json metadata file
  */
 function generateBlogJSON(posts) {
-  return JSON.stringify(posts, null, 2);
+  // `redirectFrom` is a build-time concern (it drives redirect stubs) and the
+  // frontend never reads it. blog.json is fetched by every blog page and by
+  // site search, so keep it out of the payload.
+  const publicPosts = posts.map(({ redirectFrom, ...rest }) => rest);
+  return JSON.stringify(publicPosts, null, 2);
 }
 
 /**
@@ -703,6 +796,18 @@ function buildBlog() {
     console.log('⚠️  No blog posts found. Create .md files in blog-posts/ directory.');
     console.log('📝 Example: blog-posts/my-first-post.md\n');
   }
+
+  // Never silently move a published URL.
+  //
+  // The slug used to be derived from the title, so rewording a headline
+  // republished the post at a new address and left the indexed one dead.
+  // Every post now pins `slug:` in its front matter, but that is only a
+  // convention -- this check is the thing that actually enforces it.
+  //
+  // It compares this build against the previous blog.json. If a post's URL
+  // moved, the old directory is turned into a redirect to the new one rather
+  // than being abandoned, and the change is reported loudly.
+  const movedUrls = reconcileSlugs(posts);
 
   // Generate individual post pages
   posts.forEach(post => {

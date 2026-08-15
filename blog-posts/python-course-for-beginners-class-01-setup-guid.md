@@ -12,6 +12,7 @@ tags:
   - Python for Beginners
   - Programming Basics
   - VS Code
+slug: "python-course-class-01-orientation-and-setup"
 ---
 <!--AUTHOR_PROFILE-->
 July 14, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)

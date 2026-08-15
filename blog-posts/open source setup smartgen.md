@@ -15,6 +15,7 @@ tags:
   - Web Development
   - Developer Tools
   - Product Launch
+slug: "smartgen-now-open-source-project"
 ---
 
 # SmartGen: All-in-One Digital & Web Utility Platform

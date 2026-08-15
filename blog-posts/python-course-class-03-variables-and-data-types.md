@@ -12,6 +12,7 @@ tags:
   - Python
   - Variables
   - Data Types
+slug: "python-variables-and-data-types-explained"
 ---
 <!--AUTHOR_PROFILE-->
 July 14, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
