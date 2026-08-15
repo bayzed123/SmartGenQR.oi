@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://smartgentools.com/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://smartgentools.com/about/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://smartgentools.com/blog/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -102,7 +102,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.smartgentools.com/blog-posts/images/smartgen-home-overview.JPG</image:loc>
+      <image:loc>https://smartgentools.com/blog-posts/images/smartgen-home-overview.JPG</image:loc>
     </image:image>
   </url>
   <url>
@@ -282,7 +282,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.smartgentools.com/blog-posts/images/smartgendigitalmarketing.svg</image:loc>
+      <image:loc>https://smartgentools.com/blog-posts/images/smartgendigitalmarketing.svg</image:loc>
     </image:image>
   </url>
   <url>
@@ -318,7 +318,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.smartgentools.com/blog-posts/images/python-course-class-04-cover.svg</image:loc>
+      <image:loc>https://smartgentools.com/blog-posts/images/python-course-class-04-cover.svg</image:loc>
     </image:image>
   </url>
   <url>
@@ -444,7 +444,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.smartgentools.com/blog-posts/images/python-course-class-07-cover.svg</image:loc>
+      <image:loc>https://smartgentools.com/blog-posts/images/python-course-class-07-cover.svg</image:loc>
     </image:image>
   </url>
   <url>
@@ -453,7 +453,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.smartgentools.com/blog-posts/images/python-course-class-08-cover.svg</image:loc>
+      <image:loc>https://smartgentools.com/blog-posts/images/python-course-class-08-cover.svg</image:loc>
     </image:image>
   </url>
   <url>
@@ -462,7 +462,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.smartgentools.com/blog-posts/images/python-course-class-06-cover.svg</image:loc>
+      <image:loc>https://smartgentools.com/blog-posts/images/python-course-class-06-cover.svg</image:loc>
     </image:image>
   </url>
   <url>
@@ -471,7 +471,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.smartgentools.com/blog-post/images/python-course-class-05-cover.jpg</image:loc>
+      <image:loc>https://smartgentools.com/blog-posts/images/python-course-class-05-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -632,13 +632,13 @@
   </url>
   <url>
     <loc>https://smartgentools.com/contact/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smartgentools.com/cookies/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -662,7 +662,7 @@
   </url>
   <url>
     <loc>https://smartgentools.com/disclaimer/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -673,26 +673,38 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smartgentools.com/docs/advanced-workflow-configuration/</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smartgentools.com/docs/api-reference/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/docs/architecture-and-tech-stack/</loc>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smartgentools.com/docs/building-a-fast-client-side-search-feature-without-a-backend/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smartgentools.com/docs/coding-guidelines/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smartgentools.com/docs/contributor-guide/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -704,37 +716,73 @@
   </url>
   <url>
     <loc>https://smartgentools.com/docs/developer-guidelines/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/docs/development-setup-guide/</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/docs/directory-structure-for-portfolio/</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/docs/getting-started/</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/docs/github-secrets-explained/</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/docs/installation/</loc>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smartgentools.com/docs/portfolio-website-api-and-script-reference/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smartgentools.com/docs/portfolio-website-customization-guide/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smartgentools.com/docs/portfolio-website-deployment-and-blog-system-guide/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smartgentools.com/docs/portfolio-website-getting-started-guide/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/docs/quick-setup-guide/</loc>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smartgentools.com/docs/quickstart-guide/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -806,7 +854,7 @@
   </url>
   <url>
     <loc>https://smartgentools.com/help-center/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1352,7 +1400,7 @@
   </url>
   <url>
     <loc>https://smartgentools.com/paid-tools/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1388,7 +1436,7 @@
   </url>
   <url>
     <loc>https://smartgentools.com/privacy/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1442,7 +1490,7 @@
   </url>
   <url>
     <loc>https://smartgentools.com/sitemap-finder-and-downloader/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1460,7 +1508,7 @@
   </url>
   <url>
     <loc>https://smartgentools.com/terms/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1472,7 +1520,7 @@
   </url>
   <url>
     <loc>https://smartgentools.com/text-to-changelog-json-generator/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1484,7 +1532,7 @@
   </url>
   <url>
     <loc>https://smartgentools.com/trust-center/</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
