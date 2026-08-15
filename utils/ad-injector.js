@@ -103,7 +103,10 @@ class BuildTimeAdInjector {
    */
   injectSocialBar(content) {
     const ad = this.adConfig.getAd('socialBar');
-    if (!ad) return content;
+    // `enabled: false` is an explicit opt-out, not a missing config -- honour
+    // it so a unit can be switched off in one place instead of being hunted
+    // down across every generated page.
+    if (!ad || ad.enabled === false) return content;
 
     return content.replace(/<\/body>/, `${ad.code}\n</body>`);
   }
@@ -306,7 +309,7 @@ class RuntimeAdInjector {
    */
   static injectSocialBar() {
     const ad = AD_CONFIG.getAd('socialBar');
-    if (!ad) return;
+    if (!ad || ad.enabled === false) return;
 
     const script = document.createElement('script');
     script.src = 'https://pl30322061.effectivecpmnetwork.com/f1/52/ca/f152ca4aaee504006bf6b462c2535ea8.js';

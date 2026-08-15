@@ -98,6 +98,25 @@ const AD_CONFIG = {
 
     socialBar: {
       id: 'social_bar',
+
+      // DISABLED while the AdSense application is pending.
+      //
+      // A live audit of the site recorded the browser navigating away from a
+      // Docs page to https://frs2c.com/link2?... (a blank third-party page)
+      // and a Tools page ending at about:blank -- with no click, no form
+      // submission, nothing but passive page views. Social Bar is the only
+      // unit on the site capable of that; every other format here renders
+      // inside its own container.
+      //
+      // Google Publisher Policies disallow ads that navigate the user or open
+      // windows without deliberate interaction, so leaving this on works
+      // directly against the AdSense approval this site has been seeking.
+      // The in-page banner and native units are untouched and still earn.
+      //
+      // To turn it back on (e.g. if AdSense approval is abandoned), set this
+      // to true and run `npm run build` to re-bake it into the static pages.
+      enabled: false,
+
       code: `<script src="https://pl30322061.effectivecpmnetwork.com/f1/52/ca/f152ca4aaee504006bf6b462c2535ea8.js"></script>`,
       height: 'auto',
       responsive: { desktop: true, tablet: true, mobile: true }

@@ -230,7 +230,7 @@ This has been a long, detailed module, so let's recap everything we covered. We 
 In Module 5, we'll continue building your platform-specific marketing skills. Be sure you've also reviewed the earlier lessons in this course if you haven't already, since each module builds directly on the foundation established before it:
 
 - [Introduction to Online Digital Marketing: A Beginner's Guide](https://smartgentools.com/blog/introduction-to-online-digital-marketing-a-beginners-guide/)
-- [Importance of Digital Marketing, How It Works, and Key Concepts](https://smartgentools.com/blog/importance-of-digital-marketing-how-it-works-and-key-concepts-every-beginner-should-understand/)
+- [Importance of Digital Marketing, How It Works, and Key Concepts](https://smartgentools.com/blog/importance-of-digital-marketing-how-it-works-and-key-concepts-every-beginner-should-know/)
 - [Module 1: Basic Image and Video Editing with Filmora and Canva](https://smartgentools.com/blog/module-1-basic-image-and-video-editing-complete-guide-to-filmora-and-canva-for-beginners/)
 - [Module 3: Social Media Marketing (SMM) — Advertising Concepts and Platform Selection](https://smartgentools.com/blog/module-3-social-media-marketing-smm-social-media-advertising-concepts-and-choosing-the-right-platform-for-your-audience/)
 - [Module 5: Instagram Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-5-instagram-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
@@ -241,4 +241,4 @@ In Module 5, we'll continue building your platform-specific marketing skills. Be
 - [Module 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide](https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 ---
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://smartgentools.com).*

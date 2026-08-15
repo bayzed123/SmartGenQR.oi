@@ -1,4 +1,5 @@
 ---
+slug: "about-the-team-and-contribution"
 title: "About the Team & Contribution"
 description: "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions"
 order: 4
@@ -8,13 +9,13 @@ order: 4
 
 SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions.
 
-## [About the Creator](www.github.com/bayzed123)
+## [About the Creator](https://github.com/bayzed123)
 
 **Sayad Md Bayezid Hosan** is the founder of SmartGen. His vision for the platform is to offer an all-in-one digital and web utility platform that prioritizes client-side processing, ensuring user privacy and speed. He maintains an official website at [Sayad Md Bayezid Hosa ](https://www.sayadbayezid.com) and can be connected with through his agency at [Connect With Bayezid](https://connectbayezid-8dcdz46v.manus.space/).
 
 ## Contribution Guidelines
 
-We welcome and encourage contributions from the community to help improve SmartGen. Whether you're fixing a bug, adding a new feature, or improving documentation, your efforts are greatly appreciated.[Contributing.md](Contributing.md) [WIKI_About_Team_Contribution.md](WIKI_About_Team_Contribution.md)
+We welcome and encourage contributions from the community to help improve SmartGen. Whether you're fixing a bug, adding a new feature, or improving documentation, your efforts are greatly appreciated.[Contributing.md](https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md) [WIKI_About_Team_Contribution.md](https://github.com/bayzed123/SmartGenQR.oi/blob/main/WIKI_About_Team_Contribution.md)
 
 ### Code of Conduct
 
@@ -24,11 +25,11 @@ To ensure a welcoming and inclusive environment for all contributors, SmartGen a
 *   Provide constructive feedback.
 *   Help others learn and grow.
 *   Report issues professionally.
-*   Follow the project's [license](LICENSE).
+*   Follow the project's [license](https://github.com/bayzed123/SmartGenQR.oi/blob/main/LICENSE).
 
 ### How to Contribute
 
-If you're interested in contributing code, please follow the detailed setup guide and development workflow outlined in the [Setup Guide](WIKI_Setup_Guide.md) section of this Wiki. Key steps include:
+If you're interested in contributing code, please follow the detailed setup guide and development workflow outlined in the [Setup Guide](https://github.com/bayzed123/SmartGenQR.oi/blob/main/WIKI_Setup_Guide.md) section of this Wiki. Key steps include:
 
 1.  **Fork the Repository:** Create a copy of the [SmartGen repository](https://github.com/bayzed123/SmartGenQR.oi) under your own GitHub account.
 2.  **Clone Your Fork:** Download your forked repository to your local machine.
@@ -47,7 +48,7 @@ If you encounter a bug or have an idea for a new feature, please utilize GitHub 
 
 ### Documentation
 
-Documentation is a vital part of SmartGen. Please update relevant documentation files (e.g., [Readme.Md](README.md)`, [Wiki](WIKI.md), or tool-specific documentation) when:
+Documentation is a vital part of SmartGen. Please update relevant documentation files (e.g., [Readme.Md](https://github.com/bayzed123/SmartGenQR.oi/blob/main/README.md)`, [Wiki](https://github.com/bayzed123/SmartGenQR.oi/blob/main/WIKI.md), or tool-specific documentation) when:
 
 *   New features are added.
 *   API changes occur.

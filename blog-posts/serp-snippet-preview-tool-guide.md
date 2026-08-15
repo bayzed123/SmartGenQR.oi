@@ -733,7 +733,7 @@ It takes under 5 minutes. It is 100% free. And the CTR gains you can unlock are 
 >
 > **Sayad Md Bayezid Hosan** is the founder of SmartGen Tools and a digital marketing specialist with over 5 years of experience in SEO, content strategy, and website monetization. He built SmartGen Tools to give every blogger, marketer, and creator access to professional-grade digital utilities — completely free and with zero data tracking.
 >
-> 🌐 [www.smartgentools.com](https://www.smartgentools.com) | 🛠️ [SERP Preview Tool](https://smartgentools.com/serp-preview-tool/)
+> 🌐 [www.smartgentools.com](https://smartgentools.com) | 🛠️ [SERP Preview Tool](https://smartgentools.com/serp-preview-tool/)
 
 ---
 

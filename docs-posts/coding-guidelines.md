@@ -1,7 +1,8 @@
 ---
-title: "developer Guidelines"
+slug: "developer-guidelines"
+title: "Developer Guidelines"
 description: "Learn how to quickly set up SmartGen tools."
-category: "overview"
+category: "Guides"
 order: 3
 ---
 # Developer Guidelines for SmartGen

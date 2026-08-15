@@ -16,7 +16,7 @@ tags:
 slug: "how-to-build-a-wordpress-website-from-scratch"
 ---
 <!--AUTHOR_PROFILE-->
-July 14, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 14, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 ![How to Build a WordPress Website Cover](https://smartgentools.com/blog-posts/images/how-to-build-a-wordpress-website-cover.svg)
 
@@ -255,6 +255,6 @@ Your site is now live, secured, permalink-structured, theme-configured, and runn
 - [On-Page SEO Optimization](https://smartgentools.com/blog/on-page-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 - [Local SEO & Google Business Profile](https://smartgentools.com/blog/local-seo-and-google-business-profile-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your website and marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your website and marketing journey, visit [smartgentools.com](https://smartgentools.com).*
 
 SmartGen · WordPress · Web Hosting · cPanel · WordPress Tutorial · SEO Theme · WordPress Plugins

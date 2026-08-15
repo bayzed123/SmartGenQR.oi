@@ -36,17 +36,46 @@ function readDocPosts() {
             .replace(/\b\w/g, c => c.toUpperCase());
 
         const title = attributes.title || fallbackTitle;
-        const slug = slugify(title, { lower: true, strict: true });
+
+        // An explicit `slug:` pins the URL, exactly as scripts/build-blog.js
+        // does for posts. Without it the URL is derived from the title, so
+        // rewording a heading silently moves a published page and breaks every
+        // link and bookmark pointing at the old address.
+        const slug = attributes.slug
+            ? slugify(String(attributes.slug).trim(), { lower: true, strict: true })
+            : slugify(title, { lower: true, strict: true });
 
         docs.push({
             slug,
             title,
+            sourceFile: file,
             description: attributes.description || 'SmartGen Developer Documentation',
             content: body,
             order: attributes.order || 999,
             category: attributes.category || 'Guides'
         });
     });
+
+    // Two docs resolving to the same slug means one silently overwrites the
+    // other and its page never ships. That happened for three separate files
+    // all titled "Getting Started", which is why docs-posts/ held more sources
+    // than docs/ held pages. Fail loudly instead of losing a page quietly.
+    const seen = new Map();
+    const clashes = [];
+    docs.forEach(doc => {
+        if (seen.has(doc.slug)) {
+            clashes.push(`  /docs/${doc.slug}/  <-  ${seen.get(doc.slug)}  AND  ${doc.sourceFile}`);
+        } else {
+            seen.set(doc.slug, doc.sourceFile);
+        }
+    });
+    if (clashes.length) {
+        throw new Error(
+            `${clashes.length} docs slug collision(s) — each would overwrite the other:\n` +
+            clashes.join('\n') +
+            `\nGive one of each pair a distinct title, or pin a \`slug:\` in its front matter.`
+        );
+    }
 
     return docs.sort((a, b) => a.order - b.order);
 }

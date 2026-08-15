@@ -17,7 +17,7 @@ tags:
 slug: "technical-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog"
 ---
 <!--AUTHOR_PROFILE-->
-July 04, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 04, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 # MODULE 14: Technical SEO Optimization — The Complete A to Z Mega Guide for Beginners
 

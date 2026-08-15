@@ -17,7 +17,7 @@ tags:
 slug: "mobile-cross-device-and-campaign-analytics-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog"
 ---
 <!--AUTHOR_PROFILE-->
-July 05, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 05, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 # MODULE 18: Mobile, Cross-Device & Campaign Analytics — The Complete A to Z Mega Guide for Beginners
 
@@ -289,6 +289,6 @@ In the next module, we'll continue building on this analytics and measurement se
 
 ---
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://smartgentools.com).*
 
 SmartGen · Digital Marketing · Digital Marketing Course · Module 18 · Cross-Device Tracking · UTM Parameters · Campaign Tracking · GA4 Google Ads Integration

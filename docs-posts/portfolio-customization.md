@@ -1,17 +1,17 @@
 ---
-  title: "Portfolio Website: Customization Guide"
-  description: "Complete guide to customizing colors, typography, sections, navigation, and adding new pages to your open-source developer portfolio."
-  order: 3
-  category: "Portfolio Website"
+slug: "portfolio-website-customization-guide"
+title: "Portfolio Website: Customization Guide"
+description: "Complete guide to customizing colors, typography, sections, navigation, and adding new pages to your open-source developer portfolio."
+order: 3
+category: "Portfolio Website"
 ---
-
   # Portfolio Website: Customization Guide
 
   Once your portfolio is deployed, the next step is making it truly *yours* — not just personalized with your name and links, but visually and structurally tailored to how you want to present your work. This guide covers every major customization point: colors, fonts, sections, navigation, and adding entirely new pages.
 
   > **Repository:** [github.com/bayzed123/sayadbayezid-portfolio-](https://github.com/bayzed123/sayadbayezid-portfolio-)
   >
-  > **Prerequisite:** This guide assumes you've completed the [Getting Started guide](https://smartgentools.com/docs/portfolio-website-getting-started-guide/) and optionally [deployed your site](/docs/portfolio-website-deployment-blog-system-guide/).
+  > **Prerequisite:** This guide assumes you've completed the [Getting Started guide](https://smartgentools.com/docs/portfolio-website-getting-started-guide/) and optionally [deployed your site](/docs/portfolio-website-deployment-and-blog-system-guide/).
 
   ![Portfolio customization overview showing editable zones: color theme, hero section, project cards, navigation menu, and typography](assets/images/docs/protfolio-coustomization.JPEG)
 

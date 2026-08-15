@@ -1,10 +1,10 @@
 ---
-  title: "Getting Started"
-  description: "Get SmartGen running on your local machine in under 5 minutes."
-  order: 1
-  category: "Guides"
+slug: "getting-started"
+title: "Getting Started"
+description: "Get SmartGen running on your local machine in under 5 minutes."
+order: 1
+category: "Guides"
 ---
-
   # Getting Started
 
   Welcome to the **SmartGen** project! This guide will help you get your local environment ready for development in just a few minutes.

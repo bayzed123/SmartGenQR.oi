@@ -1,10 +1,10 @@
 ---
-  title: "Portfolio Website: Getting Started Guide"
-  description: "Complete guide to forking, setting up, and running the open-source developer portfolio website locally — prerequisites, installation, configuration, and troubleshooting."
-  order: 1
-  category: "Portfolio Website"
+slug: "portfolio-website-getting-started-guide"
+title: "Portfolio Website: Getting Started Guide"
+description: "Complete guide to forking, setting up, and running the open-source developer portfolio website locally — prerequisites, installation, configuration, and troubleshooting."
+order: 1
+category: "Portfolio Website"
 ---
-
   # Portfolio Website: Getting Started Guide
 
   This guide walks you through everything you need to get the **open-source developer portfolio** running on your local machine — from prerequisites to your first successful preview in the browser.

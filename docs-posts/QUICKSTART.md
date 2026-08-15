@@ -1,4 +1,5 @@
 ---
+slug: "quickstart-guide"
 title: "Quickstart Guide"
 date: "2026-07-07"
 description: "Get from zero to a merged PR in under 10 minutes."
@@ -10,7 +11,7 @@ author: "SmartGen Team"
   # SmartGen — Quickstart Guide ⚡
 
   > 🎯 **Goal of this page:** Get you from zero → merged PR in under 10 minutes.
-  > For deep technical details, see [`CONTRIBUTOR-GUIDE.md`](./CONTRIBUTOR-GUIDE.md).
+  > For deep technical details, see [`CONTRIBUTOR-GUIDE.md`](/docs/contributor-guide/).
 
   ---
 

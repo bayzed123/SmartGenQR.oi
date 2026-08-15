@@ -1,10 +1,10 @@
 ---
-title: "Getting Started"
-description: "Learn how to set up and start contributing to SmartGen."
+slug: "architecture-and-tech-stack"
+title: "Architecture & Tech Stack"
+description: "How SmartGen is put together: core architectural principles, the technical stack, and the file structure."
 order: 1
 ---
 
-# Getting Started
 
 Welcome to the SmartGen project! This guide will help you get your local environment ready for development.
 

@@ -189,4 +189,4 @@ In Module 6, we'll continue expanding your platform-specific marketing skills. I
 - [Module 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide](https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 ---
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://smartgentools.com).*

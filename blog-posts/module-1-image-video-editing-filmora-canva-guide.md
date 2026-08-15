@@ -178,4 +178,4 @@ In Module 2 of this course, we'll build on these visual content skills as we mov
 * [Display Advertising and Remarketing Guide](https://smartgentools.com/blog/display-advertising-and-remarketing-guide-smartgen/)
 ---
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://smartgentools.com).*

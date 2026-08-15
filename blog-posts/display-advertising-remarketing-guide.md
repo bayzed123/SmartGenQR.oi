@@ -17,7 +17,7 @@ tags:
 slug: "display-advertising-and-remarketing-guide-smartgen"
 ---
 <!--AUTHOR_PROFILE-->
-July 12, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 12, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 A complete, step-by-step, beginner-friendly A to Z guide to **Module 17: Display Advertising and Remarketing** — how the Google Display Network actually works, how to set up your first display campaign without wasting budget on the wrong inventory, how to design display ads that pass Google's specs and actually get noticed, how to build remarketing audiences that bring lost visitors back to convert, and exactly how to track, test, and calculate the ROI of every dollar you spend — the exact same measurement framework professional SEM teams use.
 
@@ -72,7 +72,7 @@ Before diving in, if you haven't already gone through the earlier modules in thi
 - [Module 14: Technical SEO Optimization — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/technical-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 - [Module 15: Video Marketing Through YouTube — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/video-marketing-through-youtube-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 - [Module 16: Email Marketing — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/email-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
-- [Module 17: Display Advertising and Remarketing — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/display-advertising-and-remarketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 17: Display Advertising and Remarketing — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/display-advertising-and-remarketing-guide-smartgen/)
 
 ---
 
@@ -385,6 +385,6 @@ Take a moment to revisit the earlier lessons in this course if you need a refres
 - [Module 14: Technical SEO Optimization — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/technical-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 - [Module 15: Video Marketing Through YouTube — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/video-marketing-through-youtube-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 - [Module 16: Email Marketing — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/email-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
-- [Module 17: Display Advertising and Remarketing — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/display-advertising-and-remarketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
+- [Module 17: Display Advertising and Remarketing — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/display-advertising-and-remarketing-guide-smartgen/)
 
 ---

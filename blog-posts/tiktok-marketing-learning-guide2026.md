@@ -16,7 +16,7 @@ tags:
   - Short-Form Video
 slug: "tiktok-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog"
 ---
-July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 01, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 # MODULE 10: TikTok Marketing — The Complete A to Z Mega Guide for Beginners
 
@@ -49,7 +49,7 @@ Before we begin: if you haven't already worked through the earlier modules in th
 - [Module 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 - [Module 8: Pinterest Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
-- [Module 9: YouTube Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-9-youtube-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+- [Module 9: YouTube Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/youtube-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 
 ---
 
@@ -547,18 +547,18 @@ In the next module, we continue building your digital marketing skill set. Take 
 - [Module 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
 - [Module 7: LinkedIn Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 - [Module 8: Pinterest Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/pinterest-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
-- [Module 9: YouTube Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/module-9-youtube-marketing-the-complete-a-to-z-mega-guide-for-beginners/)
+- [Module 9: YouTube Marketing — The Complete A to Z Mega Guide](https://smartgentools.com/blog/youtube-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 
 ---
 
 > **About the Author**
 >
-> **Sayad Md Bayezid Hosan** is the founder of SmartGen Tools and the creator of the SmartGen Digital Marketing Course. With over five years of experience in SEO, content strategy, social media marketing, and digital tool development, he writes these modules to give every beginner the same practical, honest foundation he wishes had existed when he started. He publishes new modules and free tools at [smartgentools.com](https://www.smartgentools.com).
+> **Sayad Md Bayezid Hosan** is the founder of SmartGen Tools and the creator of the SmartGen Digital Marketing Course. With over five years of experience in SEO, content strategy, social media marketing, and digital tool development, he writes these modules to give every beginner the same practical, honest foundation he wishes had existed when he started. He publishes new modules and free tools at [smartgentools.com](https://smartgentools.com).
 >
-> 🌐 [www.smartgentools.com](https://www.smartgentools.com) | 👤 [Sayad Bayezid Hosan](https://www.sayadbayezid.com)
+> 🌐 [www.smartgentools.com](https://smartgentools.com) | 👤 [Sayad Bayezid Hosan](https://www.sayadbayezid.com)
 
 ---
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://smartgentools.com).*
 
 SmartGen · Digital Marketing · Digital Marketing Course · Module 10 · TikTok Marketing · TikTok SEO · TikTok Ads · Short-Form Video

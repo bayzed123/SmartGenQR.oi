@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Secrets Explained - SmartGen Docs</title>
+    <meta name="description" content="Learn about secrets as they are used in GitHub Actions workflows.">
+    <link rel="canonical" href="https://smartgentools.com/docs/github-secrets-explained/">
+    
+    <!-- HTTPS Redirect Script -->
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace('https:' + location.href.substring(location.protocol.length));
+        }
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/docs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+
+    <style>
+      .toc-sidebar { min-width: 200px; padding-left: 1.5rem; border-left: 1px solid #e5e7eb; }
+      .toc-heading { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: #888; margin-bottom: 0.75rem; }
+      .toc-list { list-style: none; padding: 0; margin: 0; }
+      .toc-list li { margin-bottom: 0.5rem; }
+      .toc-main a { font-size: 0.9rem; color: #444; text-decoration: none; }
+      .toc-sub a { font-size: 0.85rem; color: #777; text-decoration: none; padding-left: 1rem; display:block; }
+      .toc-link:hover, .toc-link.active { color: #3b82f6; font-weight: 500; }
+      .doc-layout-with-toc { display: flex; gap: 2rem; }
+      @media (max-width: 900px) { .toc-sidebar { display: none; } }
+      
+      /* GitHub-style Footer */
+      .doc-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; }
+      .nav-table { display: table; width: 100%; margin-bottom: 2rem; }
+      .nav-row { display: table-row; }
+      .nav-cell { display: table-cell; padding: 1rem; width: 50%; }
+      .nav-prev { text-align: left; padding-right: 2rem; }
+      .nav-next { text-align: right; padding-left: 2rem; border-left: 1px solid #e5e7eb; }
+      .nav-label { font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; font-weight: 500; }
+      .nav-link-footer { color: #0969da; text-decoration: none; font-weight: 600; font-size: 1.05rem; }
+      .nav-link-footer:hover { text-decoration: underline; }
+      .nav-empty { height: 2.5rem; }
+      .footer-divider { margin: 2rem 0; border: none; border-top: 1px solid #e5e7eb; }
+      .help-section { margin: 2rem 0; }
+      .help-box { margin-bottom: 2rem; }
+      .help-box h3 { font-size: 1rem; font-weight: 600; margin: 0 0 0.5rem 0; }
+      .help-box p { margin: 0.5rem 0; color: #555; font-size: 0.95rem; line-height: 1.5; }
+      .btn-contribute { display: inline-block; padding: 0.5rem 1rem; background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; color: #0969da; text-decoration: none; font-weight: 500; margin: 0.75rem 0; }
+      .btn-contribute:hover { background: #eaeef2; }
+      .link-secondary { color: #0969da; text-decoration: none; }
+      .link-secondary:hover { text-decoration: underline; }
+      .footer-legal { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; text-align: center; }
+      .footer-legal small { color: #666; font-size: 0.85rem; }
+      .footer-legal a { color: #0969da; text-decoration: none; }
+      .footer-legal a:hover { text-decoration: underline; }
+      
+      @media (max-width: 768px) {
+        .nav-cell { display: block; width: 100%; padding: 1rem 0; border-left: none; }
+        .nav-next { border-left: none; border-top: 1px solid #e5e7eb; padding-top: 1rem; text-align: left; }
+        .nav-prev { padding-right: 0; }
+      }
+    </style>
+</head>
+<body>
+    <header class="docs-header">
+        <div class="header-left">
+            <button id="mobile-menu-btn" class="icon-btn mobile-only" aria-label="Menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <a href="/" class="logo">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="color: var(--primary);"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                SmartGen Docs
+            </a>
+        </div>
+        <div class="header-right">
+            <div class="search-bar desktop-only">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" placeholder="Search or Ask AI..." readonly>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <a href="https://github.com/Sayadbayezid" target="_blank" class="icon-btn" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <div class="docs-layout">
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <aside id="sidebar" class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section-title">Guides</div>
+                <a href="/docs/github-secrets-explained/" class="nav-link active">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    GitHub Secrets Explained
+                </a>
+                <a href="/docs/development-setup-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Development Setup Guide
+                </a>
+                <a href="/docs/directory-structure-for-portfolio/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Directory Structure for Portfolio
+                </a>
+                <a href="/docs/getting-started/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Getting Started
+                </a>
+                <a href="/docs/architecture-and-tech-stack/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Architecture & Tech Stack
+                </a>
+                <a href="/docs/installation/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Installation
+                </a>
+                <a href="/docs/quick-setup-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Quick Setup Guide
+                </a>
+                <a href="/docs/vite-optimization-guide-for-cicd/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Vite Optimization Guide for CI/CD
+                </a>
+                <a href="/docs/developer-guidelines/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Developer Guidelines
+                </a>
+                <a href="/docs/advanced-workflow-configuration/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Advanced Workflow Configuration
+                </a>
+                <a href="/docs/vite-config-quick-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Vite Config Quick Reference
+                </a>
+                <a href="/docs/about-the-team-and-contribution/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    About the Team & Contribution
+                </a>
+                <a href="/docs/railway-deployment-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Railway Deployment Guide
+                </a>
+                <a href="/docs/custom-environment-variables/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Custom Environment Variables
+                </a>
+                <a href="/docs/workflow-customization-summary/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Workflow Customization Summary
+                </a>
+                <a href="/docs/contributor-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Contributor Guide
+                </a>
+                <a href="/docs/quickstart-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Quickstart Guide
+                </a><div class="nav-section-title">API Reference</div>
+                <a href="/docs/api-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    API Reference
+                </a><div class="nav-section-title">Portfolio Website</div>
+                <a href="/docs/portfolio-website-getting-started-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Getting Started Guide
+                </a>
+                <a href="/docs/portfolio-website-deployment-and-blog-system-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Deployment & Blog System Guide
+                </a>
+                <a href="/docs/portfolio-website-customization-guide/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: Customization Guide
+                </a>
+                <a href="/docs/portfolio-website-api-and-script-reference/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Portfolio Website: API & Script Reference
+                </a><div class="nav-section-title">Open Source Projects</div>
+                <a href="/docs/building-a-fast-client-side-search-feature-without-a-backend/" class="nav-link ">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    Building a Fast Client-Side Search Feature Without a Backend
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="https://smartgentools.com" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                    Home
+                </a>
+                <a href="https://smartgentools.com/blog" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    Blog
+                </a>
+                <a href="https://smartgentools.com/about" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    About Us
+                </a>
+                <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions/1" target="_blank" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    Discussions <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+                <a href="https://smartgentools.com/privacy" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    Privacy & Legal
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="doc-layout-with-toc">
+                <article class="doc-article">
+                    <div class="breadcrumb">
+                        <span>Docs</span> <span class="separator">/</span> <span>Guides</span>
+                    </div>
+                    <h1 class="doc-title">GitHub Secrets Explained</h1>
+
+<div class="header-ads-container">
+  <div class="desktop-only"><div class="ad-cls-wrapper" id="ad-wrapper-leaderboard728x90" style="min-height: 90px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f9d4f2f3a29a9dcfb43dddf1fd33eb88',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f9d4f2f3a29a9dcfb43dddf1fd33eb88/invoke.js"></script>
+</div></div>
+  <div class="mobile-only"><div class="ad-cls-wrapper" id="ad-wrapper-mobile320x50" style="min-height: 50px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : '6af746fdd2244652b728e73b1a70db61',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>
+</div></div>
+</div>
+                    <div class="doc-body">
+                        <h1 id="github-secrets-explained-for-beginners">🔐 GitHub Secrets Explained for Beginners</h1>
+<h2 id="what-is-a-andquotsecretandquot">What is a &quot;Secret&quot;? 🤔</h2>
+<p>A <strong>secret</strong> is like a <strong>password</strong> or <strong>hidden information</strong> that you don&#39;t want to share publicly.</p>
+<h3 id="real-life-example">Real-Life Example</h3>
+<p>Think of it like this:</p>
+<pre><code>Your House 🏠
+├── Living Room (public - anyone can see)
+├── Bedroom (private - only you see)
+└── Safe Box (secret - locked, only you have key)
+    ├── Passwords
+    ├── Credit cards
+    └── Personal documents
+</code></pre>
+<h3 id="in-programming">In Programming:</h3>
+<pre><code>Your Website
+├── Code (public - on GitHub, everyone sees)
+├── Configuration (private - only on your server)
+└── Secrets (locked - passwords, API keys, SSH keys)
+    ├── Server passwords
+    ├── Database passwords
+    ├── API keys from services
+    └── SSH keys for deployment
+</code></pre>
+<h2 id="why-use-the-word-andquotsecretandquot">Why Use the Word &quot;Secret&quot;? 🤐</h2>
+<p>It&#39;s called a &quot;secret&quot; because:</p>
+<ul>
+<li>🔒 It&#39;s <strong>locked and encrypted</strong></li>
+<li>👤 Only <strong>you</strong> can access it</li>
+<li>🙈 It&#39;s <strong>hidden from public view</strong></li>
+<li>🔑 It&#39;s like a <strong>password</strong> or <strong>API key</strong></li>
+</ul>
+<h2 id="what-kind-of-information-is-andquotsecretandquot">What Kind of Information is &quot;Secret&quot;?</h2>
+<h3 id="things-that-should-be-secret">✅ Things That Should Be Secret:</h3>
+<pre><code>1. Server passwords
+2. SSH private keys
+3. API tokens
+4. Database passwords
+5. Credit card numbers
+6. Personal information
+</code></pre>
+<h3 id="things-that-are-not-secret">❌ Things That Are NOT Secret:</h3>
+<pre><code>1. Your code
+2. Your README file
+3. Your project name
+4. Public configuration
+</code></pre>
+<h2 id="github-secrets-in-simple-terms">GitHub Secrets in Simple Terms</h2>
+<p>GitHub has a special feature where you can:</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+<ol>
+<li>Store secrets <strong>safely</strong> (encrypted)</li>
+<li>Use them in <strong>workflows</strong> (CI/CD)</li>
+<li><strong>Nobody</strong> can see them (except you)</li>
+</ol>
+<h3 id="analogy-treasure-box">Analogy: Treasure Box 🎁</h3>
+<pre><code>Regular Files (GitHub repo)
+├── README.md
+├── package.json
+└── All visible to everyone
+    ↓
+    Public to anyone on internet!
+
+GitHub Secrets (Special encrypted storage)
+├── PRODUCTION_SERVER_HOST
+├── PRODUCTION_SERVER_SSH_KEY
+└── PRODUCTION_SERVER_USER
+    ↓
+    Only YOU can see it!
+</code></pre>
+<h2 id="your-specific-secrets-for-deployment">Your Specific Secrets for Deployment</h2>
+<p>For deploying your portfolio, you need these secrets:</p>
+<h3 id="for-staging-server-testing">For Staging Server (Testing):</h3>
+<pre><code>STAGING_SERVER_HOST          = IP address of staging server
+STAGING_SERVER_USER          = Username to login
+STAGING_SERVER_SSH_KEY       = Private key to connect
+STAGING_DEPLOYMENT_PATH      = Folder path on server
+STAGING_URL                  = Website URL
+</code></pre>
+<h3 id="for-production-server-live">For Production Server (Live):</h3>
+<pre><code>PRODUCTION_SERVER_HOST       = IP address of production server
+PRODUCTION_SERVER_USER       = Username to login
+PRODUCTION_SERVER_SSH_KEY    = Private key to connect
+PRODUCTION_DEPLOYMENT_PATH   = Folder path on server
+PRODUCTION_URL               = Website URL
+</code></pre>
+<h2 id="example-what-is-ssh-key">Example: What is SSH Key? 🔑</h2>
+<h3 id="ssh-key-digital-lock-andamp-key">SSH Key = Digital Lock &amp; Key</h3>
+<pre><code>Like a physical lock:
+┌─────────────────┐
+│ Your House 🏠   │
+│ Locked with:    │
+│ Public lock     │
+│ (everyone sees) │
+└─────────────────┘
+
+Your key:
+┌─────────────────┐
+│ Private key 🔑  │
+│ (only you have) │
+│ Opens the lock  │
+└─────────────────┘
+</code></pre>
+<h3 id="in-code">In Code:</h3>
+<pre><code>Server has: Public lock (installed on server)
+You have: Private key (keep secret in GitHub)
+
+When deploying:
+GitHub workflows say: &quot;I&#39;m deploying!&quot;
+Server checks: &quot;Do you have the private key?&quot;
+GitHub shows: SSH key from secrets
+Server checks: &quot;Yes, I recognize this key!&quot;
+Server allows: Deployment to happen!
+</code></pre>
+<h2 id="why-canand39t-you-just-use-passwords">Why Can&#39;t You Just Use Passwords? 🤔</h2>
+<p>Because:</p>
+<ol>
+<li><strong>Passwords are unsafe</strong> - Can be guessed</li>
+<li><strong>SSH keys are safer</strong> - Like a fingerprint</li>
+<li><strong>Passwords can expire</strong> - Keys don&#39;t</li>
+<li><strong>Keys are unique</strong> - Hard to duplicate</li>
+</ol>
+<h2 id="where-to-store-secrets-in-github">Where to Store Secrets in GitHub</h2>
+<h3 id="step-by-step">Step-by-Step:</h3>
+<ol>
+<li>Go to your GitHub repository</li>
+<li>Click <strong>Settings</strong> (top right)</li>
+<li>Click <strong>Secrets and variables</strong> (left sidebar)</li>
+<li>Click <strong>Actions</strong></li>
+<li>Click <strong>New repository secret</strong></li>
+<li>Enter name and value</li>
+<li>Click <strong>Add secret</strong></li>
+</ol>
+<pre><code>📦 GitHub Repository
+└── ⚙️ Settings
+    └── 🔐 Secrets and variables
+        └── Actions
+            └── New repository secret
+                ├── Name: STAGING_SERVER_HOST
+                └── Value: 1.2.3.4
+</code></pre>
+<h2 id="example-adding-a-secret">Example: Adding a Secret</h2>
+<h3 id="what-you-do">What You Do:</h3>
+<pre><code>Name: STAGING_SERVER_HOST
+Value: 192.168.1.100
+
+Click: Add secret
+</code></pre>
+<h3 id="what-github-does">What GitHub Does:</h3>
+<pre><code>Encrypts: 192.168.1.100
+Locks it: 🔒
+Shows you: ••••••••••••• (hidden)
+Only decrypts: When workflows need it
+</code></pre>
+<h2 id="how-workflows-use-secrets">How Workflows Use Secrets</h2>
+<h3 id="in-your-workflow-file">In Your Workflow File:</h3>
+<pre><code class="language-yaml">- name: Deploy to Server
+  run: ssh user@${{ secrets.STAGING_SERVER_HOST }}
+</code></pre>
+<h3 id="what-happens">What Happens:</h3>
+<pre><code>GitHub reads: ${{ secrets.STAGING_SERVER_HOST }}
+Looks up: STAGING_SERVER_HOST from secrets
+Gets value: 192.168.1.100
+Replaces: ssh user@192.168.1.100
+Runs command: Connects to server!
+</code></pre>
+<h2 id="real-example-for-your-portfolio">Real Example for Your Portfolio</h2>
+<h3 id="your-workflow-needs-this">Your Workflow Needs This:</h3>
+<pre><code class="language-yaml">- name: Deploy Portfolio
+  uses: appleboy/ssh-action@master
+  with:
+    host: ${{ secrets.PRODUCTION_SERVER_HOST }}
+    username: ${{ secrets.PRODUCTION_SERVER_USER }}
+    key: ${{ secrets.PRODUCTION_SERVER_SSH_KEY }}
+</code></pre>
+<h3 id="you-configured">You Configured:</h3>
+<pre><code>Secret 1: PRODUCTION_SERVER_HOST = 123.45.67.89
+Secret 2: PRODUCTION_SERVER_USER = deploy
+Secret 3: PRODUCTION_SERVER_SSH_KEY = -----BEGIN OPENSSH...
+</code></pre>
+<h3 id="result">Result:</h3>
+<pre><code>GitHub replaces:
+host: 123.45.67.89
+username: deploy
+key: -----BEGIN OPENSSH...
+
+Then connects to your server and deploys!
+</code></pre>
+<h2 id="why-this-is-safe">Why This is Safe? 🛡️</h2>
+<pre><code>Without Secrets (DANGEROUS ❌):
+- SSH key in workflow file
+- Visible to everyone
+- Anyone can deploy
+- Your server is compromised!
+
+With Secrets (SAFE ✅):
+- SSH key encrypted
+- Only on GitHub servers
+- Only visible to you
+- Workflows use it safely
+- Your server is protected!
+</code></pre>
+<h2 id="quick-checklist-do-you-need-secrets">Quick Checklist: Do You Need Secrets?</h2>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Type</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Server IP</td>
+<td>Secret</td>
+<td>GitHub Secrets</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>Secret</td>
+<td>GitHub Secrets</td>
+</tr>
+<tr>
+<td>SSH Key</td>
+<td>Secret</td>
+<td>GitHub Secrets</td>
+</tr>
+<tr>
+<td>Deployment Path</td>
+<td>Secret</td>
+<td>GitHub Secrets</td>
+</tr>
+<tr>
+<td>Website URL</td>
+<td>Could be public</td>
+<td>Or GitHub Secrets</td>
+</tr>
+<tr>
+<td>Your code</td>
+<td>Not a secret</td>
+<td>In repository</td>
+</tr>
+<tr>
+<td>README</td>
+<td>Not a secret</td>
+<td>In repository</td>
+</tr>
+</tbody></table>
+<h2 id="common-mistakes-beginners-make">Common Mistakes Beginners Make ❌</h2>
+<h3 id="mistake-1-putting-secrets-in-code">Mistake 1: Putting secrets in code</h3>
+<pre><code class="language-yaml"># ❌ WRONG - DON&#39;T DO THIS!
+host: 123.45.67.89
+key: -----BEGIN OPENSSH PRIVATE KEY-----
+</code></pre>
+<h3 id="mistake-2-committing-secrets-to-git">Mistake 2: Committing secrets to Git</h3>
+<pre><code class="language-bash"># ❌ WRONG - DON&#39;T DO THIS!
+git add secrets.json
+git push  # Now everyone sees your passwords!
+</code></pre>
+<h3 id="mistake-3-sharing-ssh-key-publicly">Mistake 3: Sharing SSH key publicly</h3>
+<pre><code class="language-bash"># ❌ WRONG - DON&#39;T DO THIS!
+# Posting key in forum or chat
+-----BEGIN OPENSSH PRIVATE KEY-----
+...
+-----END OPENSSH PRIVATE KEY-----
+</code></pre>
+<h3 id="correct-way">Correct Way ✅</h3>
+<pre><code class="language-yaml"># ✅ RIGHT - USE SECRETS!
+host: ${{ secrets.PRODUCTION_SERVER_HOST }}
+key: ${{ secrets.PRODUCTION_SERVER_SSH_KEY }}
+</code></pre>
+<h2 id="your-secret-names-for-your-portfolio">Your Secret Names (For Your Portfolio)</h2>
+<p>These are the exact secret names we use:</p>
+<h3 id="staging-secrets">Staging Secrets:</h3>
+<pre><code>1. STAGING_SERVER_HOST
+2. STAGING_SERVER_USER
+3. STAGING_SERVER_SSH_KEY
+4. STAGING_DEPLOYMENT_PATH
+5. STAGING_URL
+</code></pre>
+<h3 id="production-secrets">Production Secrets:</h3>
+<pre><code>1. PRODUCTION_SERVER_HOST
+2. PRODUCTION_SERVER_USER
+3. PRODUCTION_SERVER_SSH_KEY
+4. PRODUCTION_DEPLOYMENT_PATH
+5. PRODUCTION_URL
+</code></pre>
+<h3 id="optional">Optional:</h3>
+<pre><code>1. SNYK_TOKEN (for security scanning)
+</code></pre>
+<h2 id="where-do-values-come-from">Where Do Values Come From?</h2>
+<h3 id="stagingserverhost">STAGING_SERVER_HOST</h3>
+<pre><code>Get from: Your server provider (Linode, DigitalOcean, etc.)
+Example: 185.234.218.45
+How: ssh user@185.234.218.45
+</code></pre>
+<h3 id="stagingserveruser">STAGING_SERVER_USER</h3>
+<pre><code>Get from: Server setup
+Example: deploy
+How: whoami (on server)
+</code></pre>
+<h3 id="stagingserversshkey">STAGING_SERVER_SSH_KEY</h3>
+<pre><code>Get from: Generate locally
+Example: ssh-keygen -t ed25519
+How: cat ~/.ssh/id_ed25519
+What: Entire file content (starts with -----BEGIN...)
+</code></pre>
+<h2 id="step-by-step-add-your-first-secret">Step-by-Step: Add Your First Secret</h2>
+<h3 id="1-go-to-github">1. Go to GitHub</h3>
+<pre><code>https://github.com/your-account/your_repostory
+</code></pre>
+<h3 id="2-click-settings">2. Click Settings</h3>
+<pre><code>Repository → Settings (top right)
+</code></pre>
+<h3 id="3-go-to-secrets">3. Go to Secrets</h3>
+<pre><code>Left menu → Secrets and variables → Actions
+</code></pre>
+<h3 id="4-add-secret">4. Add Secret</h3>
+<pre><code>Click: New repository secret
+Name: STAGING_SERVER_HOST
+Value: YOUR_SERVER_IP_HERE
+Click: Add secret
+</code></pre>
+<h3 id="5-repeat-for-all-secrets">5. Repeat for All Secrets</h3>
+<pre><code>Do this 5 more times for:
+- STAGING_SERVER_USER
+- STAGING_SERVER_SSH_KEY
+- STAGING_DEPLOYMENT_PATH
+- STAGING_URL
+- (And same for PRODUCTION_)
+</code></pre>
+<h2 id="how-to-get-your-secret-values">How to Get Your Secret Values</h2>
+<h3 id="for-stagingserverhost-server-ip">For STAGING_SERVER_HOST (Server IP):</h3>
+<pre><code>If you have a server:
+$ ip addr
+or
+$ curl https://checkip.amazonaws.com
+
+If using cloud provider:
+- DigitalOcean: Droplet → Settings → IP Address
+- AWS: EC2 → Instances → Public IPv4 address
+- Linode: Linodes → Server → IP Addresses
+</code></pre>
+<h3 id="for-stagingserveruser">For STAGING_SERVER_USER:</h3>
+<pre><code>Default usually: root or deploy
+Check with:
+$ whoami
+</code></pre>
+<h3 id="for-stagingserversshkey">For STAGING_SERVER_SSH_KEY:</h3>
+<pre><code>Generate:
+$ ssh-keygen -t ed25519 -f deploy_key -N &quot;&quot;
+
+View private key:
+$ cat deploy_key
+
+Copy ENTIRE content (from -----BEGIN to -----END)
+Paste into GitHub Secret
+</code></pre>
+<h3 id="for-stagingdeploymentpath">For STAGING_DEPLOYMENT_PATH:</h3>
+<pre><code>Folder on your server:
+Example: /home/deploy/app
+
+Where is your app?
+$ pwd
+(shows current path)
+</code></pre>
+<h3 id="for-stagingurl">For STAGING_URL:</h3>
+<pre><code>Your website URL:
+Example: https://staging.yourdomain.com
+
+Or for IP:
+Example: http://123.45.67.89
+</code></pre>
+<h2 id="verification-did-you-add-secrets-correctly">Verification: Did You Add Secrets Correctly?</h2>
+<h3 id="check-github">Check GitHub:</h3>
+<pre><code>1. Go to Settings &gt; Secrets and variables &gt; Actions
+2. You should see all 5 secrets listed:
+   ✅ STAGING_SERVER_HOST
+   ✅ STAGING_SERVER_USER
+   ✅ STAGING_SERVER_SSH_KEY
+   ✅ STAGING_DEPLOYMENT_PATH
+   ✅ STAGING_URL
+3. Click each to verify (shows: •••••••••••)
+</code></pre>
+<h3 id="check-workflows">Check Workflows:</h3>
+<pre><code>1. Make a push to GitHub
+2. Go to Actions tab
+3. Wait for workflow to run
+4. If secrets work: ✅ Deployment succeeds
+5. If secrets wrong: ❌ Connection fails
+</code></pre>
+<h2 id="troubleshooting-secrets-not-working">Troubleshooting: Secrets Not Working</h2>
+<h3 id="error-andquotauthentication-failedandquot">Error: &quot;Authentication failed&quot;</h3>
+<pre><code>Means: SSH key is wrong
+Fix:
+1. Copy private key again
+2. Make sure no extra spaces
+3. Use full key (-----BEGIN to -----END)
+</code></pre>
+<h3 id="error-andquotconnection-refusedandquot">Error: &quot;Connection refused&quot;</h3>
+<pre><code>Means: Server IP is wrong
+Fix:
+1. Check IP is correct
+2. Try ping: ping STAGING_SERVER_HOST
+3. Make sure server is running
+</code></pre>
+<h3 id="error-andquotpermission-deniedandquot">Error: &quot;Permission denied&quot;</h3>
+<pre><code>Means: User or SSH key wrong
+Fix:
+1. SSH manually first: ssh user@ip
+2. Check user exists
+3. Check SSH key works
+</code></pre>
+<h2 id="summary">Summary 🎯</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Secret</strong></td>
+<td>Password/key you keep hidden</td>
+</tr>
+<tr>
+<td><strong>GitHub Secret</strong></td>
+<td>Encrypted storage on GitHub</td>
+</tr>
+<tr>
+<td><strong>Why use it</strong></td>
+<td>Keep sensitive info safe</td>
+</tr>
+<tr>
+<td><strong>What to store</strong></td>
+<td>Server IPs, keys, passwords</td>
+</tr>
+<tr>
+<td><strong>How workflows use it</strong></td>
+<td>${{ secrets.NAME }}</td>
+</tr>
+<tr>
+<td><strong>Your secrets</strong></td>
+<td>5 for staging, 5 for production</td>
+</tr>
+<tr>
+<td><strong>Who can see</strong></td>
+<td>Only you and workflows</td>
+</tr>
+</tbody></table>
+<h2 id="next-steps">Next Steps</h2>
+<ol>
+<li><strong>Read</strong>: <code>FOLDER_STRUCTURE.md</code> (understand files)</li>
+<li><strong>Get</strong>: Server IP, SSH key, etc.</li>
+<li><strong>Add</strong>: All secrets to GitHub</li>
+<li><strong>Push</strong>: Code to GitHub</li>
+<li><strong>Watch</strong>: Workflows run</li>
+<li><strong>See</strong>: Your portfolio deploy! ✅</li>
+</ol>
+<hr>
+<p><strong>Congratulations!</strong> You now understand GitHub Secrets! 🎉</p>
+
+                    </div>
+                    
+        <div class="doc-footer">
+            <div class="nav-table">
+                <div class="nav-row">
+                    <div class="nav-cell nav-prev">
+                        <div class="nav-empty"></div>
+                    </div>
+                    <div class="nav-cell nav-next">
+                        
+                            <div class="nav-label">Next →</div>
+                            <a href="/docs/development-setup-guide/" class="nav-link-footer">Development Setup Guide</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="help-section">
+                <div class="help-box">
+                    <h3>Did you find what you needed?</h3>
+                    <p>Thank you! We received your feedback.</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+                </div>
+
+                <div class="help-box">
+                    <h3>Help us make these docs great!</h3>
+                    <p>All SmartGen docs are open source. See something that's wrong or unclear? Submit a pull request.</p>
+                    <a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md" class="btn-contribute">⑂ Make a contribution</a>
+                    <p><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md" class="link-secondary">Learn how to contribute</a></p>
+                </div>
+
+                <div class="help-box">
+                    <h3>Still need help?</h3>
+                    <p>👥 <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions" class="link-secondary">Ask the SmartGen community</a></p>
+                    <p>💬 <a href="https://smartgentools.com/contact/" class="link-secondary">Contact support</a></p>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p><small>© 2026 SmartGen. &nbsp; <a href="https://smartgentools.com/terms/">Terms</a> &nbsp; <a href="https://smartgentools.com/privacy/">Privacy</a> &nbsp; <a href="https://smartgentools.com/tools/">Expert services</a> &nbsp; <a href="https://smartgentools.com/blog/">Blog</a></small></p>
+            </div>
+        </div>
+    
+                </article>
+
+                
+        <aside class="toc-sidebar desktop-only">
+            <div class="toc-heading">On This Page</div>
+            <ul class="toc-list">
+                
+                    <li class="toc-item toc-main">
+                        <a href="#what-is-a-andquotsecretandquot" class="toc-link">What is a &quot;Secret&quot;? 🤔</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#real-life-example" class="toc-link">Real-Life Example</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#in-programming" class="toc-link">In Programming:</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#why-use-the-word-andquotsecretandquot" class="toc-link">Why Use the Word &quot;Secret&quot;? 🤐</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#what-kind-of-information-is-andquotsecretandquot" class="toc-link">What Kind of Information is &quot;Secret&quot;?</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#things-that-should-be-secret" class="toc-link">✅ Things That Should Be Secret:</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#things-that-are-not-secret" class="toc-link">❌ Things That Are NOT Secret:</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#github-secrets-in-simple-terms" class="toc-link">GitHub Secrets in Simple Terms</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#analogy-treasure-box" class="toc-link">Analogy: Treasure Box 🎁</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#your-specific-secrets-for-deployment" class="toc-link">Your Specific Secrets for Deployment</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#for-staging-server-testing" class="toc-link">For Staging Server (Testing):</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#for-production-server-live" class="toc-link">For Production Server (Live):</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#example-what-is-ssh-key" class="toc-link">Example: What is SSH Key? 🔑</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#ssh-key-digital-lock-andamp-key" class="toc-link">SSH Key = Digital Lock &amp; Key</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#in-code" class="toc-link">In Code:</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#why-canand39t-you-just-use-passwords" class="toc-link">Why Can&#39;t You Just Use Passwords? 🤔</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#where-to-store-secrets-in-github" class="toc-link">Where to Store Secrets in GitHub</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#step-by-step" class="toc-link">Step-by-Step:</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#example-adding-a-secret" class="toc-link">Example: Adding a Secret</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#what-you-do" class="toc-link">What You Do:</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#what-github-does" class="toc-link">What GitHub Does:</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#how-workflows-use-secrets" class="toc-link">How Workflows Use Secrets</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#in-your-workflow-file" class="toc-link">In Your Workflow File:</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#what-happens" class="toc-link">What Happens:</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#real-example-for-your-portfolio" class="toc-link">Real Example for Your Portfolio</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#your-workflow-needs-this" class="toc-link">Your Workflow Needs This:</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#you-configured" class="toc-link">You Configured:</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#result" class="toc-link">Result:</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#why-this-is-safe" class="toc-link">Why This is Safe? 🛡️</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#quick-checklist-do-you-need-secrets" class="toc-link">Quick Checklist: Do You Need Secrets?</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#common-mistakes-beginners-make" class="toc-link">Common Mistakes Beginners Make ❌</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#mistake-1-putting-secrets-in-code" class="toc-link">Mistake 1: Putting secrets in code</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#mistake-2-committing-secrets-to-git" class="toc-link">Mistake 2: Committing secrets to Git</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#mistake-3-sharing-ssh-key-publicly" class="toc-link">Mistake 3: Sharing SSH key publicly</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#correct-way" class="toc-link">Correct Way ✅</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#your-secret-names-for-your-portfolio" class="toc-link">Your Secret Names (For Your Portfolio)</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#staging-secrets" class="toc-link">Staging Secrets:</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#production-secrets" class="toc-link">Production Secrets:</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#optional" class="toc-link">Optional:</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#where-do-values-come-from" class="toc-link">Where Do Values Come From?</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#stagingserverhost" class="toc-link">STAGING_SERVER_HOST</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#stagingserveruser" class="toc-link">STAGING_SERVER_USER</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#stagingserversshkey" class="toc-link">STAGING_SERVER_SSH_KEY</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#step-by-step-add-your-first-secret" class="toc-link">Step-by-Step: Add Your First Secret</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#1-go-to-github" class="toc-link">1. Go to GitHub</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#2-click-settings" class="toc-link">2. Click Settings</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#3-go-to-secrets" class="toc-link">3. Go to Secrets</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#4-add-secret" class="toc-link">4. Add Secret</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#5-repeat-for-all-secrets" class="toc-link">5. Repeat for All Secrets</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#how-to-get-your-secret-values" class="toc-link">How to Get Your Secret Values</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#for-stagingserverhost-server-ip" class="toc-link">For STAGING_SERVER_HOST (Server IP):</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#for-stagingserveruser" class="toc-link">For STAGING_SERVER_USER:</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#for-stagingserversshkey" class="toc-link">For STAGING_SERVER_SSH_KEY:</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#for-stagingdeploymentpath" class="toc-link">For STAGING_DEPLOYMENT_PATH:</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#for-stagingurl" class="toc-link">For STAGING_URL:</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#verification-did-you-add-secrets-correctly" class="toc-link">Verification: Did You Add Secrets Correctly?</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#check-github" class="toc-link">Check GitHub:</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#check-workflows" class="toc-link">Check Workflows:</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#troubleshooting-secrets-not-working" class="toc-link">Troubleshooting: Secrets Not Working</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#error-andquotauthentication-failedandquot" class="toc-link">Error: &quot;Authentication failed&quot;</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#error-andquotconnection-refusedandquot" class="toc-link">Error: &quot;Connection refused&quot;</a>
+                    </li>
+                
+                    <li class="toc-item toc-sub">
+                        <a href="#error-andquotpermission-deniedandquot" class="toc-link">Error: &quot;Permission denied&quot;</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#summary" class="toc-link">Summary 🎯</a>
+                    </li>
+                
+                    <li class="toc-item toc-main">
+                        <a href="#next-steps" class="toc-link">Next Steps</a>
+                    </li>
+                
+            </ul>
+        </aside>
+            </div>
+        </main>
+
+<aside class="sidebar desktop-only">
+  <div class="ad-cls-wrapper sticky" style="min-height: 600px; position: sticky; top: 20px;"><script>
+  atOptions = {
+    'key' : '96e8bb0db46b2c8ef669fa310ed45f8b',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script></div>
+</aside>
+
+    </div>
+
+    <script src="../../assets/js/docs.js"></script>
+    <script>
+      document.querySelectorAll('.toc-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      const tocLinks = document.querySelectorAll('.toc-link');
+      const headings = Array.from(tocLinks).map(link =>
+        document.querySelector(link.getAttribute('href'))
+      ).filter(Boolean);
+
+      window.addEventListener('scroll', () => {
+        let current = null;
+        headings.forEach(h => {
+          if (h.getBoundingClientRect().top < 100) current = h;
+        });
+        tocLinks.forEach(link => link.classList.remove('active'));
+        if (current) {
+          const activeLink = document.querySelector('.toc-link[href="#' + current.id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    </script>
+</body>
+</html>
+<div class="ad-cls-wrapper" id="ad-wrapper-native_banner" style="min-height: auto; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
+<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>
+</div>

@@ -3,7 +3,7 @@ title: Best MkDocs Alternative SmartGenDocs
 description: Discover SmartGen Docs, the top open-source MkDocs alternative for building fast, responsive, and Markdown-based documentation.
 keywords: MkDocs alternative, MkDocs competitor, SmartGen Docs, static site generator, Python docs generator, Markdown documentation, open-source documentation
 date: 2026-07-22
-image: https://www.smartgentools.com/blog-posts/images/smartgen-home-overview.JPG
+image: https://smartgentools.com/blog-posts/images/smartgen-home-overview.JPG
 author: Sayad Md Bayezid Hosan
 tags: [SmartGen, Documentation, MkDocs Alternative]
 

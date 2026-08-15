@@ -260,9 +260,9 @@
     </div>
 
     <div class="finding flag">
-      <span class="stamp stamp--flag">Small but breaks links if ignored</span>
-      <h3>URL pattern isn't consistent</h3>
-      <p>Most tools live at <code>smartgentools.com/tool-name/</code>. Three — CPM ROI Calculator, Color Palette Extractor, EMI Calculator — live at <code>smartgentools.com/tools/tool-name/</code> instead. Flagged in the checklist so the contextual internal links you asked for don't 404.</p>
+      <span class="stamp stamp--flag">Resolved</span>
+      <h3>URL pattern is uniform</h3>
+      <p>Every tool lives at <code>smartgentools.com/tool-name/</code>. CPM ROI Calculator, Color Palette Extractor and EMI Calculator were previously documented here as using a <code>/tools/</code> prefix, but no such pages exist — the <code>/tools/</code> index linked to them relatively, which resolved to <code>/tools/tool-name/</code> and 404'd. The links now point at the root URLs, so the pattern is uniform.</p>
     </div>
   </section>
 
@@ -492,9 +492,9 @@ jobs:
     { category: 'Daily Utilities & Calculators', items: [
       {id:'voice-remover', name:'AI Vocal Remover', url:'https://smartgentools.com/voice-remover/'},
       {id:'age-calculator', name:'Age Calculator', url:'https://smartgentools.com/age-calculator/'},
-      {id:'cpm-roi-calculator', name:'CPM ROI Calculator', url:'https://smartgentools.com/tools/cpm-roi-calculator/', note:'URL uses /tools/ prefix, unlike most tools'},
-      {id:'color-palette-extractor', name:'Color Palette Extractor', url:'https://smartgentools.com/tools/color-palette-extractor/', note:'URL uses /tools/ prefix, unlike most tools'},
-      {id:'emi-calculator', name:'EMI Calculator', url:'https://smartgentools.com/tools/emi-calculator/', note:'URL uses /tools/ prefix, unlike most tools'},
+      {id:'cpm-roi-calculator', name:'CPM ROI Calculator', url:'https://smartgentools.com/cpm-roi-calculator/'},
+      {id:'color-palette-extractor', name:'Color Palette Extractor', url:'https://smartgentools.com/color-palette-extractor/'},
+      {id:'emi-calculator', name:'EMI Calculator', url:'https://smartgentools.com/emi-calculator/'},
       {id:'image-compressor', name:'Image Compressor', url:'https://smartgentools.com/image-compressor/'},
       {id:'percentage-calculator', name:'Percentage Calculator', url:'https://smartgentools.com/percentage-calculator/'},
       {id:'pomodoro-timer', name:'Pomodoro Timer', url:'https://smartgentools.com/pomodoro-timer/'},

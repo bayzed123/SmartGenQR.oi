@@ -14,7 +14,7 @@ tags:
   - Search Engine Optimization
 slug: "search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog"
 ---
-July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 01, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 # MODULE 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide for Beginners
 
@@ -252,4 +252,4 @@ In the next module, we'll continue building on these SEO fundamentals with keywo
 - [Module 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide](https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 ---
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://smartgentools.com).*

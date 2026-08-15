@@ -15,7 +15,7 @@ tags:
 slug: "google-web-analytics-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog"
 ---
 <!--AUTHOR_PROFILE-->
-July 10, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 10, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 # MODULE 17: Google Web Analytics — The Complete A to Z Mega Guide for Beginners
 
@@ -246,4 +246,4 @@ In the next module, we'll continue building on this measurement foundation. Take
 
 ---
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://smartgentools.com).*

@@ -14,7 +14,7 @@ slug: "dynamic-sitemap-generation-with-real-time-updates-the-complete-programmat
 # Dynamic Sitemap Generation with Real-time Updates: A Programmatic SEO Approach
 
 **A Complete Guide to Automated Sitemap Management for Modern SEO**
-By **Sayad Md Bayezid Hosan** | Developers at [Smartgen Utility Platform](https://www.smartgentools.com)
+By **Sayad Md Bayezid Hosan** | Developers at [Smartgen Utility Platform](https://smartgentools.com)
 
 ---
 
@@ -237,7 +237,7 @@ If your site grows beyond standard limits (50MB uncompressed or 50,000 URLs), yo
 5.  **Build Event-Driven Updates:** Add webhooks or database triggers.
 6.  **Refine Strategy:** Inject prioritization logic based on your SEO goals.
 
-Ready to get started? Visit [Smartgen Utility Platform](https://www.smartgentools.com) for free tools and resources, including our [Sitemap Finder & Custom XML Downloader](https://smartgentools.com/sitemap-finder-and-downloader/).
+Ready to get started? Visit [Smartgen Utility Platform](https://smartgentools.com) for free tools and resources, including our [Sitemap Finder & Custom XML Downloader](https://smartgentools.com/sitemap-finder-and-downloader/).
 
 *Written by [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com) for the Smartgen Utility Platform community.*
 

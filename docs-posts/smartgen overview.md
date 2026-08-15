@@ -1,7 +1,8 @@
 ---
+slug: "quick-setup-guide"
 title: "Quick Setup Guide"
 description: "Learn how to quickly set up SmartGen tools."
-category: "overview"
+category: "Guides"
 order: 2
 ---
 
@@ -160,7 +161,7 @@ If you find this utility platform helpful, consider supporting its development. 
 
 ## 📄 License
 
-This project is licensed under the MIT License with additional terms. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License with additional terms. See the [LICENSE](https://github.com/bayzed123/SmartGenQR.oi/blob/main/LICENSE) file for details.
 
 **Copyright (c) 2026 Sayad Md Bayezid Hosan**
 

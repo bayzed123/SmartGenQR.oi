@@ -3,7 +3,7 @@ title: "Python Data Structures Explained: Lists to Dicts"
 description: "Master lists, tuples, sets, and dictionaries in Python -- what each one actually does, real operations, and exactly when to use which one for the job."
 keywords: "SmartGen, Python Course, Class 07, Python data structures, Python lists, Python tuples, Python sets, Python dictionaries, when to use list vs tuple vs set vs dict"
 date: 2026-07-15
-image: "https://www.smartgentools.com/blog-posts/images/python-course-class-07-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/python-course-class-07-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -14,11 +14,11 @@ tags:
 slug: "python-data-structures-explained-lists-to-dicts"
 ---
 <!--AUTHOR_PROFILE-->
-July 15, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 15, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 A complete, step-by-step guide to Python's four core data structures — what lists, tuples, sets, and dictionaries actually do, the real operations you'll use on each, and a clear, practical way to decide which one fits a given job, with copy-paste code throughout.
 
- ![Python Data Structures Explained: Lists to Dicts — cover image](https://www.smartgentools.com/blog-posts/images/python-course-class-07-cover.svg)
+ ![Python Data Structures Explained: Lists to Dicts — cover image](https://smartgentools.com/blog-posts/images/python-course-class-07-cover.svg)
 
 ---
 
@@ -77,7 +77,7 @@ Knowing the four names isn't the same as knowing what to actually call on each o
 
 ### The Solution: Real Operations You'll Actually Use
 
- ![Choosing the Right Data Structure — a decision guide from lookup-by-name through uniqueness and mutability to lists, dicts, sets, and tuples](https://www.smartgentools.com/blog-posts/images/python-course-class-07-decision-infographic.svg)
+ ![Choosing the Right Data Structure — a decision guide from lookup-by-name through uniqueness and mutability to lists, dicts, sets, and tuples](https://smartgentools.com/blog-posts/images/python-course-class-07-decision-infographic.svg)
 
 ### List Operations
 
@@ -173,4 +173,4 @@ What Next : [ Python I/O, Break, Continue, and Pass Guide](https://smartgentools
 
 ---
 <!--AUTHOR_FOOTER-->
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your development journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your development journey, visit [smartgentools.com](https://smartgentools.com).*

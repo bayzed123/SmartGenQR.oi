@@ -1,4 +1,5 @@
 ---
+slug: "installation"
 title: "Installation"
 description: "Detailed installation and environment setup instructions for SmartGen."
 order: 2
