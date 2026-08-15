@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Google AdSense approval guide</title>
+  <desc id="desc">A green approval check over a Google AdSense dashboard card with a 2026 compliance checklist.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#eef8f0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#18324a" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="90" r="170" fill="#d9f3df" opacity=".72"/>
+  <circle cx="105" cy="570" r="150" fill="#e6efff" opacity=".75"/>
+  <text x="80" y="112" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700" fill="#536273" letter-spacing="3">SMARTGEN GUIDE • 2026</text>
+  <text x="80" y="190" font-family="Arial,Helvetica,sans-serif" font-size="66" font-weight="800" fill="#243447">Google AdSense</text>
+  <text x="80" y="260" font-family="Arial,Helvetica,sans-serif" font-size="52" font-weight="700" fill="#2e7d52">Approval Checklist</text>
+  <text x="80" y="315" font-family="Arial,Helvetica,sans-serif" font-size="27" fill="#536273">Content quality • E-E-A-T • compliance • technical SEO</text>
+  <g filter="url(#shadow)">
+    <rect x="80" y="382" width="590" height="142" rx="24" fill="#ffffff" stroke="#d5e2ee" stroke-width="3"/>
+    <rect x="112" y="418" width="76" height="76" rx="18" fill="#fbbc04"/>
+    <path d="M126 456l17 17 34-38" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="218" y="438" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#243447">READY FOR REVIEW</text>
+    <text x="218" y="478" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#536273">Build trust before you apply.</text>
+  </g>
+  <g transform="translate(790 180)" filter="url(#shadow)">
+    <rect width="310" height="310" rx="38" fill="#ffffff" stroke="#d5e2ee" stroke-width="3"/>
+    <rect x="42" y="42" width="226" height="58" rx="14" fill="#f1f5f9"/>
+    <circle cx="76" cy="71" r="16" fill="#34a853"/>
+    <path d="M67 71l7 7 13-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="108" y="79" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#243447">AdSense</text>
+    <rect x="42" y="128" width="226" height="16" rx="8" fill="#dbe5ef"/>
+    <rect x="42" y="164" width="174" height="16" rx="8" fill="#dbe5ef"/>
+    <rect x="42" y="200" width="206" height="16" rx="8" fill="#dbe5ef"/>
+    <circle cx="220" cy="250" r="54" fill="#34a853"/>
+    <path d="M190 250l20 20 42-47" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="80" y="580" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#536273">Myths, facts, and practical fixes for a compliant site</text>
+</svg>
