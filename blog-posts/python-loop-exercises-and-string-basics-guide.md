@@ -3,7 +3,7 @@ title: "Python Loop Exercises and String Basics Guide"
 description: "Practice real loop-based problems and learn Python strings step by step -- indexing, slicing, and the core string methods you will use every day."
 keywords: "SmartGen, Python Course, Class 06, Python loop exercises, FizzBuzz Python, Python strings, string slicing Python, string methods Python, Python practice problems"
 date: 2026-07-15
-image: "https://www.smartgentools.com/blog-posts/images/python-course-class-06-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/python-course-class-06-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -15,11 +15,11 @@ tags:
 slug: "python-loop-exercises-and-string-basics-guide"
 ---
 <!--AUTHOR_PROFILE-->
-July 15, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 15, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 A complete, step-by-step guide to solving real problems with Python loops and mastering strings — hands-on loop exercises including FizzBuzz and reversing a string by hand, plus everything you need to know about string indexing, slicing, immutability, and the core methods you'll use in almost every program you write.
 
- ![Python Loop Exercises and String Basics Guide — cover image](https://www.smartgentools.com/blog-posts/images/python-course-class-06-cover.svg)
+ ![Python Loop Exercises and String Basics Guide — cover image](https://smartgentools.com/blog-posts/images/python-course-class-06-cover.svg)
 
 ---
 
@@ -125,7 +125,7 @@ Text is everywhere in real programs — names, messages, file paths — and with
 
 ### The Solution: Indexing, Slicing, and the Methods You'll Actually Use
 
- ![String Indexing and Slicing — Python's "Python" example showing positive and negative indices and real slice results](https://www.smartgentools.com/blog-posts/images/python-course-class-06-string-slicing-infographic.svg)
+ ![String Indexing and Slicing — Python's "Python" example showing positive and negative indices and real slice results](https://smartgentools.com/blog-posts/images/python-course-class-06-string-slicing-infographic.svg)
 
 A **string** is simply text, written between quotes. Every character has a position, called an **index**, starting at `0` from the left, and counting `-1, -2, -3...` backward from the right:
 
@@ -216,4 +216,4 @@ Yes — Python's built-in `max()` function does it in one line (`max(numbers)`),
 
 ---
 <!--AUTHOR_FOOTER-->
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your development journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your development journey, visit [smartgentools.com](https://smartgentools.com).*

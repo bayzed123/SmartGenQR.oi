@@ -128,4 +128,4 @@ In Module 4, we'll shift focus to Search Engine Optimization (SEO) — learning 
 
 ---
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://smartgentools.com).*

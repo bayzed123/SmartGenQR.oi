@@ -1,4 +1,5 @@
 ---
+slug: "contributor-guide"
 title: "Contributor Guide"
 date: "2026-07-07"
 description: "Full architecture and API reference for SmartGen contributors."

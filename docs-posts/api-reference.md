@@ -1,4 +1,5 @@
 ---
+slug: "api-reference"
 title: "API Reference"
 description: "Reference documentation for SmartGen's internal JavaScript functions and data structures."
 order: 1

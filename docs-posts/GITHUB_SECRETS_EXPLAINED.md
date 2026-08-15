@@ -1,8 +1,9 @@
 ---
-title: “GITHUB SECRETS EXPLAINED”
+slug: "github-secrets-explained"
+title: "GitHub Secrets Explained"
 description: Learn about secrets as they are used in GitHub Actions workflows.
 order: 1
-category: github
+category: "Guides"
 ---
 # 🔐 GitHub Secrets Explained for Beginners
 

@@ -16,7 +16,7 @@ tags:
   - Video Marketing
 slug: "youtube-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog"
 ---
-July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 01, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 # MODULE 9: YouTube Marketing — The Complete A to Z Mega Guide for Beginners
 
@@ -513,12 +513,12 @@ In Module 10, we'll continue building your platform-specific marketing skills an
 
 > **About the Author**
 >
-> **Sayad Md Bayezid Hosan** is the founder of SmartGen Tools and the creator of the SmartGen Digital Marketing Course. With over five years of experience in SEO, content strategy, social media marketing, and digital tool development, he writes these modules to give every beginner the same practical, honest foundation he wishes had existed when he started. He publishes new modules and free tools at [smartgentools.com](https://www.smartgentools.com).
+> **Sayad Md Bayezid Hosan** is the founder of SmartGen Tools and the creator of the SmartGen Digital Marketing Course. With over five years of experience in SEO, content strategy, social media marketing, and digital tool development, he writes these modules to give every beginner the same practical, honest foundation he wishes had existed when he started. He publishes new modules and free tools at [smartgentools.com](https://smartgentools.com).
 >
-> 🌐 [www.smartgentools.com](https://www.smartgentools.com) | 👤 [www.sayadbayezid.com](https://www.sayadbayezid.com)
+> 🌐 [www.smartgentools.com](https://smartgentools.com) | 👤 [www.sayadbayezid.com](https://www.sayadbayezid.com)
 
 ---
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://smartgentools.com).*
 
 SmartGen · Digital Marketing · Digital Marketing Course · Module 9 · YouTube Marketing · YouTube SEO · YouTube Ads · Video Marketing

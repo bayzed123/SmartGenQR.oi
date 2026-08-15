@@ -1230,7 +1230,7 @@ The ability to **write code and see it rendered instantly** is one of the most p
 >
 > **Sayad Md Bayezid Hosan** is a web developer, digital marketing specialist, and the founder of SmartGen Tools (www.smartgentools.com). With over 5 years of experience in front-end development, SEO strategy, and building free tools for developers and creators, Sayad's mission is to make professional-grade digital utilities accessible to everyone — permanently free, with zero compromise on privacy.
 >
-> 🌐 [www.smartgentools.com](https://www.smartgentools.com) | 🛠️ [HTML/CSS/JS Previewer](https://smartgentools.com/html-code-preview/)
+> 🌐 [www.smartgentools.com](https://smartgentools.com) | 🛠️ [HTML/CSS/JS Previewer](https://smartgentools.com/html-code-preview/)
 
 ---
 

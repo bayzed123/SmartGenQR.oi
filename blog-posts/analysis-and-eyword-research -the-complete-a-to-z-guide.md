@@ -260,4 +260,4 @@ In the next module, we'll build directly on this keyword research foundation wit
 
 ---
 
-*This article was written by [Sayad Md Bayezid Hosan](www.sayadbayezid.com) for the SmartGen blog. For free tools to support your digital marketing journey, visit [SmartGen](https://www.smartgentools.com).*
+*This article was written by [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/) for the SmartGen blog. For free tools to support your digital marketing journey, visit [SmartGen](https://smartgentools.com).*

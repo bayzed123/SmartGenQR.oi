@@ -15,7 +15,7 @@ tags:
 slug: "python-variables-and-data-types-explained"
 ---
 <!--AUTHOR_PROFILE-->
-July 14, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 14, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 A complete, step-by-step guide to Python variables and data types — what a variable actually is and how to name one correctly, every core built-in data type with real copy-paste code, what object identity means and exactly when to use `is` versus `==`, how to check and convert between types, and how statements and comments actually work.
 
@@ -281,4 +281,4 @@ A tuple, covered in Section 2 — its unchangeable nature is exactly the point w
 
 ---
 <!--AUTHOR_FOOTER-->
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your development journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your development journey, visit [smartgentools.com](https://smartgentools.com).*

@@ -16,7 +16,7 @@ tags:
 slug: "google-ads-guide-search-engine-marketing"
 ---
 <!--AUTHOR_PROFILE-->
-July 11, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 11, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 A complete, step-by-step guide to Search Engine Marketing with Google Ads — the exact problem each part of paid search solves, the practical solution and click-by-click setup for each one, ad copywriting formulas backed by real psychology, every major ad extension and format, and a full walkthrough of goals and e-commerce tracking so you can prove, with real numbers, that it's working.
 
@@ -370,4 +370,4 @@ Technically yes, but you'd be flying blind, with no reliable way to know if your
 
 ---
 <!--AUTHOR_FOOTER-->
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://smartgentools.com).*

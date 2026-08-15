@@ -695,7 +695,7 @@ Then use the TDEE guidance, ideal weight tables, and action checklists in this g
 >
 > **Sayad Md Bayezid Hosan** is the founder of SmartGen Tools and a digital health tool developer with expertise in building accurate, privacy-first calculators for everyday health and fitness use. He is committed to making science-based health tools accessible to everyone, for free.
 >
-> 🌐 [www.smartgentools.com](https://www.smartgentools.com) | 🛠️ [BMI & BMR Calculator](https://smartgentools.com/bmi-bmr-calculator/)
+> 🌐 [www.smartgentools.com](https://smartgentools.com) | 🛠️ [BMI & BMR Calculator](https://smartgentools.com/bmi-bmr-calculator/)
 
 ---
 

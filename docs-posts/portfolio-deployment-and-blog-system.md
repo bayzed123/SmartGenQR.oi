@@ -1,10 +1,10 @@
 ---
-  title: "Portfolio Website: Deployment & Blog System Guide"
-  description: "Complete guide to deploying your portfolio to GitHub Pages, Netlify, or Vercel, plus a deep technical dive into the automated Markdown-to-blog publishing pipeline."
-  order: 2
-  category: "Portfolio Website"
+slug: "portfolio-website-deployment-and-blog-system-guide"
+title: "Portfolio Website: Deployment & Blog System Guide"
+description: "Complete guide to deploying your portfolio to GitHub Pages, Netlify, or Vercel, plus a deep technical dive into the automated Markdown-to-blog publishing pipeline."
+order: 2
+category: "Portfolio Website"
 ---
-
   # Portfolio Website: Deployment & Blog System Guide
 ![protfolio website visual](assets/images/docs/Protfolio-Deployment.JPEG)
   This guide covers two things you'll need once your portfolio is running locally: **getting it live on the internet**, and **understanding how the automated blog system works** so you can publish new posts confidently for years to come.
@@ -50,7 +50,7 @@
   | **Netlify** | Free tier | ✅ Yes | ✅ Yes | More build features, form handling, redirects |
   | **Vercel** | Free tier | ✅ Yes | ✅ Yes | Fastest global CDN, great for frequent updates |
 
-  ![Deployment pipeline diagram showing code flowing from a laptop to GitHub, then branching to GitHub Pages, Netlify, and Vercel](sandbox://Pb57hCrET0.png)
+  ![Deployment pipeline diagram showing code flowing from a laptop to GitHub, then branching to GitHub Pages, Netlify, and Vercel](/assets/img/docs/deployment-pipeline.svg)
 
   > **Tip**
   > All three options are free for personal portfolio use and require zero server management. If you're unsure which to pick, start with **GitHub Pages** — it requires the fewest steps since your code already lives on GitHub.
@@ -236,7 +236,7 @@
 
   Unlike traditional blogging platforms, there's no dashboard to log into. Publishing works entirely through Git:
 
-  ![Blog automation pipeline showing a markdown file flowing through git push, GitHub Actions, a Python conversion script, generated JSON, and finally a live blog page](sandbox://ujkTVnLcqR.png)
+  ![Blog automation pipeline showing a markdown file flowing through git push, GitHub Actions, a build script, generated JSON, and finally a live blog page](/assets/img/docs/blog-automation-pipeline.svg)
 
   ### The six-step flow
 

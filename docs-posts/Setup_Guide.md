@@ -1,5 +1,6 @@
 ---
-title: "Getting Started"
+slug: "development-setup-guide"
+title: "Development Setup Guide"
 description: "Learn how to set up and start contributing to SmartGen."
 order: 1
 ---

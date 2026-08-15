@@ -15,7 +15,7 @@ tags:
 slug: "python-course-class-01-orientation-and-setup"
 ---
 <!--AUTHOR_PROFILE-->
-July 14, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 14, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 # Python Course Class 01: Orientation & Setup
 

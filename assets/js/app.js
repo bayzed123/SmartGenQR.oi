@@ -23,12 +23,36 @@ document.addEventListener('DOMContentLoaded', () => {
     injectNavbar();
     injectFooter();
     injectGlobalNavFallback();
+    injectFavicon();
     initTheme();
     initAccordion();
     loadChatbot();
     injectCookieConsent();
     initAnalytics();
 });
+
+/**
+ * Site favicon.
+ *
+ * The site shipped without one: no page declared a rel="icon", and the only
+ * three that tried (/terms/, /cookies/, /disclaimer/) pointed at
+ * assets/img/favicon.png, which has never existed. Browsers therefore fell
+ * back to requesting /favicon.ico and getting a 404, so every tab showed a
+ * blank page icon -- a small but very visible credibility problem on a site
+ * being reviewed for ad approval.
+ *
+ * Declared here rather than edited into ~300 static files, matching how the
+ * nav, footer, cookie banner and analytics tag are handled. Pages that
+ * already declare their own icon are left alone.
+ */
+function injectFavicon() {
+    if (document.querySelector('link[rel~="icon"]')) return;
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/svg+xml';
+    link.href = '/favicon.svg';
+    document.head.appendChild(link);
+}
 
 /**
  * Google Analytics 4.

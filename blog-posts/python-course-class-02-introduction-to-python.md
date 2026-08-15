@@ -15,7 +15,7 @@ tags:
 slug: "what-is-python-a-complete-beginner-guide"
 ---
 <!--AUTHOR_PROFILE-->
-July 14, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 14, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 A complete, step-by-step beginner's guide to Python — what Python actually is, its full history from 1991 to today's Python 3.14, why so many beginners choose it as their first language, the real-world applications and industries built on it, the most popular frameworks and libraries, and exactly how to run your first line of Python code and understand what happens when you do.
 
@@ -255,4 +255,4 @@ Sure, once you're comfortable — but the REPL from Section 6 remains genuinely 
 <!--AUTHOR_FOOTER-->
 ** Related article 
 [Class 01: Orientation and Setup](https://smartgentools.com/blog/python-course-class-01-orientation-and-setup/)
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your development journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your development journey, visit [smartgentools.com](https://smartgentools.com).*

@@ -163,4 +163,4 @@ You now understand why digital marketing matters, how it functions behind the sc
 * [Display Advertising and Remarketing Guide](https://smartgentools.com/blog/display-advertising-and-remarketing-guide-smartgen/)
 ---
 <!--AUTHOR_FOOTER-->
-*This article was written by [Sayad Md Bayezid Hosan](https://sayadbayezid.com) for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by [Sayad Md Bayezid Hosan](https://sayadbayezid.com) for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://smartgentools.com).*

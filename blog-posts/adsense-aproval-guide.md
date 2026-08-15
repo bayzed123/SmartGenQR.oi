@@ -232,7 +232,7 @@ Every article must have a detailed **author bio at the bottom**. This is non-neg
 >
 > **Sayad Md Bayezid Hosan** is a Digital Marketing Specialist and content strategist with over 5 years of experience in SEO, website monetization, and AdSense optimization. He is the founder of SmartGen Tools (www.smartgentools.com), a platform dedicated to helping bloggers and marketers grow their online income. Sayad has helped dozens of websites achieve AdSense approval and has personally managed ad-monetized sites generating consistent monthly revenue.
 >
-> 🔗 [LinkedIn](https://www.linkedin.com/in/sayadbayezid?utm_source=share_via&utm_content=profile&utm_medium=member_ios) | [github](https://github.com/bayezid123) | [SmartGen Tools](https://www.smartgentools.com)
+> 🔗 [LinkedIn](https://www.linkedin.com/in/sayadbayezid?utm_source=share_via&utm_content=profile&utm_medium=member_ios) | [github](https://github.com/bayezid123) | [SmartGen Tools](https://smartgentools.com)
 
 ---
 
@@ -501,7 +501,7 @@ In 2026, **over 65% of web traffic is mobile**. Google's AdSense review process 
 # Correct robots.txt (allows all crawling)
 User-agent: *
 Disallow:
-Sitemap: https://www.smartgentools.com/sitemap.xml
+Sitemap: https://smartgentools.com/sitemap.xml
 ```
 
 ---
@@ -646,7 +646,7 @@ If your site was rejected, find your rejection reason below and follow the fix.
 **What it means:** Your `ads.txt` file is missing, incorrect, or inaccessible.
 
 **Fix:**
-1. Create a file named `ads.txt` and upload it to your root domain: `https://www.smartgentools.com/ads.txt`
+1. Create a file named `ads.txt` and upload it to your root domain: `https://smartgentools.com/ads.txt`
 2. For AdSense, the required line is:
 ```
 google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
@@ -727,7 +727,7 @@ Indirectly, yes. A professional, clean theme signals investment and credibility.
 
 **Q10: Can SmartGen Tools (www.smartgentools.com) help me optimize for AdSense?**
 
-Yes! SmartGen Tools provides free SEO tools, blog optimization checklists, and educational resources specifically designed to help bloggers and marketers achieve AdSense approval and maximize ad revenue. Visit [www.smartgentools.com](https://www.smartgentools.com) for free resources.
+Yes! SmartGen Tools provides free SEO tools, blog optimization checklists, and educational resources specifically designed to help bloggers and marketers achieve AdSense approval and maximize ad revenue. Visit [www.smartgentools.com](https://smartgentools.com) for free resources.
 
 ---
 
@@ -798,7 +798,7 @@ Good luck — and when you're approved, the team at **SmartGen Tools** would lov
 >
 > **Sayad Md Bayezid Hosan** is the founder of SmartGen Tools and a digital marketing specialist with expertise in SEO, website monetization, and content strategy. He has helped numerous websites achieve Google AdSense approval and sustained ad revenue growth.
 >
-> 🌐 [www.smartgentools.com](https://www.smartgentools.com) | ✉️ Contact via the site's Contact page
+> 🌐 [www.smartgentools.com](https://smartgentools.com) | ✉️ Contact via the site's Contact page
 
 ---
 

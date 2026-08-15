@@ -16,7 +16,7 @@ tags:
 slug: "customization-and-advanced-features-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog"
 ---
 <!--AUTHOR_PROFILE-->
-July 10, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 10, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 # MODULE 18: Customization and Advanced Features — The Complete A to Z Mega Guide for Beginners
 
@@ -404,4 +404,4 @@ In the next module, we'll continue building on these analytics and decision-maki
 - [Mobile, Cross-Device & Campaign Analytics — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog/mobile-cross-device-and-campaign-analytics-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/)
 ---
 
-*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://www.smartgentools.com).*
+*This article was written by Sayad Md Bayezid Hosan for the SmartGen blog. For free tools to support your digital marketing journey, visit [smartgentools.com](https://smartgentools.com).*

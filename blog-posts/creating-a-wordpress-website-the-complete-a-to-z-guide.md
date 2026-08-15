@@ -15,7 +15,7 @@ tags:
   - Blogging
 slug: "creating-a-wordpress-website-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog"
 ---
-July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
+July 01, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 # MODULE 9: Creating a WordPress Website — The Complete A to Z Mega Guide for Beginners
 
@@ -407,7 +407,7 @@ In the next module, we'll continue building your platform-specific and technical
 </div>
 ---
 
-All rights Reserve [smartgen](www.samartgentools.com) |
+All rights Reserve [smartgen](https://smartgentools.com/) |
 [visit Smartgen developer Docs](https://smartgentools.com/docs)
 
 ---
