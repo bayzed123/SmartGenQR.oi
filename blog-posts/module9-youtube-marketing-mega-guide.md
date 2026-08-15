@@ -3,7 +3,7 @@ title: "YouTube Marketing — The Complete A to Z Mega Guide for Beginners - Sma
 description: "A complete, practical guide to YouTube marketing for beginners — channel setup, video SEO, content strategy, audience growth, monetization, YouTube Ads, and analytics"
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 9, YouTube Marketing, YouTube SEO, YouTube Ads, Video Marketing, smartgen"
 date: 2026-07-01
-image: "https://smartgentools.com/blog-posts/images/module9-youtube-marketing-infographic.svg"
+image: "https://smartgentools.com/blog-posts/images/module9-youtube-marketing-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
