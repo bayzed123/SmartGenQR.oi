@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: add schema article cover image",
+    "date": "2026-08-15T00:16:15Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "refactor: colocate verified blog images",
     "date": "2026-08-14T21:31:27Z",
     "description": "Platform improvement and optimization."
