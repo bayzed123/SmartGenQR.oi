@@ -35,40 +35,21 @@ def optimize_html_file(filepath, is_root=False):
             content
         )
     
-    # 1.2 Lazy load Google Analytics (gtag.js)
-    gtag_pattern = r'<!-- Google tag \(gtag\.js\) -->\s*<script async src="https://www\.googletagmanager\.com/gtag/js\?id=G-[^"]*"><\/script>\s*<script>\s*window\.dataLayer = window\.dataLayer \|\| \[\];\s*function gtag\(\)\{dataLayer\.push\(arguments\);\}\s*gtag\(\'js\', new Date\(\)\);\s*gtag\(\'config\', \'G-[^\']*\'\);\s*<\/script>'
-    
-    if re.search(gtag_pattern, content, re.DOTALL):
-        content = re.sub(gtag_pattern, '', content, flags=re.DOTALL)
-        
-        lazy_gtag = '''<script>
-    // Lazy load Google Analytics on user interaction
-    (function() {
-        let gtag_loaded = false;
-        function loadGoogleAnalytics() {
-            if (gtag_loaded) return;
-            gtag_loaded = true;
-            
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-982HBP86V8');
-            
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
-            document.head.appendChild(script);
-        }
-        
-        // Trigger on first user interaction
-        ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
-            document.addEventListener(event, loadGoogleAnalytics, { once: true });
-        });
-    })();
-</script>'''
-        
-        content = re.sub(r'</body>', lazy_gtag + '\n</body>', content)
-    
+    # 1.2 Google Analytics — intentionally NOT touched here.
+    #
+    # This block used to strip the standard gtag snippet and re-add it behind
+    # a ['touchstart','scroll','mousemove','click'] listener. That scored well
+    # in Lighthouse but silently dropped most real traffic: any visitor who
+    # landed, read and left without interacting was never counted, and on
+    # mobile `mousemove` never fires at all. Combined with the tag only ever
+    # being present on 47 of 388 pages, GA4 was missing the large majority of
+    # sessions.
+    #
+    # Analytics is now loaded once, centrally, from assets/js/app.js
+    # (initAnalytics) — async so it still does not block rendering, but not
+    # gated on interaction. Re-adding a lazy gtag here would undo that, so
+    # this step is deliberately a no-op.
+
     # 1.3 Lazy load AdSense - DISABLED UNTIL 2026-08-07 FOR ADSENSE APPROVAL
     # Current date: 2026-07-07. Disabling for 30 days.
     adsense_pattern = r'<script async src="https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js\?client=[^"]*" crossorigin="anonymous"><\/script>'

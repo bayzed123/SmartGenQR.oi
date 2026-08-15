@@ -230,31 +230,6 @@
     </script>
 <!-- Cookie logic handled by app.js -->
 
-<script>
-    // Lazy load Google Analytics on user interaction
-    (function() {
-        let gtag_loaded = false;
-        function loadGoogleAnalytics() {
-            if (gtag_loaded) return;
-            gtag_loaded = true;
-            
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-982HBP86V8');
-            
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
-            document.head.appendChild(script);
-        }
-        
-        // Trigger on first user interaction
-        ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
-            document.addEventListener(event, loadGoogleAnalytics, { once: true });
-        });
-    })();
-</script>
 
 </body>
 </html>
