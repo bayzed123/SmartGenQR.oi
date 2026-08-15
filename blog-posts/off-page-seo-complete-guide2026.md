@@ -3,7 +3,7 @@ title: "Off-Page Optimization — The Complete A to Z Mega Guide for Beginners -
 description: "A complete, practical A to Z guide to Off-Page SEO for beginners — what off-page optimization actually is, the fundamentals of link building, proven link building strategies, the real difference between white hat and black hat SEO, and the link acquisition techniques that build lasting search authority."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 11, Off-Page SEO, Off-Page Optimization, Link Building, White Hat SEO, Black Hat SEO, Link Acquisition"
 date: 2026-07-02
-image: "https://i.ibb.co/93vNBxMP/IMG-6104.jpg"
+image: "https://smartgentools.com/blog-posts/images/off-page-seo-framework.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -22,7 +22,7 @@ July 02, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, practical A to Z guide to Off-Page SEO for beginners — what off-page optimization actually is and why it sits alongside crawling, indexing, and on-page work as one of the three pillars covered in Module 10, the real fundamentals of link building, proven link building strategies you can start applying immediately, the genuine difference between white hat and black hat SEO, and the link acquisition techniques that build lasting search authority rather than short-term risk.
 
-![MODULE 11: Off-Page Optimization — The Complete A to Z Mega Guide for Beginners](https://i.ibb.co/93vNBxMP/IMG-6104.jpg)
+![MODULE 11: Off-Page Optimization — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/off-page-seo-framework.svg)
 
 ---
 

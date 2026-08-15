@@ -3,7 +3,7 @@ title: "Display Advertising & Remarketing Guide - SmartGen"
 description: "Learn display advertising and remarketing step by step: campaign setup, ad creative, retargeting audiences, KPIs, A/B testing, and ROI budgeting."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 17, Display Advertising, Google Display Network, Remarketing, Retargeting, SEM, KPIs, A/B Testing, ROI, Budget Management, E-E-A-T"
 date: 2026-07-12
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-17-display-advertising-remarketing-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/module-17-display-advertising-remarketing-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -21,7 +21,7 @@ July 12, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, step-by-step, beginner-friendly A to Z guide to **Module 17: Display Advertising and Remarketing** — how the Google Display Network actually works, how to set up your first display campaign without wasting budget on the wrong inventory, how to design display ads that pass Google's specs and actually get noticed, how to build remarketing audiences that bring lost visitors back to convert, and exactly how to track, test, and calculate the ROI of every dollar you spend — the exact same measurement framework professional SEM teams use.
 
-![MODULE 17: Display Advertising and Remarketing — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-17-display-advertising-remarketing-cover.svg)
+![MODULE 17: Display Advertising and Remarketing — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/module-17-display-advertising-remarketing-cover.svg)
 
 ---
 
@@ -100,7 +100,7 @@ Google's own quality guidelines ask whether content demonstrates real **Experien
 
 **The problem this module solves, and the solution in one sentence:** most beginners waste display budget on broad, unsegmented targeting because nobody showed them the actual step-by-step setup — this module fixes that by walking through campaign structure, ad creative, and audience building in the exact order you'll actually build them, followed by the measurement framework (KPIs, reporting, testing, and ROI) that tells you whether it's working.
 
-![Display Advertising and Remarketing funnel — from Google Display Network reach to retargeting conversion — SmartGen Module 17](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-17-display-advertising-remarketing-foundation.svg)
+![Display Advertising and Remarketing funnel — from Google Display Network reach to retargeting conversion — SmartGen Module 17](https://smartgentools.com/blog-posts/images/module-17-display-advertising-remarketing-foundation.svg)
 
 ---
 
@@ -326,9 +326,9 @@ Never evaluate a new prospecting campaign's ROI in isolation during its first tw
 
 Below are two original visuals built specifically for this guide: a complete infographic mapping the full display advertising and remarketing system covered in this module, and a practical ad-size reference chart for building your first display creative.
 
-![Display Advertising and Remarketing infographic — campaign setup, ad creative, remarketing, KPIs, and ROI for beginners 2026](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-17-display-advertising-remarketing-infographic.svg)
+![Display Advertising and Remarketing infographic — campaign setup, ad creative, remarketing, KPIs, and ROI for beginners 2026](https://smartgentools.com/blog-posts/images/module-17-display-advertising-remarketing-infographic.svg)
 
-![Google Display Network ad size and format reference guide 2026 — SmartGen Module 17](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-17-display-advertising-remarketing-sizes.svg)
+![Google Display Network ad size and format reference guide 2026 — SmartGen Module 17](https://smartgentools.com/blog-posts/images/module-17-display-advertising-remarketing-sizes.svg)
 
 ---
 

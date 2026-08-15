@@ -3,7 +3,7 @@ title: "Video Marketing Through YouTube — The Complete A to Z Mega Guide for B
 description: "A complete, deeply detailed, beginner-friendly A to Z guide to video marketing through YouTube — how to create and optimize a YouTube channel, how to produce video content that actually retains viewers, how on-page YouTube SEO (titles, descriptions, tags, thumbnails, captions) really works in 2026, and how to build off-page authority and backlinks that drive real organic Google search traffic to your videos."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 15, YouTube Marketing, YouTube SEO, Video Marketing, YouTube Channel Optimization, YouTube On-Page SEO, YouTube Off-Page SEO, YouTube Algorithm, Video Content Creation, YouTube Keyword Research, E-E-A-T"
 date: 2026-07-07
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-15-video-marketing-youtube-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/module-15-video-marketing-youtube-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -23,7 +23,7 @@ July 07, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, deeply detailed, beginner-friendly A to Z guide to video marketing through YouTube — how to create and optimize a YouTube channel the right way from day one, how to produce video content that actually retains viewers instead of losing them in the first ten seconds, exactly how on-page YouTube SEO (titles, descriptions, tags, thumbnails, captions) really works in 2026, and how to build the kind of off-page authority and backlinks that drive real, compounding organic Google search traffic to your videos — using high-volume, low-competition keywords instead of fighting for terms you were never going to win.
 
-![MODULE 15: Video Marketing Through YouTube — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-15-video-marketing-youtube-cover.svg)
+![MODULE 15: Video Marketing Through YouTube — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/module-15-video-marketing-youtube-cover.svg)
 
 ---
 
@@ -84,7 +84,7 @@ Google's own quality guidelines ask whether content demonstrates real **Experien
 
 Sitting in between the technical and on-page layers is Section 2: the actual content itself, because no amount of channel setup or metadata optimization rescues a video nobody wants to finish watching.
 
-![The three-pillar parallel between website SEO and YouTube SEO — SmartGen Module 15](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-15-video-marketing-youtube-foundation.svg)
+![The three-pillar parallel between website SEO and YouTube SEO — SmartGen Module 15](https://smartgentools.com/blog-posts/images/module-15-video-marketing-youtube-foundation.svg)
 
 ---
 
@@ -289,7 +289,7 @@ The most common mistake is assuming a description link is doing SEO work equival
 
 Below is an original infographic built specifically for this guide, mapping the complete YouTube marketing system covered in this module — from channel setup, through content and retention science, on-page metadata priorities, and the off-page and schema tactics that drive genuine organic Google search traffic.
 
-![Video Marketing Through YouTube infographic — channel optimization, content creation, on-page SEO, and off-page SEO for beginners 2026](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-15-video-marketing-youtube-infographic.svg)
+![Video Marketing Through YouTube infographic — channel optimization, content creation, on-page SEO, and off-page SEO for beginners 2026](https://smartgentools.com/blog-posts/images/module-15-video-marketing-youtube-infographic.svg)
 
 ---
 
@@ -299,7 +299,7 @@ In this module, we treated YouTube as exactly what it is: the second-largest sea
 
 **Practice exercise:** This week, pick one video idea and run it through the full system in this module. Use YouTube's autocomplete to find three long-tail keyword variations for it. Write a title with your primary keyword in the first few words. Draft a description with your key sentence in the first two lines. Then, if you have a website, plan the blog post that will embed the finished video, complete with VideoObject schema — and if you want to skip hand-coding it, generate that schema with [SmartGen's Schema Generator](https://smartgentools.com/schema-generator/).
 
-![Module 15 visual summary — 4 pillars covered: channel optimization, content creation, on-page SEO, off-page SEO](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-15-video-marketing-youtube-summary.svg)
+![Module 15 visual summary — 4 pillars covered: channel optimization, content creation, on-page SEO, off-page SEO](https://smartgentools.com/blog-posts/images/module-15-video-marketing-youtube-summary.svg)
 
 ---
 

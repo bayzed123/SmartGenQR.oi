@@ -3,17 +3,13 @@ title: "pyproject toml Guide Write Configure and Fix Common pypi Errors2026"
 description: "A complete pyproject.toml tutorial: every field explained with examples, step-by-step setup, the 2026 license format change, and fixes for the errors that trip people up most."
 keyword: "pyproject.toml,pypi, python"
 date: 2026-07-22
-Image: "blog-posts/images/python-course-class-08-cover.svg"
-Tags: 
-- pyproject.toml 
-- examplepyproject.toml 
-- tutorial
-- python packaging guide
-- setup.py to pyproject.toml
-- pyproject.toml license
-- pypi
-tags: ["Python", "PyPI", "Packaging", "pyproject.toml", "Developer Tools"]
-image: "https://smartgentools.com/assets/images/blog-default.jpg"
+image: "https://smartgentools.com/blog-posts/images/pyproject-toml-guide-cover.svg"
+tags:
+  - "pyproject.toml"
+  - "Python Packaging"
+  - "PyPI"
+  - "Python"
+  - "Developer Tools"
 slug: "pyproject-toml-guide-write-configure-and-fix-common-pypi-errors2026"
 ---
 <!--AUTHOR_PROFILE-->

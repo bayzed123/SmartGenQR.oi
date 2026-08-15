@@ -3,7 +3,7 @@ title: "Google Web Analytics — The Complete A to Z Mega Guide for Beginners - 
 description: "A complete, beginner-friendly A to Z guide to Google Analytics (GA4) — what web analytics actually is and why it matters, how to navigate the Google Analytics interface without feeling lost, the core metrics every marketer needs to understand (bounce rate, session duration, pages per session, conversion rate, and traffic sources), and how to use advanced reporting, segments, and secondary dimensions to find insights the basic reports never show you."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 17, Google Analytics, GA4, Web Analytics, Bounce Rate, Conversion Tracking, Traffic Sources, Advanced Segments, Secondary Dimensions"
 date: 2026-07-10
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-google-web-analytics-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/module-google-web-analytics-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -21,7 +21,7 @@ July 10, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, beginner-friendly A to Z guide to Google Analytics (GA4) — what web analytics actually is and why it matters, how to navigate the Google Analytics interface without feeling lost, the core metrics every marketer needs to understand, and how to use advanced reporting, segments, and secondary dimensions to find insights the basic reports never show you.
 
-👉 ![MODULE 17: Google Web Analytics — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-google-web-analytics-cover.svg)
+👉 ![MODULE 17: Google Web Analytics — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/module-google-web-analytics-cover.svg)
 
 ---
 
@@ -89,7 +89,7 @@ Setting up Google Analytics on your WordPress site (from Module 9) generally inv
 
 This is where most beginners feel lost — and reasonably so, since GA4's interface groups a huge amount of functionality into a fairly compact sidebar. Let's walk through exactly what you're looking at, one piece at a time.
 
-👉 ![Finding Your Way Around Google Analytics — an annotated map of the six sidebar sections you will use most](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-google-web-analytics-interface-infographic.svg)
+👉 ![Finding Your Way Around Google Analytics — an annotated map of the six sidebar sections you will use most](https://smartgentools.com/blog-posts/images/module-google-web-analytics-interface-infographic.svg)
 
 ### Reports Snapshot — Your Home Base
 
@@ -155,7 +155,7 @@ This is where Google Analytics closes the loop on nearly every other module in t
 
 For campaigns you run yourself — a specific email newsletter, a specific social post, a paid ad — you can add **UTM parameters** (small tags appended to a URL) so that traffic from that exact campaign shows up clearly and distinctly in your reports, rather than being lumped generically into "referral" or "direct." This is genuinely one of the most valuable habits you can build: it's the only reliable way to know, with real evidence, whether that specific Instagram post (Module 5) or that specific email send (Module 16) actually drove real visits and real conversions — rather than just hoping it did.
 
-👉 ![Six Metrics Every Beginner Should Know — a plain-language cheat sheet covering bounce rate, engagement rate, session duration, pages per session, conversion rate, and traffic source](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-google-web-analytics-metrics-infographic.svg)
+👉 ![Six Metrics Every Beginner Should Know — a plain-language cheat sheet covering bounce rate, engagement rate, session duration, pages per session, conversion rate, and traffic source](https://smartgentools.com/blog-posts/images/module-google-web-analytics-metrics-infographic.svg)
 
 ---
 

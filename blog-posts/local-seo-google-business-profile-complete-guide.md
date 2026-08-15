@@ -3,7 +3,7 @@ title: "Local SEO & Google Business Profile — The Complete A to Z Mega Guide f
 description: "A complete, practical A to Z guide to Local SEO and Google Business Profile optimization for beginners — creating and claiming your GMB listing, optimizing every profile field, using GBP Posts to win more clicks, reading Insights and Analytics to grow your local search rankings in 2026."
 keywords: "Local SEO, Google Business Profile, Google My Business optimization, GMB listing, how to rank on Google Maps, local SEO for small business, google business profile optimization tips 2026, local SEO guide beginners, how to claim google business profile, GBP insights analytics, SmartGen"
 date: 2026-07-03
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/local-seo-google-business-profile-infographic.svg"
+image: "https://smartgentools.com/blog-posts/images/local-seo-google-business-profile-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -23,7 +23,7 @@ July 03, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayez
 
 A complete, practical A to Z guide to Local SEO and Google Business Profile (formerly Google My Business) for beginners — creating and claiming your GMB listing the right way, optimizing every profile field to rank higher on Google Maps, using GBP Posts and Updates to win more clicks and customers, and reading your Insights and Analytics to make decisions based on real data instead of guesswork.
 
-![Local SEO & Google Business Profile — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/local-seo-google-business-profile-infographic.svg)
+![Local SEO & Google Business Profile — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/local-seo-google-business-profile-infographic.svg)
 
 ---
 
@@ -284,7 +284,7 @@ Do a simple audit: Google your business name and phone number in quotation marks
 
 Below is an original infographic built specifically for this guide, mapping the complete Local SEO and Google Business Profile framework. Created exclusively for SmartGen.
 
-![Local SEO Framework — GBP creation through optimization, posts, and analytics](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/local-seo-google-business-profile-infographic.svg)
+![Local SEO Framework — GBP creation through optimization, posts, and analytics](https://smartgentools.com/blog-posts/images/local-seo-google-business-profile-infographic.svg)
 
 ---
 

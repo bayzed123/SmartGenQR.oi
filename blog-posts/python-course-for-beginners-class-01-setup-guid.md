@@ -3,7 +3,7 @@ title: "Python Course Class 01: Orientation & Setup"
 description: "Start your Python programming journey. Class 01 covers course orientation, setting up your IDE, installing Python, and how assignments are submitted."
 keywords: "SmartGen, Python Course, Learn Python, Python for Beginners, Install Python, VS Code Setup, Programming for Beginners, Python Class 01"
 date: 2026-07-14
-image: "assets/images/python-course-class-01-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/python-course-class-01-setup-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen

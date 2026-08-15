@@ -3,7 +3,7 @@ title: "TikTok Marketing — The Complete A to Z Mega Guide for Beginners - Smar
 description: "A complete, practical guide to TikTok marketing for beginners — account setup, content creation, TikTok SEO, marketing tools, community engagement, analytics, and legal considerations"
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 10, TikTok Marketing, TikTok SEO, TikTok Ads, Video Marketing, Short-Form Content, TikTok for Business, smartgen"
 date: 2026-07-01
-image: "assets/images/module10-tiktok-marketing-infographic.svg"
+image: "https://smartgentools.com/blog-posts/images/module10-tiktok-marketing-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -22,7 +22,7 @@ July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, practical guide to TikTok marketing for beginners — setting up and optimizing a business account, building a content strategy built for TikTok's unique algorithm, mastering the tools and features that drive reach, growing a real community, reading your analytics so you know what's working, and navigating the legal and ethical responsibilities every TikTok marketer needs to understand in 2026.
 
-![MODULE 10: TikTok Marketing — The Complete A to Z Mega Guide for Beginners](assets/images/module10-tiktok-marketing-infographic.svg)
+![MODULE 10: TikTok Marketing — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/module10-tiktok-marketing-infographic.svg)
 
 ---
 
@@ -503,7 +503,7 @@ Legal compliance is the floor, not the ceiling, of responsible TikTok marketing.
 
 Below is an original infographic created specifically for this module, mapping out TikTok's marketing ecosystem across all seven areas covered: introduction to the platform, account setup and optimization, content creation and strategy, native marketing tools and features, community engagement, analytics, and legal and ethical considerations.
 
-![TikTok Marketing Framework — account setup, content strategy, tools, community, analytics, and legal guide for beginners 2026](assets/images/module10-tiktok-marketing-infographic.svg)
+![TikTok Marketing Framework — account setup, content strategy, tools, community, analytics, and legal guide for beginners 2026](https://smartgentools.com/blog-posts/images/module10-tiktok-marketing-infographic.svg)
 
 ---
 

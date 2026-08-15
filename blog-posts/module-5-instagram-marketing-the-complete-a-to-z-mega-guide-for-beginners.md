@@ -3,7 +3,7 @@ title: "MODULE 5: Instagram Marketing — The Complete A to Z Mega Guide for Beg
 description: "A complete, professional guide to Instagram Marketing: introduction to Instagram, building a winning strategy, profile optimization, content creation and curation, engagement strategies, Instagram Ads and analytics, Stories and IGTV, and influencer marketing."
 keywords: "instagram marketing, instagram strategy, instagram profile optimization, instagram content creation, instagram engagement, instagram ads, instagram analytics, instagram stories marketing, IGTV marketing, influencer marketing instagram, smartgen"
 date: 2026-06-30
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module5-instagram-marketing-infographic.svg"
+image: "https://smartgentools.com/blog-posts/images/module5-instagram-marketing-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -161,7 +161,7 @@ Instagram remains the single most active platform for influencer marketing, and 
 
 Below is an original infographic mapping the Instagram content formats covered in this module to the specific role each one plays in your overall marketing strategy. This graphic was created specifically for this guide and is completely free of copyright restrictions.
 
-![Instagram marketing formats and their roles — Feed, Stories, Reels, and longer-form video](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module5-instagram-marketing-infographic.svg)
+![Instagram marketing formats and their roles — Feed, Stories, Reels, and longer-form video](https://smartgentools.com/blog-posts/images/module5-instagram-marketing-infographic.svg)
 
 ---
 

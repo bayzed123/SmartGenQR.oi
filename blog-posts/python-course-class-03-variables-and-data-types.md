@@ -3,7 +3,7 @@ title: "Python Variables and Data Types Explained"
 description: "Learn Python variables, every core data type, object identity with is vs ==, type casting, and comments -- with copy-paste code you can run now."
 keywords: "SmartGen, Python Course, Class 03, Python variables, Python data types, object identity Python, type casting Python, isinstance, is vs ==, Python comments"
 date: 2026-07-14
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-03-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/python-course-class-03-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -19,7 +19,7 @@ July 14, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, step-by-step guide to Python variables and data types — what a variable actually is and how to name one correctly, every core built-in data type with real copy-paste code, what object identity means and exactly when to use `is` versus `==`, how to check and convert between types, and how statements and comments actually work.
 
- ![Python Variables and Data Types Explained — cover image](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-03-cover.svg)
+ ![Python Variables and Data Types Explained — cover image](https://smartgentools.com/blog-posts/images/python-course-class-03-cover.svg)
 
 ---
 
@@ -92,7 +92,7 @@ A value's **type** determines what you can actually do with it — you can add t
 
 ### The Solution: The Eight Core Built-In Types
 
- ![Python's Core Data Types at a Glance — int, float, str, bool, list, tuple, dict, set, and None, each with real example code](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-03-datatypes-infographic.svg)
+ ![Python's Core Data Types at a Glance — int, float, str, bool, list, tuple, dict, set, and None, each with real example code](https://smartgentools.com/blog-posts/images/python-course-class-03-datatypes-infographic.svg)
 
 ```python
 age = 25                              # int - whole numbers
@@ -131,7 +131,7 @@ Two variables can hold the exact same value while actually being two completely 
 
 ### The Solution: Understanding == vs is
 
- ![Object Identity: == vs is — same value doesn't always mean the same object in memory](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/python-course-class-03-identity-infographic.svg)
+ ![Object Identity: == vs is — same value doesn't always mean the same object in memory](https://smartgentools.com/blog-posts/images/python-course-class-03-identity-infographic.svg)
 
 Every object in Python has an **identity** (a unique reference to where it lives in memory, viewable with the built-in `id()` function), a **type**, and a **value**. `==` checks whether two variables hold the **same value**. `is` checks whether two variables are **literally the same object** in memory.
 

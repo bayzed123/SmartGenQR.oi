@@ -3,7 +3,7 @@ title: "Creating a WordPress Website — The Complete A to Z Mega Guide for Begi
 description: "A complete, practical A to Z guide to building a WordPress website for beginners — what WordPress actually is and why it matters for digital marketers, the real difference between WordPress.com and WordPress.org, how to register a domain and choose hosting, how to install and set up WordPress correctly, how to pick themes and plugins without wrecking your site, how to actually build the pages and structure of a real website, and how to use WordPress for blogging the right way."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 9, WordPress, WordPress Website, WordPress.com vs WordPress.org, Domain Hosting, WordPress Themes, WordPress Plugins, WordPress Blogging"
 date: 2026-07-01
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/smartgen-wordpress-guide.jpg"
+image: "https://smartgentools.com/blog-posts/images/smartgen-wordpress-guide.jpg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -21,7 +21,7 @@ July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, practical A to Z guide to building a WordPress website for beginners — what WordPress actually is and why it matters for digital marketers, the real difference between WordPress.com and WordPress.org, how to register a domain and choose hosting, how to install and set up WordPress correctly, how to pick themes and plugins without wrecking your site, how to actually build the pages and structure of a real website, and how to use WordPress for blogging the right way.
 
-![MODULE 9: Creating a WordPress Website — The Complete A to Z Mega Guide for Beginners](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/smartgen-wordpress-guide-infograpy.jpg)
+![MODULE 9: Creating a WordPress Website — The Complete A to Z Mega Guide for Beginners](https://smartgentools.com/blog-posts/images/smartgen-wordpress-guide-infograpy.jpg)
 ---
 
 ## Welcome to Module 9: Creating a WordPress Website
@@ -322,7 +322,7 @@ Once your blog is producing real content, it becomes the natural destination for
 
 Below is an original infographic built specifically for this guide, mapping out the WordPress website-building system from domain and hosting through installation, themes and plugins, page structure, and blogging.
 
-![WordPress Website Building System — from domain and hosting through installation, themes, plugins, pages, and blogging](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/smartgen-wordpressguide-visual-summary.jpg)
+![WordPress Website Building System — from domain and hosting through installation, themes, plugins, pages, and blogging](https://smartgentools.com/blog-posts/images/smartgen-wordpressguide-visual-summary.jpg)
 ---
 
 ## Module 9 Mega Guide Summary

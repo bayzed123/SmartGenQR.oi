@@ -3,7 +3,7 @@ title: "LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners - Sm
 description: "A complete, practical guide to LinkedIn marketing and profile optimization: choosing between an individual profile and a Company Page, building a profile that actually gets found, creating content the algorithm wants to spread, growing a real professional network, running an effective Company Page, using LinkedIn Ads, and reading your analytics."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 7, LinkedIn Marketing, LinkedIn Optimization, LinkedIn Ads, B2B Marketing"
 date: 2026-07-01
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module7-linkedin-marketing-infographic.svg"
+image: "https://smartgentools.com/blog-posts/images/module7-linkedin-marketing-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -23,7 +23,7 @@ July 01, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, practical guide to LinkedIn marketing and profile optimization: choosing between an individual profile and a company page, building a profile that actually gets found, creating content the algorithm wants to spread, growing a real professional network, running an effective Company Page, using LinkedIn Ads, and reading your analytics so you know what's actually working.
 
-![MODULE 7: LinkedIn Marketing](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module7-linkedin-marketing-infographic.svg)
+![MODULE 7: LinkedIn Marketing](https://smartgentools.com/blog-posts/images/module7-linkedin-marketing-infographic.svg)
 
 ## Welcome to Module 7: LinkedIn Marketing
 
@@ -223,7 +223,7 @@ None of the work in this guide means much if you never check whether it's actual
 
 Below is an original infographic mapping out the eight building blocks covered in this guide — from your first decision about individual versus company presence, through profile optimization, content, network growth, Company Pages, advertising, and finally analytics. This graphic was created specifically for this guide and is free to use with attribution back to this article.
 
-![LinkedIn Marketing Framework — 8 building blocks covering profile strategy, content, network growth, company pages, ads, and analytics](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module7-linkedin-marketing-infographic.svg)
+![LinkedIn Marketing Framework — 8 building blocks covering profile strategy, content, network growth, company pages, ads, and analytics](https://smartgentools.com/blog-posts/images/module7-linkedin-marketing-infographic.svg)
 
 ---
 

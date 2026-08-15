@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">XML sitemap structure</title>
+  <desc id="desc">An XML sitemap example showing urlset, loc, and lastmod fields for search-engine crawling.</desc>
+  <rect width="1200" height="630" fill="#f5f8fc"/>
+  <rect x="70" y="55" width="1060" height="520" rx="24" fill="#ffffff" stroke="#d7e1ec" stroke-width="3"/>
+  <rect x="70" y="55" width="1060" height="92" rx="24" fill="#1f5b8f"/>
+  <text x="115" y="116" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="800" fill="#ffffff">XML Sitemap Structure</text>
+  <text x="1075" y="116" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="22" fill="#d8efff">SEARCH ENGINE MAP</text>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="25" fill="#29445c">
+    <text x="125" y="202" fill="#8c3e3e">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</text>
+    <text x="125" y="246" fill="#1f5b8f">&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;</text>
+    <text x="170" y="300" fill="#697b8d">&lt;url&gt;</text>
+    <text x="215" y="342"><tspan fill="#1f5b8f">&lt;loc&gt;</tspan><tspan fill="#29445c">https://smartgentools.com/</tspan><tspan fill="#1f5b8f">&lt;/loc&gt;</tspan></text>
+    <text x="215" y="384"><tspan fill="#1f5b8f">&lt;lastmod&gt;</tspan><tspan fill="#29445c">2026-07-22</tspan><tspan fill="#1f5b8f">&lt;/lastmod&gt;</tspan></text>
+    <text x="170" y="428" fill="#697b8d">&lt;/url&gt;</text>
+    <text x="170" y="472" fill="#697b8d">&lt;url&gt; ... &lt;/url&gt;</text>
+    <text x="125" y="526" fill="#1f5b8f">&lt;/urlset&gt;</text>
+  </g>
+  <rect x="800" y="192" width="280" height="218" rx="18" fill="#eef7ff" stroke="#9bc5e5" stroke-width="3"/>
+  <text x="940" y="240" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="800" fill="#1f5b8f">KEY FIELDS</text>
+  <text x="835" y="290" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#29445c">• loc = page URL</text>
+  <text x="835" y="330" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#29445c">• lastmod = date</text>
+  <text x="835" y="370" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#29445c">• urlset = document</text>
+</svg>

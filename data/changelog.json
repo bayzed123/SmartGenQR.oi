@@ -1,5 +1,150 @@
 [
   {
+    "title": "fix: localize sitemap guide visuals",
+    "date": "2026-08-15T01:06:31Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: localize keyword research framework",
+    "date": "2026-08-15T01:02:18Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: localize off-page seo framework",
+    "date": "2026-08-15T00:55:22Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: localize adsense guide cover",
+    "date": "2026-08-15T00:52:27Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: localize module 15 youtube images",
+    "date": "2026-08-15T00:47:43Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: localize module 17 display images",
+    "date": "2026-08-15T00:42:49Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: add module 10 tiktok images",
+    "date": "2026-08-15T00:39:16Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: add module 9 youtube images",
+    "date": "2026-08-15T00:34:59Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: add python class 01 cover",
+    "date": "2026-08-15T00:29:57Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: use focused svg blog covers",
+    "date": "2026-08-15T00:23:53Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: add schema article cover image",
+    "date": "2026-08-15T00:16:15Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "refactor: colocate verified blog images",
+    "date": "2026-08-14T21:31:27Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "Delete blog-post/images/seo-friendly-content-workflow.svg",
+    "date": "2026-08-14T21:16:35Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "feat: preserve blog dates and images in sitemap",
+    "date": "2026-08-14T21:13:54Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: place blog cover under blog-posts images",
+    "date": "2026-08-14T21:00:43Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: add raster cover image for social previews",
+    "date": "2026-08-14T20:55:18Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: resolve LinkedIn member identity automatically",
+    "date": "2026-08-14T20:50:10Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: use Share on LinkedIn UGC endpoint",
+    "date": "2026-08-14T20:01:28Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: migrate LinkedIn article sharing to Posts API",
+    "date": "2026-08-14T20:00:44Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: use LinkedIn member author URN",
+    "date": "2026-08-14T19:59:21Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: use LinkedIn member secret for author",
+    "date": "2026-08-14T19:29:53Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: add LinkedIn API version header",
+    "date": "2026-08-14T19:06:16Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "feat: support manual LinkedIn article test",
+    "date": "2026-08-14T19:05:23Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: detect newly added blog posts in action",
+    "date": "2026-08-14T18:59:18Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "feat: add SEO-friendly content writing guide",
+    "date": "2026-08-14T18:54:37Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix: use person secret as LinkedIn access token",
+    "date": "2026-08-14T18:31:19Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "feat: share new blog posts on LinkedIn",
+    "date": "2026-08-14T18:26:14Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "Merge pull request #13 from bayzed123/claude/seo-audit-premium-features-yv9j8y",
+    "date": "2026-08-14T16:20:14Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "Merge pull request #12 from bayzed123/claude/seo-audit-premium-features-yv9j8y",
+    "date": "2026-08-14T14:04:36Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Update ui-ux-design-fundamentals-class-1.md",
     "date": "2026-08-13T22:34:01Z",
     "description": "Platform improvement and optimization."

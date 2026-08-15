@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Google News sitemap format</title>
+  <desc id="desc">A Google News sitemap example showing the news namespace, publication, language, publication date, and article title.</desc>
+  <rect width="1200" height="630" fill="#f6f9fc"/>
+  <rect x="72" y="62" width="1056" height="506" rx="24" fill="#ffffff" stroke="#d5e0eb" stroke-width="3"/>
+  <text x="120" y="132" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" fill="#1c4e80">Google News Sitemap</text>
+  <text x="120" y="176" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#5b6f82">Structured metadata for timely news discovery</text>
+  <rect x="120" y="218" width="960" height="270" rx="18" fill="#f2f7fb" stroke="#b9d0e2" stroke-width="2"/>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="24">
+    <text x="155" y="265" fill="#7c3e55">&lt;urlset xmlns:news=".../sitemap-news/0.9"&gt;</text>
+    <text x="205" y="308" fill="#1c4e80">&lt;news:publication&gt;</text>
+    <text x="255" y="345" fill="#334e68">&lt;news:name&gt;SmartGen News&lt;/news:name&gt;</text>
+    <text x="255" y="380" fill="#334e68">&lt;news:language&gt;en&lt;/news:language&gt;</text>
+    <text x="205" y="416" fill="#1c4e80">&lt;/news:publication&gt;</text>
+    <text x="205" y="452" fill="#334e68">&lt;news:publication_date&gt;2026-07-22&lt;/news:publication_date&gt;</text>
+    <text x="205" y="488" fill="#334e68">&lt;news:title&gt;Article headline&lt;/news:title&gt;</text>
+  </g>
+  <rect x="820" y="110" width="240" height="72" rx="36" fill="#e8f3ff" stroke="#8ab8dc" stroke-width="2"/>
+  <text x="940" y="155" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#1c4e80">FAST DISCOVERY</text>
+  <text x="120" y="535" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#5b6f82">Publication • language • date • headline</text>
+</svg>

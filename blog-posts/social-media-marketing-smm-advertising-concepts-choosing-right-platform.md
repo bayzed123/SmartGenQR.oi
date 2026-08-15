@@ -3,7 +3,7 @@ title: "MODULE 3: Social Media Marketing (SMM) — Social Media Advertising Conc
 description: "A complete guide to Social Media Marketing (SMM): how social media advertising works, key ad concepts and targeting options, and a step-by-step framework for selecting the perfect social media platform based on your target audience."
 keywords: "social media marketing, SMM, social media advertising, what is social media advertising, social media ad targeting, choosing social media platform, target audience social media, facebook ads, instagram ads, linkedin ads, smartgen"
 date: 2026-06-30
-image: "assets/images/module3-smm-overview-infographic.svg"
+image: "https://smartgentools.com/blog-posts/images/module3-smm-overview-infographic.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -110,7 +110,7 @@ Once you begin posting and advertising, let real performance data — not assump
 
 Below is an original infographic mapping common business goals to the platforms best suited for them, summarizing the platform-selection framework covered in this module. This graphic was created specifically for this guide and is completely free of copyright restrictions.
 
-![Choosing the right social media platform based on target audience and business goal](assets/images/module3-smm-overview-infographic.svg)
+![Choosing the right social media platform based on target audience and business goal](https://smartgentools.com/blog-posts/images/module3-smm-overview-infographic.svg)
 
 ---
 

@@ -3,7 +3,7 @@ title: "Google Ads Guide: Search Engine Marketing"
 description: "Learn paid search step by step: Google Ads copywriting, bidding strategies, ad extensions, and conversion tracking that actually drives results."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 19, Google Ads, Search Engine Marketing, SEM, PPC, Ad Copywriting, Bidding Strategies, Ad Extensions, Responsive Search Ads, Conversion Tracking, E-commerce Tracking"
 date: 2026-07-11
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-google-ads-search-engine-marketing-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/module-google-ads-search-engine-marketing-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -20,7 +20,7 @@ July 11, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, step-by-step guide to Search Engine Marketing with Google Ads — the exact problem each part of paid search solves, the practical solution and click-by-click setup for each one, ad copywriting formulas backed by real psychology, every major ad extension and format, and a full walkthrough of goals and e-commerce tracking so you can prove, with real numbers, that it's working.
 
-![Google Ads Guide: Search Engine Marketing — cover image](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-google-ads-search-engine-marketing-cover.svg)
+![Google Ads Guide: Search Engine Marketing — cover image](https://smartgentools.com/blog-posts/images/module-google-ads-search-engine-marketing-cover.svg)
 
 ---
 
@@ -188,7 +188,7 @@ The bidding strategy names — Target CPA, Target ROAS, Maximize Conversions —
 
 ### The Solution: Match the Strategy to Your Real Goal, With Real Numbers
 
-![Choosing the Right Bidding Strategy — a decision guide matching campaign goals to Maximize Clicks, Maximize Conversions, Target CPA, Target ROAS, or Manual CPC](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-google-ads-bidding-strategy-infographic.svg)
+![Choosing the Right Bidding Strategy — a decision guide matching campaign goals to Maximize Clicks, Maximize Conversions, Target CPA, Target ROAS, or Manual CPC](https://smartgentools.com/blog-posts/images/module-google-ads-bidding-strategy-infographic.svg)
 
 **Manual CPC** means you personally set the maximum you'll pay per click on each keyword — full control, but it demands ongoing, hands-on management. **Automated strategies** hand that decision to Google's machine-learning systems, adjusting bids in real time toward your stated goal — genuinely similar in spirit to the RankBrain concept from the [Algorithm Updates guide](https://smartgentools.com/blog/algorithm-updates-and-analysis-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/).
 
@@ -240,7 +240,7 @@ Your ad is live, technically correct, and being quietly outperformed by a compet
 
 **Price extensions** display specific items with their own price and link — Sweet Layers could show "6-inch Cake — $35," "8-inch Cake — $50," "Cupcake Dozen — $24" — letting price-conscious searchers self-select before they even click.
 
-![The Anatomy of a Google Search Ad — labeled diagram of headlines, descriptions, sitelinks, callouts, and structured snippets](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module-google-ads-ad-anatomy-infographic.svg)
+![The Anatomy of a Google Search Ad — labeled diagram of headlines, descriptions, sitelinks, callouts, and structured snippets](https://smartgentools.com/blog-posts/images/module-google-ads-ad-anatomy-infographic.svg)
 
 ### Ad Formats for Display and Video Campaigns
 

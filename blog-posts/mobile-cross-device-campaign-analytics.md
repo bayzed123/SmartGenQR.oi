@@ -3,7 +3,7 @@ title: "Mobile, Cross-Device & Campaign Analytics — The Complete A to Z Mega G
 description: "A complete, practical A to Z guide to mobile and cross-device analytics for beginners — responsive tracking, User-ID cross-device measurement, UTM parameters and campaign tracking, social media analytics, GA4 and Google Ads integration, and measuring real ad performance."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 18, Cross-Device Tracking, Google Analytics User-ID, UTM Parameters, UTM Builder, Campaign Tracking, GA4 Google Ads Integration, Social Media Analytics, Ad Performance Measurement, Mobile Analytics"
 date: 2026-07-05
-image: "https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module18-mobile-cross-device-campaign-analytics-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/module18-mobile-cross-device-campaign-analytics-cover.svg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -23,7 +23,7 @@ July 05, 2026 • General • By [Sayad Md Bayezid Hosan](www.sayadbayezid.com)
 
 A complete, practical A to Z guide to mobile and cross-device analytics for beginners — mobile tracking and responsive design considerations, cross-device tracking with User-ID, understanding campaign tracking, creating UTM parameters that actually hold up in real reporting, analysing marketing campaigns with confidence, tracking social media interactions, integrating Google Analytics with Google Ads, and measuring ad performance the right way in 2026.
 
-![![Mobile, Cross-Device & Campaign Analytics Framework — device tracking, UTM parameters, and GA4 Google Ads integration for beginners 2026](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module18-mobile-cross-device-campaign-analytics-infographic.svg)
+![![Mobile, Cross-Device & Campaign Analytics Framework — device tracking, UTM parameters, and GA4 Google Ads integration for beginners 2026](https://smartgentools.com/blog-posts/images/module18-mobile-cross-device-campaign-analytics-infographic.svg)
 
 ---
 
@@ -234,7 +234,7 @@ With linking complete and conversions importing correctly, the final piece is kn
 Below are two original visual assets built specifically for this module. The first maps the complete framework covered across all three sections — mobile and cross-device tracking, campaign and UTM tracking, and social and advertising analytics. The second is a quick-reference cheat sheet covering the five UTM parameters, cross-device identifiers, the GA4–Google Ads linking checklist, and the core ad performance metrics glossary, suitable for saving or printing as an ongoing desk reference.
 
 
-![Cheat Sheet — UTM Parameters, Cross-Device Identifiers, GA4 Google Ads Linking Checklist, and Ad Metrics Glossary](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/module18-mobile-cross-device-campaign-analytics-summary.svg)
+![Cheat Sheet — UTM Parameters, Cross-Device Identifiers, GA4 Google Ads Linking Checklist, and Ad Metrics Glossary](https://smartgentools.com/blog-posts/images/module18-mobile-cross-device-campaign-analytics-summary.svg)
 
 ---
 
