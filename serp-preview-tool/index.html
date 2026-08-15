@@ -25,9 +25,58 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does my title get cut off even though it's under 60 characters?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google truncates by pixel width, not character count — wide characters (like \"W\" or \"M\") take more space than narrow ones (like \"i\" or \"l\"), so the exact cutoff point varies by which letters are used."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Google always use my written meta description?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always — Google sometimes generates its own snippet from page content if it judges that more relevant to the specific search query. Writing a strong, accurate description still improves the odds yours is used."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this tool check my actual live page, or just what I type here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The preview itself renders exactly what you type in — pair it with SmartGen's Meta Tag Generator to produce the actual HTML tags to publish. The ranking checker is different: it queries live Google search results for the keyword you enter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does \"Suggest with AI\" work, and is it free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It sends your one-line topic description to Google's Gemini model, which writes three title/description pairs already sized to Google's real display limits. It's free to use, with a fair-use hourly limit per visitor to keep it available for everyone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the ranking checker only look at the top 10 results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's powered by the Google Custom Search API, which has a limited free daily quota shared across every visitor to this page — checking only the first page of results keeps that quota usable for everyone instead of one search burning through it. If your page isn't in the top 10, it's outside first-page results for that keyword."
+      }
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "SERP Preview Tool - Optimize Google Snippets",
   "description": "Preview how your page appears in Google search results. Optimize meta titles and descriptions for better CTR, enhancing your visibility, ...",
+  "@id": "https://smartgentools.com/serp-preview-tool/#webapp",
   "url": "https://smartgentools.com/serp-preview-tool/",
   "applicationCategory": "Utility",
   "operatingSystem": "All",
@@ -206,14 +255,14 @@
     
     <script src="../assets/js/search-data.js" defer></script>
     
-    <meta property="og:title" content="Google Snippet Generator - Free SERP Preview Tool">>
-    <meta property="og:description" content="See exactly how your page looks in Google before you publish. Free SERP snippet generator to test titles, meta descriptions and pixel width live.">>
+    <meta property="og:title" content="Google Snippet Generator - Free SERP Preview Tool">
+    <meta property="og:description" content="See exactly how your page looks in Google before you publish. Free SERP snippet generator to test titles, meta descriptions and pixel width live.">
     <meta property="og:url" content="https://smartgentools.com/serp-preview-tool/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://smartgentools.com/assets/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Google Snippet Generator - Free SERP Preview Tool">>
-    <meta name="twitter:description" content="See exactly how your page looks in Google before you publish. Free SERP snippet generator to test titles, meta descriptions and pixel width live.">>
+    <meta name="twitter:title" content="Google Snippet Generator - Free SERP Preview Tool">
+    <meta name="twitter:description" content="See exactly how your page looks in Google before you publish. Free SERP snippet generator to test titles, meta descriptions and pixel width live.">
     <meta name="twitter:image" content="https://smartgentools.com/assets/og-image.png">
 </head>
 <body>
@@ -222,7 +271,7 @@
     <main class="container">
         <div class="tool-container">
             <h1>Google SERP Snippet Preview</h1>
-            <p>Optimize your website's appearance in Google search results for higher click-through rates.</p>
+            <p>Optimize your website's appearance in Google search results for higher click-through rates. New to snippets? Read the full <a href="/blog/google-serp-snippet-preview-tool-the-complete-guide-to-optimizing-your-search-appearance-in-2026/">SERP snippet optimization guide</a>.</p>
 
             <div class="serp-tool-box" id="ai-suggest-box">
                 <h2>✨ Suggest Title &amp; Description with AI</h2>
@@ -371,6 +420,14 @@
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
         
+
+        <a href="/blog/google-serp-snippet-preview-tool-the-complete-guide-to-optimizing-your-search-appearance-in-2026/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
+            <div style="padding: 1rem;">
+                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">SERP Snippet Optimization Guide</h4>
+                <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">Pixel-width limits, title formulas and the snippet mistakes that quietly cost you clicks.</p>
+            </div>
+        </a>
+
         <a href="/blog/how-to-optimize-your-website-for-google-adsense-approval-in-2026/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
             <div style="padding: 1rem;">
                 <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">AdSense Approval Guide</h4>

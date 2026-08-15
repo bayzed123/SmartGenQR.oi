@@ -719,8 +719,27 @@ function generateBlogJSON(posts) {
 
 /**
  * Update sitemap.xml with blog posts
+ *
+ * DISABLED ON PURPOSE -- do not re-enable without removing the CI generator.
+ *
+ * sitemap.xml has a single owner: .github/workflows/auto-sitemap.yml. That
+ * workflow walks blog-posts/*.md itself, honours the pinned `slug:` front
+ * matter exactly as this script does, carries the cover images through, and
+ * also covers every static page -- so it is a strict superset of what this
+ * function produced. Nothing is lost by standing down.
+ *
+ * Having both write the file was actively harmful. They emit the same URL set
+ * in different orders (CI sorts alphabetically; this function stripped the
+ * blog entries and re-appended them at the end) with different lastmod and
+ * priority values, so every push rewrote ~1300 lines and the two generators
+ * fought each other -- the source of the recurring sitemap.xml merge
+ * conflicts. Regenerate with: gh workflow run auto-sitemap.yml
  */
 function updateSitemap(posts) {
+  console.log(`ℹ️  sitemap.xml left to auto-sitemap.yml (${posts.length} posts will be picked up there)\n`);
+}
+
+function updateSitemapDisabled(posts) {
   const sitemapPath = path.join(__dirname, '../sitemap.xml');
   if (!fs.existsSync(sitemapPath)) {
     console.log('⚠️  sitemap.xml not found at root. Skipping sitemap update.');
@@ -744,10 +763,19 @@ function updateSitemap(posts) {
     );
   }
 
-  // Remove existing blog entries to avoid duplicates
-  // This regex finds <url> blocks that contain /blog/ in the <loc> tag
-  const urlRegex = /<url>[\s\S]*?<loc>https:\/\/smartgentools\.com\/blog\/[\s\S]*?<\/url>/g;
-  sitemapContent = sitemapContent.replace(urlRegex, '');
+  // Remove existing blog entries to avoid duplicates.
+  //
+  // Match each <url>...</url> block on its own and drop only the blog ones.
+  // The previous version used a single regex whose gap between <url> and
+  // <loc> was unbounded, so it ran straight through </url> boundaries: from
+  // the first <url> in the file it kept expanding until it hit any /blog/
+  // <loc>, deleting every entry in between. Because the sitemap is sorted
+  // alphabetically, that silently ate the homepage, /about/, /age-calculator/
+  // and everything else sorting before /blog/ on every build.
+  sitemapContent = sitemapContent.replace(
+    /[ \t]*<url>[\s\S]*?<\/url>\n?/g,
+    block => /<loc>https:\/\/smartgentools\.com\/blog\//.test(block) ? '' : block
+  );
 
   // Clean up any double newlines caused by replacement
   sitemapContent = sitemapContent.replace(/\n\s*\n/g, '\n');
