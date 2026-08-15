@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">On-page and off-page SEO framework</title>
+  <desc id="desc">A two-sided SEO framework comparing on-page foundations with off-page link building, content marketing, local SEO, social media, public relations, guest posting, and brand mentions.</desc>
+  <defs>
+    <linearGradient id="left" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5b5ce2"/><stop offset="1" stop-color="#7569f0"/></linearGradient>
+    <linearGradient id="right" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2ed7dc"/><stop offset="1" stop-color="#34bfcf"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#182b49" flood-opacity=".16"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="#f7fbff"/>
+  <text x="600" y="82" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="800" fill="#243447">SEO Authority Framework</text>
+  <text x="600" y="122" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#536273">Optimize what you control, then earn trust across the web.</text>
+  <g filter="url(#shadow)">
+    <path d="M112 198h388c88 0 152 54 152 117s-64 117-152 117H112c-60 0-96-48-96-117s36-117 96-117z" fill="url(#left)"/>
+    <path d="M1088 198H700c-88 0-152 54-152 117s64 117 152 117h388c60 0 96-48 96-117s-36-117-96-117z" fill="url(#right)"/>
+    <circle cx="600" cy="315" r="91" fill="#ffffff" stroke="#d5e2ee" stroke-width="5"/>
+  </g>
+  <text x="307" y="245" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="800" fill="#ffffff">ON-PAGE</text>
+  <text x="307" y="282" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#ffffff">content • keywords • titles</text>
+  <text x="307" y="315" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#ffffff">meta • headers • URLs</text>
+  <text x="307" y="348" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#ffffff">internal links • schema</text>
+  <text x="893" y="245" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="800" fill="#083d4b">OFF-PAGE</text>
+  <text x="893" y="282" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#083d4b">link building • content marketing</text>
+  <text x="893" y="315" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#083d4b">local SEO • social media</text>
+  <text x="893" y="348" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#083d4b">PR • guest posting • brand mentions</text>
+  <text x="600" y="327" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="800" fill="#243447">SEO</text>
+  <text x="600" y="505" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" fill="#243447">Relevance + authority + trust</text>
+  <text x="600" y="545" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#536273">Build the page, then earn the reputation.</text>
+</svg>
