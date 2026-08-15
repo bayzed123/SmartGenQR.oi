@@ -200,6 +200,9 @@
     <lastmod>2026-06-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smartgentools.com/blog-posts/images/schema-generator-cover.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://smartgentools.com/blog/google-ads-guide-search-engine-marketing/</loc>
@@ -422,6 +425,9 @@
     <lastmod>2026-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smartgentools.com/blog-posts/images/pyproject-toml-guide-cover.svg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://smartgentools.com/blog/python-course-class-01-orientation-setup/</loc>
