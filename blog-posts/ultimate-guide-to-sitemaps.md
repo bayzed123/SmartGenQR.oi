@@ -3,7 +3,7 @@ title: "The Ultimate Guide to Sitemaps: How to Create, Optimize, and Boost Your 
 description: "A comprehensive guide to understanding, creating, optimizing, and submitting XML and HTML sitemaps to supercharge your website's search engine rankings."
 keywords: "XML sitemap, HTML sitemap, SEO guide, create sitemap online, optimize sitemap, submit sitemap to Google, SmartGen Tools, find sitemap"
 date: "2026-05-31"
-image: "https://i.ibb.co/TDGfjVC1/IMG-4284.jpg"
+image: "https://smartgentools.com/blog-posts/images/xml-sitemap-structure.svg"
 author: "Sayad Md Bayezid Hosan"
 tags: ["SEO", "SmartGen", "Webmaster"]
 ---
@@ -47,7 +47,7 @@ Sitemaps generally fall into two distinct categories: XML and HTML. Depending on
 
 If your primary focus is technical SEO, the XML (Extensible Markup Language) sitemap is your holy grail. This is a machine-readable text file created exclusively for search engine spiders, helping them understand crawlability and indexation queues.
 
-![Example of an XML Sitemap Structure](https://i.ibb.co/TDGfjVC1/IMG-4284.jpg)
+![Example of an XML Sitemap Structure](https://smartgentools.com/blog-posts/images/xml-sitemap-structure.svg)
 *Standard XML Sitemap Structure targeted for search engines.*
 
 Usually, this file resides in the root directory of your website (e.g., `https://www.yourdomain.com/sitemap.xml`). However, for security reasons, some webmasters prefer to hide it from competitors by placing it in a custom subfolder or renaming the file.
@@ -60,7 +60,7 @@ A standard XML sitemap has strict limits: it cannot exceed **50,000 URLs** or **
 * **Video Sitemaps:** Provides critical context about video content, including titles, length, categories, and age ratings, ensuring rich snippets in search results.
 ### [Google News Sitemap Guidelines](https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap):** Crucial for digital publishers. Google requires a specific news sitemap containing articles published in the last 48 hours. This guarantees rapid indexing for Google News placement.
 
-![News XML Sitemap format](https://i.ibb.co/DHdRXRfc/IMG-4280.webp)
+![News XML Sitemap format](https://smartgentools.com/blog-posts/images/google-news-sitemap-format.svg)
 *Format of a specialized Google News Sitemap.*
 
 #### 2. What is an HTML Sitemap?
@@ -77,7 +77,7 @@ Depending on your technical expertise and website size, you can create a sitemap
 
 **Automated Sitemap Generators:** For modern, growing websites, automation is the only logical path. If you are on WordPress, SEO plugins like RankMath, Yoast SEO, or Simple Sitemap automatically generate dynamic XML sitemaps that update the moment you publish a new post.
 
-![Yoast SEO Sitemap Generation](https://i.ibb.co/1YJbFXdL/IMG-4281.webp)
+![Yoast SEO Sitemap Generation](https://smartgentools.com/blog-posts/images/yoast-xml-sitemap-index.svg)
 *Automated sitemap generated via Yoast SEO.*
 
 If you are using a custom-coded website or other CMS, you can utilize advanced tools like **SmartGen's Custom Sitemap Downloader**, Screaming Frog, or XML-Sitemaps.com to crawl your domain and instantly export perfectly formatted XML files.
