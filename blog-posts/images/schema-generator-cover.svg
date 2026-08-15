@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Schema Markup Generator and JSON-LD Structured Data</title>
+  <desc id="desc">A code panel connects structured data types to a search result preview and validation shield.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8fbff"/><stop offset="1" stop-color="#eaf2ff"/></linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#13294b"/><stop offset="1" stop-color="#0a1730"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#1e4b8f" flood-opacity=".18"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1430" cy="90" r="230" fill="#dbe9ff" opacity=".7"/><circle cx="120" cy="820" r="240" fill="#e2f4f4" opacity=".8"/>
+  <text x="90" y="130" font-family="Inter,Arial,sans-serif" font-size="58" font-weight="800" fill="#102651">Schema Markup</text>
+  <text x="90" y="198" font-family="Inter,Arial,sans-serif" font-size="58" font-weight="800" fill="#2156b6">Generator</text>
+  <text x="94" y="250" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="600" fill="#4b62a5">JSON-LD structured data for search visibility</text>
+  <g filter="url(#shadow)"><rect x="90" y="330" width="520" height="390" rx="24" fill="url(#panel)"/></g>
+  <circle cx="125" cy="365" r="9" fill="#ff6b6b"/><circle cx="155" cy="365" r="9" fill="#ffd166"/><circle cx="185" cy="365" r="9" fill="#51cf66"/>
+  <text x="135" y="430" font-family="monospace" font-size="24" fill="#8bd3ff">{</text><text x="165" y="470" font-family="monospace" font-size="22" fill="#d8e7ff">&quot;@context&quot;: &quot;schema.org&quot;,</text><text x="165" y="510" font-family="monospace" font-size="22" fill="#8bd3ff">&quot;@type&quot;: &quot;Article&quot;,</text><text x="165" y="550" font-family="monospace" font-size="22" fill="#d8e7ff">&quot;name&quot;: &quot;...&quot;,</text><text x="165" y="590" font-family="monospace" font-size="22" fill="#d8e7ff">&quot;author&quot;: { ... }</text><text x="135" y="635" font-family="monospace" font-size="24" fill="#8bd3ff">}</text>
+  <g stroke="#4b70d4" stroke-width="5" fill="none"><path d="M650 520 C760 520 740 300 850 300"/><path d="M650 520 C770 520 760 480 850 480"/><path d="M650 520 C770 520 760 660 850 660"/></g>
+  <g filter="url(#shadow)"><rect x="850" y="235" width="270" height="130" rx="22" fill="#fff"/><rect x="850" y="415" width="270" height="130" rx="22" fill="#fff"/><rect x="850" y="595" width="270" height="130" rx="22" fill="#fff"/></g>
+  <circle cx="910" cy="300" r="30" fill="#2364d2"/><text x="900" y="310" font-family="Arial" font-size="30" fill="#fff">A</text><text x="960" y="295" font-family="Inter,Arial" font-size="24" font-weight="700" fill="#18346b">Article</text><text x="960" y="328" font-family="Inter,Arial" font-size="18" fill="#62749a">structured type</text>
+  <circle cx="910" cy="480" r="30" fill="#19a6a2"/><text x="899" y="490" font-family="Arial" font-size="28" fill="#fff">?</text><text x="960" y="475" font-family="Inter,Arial" font-size="24" font-weight="700" fill="#18346b">FAQ</text><text x="960" y="508" font-family="Inter,Arial" font-size="18" fill="#62749a">answer markup</text>
+  <circle cx="910" cy="660" r="30" fill="#7356cf"/><text x="896" y="671" font-family="Arial" font-size="26" fill="#fff">$</text><text x="960" y="655" font-family="Inter,Arial" font-size="24" font-weight="700" fill="#18346b">Product</text><text x="960" y="688" font-family="Inter,Arial" font-size="18" fill="#62749a">offer details</text>
+  <g filter="url(#shadow)"><rect x="1190" y="270" width="320" height="360" rx="25" fill="#fff"/><rect x="1220" y="305" width="260" height="18" rx="9" fill="#d6e0ef"/><rect x="1220" y="355" width="230" height="82" rx="12" fill="#edf3fb"/><rect x="1220" y="465" width="210" height="18" rx="9" fill="#536bd1"/><rect x="1220" y="505" width="245" height="13" rx="7" fill="#c3cfdf"/><rect x="1220" y="535" width="190" height="13" rx="7" fill="#c3cfdf"/><circle cx="1260" cy="395" r="18" fill="#ffd166"/><path d="M1250 395 l8 8 15-18" fill="none" stroke="#fff" stroke-width="6"/></g>
+  <circle cx="1400" cy="720" r="70" fill="#19a6a2"/><path d="M1365 720 l24 24 50-58" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><text x="1320" y="830" font-family="Inter,Arial" font-size="22" font-weight="700" fill="#18346b">VALIDATE • PUBLISH • UNDERSTAND</text>
+</svg>

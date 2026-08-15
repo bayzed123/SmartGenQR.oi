@@ -3,7 +3,7 @@ title: "pyproject toml Guide Write Configure and Fix Common pypi Errors2026"
 description: "A complete pyproject.toml tutorial: every field explained with examples, step-by-step setup, the 2026 license format change, and fixes for the errors that trip people up most."
 keyword: "pyproject.toml,pypi, python"
 date: 2026-07-22
-Image: "blog-posts/images/python-course-class-08-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/pyproject-toml-guide-cover.svg"
 Tags: 
 - pyproject.toml 
 - examplepyproject.toml 
