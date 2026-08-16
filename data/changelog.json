@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: add LinkedIn automation case study",
+    "date": "2026-08-16T17:41:04Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: preserve blog slugs in LinkedIn sharing",
     "date": "2026-08-16T17:29:35Z",
     "description": "Platform improvement and optimization."
