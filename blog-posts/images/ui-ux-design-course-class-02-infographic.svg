@@ -1,0 +1,208 @@
+<svg viewBox="0 0 800 916" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+
+  <defs>
+    <filter id="card-shadow" x="-4%" y="-4%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="rgba(76,29,149,0.10)"/>
+    </filter>
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#5B21B6;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#3B1878;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="stats-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B1878;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#2A1155;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="800" height="916" fill="#FAF8FF"/>
+
+  <!-- ================================================ -->
+  <!-- HEADER                                           -->
+  <!-- ================================================ -->
+  <rect width="800" height="118" fill="url(#header-grad)"/>
+  <circle cx="748" cy="20" r="90" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="762" cy="112" r="55" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="28" cy="92" r="64" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- Icon: stacked frames -->
+  <rect x="20" y="20" width="68" height="68" rx="10" fill="rgba(255,255,255,0.16)"/>
+  <rect x="34" y="34" width="28" height="22" rx="3" fill="none" stroke="white" stroke-width="2" opacity="0.55"/>
+  <rect x="42" y="42" width="28" height="22" rx="3" fill="none" stroke="white" stroke-width="2" opacity="0.8"/>
+  <rect x="50" y="50" width="28" height="22" rx="3" fill="white" opacity="0.95"/>
+
+  <!-- Header Titles -->
+  <text x="106" y="44" fill="white" font-size="21" font-weight="700" letter-spacing="-0.3">Figma Essentials</text>
+  <text x="106" y="70" fill="rgba(255,255,255,0.88)" font-size="13">Class 02 — Interface, Plugins, Components &amp; Auto Layout</text>
+  <text x="106" y="96" fill="rgba(255,255,255,0.62)" font-size="11">SmartGen UI/UX Design Course  ·  smartgentools.com  ·  By Sayad Md Bayezid Hosan</text>
+
+  <!-- ================================================ -->
+  <!-- STATS STRIP                                      -->
+  <!-- ================================================ -->
+  <rect y="118" width="800" height="56" fill="url(#stats-grad)"/>
+
+  <text x="133" y="143" text-anchor="middle" fill="white" font-size="17" font-weight="700">3 Flows</text>
+  <text x="133" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">Horizontal · Vertical · Grid</text>
+
+  <line x1="266" y1="127" x2="266" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="400" y="143" text-anchor="middle" fill="white" font-size="17" font-weight="700">⇧ A</text>
+  <text x="400" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">Shortcut to Add Auto Layout</text>
+
+  <line x1="533" y1="127" x2="533" y2="168" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="667" y="143" text-anchor="middle" fill="white" font-size="17" font-weight="700">3 Seats</text>
+  <text x="667" y="162" text-anchor="middle" fill="rgba(255,255,255,0.80)" font-size="10.5">Full · Dev · Collab</text>
+
+  <!-- ================================================ -->
+  <!-- SECTION LABEL                                    -->
+  <!-- ================================================ -->
+  <text x="400" y="194" text-anchor="middle" fill="#7C5CBF" font-size="9.5" letter-spacing="2.5" font-weight="700">3 SKILLS FOR PRODUCTIVE FIGMA WORK</text>
+
+  <!-- ================================================ -->
+  <!-- CARD 1: Figma Basics                             -->
+  <!-- ================================================ -->
+  <rect x="20" y="204" width="372" height="168" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="204" width="5" height="168" rx="2.5" fill="#7C3AED"/>
+  <circle cx="63" cy="230" r="18" fill="#7C3AED"/>
+  <text x="63" y="236" text-anchor="middle" fill="white" font-size="14" font-weight="700">1</text>
+  <text x="89" y="226" fill="#1A1A1A" font-size="13.5" font-weight="700">Figma Basics</text>
+  <text x="89" y="242" fill="#7C3AED" font-size="8.5" font-weight="700" letter-spacing="0.6">THE INTERFACE &amp; CORE TOOLS</text>
+  <line x1="32" y1="256" x2="381" y2="256" stroke="#EDE4FB" stroke-width="1"/>
+
+  <circle cx="40" cy="273" r="3.5" fill="#7C3AED"/>
+  <text x="50" y="277" fill="#333" font-size="10.5" font-weight="600">Browser-based, real-time collaborative design</text>
+  <circle cx="40" cy="293" r="3.5" fill="#7C3AED"/>
+  <text x="50" y="297" fill="#333" font-size="10.5" font-weight="600">Toolbar · Layers · Canvas · Design panel</text>
+  <circle cx="40" cy="313" r="3.5" fill="#7C3AED"/>
+  <text x="50" y="317" fill="#333" font-size="10.5" font-weight="600">F = Frame · T = Text · R/O = Shapes · V = Move</text>
+
+  <rect x="32" y="332" width="348" height="28" rx="7" fill="#F5F0FE"/>
+  <text x="206" y="350" text-anchor="middle" fill="#7C3AED" font-size="10" font-weight="700">Frames resize &amp; take Auto Layout — Groups can't</text>
+
+  <!-- ================================================ -->
+  <!-- CARD 2: Figma Plugins & Tools                    -->
+  <!-- ================================================ -->
+  <rect x="408" y="204" width="372" height="168" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="408" y="204" width="5" height="168" rx="2.5" fill="#8B5CF6"/>
+  <circle cx="451" cy="230" r="18" fill="#8B5CF6"/>
+  <text x="451" y="236" text-anchor="middle" fill="white" font-size="14" font-weight="700">2</text>
+  <text x="477" y="226" fill="#1A1A1A" font-size="13.5" font-weight="700">Plugins &amp; Tools</text>
+  <text x="477" y="242" fill="#8B5CF6" font-size="8.5" font-weight="700" letter-spacing="0.6">EXTEND WHAT FIGMA CAN DO</text>
+  <line x1="420" y1="256" x2="769" y2="256" stroke="#EDE4FB" stroke-width="1"/>
+
+  <circle cx="428" cy="273" r="3.5" fill="#8B5CF6"/>
+  <text x="438" y="277" fill="#333" font-size="10.5" font-weight="600">Stark — accessibility &amp; WCAG contrast checks</text>
+  <circle cx="428" cy="293" r="3.5" fill="#8B5CF6"/>
+  <text x="438" y="297" fill="#333" font-size="10.5" font-weight="600">Tokens Studio — design tokens synced to GitHub</text>
+  <circle cx="428" cy="313" r="3.5" fill="#8B5CF6"/>
+  <text x="438" y="317" fill="#333" font-size="10.5" font-weight="600">Autoflow — auto-routed user-flow arrows</text>
+
+  <rect x="420" y="332" width="348" height="28" rx="7" fill="#F5F0FE"/>
+  <text x="594" y="350" text-anchor="middle" fill="#8B5CF6" font-size="10" font-weight="700">Resources panel (puzzle icon) → Community → Install</text>
+
+  <!-- ================================================ -->
+  <!-- CARD 3: Components & Auto Layout (full width)    -->
+  <!-- ================================================ -->
+  <rect x="20" y="386" width="760" height="180" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="386" width="5" height="180" rx="2.5" fill="#4C1D95"/>
+
+  <circle cx="63" cy="410" r="18" fill="#4C1D95"/>
+  <text x="63" y="416" text-anchor="middle" fill="white" font-size="14" font-weight="700">3</text>
+  <text x="89" y="408" fill="#1A1A1A" font-size="13.5" font-weight="700">Components &amp; Auto Layout</text>
+  <text x="89" y="424" fill="#4C1D95" font-size="8.5" font-weight="700" letter-spacing="0.6">REUSABLE, RESPONSIVE-STYLE DESIGN SYSTEMS</text>
+
+  <line x1="32" y1="438" x2="768" y2="438" stroke="#EDE4FB" stroke-width="1"/>
+
+  <circle cx="46" cy="457" r="3.5" fill="#4C1D95"/>
+  <text x="56" y="461" fill="#333" font-size="10" font-weight="600">Main Component — the single source of truth</text>
+  <text x="56" y="477" fill="#333" font-size="10" font-weight="600">Instance — inherits updates, allows overrides</text>
+
+  <circle cx="306" cy="457" r="3.5" fill="#4C1D95"/>
+  <text x="316" y="461" fill="#333" font-size="10" font-weight="600">Variants — button states as one component</text>
+  <text x="316" y="477" fill="#333" font-size="10" font-weight="600">⇧A instantly adds Auto Layout to a frame</text>
+
+  <circle cx="566" cy="457" r="3.5" fill="#4C1D95"/>
+  <text x="576" y="461" fill="#333" font-size="10" font-weight="600">Hug / Fill / Fixed — how elements resize</text>
+  <text x="576" y="477" fill="#333" font-size="10" font-weight="600">Row &amp; column gap are now independent values</text>
+
+  <rect x="32" y="498" width="736" height="26" rx="6" fill="#F1EBFB"/>
+  <text x="400" y="516" text-anchor="middle" fill="#4C1D95" font-size="9.5" font-weight="700">A button built with Auto Layout resizes itself — nothing manually re-measured</text>
+
+  <text x="400" y="548" text-anchor="middle" fill="#9B8AC4" font-size="9" font-weight="600">See the three Auto Layout flow types below ↓</text>
+
+  <!-- ================================================ -->
+  <!-- AUTO LAYOUT: 3 FLOW TYPES PANEL                  -->
+  <!-- ================================================ -->
+  <rect x="20" y="580" width="760" height="210" rx="11" fill="white" filter="url(#card-shadow)"/>
+  <rect x="20" y="580" width="760" height="32" rx="11" fill="#5B21B6"/>
+  <rect x="20" y="596" width="760" height="16" fill="#5B21B6"/>
+  <text x="400" y="601" text-anchor="middle" fill="white" font-size="12" font-weight="700" letter-spacing="0.4">AUTO LAYOUT — THE 3 FLOW TYPES</text>
+
+  <!-- Column dividers -->
+  <line x1="290" y1="622" x2="290" y2="756" stroke="#EDE4FB" stroke-width="1.5"/>
+  <line x1="540" y1="622" x2="540" y2="756" stroke="#EDE4FB" stroke-width="1.5"/>
+
+  <!-- Diagram 1: Horizontal -->
+  <rect x="88" y="650" width="34" height="46" rx="6" fill="#7C3AED"/>
+  <text x="145" y="678" text-anchor="middle" fill="#B3A2D6" font-size="13" font-weight="700">↔</text>
+  <rect x="168" y="650" width="34" height="46" rx="6" fill="#8B5CF6"/>
+  <text x="225" y="678" text-anchor="middle" fill="#B3A2D6" font-size="13" font-weight="700">↔</text>
+  <rect x="248" y="650" width="34" height="46" rx="6" fill="#A855F7"/>
+  <text x="150" y="726" text-anchor="middle" fill="#1A1A1A" font-size="11" font-weight="700">Horizontal</text>
+  <text x="150" y="741" text-anchor="middle" fill="#8B8095" font-size="8.5">Row of buttons, icons</text>
+
+  <!-- Diagram 2: Vertical -->
+  <rect x="360" y="628" width="80" height="18" rx="5" fill="#7C3AED"/>
+  <rect x="360" y="654" width="80" height="18" rx="5" fill="#8B5CF6"/>
+  <rect x="360" y="680" width="80" height="18" rx="5" fill="#A855F7"/>
+  <text x="400" y="726" text-anchor="middle" fill="#1A1A1A" font-size="11" font-weight="700">Vertical</text>
+  <text x="400" y="741" text-anchor="middle" fill="#8B8095" font-size="8.5">Lists, feeds, stacked forms</text>
+
+  <!-- Diagram 3: Grid -->
+  <rect x="76" y="0" width="0" height="0" fill="none"/> <!-- spacer no-op -->
+  <rect x="608" y="628" width="38" height="34" rx="5" fill="#7C3AED"/>
+  <rect x="654" y="628" width="38" height="34" rx="5" fill="#8B5CF6"/>
+  <rect x="608" y="670" width="38" height="34" rx="5" fill="#A855F7"/>
+  <rect x="654" y="670" width="38" height="34" rx="5" fill="#C4A6FA"/>
+  <rect x="678" y="614" width="34" height="15" rx="7.5" fill="#FBBF24"/>
+  <text x="695" y="625" text-anchor="middle" fill="white" font-size="7.5" font-weight="700">NEW</text>
+  <text x="650" y="726" text-anchor="middle" fill="#1A1A1A" font-size="11" font-weight="700">Grid</text>
+  <text x="650" y="741" text-anchor="middle" fill="#8B8095" font-size="8.5">Dashboards, bento boxes</text>
+
+  <text x="400" y="770" text-anchor="middle" fill="#9B8AC4" font-size="8.5">Toggle any frame's flow anytime — Figma suggests the most likely one automatically</text>
+
+  <!-- ================================================ -->
+  <!-- FOOTER: UI/UX Course Roadmap Loop                -->
+  <!-- ================================================ -->
+  <rect y="804" width="800" height="80" fill="#2A1155"/>
+
+  <text x="400" y="822" text-anchor="middle" fill="white" font-size="11" font-weight="700" letter-spacing="1.3">THE SMARTGEN UI/UX DESIGN COURSE ROADMAP</text>
+
+  <text x="83" y="842" text-anchor="middle" fill="#8B7AAE" font-size="8.5" font-weight="700">FUNDAMENTALS</text>
+  <text x="83" y="854" text-anchor="middle" fill="#5F4E82" font-size="7.5">Class 01 ✓</text>
+  <text x="146" y="848" text-anchor="middle" fill="#5A487C" font-size="13">›</text>
+
+  <text x="210" y="842" text-anchor="middle" fill="#FBBF24" font-size="8.5" font-weight="700">FIGMA ESSENTIALS</text>
+  <text x="210" y="854" text-anchor="middle" fill="#D4B96A" font-size="7.5">Class 02 — Today</text>
+  <text x="273" y="848" text-anchor="middle" fill="#5A487C" font-size="13">›</text>
+
+  <text x="337" y="842" text-anchor="middle" fill="#C4B5FD" font-size="8.5" font-weight="700">DESIGN SYSTEM</text>
+  <text x="337" y="854" text-anchor="middle" fill="#8B7AAE" font-size="7.5">Variables &amp; Tokens</text>
+  <text x="400" y="848" text-anchor="middle" fill="#5A487C" font-size="13">›</text>
+
+  <text x="463" y="842" text-anchor="middle" fill="#C4B5FD" font-size="8.5" font-weight="700">UX PROCESS</text>
+  <text x="463" y="854" text-anchor="middle" fill="#8B7AAE" font-size="7.5">Research &amp; Wireframes</text>
+  <text x="527" y="848" text-anchor="middle" fill="#5A487C" font-size="13">›</text>
+
+  <text x="590" y="842" text-anchor="middle" fill="#C4B5FD" font-size="8.5" font-weight="700">APPLIED DESIGN</text>
+  <text x="590" y="854" text-anchor="middle" fill="#8B7AAE" font-size="7.5">Dashboards &amp; Web</text>
+  <text x="653" y="848" text-anchor="middle" fill="#5A487C" font-size="13">›</text>
+
+  <text x="717" y="842" text-anchor="middle" fill="#C4B5FD" font-size="8.5" font-weight="700">FREELANCING</text>
+  <text x="717" y="854" text-anchor="middle" fill="#8B7AAE" font-size="7.5">Portfolio &amp; Clients</text>
+
+  <!-- Copyright -->
+  <text x="400" y="900" text-anchor="middle" fill="#6B4FA0" font-size="9">© 2026 SmartGen UI/UX Design Course  ·  smartgentools.com  ·  Class 02 by Sayad Md Bayezid Hosan</text>
+
+</svg>

@@ -1,0 +1,76 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" font-family="'Helvetica Neue', Arial, sans-serif">
+
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B1878;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="card-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="rgba(30,10,60,0.35)"/>
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="800" height="420" fill="url(#bg-grad)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="742" cy="55" r="150" fill="rgba(255,255,255,0.06)"/>
+  <circle cx="55" cy="395" r="110" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="715" cy="390" r="55" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- ================================================ -->
+  <!-- LEFT: TITLE BLOCK                                -->
+  <!-- ================================================ -->
+
+  <rect x="50" y="52" width="292" height="28" rx="14" fill="rgba(255,255,255,0.16)"/>
+  <text x="65" y="71" fill="white" font-size="11" font-weight="700" letter-spacing="1">SMARTGEN UI/UX DESIGN COURSE</text>
+
+  <text x="48" y="152" fill="white" font-size="50" font-weight="800" letter-spacing="-0.5">Figma</text>
+  <text x="48" y="210" fill="white" font-size="50" font-weight="800" letter-spacing="-0.5">Essentials</text>
+
+  <rect x="50" y="230" width="72" height="5" rx="2.5" fill="#FBBF24"/>
+
+  <text x="50" y="268" fill="rgba(255,255,255,0.88)" font-size="16" font-weight="500">Class 02 — Interface, Plugins &amp; Tools,</text>
+  <text x="50" y="292" fill="rgba(255,255,255,0.88)" font-size="16" font-weight="500">Components &amp; Auto Layout</text>
+
+  <!-- ================================================ -->
+  <!-- RIGHT: MOCK FRAME + LAYERS + AUTO LAYOUT CARD    -->
+  <!-- ================================================ -->
+  <rect x="462" y="86" width="288" height="248" rx="18" fill="white" filter="url(#card-shadow)"/>
+
+  <!-- Mini "Layers panel" strip -->
+  <rect x="482" y="104" width="70" height="212" rx="8" fill="#FAF9FC"/>
+  <text x="490" y="120" fill="#9CA3AF" font-size="8" font-weight="700" letter-spacing="0.5">LAYERS</text>
+  <rect x="490" y="130" width="54" height="8" rx="2" fill="#E5E1F0"/>
+  <rect x="490" y="144" width="46" height="8" rx="2" fill="#DDD5F5"/>
+  <rect x="496" y="158" width="40" height="8" rx="2" fill="#C9B8F5"/>
+  <rect x="496" y="172" width="40" height="8" rx="2" fill="#C9B8F5"/>
+  <rect x="490" y="186" width="46" height="8" rx="2" fill="#DDD5F5"/>
+  <rect x="490" y="200" width="38" height="8" rx="2" fill="#E5E1F0"/>
+
+  <!-- Auto layout demo: a frame with 3 items + gap arrows -->
+  <text x="566" y="122" fill="#9CA3AF" font-size="8" font-weight="700" letter-spacing="0.5">AUTO LAYOUT — HUG</text>
+
+  <rect x="566" y="132" width="164" height="58" rx="10" fill="#F5F0FE" stroke="#DCC9FA" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <rect x="578" y="145" width="30" height="32" rx="6" fill="#7C3AED"/>
+  <text x="622" y="158" fill="#9CA3AF" font-size="11" font-weight="700">↔</text>
+  <rect x="636" y="145" width="30" height="32" rx="6" fill="#8B5CF6"/>
+  <text x="680" y="158" fill="#9CA3AF" font-size="11" font-weight="700">↔</text>
+  <rect x="694" y="145" width="30" height="32" rx="6" fill="#A855F7"/>
+
+  <text x="566" y="212" fill="#9CA3AF" font-size="8" font-weight="700" letter-spacing="0.5">COMPONENT + VARIANT</text>
+  <rect x="566" y="222" width="76" height="36" rx="8" fill="#7C3AED"/>
+  <text x="604" y="244" text-anchor="middle" fill="white" font-size="10.5" font-weight="700">Default</text>
+  <rect x="654" y="222" width="76" height="36" rx="8" fill="white" stroke="#7C3AED" stroke-width="2"/>
+  <text x="692" y="244" text-anchor="middle" fill="#7C3AED" font-size="10.5" font-weight="700">Hover</text>
+
+  <rect x="566" y="272" width="164" height="30" rx="7" fill="#F5F0FE"/>
+  <text x="648" y="291" text-anchor="middle" fill="#7C3AED" font-size="10" font-weight="700">⇧ A — Add Auto Layout</text>
+
+  <!-- ================================================ -->
+  <!-- BOTTOM BYLINE STRIP                              -->
+  <!-- ================================================ -->
+  <line x1="50" y1="374" x2="750" y2="374" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+  <text x="50" y="398" fill="rgba(255,255,255,0.78)" font-size="12.5">smartgentools.com  ·  By Sayad Md Bayezid Hosan  ·  Class 02</text>
+
+</svg>
