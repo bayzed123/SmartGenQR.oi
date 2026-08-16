@@ -71,7 +71,7 @@ function readBlogPosts() {
       content: body,
       date: attributes.date || new Date().toISOString().split('T')[0],
       tags: attributes.tags || [],
-      image: attributes.image || `${SITE_URL}/assets/images/blog-default.jpg`,
+      image: attributes.image || `${SITE_URL}/assets/images/blog-default.svg`,
       author: attributes.author || AUTHOR_NAME,
       category: attributes.category || 'General',
       // Old URLs this post used to live at. Each becomes a redirect stub so
@@ -710,11 +710,21 @@ function generateArchiveHTML() {
  * Generate blog.json metadata file
  */
 function generateBlogJSON(posts) {
-  // `redirectFrom` is a build-time concern (it drives redirect stubs) and the
-  // frontend never reads it. blog.json is fetched by every blog page and by
-  // site search, so keep it out of the payload.
-  const publicPosts = posts.map(({ redirectFrom, ...rest }) => rest);
-  return JSON.stringify(publicPosts, null, 2);
+  // blog.json is fetched by the homepage feed, the blog archive and site
+  // search, so every byte here is paid for on first load.
+  //
+  // `content` was 97.7% of the file -- the full markdown body of all 64 posts,
+  // 1.86MB of the 1.9MB total -- and not one consumer reads it: blog.js,
+  // search.js and feed-combined.js only ever touch slug/title/description/
+  // date/tags/image/author/category. Dropping it takes the payload to ~43KB.
+  // The bodies are already published as static HTML at each post's own URL.
+  //
+  // `redirectFrom` is likewise build-time only (it drives the redirect stubs).
+  //
+  // Minified rather than pretty-printed: this file is machine-read, and the
+  // indentation was costing a further ~15% for nothing.
+  const publicPosts = posts.map(({ redirectFrom, content, ...rest }) => rest);
+  return JSON.stringify(publicPosts);
 }
 
 /**
@@ -804,7 +814,7 @@ function updateSitemapDisabled(posts) {
         postDate = post.date.split('T')[0];
       }
     }
-    const imageUrl = post.image && !post.image.endsWith('/assets/images/blog-default.jpg')
+    const imageUrl = post.image && !post.image.endsWith('/assets/images/blog-default.svg')
       ? (post.image.startsWith('http') ? post.image : `${SITE_URL}/${post.image.replace(/^\//, '')}`)
       : '';
     const imageEntry = imageUrl

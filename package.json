@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "front-matter": "^4.0.2",
-    "luxon": "^3.7.2"
+    "luxon": "^3.7.2",
+    "playwright-core": "^1.62.1"
   },
   "devDependencies": {
     "gray-matter": "^4.0.3",

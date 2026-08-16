@@ -247,7 +247,7 @@ function injectNavbar() {
             <div class="header-content">
                 <a href="/" class="logo" aria-label="SmartGen Home" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
                     <img src="/assets/img/logo-icon.svg" width="44" height="40" alt="" style="display: block; height: 40px; width: auto;" loading="eager" decoding="async">
-                    <span style="font-family: Inter, sans-serif; font-weight: 800; font-size: 24px; line-height: 1; color: var(--navy, #0f172a);">Smart<span style="color:#ff8800;">Gen</span></span>
+                    <span style="font-family: Inter, sans-serif; font-weight: 800; font-size: 24px; line-height: 1; color: var(--navy, #0f172a);">Smart<span class="sg-wordmark-accent">Gen</span></span>
                 </a>
                 <div class="header-actions">
                     <button id="theme-toggle" class="icon-btn" title="Toggle Theme">🌓</button>
@@ -271,7 +271,7 @@ function injectNavbar() {
             <div class="sidebar-header">
                 <a href="/" class="sidebar-logo" aria-label="SmartGen Home" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
                     <img src="/assets/img/logo-icon.svg" width="44" height="40" alt="" style="display: block; height: 40px; width: auto;" loading="eager" decoding="async">
-                    <span style="font-family: Inter, sans-serif; font-weight: 800; font-size: 24px; line-height: 1; color: var(--navy, #0f172a);">Smart<span style="color:#ff8800;">Gen</span></span>
+                    <span style="font-family: Inter, sans-serif; font-weight: 800; font-size: 24px; line-height: 1; color: var(--navy, #0f172a);">S<span class="sg-wordmark-accent">Gen</span>pan></span>
                 </a>
                 <button id="sidebar-close" class="sidebar-close-btn" title="Close Menu">✕</button>
             </div>

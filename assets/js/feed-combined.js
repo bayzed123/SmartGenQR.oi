@@ -181,7 +181,7 @@ function renderFeed(posts, container) {
                 </div>
                 ${post.image ? `
                 <a href="${post.url}">
-                    <img src="${post.image}" alt="${post.title}" class="feed-post-image" onerror="this.src='/assets/images/blog-default.jpg'">
+                    <img src="${post.image}" alt="${post.title}" class="feed-post-image" width="1200" height="630" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/assets/images/blog-default.svg'">
                 </a>
                 ` : ''}
                 <div class="feed-post-footer">

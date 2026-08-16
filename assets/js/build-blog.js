@@ -61,7 +61,7 @@ function readBlogPosts() {
       content: body,
       date: attributes.date || new Date().toISOString().split('T')[0],
       tags: attributes.tags || [],
-      image: attributes.image || `${SITE_URL}/assets/images/blog-default.jpg`,
+      image: attributes.image || `${SITE_URL}/assets/images/blog-default.svg`,
       author: attributes.author || AUTHOR_NAME,
       category: attributes.category || 'General',
     });
