@@ -274,6 +274,15 @@
     </image:image>
   </url>
   <url>
+    <loc>https://smartgentools.com/blog/how-we-automated-website-to-linkedin-article-sharing-case-study/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smartgentools.com/blog-posts/images/how-we-automated-website-to-linkedin-article-sharing-case-study.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://smartgentools.com/blog/importance-of-digital-marketing-how-it-works-and-key-concepts-every-beginner-should-know/</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -1643,14 +1652,5 @@
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smartgentools.com/blog/how-we-automated-website-to-linkedin-article-sharing-case-study/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://smartgentools.com/blog-posts/images/how-we-automated-website-to-linkedin-article-sharing-case-study.svg</image:loc>
-    </image:image>
   </url>
 </urlset>
