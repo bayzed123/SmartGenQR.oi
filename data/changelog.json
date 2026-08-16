@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: preserve blog slugs in LinkedIn sharing",
+    "date": "2026-08-16T17:29:35Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Update ui-ux-design-course-class-02-figma-essentials.md",
     "date": "2026-08-16T17:10:40Z",
     "description": "Platform improvement and optimization."
