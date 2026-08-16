@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: support native LinkedIn image shares",
+    "date": "2026-08-16T18:07:59Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: verify LinkedIn preview image before sharing",
     "date": "2026-08-16T17:53:44Z",
     "description": "Platform improvement and optimization."
