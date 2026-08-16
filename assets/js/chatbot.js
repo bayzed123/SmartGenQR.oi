@@ -321,7 +321,13 @@
     for (var i = 0; i < stale.length; i++) stale[i].remove();
 
     this.el.messages.appendChild(node);
-    this.el.messages.scrollTop = this.el.messages.scrollHeight;
+
+    // Reading scrollHeight straight after appendChild forces a synchronous
+    // layout in the same task as the mutation -- the forced-reflow diagnostic
+    // PageSpeed reports for this file. Deferring the read to the next frame
+    // lets the browser lay out once and scroll with the result.
+    var box = this.el.messages;
+    requestAnimationFrame(function () { box.scrollTop = box.scrollHeight; });
   };
 
   /* ---------------------------------------------------------------- boot */
