@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Design Course Class 02: Figma Essentials - SmartGen Blog</title>
+    <meta name="description" content="Class 02 of the UI/UX Design Course covers Figma essentials — the interface, must-know tools and plugins, components, and Auto Layout for real design work.">
+    <meta name="author" content="Sayad Md Bayezid Hosan">
+    <meta name="keywords" content="SmartGen, UI UX Design, UI UX Course, Figma, Figma Basics, Figma Plugins, Auto Layout, Components">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="UI/UX Design Course Class 02: Figma Essentials">
+    <meta property="og:description" content="Class 02 of the UI/UX Design Course covers Figma essentials — the interface, must-know tools and plugins, components, and Auto Layout for real design work.">
+    <meta property="og:image" content="https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-02-cover.svg">
+    <meta property="og:url" content="https://smartgentools.com/blog/uiux-design-course-class-02-figma-essentials/">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="Fri Aug 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)">
+    <meta property="article:author" content="Sayad Md Bayezid Hosan">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UI/UX Design Course Class 02: Figma Essentials">
+    <meta name="twitter:description" content="Class 02 of the UI/UX Design Course covers Figma essentials — the interface, must-know tools and plugins, components, and Auto Layout for real design work.">
+    <meta name="twitter:image" content="https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-02-cover.svg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://smartgentools.com/blog/uiux-design-course-class-02-figma-essentials/">
+    
+    <!-- HTTPS Redirect Script -->
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace('https:' + location.href.substring(location.protocol.length));
+        }
+    </script>
+    
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "UI/UX Design Course Class 02: Figma Essentials",
+        "description": "Class 02 of the UI/UX Design Course covers Figma essentials — the interface, must-know tools and plugins, components, and Auto Layout for real design work.",
+        "image": "https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-02-cover.svg",
+        "datePublished": "Fri Aug 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "author": {
+            "@type": "Person",
+            "name": "Sayad Md Bayezid Hosan",
+            "url": "https://smartgentools.com/about/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "SmartGen",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://smartgentools.com/assets/images/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <!-- JSON-LD BreadcrumbList Schema (rich-result breadcrumb trail) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://smartgentools.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://smartgentools.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "UI/UX Design Course Class 02: Figma Essentials", "item": "https://smartgentools.com/blog/uiux-design-course-class-02-figma-essentials/" }
+        ]
+    }
+    </script>
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/blog.css">
+    <link rel="stylesheet" href="../../assets/css/ads.css">
+    
+    <!-- Inline Styles for Print and Share Modal -->
+    <style>
+        /* Print Styles */
+        @media print {
+            header, footer, .newsletter-section, .blog-related-posts, #print-button, #share-button, #main-header, #main-footer, .share-modal {
+                display: none !important;
+            }
+            body { background: white; color: black; }
+            .blog-post-container { max-width: 100%; padding: 0; }
+            .blog-post-article { box-shadow: none; border: none; }
+            .blog-post-title { page-break-after: avoid; }
+            .blog-post-content { color: black; }
+            .blog-post-content a { color: #0066cc; text-decoration: underline; }
+            img { max-width: 100%; height: auto; page-break-inside: avoid; }
+            h2, h3, h4 { page-break-after: avoid; page-break-inside: avoid; }
+            p { orphans: 3; widows: 3; }
+            pre { background: #f5f5f5 !important; border: 1px solid #ddd !important; page-break-inside: avoid; }
+        }
+
+        /* Share Modal Styles */
+        .share-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .share-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .share-modal-content {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            max-width: 350px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        .share-modal.show .share-modal-content {
+            transform: translateY(0);
+        }
+        .share-close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 28px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .share-close:hover { color: #000; }
+        .share-modal h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+            font-size: 1.5rem;
+        }
+        .share-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .share-btn {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .share-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+        .share-btn.fb { background: #1877F2; }
+        .share-btn.tw { background: #000000; }
+        .share-btn.li { background: #0A66C2; }
+        .share-btn.wa { background: #25D366; }
+        .share-btn.copy { background: #4b5563; }
+    </style>
+    
+    <!-- Scripts -->
+    <script src="../../assets/js/app.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/blog.js" defer></script>
+
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="blog-post-container">
+        <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span class="blog-breadcrumb-sep">/</span>
+            <a href="/blog/">Blog</a>
+            <span class="blog-breadcrumb-sep">/</span>
+            <span class="blog-breadcrumb-current">UI/UX Design Course Class 02: Figma Essentials</span>
+        </nav>
+        <article class="blog-post-article reveal-up">
+            <header class="blog-post-header">
+                <div class="blog-post-meta">
+                    <time datetime="Fri Aug 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)">August 14, 2026</time>
+                    <span class="meta-separator">•</span>
+                    <span class="blog-post-category">General</span>
+                    <span class="meta-separator">•</span>
+                    <span class="blog-post-author">By Sayad Md Bayezid Hosan</span>
+                </div>
+                <h1 class="blog-post-title">UI/UX Design Course Class 02: Figma Essentials</h1>
+
+<div class="header-ads-container">
+  <div class="desktop-only"><div class="ad-cls-wrapper" id="ad-wrapper-leaderboard728x90" style="min-height: 90px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f9d4f2f3a29a9dcfb43dddf1fd33eb88',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f9d4f2f3a29a9dcfb43dddf1fd33eb88/invoke.js"></script>
+</div></div>
+  <div class="mobile-only"><div class="ad-cls-wrapper" id="ad-wrapper-mobile320x50" style="min-height: 50px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : '6af746fdd2244652b728e73b1a70db61',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>
+</div></div>
+</div>
+                <p class="blog-post-excerpt">Class 02 of the UI/UX Design Course covers Figma essentials — the interface, must-know tools and plugins, components, and Auto Layout for real design work.</p>
+            </header>
+
+            <!-- Author Profile Section - Right after title (Auto-inserted if not manually placed) -->
+            
+
+            <img src="https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-02-cover.svg" alt="UI/UX Design Course Class 02: Figma Essentials" class="blog-post-featured-image reveal-up delay-100">
+
+            <div class="blog-post-content reveal-up delay-200">
+                <!-- Slim Minimalist Author Profile Box -->
+<div class="author-box" style="display: flex; align-items: center; margin: 2rem 0; padding: 0.75rem 0; gap: 0.75rem;">
+    <!-- Profile Picture -->
+    <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/smartgentools-blog-bayezid-profile.jpg" 
+         alt="Sayad Md Bayezid Hosan" 
+         style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+    
+    <!-- Info -->
+    <div class="author-info" style="flex: 1;">
+        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
+    </div>
+</div>
+
+<p>August 14, 2026 • General • By <a href="https://www.sayadbayezid.com">Sayad Md Bayezid Hosan</a></p>
+<h1>UI/UX Design Course Class 02: Figma Essentials</h1>
+<p>In <a href="https://smartgentools.com/blog/uiux-design-course-fundamentals/">Class 01</a> we covered the theory every design decision rests on — color, psychology, typography, and the principles that tie them together. Today we open the tool almost every one of those decisions actually gets built in.</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+<p>Figma remains the industry-standard interface design tool in 2026 — browser-based, real-time collaborative, and used across companies of every size for everything from quick wireframes to full production design systems. This class covers three things: the core interface and tools you need to move around confidently, the plugin ecosystem that extends what Figma can do out of the box, and components with Auto Layout — the single most important workflow shift between &quot;designing a picture of a button&quot; and &quot;designing a button that actually behaves like one.&quot;</p>
+<p><img src="https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-02-cover.svg" alt="UI/UX Design Course Class 02: Figma Essentials"></p>
+<hr>
+<h2>Welcome to Class 02</h2>
+<p>This class is deliberately hands-on. Open Figma in a browser tab as you read — you don&#39;t need to install anything, and the free Starter plan covers everything in this class. By the end, you&#39;ll be able to navigate the interface without hunting for tools, install and use a plugin, and build a component that resizes itself automatically instead of breaking every time its content changes.</p>
+<hr>
+<h2>1. Figma Basics</h2>
+<h3>What Figma Is, and Why It Still Leads</h3>
+<p>Figma is a browser-based interface design tool that lets multiple people design inside the same file at the same time — no exporting, no version conflicts, no &quot;final_v3_ACTUALLY_final.fig&quot; file names. That real-time collaboration model is a large part of why it became the default design tool across the industry: a designer, a product manager, and a developer can all be looking at — and commenting on — the exact same file simultaneously.</p>
+<p>Figma organizes work into a few distinct file types inside one account:</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+<ul>
+<li><strong>Design files</strong> — where UI/UX design happens; this is where this entire class lives.</li>
+<li><strong>FigJam</strong> — a digital whiteboard for early brainstorming, user flow sketching, and workshops, before anything gets designed in detail.</li>
+<li><strong>Slides</strong> — presentation decks, useful for case study presentations later in this course.</li>
+<li><strong>Sites</strong> — for publishing simple, design-driven websites directly from Figma.</li>
+</ul>
+<h3>Accounts and Seats: What You Actually Need to Sign Up For</h3>
+<p>As of 2026, Figma organizes access around three seat types, and understanding this now will save you confusion later:</p>
+<ul>
+<li><strong>Full seat</strong> — complete design editing access. This is what you need for everything in this course.</li>
+<li><strong>Dev seat</strong> — built for developers reviewing designs; includes full Dev Mode access (code snippets, variable inspection) but not design editing.</li>
+<li><strong>Collab seat</strong> — for teammates who only need to comment and view, not design or inspect code.</li>
+</ul>
+<p>The free <strong>Starter plan</strong> gives you a Full seat with everything you need to learn on, plus basic design inspection. You won&#39;t need a paid plan for this course.</p>
+<h3>The Core Interface Areas</h3>
+<p>When you open a design file, four areas matter most:</p>
+<ul>
+<li><strong>Toolbar (top)</strong> — where you select tools: move, frame, shape, text, pen, comment.</li>
+<li><strong>Layers panel (left)</strong> — a tree view of every element in your file, nested by frame and group.</li>
+<li><strong>Canvas (center)</strong> — the infinite workspace where you actually design.</li>
+<li><strong>Design panel (right)</strong> — properties for whatever&#39;s currently selected: position, size, fill, stroke, effects, and (once you get to Section 3) Auto Layout settings.</li>
+</ul>
+<p>A fifth panel, <strong>Assets</strong>, sits alongside Layers and stores your components and styles so you can drag them onto the canvas without hunting through other files.</p>
+<h3>Essential Tools and Their Shortcuts</h3>
+<p>Every one of these has a single-key shortcut worth memorizing before anything else — they turn hours of menu-hunting into muscle memory within a week.</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Shortcut</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Move / Select</td>
+<td><code>V</code></td>
+<td>Select and move any layer</td>
+</tr>
+<tr>
+<td>Frame</td>
+<td><code>F</code></td>
+<td>Create a frame — your main container for screens</td>
+</tr>
+<tr>
+<td>Rectangle</td>
+<td><code>R</code></td>
+<td>Draw a rectangle</td>
+</tr>
+<tr>
+<td>Ellipse</td>
+<td><code>O</code></td>
+<td>Draw a circle or ellipse</td>
+</tr>
+<tr>
+<td>Text</td>
+<td><code>T</code></td>
+<td>Add editable text</td>
+</tr>
+<tr>
+<td>Pen</td>
+<td><code>P</code></td>
+<td>Draw custom vector shapes and paths</td>
+</tr>
+<tr>
+<td>Comment</td>
+<td><code>C</code></td>
+<td>Leave feedback pinned to a specific spot</td>
+</tr>
+<tr>
+<td>Hand tool</td>
+<td><code>H</code> (or hold Spacebar)</td>
+<td>Pan around the canvas</td>
+</tr>
+<tr>
+<td>Zoom to fit</td>
+<td><code>Shift + 1</code></td>
+<td>Fit your whole design in view</td>
+</tr>
+</tbody></table>
+<h3>Frames vs. Groups — The Mistake Almost Every Beginner Makes</h3>
+<p>This single distinction causes more early confusion than anything else in Figma. A <strong>Group</strong> is just a bounding box around selected layers — convenient for organizing, but it has no independent size logic of its own. A <strong>Frame</strong> behaves more like a real container: it can be resized independently, it supports constraints (how child elements behave when the frame resizes), and — critically for Section 3 — only frames can have Auto Layout applied to them.</p>
+<p>The practical rule: if you&#39;re building an actual screen, a card, a button, or anything you expect to resize or reuse, use a <strong>Frame</strong>, not a Group, from the very first click.</p>
+<hr>
+<h2>2. Figma Plugins &amp; Tools</h2>
+<h3>What Plugins Actually Do</h3>
+<p>Plugins are community-built or officially published mini-applications that run inside Figma and extend what it can do beyond its native features — automating repetitive tasks, generating assets, checking accessibility, or connecting your file to outside systems like a codebase.</p>
+<h3>How to Install and Use One</h3>
+<p>Open the <strong>Resources</strong> panel (the puzzle-piece icon in the top toolbar), search the <strong>Community</strong> tab for what you need, click a plugin, and select <strong>Install</strong>. Once installed, run it either from that same Resources panel or by right-clicking the canvas → Plugins. Most plugins act on whatever layer or frame you currently have selected, so select first, then run the plugin.</p>
+<h3>Plugins Worth Installing First</h3>
+<p>Rather than browsing thousands of options, these categories cover most of what a beginner actually needs:</p>
+<ul>
+<li><strong>Stark</strong> — the most complete accessibility plugin available for Figma: checks contrast ratios against WCAG 2.1 and 2.2 (the exact standard covered in Class 01), simulates how a design looks with deuteranopia, protanopia, or low vision, and flags touch-target sizing issues. Given how much of Class 01 was about color contrast and color blindness, this is the single highest-value plugin to install first.</li>
+<li><strong>Tokens Studio</strong> — manages design tokens (colors, spacing, typography) and can sync them to GitHub or GitLab. Not essential today, but worth knowing exists before Class 03 covers design systems.</li>
+<li><strong>Autoflow</strong> — draws clean, automatically routed connector arrows between frames, which is genuinely useful once you start mapping user flows later in this course.</li>
+<li><strong>Iconify</strong> or <strong>Unsplash</strong> — bring icon libraries or stock photography directly into the canvas without leaving Figma to search elsewhere.</li>
+</ul>
+<h3>Native Tools That Used to Require Plugins</h3>
+<p>Figma has steadily absorbed some of the most common plugin use cases directly into the product, so it&#39;s worth knowing what&#39;s now built in before installing a redundant plugin:</p>
+<ul>
+<li><strong>Dev Mode</strong> — a dedicated inspection view (accessed via the seat types covered in Section 1) that shows exact spacing, colors, and ready-to-copy code snippets for developers.</li>
+<li><strong>Variables</strong> — Figma&#39;s native design-token system: color, number, string, and boolean values that can hold different values per mode (like light/dark theme) and can reference each other. This is the modern replacement for what older token plugins used to handle manually.</li>
+<li><strong>Figma AI features</strong>, including a <strong>Rename Layers</strong> tool that cleans up messy layer names in bulk, and <strong>Visual Search</strong>, which scans your existing components for anything visually similar before you build a duplicate from scratch.</li>
+</ul>
+<hr>
+<h2>3. Figma Components &amp; Auto Layout</h2>
+<p>This is where the first two sections come together into an actual professional workflow — and it&#39;s the single biggest shift in how you should think about designing anything you intend to reuse or hand off.</p>
+<h3>Components: Design Once, Update Everywhere</h3>
+<p>A <strong>Main Component</strong> is a reusable master version of an element — a button, a card, a nav bar. Every copy you place elsewhere is an <strong>Instance</strong> — a linked copy that automatically updates whenever you edit the main component, while still allowing individual overrides (like changing just the text on one instance) without breaking the link.</p>
+<p>To create one: design the element normally, select it, and either press the component icon in the toolbar or use the right-click menu → <strong>Create Component</strong>. It now appears in your Assets panel, ready to drag onto any frame.</p>
+<h3>Variants: One Component, Multiple States</h3>
+<p>Instead of building four separate &quot;Button&quot; components for default, hover, pressed, and disabled states, <strong>Variants</strong> let you group all four into a single component with a property you can switch between — keeping every state visually consistent and updating together when the base design changes. This single feature is why professional component libraries stay manageable even as a product grows to hundreds of screens.</p>
+<h3>Auto Layout: Figma&#39;s Answer to Flexbox (and Now Grid)</h3>
+<p><strong>Auto Layout</strong> is what makes a component actually <em>behave</em> like a real interface element instead of a static picture of one — spacing, padding, and sizing adjust automatically as content changes, the same way a real button in code would resize itself around longer or shorter text.</p>
+<p>Select a frame (or a group of layers) and press <strong>Shift + A</strong> to add Auto Layout instantly. As of 2025–2026, Auto Layout supports three distinct flow types:</p>
+<ul>
+<li><strong>Horizontal</strong> — arranges items left to right, ideal for a row of buttons or icons.</li>
+<li><strong>Vertical</strong> — arranges items top to bottom, ideal for a list or a feed.</li>
+<li><strong>Grid</strong> <em>(added at Config 2025, now a mature core feature)</em> — a genuine two-dimensional layout, closer to CSS Grid than Flexbox, letting elements span multiple rows or columns. This is the right choice for dashboards, image galleries, and bento-box style layouts that Horizontal or Vertical alone can&#39;t cleanly express.</li>
+</ul>
+<p>Once Auto Layout is applied, the Design panel exposes the properties that make it powerful:</p>
+<ul>
+<li><strong>Padding</strong> — space between the frame&#39;s edge and its contents, adjustable uniformly or per side.</li>
+<li><strong>Gap</strong> — space between individual items. Row gap and column gap can now be set independently, which matters the moment a layout wraps onto multiple lines.</li>
+<li><strong>Wrap</strong> — available on Horizontal frames, pushes overflowing items onto a new line instead of forcing them to shrink or spill outside the frame — genuine flexbox-style wrapping behavior.</li>
+<li><strong>Resizing (Hug / Fill / Fixed)</strong> — controls how an element responds to its content and parent: <strong>Hug</strong> shrinks the frame to fit its content exactly, <strong>Fill</strong> stretches it to take up all available space in its parent, and <strong>Fixed</strong> locks it to a specific size regardless of content.</li>
+</ul>
+<h3>Putting It Together: A Button That Actually Behaves Like One</h3>
+<p>Here&#39;s the workflow that separates a beginner&#39;s static button from a production-ready one: create a Frame, add a Text layer inside it, apply Auto Layout (<code>Shift + A</code>), set the frame&#39;s resizing to <strong>Hug</strong> on both axes so it shrinks to fit the text exactly, add consistent padding (say, 12px vertical, 24px horizontal), then turn it into a Component. Now, when you or a teammate edits the button&#39;s text anywhere it&#39;s used, the padding and sizing adjust automatically — nothing manually re-measured, nothing quietly breaking two screens away.</p>
+<hr>
+<h2>Common Mistakes Beginners Make in Figma</h2>
+<ul>
+<li><strong>Using Groups where a Frame belongs.</strong> Groups can&#39;t take Auto Layout, and this single choice, made early, causes the most rework later.</li>
+<li><strong>Detaching component instances unnecessarily.</strong> Once detached, that copy stops receiving updates from the main component — only detach when you genuinely need a one-off exception.</li>
+<li><strong>Skipping layer names.</strong> A Layers panel full of &quot;Rectangle 47&quot; and &quot;Frame 12&quot; becomes unusable fast; name things as you build, or use the AI Rename Layers tool as a cleanup pass.</li>
+<li><strong>Reaching for a plugin before checking if it&#39;s now a native feature.</strong> Several older plugin categories (design tokens, dev handoff) are now handled natively through Variables and Dev Mode.</li>
+<li><strong>Setting Fixed sizing out of habit.</strong> Defaulting every frame to Fixed defeats the entire purpose of Auto Layout — use Hug or Fill deliberately based on how that element should actually behave.</li>
+<li><strong>Ignoring accessibility until the end.</strong> Running Stark&#39;s contrast check as you build, not after, catches Class 01&#39;s WCAG issues while they&#39;re still a one-click fix.</li>
+</ul>
+<hr>
+<h2>Practice: Build Your First Auto Layout Component</h2>
+<p>You don&#39;t need a real project to practice this — just fifteen focused minutes in a blank Figma file.</p>
+<ol>
+<li>Create a Frame, add a Text layer inside it saying &quot;Get Started.&quot;</li>
+<li>Select the frame and press <code>Shift + A</code> to add Auto Layout.</li>
+<li>Set horizontal padding to 24px and vertical padding to 12px.</li>
+<li>Set both resizing properties to <strong>Hug</strong>, and watch the frame shrink to fit the text exactly.</li>
+<li>Give the frame a fill color and a corner radius so it visually reads as a button.</li>
+<li>Turn it into a Component (right-click → Create Component).</li>
+<li>Duplicate the instance, change its text to something longer, and confirm the button resizes itself automatically — no manual adjustment required.</li>
+</ol>
+<p>If you have Stark installed, run a contrast check on your button&#39;s text against its background before moving on — a genuine habit worth building from your very first component.</p>
+<hr>
+<h2>Knowledge Check</h2>
+<p><strong>1. What&#39;s the key functional difference between a Frame and a Group?</strong><br>Frames can be resized independently, support constraints, and are required for Auto Layout. Groups are just a bounding box with none of that behavior.</p>
+<p><strong>2. What shortcut adds Auto Layout to a selected frame?</strong><br><code>Shift + A</code>.</p>
+<p><strong>3. Name the three Auto Layout flow types available in 2026.</strong><br>Horizontal, Vertical, and Grid.</p>
+<p><strong>4. What&#39;s the difference between a Main Component and an Instance?</strong><br>A Main Component is the single source of truth; an Instance is a linked copy that updates automatically when the main component changes, while still allowing individual overrides.</p>
+<p><strong>5. What does &quot;Hug&quot; resizing do, compared to &quot;Fill&quot; and &quot;Fixed&quot;?</strong><br>Hug shrinks a frame to fit its content exactly. Fill stretches it to take up all available space in its parent. Fixed locks it to a set size regardless of content.</p>
+<hr>
+<h2>Visual Summary</h2>
+<p>The infographic below maps Figma&#39;s core interface, the plugin categories worth installing first, and all three Auto Layout flow types side by side.</p>
+<p><img src="https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-02-infographic.svg" alt="Figma Essentials infographic — interface, plugins, components, and the three Auto Layout flow types"></p>
+<hr>
+<h2>Where This Course Is Headed</h2>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Focus</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1 — Done</strong></td>
+<td>UI/UX Fundamentals: Color Theory, Color Psychology, Typography, Design Principles</td>
+</tr>
+<tr>
+<td><strong>2 — Today</strong></td>
+<td>Figma Essentials: interface, plugins, components, and Auto Layout</td>
+</tr>
+<tr>
+<td><strong>3 — Next</strong></td>
+<td>Design Systems: Variables, tokens, and building a reusable component library</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>The UX Process: user research, personas, empathy mapping, user flows, information architecture, wireframing</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Applied Design: dashboards, landing pages, e-commerce and website design, prototyping</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Portfolio, Case Studies &amp; Freelancing</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Frequently Asked Questions</h2>
+<p><strong>Do I need to pay for Figma to follow this course?</strong><br>No. The free Starter plan includes a Full seat with everything covered in this class — the interface, plugins, components, and Auto Layout. Paid seats become relevant for teams needing full Dev Mode access or working at larger scale.</p>
+<p><strong>What&#39;s the difference between a plugin and a native Figma feature?</strong><br>Plugins are built by the community or third parties and installed separately through the Resources panel. Native features — like Variables, Dev Mode, and AI tools — ship built into Figma itself. Several things that used to require plugins are now native, which is worth checking before installing something redundant.</p>
+<p><strong>Why should I use Auto Layout instead of just placing elements manually?</strong><br>Manual placement is static — it breaks the moment content changes length, a screen gets translated into another language, or a teammate edits text. Auto Layout keeps spacing and sizing correct automatically, the same way a real coded interface would behave.</p>
+<p><strong>What is the new Grid option in Auto Layout, and when should I use it?</strong><br>Grid is a two-dimensional layout mode, closer to CSS Grid than Flexbox, added as a mature feature after its Config 2025 introduction. Use it for anything Horizontal or Vertical alone can&#39;t cleanly express — dashboards, photo galleries, and bento-box style layouts where elements need to span multiple rows or columns.</p>
+<p><strong>What&#39;s the difference between detaching an instance and just editing it?</strong><br>Editing text or swapping an icon inside an instance is a supported &quot;override&quot; — the instance stays linked to the main component for everything else. Detaching completely breaks that link, so the instance stops receiving any future updates from the main component. Only detach when you specifically need a permanent, one-off exception.</p>
+<p><strong>Is Dev Mode something I need to know as a designer, not just a developer?</strong><br>It&#39;s worth understanding even if you&#39;re not the one using it daily. Dev Mode is how your designs get handed off — it shows exact spacing, color values, and code snippets. Knowing what a developer will see there helps you build files that hand off cleanly, without last-minute clarification threads.</p>
+<p><strong>How many plugins should I install as a beginner?</strong><br>Start with one — Stark, for accessibility — and add others only when you hit a specific, recurring need. Installing dozens of plugins upfront usually just adds clutter to the Resources panel without changing your actual workflow.</p>
+<p><strong>What should I learn right after this class?</strong><br>Class 03 covers Design Systems — Variables, design tokens, and how to turn the components and Auto Layout skills from today into a reusable library that scales across an entire product.</p>
+<hr>
+<p>*This article is Class 02 of the free SmartGen UI/UX Design Course, written by </p>
+<!-- Premium Author Footer Box - SEO & E-E-A-T Optimized -->
+<div style="margin-top: 4rem; border-top: 2px solid #e2e8f0; padding-top: 3rem;">
+  <p style="text-align: center; color: #64748b; font-size: 0.95rem; margin-bottom: 2rem; font-style: italic; font-weight: 500;">
+    — Written by <strong style="color: #1e293b;">Sayad Md Bayezid Hosan</strong> for the SmartGen blog
+  </p>
+
+  <div style="max-width: 700px; margin: 0 auto; padding: 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); text-align: center; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+    
+    <!-- Profile Image with Verification Badge -->
+    <div style="position: relative; display: inline-block; margin-bottom: 1.5rem;">
+      <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/smartgen-founder.jpg" 
+           alt="Sayad Md Bayezid Hosan - Tech Entrepreneur & Full-Stack Developer" 
+           style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid #2563eb; object-fit: cover; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);">
+      <span style="position: absolute; bottom: 0; right: 0; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 18px; border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" title="Verified Author">✓</span>
+    </div>
+    
+    <!-- Author Name & Title -->
+    <h2 style="margin: 1rem 0 0.5rem 0; font-size: 1.8rem; color: #1e293b; font-weight: 800; font-family: 'Poppins', sans-serif;">Sayad Md Bayezid Hosan</h2>
+    <p style="margin: 0 0 1.5rem 0; color: #2563eb; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px;">Founder & Tech Entrepreneur | Full-Stack Developer</p>
+    
+    <!-- Expertise Tags -->
+    <div style="margin: 1.5rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+      <span style="background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 100%); color: #166534; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #a7f3d0;">Full-stack Developer</span>
+      <span style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); color: #1e40af; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #93c5fd;">Digital Marketer</span>
+      <span style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #92400e; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #fcd34d;">SEO Expert</span>
+      <span style="background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); color: #5b21b6; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #c4b5fd;">Tech Writer</span>
+    </div>
+    
+    <!-- Bio -->
+    <p style="color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; padding: 0 0.5rem;">
+      Full-stack Web Developer, Digital Marketing Strategist, and Tech Entrepreneur with 5+ years of experience delivering innovative digital solutions. Specializing in web development, AI integration, strategic digital marketing, and tech entrepreneurship. As a leading Tech Provider, I help audiences navigate digital platforms safely through permission-based technical solutions and digital business asset management.
+    </p>
+
+    <!-- Credentials & Achievements -->
+    <div style="background: #f0f9ff; border-left: 3px solid #0284c7; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: left;">
+      <p style="margin: 0; color: #0c4a6e; font-size: 0.9rem; font-weight: 600;">Credentials & Expertise:</p>
+      <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0; color: #475569; font-size: 0.9rem; line-height: 1.6;">
+        <li>Founder of CWB Agency & GenZFrontier</li>
+        <li>Final-year English Student at Northern University Bangladesh</li>
+        <li>Specialized in AI-powered web development & content strategy</li>
+        <li>Published author on tech, digital marketing & entrepreneurship</li>
+      </ul>
+    </div>
+    
+    <!-- Social Links & External Profiles -->
+    <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem;">
+      <a href="https://github.com/Sayadbayezid" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1f2937; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="GitHub Profile" onmouseover="this.style.background='#111827'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#1f2937'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0 1 12 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/bayezidhosan" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1877f2; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="Facebook Profile" onmouseover="this.style.background='#0a66c2'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#1877f2'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.988h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.891h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/sayadbayezid" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0077b5; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="LinkedIn Profile" onmouseover="this.style.background='#005885'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#0077b5'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      </a>
+      <a href="https://www.sayadbayezid.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #10b981; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="Personal Website" onmouseover="this.style.background='#059669'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#10b981'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      </a>
+      <a href="https://smartgentools.com/about/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #f59e0b; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="SmartGen About" onmouseover="this.style.background='#d97706'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#f59e0b'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </a>
+      <a href="https://orcid.org/0009-0003-6568-6648" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #a6ce39; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="ORCID Profile" onmouseover="this.style.background='#8ab81f'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#a6ce39'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/></svg>
+      </a>
+    </div>
+
+    <!-- CTA Button -->
+    <a href="https://smartgentools.com/about/" style="display: inline-block; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37, 99, 235, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(37, 99, 235, 0.3)';">
+      Learn More About Me
+    </a>
+  </div>
+</div>
+
+<p> Explore more free tools and guides at <a href="https://smartgentools.com">smartgentools.com</a>.*</p>
+
+            </div>
+
+            <!-- Adsterra In-Content Ads (Auto-injected) -->
+            <div id="adsterra-in-content-container"></div>
+
+            <div class="ad-cls-wrapper" id="ad-wrapper-native_banner" style="min-height: auto; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
+<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>
+</div>
+<footer class="blog-post-footer reveal-up delay-300">
+                <div class="blog-post-tags">
+                    <span class="blog-tag">SmartGen</span><span class="blog-tag">UI UX Design</span><span class="blog-tag">UI UX Course</span><span class="blog-tag">Figma</span><span class="blog-tag">Figma Basics</span><span class="blog-tag">Figma Plugins</span><span class="blog-tag">Auto Layout</span><span class="blog-tag">Components</span>
+                </div>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button id="print-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #2563eb; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" title="Print or download this article as PDF">
+                        <span>🖨️</span>
+                        <span>Print / Download</span>
+                    </button>
+                    <button id="share-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #6b7280; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" title="Share this article">
+                        <span>📤</span>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </footer>
+        </article>
+
+        <!-- Author Footer Section - E-E-A-T Signal (After Article, Auto-inserted if not manually placed) -->
+        
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section reveal-up" style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 5rem 2rem; border-radius: 30px; margin: 4rem auto; max-width: 900px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
+            <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
+            <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
+            <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                <input type="email" name="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
+            </form>
+            <p class="newsletter-feedback" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Related Posts Section -->
+        <section class="blog-related-posts reveal-up" data-post-slug="uiux-design-course-class-02-figma-essentials" data-post-tags="SmartGen,UI UX Design,UI UX Course,Figma,Figma Basics,Figma Plugins,Auto Layout,Components">
+            <h2 class="related-posts-title">📚 Related Posts</h2>
+            <div id="related-posts-grid" class="blog-grid">
+                <!-- Related posts will be injected by JS -->
+            </div>
+        </section>
+    </main>
+
+<aside class="sidebar desktop-only">
+  <div class="ad-cls-wrapper sticky" style="min-height: 600px; position: sticky; top: 20px;"><script>
+  atOptions = {
+    'key' : '96e8bb0db46b2c8ef669fa310ed45f8b',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script></div>
+</aside>
+
+
+    <footer id="main-footer"></footer>
+
+    <!-- Custom Share Modal -->
+    <div id="shareModal" class="share-modal">
+        <div class="share-modal-content">
+            <span class="share-close">&times;</span>
+            <h3>Share this article</h3>
+            <div class="share-buttons">
+                <button onclick="shareTo('facebook')" class="share-btn fb">📘 Facebook</button>
+                <button onclick="shareTo('twitter')" class="share-btn tw">𝕏 Twitter</button>
+                <button onclick="shareTo('linkedin')" class="share-btn li">💼 LinkedIn</button>
+                <button onclick="shareTo('whatsapp')" class="share-btn wa">💬 WhatsApp</button>
+                <button onclick="shareTo('copy')" class="share-btn copy">🔗 Copy Link</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Print & Download Functionality
+            const printBtn = document.getElementById('print-button');
+            if (printBtn) {
+                printBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.print();
+                });
+            }
+            
+            // Share Modal Functionality
+            const shareBtn = document.getElementById('share-button');
+            const modal = document.getElementById('shareModal');
+            const closeBtn = document.querySelector('.share-close');
+            
+            if (shareBtn && modal) {
+                shareBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.classList.add('show');
+                });
+                
+                closeBtn.addEventListener('click', function() {
+                    modal.classList.remove('show');
+                });
+                
+                // Close modal when clicking outside
+                window.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.classList.remove('show');
+                    }
+                });
+            }
+        });
+
+        // Social Sharing Logic
+        function shareTo(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'facebook':
+                    shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+                    break;
+                case 'twitter':
+                    shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+                    break;
+                case 'linkedin':
+                    shareUrl = 'https://www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + title;
+                    break;
+                case 'whatsapp':
+                    shareUrl = 'https://api.whatsapp.com/send?text=' + title + ' ' + url;
+                    break;
+                case 'copy':
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        alert('✅ Link copied to clipboard!');
+                    }).catch(err => {
+                        console.error('Failed to copy: ', err);
+                    });
+                    return; // Exit early for copy
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=500,scrollbars=no,resizable=no');
+            }
+        }
+    </script>
+</body>
+</html>

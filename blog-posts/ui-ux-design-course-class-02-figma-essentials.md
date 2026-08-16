@@ -1,5 +1,7 @@
 ---
 title: "UI/UX Design Course Class 02: Figma Essentials"
+slug: "uiux-design-course-class-02-figma-essentials"
+linkedin_image: "https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-02-cover-linkedin.jpg"
 description: "Class 02 of the UI/UX Design Course covers Figma essentials — the interface, must-know tools and plugins, components, and Auto Layout for real design work."
 keywords: "Figma basics, Figma for beginners, Figma plugins 2026, Figma components tutorial, Figma Auto Layout, Figma Grid auto layout, Figma Dev Mode, UI UX design course, Figma tutorial, SmartGen"
 date: 2026-08-14

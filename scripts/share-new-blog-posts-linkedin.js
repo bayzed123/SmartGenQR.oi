@@ -107,6 +107,7 @@ async function publish(post, personId) {
   if (dryRun) {
     console.log(`[DRY RUN] Would publish: ${post.title}`);
     console.log(`[DRY RUN] Article URL: ${post.url}`);
+    console.log(`[DRY RUN] Preview image: ${post.image || '(LinkedIn will use page metadata)'}`);
     return;
   }
 
@@ -124,13 +125,23 @@ async function publish(post, personId) {
           shareCommentary: {
             text: `${post.title}\n\n${post.description}\n\nRead the full article: ${post.url}`.slice(0, 3000),
           },
+          primaryLandingPageUrl: post.url,
           shareMediaCategory: 'ARTICLE',
           media: [
             {
               status: 'READY',
               originalUrl: post.url,
+              landingPageUrl: post.url,
               title: { text: post.title },
               description: { text: post.description },
+              ...(post.image ? {
+                thumbnails: [{
+                  url: post.image,
+                  width: 1200,
+                  height: 630,
+                  altText: post.title,
+                }],
+              } : {}),
             },
           ],
         },
@@ -164,10 +175,14 @@ async function publish(post, personId) {
     const source = fs.readFileSync(path.resolve(file), 'utf8');
     const attributes = frontMatter(source);
     const title = cleanText(attributes.title, path.basename(file, '.md'));
-    const slug = slugify(title);
+    // Reuse the same explicit slug honored by scripts/build-blog.js and the
+    // sitemap workflow. Falling back to title slugification preserves the
+    // legacy behavior for posts that do not pin a slug.
+    const slug = cleanText(attributes.slug) || slugify(title);
     const post = {
       title,
       description: cleanText(attributes.description, `Read the latest SmartGen article: ${title}`),
+      image: cleanText(attributes.linkedin_image || attributes.image),
       url: `${siteUrl}/blog/${slug}/`,
     };
     await publish(post, personId);
