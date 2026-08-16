@@ -289,7 +289,7 @@ function renderPosts(posts) {
 
     return `
     <a href="/blog/${post.slug}/" class="blog-card reveal-up ${delayClass}">
-      <img src="${post.image}" alt="${post.title}" class="blog-card-image" onerror="this.src='/assets/images/blog-default.jpg'">
+      <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="1200" height="630" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/assets/images/blog-default.svg'">
       <div class="blog-card-content">
         <span class="blog-card-tag">${post.tags && post.tags.length > 0 ? post.tags[0] : 'General'}</span>
         <h3 class="blog-card-title">${escapeHtml(post.title)}</h3>
@@ -352,7 +352,7 @@ async function initRelatedPosts() {
       .map(
         (post) => `
     <a href="/blog/${post.slug}/" class="blog-card">
-      <img src="${post.image}" alt="${escapeHtml(post.title)}" class="blog-card-image" loading="lazy" onerror="this.src='/assets/images/blog-default.jpg'">
+      <img src="${post.image}" alt="${escapeHtml(post.title)}" class="blog-card-image" width="1200" height="630" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/assets/images/blog-default.svg'">
       <div class="blog-card-content">
         <h3 class="blog-card-title" style="font-size: 1.1rem;">${escapeHtml(post.title)}</h3>
         <div style="margin-top: 1rem;">

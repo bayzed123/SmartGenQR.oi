@@ -507,14 +507,14 @@ body {
     text-align: center;
 }
 
-.trust-item h4 {
+.trust-item h4, .trust-item .trust-value {
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 0.25rem;
     color: var(--navy);
 }
 
-[data-theme="dark"] .trust-item h4 {
+[data-theme="dark"] .trust-item h4, .trust-item .trust-value {
     color: var(--white);
 }
 
@@ -835,7 +835,7 @@ body {
     height: 20px;
 }
 
-.footer-info-text h4 {
+.footer-info-text h4, .footer-info-text h3 {
     margin: 0 0 0.35rem;
     font-size: 0.8rem;
     font-weight: 700;
@@ -1124,3 +1124,10 @@ input.form-input[type="range"] {
     border: none;
     transition: var(--transition);
 }
+
+/* Brand accent for the wordmark, contrast-safe in both themes.
+   #ff8800 is 2.39:1 on white -- below the 3.0 large-text minimum -- so the
+   light surface uses a darker orange (5.18:1, passes AA even at body size)
+   while dark surfaces keep the original (7.46:1 on #0f172a). */
+.sg-wordmark-accent { color: #c2410c; }
+[data-theme="dark"] .sg-wordmark-accent { color: #ff8800; }

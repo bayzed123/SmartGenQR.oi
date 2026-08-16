@@ -77,6 +77,11 @@
 .feed-post-image {
     width: 100%;
     height: auto;
+    /* Match the width/height attributes the feed emits, so the box the browser
+       reserves is the box the image ends up filling. With height:auto and a
+       real cover of a different shape, the card would reserve one height and
+       then jump to another -- that jump was part of the 0.085 mobile CLS. */
+    aspect-ratio: 1200 / 630;
     max-height: 400px;
     object-fit: cover;
     border-top: 1px solid var(--border);
@@ -145,3 +150,12 @@
     font-weight: 600;
     color: var(--text-secondary);
 }
+
+/* Sentinel that triggers the next feed batch; also hosts the no-JS-observer
+   fallback button so the remaining posts stay reachable. */
+.feed-sentinel { min-height: 1px; text-align: center; padding: 8px 0 32px; }
+.feed-load-more {
+    background: #2563eb; color: #fff; border: 0; border-radius: 10px;
+    padding: 12px 26px; font: 600 15px Inter, system-ui, sans-serif; cursor: pointer;
+}
+.feed-load-more:hover { background: #1d4ed8; }

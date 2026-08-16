@@ -38,7 +38,7 @@ files.forEach(file => {
     let finalHtml = template
         .replace(/{{title}}/g, data.title || 'Untitled Post')
         .replace(/{{description}}/g, data.description || '')
-        .replace(/{{image}}/g, data.image || '/assets/images/blog-default.jpg')
+        .replace(/{{image}}/g, data.image || '/assets/images/blog-default.svg')
         .replace(/{{date}}/g, data.date || new Date().toLocaleDateString())
         .replace(/{{category}}/g, data.category || (data.tags ? data.tags[0] : 'General'))
         .replace(/{{slug}}/g, slug)

@@ -92,9 +92,12 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/chatbot.css">
+    <link rel="preload" as="style" href="/assets/css/chatbot.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/chatbot.css"></noscript>
     <link rel="stylesheet" href="./assets/css/feed.css">
     <style>
         /* CSS Reset - This fixes the left-shift issue on mobile */
@@ -468,7 +471,7 @@
             text-align: center;
         }
 
-        .trust-item h4 {
+        .trust-item h4, .trust-item .trust-value {
             font-size: 2rem;
             font-weight: 800;
             margin-bottom: 0.25rem;
@@ -615,7 +618,7 @@
             margin-top: 3px;
         }
         
-        .footer-info-text h4 {
+        .footer-info-text h4, .footer-info-text h3 {
             color: #ffffff;
             margin: 0 0 5px 0;
             font-size: 1.1rem;
@@ -840,6 +843,7 @@
 <body>
     <!-- HEADER (Untouched) -->
     <header id="main-header"></header>
+    <main id="main-content">
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -908,19 +912,19 @@
         <div class="container">
             <div class="trust-grid">
                 <div class="trust-item">
-                    <h4>131+</h4>
+                    <div class="trust-value">131+</div>
                     <p>Free Web Tools</p>
                 </div>
                 <div class="trust-item">
-                    <h4>100%</h4>
+                    <div class="trust-value">100%</div>
                     <p>Local Processing</p>
                 </div>
                 <div class="trust-item">
-                    <h4>Zero</h4>
+                    <div class="trust-value">Zero</div>
                     <p>Data Tracking</p>
                 </div>
                 <div class="trust-item">
-                    <h4>Open</h4>
+                    <div class="trust-value">Open</div>
                     <p>Source Engine</p>
                 </div>
             </div>
@@ -1039,6 +1043,8 @@
     </section>
 
     <!-- NEW MODERN DARK FOOTER -->
+    </main>
+
     <footer id="main-footer" class="modern-dark-footer">
         <!-- Top Info Bar -->
         <div class="footer-top-bar">
@@ -1049,7 +1055,7 @@
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
                     <div class="footer-info-text">
-                        <h4>Find us</h4>
+                        <h3>Find us</h3>
                         <a href="https://maps.app.goo.gl/4HJUjquV4dRVoXvm6?g_st=ic" target="_blank">Auliabad, Kalihati, Tangail, Bangladesh</a>
                     </div>
                 </div>
@@ -1059,7 +1065,7 @@
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     </div>
                     <div class="footer-info-text">
-                        <h4>Call us</h4>
+                        <h3>Call us</h3>
                         <p>01519601517<br>+880 1518-740295</p>
                     </div>
                 </div>
@@ -1069,7 +1075,7 @@
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     </div>
                     <div class="footer-info-text">
-                        <h4>Mail us</h4>
+                        <h3>Mail us</h3>
                         <a href="mailto:cwb.agency@outlook.com">cwb.agency@outlook.com</a><br>
                         <a href="mailto:support@sayadbayezid.com">support@sayadbayezid.com</a>
                          <a href="mailto:info@sayadbayezid.com">info@sayadbayezid.com</a>
