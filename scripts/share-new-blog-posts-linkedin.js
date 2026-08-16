@@ -127,15 +127,105 @@ async function waitForPublicMetadata(post) {
   throw new Error(`Public article metadata was not ready after ${attempts} checks; LinkedIn publish was skipped to avoid a stale preview.`);
 }
 
+async function uploadNativeImage(post, personId) {
+  const imagePath = path.resolve(post.localImagePath);
+  if (!fs.existsSync(imagePath)) {
+    throw new Error(`Native LinkedIn image file was not found: ${imagePath}`);
+  }
+  const imageBytes = fs.readFileSync(imagePath);
+  const registration = await linkedinRequest('https://api.linkedin.com/v2/assets?action=registerUpload', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Restli-Protocol-Version': '2.0.0',
+    },
+    body: JSON.stringify({
+      registerUploadRequest: {
+        owner: `urn:li:person:${personId}`,
+        recipes: ['urn:li:digitalmediaRecipe:feedshare-image'],
+        serviceRelationships: [{
+          identifier: 'urn:li:userGeneratedContent',
+          relationshipType: 'OWNER',
+        }],
+        supportedUploadMechanism: ['SYNCHRONOUS_UPLOAD'],
+      },
+    }),
+  });
+  const value = registration.data.value || {};
+  const mechanism = value.uploadMechanism?.['com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest'];
+  if (!value.asset || !mechanism?.uploadUrl) {
+    throw new Error(`LinkedIn image registration did not return an asset and upload URL: ${JSON.stringify(registration.data).slice(0, 1200)}`);
+  }
+  const uploadResponse = await fetch(mechanism.uploadUrl, {
+    method: 'PUT',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/octet-stream',
+      ...(mechanism.headers || {}),
+    },
+    body: imageBytes,
+  });
+  if (!uploadResponse.ok) {
+    throw new Error(`LinkedIn native image upload failed with HTTP ${uploadResponse.status}: ${(await uploadResponse.text()).slice(0, 1000)}`);
+  }
+  console.log(`Native LinkedIn image uploaded: ${value.asset}`);
+  return value.asset;
+}
+
+async function publishNativeImage(post, personId) {
+  const assetUrn = await uploadNativeImage(post, personId);
+  const response = await linkedinRequest('https://api.linkedin.com/v2/ugcPosts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Restli-Protocol-Version': '2.0.0',
+    },
+    body: JSON.stringify({
+      author: `urn:li:person:${personId}`,
+      lifecycleState: 'PUBLISHED',
+      specificContent: {
+        'com.linkedin.ugc.ShareContent': {
+          shareCommentary: {
+            text: `${post.title}\n\n${post.description}\n\nRead the full article: ${post.url}`.slice(0, 3000),
+          },
+          primaryLandingPageUrl: post.url,
+          shareMediaCategory: 'IMAGE',
+          media: [{
+            status: 'READY',
+            media: assetUrn,
+            originalUrl: post.url,
+            landingPageUrl: post.url,
+            title: { text: post.title },
+            description: { text: post.description },
+          }],
+        },
+      },
+      visibility: {
+        'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC',
+      },
+    }),
+  });
+  const postId = response.headers.get('x-restli-id');
+  console.log(`Published native image to LinkedIn: ${post.title}`);
+  if (postId) console.log(`LinkedIn post ID: ${postId}`);
+}
+
 async function publish(post, personId) {
   if (dryRun) {
     console.log(`[DRY RUN] Would publish: ${post.title}`);
+    console.log(`[DRY RUN] Mode: ${post.mode || 'article'}`);
     console.log(`[DRY RUN] Article URL: ${post.url}`);
     console.log(`[DRY RUN] Preview image: ${post.image || '(LinkedIn will use page metadata)'}`);
+    if (post.mode === 'image') console.log(`[DRY RUN] Native image file: ${post.localImagePath}`);
     return;
   }
 
   await waitForPublicMetadata(post);
+  if (post.mode === 'image') {
+    await publishNativeImage(post, personId);
+    return;
+  }
+
   const response = await linkedinRequest('https://api.linkedin.com/v2/ugcPosts', {
     method: 'POST',
     headers: {
@@ -204,10 +294,14 @@ async function publish(post, personId) {
     // sitemap workflow. Falling back to title slugification preserves the
     // legacy behavior for posts that do not pin a slug.
     const slug = cleanText(attributes.slug) || slugify(title);
+    const imageUrl = cleanText(attributes.linkedin_image || attributes.image);
+    const imagePath = imageUrl ? new URL(imageUrl).pathname.replace(/^\//, '') : '';
     const post = {
       title,
       description: cleanText(attributes.description, `Read the latest SmartGen article: ${title}`),
-      image: cleanText(attributes.linkedin_image || attributes.image),
+      image: imageUrl,
+      localImagePath: imagePath,
+      mode: cleanText(attributes.linkedin_mode || attributes.linkedinMode).toLowerCase(),
       url: `${siteUrl}/blog/${slug}/`,
     };
     await publish(post, personId);

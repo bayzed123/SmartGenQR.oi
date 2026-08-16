@@ -2,6 +2,7 @@
 title: "How We Automated Website-to-LinkedIn Article Sharing: A GitHub Actions Case Study"
 slug: "how-we-automated-website-to-linkedin-article-sharing-case-study"
 linkedin_image: "https://smartgentools.com/blog-posts/images/how-we-automated-website-to-linkedin-article-sharing-case-study-linkedin.jpg"
+linkedin_mode: "image"
 description: "A first-party case study showing how SmartGen automated blog-to-LinkedIn article sharing with GitHub Actions, the LinkedIn API, canonical URLs, Open Graph images, and safe SEO controls."
 keywords: "automate blog posts to LinkedIn, website to LinkedIn automation, LinkedIn API automation, GitHub Actions LinkedIn posting, automate LinkedIn article sharing, LinkedIn Open Graph image, blog promotion automation"
 date: 2026-08-16
