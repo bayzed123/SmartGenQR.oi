@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: verify LinkedIn preview image before sharing",
+    "date": "2026-08-16T17:53:44Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: add LinkedIn automation case study",
     "date": "2026-08-16T17:41:04Z",
     "description": "Platform improvement and optimization."
