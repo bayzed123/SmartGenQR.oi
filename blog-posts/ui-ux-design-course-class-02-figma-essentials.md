@@ -20,7 +20,7 @@ August 14, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbay
 
 # UI/UX Design Course Class 02: Figma Essentials
 
-In [Class 01](https://smartgentools.com/blog/ui-ux-design-course-class-01-fundamentals/) we covered the theory every design decision rests on — color, psychology, typography, and the principles that tie them together. Today we open the tool almost every one of those decisions actually gets built in.
+In [Class 01](https://smartgentools.com/blog/uiux-design-course-fundamentals/) we covered the theory every design decision rests on — color, psychology, typography, and the principles that tie them together. Today we open the tool almost every one of those decisions actually gets built in.
 
 Figma remains the industry-standard interface design tool in 2026 — browser-based, real-time collaborative, and used across companies of every size for everything from quick wireframes to full production design systems. This class covers three things: the core interface and tools you need to move around confidently, the plugin ecosystem that extends what Figma can do out of the box, and components with Auto Layout — the single most important workflow shift between "designing a picture of a button" and "designing a button that actually behaves like one."
 
