@@ -6,6 +6,7 @@ description: "A first-party case study showing how SmartGen automated blog-to-Li
 keywords: "automate blog posts to LinkedIn, website to LinkedIn automation, LinkedIn API automation, GitHub Actions LinkedIn posting, automate LinkedIn article sharing, LinkedIn Open Graph image, blog promotion automation"
 date: 2026-08-16
 image: "https://smartgentools.com/blog-posts/images/how-we-automated-website-to-linkedin-article-sharing-case-study.svg"
+social_image: "https://smartgentools.com/blog-posts/images/how-we-automated-website-to-linkedin-article-sharing-case-study-linkedin.jpg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen

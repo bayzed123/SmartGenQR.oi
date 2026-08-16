@@ -72,6 +72,10 @@ function readBlogPosts() {
       date: attributes.date || new Date().toISOString().split('T')[0],
       tags: attributes.tags || [],
       image: attributes.image || `${SITE_URL}/assets/images/blog-default.svg`,
+      // Social platforms may not render every article-image format consistently.
+      // Keep the article image for the page, but allow an explicit raster social
+      // image for Open Graph/Twitter previews without changing existing posts.
+      socialImage: attributes.social_image || attributes.socialImage || attributes.image || `${SITE_URL}/assets/images/blog-default.svg`,
       author: attributes.author || AUTHOR_NAME,
       category: attributes.category || 'General',
       // Old URLs this post used to live at. Each becomes a redirect stub so
@@ -258,7 +262,10 @@ function generatePostHTML(post) {
     <!-- Open Graph Tags -->
     <meta property="og:title" content="${post.title}">
     <meta property="og:description" content="${post.description}">
-    <meta property="og:image" content="${post.image}">
+    <meta property="og:image" content="${post.socialImage}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:url" content="${SITE_URL}/blog/${post.slug}/">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="${post.date}">
@@ -268,7 +275,7 @@ function generatePostHTML(post) {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${post.title}">
     <meta name="twitter:description" content="${post.description}">
-    <meta name="twitter:image" content="${post.image}">
+    <meta name="twitter:image" content="${post.socialImage}">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="${SITE_URL}/blog/${post.slug}/">

@@ -103,6 +103,30 @@ async function resolvePersonId() {
   throw new Error('LinkedIn did not return a member identity and LINKEDIN_MEMBER_ID is not configured.');
 }
 
+async function waitForPublicMetadata(post) {
+  const attempts = Number(process.env.LINKEDIN_PUBLIC_CHECK_ATTEMPTS || 18);
+  const delayMs = Number(process.env.LINKEDIN_PUBLIC_CHECK_DELAY_MS || 10000);
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      const pageResponse = await fetch(post.url, { headers: { 'User-Agent': 'SmartGen-LinkedIn-Publisher/1.0' } });
+      const pageHtml = await pageResponse.text();
+      const imageResponse = await fetch(post.image, { headers: { 'User-Agent': 'SmartGen-LinkedIn-Publisher/1.0' } });
+      const contentType = imageResponse.headers.get('content-type') || '';
+      const pageReady = pageResponse.ok && pageHtml.includes(post.image) && /<meta[^>]+property=["']og:image["'][^>]+content=["']https:\/\//i.test(pageHtml);
+      const imageReady = imageResponse.ok && contentType.toLowerCase().includes('image/jpeg');
+      if (pageReady && imageReady) {
+        console.log(`Public article and preview image verified on attempt ${attempt}.`);
+        return;
+      }
+      console.log(`Waiting for public article deployment (attempt ${attempt}/${attempts}; page=${pageResponse.status}, image=${imageResponse.status}, type=${contentType || 'unknown'}).`);
+    } catch (error) {
+      console.log(`Waiting for public article deployment (attempt ${attempt}/${attempts}; ${error.message}).`);
+    }
+    if (attempt < attempts) await new Promise((resolve) => setTimeout(resolve, delayMs));
+  }
+  throw new Error(`Public article metadata was not ready after ${attempts} checks; LinkedIn publish was skipped to avoid a stale preview.`);
+}
+
 async function publish(post, personId) {
   if (dryRun) {
     console.log(`[DRY RUN] Would publish: ${post.title}`);
@@ -111,6 +135,7 @@ async function publish(post, personId) {
     return;
   }
 
+  await waitForPublicMetadata(post);
   const response = await linkedinRequest('https://api.linkedin.com/v2/ugcPosts', {
     method: 'POST',
     headers: {
