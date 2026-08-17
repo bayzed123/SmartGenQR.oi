@@ -358,13 +358,17 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .chatbot-window {
-        width: calc(100vw - 40px); /* Adjust width to fit screen with padding */
+        /* Let left/right define the width. calc(100vw - 40px) counted the
+           scrollbar and then had the border added on top of it (no border-box
+           reset on this site), so the panel sat a few pixels past the right edge
+           and gave the whole page a horizontal scrollbar. */
+        box-sizing: border-box;
+        width: auto;
         height: 70vh;
         max-height: 600px;
         bottom: 80px;
         right: 20px;
-        left: 20px; /* Center horizontally */
-        margin: 0 auto; /* Center horizontally */
+        left: 20px;
         transform: translateY(20px) scale(0.95); /* Reset transform origin for better centering */
         transform-origin: bottom center; /* Center scaling from bottom */
     }
@@ -390,7 +394,8 @@
 
 @media (max-width: 480px) {
     .chatbot-window {
-        width: calc(100vw - 20px);
+        box-sizing: border-box;
+        width: auto;
         height: 80vh;
         bottom: 70px;
         right: 10px;

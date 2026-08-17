@@ -61,7 +61,11 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-mai
 .footer-link:hover { background: var(--border-light); color: var(--text-primary); }
 
 /* Main Content */
-.main-content { flex-grow: 1; padding: 3rem 4rem; max-width: 900px; }
+/* min-width:0 is required. A flex item defaults to min-width:auto, which
+   refuses to shrink below its content's min-content width -- so a wide
+   table or code sample held .main-content at 807px inside a 320px phone
+   and the whole docs section scrolled sideways. */
+.main-content { flex-grow: 1; min-width: 0; padding: 3rem 4rem; max-width: 900px; }
 .breadcrumb { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500; }
 .breadcrumb .separator { margin: 0 0.5rem; opacity: 0.5; }
 .doc-title { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 2rem; color: var(--text-primary); }
@@ -70,6 +74,28 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-mai
 .doc-body code { font-family: 'Fira Code', monospace; background: var(--code-bg); padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
 .doc-body pre { background: var(--code-bg); padding: 1.2rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; border: 1px solid var(--border-light); }
 .doc-body pre code { background: transparent; padding: 0; }
+
+/* Ad slots declare fixed pixel sizes (the leaderboard is 728px wide), and
+   ads.css is not loaded on docs pages, so nothing capped them here. A fixed
+   728px child inside the article set the whole column's min-content width to
+   807px and pushed every docs page sideways on a phone. Clip them to the
+   column instead. */
+.header-ads-container,
+.header-ads-container > div,
+.doc-body .ad-cls-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+}
+.doc-article { min-width: 0; max-width: 100%; }
+.doc-body img, .doc-body svg, .doc-body iframe, .doc-body video { max-width: 100%; height: auto; }
+.doc-body table { display: block; overflow-x: auto; max-width: 100%; }
+
+/* The right-hand 'On This Page' rail needs the sidebar (280px) and a
+   readable article beside it; below ~1100px there is not room for all
+   three, and it was pushing the layout past the viewport at 1024. */
+@media (max-width: 1100px) {
+    .toc-sidebar { display: none; }
+}
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
