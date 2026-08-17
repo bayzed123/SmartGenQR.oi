@@ -1,6 +1,8 @@
 ---
 title: "UI/UX Design Course Class 03: The UX Design Process"
-linkedin_image: "https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-03-cover.svg"
+slug: "uiux-design-course-class-03-the-ux-design-process"
+linkedin_image: "https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-03-cover-linkedin.jpg"
+linkedin_mode: "image"
 description: "Class 03 of the UI/UX Design Course covers the app design and UX process — how to conduct user research and build user personas that guide real decisions."
 keywords: "app design process, UX design process, mobile app design process, user research methods for beginners, how to create a user persona, user persona for app design, UX research process, app design and UX process, user persona template, UI UX design course class 03, SmartGen"
 date: 2026-08-14
