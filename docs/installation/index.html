@@ -247,9 +247,9 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="installation">Installation</h1>
+                        <h2 id="installation">Installation</h2>
 <p>This page covers a more detailed installation walkthrough, including environment variables, folder setup, and troubleshooting common issues.</p>
-<h2 id="system-requirements">System Requirements</h2>
+<h3 id="system-requirements">System Requirements</h3>
 <table>
 <thead>
 <tr>
@@ -274,7 +274,7 @@
 <td>Windows / macOS / Linux</td>
 </tr>
 </tbody></table>
-<h2 id="step-1-fork-andamp-clone">Step 1 — Fork &amp; Clone</h2>
+<h3 id="step-1-fork-andamp-clone">Step 1 — Fork &amp; Clone</h3>
 <p>If you plan to contribute, fork the repo first on GitHub, then clone your fork:</p>
 <pre><code class="language-bash">git clone https://github.com/YOUR_USERNAME/SmartGenQR.oi.git
 cd SmartGenQR.oi
@@ -282,7 +282,7 @@ cd SmartGenQR.oi
 <p>Add the original repo as an upstream remote (recommended for contributors):</p>
 <pre><code class="language-bash">git remote add upstream https://github.com/bayzed123/SmartGenQR.oi.git
 </code></pre>
-<h2 id="step-2-install-dependencies">Step 2 — Install Dependencies</h2>
+<h3 id="step-2-install-dependencies">Step 2 — Install Dependencies</h3>
 <pre><code class="language-bash">pnpm install
 </code></pre>
 <p>This installs the following key packages used by the build pipeline:</p>
@@ -306,7 +306,7 @@ cd SmartGenQR.oi
 <li><code>vitest</code> — unit testing</li>
 <li><code>eslint</code> + <code>prettier</code> — code quality tools</li>
 </ul>
-<h2 id="step-3-folder-structure-you-should-know">Step 3 — Folder Structure You Should Know</h2>
+<h3 id="step-3-folder-structure-you-should-know">Step 3 — Folder Structure You Should Know</h3>
 <pre><code class="language-text">SmartGenQR.oi/
 ├── assets/
 │   ├── css/
@@ -332,7 +332,7 @@ cd SmartGenQR.oi
 <blockquote>
 <p>⚠️ <strong>Never edit files inside <code>/blog/</code> or <code>/docs/</code> directly</strong> — they are auto-generated and will be overwritten on the next build.</p>
 </blockquote>
-<h2 id="step-4-build-the-project">Step 4 — Build the Project</h2>
+<h3 id="step-4-build-the-project">Step 4 — Build the Project</h3>
 <pre><code class="language-bash">pnpm build
 </code></pre>
 <p>Expected output:</p>
@@ -344,14 +344,14 @@ cd SmartGenQR.oi
 ✅ Built: /docs/getting-started/
 🎉 Docs build completed successfully!
 </code></pre>
-<h2 id="step-5-local-development-server">Step 5 — Local Development Server</h2>
+<h3 id="step-5-local-development-server">Step 5 — Local Development Server</h3>
 <pre><code class="language-bash">npx serve .
 </code></pre>
 <p>Visit <code>http://localhost:3000/docs/</code> to preview your changes.</p>
-<h2 id="common-issues">Common Issues</h2>
-<h3 id="syntaxerror-invalid-or-unexpected-token-on-build">❌ <code>SyntaxError: Invalid or unexpected token</code> on build</h3>
+<h3 id="common-issues">Common Issues</h3>
+<h4 id="syntaxerror-invalid-or-unexpected-token-on-build">❌ <code>SyntaxError: Invalid or unexpected token</code> on build</h4>
 <p>This usually means a script file has a stray shebang (<code>#!/usr/bin/env node</code>) combined with a UTF-8 BOM encoding issue. Remove the shebang line, or re-save the file as <strong>UTF-8 without BOM</strong>.</p>
-<h3 id="images-not-showing-on-doc-pages">❌ Images not showing on doc pages</h3>
+<h4 id="images-not-showing-on-doc-pages">❌ Images not showing on doc pages</h4>
 <p>Make sure image paths in your Markdown are <strong>relative without a leading slash</strong>:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -369,11 +369,11 @@ cd SmartGenQR.oi
 <pre><code class="language-markdown">✅ ![Diagram](/assets/images/docs/diagram.svg)
 ❌ ![Diagram](/assets/images/docs/diagram.svg)
 </code></pre>
-<h3 id="table-of-contents-links-donand39t-scroll">❌ Table of Contents links don&#39;t scroll</h3>
+<h4 id="table-of-contents-links-donand39t-scroll">❌ Table of Contents links don&#39;t scroll</h4>
 <p>Confirm you&#39;re using <code>##</code> or <code>###</code> headings in your Markdown — only H2/H3 headings are collected into the &quot;On This Page&quot; navigation.</p>
-<h2 id="environment-variables">Environment Variables</h2>
+<h3 id="environment-variables">Environment Variables</h3>
 <p>SmartGen&#39;s static build currently requires <strong>no environment variables</strong> — everything runs client-side with no API keys or secrets needed. If you add server-side features in the future, document them here.</p>
-<h2 id="next-steps">Next Steps</h2>
+<h3 id="next-steps">Next Steps</h3>
 <p>Continue to the <a href="/docs/api-reference/">API Reference</a> to learn about the internal JavaScript functions powering navigation, search, and theming.</p>
 
                     </div>

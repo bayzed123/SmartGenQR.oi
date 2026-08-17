@@ -1,5 +1,6 @@
 ---
 title: "free qr code generator and pocture url generator smartgentools"
+seo_title: "Free QR Code and Image URL Generator"
 description: "no login required qr code error correction levels explained · qr code finder pattern · qr code quiet zone · wifi qr code format wpa · vcard format for qr code · mecard vs vcard qr code · qr code api free · bulk qr code generator free"
 image: "https://smartgentools.com/blog-posts/images/IMG_7851.jpeg"
 tags:

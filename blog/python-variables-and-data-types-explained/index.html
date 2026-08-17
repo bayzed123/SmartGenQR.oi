@@ -251,13 +251,15 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
 
 <p>July 14, 2026 • General • By <a href="https://www.sayadbayezid.com/">Sayad Md Bayezid Hosan</a></p>
-<p>A complete, step-by-step guide to Python variables and data types — what a variable actually is and how to name one correctly, every core built-in data type with real copy-paste code, what object identity means and exactly when to use <code>is</code> versus <code>==</code>, how to check and convert between types, and how statements and comments actually work.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -271,6 +273,7 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<p>A complete, step-by-step guide to Python variables and data types — what a variable actually is and how to name one correctly, every core built-in data type with real copy-paste code, what object identity means and exactly when to use <code>is</code> versus <code>==</code>, how to check and convert between types, and how statements and comments actually work.</p>
 <p> <img src="https://smartgentools.com/blog-posts/images/python-course-class-03-cover.svg" alt="Python Variables and Data Types Explained — cover image"></p>
 <hr>
 <h2>Table of Contents</h2>
@@ -291,8 +294,6 @@
 <h2>Introduction to Variables</h2>
 <h3>The Problem</h3>
 <p>Every real program needs to store and reuse information — a name, a price, a score — and without understanding exactly how Python does that, every later concept in this course will feel like it&#39;s built on sand.</p>
-<h3>The Solution: What a Variable Actually Is</h3>
-<p>A <strong>variable</strong> is a name that refers to a value stored in memory. Creating one in Python is simply a matter of writing a name, an equals sign, and a value:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -306,6 +307,8 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<h3>The Solution: What a Variable Actually Is</h3>
+<p>A <strong>variable</strong> is a name that refers to a value stored in memory. Creating one in Python is simply a matter of writing a name, an equals sign, and a value:</p>
 <pre><code class="language-python">age = 25
 name = &quot;Maria&quot;
 price = 19.99

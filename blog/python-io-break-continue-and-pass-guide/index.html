@@ -251,12 +251,14 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
 <p>July 15, 2026 • General • By <a href="https://www.sayadbayezid.com/">Sayad Md Bayezid Hosan</a></p>
-<p>A complete, step-by-step guide to Python input and output operations, the break, continue, and pass statements that control exactly how a loop behaves, and the genuinely underused <code>else</code> clause on loops — with real, copy-paste code for every concept.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -270,6 +272,7 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<p>A complete, step-by-step guide to Python input and output operations, the break, continue, and pass statements that control exactly how a loop behaves, and the genuinely underused <code>else</code> clause on loops — with real, copy-paste code for every concept.</p>
 <p> <img src="https://smartgentools.com/blog-posts/images/python-course-class-08-cover.svg" alt="Python I/O, Break, Continue, and Pass Guide — cover image"></p>
 <hr>
 <h2>Table of Contents</h2>
@@ -297,12 +300,6 @@
 <h2>Input and Output Operations</h2>
 <h3>The Problem</h3>
 <p>A program that can&#39;t take input from a real person or clearly show its results back is really just a calculator running silently in the background — genuinely useful programs need to talk to their user in both directions.</p>
-<h3>The Solution: <code>input()</code> and <code>print()</code>, Used Properly</h3>
-<pre><code class="language-python">name = input(&quot;What is your name? &quot;)   # input() always returns a string
-print(&quot;Hello,&quot;, name)                  # print() can take multiple arguments
-print(f&quot;Welcome, {name}!&quot;)             # f-strings, from earlier classes, work here too
-</code></pre>
-<p><code>print()</code> has two genuinely useful optional arguments beginners often miss:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -316,6 +313,12 @@ print(f&quot;Welcome, {name}!&quot;)             # f-strings, from earlier class
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<h3>The Solution: <code>input()</code> and <code>print()</code>, Used Properly</h3>
+<pre><code class="language-python">name = input(&quot;What is your name? &quot;)   # input() always returns a string
+print(&quot;Hello,&quot;, name)                  # print() can take multiple arguments
+print(f&quot;Welcome, {name}!&quot;)             # f-strings, from earlier classes, work here too
+</code></pre>
+<p><code>print()</code> has two genuinely useful optional arguments beginners often miss:</p>
 <pre><code class="language-python">print(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, sep=&quot;-&quot;)    # A-B-C - controls what goes between arguments
 print(&quot;Loading&quot;, end=&quot;...&quot;)       # no newline after this line
 print(&quot;Done&quot;)                     # continues on the same visual line as &quot;Loading...&quot;

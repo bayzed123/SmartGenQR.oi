@@ -1,5 +1,6 @@
 ---
-title: "Importance of Digital Marketing, How It Works, and Key Concepts Every Beginner Should Know - SmartGen Blog"
+title: "Importance of Digital Marketing, How It Works, and Key Concepts Every Beginner Should Know"
+seo_title: "Digital Marketing Basics: How It Really Works"
 description: "Learn why digital marketing matters, how it works, key marketing types, and essential terms in this complete beginner guide from SmartGen."
 keywords: "importance of digital marketing, how internet marketing works, traditional vs digital marketing, types of digital marketing, digital marketing jargon, digital marketing terms, smartgen"
 date: 2026-06-30

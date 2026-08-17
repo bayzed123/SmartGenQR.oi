@@ -251,13 +251,15 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
 
 <p>July 22, 2026 • Developer Tools • By <a href="https://sayadbayezid.com">Sayad Md Bayezid Hosan</a></p>
-<p>Are you searching for a modern, fast, and highly customizable <strong>MkDocs alternative</strong>? Meet <strong>SmartGen Docs</strong>, an open-source static site generator engineered specifically for developers and technical writers who want to build beautiful project documentation effortlessly.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -271,14 +273,13 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<p>Are you searching for a modern, fast, and highly customizable <strong>MkDocs alternative</strong>? Meet <strong>SmartGen Docs</strong>, an open-source static site generator engineered specifically for developers and technical writers who want to build beautiful project documentation effortlessly.</p>
 <p>Created by Sayad Md Bayezid Hosan, <a href="https://docs.smartgentools.com">SmartGen Docs</a> is designed to be the ultimate competitor in the static site generation space, offering seamless Markdown transformation, lightning-fast build times, and deep integration with the broader SmartGen platform ecosystem.</p>
 <hr>
 <p>SmartGen Docs is an open-source static site generator for project documentation, created by Sayad Md Bayezid Hosan. It allows for easy transformation of Markdown files into responsive websites, designed for developers and technical writers. Key features include Markdown support, static site generation, YAML configuration, live reload development server, customizable themes, CLI for project management, and API auto-generation. Users can quickly get started with installation and project setup by following detailed guides available in the documentation. Various resources, tutorials, and a community section encourage collaboration and knowledge sharing.<br><a href="https://docs.smartgentools.com/index.html">Home</a> Welcome<br><img src="https://smartgentools.com/blog-posts/images/smartgenDocsHeader.png" alt="Header-image"></p>
-<h1>Getting Started with SmartGen Docs</h1>
+<h2>Getting Started with SmartGen Docs</h2>
 <p>Welcome to the <strong>Getting Started</strong> section of SmartGen Docs. This guide is designed to help you quickly set up your documentation project, understand its basic structure, and begin writing your content. Whether you&#39;re a new user or looking for a refresher, these pages will provide you with the essential information to kickstart your journey with SmartGen Docs.</p>
 <p>SmartGen Docs simplifies the process of creating professional, responsive documentation websites from Markdown files. By following the steps outlined in this section, you will learn how to install the necessary tools, initialize a new project, and deploy your documentation.</p>
-<hr>
-<p><img src="https://smartgentools.com/blog-posts/images/smartgen-home-overview.JPG" alt="smartgen Docs Home Image"></p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -293,7 +294,9 @@
 </div>
 
 <hr>
-<h2>In This Section</h2>
+<p><img src="https://smartgentools.com/blog-posts/images/smartgen-home-overview.JPG" alt="smartgen Docs Home Image"></p>
+<hr>
+<h3>In This Section</h3>
 <p>Explore the following topics to get started:</p>
 <ul>
 <li><strong><a href="https://docs.smartgentools.com/getting-started/installation.html">Installation</a></strong>: Learn how to install SmartGen Docs on your local machine.</li>
@@ -308,7 +311,7 @@
 <hr>
 <p><a href="https://docs.smartgentools.com/index.html">Home</a> Overview<br><img src="https://smartgentools.com/blog-posts/images/SmartgenDocs%20Home%20page%20.png" alt="smartgen home overview image"><br>Welcome to the <strong>Core Documentation</strong> section of SmartGen Docs. This area provides an in-depth understanding of the platform itself, covering its underlying architecture, key features, fundamental concepts, and release history. Whether you are looking to understand how SmartGen Docs works under the hood or seeking detailed information about its capabilities, this section is your primary resource.</p>
 <p>SmartGen Docs is built to be efficient and flexible, transforming your Markdown content into a polished static website. The pages within this section will help you grasp the technical aspects and design philosophies that make SmartGen Docs a powerful tool for documentation.</p>
-<h2>In This Section</h2>
+<h3>In This Section</h3>
 <p>Explore the following topics to gain a comprehensive understanding of SmartGen Docs:</p>
 <ul>
 <li><strong><a href="https://docs.smartgentools.com/docs/index.html">Overview</a></strong>: A general introduction to the core documentation.</li>
@@ -322,20 +325,20 @@
 <p>We recommend starting with the <strong><a href="https://docs.smartgentools.com/docs/architecture.html">Architecture</a></strong> and <strong><a href="https://docs.smartgentools.com/docs/concepts.html">Concepts</a></strong> pages to build a strong foundation, then exploring other topics as needed. Each page is designed to provide clear, concise, and accurate information to enhance your understanding of SmartGen Docs.<br><a href="https://docs.smartgentools.com/blog/releases.html">PreviousRelease Notes</a> <a href="https://docs.smartgentools.com/about/developer.html">Next Developer</a></p>
 <hr>
 <p>The page outlines the recommended structure for organizing a SmartGen Docs project to enhance maintainability and scalability. The core project directory includes the main configuration file <code>smartgen.yml</code>, a <code>docs/</code> directory for Markdown documentation files, and a <code>site/</code> directory for the generated static website. Key details of each component are explained: \n\n1. <strong><code>smartgen.yml</code></strong> - Configures site settings like name, URL, author, description, theme, and navigation structure. \n2. <strong><code>docs/</code></strong> - Contains source Markdown files, including a homepage and logically grouped guides/tutorials. \n3. <strong><code>site/</code></strong> - Automatically generated HTML files from the Markdown sources, including necessary CSS and JavaScript files. \n\nBest practices suggest logical grouping of documentation, consistent naming conventions for files, and regular updates to the <code>smartgen.yml</code> to reflect changes in <code>docs/</code>. Following this structure ensures a well-organized documentation project.<br><a href="https://docs.smartgentools.com/index.html">Home</a> SmartGen Platform<br><img src="https://smartgentools.com/blog-posts/images/smartgen-project-structure.JPG" alt="smartgen platfrom image"></p>
-<h1>The SmartGen Platform and SmartGen Docs</h1>
+<h2>The SmartGen Platform and SmartGen Docs</h2>
 <p>SmartGen Docs is an integral part of the larger <strong>SmartGen Platform</strong>, an ecosystem of innovative tools and solutions developed by Sayad Md Bayezid Hosan. The platform aims to streamline various aspects of digital content creation, management, and deployment, catering to developers, marketers, and content creators alike.</p>
-<h2>Overview of the SmartGen Platform</h2>
+<h3>Overview of the SmartGen Platform</h3>
 <p>The SmartGen Platform encompasses a suite of interconnected tools designed to enhance productivity and efficiency. While SmartGen Docs focuses specifically on documentation generation, other components of the platform address different needs, such as AI-powered content generation, SEO optimization, and various developer utilities. The core philosophy behind the SmartGen Platform is to provide robust, open-source, and user-friendly tools that empower individuals and teams to achieve their digital goals.</p>
-<h2>SmartGen Docs within the Ecosystem</h2>
+<h3>SmartGen Docs within the Ecosystem</h3>
 <p>SmartGen Docs plays a crucial role in the SmartGen Platform by providing a dedicated, high-quality solution for technical documentation. It leverages the platform&#39;s broader capabilities where relevant, such as potential integrations with AI tools for content suggestions or SEO tools for optimizing documentation discoverability. Its static site generation approach ensures that documentation is fast, secure, and easily deployable, complementing the dynamic nature of other SmartGen tools.</p>
-<h3>Key Integrations and Synergies</h3>
+<h4>Key Integrations and Synergies</h4>
 <ul>
 <li><strong>Content Generation</strong>: Future integrations might allow SmartGen Docs to leverage AI tools from the platform to assist in drafting or refining documentation content.</li>
 <li><strong>SEO Optimization</strong>: Documentation generated by SmartGen Docs can benefit from the platform&#39;s SEO tools to ensure high visibility in search engine results.</li>
 <li><strong>Developer Tools</strong>: SmartGen Docs provides API reference generation, which directly supports developers using other SmartGen Platform tools by offering clear and accessible API documentation.</li>
 <li><strong>Unified Experience</strong>: The consistent design principles and underlying technologies across the SmartGen Platform ensure a cohesive user experience, making it easy for users to transition between different tools.</li>
 </ul>
-<h2>Vision for the SmartGen Platform</h2>
+<h3>Vision for the SmartGen Platform</h3>
 <p>The long-term vision for the SmartGen Platform is to create a comprehensive, interconnected suite of tools that simplifies the entire digital workflow. SmartGen Docs is a foundational piece of this vision, ensuring that every project built or supported by the platform has access to world-class documentation capabilities. As the platform evolves, SmartGen Docs will continue to integrate more deeply with other tools, offering an even more seamless and powerful experience for its users.</p>
 <p>For more information on other tools available within the ecosystem, please visit the <a href="https://docs.smartgentools.com/tools/index.md">SmartGen Tools section</a>.</p>
 <p><a href="https://docs.smartgentools.com/docs/index.html">PreviousOverview</a> <a href="https://docs.smartgentools.com/docs/architecture.html">Next Architecture</a></p>
@@ -343,16 +346,16 @@
 <p>The Core Documentation section of SmartGen Docs provides comprehensive information about the platform, including its architecture, features, and underlying concepts. It serves as a primary resource for understanding SmartGen Docs, which efficiently transforms Markdown content into a static website. Key topics include an overview of the documentation, the SmartGen platform, technical architecture, features, fundamental concepts, release notes, and a changelog. Users are encouraged to start with the Architecture and Concepts pages for a foundational understanding.</p>
 <hr>
 <p><img src="https://smartgentools.com/blog-posts/images/smartgen-quick-start.JPG" alt="smartgen quick start image"><br>The Quick Start Guide for SmartGen Docs provides a step-by-step approach to creating and serving a documentation site. It includes four main sections: 1. <strong>Initialize a New Project</strong>: Use the command <code>smartgen-docs init</code> to set up the project, which creates configuration and an initial <code>index.md</code> file. 2. <strong>Write Your Documentation</strong>: Documentation is composed in Markdown, starting with editing <code>docs/index.md</code> and adding additional pages as needed, updating <code>smartgen.yml</code> for navigation. 3. <strong>Serve Your Documentation Locally</strong>: Run <code>smartgen-docs serve</code> to preview changes live on a local server. 4. <strong>Build Your Static Site</strong>: Execute <code>smartgen-docs build</code> to generate a static website in the <code>site/</code> directory for deployment. The guide concludes with links for further learning and deployment.<br><a href="https://docs.smartgentools.com/index.html">Home</a> Quick Start</p>
-<h1>Quick Start Guide</h1>
+<h2>Quick Start Guide</h2>
 <p>This guide provides a rapid, step-by-step introduction to creating and serving your first documentation site with SmartGen Docs. If you have already <a href="https://docs.smartgentools.com/getting-started/installation.md">installed SmartGen Docs</a>, you can follow these instructions to get your project up and running in minutes.</p>
-<h2>1. Initialize a New Project</h2>
+<h3>1. Initialize a New Project</h3>
 <p>The first step is to initialize a new SmartGen Docs project. This command creates the necessary configuration file (<code>smartgen.yml</code>) and a default <code>index.md</code> file within your <code>docs/</code> directory.</p>
 <p>Open your terminal or command prompt, navigate to the directory where you want to create your project, and run:</p>
 <pre><code>smartgen-docs init
 Copy
 </code></pre>
 <p>Upon successful execution, you will see a message indicating that the project has been initialized. A new directory named <code>docs/</code> will be created, containing <code>index.md</code> and <code>getting-started/index.md</code>.</p>
-<h2>2. Write Your Documentation</h2>
+<h3>2. Write Your Documentation</h3>
 <p>SmartGen Docs is Markdown-centric, meaning you write your content using simple Markdown syntax. The <code>init</code> command creates a basic <code>docs/index.md</code> file, which serves as your project&#39;s homepage.</p>
 <ul>
 <li><strong>Edit <code>docs/index.md</code></strong>: Open <code>docs/index.md</code> in your favorite text editor and start adding your content. This file will be the main landing page for your documentation.</li>
@@ -367,34 +370,34 @@ Copy
       - Welcome: getting-started/index.md
 Copy
 </code></pre>
-<h2>3. Serve Your Documentation Locally</h2>
+<h3>3. Serve Your Documentation Locally</h3>
 <p>SmartGen Docs includes a built-in development server with live reloading, allowing you to preview your changes in real-time as you write. This is incredibly useful for iterative development and ensures your documentation looks as expected.</p>
 <p>From your project&#39;s root directory (where <code>smartgen.yml</code> is located), run:</p>
 <pre><code>smartgen-docs serve
 Copy
 </code></pre>
 <p>Open your web browser and navigate to <code>http://localhost:8000</code> (or the port indicated in your terminal). You will see your documentation site, and any changes you save to your Markdown files or <code>smartgen.yml</code> will automatically refresh in the browser.</p>
-<h2>4. Build Your Static Site</h2>
+<h3>4. Build Your Static Site</h3>
 <p>Once you are satisfied with your documentation, you can build the static HTML files that are ready for deployment. This command generates a complete static website in the <code>site/</code> directory.</p>
 <p>From your project&#39;s root directory, run:</p>
 <pre><code>smartgen-docs build
 Copy
 </code></pre>
 <p>After the command completes, a new <code>site/</code> directory will be created (or updated) in your project&#39;s root. This directory contains all the HTML, CSS, and JavaScript files that make up your documentation website, ready to be hosted on any static web server.</p>
-<h2>Next Steps</h2>
+<h3>Next Steps</h3>
 <p>Congratulations! You&#39;ve successfully initialized, written, served, and built your first SmartGen Docs project. For a more in-depth understanding of the project structure and components, proceed to <a href="https://docs.smartgentools.com/getting-started/first-project.md">Your First Project</a>. If you&#39;re ready to deploy your site, visit the <a href="https://docs.smartgentools.com/getting-started/deployment.md">Deployment Guide</a>.</p>
 <p><a href="https://docs.smartgentools.com/getting-started/installation.html">PreviousInstallation</a> <a href="https://docs.smartgentools.com/getting-started/first-project.html">Next First Project</a></p>
 <hr>
 <p><img src="https://smartgentools.com/blog-posts/images/smartgen-docs-home.JPG" alt="smartgen docs home inage"><br>This guide provides a step-by-step process to install SmartGen Docs, a Python-based tool, using <code>pip</code>. It outlines prerequisites including Python 3.8+ and pip installation. The installation steps include opening a terminal, executing the installation command, and verifying the installation by using the help command. It also covers upgrading SmartGen Docs and offers links to a Quick Start Guide and troubleshooting resources.<br><a href="https://docs.smartgentools.com/index.html">Home</a> Installation</p>
-<h1>Installation</h1>
+<h2>Installation</h2>
 <p>This guide provides detailed instructions on how to install SmartGen Docs on your system. SmartGen Docs is a Python-based tool, and its installation is straightforward using <code>pip</code>.</p>
-<h2>Prerequisites</h2>
+<h3>Prerequisites</h3>
 <p>Before you begin, ensure you have the following installed on your system:</p>
 <ul>
 <li><strong>Python 3.8+</strong>: SmartGen Docs requires Python 3.8 or a newer version. You can download Python from the <a href="https://www.python.org/downloads/">official Python website</a>.</li>
 <li><strong>pip</strong>: The Python package installer, which usually comes bundled with Python. You can verify its installation by running <code>pip --version</code> in your terminal.</li>
 </ul>
-<h2>Installation Steps</h2>
+<h3>Installation Steps</h3>
 <p>Follow these steps to install SmartGen Docs:</p>
 <ol>
 <li><p><strong>Open your terminal or command prompt.</strong></p>
@@ -415,15 +418,15 @@ Copy
 Copy
 </code></pre>
 <p>If the installation was successful, you will see a list of available commands and options for SmartGen Docs.</p>
-<h2>Upgrading SmartGen Docs</h2>
+<h3>Upgrading SmartGen Docs</h3>
 <p>To upgrade SmartGen Docs to the latest version, use the following command:</p>
 <pre><code>pip install --upgrade smartgen-docs
 Copy
 </code></pre>
 <p>This will replace your current installation with the newest available version, ensuring you have access to the latest features and bug fixes.</p>
-<h2>Next Steps</h2>
+<h3>Next Steps</h3>
 <p>Once SmartGen Docs is installed, you are ready to create your first documentation project. Proceed to the <a href="https://docs.smartgentools.com/getting-started/docs/getting-started/quick-start.md">Quick Start Guide</a> to learn how to initialize and serve your documentation locally.</p>
-<h2>Troubleshooting</h2>
+<h3>Troubleshooting</h3>
 <p>If you encounter any issues during installation, please refer to the <a href="https://docs.smartgentools.com/guides/troubleshooting.md">Troubleshooting Guide</a> or check the <a href="https://docs.smartgentools.com/getting-started/faq.md">FAQ</a> for common problems and solutions. If your issue persists, consider reporting it on our <a href="https://github.com/bayeziddev/smartGenDocs/issues">GitHub Issues</a> page.</p>
 <p><a href="https://docs.smartgentools.com/getting-started/index.html">PreviousWelcome</a> <a href="https://docs.smartgentools.com/getting-started/quick-start.html">Next Quick Start</a></p>
 <hr>
@@ -435,9 +438,9 @@ Copy
 <li><strong>Vercel</strong>: Similar to Netlify, it requires pushing to a Git repository and configuring the project settings in Vercel for deployment.</li>
 </ol>
 <p>All methods provide a pathway for making documentation accessible online.<br><a href="https://docs.smartgentools.com/index.html">Home</a> Folder Structure</p>
-<h1>Project Folder Structure</h1>
+<h2>Project Folder Structure</h2>
 <p>Understanding the recommended folder structure is crucial for organizing your SmartGen Docs project effectively. A well-structured project ensures maintainability, scalability, and ease of navigation for both developers and users. This guide outlines the typical layout of a SmartGen Docs project and explains the purpose of each directory and file.</p>
-<h2>Core Project Structure</h2>
+<h3>Core Project Structure</h3>
 <p>After initializing a new project with <code>smartgen-docs init</code> and building it with <code>smartgen-docs build</code>, your project directory will generally look like this:</p>
 <pre><code>.
 ├── smartgen.yml          # Main configuration file for your SmartGen Docs project
@@ -460,8 +463,8 @@ Copy
     └── ...               # Other generated HTML files and assets
 Copy
 </code></pre>
-<h2>Explanation of Directories and Files</h2>
-<h3><code>smartgen.yml</code></h3>
+<h3>Explanation of Directories and Files</h3>
+<h4><code>smartgen.yml</code></h4>
 <p>This is the central configuration file for your SmartGen Docs project. It is written in YAML format and controls various aspects of your documentation site, including:</p>
 <ul>
 <li><strong><code>site_name</code></strong>: The title of your documentation site.</li>
@@ -472,13 +475,13 @@ Copy
 <li><strong><code>nav</code></strong>: Defines the navigation structure of your documentation. This is where you link your Markdown files to create the menu hierarchy.</li>
 </ul>
 <p>For more details on configuring your project, refer to the <a href="https://docs.smartgentools.com/guides/configuration.md">Configuration Guide</a>.</p>
-<h3><code>docs/</code> Directory</h3>
+<h4><code>docs/</code> Directory</h4>
 <p>This directory is where all your Markdown source files (<code>.md</code>) are stored. Each Markdown file within this directory (and its subdirectories) will be processed by SmartGen Docs and converted into an HTML page in the final static site. The structure you create within the <code>docs/</code> directory often mirrors the navigation structure defined in <code>smartgen.yml</code>.</p>
 <ul>
 <li><strong><code>index.md</code></strong>: This file is typically the main entry point or homepage of your documentation. It provides an overview of your project.</li>
 <li><strong>Subdirectories (e.g., <code>getting-started/</code>, <code>api/</code>, <code>guides/</code>)</strong>: These are used to logically group related documentation pages. For instance, all guides related to getting started are placed in <code>docs/getting-started/</code>.</li>
 </ul>
-<h3><code>site/</code> Directory</h3>
+<h4><code>site/</code> Directory</h4>
 <p>This directory is automatically generated when you run the <code>smartgen-docs build</code> command. It contains the complete static website, including:</p>
 <ul>
 <li><strong>HTML Files</strong>: Each Markdown file from the <code>docs/</code> directory is converted into a corresponding HTML file (e.g., <code>docs/installation.md</code> becomes <code>site/installation.html</code>).</li>
@@ -486,7 +489,7 @@ Copy
 <li><strong>Static Assets</strong>: Any other static assets (like images, favicons) defined in your theme or copied manually will also reside here.</li>
 </ul>
 <p><strong>Important</strong>: The <code>site/</code> directory should generally not be manually edited, as its contents are overwritten each time you run <code>smartgen-docs build</code>. It is intended for deployment purposes.</p>
-<h2>Best Practices for Organization</h2>
+<h3>Best Practices for Organization</h3>
 <ul>
 <li><strong>Logical Grouping</strong>: Organize your Markdown files into logical categories using subdirectories within <code>docs/</code>. This makes it easier to find and manage content.</li>
 <li><strong>Consistent Naming</strong>: Use consistent and descriptive filenames for your Markdown files (e.g., <code>installation.md</code>, <code>api-overview.md</code>).</li>
@@ -496,10 +499,10 @@ Copy
 <p><a href="https://docs.smartgentools.com/getting-started/first-project.html">PreviousFirst Project</a> <a href="https://docs.smartgentools.com/getting-started/deployment.html">Next Deployment</a></p>
 <hr>
 <p>The &#39;Getting Started&#39; section of SmartGen Docs helps users set up their documentation projects. It covers installation, creating a site, project initialization, folder structure, deployment methods, and frequently asked questions. The guide provides a structured approach to quickly acquire the necessary information to use SmartGen Docs effectively.<br><a href="https://docs.smartgentools.com/index.html">Home</a> Welcome</p>
-<h1>Getting Started with SmartGen Docs</h1>
+<h2>Getting Started with SmartGen Docs</h2>
 <p>Welcome to the <strong>Getting Started</strong> section of SmartGen Docs. This guide is designed to help you quickly set up your documentation project, understand its basic structure, and begin writing your content. Whether you&#39;re a new user or looking for a refresher, these pages will provide you with the essential information to kickstart your journey with SmartGen Docs.</p>
 <p>SmartGen Docs simplifies the process of creating professional, responsive documentation websites from Markdown files. By following the steps outlined in this section, you will learn how to install the necessary tools, initialize a new project, and deploy your documentation.</p>
-<h2>In This Section</h2>
+<h3>In This Section</h3>
 <p>Explore the following topics to get started:</p>
 <ul>
 <li><strong><a href="https://docs.smartgentools.com/getting-started/installation.html">Installation</a></strong>: Learn how to install SmartGen Docs on your local machine.</li>
@@ -515,9 +518,9 @@ Copy
 <p>The SmartGen Platform, developed by Sayad Md Bayezid Hosan, is an ecosystem of tools designed for digital content creation and management. Key components include SmartGen Docs, which focuses on high-quality technical documentation generation. The platform offers features such as AI-powered content generation and SEO optimization, aimed at improving productivity for developers, marketers, and content creators. SmartGen Docs enhances documentation with potential AI and SEO integrations, ensuring discoverability and user-friendly experience. The vision for the SmartGen Platform is to create a comprehensive suite that streamlines digital workflows, with SmartGen Docs serving as a crucial component.</p>
 <hr>
 <p>This guide outlines the process of initializing a new SmartGen Docs project, detailing its core components and project structure. It includes steps for using the <code>init</code> command to create the essential files: <code>smartgen.yml</code>, which configures the project; the <code>docs/</code> directory for Markdown content; and default index files for the homepage and Getting Started section. The project structure is represented hierarchically, and customization of the <code>smartgen.yml</code> file is emphasized, allowing users to define site metadata, theme, and navigation. Additionally, the guide notes that new content can be added as Markdown files, encouraging effective organization.<br><a href="https://docs.smartgentools.com/index.html">Home</a> First Project</p>
-<h1>Your First SmartGen Docs Project</h1>
+<h2>Your First SmartGen Docs Project</h2>
 <p>This guide provides a detailed walkthrough of initializing a new SmartGen Docs project and understanding its core components. If you have followed the <a href="https://docs.smartgentools.com/getting-started/installation.md">Installation Guide</a> and the <a href="https://docs.smartgentools.com/getting-started/quick-start.md">Quick Start Guide</a>, you are ready to delve deeper into the structure of your documentation site.</p>
-<h2>1. Initializing the Project</h2>
+<h3>1. Initializing the Project</h3>
 <p>As covered in the Quick Start, you initialize a new project using the <code>init</code> command:</p>
 <pre><code>smartgen-docs init
 Copy
@@ -529,7 +532,7 @@ Copy
 <li><strong>Creates <code>docs/index.md</code></strong>: This file serves as the homepage for your documentation site. It&#39;s the first page users will see when they visit your documentation.</li>
 <li><strong>Creates <code>docs/getting-started/index.md</code></strong>: This is a placeholder for the Getting Started section&#39;s overview page.</li>
 </ul>
-<h2>2. Understanding the Project Structure</h2>
+<h3>2. Understanding the Project Structure</h3>
 <p>After initialization, your project directory will have a structure similar to this:</p>
 <pre><code>.
 ├── smartgen.yml          # Project configuration
@@ -547,7 +550,7 @@ Copy
 <li><strong><code>docs/</code></strong>: This directory contains all your source Markdown files. Each Markdown file (<code>.md</code>) will be transformed into an HTML page in your final documentation site. You can create subdirectories within <code>docs/</code> to organize your content logically, mirroring your navigation structure.</li>
 <li><strong><code>site/</code></strong>: This directory is generated when you run <code>smartgen-docs build</code>. It contains the complete static HTML, CSS, and JavaScript files that make up your documentation website. This is the content you will deploy to a web server.</li>
 </ul>
-<h2>3. Customizing <code>smartgen.yml</code></h2>
+<h3>3. Customizing <code>smartgen.yml</code></h3>
 <p>The <code>smartgen.yml</code> file is crucial for defining your documentation&#39;s structure and appearance. Here are some key sections you&#39;ll work with:</p>
 <pre><code>site_name: My Awesome Docs
 site_url: https://example.com/docs
@@ -574,26 +577,26 @@ Copy
 <li><strong><code>theme</code></strong>: This section allows you to select a theme (<code>default</code> or <code>premium</code>) and customize its colors and fonts.</li>
 <li><strong><code>nav</code></strong>: This is the most important section for content organization. It defines the main navigation menu of your documentation. You can create nested menus by listing sub-pages under a main category. The paths specified here are relative to your <code>docs/</code> directory.</li>
 </ul>
-<h2>4. Adding Content</h2>
+<h3>4. Adding Content</h3>
 <p>To add new content, simply create a new Markdown file in the <code>docs/</code> directory or a relevant subdirectory. For example, to add a page about new features, you might create <code>docs/features.md</code> and then add it to your <code>smartgen.yml</code> navigation.</p>
-<h2>Next Steps</h2>
+<h3>Next Steps</h3>
 <p>Now that you understand the project structure, you can proceed to organize your content effectively. Learn more about the recommended <a href="https://docs.smartgentools.com/getting-started/folder-structure.md">Folder Structure</a> for best practices.</p>
 <p><a href="https://docs.smartgentools.com/getting-started/quick-start.html">PreviousQuick Start</a> <a href="https://docs.smartgentools.com/getting-started/folder-structure.html">Next Folder Structure</a></p>
 <hr>
 <p><img src="https://smartgentools.com/blog-posts/images/smartgen-deploy-documentation.JPG" alt="smartgen deploy image"><br><a href="https://docs.smartgentools.com/index.html">Home</a> Deployment</p>
-<h1>Deployment</h1>
+<h2>Deployment</h2>
 <p>Once you have built your SmartGen Docs project using the <code>smartgen-docs build</code> command, you will have a <code>site/</code> directory containing a complete static HTML website. Because it is purely static (HTML, CSS, JavaScript), you can deploy it to almost any web hosting service or static site hosting platform.</p>
 <p>This guide outlines the general deployment process and provides specific instructions for popular hosting platforms.</p>
-<h2>General Deployment Process</h2>
+<h3>General Deployment Process</h3>
 <p>The general process for deploying a SmartGen Docs site involves these steps:</p>
 <ol>
 <li><strong>Build the Site</strong>: Ensure you have the latest version of your documentation built by running <code>smartgen-docs build</code> in your project&#39;s root directory.</li>
 <li><strong>Locate the Output</strong>: Verify that the <code>site/</code> directory has been created and contains your HTML files.</li>
 <li><strong>Upload to Host</strong>: Transfer the contents of the <code>site/</code> directory to your chosen web hosting provider. The method for uploading depends on the provider (e.g., FTP, Git push, web interface).</li>
 </ol>
-<h2>Deploying to GitHub Pages</h2>
+<h3>Deploying to GitHub Pages</h3>
 <p>GitHub Pages is a popular, free option for hosting static websites directly from a GitHub repository. It is an excellent choice for open-source projects and personal documentation.</p>
-<h3>Method 1: Manual Deployment (gh-pages branch)</h3>
+<h4>Method 1: Manual Deployment (gh-pages branch)</h4>
 <ol>
 <li><strong>Initialize Git</strong>: If your project isn&#39;t already a Git repository, initialize it:</li>
 </ol>
@@ -620,7 +623,7 @@ Copy
 <ol start="5">
 <li><strong>Configure GitHub Pages</strong>: Go to your repository settings on GitHub, navigate to the &quot;Pages&quot; section, and select the <code>gh-pages</code> branch as the source.</li>
 </ol>
-<h3>Method 2: Automated Deployment with GitHub Actions</h3>
+<h4>Method 2: Automated Deployment with GitHub Actions</h4>
 <p>For a more robust workflow, you can automate the build and deployment process using GitHub Actions. This ensures your site is updated automatically whenever you push changes to your main branch.</p>
 <ol>
 <li>Create a file named <code>.github/workflows/deploy.yml</code> in your repository.</li>
@@ -659,7 +662,7 @@ build-and-deploy:
           publish_dir: ./site
 Copy
 </code></pre>
-<h2>Deploying to Netlify</h2>
+<h3>Deploying to Netlify</h3>
 <p>Netlify is another excellent platform for hosting static sites, offering continuous deployment from Git repositories.</p>
 <ol>
 <li><p><strong>Push to Git</strong>: Ensure your project (excluding the <code>site/</code> directory) is pushed to a Git repository (GitHub, GitLab, or Bitbucket).</p>
@@ -677,7 +680,7 @@ Copy
 <li><p><strong>Deploy</strong>: Click &quot;Deploy site&quot;. Netlify will automatically build and deploy your documentation.</p>
 </li>
 </ol>
-<h2>Deploying to Vercel</h2>
+<h3>Deploying to Vercel</h3>
 <p>Vercel is a platform optimized for frontend frameworks and static sites, providing fast global deployment.</p>
 <ol>
 <li><p><strong>Push to Git</strong>: Ensure your project is in a Git repository.</p>
@@ -700,14 +703,14 @@ Copy
 <p><a href="https://docs.smartgentools.com/getting-started/folder-structure.html">PreviousFolder Structure</a> <a href="https://docs.smartgentools.com/getting-started/faq.html">Next FAQ</a></p>
 <hr>
 <p>The FAQ section for SmartGen Docs covers common inquiries regarding its use, installation, and features. SmartGen Docs is an open-source static site generator that simplifies the creation of documentation websites from Markdown files. Key benefits include ease of use, fast loading times, flexibility, and compatibility with various deployment platforms. Installation requires Python 3.8 or newer. Users can install or upgrade SmartGen Docs via pip. The documentation structure necessitates placing Markdown files in a &#39;docs/&#39; directory. To add a new page, users must create a Markdown file and update the &#39;smartgen.yml&#39; configuration. Local previews and builds for deployment are straightforward, and the site can be deployed to GitHub Pages.<br><a href="https://docs.smartgentools.com/index.html">Home</a> FAQ</p>
-<h1>Frequently Asked Questions (FAQ)</h1>
+<h2>Frequently Asked Questions (FAQ)</h2>
 <p>This section addresses common questions and provides solutions to frequently encountered issues when working with SmartGen Docs. If you don&#39;t find the answer to your question here, please refer to the <a href="https://docs.smartgentools.com/guides/troubleshooting.md">Troubleshooting Guide</a> or open an issue on our <a href="https://github.com/bayeziddev/smartGenDocs/issues">GitHub Repository</a>.</p>
-<h2>General Questions</h2>
-<h3>What is SmartGen Docs?</h3>
+<h3>General Questions</h3>
+<h4>What is SmartGen Docs?</h4>
 <p>SmartGen Docs is a lightweight, open-source static site generator designed to help you create professional and responsive documentation websites from Markdown files. It focuses on simplicity, speed, and ease of deployment.</p>
-<h3>Is SmartGen Docs free to use?</h3>
+<h4>Is SmartGen Docs free to use?</h4>
 <p>Yes, SmartGen Docs is open-source and completely free to use under the <a href="https://docs.smartgentools.com/about/license.md">MIT License</a>.</p>
-<h3>What are the main benefits of using SmartGen Docs?</h3>
+<h4>What are the main benefits of using SmartGen Docs?</h4>
 <p>Key benefits include:</p>
 <ul>
 <li><strong>Simplicity</strong>: Easy to learn and use, especially for those familiar with Markdown.</li>
@@ -716,28 +719,28 @@ Copy
 <li><strong>Open Source</strong>: Community-driven development and transparent codebase.</li>
 <li><strong>Deployment</strong>: Easy deployment to various static site hosting platforms like GitHub Pages, Netlify, and Vercel.</li>
 </ul>
-<h3>What are the system requirements for SmartGen Docs?</h3>
+<h4>What are the system requirements for SmartGen Docs?</h4>
 <p>SmartGen Docs requires Python 3.8 or newer and <code>pip</code> for installation. No other specific system requirements are typically needed beyond a standard development environment.</p>
-<h2>Installation and Setup</h2>
-<h3>How do I install SmartGen Docs?</h3>
+<h3>Installation and Setup</h3>
+<h4>How do I install SmartGen Docs?</h4>
 <p>You can install SmartGen Docs using <code>pip</code>:</p>
 <pre><code>pip install smartgen-docs
 Copy
 </code></pre>
 <p>For detailed instructions, refer to the <a href="https://docs.smartgentools.com/getting-started/installation.md">Installation Guide</a>.</p>
-<h3>How do I upgrade SmartGen Docs to the latest version?</h3>
+<h4>How do I upgrade SmartGen Docs to the latest version?</h4>
 <p>To upgrade, use the following <code>pip</code> command:</p>
 <pre><code>pip install --upgrade smartgen-docs
 Copy
 </code></pre>
-<h3>What should I do if <code>smartgen-docs</code> command is not found after installation?</h3>
+<h4>What should I do if <code>smartgen-docs</code> command is not found after installation?</h4>
 <p>This usually indicates that the Python scripts directory is not in your system&#39;s PATH. Ensure that <code>pip</code>&#39;s installation directory is included in your system&#39;s PATH environment variable. You might need to restart your terminal after installation.</p>
-<h3>Can I use a custom theme with SmartGen Docs?</h3>
+<h4>Can I use a custom theme with SmartGen Docs?</h4>
 <p>Yes, SmartGen Docs supports customizable themes using Jinja2 templates. You can modify existing themes or create your own. Refer to the <a href="https://docs.smartgentools.com/guides/customization.md">Customization Guide</a> for more information.</p>
-<h2>Project Structure and Content</h2>
-<h3>Where should I put my Markdown files?</h3>
+<h3>Project Structure and Content</h3>
+<h4>Where should I put my Markdown files?</h4>
 <p>All your Markdown source files (<code>.md</code>) should be placed within the <code>docs/</code> directory of your project. You can create subdirectories within <code>docs/</code> to organize your content logically.</p>
-<h3>How do I add a new page to my documentation?</h3>
+<h4>How do I add a new page to my documentation?</h4>
 <ol>
 <li>Create a new Markdown file (e.g., <code>docs/my-new-page.md</code>).</li>
 <li>Add the new page to the <code>nav</code> section of your <code>smartgen.yml</code> file to make it appear in the navigation menu. For example:</li>
@@ -747,7 +750,7 @@ Copy
   - My New Page: my-new-page.md
 Copy
 </code></pre>
-<h3>How do I create nested navigation menus?</h3>
+<h4>How do I create nested navigation menus?</h4>
 <p>You can create nested menus in your <code>smartgen.yml</code> by defining a dictionary where the key is the parent menu item and the value is a list of its child pages. For example:</p>
 <pre><code>nav:
   - Home: index.md
@@ -757,20 +760,20 @@ Copy
 Copy
 </code></pre>
 <p>Refer to the <a href="https://docs.smartgentools.com/getting-started/folder-structure.html">Folder Structure Guide</a> and <a href="https://docs.smartgentools.com/guides/configuration.html">Configuration Guide</a> for more details.</p>
-<h2>Building and Serving</h2>
-<h3>How do I preview my documentation locally?</h3>
+<h3>Building and Serving</h3>
+<h4>How do I preview my documentation locally?</h4>
 <p>Run the following command from your project&#39;s root directory:</p>
 <pre><code>smartgen-docs serve
 Copy
 </code></pre>
 <p>This starts a development server with live reloading, accessible at <code>http://localhost:8000</code> by default.</p>
-<h3>How do I build the static site for deployment?</h3>
+<h4>How do I build the static site for deployment?</h4>
 <p>Execute the <code>build</code> command from your project&#39;s root directory:</p>
 <pre><code>smartgen-docs build
 Copy
 </code></pre>
 <p>This will generate all static HTML, CSS, and JavaScript files into the <code>site/</code> directory.</p>
-<h3>Can I deploy my SmartGen Docs site to GitHub Pages?</h3>
+<h4>Can I deploy my SmartGen Docs site to GitHub Pages?</h4>
 <p>Yes, SmartGen Docs sites are perfectly suited for GitHub Pages. You can deploy manually or automate the process using GitHub Actions. See the <a href="https://docs.smartgentools.com/getting-started/deployment.md">Deployment Guide</a> for detailed instructions.</p>
 <p><a href="https://docs.smartgentools.com/getting-started/deployment.html">PreviousDeployment</a> <a href="https://docs.smartgentools.com/docs/index.html">Next Overview</a></p>
 <hr>

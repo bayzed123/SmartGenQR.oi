@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook Post Share Automation system is built on a browser extension - SmartGen Blog</title>
+    <title>Facebook Post Share Automation Extension - SmartGen Blog</title>
     <meta name="description" content="User interface for creating automation tasks - Sends task requests to backend API Tracks execution status in real-time,No dependency on browser extensions anymore">
     <meta name="author" content="SmartGen Editorial Team">
     <meta name="keywords" content="Facebook Automation'',AI Tools, SmartGen">
@@ -246,7 +246,10 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
@@ -255,13 +258,9 @@
             <img src="https://i.ibb.co/svS3qbVG/IMG-4784.jpg" alt="Facebook Post Share Automation system is built on a browser extension" class="blog-post-featured-image reveal-up delay-100">
 
             <div class="blog-post-content reveal-up delay-200">
-                <h1>🚀 Cross-Platform Workflow Automation — Coming Soon</h1>
+                <h2>🚀 Cross-Platform Workflow Automation — Coming Soon</h2>
 <blockquote>
 <p><strong>Currently in Beta Testing</strong><br>A next-generation automation system is under active development and will be released soon.</p>
-</blockquote>
-<hr>
-<h2>Introduction</h2>
-<p>The existing Facebook Post Share Automation system is built on a browser extension, which restricts usage to desktop environments. To enable full cross-platform support (including Android and iOS), the system is being redesigned into a server-based automation architecture.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -275,14 +274,18 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+</blockquote>
+<hr>
+<h3>Introduction</h3>
+<p>The existing Facebook Post Share Automation system is built on a browser extension, which restricts usage to desktop environments. To enable full cross-platform support (including Android and iOS), the system is being redesigned into a server-based automation architecture.</p>
 <p>This upgrade introduces a centralized backend that handles all automation tasks, enabling users to trigger workflows from any device while maintaining secure session management and consistent execution.</p>
 <hr>
-<h1>Cross-Platform Workflow Architecture Design</h1>
-<h2>Core Objective</h2>
+<h2>Cross-Platform Workflow Architecture Design</h2>
+<h3>Core Objective</h3>
 <p>To migrate all browser-dependent automation logic into a scalable cloud infrastructure capable of executing tasks reliably across platforms.</p>
 <hr>
-<h2>System Overview</h2>
-<h3>1. Dashboard (Client Layer)</h3>
+<h3>System Overview</h3>
+<h4>1. Dashboard (Client Layer)</h4>
 <ul>
 <li>User interface for creating automation tasks</li>
 <li>Sends task requests to backend API</li>
@@ -294,10 +297,8 @@
 <li>Secure HTTP API requests (REST/GraphQL)</li>
 </ul>
 <hr>
-<h3>2. Backend Server (Core Engine)</h3>
+<h4>2. Backend Server (Core Engine)</h4>
 <p>The backend acts as the central control system.</p>
-<h4>Key Components:</h4>
-<p><strong>API Layer</strong></p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -311,6 +312,8 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<h5>Key Components:</h5>
+<p><strong>API Layer</strong></p>
 <ul>
 <li>Receives automation requests</li>
 <li>Validates input</li>
@@ -336,14 +339,14 @@
 <li>Tracks analytics</li>
 </ul>
 <hr>
-<h3>3. Headless Browser Automation Layer</h3>
+<h4>3. Headless Browser Automation Layer</h4>
 <p>Responsible for executing actual automation workflows.</p>
-<h4>Technologies:</h4>
+<h5>Technologies:</h5>
 <ul>
 <li>Playwright</li>
 <li>Puppeteer</li>
 </ul>
-<h4>Capabilities:</h4>
+<h5>Capabilities:</h5>
 <ul>
 <li>Simulated user interaction</li>
 <li>Dynamic page navigation</li>
@@ -351,7 +354,7 @@
 <li>Automated posting/share workflows</li>
 </ul>
 <hr>
-<h3>4. Persistent Session Management</h3>
+<h4>4. Persistent Session Management</h4>
 <p>To avoid repeated logins and improve efficiency:</p>
 <p>Stored securely:</p>
 <ul>
@@ -367,7 +370,7 @@
 <li>Reduced authentication failures</li>
 </ul>
 <hr>
-<h2>Workflow Execution Pipeline</h2>
+<h3>Workflow Execution Pipeline</h3>
 <ol>
 <li>User creates automation task in dashboard  </li>
 <li>Dashboard sends request to backend API  </li>
@@ -380,7 +383,7 @@
 <li>Task completion status is recorded</li>
 </ol>
 <hr>
-<h2>Scalability Design</h2>
+<h3>Scalability Design</h3>
 <ul>
 <li>Horizontal scaling of worker nodes  </li>
 <li>Queue-based distributed processing  </li>
@@ -389,7 +392,7 @@
 <li>Load balancing across services</li>
 </ul>
 <hr>
-<h2>Security &amp; Protection Strategy</h2>
+<h3>Security &amp; Protection Strategy</h3>
 <ul>
 <li>End-to-end encryption for sensitive data  </li>
 <li>Secure session storage  </li>
@@ -399,7 +402,7 @@
 <li>Controlled retry mechanisms</li>
 </ul>
 <hr>
-<h2>Reliability Enhancements</h2>
+<h3>Reliability Enhancements</h3>
 <ul>
 <li>Randomized interaction timing  </li>
 <li>Human-like behavior simulation  </li>
@@ -408,7 +411,7 @@
 <li>Automatic error recovery</li>
 </ul>
 <hr>
-<h2>Monitoring System</h2>
+<h3>Monitoring System</h3>
 <p>Real-time observability includes:</p>
 <ul>
 <li>Worker health tracking  </li>
@@ -417,7 +420,7 @@
 <li>System alerts and logs</li>
 </ul>
 <hr>
-<h2>Beta Status</h2>
+<h3>Beta Status</h3>
 <p>🚧 <strong>Currently in Beta Testing Phase</strong></p>
 <p>System is undergoing internal testing to ensure:</p>
 <ul>
@@ -427,7 +430,7 @@
 <li>Performance optimization</li>
 </ul>
 <hr>
-<h2>Coming Soon</h2>
+<h3>Coming Soon</h3>
 <p>A fully cloud-powered cross-platform automation system designed for:</p>
 <ul>
 <li>Desktop</li>
@@ -443,7 +446,7 @@
 <li>Fully automated execution engine</li>
 </ul>
 <hr>
-<h2>Final Note</h2>
+<h3>Final Note</h3>
 <p>This is a major infrastructure upgrade moving from extension-based automation to a fully distributed cloud automation system.</p>
 <p><strong>Release coming very soon.</strong></p>
 

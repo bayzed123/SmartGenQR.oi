@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UI/UX Design Course Class 03: The UX Design Process - SmartGen Blog</title>
+    <title>UI/UX Design Course Class 03: The UX Design Process</title>
     <meta name="description" content="Class 03 of the UI/UX Design Course covers the app design and UX process — how to conduct user research and build user personas that guide real decisions.">
     <meta name="author" content="Sayad Md Bayezid Hosan">
     <meta name="keywords" content="SmartGen, UI UX Design, UI UX Course, UX Process, User Research, User Persona, App Design, UX Research Methods">
@@ -251,14 +251,15 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
 
 <p>August 14, 2026 • General • By <a href="https://www.sayadbayezid.com">Sayad Md Bayezid Hosan</a></p>
-<h1>UI/UX Design Course Class 03: The UX Design Process</h1>
-<p>There&#39;s a specific moment where most beginner app projects quietly go wrong: right after learning <a href="https://smartgentools.com/blog/uiux-design-course-class-02-figma-essentials/">Figma</a> in Class 02, it&#39;s tempting to open a blank frame and start dragging rectangles into something that looks like an app. The screens might even look good. But without the work covered in this class first, they&#39;re built on guesses about who&#39;s using the product and what they actually need — and a beautifully executed screen built on a wrong assumption doesn&#39;t get fixed later, it gets thrown away.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -272,17 +273,17 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<h2>UI/UX Design Course Class 03: The UX Design Process</h2>
+<p>There&#39;s a specific moment where most beginner app projects quietly go wrong: right after learning <a href="https://smartgentools.com/blog/uiux-design-course-class-02-figma-essentials/">Figma</a> in Class 02, it&#39;s tempting to open a blank frame and start dragging rectangles into something that looks like an app. The screens might even look good. But without the work covered in this class first, they&#39;re built on guesses about who&#39;s using the product and what they actually need — and a beautifully executed screen built on a wrong assumption doesn&#39;t get fixed later, it gets thrown away.</p>
 <p>This class covers the process that comes <em>before</em> visual design: the overall app design and UX process, how to conduct real user research, and how to turn that research into user personas your team can actually design against.</p>
 <p><img src="https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-03-cover.svg" alt="UI/UX Design Course Class 03: The UX Design Process"></p>
 <hr>
-<h2>Welcome to Class 03</h2>
+<h3>Welcome to Class 03</h3>
 <p>Everything in this class is deliberately low-cost to practice. You don&#39;t need a research budget, a recruiting agency, or a single paying user to do a real, useful version of what&#39;s covered here — you need a notebook, a handful of honest conversations, and the willingness to be wrong about your first assumptions. That&#39;s genuinely most of what separates a research-informed design from a guess with good typography.</p>
 <hr>
-<h2>1. App Design &amp; The UX Process</h2>
-<h3>Why Skipping Straight to Design Backfires</h3>
+<h3>1. App Design &amp; The UX Process</h3>
+<h4>Why Skipping Straight to Design Backfires</h4>
 <p>Every app that feels intuitive went through a process before a single pixel was finalized. Skipping that process doesn&#39;t save time — it just moves the cost later, when a launched feature nobody wanted has to be reworked or removed entirely, at a much higher cost than getting it right before development ever started.</p>
-<h3>The Seven Stages</h3>
-<p>This structure closely mirrors the <strong>Design Thinking</strong> framework popularized by IDEO and Stanford&#39;s d.school (Empathize → Define → Ideate → Prototype → Test), adapted here specifically for app design:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -296,6 +297,8 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<h4>The Seven Stages</h4>
+<p>This structure closely mirrors the <strong>Design Thinking</strong> framework popularized by IDEO and Stanford&#39;s d.school (Empathize → Define → Ideate → Prototype → Test), adapted here specifically for app design:</p>
 <ol>
 <li><strong>Discovery</strong> — define the problem you&#39;re actually solving and the business goal behind it, before touching the solution at all.</li>
 <li><strong>Research</strong> — go find out whether your assumptions about users are true (Section 2).</li>
@@ -307,8 +310,8 @@
 </ol>
 <p>The stages aren&#39;t strictly linear in practice — most real projects loop back a step or two as they learn — but the order matters: research and definition genuinely need to happen before design, not alongside it or after.</p>
 <hr>
-<h2>2. User Research: Understanding Who You&#39;re Actually Designing For</h2>
-<h3>Qualitative vs. Quantitative Research</h3>
+<h3>2. User Research: Understanding Who You&#39;re Actually Designing For</h3>
+<h4>Qualitative vs. Quantitative Research</h4>
 <p>These two categories answer fundamentally different questions, and confusing them is one of the most common early mistakes.</p>
 <table>
 <thead>
@@ -333,18 +336,18 @@
 </tr>
 </tbody></table>
 <p>Most early-stage app research leans qualitative — you&#39;re trying to understand <em>why</em> people behave a certain way, which numbers alone can&#39;t tell you.</p>
-<h3>Four Research Methods Worth Learning First</h3>
+<h4>Four Research Methods Worth Learning First</h4>
 <p><strong>User interviews.</strong> One-on-one conversations, typically 20–45 minutes, exploring how someone currently handles the problem your app addresses. The goal isn&#39;t to pitch your idea — it&#39;s to listen for real frustrations and existing workarounds.</p>
 <p><strong>Surveys.</strong> Useful once you already have a hypothesis and want to check how common it is across a larger group. Keep them short; a 20-question survey gets abandoned far more often than a 5-question one.</p>
 <p><strong>Usability testing.</strong> Watching someone actually try to complete a task in your app (or a prototype of it) and noting exactly where they hesitate, misclick, or give up. This is the method most directly connected to what you&#39;ll design in Class 02&#39;s Figma skills — a clickable prototype is enough to run one.</p>
 <p><strong>Competitive analysis.</strong> Studying how existing apps in your space solve (or fail to solve) the same problem. This isn&#39;t about copying — it&#39;s about understanding what users already expect, so you know when you&#39;re meeting that expectation and when you&#39;re deliberately breaking from it.</p>
-<h3>How Much Research Is Enough?</h3>
+<h4>How Much Research Is Enough?</h4>
 <p>A widely cited finding from Jakob Nielsen&#39;s research suggests that testing with around <strong>five users can surface roughly 85% of usability problems</strong> in a design — a heuristic that&#39;s been genuinely useful for decades because it makes research feel achievable rather than an all-or-nothing budget item. It&#39;s worth knowing this comes with real caveats: it&#39;s a simplified model, later researchers have pointed out it depends heavily on how consistent the problems are across users, and five deeply similar users will always teach you less than five genuinely different ones. Treat it as permission to start small, not as a hard ceiling on how much research is ever worth doing.</p>
 <hr>
-<h2>3. User Personas: Turning Research Into a Design Tool</h2>
-<h3>What a Persona Actually Is — and Isn&#39;t</h3>
+<h3>3. User Personas: Turning Research Into a Design Tool</h3>
+<h4>What a Persona Actually Is — and Isn&#39;t</h4>
 <p>A user persona is a fictional but research-grounded representative of a real user group — built from patterns you actually observed, not a character invented to sound plausible. This distinction matters enough that the field has a specific term for getting it wrong: an <strong>assumption persona</strong> is one built from internal guesses about users instead of real research, and it tends to quietly reinforce whatever the team already believed rather than challenge it. A persona is only as useful as the research underneath it.</p>
-<h3>The Core Elements of a Strong Persona</h3>
+<h4>The Core Elements of a Strong Persona</h4>
 <ul>
 <li><strong>Name and photo</strong> — makes the persona memorable and specific enough for a team to actually reference in a meeting, instead of falling back on &quot;the user.&quot;</li>
 <li><strong>A short quote</strong> — one sentence, in the persona&#39;s own voice, that captures their core motivation.</li>
@@ -353,7 +356,7 @@
 <li><strong>Relevant behaviors</strong> — how they currently solve this problem, including any workarounds.</li>
 <li><strong>Demographics, only where relevant</strong> — age, location, or job title belong in a persona only if they genuinely change a design decision. Padding a persona with irrelevant demographic detail is one of the most common ways personas end up unused.</li>
 </ul>
-<h3>From Research Notes to Persona: A Step-by-Step Walkthrough</h3>
+<h4>From Research Notes to Persona: A Step-by-Step Walkthrough</h4>
 <ol>
 <li><strong>Gather your raw research notes</strong> from every interview or survey response, without editing them yet.</li>
 <li><strong>Look for patterns</strong> across participants — an approach often called affinity mapping, where similar quotes and behaviors get grouped together physically or digitally.</li>
@@ -362,10 +365,10 @@
 <li><strong>Validate it against real quotes and data.</strong> If you can&#39;t point to where a trait came from in your research, it doesn&#39;t belong in the persona yet.</li>
 <li><strong>Put it somewhere the team will actually see it</strong> — pinned in your Figma file, referenced in planning docs — since a persona that only exists as a forgotten PDF has no real effect on the product.</li>
 </ol>
-<h3>How Many Personas Do You Need?</h3>
+<h4>How Many Personas Do You Need?</h4>
 <p>Most real projects land on <strong>three to five personas</strong> — enough to represent genuinely different user needs without diluting focus across too many. It&#39;s common to designate one as the <strong>primary persona</strong> (the person most design decisions are optimized for) with the others as secondary, rather than treating all personas as equally weighted.</p>
 <hr>
-<h2>Common Mistakes Beginners Make</h2>
+<h3>Common Mistakes Beginners Make</h3>
 <ul>
 <li><strong>Opening Figma before any research happens.</strong> Every hour spent designing on top of an untested assumption is an hour that may need to be redone.</li>
 <li><strong>Treating research as a one-time checkbox.</strong> The most useful research habits are ongoing, not a single sprint at the very start of a project.</li>
@@ -374,7 +377,7 @@
 <li><strong>Never validating the persona against new data.</strong> A persona built once and never revisited slowly drifts away from who your users actually are.</li>
 </ul>
 <hr>
-<h2>Practice: Build Your First Research-Based Persona</h2>
+<h3>Practice: Build Your First Research-Based Persona</h3>
 <p>You don&#39;t need a research budget to do a genuine version of this exercise.</p>
 <ol>
 <li>Pick an app idea — real or hypothetical — and identify 3 people in your life who represent your target user type.</li>
@@ -385,18 +388,18 @@
 </ol>
 <p>This is a genuinely smaller version of the same process professional UX researchers use — the method scales, the sample size is just smaller.</p>
 <hr>
-<h2>Knowledge Check</h2>
+<h3>Knowledge Check</h3>
 <p><strong>1. What&#39;s the core difference between qualitative and quantitative research?</strong><br>Qualitative research answers <em>why</em> and <em>how</em>, typically through small-sample methods like interviews. Quantitative research answers <em>how many</em> and <em>how often</em>, typically through larger-sample methods like surveys and analytics.</p>
 <p><strong>2. According to Nielsen&#39;s widely cited finding, roughly how many users can surface about 85% of usability problems?</strong><br>Around five — though it&#39;s a simplified heuristic, not a hard rule, and depends on how similar or different those five users are.</p>
 <p><strong>3. What&#39;s the difference between a research-based persona and an assumption persona?</strong><br>A research-based persona is built from patterns in real user conversations or data. An assumption persona is built from internal guesses about users, without that grounding — and tends to just reinforce what the team already believed.</p>
 <p><strong>4. How many personas does a typical project usually need?</strong><br>Three to five, usually with one designated as the primary persona that most design decisions optimize for.</p>
 <p><strong>5. Name at least four of the seven stages in the UX process covered in Section 1.</strong><br>Any four of: Discovery, Research, Define, Ideate, Design, Prototype &amp; Test, Launch &amp; Iterate.</p>
 <hr>
-<h2>Visual Summary</h2>
+<h3>Visual Summary</h3>
 <p>The infographic below maps all seven stages of the UX process, plus the core building blocks of user research and user personas covered in this class.</p>
 <p><img src="https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-03-infographic.svg" alt="UX Design Process infographic — the 7-stage process, user research methods, and user persona anatomy"></p>
 <hr>
-<h2>Where This Course Is Headed</h2>
+<h3>Where This Course Is Headed</h3>
 <table>
 <thead>
 <tr>
@@ -430,7 +433,7 @@
 </tr>
 </tbody></table>
 <hr>
-<h2>Frequently Asked Questions</h2>
+<h3>Frequently Asked Questions</h3>
 <p><strong>Do I need a research budget or recruiting agency to do real user research?</strong><br>No. The practice exercise in this class — five open-ended questions with three people who represent your target user — is a genuinely smaller-scale version of the exact same method professional researchers use. Budget changes the scale, not the fundamental process.</p>
 <p><strong>Is user research only necessary for large companies?</strong><br>It&#39;s arguably more valuable for smaller teams and solo builders, since there&#39;s no larger budget or brand recognition to absorb the cost of building the wrong thing. A single afternoon of conversations before designing can prevent weeks of rework later.</p>
 <p><strong>What&#39;s the difference between a user persona and a target audience?</strong><br>A target audience is typically a broad demographic description (&quot;women aged 25–34 interested in fitness&quot;). A persona is a specific, research-grounded individual representation that includes goals, frustrations, and behaviors — detailed enough to make a real design decision against, not just a marketing segment.</p>

@@ -246,7 +246,10 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
@@ -255,9 +258,8 @@
             <img src="https://i.ibb.co/Y7FCcNqP/962-F6-E99-D77-F-4-A13-BC23-B9-F465-ADC8-EA.png" alt="SmartGen Now Open source project" class="blog-post-featured-image reveal-up delay-100">
 
             <div class="blog-post-content reveal-up delay-200">
-                <h1>SmartGen: All-in-One Digital &amp; Web Utility Platform</h1>
+                <h2>SmartGen: All-in-One Digital &amp; Web Utility Platform</h2>
 <p><a href="https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/auto-changelog.yml"><img src="https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/auto-changelog.yml/badge.svg" alt="Auto Changelog Status"></a> <a href="https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/pages/pages-build-deployment/badge.svg" alt="Pages Build Deployment"></a><br><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a><br><a href="https://github.com/bayzed123/SmartGenQR.oi"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" alt="Open Source Love"></a></p>
-<p><strong>SmartGen</strong> is a premier, open-source web utility ecosystem featuring over <strong>45+ high-performance tools</strong>. Designed for developers, marketers, and SEO experts, it operates on a <strong>100% Client-Side</strong> architecture, ensuring absolute privacy and lightning-fast execution without any server-side data storage.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -271,8 +273,9 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<p><strong>SmartGen</strong> is a premier, open-source web utility ecosystem featuring over <strong>45+ high-performance tools</strong>. Designed for developers, marketers, and SEO experts, it operates on a <strong>100% Client-Side</strong> architecture, ensuring absolute privacy and lightning-fast execution without any server-side data storage.</p>
 <hr>
-<h2>🌐 Quick Access &amp; Legal</h2>
+<h3>🌐 Quick Access &amp; Legal</h3>
 <table>
 <thead>
 <tr>
@@ -293,9 +296,9 @@
 <td align="left"><a href="https://www.sayadbayezid.com"><img src="https://img.shields.io/badge/Founder-Sayad_Bayezid-orange?style=for-the-badge&logo=person&logoColor=white" alt="Founder"></a></td>
 </tr>
 </tbody></table>
-<h3>✅ All Systems Operational</h3>
-<h2><strong>Status:</strong> All tools and pages in the sitemap are working perfectly! No broken links found.</h2>
-<h2>🚀 Project Overview &amp; Core Values</h2>
+<h4>✅ All Systems Operational</h4>
+<h3><strong>Status:</strong> All tools and pages in the sitemap are working perfectly! No broken links found.</h3>
+<h3>🚀 Project Overview &amp; Core Values</h3>
 <p>SmartGen is built on the principle of <strong>Edge Processing</strong>. Unlike traditional utility sites that require data to be uploaded to a server, SmartGen performs all calculations, generations, and transformations directly within the user&#39;s browser or device. </p>
 <ul>
 <li><strong>Privacy First:</strong> No user data ever leaves the local device. There is no central repository of user-generated content for hackers to target.</li>
@@ -304,9 +307,9 @@
 <li><strong>SEO Optimized:</strong> Every tool is backed by a &quot;Skyscraper&quot; SEO strategy, featuring JSON-LD Schema and 1200+ word content blocks.</li>
 </ul>
 <hr>
-<h2>🏗️ Architecture &amp; Tech Stack</h2>
+<h3>🏗️ Architecture &amp; Tech Stack</h3>
 <p>SmartGen employs a lightweight, modular, and client-side focused architecture designed for speed, privacy, and ease of maintenance. </p>
-<h3>Frontend &amp; Core Technologies</h3>
+<h4>Frontend &amp; Core Technologies</h4>
 <ul>
 <li><strong>HTML5 &amp; CSS3:</strong> Foundational markup and global styles (<code>/assets/css/style.css</code>).</li>
 <li><strong>JavaScript (ES6+):</strong> Powers all client-side logic.<ul>
@@ -317,15 +320,15 @@
 </li>
 <li><strong>File Structure:</strong> Each tool resides in its own directory (e.g., <code>/[tool-folder]/index.html</code>), keeping the application strictly modular.</li>
 </ul>
-<h3>Build &amp; Content Management</h3>
+<h4>Build &amp; Content Management</h4>
 <ul>
 <li><strong>Node.js &amp; pnpm:</strong> Runtime environment and fast package manager.</li>
 <li><strong>Static Site Generation (SSG):</strong> <code>scripts/build-blog.js</code> generates the blog using <code>front-matter</code> for metadata and <code>marked</code> for Markdown-to-HTML conversion.</li>
 <li><strong>CI/CD:</strong> Automated changelogs via GitHub Actions and seamless deployments to GitHub Pages.</li>
 </ul>
 <hr>
-<h2>🛠️ Master Tool Directory</h2>
-<h3>💻 Developer &amp; Technical</h3>
+<h3>🛠️ Master Tool Directory</h3>
+<h4>💻 Developer &amp; Technical</h4>
 <table>
 <thead>
 <tr>
@@ -408,7 +411,7 @@
 <td align="left">No server interaction.</td>
 </tr>
 </tbody></table>
-<h3>📈 Marketing &amp; Social Media</h3>
+<h4>📈 Marketing &amp; Social Media</h4>
 <table>
 <thead>
 <tr>
@@ -473,7 +476,7 @@
 <td align="left">Accesses public YouTube servers.</td>
 </tr>
 </tbody></table>
-<h3>🔍 SEO &amp; Content</h3>
+<h4>🔍 SEO &amp; Content</h4>
 <table>
 <thead>
 <tr>
@@ -514,7 +517,7 @@
 <td align="left">Real-time analysis as you type.</td>
 </tr>
 </tbody></table>
-<h3>📅 Daily Utilities &amp; Calculators</h3>
+<h4>📅 Daily Utilities &amp; Calculators</h4>
 <table>
 <thead>
 <tr>
@@ -574,7 +577,7 @@
 </tr>
 </tbody></table>
 <hr>
-<h2>⚙️ Setup &amp; Local Development</h2>
+<h3>⚙️ Setup &amp; Local Development</h3>
 <ol>
 <li><strong>Clone:</strong> <code>git clone https://github.com/bayzed123/SmartGenQR.oi.git</code></li>
 <li><strong>Add Upstream Remote:</strong> <code>git remote add upstream https://github.com/bayzed123/SmartGenQR.oi.git</code></li>
@@ -583,7 +586,7 @@
 <li><strong>Local Preview:</strong> Open any <code>index.html</code> or use <code>npx serve</code> for the full environment.</li>
 <li><strong>Build Blog:</strong> <code>pnpm build</code> (Runs <code>scripts/build-blog.js</code>).</li>
 </ol>
-<h3>Developer Guidelines</h3>
+<h4>Developer Guidelines</h4>
 <ul>
 <li><strong>Directory Structure:</strong> Each tool must reside in its own folder.</li>
 <li><strong>Client-Side Only:</strong> No server-side processing. Use JavaScript for all logic.</li>
@@ -591,18 +594,15 @@
 <li><strong>SEO Skyscraper:</strong> Every <code>index.html</code> must include robust SEO content, FAQ schema, and optimized meta tags.</li>
 </ul>
 <hr>
-<h2>🤝 Contributing &amp; Code of Conduct</h2>
+<h3>🤝 Contributing &amp; Code of Conduct</h3>
 <p>We welcome contributions from everyone! By participating, you agree to abide by our Code of Conduct, which ensures a harassment-free experience for everyone.</p>
-<h3>Pull Request Workflow</h3>
+<h4>Pull Request Workflow</h4>
 <ol>
 <li><strong>Tests:</strong> Ensure <code>pnpm test</code>, <code>pnpm check</code>, and <code>pnpm format</code> all pass.</li>
 <li><strong>Commit Formatting:</strong> Use descriptive messages (e.g., <code>feat: add new qr type</code>, <code>fix: resolve mobile overflow</code>).</li>
 <li><strong>Review Process:</strong> PRs are reviewed for code quality, performance impact, and browser compatibility (1-5 days turnaround).</li>
 </ol>
 <p><em>See full templates for Bug Reports and Feature Requests in the repository documentation.</em></p>
-<hr>
-<h2>🛡️ Trust Center &amp; Core Policies</h2>
-<p>Welcome to the SmartGen Trust Center. This document outlines our operational DNA, detailing our commitment to privacy, ethical monetization, and transparency.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -616,33 +616,36 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
-<h3>Version Information</h3>
+<hr>
+<h3>🛡️ Trust Center &amp; Core Policies</h3>
+<p>Welcome to the SmartGen Trust Center. This document outlines our operational DNA, detailing our commitment to privacy, ethical monetization, and transparency.</p>
+<h4>Version Information</h4>
 <ul>
 <li><strong>Mobile App Version:</strong> v1.0.0 (First Public Release)</li>
 <li><strong>Web Tools Version:</strong> v3.2.0 (Stable GitHub Release)</li>
 <li><strong>Trust Center Edition:</strong> 2026.06</li>
 </ul>
-<h3>1. Core Data Processing &amp; Analytics</h3>
+<h4>1. Core Data Processing &amp; Analytics</h4>
 <p>SmartGen operates without requiring user registration, login, or account creation. <strong>We do not collect or store personal or user-generated content.</strong> Limited non-personal technical data (device information, crash logs) may be processed by trusted third-party services (Google Firebase, Google Analytics, Google Tag Manager) strictly for performance monitoring and stability improvements.</p>
-<h3>2. The Edge Processing Imperative (Philosophy of Privacy)</h3>
+<h4>2. The Edge Processing Imperative (Philosophy of Privacy)</h4>
 <p>Instead of relying on distant servers, the vast majority of our core functionalities are executed directly on your device. This means that when you create a QR code from sensitive text or compress a personal image, that data never leaves your secure local environment. </p>
-<h3>3. Ethical Monetization Strategy</h3>
+<h4>3. Ethical Monetization Strategy</h4>
 <p>SmartGen tools are 100% free. To sustain development costs, we monetize ethically via Google AdMob and voluntary donations. </p>
 <ul>
 <li><strong>Ad Personalization:</strong> Users have complete control over their advertising experience and can opt-out of personalized ads via device-level settings at any time. We do not directly control AdMob&#39;s internal ad targeting system.</li>
 </ul>
-<h3>4. Children’s Privacy &amp; Age Restrictions</h3>
+<h4>4. Children’s Privacy &amp; Age Restrictions</h4>
 <p>SmartGen is not directed to children under 13 (or the applicable digital consent age). We do not knowingly collect personal data from children or profile minors for advertising. AdMob is configured to comply with child-safe advertising policies.</p>
-<h3>5. External API Processing &amp; Data Flow</h3>
+<h4>5. External API Processing &amp; Data Flow</h4>
 <p>While most tools operate client-side, specific features (like the AI Vocal Remover or URL fetchers) utilize external APIs. </p>
 <ul>
 <li>Requests are initiated <em>solely</em> by user action.</li>
 <li>Only necessary input is transmitted, processed temporarily, and never stored permanently on our servers.</li>
 </ul>
-<h3>6. User Data Control</h3>
+<h4>6. User Data Control</h4>
 <p>Because SmartGen maintains no user accounts, there is no server-side data to delete. Users have full control over locally stored data and can wipe it entirely by clearing their browser cache or uninstalling the application.</p>
 <hr>
-<h2>📞 Contact &amp; Official Support Channels</h2>
+<h3>📞 Contact &amp; Official Support Channels</h3>
 <ul>
 <li><strong>Official Website:</strong> <a href="https://smartgentools.com">www.smartgentools.com</a></li>
 <li><strong>Support Email:</strong> <a href="mailto:cwb.agency@outlook.com">cwb.agency@outlook.com</a></li>

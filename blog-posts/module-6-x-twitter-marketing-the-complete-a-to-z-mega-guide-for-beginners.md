@@ -1,5 +1,6 @@
 ---
 title: "MODULE 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide for Beginners"
+seo_title: "X (Twitter) Marketing Guide for Beginners"
 description: "A complete, practical guide to marketing on X (formerly Twitter): creating and curating your profile, understanding followers, retweets, clicks, and conversions, using hashtags effectively, finding and following niche users, writing posts that drive engagement, and running X ad campaigns."
 keywords: "x marketing, twitter marketing, x profile setup, x followers retweets, x hashtags, x engagement strategy, x ads campaign, twitter ads, how to grow on x, smartgen"
 date: 2026-06-30
@@ -15,7 +16,6 @@ tags:
   - X Ads
 slug: "module-6-x-formerly-twitter-marketing-the-complete-a-to-z-mega-guide-for-beginners"
 ---
-
 ## Welcome to Module 6: X (Formerly Twitter) Marketing
 
 We've now covered Facebook and Instagram in real depth. Today we're moving onto a platform that works completely differently from both of them: **X**, the platform formerly known as Twitter. If you walk into X expecting it to behave like Instagram or Facebook, you'll struggle, because the entire culture, pace, and content style here is built around something different — speed, conversation, and real-time relevance.

@@ -1,5 +1,6 @@
 ---
 title: "How We Automated Website-to-LinkedIn Article Sharing: A GitHub Actions Case Study"
+seo_title: "Automating LinkedIn Posts with GitHub Actions"
 slug: "how-we-automated-website-to-linkedin-article-sharing-case-study"
 linkedin_image: "https://smartgentools.com/blog-posts/images/how-we-automated-website-to-linkedin-article-sharing-case-study-linkedin.jpg"
 linkedin_mode: "image"

@@ -247,9 +247,9 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="railway-deployment-guide-alternative-to-ssh">🚂 Railway Deployment Guide (Alternative to SSH)</h1>
+                        <h2 id="railway-deployment-guide-alternative-to-ssh">🚂 Railway Deployment Guide (Alternative to SSH)</h2>
 <p>Your repo has <code>railway.json</code>, so you can deploy to Railway instead of manual SSH!</p>
-<h2 id="what-is-railway">What is Railway?</h2>
+<h3 id="what-is-railway">What is Railway?</h3>
 <p>Railway is a modern hosting platform that automatically deploys your app:</p>
 <ul>
 <li>Auto builds from GitHub</li>
@@ -258,7 +258,7 @@
 <li>Scales automatically</li>
 <li>Free for small projects (with limits)</li>
 </ul>
-<h2 id="comparison-ssh-vs-railway">🆚 Comparison: SSH vs Railway</h2>
+<h3 id="comparison-ssh-vs-railway">🆚 Comparison: SSH vs Railway</h3>
 <table>
 <thead>
 <tr>
@@ -303,19 +303,19 @@
 <td>Easy</td>
 </tr>
 </tbody></table>
-<h2 id="option-1-use-railway-recommended-for-beginners">🚀 Option 1: Use Railway (Recommended for Beginners)</h2>
-<h3 id="step-1-create-railway-account">Step 1: Create Railway Account</h3>
+<h3 id="option-1-use-railway-recommended-for-beginners">🚀 Option 1: Use Railway (Recommended for Beginners)</h3>
+<h4 id="step-1-create-railway-account">Step 1: Create Railway Account</h4>
 <pre><code>1. Go to: https://railway.app
 2. Sign up with GitHub
 3. Give permissions to your repo
 </code></pre>
-<h3 id="step-2-create-new-project">Step 2: Create New Project</h3>
+<h4 id="step-2-create-new-project">Step 2: Create New Project</h4>
 <pre><code>1. Click &quot;New Project&quot;
 2. Select &quot;Deploy from GitHub&quot;
 3. Choose your repository
 4. Select &quot;Confirm Deploy&quot;
 </code></pre>
-<h3 id="step-3-configure-railwayjson">Step 3: Configure railway.json</h3>
+<h4 id="step-3-configure-railwayjson">Step 3: Configure railway.json</h4>
 <p>Your <code>railway.json</code> should look like:</p>
 <pre><code class="language-json">{
   &quot;$schema&quot;: &quot;https://railway.app/railway.schema.json&quot;,
@@ -329,7 +329,7 @@
   }
 }
 </code></pre>
-<h3 id="step-4-add-environment-variables">Step 4: Add Environment Variables</h3>
+<h4 id="step-4-add-environment-variables">Step 4: Add Environment Variables</h4>
 <p>In Railway dashboard:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -352,25 +352,25 @@ PORT=3000
 </code></pre>
 </li>
 </ol>
-<h3 id="step-5-deploy">Step 5: Deploy</h3>
+<h4 id="step-5-deploy">Step 5: Deploy</h4>
 <pre><code>1. Go to &quot;Deployments&quot; tab
 2. Click &quot;Deploy&quot; button
 3. Watch it build and deploy
 4. Get your URL (e.g., https://app-name-production.up.railway.app)
 </code></pre>
-<h3 id="step-6-auto-deploy-from-github">Step 6: Auto-Deploy from GitHub</h3>
+<h4 id="step-6-auto-deploy-from-github">Step 6: Auto-Deploy from GitHub</h4>
 <pre><code>1. Go to &quot;Settings&quot; tab
 2. Enable &quot;Deploy on Push&quot;
 3. Select branch (main)
 4. Save
 </code></pre>
 <p>Now every push to <code>main</code> auto-deploys!</p>
-<h2 id="using-railway-with-our-workflows">📦 Using Railway with Our Workflows</h2>
-<h3 id="option-a-railway-only-simplest">Option A: Railway Only (Simplest)</h3>
+<h3 id="using-railway-with-our-workflows">📦 Using Railway with Our Workflows</h3>
+<h4 id="option-a-railway-only-simplest">Option A: Railway Only (Simplest)</h4>
 <pre><code>Don&#39;t use our deploy.yml
 Use Railway&#39;s built-in GitHub integration
 </code></pre>
-<h3 id="option-b-railway-github-actions">Option B: Railway + GitHub Actions</h3>
+<h4 id="option-b-railway-github-actions">Option B: Railway + GitHub Actions</h4>
 <pre><code>Use our workflows to:
 1. Run tests
 2. Build Docker image
@@ -383,27 +383,27 @@ Use Railway&#39;s built-in GitHub integration
     token: ${{ secrets.RAILWAY_TOKEN }}
     service: ${{ secrets.RAILWAY_SERVICE_ID }}
 </code></pre>
-<h2 id="step-by-step-railway-setup">🚂 Step-by-Step Railway Setup</h2>
-<h3 id="1-get-railway-token">1. Get Railway Token</h3>
+<h3 id="step-by-step-railway-setup">🚂 Step-by-Step Railway Setup</h3>
+<h4 id="1-get-railway-token">1. Get Railway Token</h4>
 <pre><code>1. Go to: https://railway.app/account/tokens
 2. Create new token
 3. Copy token
 4. Add to GitHub secrets as: RAILWAY_TOKEN
 </code></pre>
-<h3 id="2-get-service-id">2. Get Service ID</h3>
+<h4 id="2-get-service-id">2. Get Service ID</h4>
 <pre><code>1. In Railway dashboard
 2. Go to your project
 3. Click &quot;Settings&quot;
 4. Copy &quot;Service ID&quot;
 5. Add to GitHub secrets as: RAILWAY_SERVICE_ID
 </code></pre>
-<h3 id="3-configure-github-secrets">3. Configure GitHub Secrets</h3>
+<h4 id="3-configure-github-secrets">3. Configure GitHub Secrets</h4>
 <p>Go to: <code>Settings &gt; Secrets and variables &gt; Actions</code></p>
 <p>Add:</p>
 <pre><code>RAILWAY_TOKEN = your-token-here
 RAILWAY_SERVICE_ID = your-service-id
 </code></pre>
-<h3 id="4-update-workflow">4. Update Workflow</h3>
+<h4 id="4-update-workflow">4. Update Workflow</h4>
 <pre><code class="language-yaml"># .github/workflows/deploy.yml
 
 deploy-railway:
@@ -420,21 +420,21 @@ deploy-railway:
         token: ${{ secrets.RAILWAY_TOKEN }}
         service: ${{ secrets.RAILWAY_SERVICE_ID }}
 </code></pre>
-<h2 id="railway-pricing">📊 Railway Pricing</h2>
-<h3 id="free-tier">Free Tier</h3>
+<h3 id="railway-pricing">📊 Railway Pricing</h3>
+<h4 id="free-tier">Free Tier</h4>
 <ul>
 <li>✅ $5 monthly credit</li>
 <li>✅ 500 build minutes</li>
 <li>✅ Enough for small projects</li>
 <li>✅ Automatic SSL</li>
 </ul>
-<h3 id="pay-as-you-go">Pay as You Go</h3>
+<h4 id="pay-as-you-go">Pay as You Go</h4>
 <ul>
 <li>💰 $0.50/GB-month (memory)</li>
 <li>💰 $0.10/CPU-month</li>
 <li>💰 Typical app: $5-10/month</li>
 </ul>
-<h2 id="railway-deployment-steps">✅ Railway Deployment Steps</h2>
+<h3 id="railway-deployment-steps">✅ Railway Deployment Steps</h3>
 <pre><code>Push to main
     ↓
 GitHub notifies Railway
@@ -449,8 +449,8 @@ App is live on railway.app subdomain
     ↓
 Access via your custom domain
 </code></pre>
-<h2 id="railway-vs-our-manual-deploy">🔧 Railway vs Our Manual Deploy</h2>
-<h3 id="our-manual-deploy-ssh">Our Manual Deploy (SSH)</h3>
+<h3 id="railway-vs-our-manual-deploy">🔧 Railway vs Our Manual Deploy</h3>
+<h4 id="our-manual-deploy-ssh">Our Manual Deploy (SSH)</h4>
 <pre><code class="language-yaml"># Pros
 ✅ Full server control
 ✅ Custom configurations
@@ -461,7 +461,7 @@ Access via your custom domain
 ❌ Setup SSL/TLS manually
 ❌ Handle upgrades/security
 </code></pre>
-<h3 id="railway-deploy">Railway Deploy</h3>
+<h4 id="railway-deploy">Railway Deploy</h4>
 <pre><code class="language-yaml"># Pros
 ✅ Zero server management
 ✅ Auto SSL/TLS
@@ -473,26 +473,26 @@ Access via your custom domain
 ❌ Vendor lock-in
 ❌ Limited customization
 </code></pre>
-<h2 id="recommended-setup-for-you">🎯 Recommended Setup for You</h2>
-<h3 id="for-quick-start-recommended">For Quick Start (Recommended)</h3>
+<h3 id="recommended-setup-for-you">🎯 Recommended Setup for You</h3>
+<h4 id="for-quick-start-recommended">For Quick Start (Recommended)</h4>
 <pre><code>Use Railway
 - Zero infrastructure setup
 - Auto SSL
 - Auto deployments
 - Free tier enough for portfolio
 </code></pre>
-<h3 id="for-full-control">For Full Control</h3>
+<h4 id="for-full-control">For Full Control</h4>
 <pre><code>Use our SSH workflows
 - Own server
 - Full customization
 - Long-term cost savings
 </code></pre>
-<h3 id="for-both-hybrid">For Both (Hybrid)</h3>
+<h4 id="for-both-hybrid">For Both (Hybrid)</h4>
 <pre><code>Use Railway for staging
 Use SSH for production
 Best of both worlds
 </code></pre>
-<h2 id="railwayjson-example-for-your-app">📝 railway.json Example for Your App</h2>
+<h3 id="railwayjson-example-for-your-app">📝 railway.json Example for Your App</h3>
 <pre><code class="language-json">{
   &quot;$schema&quot;: &quot;https://railway.app/railway.schema.json&quot;,
   &quot;build&quot;: {
@@ -514,7 +514,7 @@ Best of both worlds
   }
 }
 </code></pre>
-<h2 id="deploy-on-railway-in-5-minutes">🚀 Deploy on Railway in 5 Minutes</h2>
+<h3 id="deploy-on-railway-in-5-minutes">🚀 Deploy on Railway in 5 Minutes</h3>
 <pre><code class="language-bash"># 1. Update railway.json (see above)
 git add railway.json
 git commit -m &quot;feat: configure railway deployment&quot;
@@ -532,8 +532,8 @@ git push origin main
 
 # 5. Done!
 </code></pre>
-<h2 id="connect-custom-domain-to-railway">🔗 Connect Custom Domain to Railway</h2>
-<h3 id="add-custom-domain">Add Custom Domain</h3>
+<h3 id="connect-custom-domain-to-railway">🔗 Connect Custom Domain to Railway</h3>
+<h4 id="add-custom-domain">Add Custom Domain</h4>
 <pre><code>1. Railway dashboard
 2. Click your project
 3. Go to &quot;Settings&quot;
@@ -542,7 +542,7 @@ git push origin main
 6. Add CNAME record to your DNS
 7. Done!
 </code></pre>
-<h3 id="dns-configuration-example">DNS Configuration Example</h3>
+<h4 id="dns-configuration-example">DNS Configuration Example</h4>
 <p>If using Namecheap or similar:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -561,7 +561,7 @@ git push origin main
 Name: www (or @)
 Value: your-app.up.railway.app
 </code></pre>
-<h2 id="railway-features-for-your-app">🎁 Railway Features for Your App</h2>
+<h3 id="railway-features-for-your-app">🎁 Railway Features for Your App</h3>
 <table>
 <thead>
 <tr>
@@ -602,7 +602,7 @@ Value: your-app.up.railway.app
 <td>✅ Supported</td>
 </tr>
 </tbody></table>
-<h2 id="expected-performance">📊 Expected Performance</h2>
+<h3 id="expected-performance">📊 Expected Performance</h3>
 <p>Railway provides:</p>
 <ul>
 <li><strong>Response time</strong>: &lt; 100ms</li>
@@ -611,7 +611,7 @@ Value: your-app.up.railway.app
 <li><strong>CDN</strong>: Optional</li>
 <li><strong>Backups</strong>: Manual only</li>
 </ul>
-<h2 id="railway-limitations">⚠️ Railway Limitations</h2>
+<h3 id="railway-limitations">⚠️ Railway Limitations</h3>
 <ul>
 <li>Limited to 100GB storage (free tier)</li>
 <li>Limited build minutes (500/month free)</li>
@@ -619,25 +619,25 @@ Value: your-app.up.railway.app
 <li>No SSH access</li>
 <li>Limited customization</li>
 </ul>
-<h2 id="railway-troubleshooting">🆘 Railway Troubleshooting</h2>
-<h3 id="build-fails">Build fails</h3>
+<h3 id="railway-troubleshooting">🆘 Railway Troubleshooting</h3>
+<h4 id="build-fails">Build fails</h4>
 <pre><code>1. Check logs: Railway dashboard &gt; Deployments
 2. Common issues:
    - Node version mismatch
    - Missing environment variables
    - Dockerfile path incorrect
 </code></pre>
-<h3 id="app-doesnand39t-start">App doesn&#39;t start</h3>
+<h4 id="app-doesnand39t-start">App doesn&#39;t start</h4>
 <pre><code>1. Check start command in railway.json
 2. Should be: node dist/index.js
 3. Check port: Should use process.env.PORT || 3000
 </code></pre>
-<h3 id="slow-deployments">Slow deployments</h3>
+<h4 id="slow-deployments">Slow deployments</h4>
 <pre><code>1. Clear Railway cache: Settings &gt; Clear Cache
 2. Check dependencies: pnpm-lock.yaml
 3. Use .dockerignore: Already included
 </code></pre>
-<h2 id="decision-tree-ssh-vs-railway">🎯 Decision Tree: SSH vs Railway</h2>
+<h3 id="decision-tree-ssh-vs-railway">🎯 Decision Tree: SSH vs Railway</h3>
 <pre><code>Do you want zero setup?
 ├─ YES → Use Railway
 └─ NO → Use SSH
@@ -654,13 +654,13 @@ Budget for infrastructure?
 ├─ YES → Use SSH
 └─ NO → Use Railway (free tier)
 </code></pre>
-<h2 id="recommended-path">📚 Recommended Path</h2>
+<h3 id="recommended-path">📚 Recommended Path</h3>
 <p>For your portfolio app:</p>
 <pre><code>1. Start with Railway (quick setup)
 2. Get comfortable with deployments
 3. Later move to SSH if needed
 </code></pre>
-<h2 id="railway-deployment-flow">🔄 Railway Deployment Flow</h2>
+<h3 id="railway-deployment-flow">🔄 Railway Deployment Flow</h3>
 <pre><code>1. Push to GitHub
    git push origin main
     ↓
@@ -679,8 +679,8 @@ Budget for infrastructure?
     ↓
 7. Done! App is live 🎉
 </code></pre>
-<h2 id="next-steps">🎓 Next Steps</h2>
-<h3 id="choose-your-path">Choose Your Path:</h3>
+<h3 id="next-steps">🎓 Next Steps</h3>
+<h4 id="choose-your-path">Choose Your Path:</h4>
 <p><strong>Path A: Use Railway (Recommended)</strong></p>
 <ol>
 <li>Create Railway account</li>

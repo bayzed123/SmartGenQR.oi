@@ -247,8 +247,8 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="vite-config-quick-reference">⚡ Vite Config Quick Reference</h1>
-<h2 id="your-setup">Your Setup</h2>
+                        <h2 id="vite-config-quick-reference">⚡ Vite Config Quick Reference</h2>
+<h3 id="your-setup">Your Setup</h3>
 <pre><code class="language-typescript">// vite.config.ts
 build: {
   outDir: &quot;dist/public&quot;,
@@ -265,7 +265,7 @@ server: {
   ],
 }
 </code></pre>
-<h2 id="key-facts-about-your-vite-build">Key Facts About Your Vite Build</h2>
+<h3 id="key-facts-about-your-vite-build">Key Facts About Your Vite Build</h3>
 <table>
 <thead>
 <tr>
@@ -300,7 +300,7 @@ server: {
 <td>Default dev server port</td>
 </tr>
 </tbody></table>
-<h2 id="build-command-breakdown">Build Command Breakdown</h2>
+<h3 id="build-command-breakdown">Build Command Breakdown</h3>
 <pre><code class="language-bash">pnpm build
   ↓
 vite build
@@ -311,8 +311,8 @@ vite build
   └─ Outputs to: dist/public/
 </code></pre>
 <p><strong>Time</strong>: ~15-20 seconds (with caching)</p>
-<h2 id="what-happens-in-cicd">What Happens in CI/CD</h2>
-<h3 id="1-installation-30-seconds">1️⃣ Installation (~30 seconds)</h3>
+<h3 id="what-happens-in-cicd">What Happens in CI/CD</h3>
+<h4 id="1-installation-30-seconds">1️⃣ Installation (~30 seconds)</h4>
 <pre><code class="language-bash">pnpm install --frozen-lockfile
 </code></pre>
 <ul>
@@ -320,7 +320,7 @@ vite build
 <li>Installs 100+ dependencies</li>
 <li>Uses GitHub Actions cache</li>
 </ul>
-<h3 id="2-type-check-3-seconds">2️⃣ Type Check (~3 seconds)</h3>
+<h4 id="2-type-check-3-seconds">2️⃣ Type Check (~3 seconds)</h4>
 <pre><code class="language-bash">pnpm check
 </code></pre>
 <ul>
@@ -328,7 +328,7 @@ vite build
 <li>Catches type errors early</li>
 <li>No build output</li>
 </ul>
-<h3 id="3-build-20-seconds">3️⃣ Build (~20 seconds)</h3>
+<h4 id="3-build-20-seconds">3️⃣ Build (~20 seconds)</h4>
 <pre><code class="language-bash">NODE_ENV=production pnpm build
 </code></pre>
 <ul>
@@ -337,7 +337,7 @@ vite build
 <li>Minifies everything</li>
 <li>Outputs to <code>dist/public/</code></li>
 </ul>
-<h3 id="4-verification-2-seconds">4️⃣ Verification (~2 seconds)</h3>
+<h4 id="4-verification-2-seconds">4️⃣ Verification (~2 seconds)</h4>
 <pre><code class="language-bash"># Check dist exists
 if [ ! -d &quot;dist&quot; ]; then exit 1; fi
 
@@ -347,13 +347,13 @@ find dist -type f | wc -l
 # Show size
 du -sh dist
 </code></pre>
-<h3 id="5-deployment-10-seconds">5️⃣ Deployment (~10 seconds)</h3>
+<h4 id="5-deployment-10-seconds">5️⃣ Deployment (~10 seconds)</h4>
 <ul>
 <li>Copy <code>dist/</code> to server</li>
 <li>Restart Express server</li>
 <li>Health check</li>
 </ul>
-<h2 id="commands-cheat-sheet">Commands Cheat Sheet</h2>
+<h3 id="commands-cheat-sheet">Commands Cheat Sheet</h3>
 <pre><code class="language-bash"># Development
 pnpm dev                    # Start Vite dev server (port 3000)
 
@@ -370,14 +370,14 @@ pnpm check                  # TypeScript check only (no build)
 # Formatting
 pnpm format                 # Format code with Prettier
 </code></pre>
-<h2 id="workflow-environment-variables">Workflow Environment Variables</h2>
+<h3 id="workflow-environment-variables">Workflow Environment Variables</h3>
 <p>Add to your workflows for better builds:</p>
 <pre><code class="language-yaml">env:
   NODE_ENV: production
   VITE_BUILD_TARGET: es2020     # Modern JavaScript
   VITE_SOURCEMAP: false          # Disable source maps
 </code></pre>
-<h2 id="file-structure-after-build">File Structure After Build</h2>
+<h3 id="file-structure-after-build">File Structure After Build</h3>
 <pre><code>dist/
 ├── public/                  # Your build output
 │   ├── index.html          # Main entry point
@@ -388,21 +388,21 @@ pnpm format                 # Format code with Prettier
 │   └── ...other files
 └── index.js                # Express server entry
 </code></pre>
-<h2 id="github-actions-integration">GitHub Actions Integration</h2>
-<h3 id="build-step">Build Step</h3>
+<h3 id="github-actions-integration">GitHub Actions Integration</h3>
+<h4 id="build-step">Build Step</h4>
 <pre><code class="language-yaml">- name: Build with Vite
   run: pnpm build
   env:
     NODE_ENV: production
     VITE_BUILD_TARGET: es2020
 </code></pre>
-<h3 id="verify-step">Verify Step</h3>
+<h4 id="verify-step">Verify Step</h4>
 <pre><code class="language-yaml">- name: Verify build
   run: |
     test -d dist &amp;&amp; echo &quot;✅ Build OK&quot; || exit 1
     find dist -name &#39;*.js&#39; | wc -l
 </code></pre>
-<h3 id="upload-step">Upload Step</h3>
+<h4 id="upload-step">Upload Step</h4>
 <pre><code class="language-yaml">- name: Upload artifacts
   uses: actions/upload-artifact@v4
   with:
@@ -410,8 +410,8 @@ pnpm format                 # Format code with Prettier
     path: dist/
     retention-days: 5
 </code></pre>
-<h2 id="docker-best-practices-for-vite">Docker Best Practices for Vite</h2>
-<h3 id="multi-stage-build">Multi-stage Build</h3>
+<h3 id="docker-best-practices-for-vite">Docker Best Practices for Vite</h3>
+<h4 id="multi-stage-build">Multi-stage Build</h4>
 <pre><code class="language-dockerfile">FROM node:20-alpine AS builder
 # ... install and build ...
 RUN pnpm build
@@ -420,7 +420,7 @@ FROM node:20-alpine
 # ... copy dist/ to runtime ...
 COPY --from=builder /app/dist ./dist
 </code></pre>
-<h3 id="in-docker-composeyml">In docker-compose.yml</h3>
+<h4 id="in-docker-composeyml">In docker-compose.yml</h4>
 <pre><code class="language-yaml">services:
   app:
     build: .
@@ -429,8 +429,8 @@ COPY --from=builder /app/dist ./dist
     environment:
       NODE_ENV: production
 </code></pre>
-<h2 id="debugging-build-issues">Debugging Build Issues</h2>
-<h3 id="build-not-starting">Build not starting?</h3>
+<h3 id="debugging-build-issues">Debugging Build Issues</h3>
+<h4 id="build-not-starting">Build not starting?</h4>
 <pre><code class="language-bash"># Check Vite is installed
 pnpm list vite
 
@@ -441,7 +441,7 @@ pnpm build --verbose
 rm -rf node_modules .vite
 pnpm install
 </code></pre>
-<h3 id="build-failing-in-ci-but-works-locally">Build failing in CI but works locally?</h3>
+<h4 id="build-failing-in-ci-but-works-locally">Build failing in CI but works locally?</h4>
 <pre><code class="language-bash"># Ensure same Node version
 node -v  # Should be v20+
 
@@ -451,21 +451,21 @@ pnpm store prune
 # Reinstall
 pnpm install --frozen-lockfile
 </code></pre>
-<h3 id="build-too-slow">Build too slow?</h3>
+<h4 id="build-too-slow">Build too slow?</h4>
 <pre><code class="language-bash"># Check if dependencies installed
 pnpm list --depth=0
 
 # Use cache in CI/CD
 # Already configured in workflows
 </code></pre>
-<h2 id="performance-tips">Performance Tips</h2>
-<h3 id="1-keep-dependencies-minimal">1. Keep Dependencies Minimal</h3>
+<h3 id="performance-tips">Performance Tips</h3>
+<h4 id="1-keep-dependencies-minimal">1. Keep Dependencies Minimal</h4>
 <ul>
 <li>Your project has ~100 dependencies</li>
 <li>Vite handles them efficiently</li>
 <li>Remove unused packages</li>
 </ul>
-<h3 id="2-code-splitting">2. Code Splitting</h3>
+<h4 id="2-code-splitting">2. Code Splitting</h4>
 <p>Your Radix UI components (21 packages) are bundled together. Consider splitting:</p>
 <pre><code class="language-typescript">// vite.config.ts
 rollupOptions: {
@@ -477,21 +477,21 @@ rollupOptions: {
   }
 }
 </code></pre>
-<h3 id="3-lazy-load-components">3. Lazy Load Components</h3>
+<h4 id="3-lazy-load-components">3. Lazy Load Components</h4>
 <pre><code class="language-typescript">import { lazy } from &#39;react&#39;;
 
 const HeavyComponent = lazy(() =&gt; 
   import(&#39;./HeavyComponent&#39;)
 );
 </code></pre>
-<h3 id="4-monitor-bundle-size">4. Monitor Bundle Size</h3>
+<h4 id="4-monitor-bundle-size">4. Monitor Bundle Size</h4>
 <pre><code class="language-bash"># Add to package.json
 &quot;build:analyze&quot;: &quot;vite build --analyze&quot;
 
 # Then npm install -g rollup-plugin-visualizer
 </code></pre>
-<h2 id="common-errors-andamp-fixes">Common Errors &amp; Fixes</h2>
-<h3 id="andquotdist-is-not-a-directoryandquot">❌ &quot;dist is not a directory&quot;</h3>
+<h3 id="common-errors-andamp-fixes">Common Errors &amp; Fixes</h3>
+<h4 id="andquotdist-is-not-a-directoryandquot">❌ &quot;dist is not a directory&quot;</h4>
 <p><strong>Fix</strong>: <code>pnpm build</code> didn&#39;t complete</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -514,14 +514,14 @@ rm -rf dist node_modules
 pnpm install
 pnpm build
 </code></pre>
-<h3 id="andquotenoent-no-such-file-or-directory-and39distpublicand39andquot">❌ &quot;ENOENT: no such file or directory &#39;dist/public&#39;&quot;</h3>
+<h4 id="andquotenoent-no-such-file-or-directory-and39distpublicand39andquot">❌ &quot;ENOENT: no such file or directory &#39;dist/public&#39;&quot;</h4>
 <p><strong>Fix</strong>: Check vite.config.ts <code>outDir</code></p>
 <pre><code class="language-typescript">// Should be:
 outDir: &quot;dist/public&quot;
 // Or:
 outDir: path.resolve(__dirname, &quot;dist/public&quot;)
 </code></pre>
-<h3 id="andquotcannot-find-module-and39and39andquot">❌ &quot;Cannot find module &#39;@&#39;&quot;</h3>
+<h4 id="andquotcannot-find-module-and39and39andquot">❌ &quot;Cannot find module &#39;@&#39;&quot;</h4>
 <p><strong>Fix</strong>: Alias not configured. Already done in your vite.config.ts:</p>
 <pre><code class="language-typescript">resolve: {
   alias: {
@@ -529,14 +529,14 @@ outDir: path.resolve(__dirname, &quot;dist/public&quot;)
   },
 }
 </code></pre>
-<h3 id="andquotcss-not-loading-in-productionandquot">❌ &quot;CSS not loading in production&quot;</h3>
+<h4 id="andquotcss-not-loading-in-productionandquot">❌ &quot;CSS not loading in production&quot;</h4>
 <p><strong>Fix</strong>: Enable CSS code splitting:</p>
 <pre><code class="language-typescript">build: {
   cssCodeSplit: true,
 }
 </code></pre>
-<h2 id="monitoring-build-health">Monitoring Build Health</h2>
-<h3 id="in-workflows">In Workflows</h3>
+<h3 id="monitoring-build-health">Monitoring Build Health</h3>
+<h4 id="in-workflows">In Workflows</h4>
 <pre><code class="language-yaml">- name: Build Report
   run: |
     echo &quot;## Build Report&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
@@ -544,7 +544,7 @@ outDir: path.resolve(__dirname, &quot;dist/public&quot;)
     echo &quot;- Output: dist/&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
     du -sh dist &gt;&gt; $GITHUB_STEP_SUMMARY
 </code></pre>
-<h3 id="local-testing">Local Testing</h3>
+<h4 id="local-testing">Local Testing</h4>
 <pre><code class="language-bash"># Build and preview
 pnpm build
 pnpm preview --host
@@ -552,7 +552,7 @@ pnpm preview --host
 # Open browser
 # http://localhost:4173
 </code></pre>
-<h2 id="next-advanced-topics">Next: Advanced Topics</h2>
+<h3 id="next-advanced-topics">Next: Advanced Topics</h3>
 <p>See <code>VITE_OPTIMIZATION.md</code> for:</p>
 <ul>
 <li>Bundle analysis</li>

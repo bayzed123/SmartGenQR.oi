@@ -247,11 +247,11 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="getting-started">Getting Started</h1>
+                        <h2 id="getting-started">Getting Started</h2>
 <p>  Welcome to the <strong>SmartGen</strong> project! This guide will help you get your local environment ready for development in just a few minutes.</p>
-<h2 id="what-is-smartgen">What is SmartGen?</h2>
+<h3 id="what-is-smartgen">What is SmartGen?</h3>
 <p>  SmartGen is a collection of free, privacy-first developer and marketing utilities — QR code generators, image compressors, text converters, and more — all processed <strong>entirely in the browser</strong>. No data ever touches a server.</p>
-<h2 id="prerequisites">Prerequisites</h2>
+<h3 id="prerequisites">Prerequisites</h3>
 <p>  Before you begin, make sure you have the following installed:</p>
 <ul>
 <li><strong>Node.js</strong> 18 or higher</li>
@@ -279,15 +279,15 @@ git --version
 <p>  If <code>pnpm</code> isn&#39;t installed yet:</p>
 <pre><code class="language-bash">npm install -g pnpm
 </code></pre>
-<h2 id="clone-the-repository">Clone the Repository</h2>
+<h3 id="clone-the-repository">Clone the Repository</h3>
 <pre><code class="language-bash">git clone https://github.com/bayzed123/SmartGenQR.oi.git
 cd SmartGenQR.oi
 </code></pre>
-<h2 id="install-dependencies">Install Dependencies</h2>
+<h3 id="install-dependencies">Install Dependencies</h3>
 <pre><code class="language-bash">pnpm install
 </code></pre>
 <p>  This installs everything needed for both the site and the build scripts (<code>marked</code>, <code>gray-matter</code>, <code>slugify</code>, etc.).</p>
-<h2 id="run-the-build-scripts">Run the Build Scripts</h2>
+<h3 id="run-the-build-scripts">Run the Build Scripts</h3>
 <p>  SmartGen generates its Blog and Docs sections as static HTML from Markdown source files.</p>
 <pre><code class="language-bash">pnpm build
 </code></pre>
@@ -295,7 +295,7 @@ cd SmartGenQR.oi
 <pre><code class="language-bash">npm run build-blog   # compiles blog-posts/*.md → /blog/
 npm run build-docs   # compiles docs-posts/*.md → /docs/
 </code></pre>
-<h2 id="preview-locally">Preview Locally</h2>
+<h3 id="preview-locally">Preview Locally</h3>
 <p>  Since SmartGen is a static site, you can preview it with any simple local server:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -313,7 +313,7 @@ npm run build-docs   # compiles docs-posts/*.md → /docs/
 <pre><code class="language-bash">npx serve .
 </code></pre>
 <p>  Then open <code>http://localhost:3000</code> in your browser.</p>
-<h2 id="project-architecture-quick-overview">Project Architecture (Quick Overview)</h2>
+<h3 id="project-architecture-quick-overview">Project Architecture (Quick Overview)</h3>
 <p>  SmartGen follows a <strong>modular, client-side-first architecture</strong>:</p>
 <ul>
 <li>Each tool lives in its own folder: <code>/[tool-folder]/index.html</code></li>
@@ -322,7 +322,7 @@ npm run build-docs   # compiles docs-posts/*.md → /docs/
 <li>Blog &amp; Docs are generated from Markdown via Node.js build scripts in <code>/scripts/</code></li>
 </ul>
 <p>  For a deeper dive, see the <a href="/docs/installation/">Installation Guide</a> and <a href="/docs/api-reference/">API Reference</a>.</p>
-<h2 id="next-steps">Next Steps</h2>
+<h3 id="next-steps">Next Steps</h3>
 <ul>
 <li>✅ Explore the <code>/[tool-folder]/</code> directories to see how individual tools are built</li>
 <li>✅ Read <a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md">`CONTRIBUTING.md`</a> before submitting a PR</li>

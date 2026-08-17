@@ -1,5 +1,6 @@
 ---
 title: "Upwork for Beginners: The Complete Guide to Your First Client in 2026"
+seo_title: "Upwork for Beginners: Land Your First Client"
 date: "2026-08-16"
 author: "Sayad Md Bayezid Hosan"
 description: "A practical Upwork guide for beginners: how the algorithm actually ranks profiles, what Connects really cost you, how to write proposals that get opened, and the pricing mistakes that keep new freelancers stuck at zero."
@@ -8,7 +9,6 @@ tags: ["Upwork", "Freelancing", "Remote Work", "Proposals", "Career", "Digital M
 category: "Education Blog"
 slug: "upwork-for-beginners-complete-guide-2026"
 ---
-
 > ✅ **Written by Sayad Md Bayezid Hosan** — Founder of SmartGen Tools | Last Updated: August 16, 2026
 
 ---

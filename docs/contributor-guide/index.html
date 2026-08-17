@@ -247,7 +247,7 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="smartgen-contributor-andamp-api-reference-guide">SmartGen — Contributor &amp; API Reference Guide</h1>
+                        <h2 id="smartgen-contributor-andamp-api-reference-guide">SmartGen — Contributor &amp; API Reference Guide</h2>
 <p>  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" title="" class="doc-image">
 <br>  <img src="https://img.shields.io/badge/Architecture-100%25_Client--Side-success" alt="Client-Side Only" title="" class="doc-image">
 <br>  <img src="https://img.shields.io/badge/Tools-131%2B-blue" alt="Tools" title="" class="doc-image">
@@ -257,9 +257,9 @@
 <p>📌 <strong>File location suggestion:</strong> <code>docs-post/CONTRIBUTOR-GUIDE.md</code></p>
 </blockquote>
 <hr>
-<h2 id=""><img src="/assets/images/docs/architecture-diagram.svg" alt="SmartGen Architecture" title="" class="doc-image">
-</h2>
-<h2 id="table-of-contents">📖 Table of Contents</h2>
+<h3 id=""><img src="/assets/images/docs/architecture-diagram.svg" alt="SmartGen Architecture" title="" class="doc-image">
+</h3>
+<h3 id="table-of-contents">📖 Table of Contents</h3>
 <ol>
 <li><a href="#1-project-philosophy">Project Philosophy</a></li>
 <li><a href="#2-architecture-overview">Architecture Overview</a></li>
@@ -283,7 +283,7 @@
 <li><a href="#11-license">License</a></li>
 </ol>
 <hr>
-<h2 id="1-project-philosophy">1. Project Philosophy</h2>
+<h3 id="1-project-philosophy">1. Project Philosophy</h3>
 <p>  SmartGen is built on four non-negotiable principles:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -324,7 +324,7 @@
 </tbody></table>
 <p>  If a pull request violates any of these four rules, it will be rejected regardless of code quality.</p>
 <hr>
-<h2 id="2-architecture-overview">2. Architecture Overview</h2>
+<h3 id="2-architecture-overview">2. Architecture Overview</h3>
 <pre><code class="language-mermaid">graph TD
   A[User Browser] --&gt; B[index.html / tool pages]
   B --&gt; C[assets/js/app.js&lt;br/&gt;Navbar + Footer + Theme]
@@ -339,7 +339,7 @@
 </code></pre>
 <p>  <strong>Key idea:</strong> Every page is static HTML. All &quot;smart&quot; behavior (navbar, search, chatbot, related tools) is injected client-side via vanilla JS files loaded on every page.</p>
 <hr>
-<h2 id="3-folder-structure">3. Folder Structure</h2>
+<h3 id="3-folder-structure">3. Folder Structure</h3>
 <pre><code>SmartGenQR.oi/
 ├── assets/
 │   ├── js/
@@ -370,7 +370,7 @@
 <p>⚠️ <strong>Rule:</strong> Every new tool = a <strong>new top-level folder</strong> with its own <code>index.html</code>. Never nest tools inside other tools.</p>
 </blockquote>
 <hr>
-<h2 id="4-getting-started-local-setup">4. Getting Started (Local Setup)</h2>
+<h3 id="4-getting-started-local-setup">4. Getting Started (Local Setup)</h3>
 <pre><code class="language-bash"># 1. Clone the repository
 git clone https://github.com/bayzed123/SmartGenQR.oi.git
 cd SmartGenQR.oi
@@ -414,7 +414,7 @@ pnpm build
 </tr>
 </tbody></table>
 <hr>
-<h2 id="5-contribution-rules">5. Contribution Rules</h2>
+<h3 id="5-contribution-rules">5. Contribution Rules</h3>
 <ol>
 <li><strong>One tool = one folder.</strong> e.g. <code>/new-tool/index.html</code></li>
 <li><strong>Client-side only.</strong> No <code>fetch()</code> calls to your own backend. External read-only APIs (like public REST APIs) are okay if privacy-safe.</li>
@@ -430,9 +430,9 @@ pnpm build
 <li>Submit changes via <strong>Pull Request</strong>, not direct push to <code>main</code>.</li>
 </ol>
 <hr>
-<h2 id="6-api-reference-core-modules">6. API Reference — Core Modules</h2>
+<h3 id="6-api-reference-core-modules">6. API Reference — Core Modules</h3>
 <p>  This section documents every JS &quot;API&quot; surface in the codebase — the functions and data objects other files depend on.</p>
-<h3 id="61-appjs-site-shell-engine">6.1 <code>app.js</code> — Site Shell Engine</h3>
+<h4 id="61-appjs-site-shell-engine">6.1 <code>app.js</code> — Site Shell Engine</h4>
 <p>  <strong>Purpose:</strong> Injects the shared navbar/footer and manages theme (light/dark) on every single page.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -495,7 +495,7 @@ pnpm build
 <p>⚠️ <strong>Why absolute paths matter:</strong> The code comment in <code>app.js</code> explicitly states:<br><code>// Absolute paths (/) are used to prevent routing errors like &#39;blog/blog/&#39;</code><br>Always use <code>/assets/...</code> never <code>./assets/...</code> in any script/link tag you add.</p>
 </blockquote>
 <hr>
-<h3 id="62-search-datajs-tools-index-toolsindex">6.2 <code>search-data.js</code> — Tools Index (<code>TOOLS_INDEX</code>)</h3>
+<h4 id="62-search-datajs-tools-index-toolsindex">6.2 <code>search-data.js</code> — Tools Index (<code>TOOLS_INDEX</code>)</h4>
 <p>  <strong>Purpose:</strong> The single master list of all tools. Powers site search, related-tools widget, and (once wired in) the chatbot&#39;s tool-matching.</p>
 <p>  <strong>Exposed global:</strong> <code>TOOLS_INDEX</code> (Array)</p>
 <p>  <strong>Schema (one object per tool):</strong></p>
@@ -562,7 +562,7 @@ pnpm build
 </tr>
 </tbody></table>
 <hr>
-<h3 id="63-related-toolsjs-recommendation-engine">6.3 <code>related-tools.js</code> — Recommendation Engine</h3>
+<h4 id="63-related-toolsjs-recommendation-engine">6.3 <code>related-tools.js</code> — Recommendation Engine</h4>
 <p>  <strong>Purpose:</strong> Reads <code>TOOLS_INDEX</code> and renders a &quot;Related Tools You Might Need&quot; block on any tool page.</p>
 <p>  <strong>Loaded on:</strong> Individual tool pages that include <code>&lt;div id=&quot;dynamic-related-tools&quot;&gt;&lt;/div&gt;</code>.</p>
 <table>
@@ -591,7 +591,7 @@ const repoName = (isGitHubPages &amp;&amp; !isCustomDomain)
 <pre><code class="language-html">&lt;div id=&quot;dynamic-related-tools&quot;&gt;&lt;/div&gt;
 </code></pre>
 <hr>
-<h3 id="64-chatbotjs-smartgenchatbot-class">6.4 <code>chatbot.js</code> — <code>SmartGenChatbot</code> Class</h3>
+<h4 id="64-chatbotjs-smartgenchatbot-class">6.4 <code>chatbot.js</code> — <code>SmartGenChatbot</code> Class</h4>
 <p>  <strong>Purpose:</strong> Client-side FAQ + site-navigation assistant. No server, no API keys.</p>
 <p>  <strong>Exposed global:</strong> <code>SmartGenChatbot</code> (class)</p>
 <p>  <strong>Instantiation:</strong></p>
@@ -682,7 +682,7 @@ const repoName = (isGitHubPages &amp;&amp; !isCustomDomain)
 &lt;script src=&quot;/assets/js/chatbot.js&quot; defer&gt;&lt;/script&gt;
 </code></pre>
 <hr>
-<h3 id="65-datafaqjson-faq-schema">6.5 <code>data/faq.json</code> — FAQ Schema</h3>
+<h4 id="65-datafaqjson-faq-schema">6.5 <code>data/faq.json</code> — FAQ Schema</h4>
 <pre><code class="language-json">{
   &quot;faqs&quot;: [
     {
@@ -724,7 +724,7 @@ const repoName = (isGitHubPages &amp;&amp; !isCustomDomain)
 </tr>
 </tbody></table>
 <hr>
-<h3 id="66-scriptsbuild-blogjs-blog-builder">6.6 <code>scripts/build-blog.js</code> — Blog Builder</h3>
+<h4 id="66-scriptsbuild-blogjs-blog-builder">6.6 <code>scripts/build-blog.js</code> — Blog Builder</h4>
 <p>  <strong>Purpose:</strong> Compiles Markdown files in <code>/blog-posts/</code> into <code>blog.json</code> + static blog HTML pages.</p>
 <p>  <strong>Run via:</strong> <code>pnpm build-blog</code> (internally calls <code>node scripts/build-blog.js</code>)</p>
 <p>  <strong>Dependencies used:</strong> <code>front-matter</code>, <code>gray-matter</code>, <code>marked</code>, <code>slugify</code>, <code>luxon</code></p>
@@ -737,14 +737,14 @@ author: &quot;Sayad Md Bayezid Hosan&quot;
 ---
 </code></pre>
 <hr>
-<h3 id="67-scriptsdocs-buildjs-docs-builder">6.7 <code>scripts/docs-build.js</code> — Docs Builder</h3>
+<h4 id="67-scriptsdocs-buildjs-docs-builder">6.7 <code>scripts/docs-build.js</code> — Docs Builder</h4>
 <p>  <strong>Purpose:</strong> Same pipeline as the blog builder, but for <code>/docs-post/</code> → generates documentation pages.</p>
 <p>  <strong>Run via:</strong> <code>pnpm build-docs</code></p>
 <blockquote>
 <p>💡 This is exactly the tool you&#39;ll use for the file you&#39;re reading right now — drop this file in <code>docs-post/CONTRIBUTOR-GUIDE.md</code>, run <code>pnpm build</code>, and it will be compiled into a live doc page automatically.</p>
 </blockquote>
 <hr>
-<h2 id="7-step-by-step-adding-a-new-tool">7. Step-by-Step: Adding a New Tool</h2>
+<h3 id="7-step-by-step-adding-a-new-tool">7. Step-by-Step: Adding a New Tool</h3>
 <ol>
 <li>Create folder: <code>/your-tool-name/</code></li>
 <li>Add <code>index.html</code> inside it with:<ul>
@@ -771,7 +771,7 @@ author: &quot;Sayad Md Bayezid Hosan&quot;
 <li>Submit a Pull Request.</li>
 </ol>
 <hr>
-<h2 id="8-step-by-step-adding-a-new-faq-entry">8. Step-by-Step: Adding a New FAQ Entry</h2>
+<h3 id="8-step-by-step-adding-a-new-faq-entry">8. Step-by-Step: Adding a New FAQ Entry</h3>
 <ol>
 <li>Open <code>data/faq.json</code></li>
 <li>Add a new object to the <code>faqs</code> array with the next sequential <code>id</code></li>
@@ -780,7 +780,7 @@ author: &quot;Sayad Md Bayezid Hosan&quot;
 <li>Commit and PR</li>
 </ol>
 <hr>
-<h2 id="9-step-by-step-writing-a-blog-post">9. Step-by-Step: Writing a Blog Post</h2>
+<h3 id="9-step-by-step-writing-a-blog-post">9. Step-by-Step: Writing a Blog Post</h3>
 <ol>
 <li>Create a new <code>.md</code> file inside <code>/blog-posts/</code></li>
 <li>Add YAML front matter (see <a href="#66-scriptsbuild-blogjs--blog-builder">Section 6.6</a>)</li>
@@ -790,7 +790,7 @@ author: &quot;Sayad Md Bayezid Hosan&quot;
 <li>Submit PR</li>
 </ol>
 <hr>
-<h2 id="10-deployment-andamp-cicd">10. Deployment &amp; CI/CD</h2>
+<h3 id="10-deployment-andamp-cicd">10. Deployment &amp; CI/CD</h3>
 <table>
 <thead>
 <tr>
@@ -809,7 +809,7 @@ author: &quot;Sayad Md Bayezid Hosan&quot;
 </tbody></table>
 <p>  You do <strong>not</strong> need to manually deploy — merging to <code>main</code> is the deployment.</p>
 <hr>
-<h2 id="11-license">11. License</h2>
+<h3 id="11-license">11. License</h3>
 <p>  Licensed under the <strong>MIT License</strong>.<br>  Copyright (c) 2026 Sayad Md Bayezid Hosan.</p>
 <hr>
 <p>  <em>Questions or improvements to this doc? Open an issue or PR — this file lives at <code>docs-post/CONTRIBUTOR-GUIDE.md</code> and is itself built via <code>scripts/docs-build.js</code>.</em></p>

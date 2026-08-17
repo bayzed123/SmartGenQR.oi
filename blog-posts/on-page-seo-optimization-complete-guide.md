@@ -1,5 +1,6 @@
 ---
-title: "On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners - SmartGen Blog"
+title: "On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners"
+seo_title: "On-Page SEO Guide for Beginners"
 description: "A complete, practical A to Z guide to on-page SEO optimization — conducting audits, optimizing title tags, meta descriptions, headers, images, URLs, internal links, 301 redirects, XML sitemaps, robots.txt, and monitoring page performance for real search results."
 keywords: "SmartGen, SEO, On-Page SEO, On-Page Optimization, Title Tag, Meta Description, Canonical Tag, Header Tag, XML Sitemap, Robots.txt, 301 Redirect, 404 Error Page, Internal Linking, Page Speed, Schema Markup, SmartGen Tools"
 date: 2026-07-02
@@ -17,7 +18,6 @@ tags:
   - Page Performance
 slug: "on-page-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog"
 ---
-
 July 02, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com)
 
 # On-Page SEO Optimization — The Complete A to Z Mega Guide for Beginners

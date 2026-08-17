@@ -1,5 +1,6 @@
 ---
 title: "SmartGen AI Vocal Remover: The Vision Behind 100% Free, Private Audio Stem Splitting"
+seo_title: "AI Vocal Remover: Free, Private Stem Splitting"
 description: "Discover the SmartGen AI Vocal Remover – a 100% free, no sign-up, privacy-focused tool for separating vocals and instruments using advanced Demucs v4 AI technology."
 keywords: "AI Vocal Remover, Free Audio Stem Splitter, Separate Music and Voice Online, Extract Acapella Free, Best Vocal Remover for Karaoke, SmartGen Tools, Demucs v4 online, no sign up vocal remover"
 date: "2026-05-28"

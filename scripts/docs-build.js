@@ -95,6 +95,20 @@ function createSlugMapping(allDocs) {
     return mapping;
 }
 
+/** Shift every heading in rendered markdown down one level, deepest first so
+ *  the passes cannot cascade into each other. No-op when the body has no h1. */
+function demoteContentHeadings(htmlContent) {
+    if (!/<h1[\s>]/i.test(htmlContent)) return htmlContent;
+    for (let level = 5; level >= 1; level--) {
+        const open = new RegExp(`<h${level}(\\s[^>]*)?>`, 'gi');
+        const close = new RegExp(`</h${level}>`, 'gi');
+        htmlContent = htmlContent
+            .replace(open, (m, attrs) => `<h${level + 1}${attrs || ''}>`)
+            .replace(close, `</h${level + 1}>`);
+    }
+    return htmlContent;
+}
+
 function createRenderer(tocList, slugMapping = {}) {
     const renderer = new marked.Renderer();
 
@@ -182,7 +196,12 @@ function generateDocHTML(doc, allDocs) {
     const tocList = [];
     const slugMapping = createSlugMapping(allDocs);
     const renderer = createRenderer(tocList, slugMapping);
-    const htmlContent = marked.parse(doc.content, { renderer });
+    // The page template already renders the doc's <h1 class="doc-title">.
+    // Markdown that also opens with `# ` produced a second h1 (24 docs pages
+    // had between two and nine of them) and flattened sections against their
+    // own subsections. Shift the body down a level where that happens; docs
+    // already starting at `## ` are untouched.
+    const htmlContent = demoteContentHeadings(marked.parse(doc.content, { renderer }));
 
     // Find current doc index for navigation
     const currentIndex = allDocs.findIndex(d => d.slug === doc.slug);

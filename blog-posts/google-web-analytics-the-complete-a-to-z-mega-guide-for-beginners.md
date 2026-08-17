@@ -1,5 +1,6 @@
 ---
-title: "Google Web Analytics — The Complete A to Z Mega Guide for Beginners - SmartGen Blog"
+title: "Google Web Analytics — The Complete A to Z Mega Guide for Beginners"
+seo_title: "Google Analytics Guide for Beginners"
 description: "A complete, beginner-friendly A to Z guide to Google Analytics (GA4) — what web analytics actually is and why it matters, how to navigate the Google Analytics interface without feeling lost, the core metrics every marketer needs to understand (bounce rate, session duration, pages per session, conversion rate, and traffic sources), and how to use advanced reporting, segments, and secondary dimensions to find insights the basic reports never show you."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 17, Google Analytics, GA4, Web Analytics, Bounce Rate, Conversion Tracking, Traffic Sources, Advanced Segments, Secondary Dimensions"
 date: 2026-07-10

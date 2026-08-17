@@ -247,13 +247,13 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="portfolio-website-api-andamp-script-reference">Portfolio Website: API &amp; Script Reference</h1>
+                        <h2 id="portfolio-website-api-andamp-script-reference">Portfolio Website: API &amp; Script Reference</h2>
 <p>  This is the technical reference documentation for the internal scripts and functions that power the portfolio project. Unlike the previous guides — which walk through <em>tasks</em> — this page documents every function, parameter, and data structure so you can confidently extend or debug the codebase.</p>
 <blockquote>
 <p><strong>Repository:</strong> <a href="https://github.com/bayzed123/sayadbayezid-portfolio-">github.com/bayzed123/sayadbayezid-portfolio-</a></p>
 </blockquote>
 <hr>
-<h2 id="portfolio-website-documentation-series">📖 Portfolio Website Documentation Series</h2>
+<h3 id="portfolio-website-documentation-series">📖 Portfolio Website Documentation Series</h3>
 <p>  This page is <strong>Part 4</strong> of a complete 4-part guide series. If you&#39;re following along step by step, here&#39;s the full path:</p>
 <table>
 <thead>
@@ -300,7 +300,7 @@
 </div>
 
 </blockquote>
-<h2 id="in-this-guide">In this guide</h2>
+<h3 id="in-this-guide">In this guide</h3>
 <ul>
 <li><a href="#setupsh-reference">`setup.sh` reference</a></li>
 <li><a href="#scriptsconvert_blogspy-reference">`scripts/convert_blogs.py` reference</a></li>
@@ -315,12 +315,12 @@
 <li><a href="#frequently-asked-questions">Frequently asked questions</a></li>
 </ul>
 <hr>
-<h2 id="setupsh-reference"><code>setup.sh</code> reference</h2>
+<h3 id="setupsh-reference"><code>setup.sh</code> reference</h3>
 <p>  Interactive shell script that personalizes the project with your information across all relevant files in a single run.</p>
-<h3 id="usage">Usage</h3>
+<h4 id="usage">Usage</h4>
 <pre><code class="language-bash">bash setup.sh
 </code></pre>
-<h3 id="prompts-and-variables">Prompts and variables</h3>
+<h4 id="prompts-and-variables">Prompts and variables</h4>
 <table>
 <thead>
 <tr>
@@ -360,7 +360,7 @@
 <td><code>yourblog.blogspot.com</code></td>
 </tr>
 </tbody></table>
-<h3 id="internal-logic">Internal logic</h3>
+<h4 id="internal-logic">Internal logic</h4>
 <pre><code class="language-bash">#!/bin/bash
 
 read -p &quot;Enter your full name: &quot; FULL_NAME
@@ -387,7 +387,7 @@ echo &quot;✅ Setup Complete!&quot;
 <blockquote>
 <p><strong>Note</strong><br>The script uses <code>sed</code> (stream editor) to perform find-and-replace across files. <code>sed -i.bak</code> creates a backup file first, then the script deletes it after a successful replacement — this is a safety pattern in case <code>sed</code> fails partway through on certain systems.</p>
 </blockquote>
-<h3 id="return-behavior">Return behavior</h3>
+<h4 id="return-behavior">Return behavior</h4>
 <table>
 <thead>
 <tr>
@@ -412,13 +412,13 @@ echo &quot;✅ Setup Complete!&quot;
 <p><strong>Warning</strong><br><code>setup.sh</code> does <strong>not</strong> validate input format. Entering an invalid URL (missing <code>https://</code>, typos) will insert exactly what you typed. Double-check each generated file after running it.</p>
 </blockquote>
 <hr>
-<h2 id="scriptsconvertblogspy-reference"><code>scripts/convert_blogs.py</code> reference</h2>
+<h3 id="scriptsconvertblogspy-reference"><code>scripts/convert_blogs.py</code> reference</h3>
 <p>  The core Python module that converts Markdown/HTML files in <code>blog_uploads/</code> into structured JSON consumed by the front end.</p>
-<h3 id="module-level-constants">Module-level constants</h3>
+<h4 id="module-level-constants">Module-level constants</h4>
 <pre><code class="language-python">UPLOADS_DIR = &quot;blog_uploads&quot;
 OUTPUT_DIR = &quot;blogs&quot;
 </code></pre>
-<h3 id="function-slugifytitle">Function: <code>slugify(title)</code></h3>
+<h4 id="function-slugifytitle">Function: <code>slugify(title)</code></h4>
 <p>  Converts a post title into a URL-safe slug.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -458,7 +458,7 @@ OUTPUT_DIR = &quot;blogs&quot;
 <blockquote>
 <p><strong>Note</strong><br>This basic implementation does not strip punctuation. A title like <code>&quot;What&#39;s New?&quot;</code> produces <code>&quot;what&#39;s-new?&quot;</code> — special characters pass through unmodified. If you need stricter slugs, extend this function with a regex substitution (see <a href="#extending-the-codebase">Extending the codebase</a>).</p>
 </blockquote>
-<h3 id="function-extracttocsoup">Function: <code>extract_toc(soup)</code></h3>
+<h4 id="function-extracttocsoup">Function: <code>extract_toc(soup)</code></h4>
 <p>  Scans parsed HTML for <code>&lt;h2&gt;</code>/<code>&lt;h3&gt;</code> tags, assigns each an <code>id</code>, and builds a Table of Contents list.</p>
 <pre><code class="language-python">def extract_toc(soup):
     toc = []
@@ -485,7 +485,7 @@ OUTPUT_DIR = &quot;blogs&quot;
 </tbody></table>
 <p>  <strong>Returns:</strong> <code>list[dict]</code> — each dict contains <code>level</code> (<code>&quot;h2&quot;</code> or <code>&quot;h3&quot;</code>), <code>text</code>, and <code>slug</code></p>
 <p>  <strong>Side effect:</strong> Mutates <code>soup</code> in place by adding an <code>id</code> attribute to each matched heading — required so TOC links (<code>#slug</code>) can jump to the correct element.</p>
-<h3 id="function-processmarkdownfilefilepath">Function: <code>process_markdown_file(filepath)</code></h3>
+<h4 id="function-processmarkdownfilefilepath">Function: <code>process_markdown_file(filepath)</code></h4>
 <p>  The main per-file processor — reads a Markdown file, converts it to HTML, and extracts all metadata needed for the JSON output.</p>
 <pre><code class="language-python">def process_markdown_file(filepath):
     with open(filepath, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
@@ -562,7 +562,7 @@ OUTPUT_DIR = &quot;blogs&quot;
 <blockquote>
 <p><strong>Warning</strong><br>If a Markdown file has <strong>no</strong> <code># Heading</code>, the title defaults to <code>&quot;Untitled&quot;</code> and the slug becomes <code>&quot;untitled&quot;</code> — a second such file will silently overwrite the first&#39;s JSON output. Always include exactly one <code># Title</code> per post.</p>
 </blockquote>
-<h3 id="function-buildallposts">Function: <code>build_all_posts()</code></h3>
+<h4 id="function-buildallposts">Function: <code>build_all_posts()</code></h4>
 <p>  Orchestrates the full batch process — iterates every file in <code>blog_uploads/</code>, processes it, writes individual JSON files, and rebuilds the master index.</p>
 <pre><code class="language-python">def build_all_posts():
     index = []
@@ -597,8 +597,8 @@ OUTPUT_DIR = &quot;blogs&quot;
 </code></pre>
 <p>  This means running <code>python3 scripts/convert_blogs.py</code> directly triggers the full batch conversion — the same call GitHub Actions makes automatically on every push to <code>blog_uploads/</code>.</p>
 <hr>
-<h2 id="blog-json-data-structures">Blog JSON data structures</h2>
-<h3 id="individual-post-schema-blogsslugjson">Individual post schema — <code>blogs/{slug}.json</code></h3>
+<h3 id="blog-json-data-structures">Blog JSON data structures</h3>
+<h4 id="individual-post-schema-blogsslugjson">Individual post schema — <code>blogs/{slug}.json</code></h4>
 <pre><code class="language-json">{
   &quot;title&quot;: &quot;My First Blog Post&quot;,
   &quot;slug&quot;: &quot;my-first-blog-post&quot;,
@@ -653,7 +653,7 @@ OUTPUT_DIR = &quot;blogs&quot;
 <blockquote>
 <p><strong>Warning</strong><br><code>content</code> is inserted directly via <code>innerHTML</code> with no sanitization step. Since you control all input files yourself, this is safe for personal use — but <strong>never</strong> accept blog post uploads from untrusted third parties without adding an HTML sanitization library first, as this would otherwise be an XSS vulnerability.</p>
 </blockquote>
-<h3 id="index-schema-blogsindexjson">Index schema — <code>blogs/index.json</code></h3>
+<h4 id="index-schema-blogsindexjson">Index schema — <code>blogs/index.json</code></h4>
 <pre><code class="language-json">[
   { &quot;title&quot;: &quot;My First Blog Post&quot;, &quot;slug&quot;: &quot;my-first-blog-post&quot;, &quot;excerpt&quot;: &quot;...&quot; },
   { &quot;title&quot;: &quot;Second Post&quot;, &quot;slug&quot;: &quot;second-post&quot;, &quot;excerpt&quot;: &quot;...&quot; }
@@ -661,8 +661,8 @@ OUTPUT_DIR = &quot;blogs&quot;
 </code></pre>
 <p>  A flat array, ordered by filesystem iteration order (typically alphabetical by filename — <strong>not</strong> guaranteed to be chronological). See <a href="#extending-the-codebase">Extending the codebase</a> for adding date-based sorting.</p>
 <hr>
-<h2 id="blog-loaderhtml-javascript-reference"><code>blog-loader.html</code> JavaScript reference</h2>
-<h3 id="function-loadblogpostslug">Function: <code>loadBlogPost(slug)</code></h3>
+<h3 id="blog-loaderhtml-javascript-reference"><code>blog-loader.html</code> JavaScript reference</h3>
+<h4 id="function-loadblogpostslug">Function: <code>loadBlogPost(slug)</code></h4>
 <p>  Fetches a single post&#39;s JSON and renders it into the page.</p>
 <pre><code class="language-javascript">async function loadBlogPost(slug) {
   const res = await fetch(`/blogs/${slug}.json`);
@@ -691,7 +691,7 @@ OUTPUT_DIR = &quot;blogs&quot;
 </tbody></table>
 <p>  <strong>DOM dependencies:</strong> Requires elements with classes <code>.post-title</code> and <code>.post-content</code> present in <code>blog-loader.html</code>.</p>
 <p>  <strong>Failure mode:</strong> If <code>slug</code> doesn&#39;t match any existing JSON file, <code>fetch()</code> resolves with a 404 response, and <code>res.json()</code> throws — currently unhandled, resulting in a blank page. See <a href="#extending-the-codebase">Extending the codebase</a> for adding error handling.</p>
-<h3 id="function-rendertoctoc">Function: <code>renderToc(toc)</code></h3>
+<h4 id="function-rendertoctoc">Function: <code>renderToc(toc)</code></h4>
 <p>  Renders the Table of Contents sidebar from the <code>toc</code> array.</p>
 <pre><code class="language-javascript">function renderToc(toc) {
   const container = document.querySelector(&#39;.toc-list&#39;);
@@ -717,7 +717,7 @@ OUTPUT_DIR = &quot;blogs&quot;
 <p>  <strong>DOM dependency:</strong> Requires an element with class <code>.toc-list</code>.</p>
 <p>  <strong>CSS hook:</strong> Generated <code>&lt;li&gt;</code> elements receive classes <code>toc-h2</code> or <code>toc-h3</code>, allowing indentation styling to differentiate heading levels in the sidebar.</p>
 <hr>
-<h2 id="assetsjsnav-activejs-reference"><code>assets/js/nav-active.js</code> reference</h2>
+<h3 id="assetsjsnav-activejs-reference"><code>assets/js/nav-active.js</code> reference</h3>
 <p>  Automatically highlights the current page&#39;s link in the navigation bar.</p>
 <pre><code class="language-javascript">const currentPath = window.location.pathname.split(&#39;/&#39;).pop() || &#39;index.html&#39;;
 document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
@@ -744,7 +744,7 @@ document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
 <p><strong>Note</strong><br>This matches on exact <code>href</code> string equality. A link written as <code>href=&quot;index.html&quot;</code> will <strong>not</strong> match a URL path of <code>/</code> (root) — if using a custom domain where the homepage loads without a filename, extend this logic to also check for an empty string case (see <a href="#extending-the-codebase">Extending the codebase</a>).</p>
 </blockquote>
 <hr>
-<h2 id="assetsjstheme-togglejs-reference"><code>assets/js/theme-toggle.js</code> reference</h2>
+<h3 id="assetsjstheme-togglejs-reference"><code>assets/js/theme-toggle.js</code> reference</h3>
 <p>  Handles dark/light mode switching with persistence via <code>localStorage</code>.</p>
 <pre><code class="language-javascript">const toggleBtn = document.querySelector(&#39;#theme-toggle&#39;);
 const body = document.body;
@@ -775,8 +775,8 @@ toggleBtn.addEventListener(&#39;click&#39;, () =&gt; {
 <p>  <strong>DOM dependency:</strong> Requires a button element with <code>id=&quot;theme-toggle&quot;</code>.</p>
 <p>  <strong>CSS dependency:</strong> Requires a <code>.dark-mode</code> class defined on <code>:root</code> or <code>body</code> with corresponding variable overrides (see <a href="/docs/portfolio-website-customization-guide/">Customization Guide → Enable dark mode</a>).</p>
 <hr>
-<h2 id="i18n-loader-reference"><code>i18n</code> loader reference</h2>
-<h3 id="function-loadlanguagelang">Function: <code>loadLanguage(lang)</code></h3>
+<h3 id="i18n-loader-reference"><code>i18n</code> loader reference</h3>
+<h4 id="function-loadlanguagelang">Function: <code>loadLanguage(lang)</code></h4>
 <p>  Fetches a language JSON file and applies translated strings to matching DOM elements.</p>
 <pre><code class="language-javascript">async function loadLanguage(lang) {
   const res = await fetch(`i18n/${lang}.json`);
@@ -804,7 +804,7 @@ toggleBtn.addEventListener(&#39;click&#39;, () =&gt; {
 </tbody></table>
 <p>  <strong>DOM dependency:</strong> Elements must have a <code>data-i18n=&quot;key.name&quot;</code> attribute matching a key in the JSON file.</p>
 <p>  <strong>Failure mode:</strong> If a key in <code>data-i18n</code> doesn&#39;t exist in the loaded JSON, the element&#39;s <code>textContent</code> is left unchanged (falls back to whatever is in the HTML source by default) — this is a safe default, not a crash.</p>
-<h3 id="i18n-file-schema">i18n file schema</h3>
+<h4 id="i18n-file-schema">i18n file schema</h4>
 <pre><code class="language-json">{
   &quot;nav.about&quot;: &quot;About&quot;,
   &quot;nav.projects&quot;: &quot;Projects&quot;,
@@ -814,8 +814,8 @@ toggleBtn.addEventListener(&#39;click&#39;, () =&gt; {
 </code></pre>
 <p>  Flat key-value pairs — no nesting supported in the default implementation.</p>
 <hr>
-<h2 id="github-actions-workflow-reference">GitHub Actions workflow reference</h2>
-<h3 id="githubworkflowsblogautomationyml"><code>.github/workflows/blog_automation.yml</code></h3>
+<h3 id="github-actions-workflow-reference">GitHub Actions workflow reference</h3>
+<h4 id="githubworkflowsblogautomationyml"><code>.github/workflows/blog_automation.yml</code></h4>
 <pre><code class="language-yaml">name: Blog Automation
 
 on:
@@ -874,7 +874,7 @@ jobs:
 </tbody></table>
 <p>  <strong>Permissions note:</strong> This workflow pushes commits back to the repository. Ensure <strong>Settings → Actions → General → Workflow permissions</strong> is set to &quot;Read and write permissions&quot; for this to succeed.</p>
 <hr>
-<h2 id="file-and-folder-reference">File and folder reference</h2>
+<h3 id="file-and-folder-reference">File and folder reference</h3>
 <p>  Quick-lookup table of every functional file in the project:</p>
 <table>
 <thead>
@@ -981,9 +981,9 @@ jobs:
 </tr>
 </tbody></table>
 <hr>
-<h2 id="extending-the-codebase">Extending the codebase</h2>
+<h3 id="extending-the-codebase">Extending the codebase</h3>
 <p>  Common extension points referenced throughout this document:</p>
-<h3 id="stricter-slugification">Stricter slugification</h3>
+<h4 id="stricter-slugification">Stricter slugification</h4>
 <pre><code class="language-python">import re
 
 def slugify(title):
@@ -992,11 +992,11 @@ def slugify(title):
     slug = re.sub(r&#39;[\s_]+&#39;, &#39;-&#39;, slug)    # collapse whitespace to hyphens
     return slug
 </code></pre>
-<h3 id="chronological-post-ordering">Chronological post ordering</h3>
+<h4 id="chronological-post-ordering">Chronological post ordering</h4>
 <p>  Add a <code>date</code> field to each post (either from front-matter or filename convention), then sort before writing <code>index.json</code>:</p>
 <pre><code class="language-python">index.sort(key=lambda p: p.get(&quot;date&quot;, &quot;&quot;), reverse=True)
 </code></pre>
-<h3 id="error-handling-in-loadblogpost">Error handling in <code>loadBlogPost</code></h3>
+<h4 id="error-handling-in-loadblogpost">Error handling in <code>loadBlogPost</code></h4>
 <pre><code class="language-javascript">async function loadBlogPost(slug) {
   try {
     const res = await fetch(`/blogs/${slug}.json`);
@@ -1009,13 +1009,13 @@ def slugify(title):
   }
 }
 </code></pre>
-<h3 id="root-path-handling-in-nav-activejs">Root-path handling in <code>nav-active.js</code></h3>
+<h4 id="root-path-handling-in-nav-activejs">Root-path handling in <code>nav-active.js</code></h4>
 <pre><code class="language-javascript">const currentPath = window.location.pathname.split(&#39;/&#39;).pop() || &#39;index.html&#39;;
 // Add this line to also match root-path homepage loads:
 const isHome = currentPath === &#39;&#39; || currentPath === &#39;index.html&#39;;
 </code></pre>
 <hr>
-<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="frequently-asked-questions">Frequently asked questions</h3>
   <details>
   <summary><strong>Can I add front-matter (like date, tags) to Markdown posts?</strong></summary><p>  Not by default — the current <code>process_markdown_file()</code> function only extracts the <code>&lt;h1&gt;</code> title and first paragraph. To support front-matter, add the <code>python-frontmatter</code> package and parse YAML metadata at the top of each <code>.md</code> file before passing the remaining body to <code>markdown.markdown()</code>.<br>  </details></p>
   <details>
@@ -1029,7 +1029,7 @@ build_all_posts()
 </code></pre>
 <p>  This is useful if you want to integrate blog conversion into a larger custom build pipeline.<br>  </details></p>
 <hr>
-<h2 id="related-guides-in-this-series">Related guides in this series</h2>
+<h3 id="related-guides-in-this-series">Related guides in this series</h3>
 <p>  You&#39;ve now reached the end of the <strong>Portfolio Website</strong> documentation series. Here&#39;s the complete path for reference:</p>
 <ol>
 <li><strong><a href="/docs/portfolio-website-getting-started-guide/">Getting Started Guide</a></strong> — Fork, clone, install, run locally</li>
@@ -1040,7 +1040,7 @@ build_all_posts()
 <blockquote>
 <p><strong>Tip</strong><br>Bookmark this reference page — you&#39;ll likely return to it any time you extend the blog system or debug an unexpected script behavior, long after initial setup is complete.</p>
 </blockquote>
-<h2 id="further-reading">Further reading</h2>
+<h3 id="further-reading">Further reading</h3>
 <ul>
 <li><a href="https://github.com/bayzed123/sayadbayezid-portfolio-/blob/main/WIKI.md">WIKI.md</a> — original repository wiki</li>
 <li><a href="https://python-markdown.github.io/">Python `markdown` library docs</a> — full extension reference</li>

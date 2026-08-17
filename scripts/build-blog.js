@@ -67,6 +67,10 @@ function readBlogPosts() {
     posts.push({
       slug,
       title: attributes.title || 'Untitled',
+      // Optional shorter <title> for search results. Google truncates around
+      // 60 characters, but a headline on the page can usefully be longer --
+      // these are two different jobs and were sharing one string.
+      seoTitle: (attributes.seo_title || attributes.seoTitle || '').trim(),
       description: attributes.description || '',
       content: body,
       date: attributes.date || new Date().toISOString().split('T')[0],
@@ -231,10 +235,50 @@ function redirectStub(fromSlug, toSlug) {
 }
 
 /**
+ * The <title> shown in search results.
+ *
+ * Prefers an explicit `seo_title:`. The " - SmartGen Blog" suffix is only
+ * appended when the result still fits inside Google's ~60-character display
+ * limit -- on a 100-character headline the suffix was pure waste, guaranteed
+ * to be cut off while pushing the useful words further out of view.
+ */
+const TITLE_LIMIT = 60;
+const TITLE_SUFFIX = ' - SmartGen Blog';
+function pageTitle(post) {
+  const base = (post.seoTitle || post.title || '').trim();
+  return base.length + TITLE_SUFFIX.length <= TITLE_LIMIT ? base + TITLE_SUFFIX : base;
+}
+
+/**
  * Generate HTML for a single blog post
  */
+/**
+ * The page template already supplies the article's <h1>. Markdown that also
+ * opens sections with `# ` therefore produced a second (and third, and
+ * ninth) h1, and left those sections sitting at the same level as the
+ * subsections beneath them -- 47 posts had multiple h1s and the outline
+ * skipped levels.
+ *
+ * Where the rendered body contains an h1, every heading in it is shifted down
+ * one level so the document reads h1 (title) > h2 (section) > h3 (subsection).
+ * Posts already starting at `## ` are left exactly as they are.
+ */
+function demoteContentHeadings(htmlContent) {
+  if (!/<h1[\s>]/i.test(htmlContent)) return htmlContent;
+  // Highest level first would cascade (h1->h2 then that h2->h3), so walk
+  // from the deepest heading upwards.
+  for (let level = 5; level >= 1; level--) {
+    const open = new RegExp(`<h${level}(\\s[^>]*)?>`, 'gi');
+    const close = new RegExp(`</h${level}>`, 'gi');
+    htmlContent = htmlContent
+      .replace(open, (m, attrs) => `<h${level + 1}${attrs || ''}>`)
+      .replace(close, `</h${level + 1}>`);
+  }
+  return htmlContent;
+}
+
 function generatePostHTML(post) {
-  let htmlContent = marked(post.content);
+  let htmlContent = demoteContentHeadings(marked(post.content));
   const authorProfileBox = loadAuthorProfileBox();
   const authorFooterBox = loadAuthorFooterBox();
   
@@ -254,7 +298,7 @@ function generatePostHTML(post) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${post.title} - SmartGen Blog</title>
+    <title>${pageTitle(post)}</title>
     <meta name="description" content="${post.description}">
     <meta name="author" content="${post.author}">
     <meta name="keywords" content="${post.tags.join(', ')}">

@@ -251,14 +251,15 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
 
 <p>July 15, 2026 • General • By <a href="https://www.sayadbayezid.com/">Sayad Md Bayezid Hosan</a></p>
-<h1>Python Operators Explained</h1>
-<p>A complete, step-by-step guide to Python operators — the real difference between an operand and an operator, every arithmetic, comparison, and assignment operator with runnable code, how logical, membership, and identity operators actually behave (including the short-circuit rule that surprises most beginners), operator precedence and the ternary expression, and the key differences and best practices that separate code that merely runs from code that&#39;s actually correct.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -272,9 +273,11 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<h2>Python Operators Explained</h2>
+<p>A complete, step-by-step guide to Python operators — the real difference between an operand and an operator, every arithmetic, comparison, and assignment operator with runnable code, how logical, membership, and identity operators actually behave (including the short-circuit rule that surprises most beginners), operator precedence and the ternary expression, and the key differences and best practices that separate code that merely runs from code that&#39;s actually correct.</p>
 <p><img src="https://smartgentools.com/blog-posts/images/python-course-class-04-cover.svg" alt="Python Operators Explained — cover image"></p>
 <hr>
-<h2>Table of Contents</h2>
+<h3>Table of Contents</h3>
 <ol>
 <li><a href="#operand-vs-operator">Operand vs. Operator</a></li>
 <li><a href="#arithmetic-comparison-and-assignment-operators">Arithmetic, Comparison, and Assignment Operators</a></li>
@@ -286,14 +289,12 @@
 </ol>
 <p><em>(Tap any line to jump straight to that section.)</em></p>
 <hr>
-<h2>Continuing the Course</h2>
+<h3>Continuing the Course</h3>
 <p>This is Class 04, building directly on <a href="https://smartgentools.com/blog/python-variables-and-data-types-explained/">Class 03: Variables and Data Types</a>, <a href="https://smartgentools.com/blog/what-is-python-a-complete-beginner-guide/">Class 02: What Is Python?</a>, and <a href="https://smartgentools.com/blog/python-course-class-01-orientation-and-setup/">Class 01: Orientation and Setup</a>. Every operator in this class works <em>because</em> of the types you just learned — <code>+</code> behaves one way on two <code>int</code> values and a genuinely different way on two <code>str</code> values, and that only makes sense once you already know what a type is. If you haven&#39;t run your first line of Python yet, Class 02&#39;s step-by-step section walks you through it before you start here.</p>
 <hr>
-<h2>Operand vs. Operator</h2>
-<h3>The Problem</h3>
+<h3>Operand vs. Operator</h3>
+<h4>The Problem</h4>
 <p>Python documentation and error messages constantly use the words &quot;operand&quot; and &quot;operator&quot; as if every reader already knows exactly which is which — and mixing them up makes it genuinely harder to read an error message or ask a good question when your code breaks.</p>
-<h3>The Solution: Two Precise Definitions</h3>
-<p>An <strong>operator</strong> is the symbol that performs an action — <code>+</code>, <code>-</code>, <code>==</code>, <code>and</code>. An <strong>operand</strong> is the value the operator acts on. In the expression below, <code>7</code> and <code>3</code> are the operands, and <code>+</code> is the operator:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -307,6 +308,8 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<h4>The Solution: Two Precise Definitions</h4>
+<p>An <strong>operator</strong> is the symbol that performs an action — <code>+</code>, <code>-</code>, <code>==</code>, <code>and</code>. An <strong>operand</strong> is the value the operator acts on. In the expression below, <code>7</code> and <code>3</code> are the operands, and <code>+</code> is the operator:</p>
 <pre><code class="language-python">result = 7 + 3
 print(result)   # 10
 </code></pre>
@@ -318,7 +321,7 @@ print(y)        # -5
 total = 7 + 3    # binary operator: two operands (7 and 3)
 print(total)    # 10
 </code></pre>
-<h3>Common Mistake to Avoid</h3>
+<h4>Common Mistake to Avoid</h4>
 <p>Assuming an operator always means the same thing regardless of what type its operands are. <code>+</code> means numeric addition between two <code>int</code> or <code>float</code> values, but between two <code>str</code> values it means concatenation — and between an <code>int</code> and a <code>str</code>, Python refuses outright:</p>
 <pre><code class="language-python">print(2 + 3)         # 5   - numeric addition
 print(&quot;2&quot; + &quot;3&quot;)     # 23  - string concatenation, not addition
@@ -326,10 +329,10 @@ print(2 + &quot;3&quot;)       # TypeError: unsupported operand type(s)
 </code></pre>
 <p>That last line is one of the single most common errors a Python beginner hits — and now you know exactly why it happens.</p>
 <hr>
-<h2>Arithmetic, Comparison, and Assignment Operators</h2>
-<h3>The Problem</h3>
+<h3>Arithmetic, Comparison, and Assignment Operators</h3>
+<h4>The Problem</h4>
 <p>These three operator families look simple individually, but two specific details inside them — the difference between <code>/</code> and <code>//</code>, and the difference between <code>=</code> and <code>==</code> — cause more beginner bugs than almost anything else in this entire course.</p>
-<h3>The Solution: Every Operator, With Code You Can Run</h3>
+<h4>The Solution: Every Operator, With Code You Can Run</h4>
 <p><img src="https://smartgentools.com/blog-posts/images/operators-infographic.svg" alt="Python Arithmetic, Comparison, and Assignment Operators at a Glance — every symbol with a runnable example"></p>
 <p><strong>Arithmetic operators</strong> perform math on numbers:</p>
 <pre><code class="language-python">a, b = 17, 5
@@ -365,7 +368,7 @@ score *= 2           # score = score * 2
 score //= 4          # score = score // 4
 print(score)        # 8
 </code></pre>
-<h3>Common Mistake to Avoid</h3>
+<h4>Common Mistake to Avoid</h4>
 <p>Confusing <code>=</code> (assignment) with <code>==</code> (comparison) inside a conditional. In some languages this silently compiles and creates a hard-to-spot bug — Python actually protects you here, refusing to run at all:</p>
 <pre><code class="language-python">x = 5
 
@@ -376,10 +379,10 @@ if x == 5:      # correct - this is a comparison
 </code></pre>
 <p>That <code>SyntaxError</code> is Python catching your mistake before it becomes a bug — treat it as a feature, not an annoyance.</p>
 <hr>
-<h2>Logical, Membership, and Identity Operators</h2>
-<h3>The Problem</h3>
+<h3>Logical, Membership, and Identity Operators</h3>
+<h4>The Problem</h4>
 <p>These three operator families look like simple yes/no logic on the surface, but each one has a specific, non-obvious behavior that trips up beginners the first time they meet it — especially the fact that <code>and</code> and <code>or</code> don&#39;t actually return <code>True</code> or <code>False</code> the way most people assume.</p>
-<h3>The Solution: What Each Operator Actually Returns</h3>
+<h4>The Solution: What Each Operator Actually Returns</h4>
 <p><strong>Logical operators</strong> (<code>and</code>, <code>or</code>, <code>not</code>) combine or invert boolean expressions:</p>
 <pre><code class="language-python">age = 25
 has_id = True
@@ -411,7 +414,7 @@ list_b = [1, 2, 3]
 print(list_a == list_b)   # True  - same values
 print(list_a is list_b)   # False - two separate objects in memory
 </code></pre>
-<h3>Common Mistake to Avoid</h3>
+<h4>Common Mistake to Avoid</h4>
 <p>Relying on short-circuit evaluation without realizing the second operand might never run. If that second operand is a function call with a side effect — like saving data or printing a message — and the first operand already made the result certain, that function call silently never happens:</p>
 <pre><code class="language-python">def log_action():
     print(&quot;Action logged!&quot;)
@@ -420,10 +423,10 @@ print(list_a is list_b)   # False - two separate objects in memory
 result = False and log_action()   # log_action() never runs - &quot;Action logged!&quot; never prints
 </code></pre>
 <hr>
-<h2>Operator Precedence and Ternary Operators</h2>
-<h3>The Problem</h3>
+<h3>Operator Precedence and Ternary Operators</h3>
+<h4>The Problem</h4>
 <p>Without a clear mental model of which operators run first, expressions that mix arithmetic, comparisons, and logic can produce a result that looks completely wrong at first glance — even though Python is following consistent, learnable rules the entire time.</p>
-<h3>The Solution: The Order Python Actually Follows</h3>
+<h4>The Solution: The Order Python Actually Follows</h4>
 <p><img src="https://smartgentools.com/blog-posts/images/precedence-infographic.svg" alt="Python Operator Precedence Order — from highest to lowest priority, parentheses to logical operators"></p>
 <p>From highest to lowest priority: <strong>parentheses</strong> run first, always — then <strong>exponentiation</strong> (<code>**</code>), then <strong>multiplication, division, floor division, and modulus</strong> (<code>* / // %</code>), then <strong>addition and subtraction</strong> (<code>+ -</code>), then <strong>comparisons</strong> (<code>== != &lt; &gt;</code> and friends), then <strong>logical operators</strong> (<code>not</code>, then <code>and</code>, then <code>or</code>, in that order).</p>
 <pre><code class="language-python">result = 2 + 3 * 4
@@ -446,7 +449,7 @@ if age &gt;= 18:
 else:
     status = &quot;Minor&quot;
 </code></pre>
-<h3>Common Mistake to Avoid</h3>
+<h4>Common Mistake to Avoid</h4>
 <p>Nesting ternary expressions to avoid writing a full <code>if</code>/<code>elif</code>/<code>else</code> block. It&#39;s valid Python, but it reads terribly and hides bugs:</p>
 <pre><code class="language-python"># Technically valid - genuinely hard to read at a glance
 grade = &quot;A&quot; if score &gt;= 90 else &quot;B&quot; if score &gt;= 80 else &quot;C&quot; if score &gt;= 70 else &quot;F&quot;
@@ -463,10 +466,10 @@ else:
 </code></pre>
 <p>A ternary expression is for one simple choice. The moment you need a second condition, switch to a real <code>if</code>/<code>elif</code>/<code>else</code> block.</p>
 <hr>
-<h2>Key Differences and Best Practices</h2>
-<h3>The Problem</h3>
+<h3>Key Differences and Best Practices</h3>
+<h4>The Problem</h4>
 <p>Knowing what each operator does individually isn&#39;t quite the same as knowing which one to reach for in a real piece of code — and a handful of style habits separate code that runs from code other developers (including future you) can actually read.</p>
-<h3>The Solution: The Rules Worth Committing to Memory</h3>
+<h4>The Solution: The Rules Worth Committing to Memory</h4>
 <p><strong><code>==</code> vs. <code>is</code></strong> — use <code>==</code> for comparing values (almost always what you want), and reserve <code>is</code> specifically for comparing against <code>None</code>, <code>True</code>, or <code>False</code>, exactly as shown in Section 3.</p>
 <p><strong><code>/</code> vs. <code>//</code></strong> — use <code>/</code> when you want a precise, decimal result, and <code>//</code> when you specifically want a whole number with any remainder discarded, such as calculating how many full groups of 5 fit into 23 (<code>23 // 5</code> → <code>4</code>).</p>
 <p><strong>Spacing around operators</strong> — <a href="https://peps.python.org/pep-0008/">PEP 8</a>, Python&#39;s official style guide, calls for a single space on each side of most operators. <code>x = x + 1</code> is correct; <code>x=x+1</code> runs identically but is genuinely harder to scan:</p>
@@ -488,10 +491,10 @@ while (data := input(&quot;Enter a value: &quot;)) != &quot;quit&quot;:
     print(f&quot;You entered: {data}&quot;)
 </code></pre>
 <p>You won&#39;t need it constantly as a beginner, but recognizing it when you see it in other people&#39;s code will save you a confused pause.</p>
-<h3>Common Mistake to Avoid</h3>
+<h4>Common Mistake to Avoid</h4>
 <p>Reaching for the most &quot;clever&quot; or compressed operator combination instead of the most readable one. Python rewards clarity — a slightly longer line that&#39;s instantly understandable beats a shorter one that makes the next reader (including you, in six months) stop and puzzle it out.</p>
 <hr>
-<h2>Quick-Reference Glossary</h2>
+<h3>Quick-Reference Glossary</h3>
 <table>
 <thead>
 <tr>
@@ -549,11 +552,11 @@ while (data := input(&quot;Enter a value: &quot;)) != &quot;quit&quot;:
 </tr>
 </tbody></table>
 <hr>
-<h2>Class Summary</h2>
+<h3>Class Summary</h3>
 <p>In this class, we covered the precise difference between an operand and an operator, and why an operator&#39;s meaning can change entirely depending on its operand&#39;s type. We covered every arithmetic, comparison, and assignment operator with runnable code, including the classic <code>=</code> versus <code>==</code> trap that Python protects you from with a <code>SyntaxError</code>. We covered logical, membership, and identity operators — especially the short-circuit behavior of <code>and</code>/<code>or</code> that returns an actual operand rather than a plain <code>True</code>/<code>False</code>. We covered operator precedence and the ternary expression, including exactly when a ternary stops being readable. And we closed with the practical differences and best practices — <code>==</code> vs. <code>is</code>, <code>/</code> vs. <code>//</code>, PEP 8 spacing, and a first look at the walrus operator.</p>
 <p><strong>Practice exercise:</strong> Write a short script with two number variables. Print the result of all seven arithmetic operators from Section 2 on them. Then write one line using a ternary expression that prints <code>&quot;Even&quot;</code> or <code>&quot;Odd&quot;</code> based on whether the first number is evenly divisible by 2 — you&#39;ll need the modulus operator from Section 2 and the ternary syntax from Section 4 together.</p>
 <hr>
-<h2>Frequently Asked Questions</h2>
+<h3>Frequently Asked Questions</h3>
 <p><strong>What&#39;s the actual difference between <code>/</code> and <code>//</code> in Python?</strong><br><code>/</code> always returns a float (a decimal), even when the numbers divide evenly — <code>10 / 2</code> gives <code>5.0</code>. <code>//</code> performs floor division, returning a whole number with the remainder discarded — <code>10 // 3</code> gives <code>3</code>. Use <code>//</code> whenever you specifically need a whole-number result.</p>
 <p><strong>Why does <code>if x = 5:</code> give me an error instead of just running?</strong><br>Python deliberately treats <code>=</code> as an assignment-only operator and refuses to let it appear inside a condition, which is exactly why it raises a <code>SyntaxError</code> rather than silently running with unexpected behavior, as covered in Section 2. Use <code>==</code> for comparisons instead.</p>
 <p><strong>Do <code>and</code> and <code>or</code> really not return <code>True</code> or <code>False</code>?</strong><br>Correct — they return whichever actual operand determined the result, not a plain boolean, as shown in Section 3. This is genuinely useful once you know it (it powers common patterns like <code>value = user_input or &quot;default&quot;</code>), but it&#39;s worth knowing explicitly so it doesn&#39;t surprise you mid-debug.</p>
@@ -567,7 +570,7 @@ while (data := input(&quot;Enter a value: &quot;)) != &quot;quit&quot;:
 <div style="max-width: 600px; margin: 2rem auto; padding: 2rem; background: #ffffff; border-radius: 40px; border: 1px solid #f0f0f0; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; font-family: sans-serif;"><p>  <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/smartgen-founder.jpg" 
        alt="Sayad Md Bayezid Hosan" 
        style="width: 100px; height: 100px; border-radius: 50%; border: 4px solid #dcfce7; margin: 0 auto 1rem auto; object-fit: cover;"></p>
-  <h2 style="margin: 0; font-size: 1.8rem; color: #1e293b; font-weight: 800; font-family: serif;">Sayad Md Bayezid Hosan</h2>  <div style="margin: 1rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+  <h3 style="margin: 0; font-size: 1.8rem; color: #1e293b; font-weight: 800; font-family: serif;">Sayad Md Bayezid Hosan</h3>  <div style="margin: 1rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
     <span style="background: #dcfce7; color: #166534; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Full-stack Developer</span>
     <span style="background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Digital Marketer</span>
     <span style="background: #fef3c7; color: #92400e; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">Researcher</span>

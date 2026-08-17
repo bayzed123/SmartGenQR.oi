@@ -1,5 +1,6 @@
 ---
-title: "Search Engine Optimization (SEO) — The Complete A to Z Mega Guide for Beginners - SmartGen Blog"
+title: "Search Engine Optimization (SEO) — The Complete A to Z Mega Guide for Beginners"
+seo_title: "SEO for Beginners: The Complete A-to-Z Guide"
 description: "A complete, practical A to Z guide to Search Engine Optimization for beginners — what SEO actually is and why it underlies everything else in this course, how search engines really work behind the scenes, how to read and understand the SERP the way a search engine sees it, and how crawling and indexing determine whether your content can ever be found at all."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 10, SEO, Search Engine Optimization, How Search Engines Work, SERP, Crawling, Indexing"
 date: 2026-07-01

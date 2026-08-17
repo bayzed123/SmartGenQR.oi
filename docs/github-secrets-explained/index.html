@@ -247,10 +247,10 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="github-secrets-explained-for-beginners">🔐 GitHub Secrets Explained for Beginners</h1>
-<h2 id="what-is-a-andquotsecretandquot">What is a &quot;Secret&quot;? 🤔</h2>
+                        <h2 id="github-secrets-explained-for-beginners">🔐 GitHub Secrets Explained for Beginners</h2>
+<h3 id="what-is-a-andquotsecretandquot">What is a &quot;Secret&quot;? 🤔</h3>
 <p>A <strong>secret</strong> is like a <strong>password</strong> or <strong>hidden information</strong> that you don&#39;t want to share publicly.</p>
-<h3 id="real-life-example">Real-Life Example</h3>
+<h4 id="real-life-example">Real-Life Example</h4>
 <p>Think of it like this:</p>
 <pre><code>Your House 🏠
 ├── Living Room (public - anyone can see)
@@ -260,7 +260,7 @@
     ├── Credit cards
     └── Personal documents
 </code></pre>
-<h3 id="in-programming">In Programming:</h3>
+<h4 id="in-programming">In Programming:</h4>
 <pre><code>Your Website
 ├── Code (public - on GitHub, everyone sees)
 ├── Configuration (private - only on your server)
@@ -270,7 +270,7 @@
     ├── API keys from services
     └── SSH keys for deployment
 </code></pre>
-<h2 id="why-use-the-word-andquotsecretandquot">Why Use the Word &quot;Secret&quot;? 🤐</h2>
+<h3 id="why-use-the-word-andquotsecretandquot">Why Use the Word &quot;Secret&quot;? 🤐</h3>
 <p>It&#39;s called a &quot;secret&quot; because:</p>
 <ul>
 <li>🔒 It&#39;s <strong>locked and encrypted</strong></li>
@@ -278,8 +278,8 @@
 <li>🙈 It&#39;s <strong>hidden from public view</strong></li>
 <li>🔑 It&#39;s like a <strong>password</strong> or <strong>API key</strong></li>
 </ul>
-<h2 id="what-kind-of-information-is-andquotsecretandquot">What Kind of Information is &quot;Secret&quot;?</h2>
-<h3 id="things-that-should-be-secret">✅ Things That Should Be Secret:</h3>
+<h3 id="what-kind-of-information-is-andquotsecretandquot">What Kind of Information is &quot;Secret&quot;?</h3>
+<h4 id="things-that-should-be-secret">✅ Things That Should Be Secret:</h4>
 <pre><code>1. Server passwords
 2. SSH private keys
 3. API tokens
@@ -287,13 +287,13 @@
 5. Credit card numbers
 6. Personal information
 </code></pre>
-<h3 id="things-that-are-not-secret">❌ Things That Are NOT Secret:</h3>
+<h4 id="things-that-are-not-secret">❌ Things That Are NOT Secret:</h4>
 <pre><code>1. Your code
 2. Your README file
 3. Your project name
 4. Public configuration
 </code></pre>
-<h2 id="github-secrets-in-simple-terms">GitHub Secrets in Simple Terms</h2>
+<h3 id="github-secrets-in-simple-terms">GitHub Secrets in Simple Terms</h3>
 <p>GitHub has a special feature where you can:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -313,7 +313,7 @@
 <li>Use them in <strong>workflows</strong> (CI/CD)</li>
 <li><strong>Nobody</strong> can see them (except you)</li>
 </ol>
-<h3 id="analogy-treasure-box">Analogy: Treasure Box 🎁</h3>
+<h4 id="analogy-treasure-box">Analogy: Treasure Box 🎁</h4>
 <pre><code>Regular Files (GitHub repo)
 ├── README.md
 ├── package.json
@@ -328,24 +328,24 @@ GitHub Secrets (Special encrypted storage)
     ↓
     Only YOU can see it!
 </code></pre>
-<h2 id="your-specific-secrets-for-deployment">Your Specific Secrets for Deployment</h2>
+<h3 id="your-specific-secrets-for-deployment">Your Specific Secrets for Deployment</h3>
 <p>For deploying your portfolio, you need these secrets:</p>
-<h3 id="for-staging-server-testing">For Staging Server (Testing):</h3>
+<h4 id="for-staging-server-testing">For Staging Server (Testing):</h4>
 <pre><code>STAGING_SERVER_HOST          = IP address of staging server
 STAGING_SERVER_USER          = Username to login
 STAGING_SERVER_SSH_KEY       = Private key to connect
 STAGING_DEPLOYMENT_PATH      = Folder path on server
 STAGING_URL                  = Website URL
 </code></pre>
-<h3 id="for-production-server-live">For Production Server (Live):</h3>
+<h4 id="for-production-server-live">For Production Server (Live):</h4>
 <pre><code>PRODUCTION_SERVER_HOST       = IP address of production server
 PRODUCTION_SERVER_USER       = Username to login
 PRODUCTION_SERVER_SSH_KEY    = Private key to connect
 PRODUCTION_DEPLOYMENT_PATH   = Folder path on server
 PRODUCTION_URL               = Website URL
 </code></pre>
-<h2 id="example-what-is-ssh-key">Example: What is SSH Key? 🔑</h2>
-<h3 id="ssh-key-digital-lock-andamp-key">SSH Key = Digital Lock &amp; Key</h3>
+<h3 id="example-what-is-ssh-key">Example: What is SSH Key? 🔑</h3>
+<h4 id="ssh-key-digital-lock-andamp-key">SSH Key = Digital Lock &amp; Key</h4>
 <pre><code>Like a physical lock:
 ┌─────────────────┐
 │ Your House 🏠   │
@@ -361,7 +361,7 @@ Your key:
 │ Opens the lock  │
 └─────────────────┘
 </code></pre>
-<h3 id="in-code">In Code:</h3>
+<h4 id="in-code">In Code:</h4>
 <pre><code>Server has: Public lock (installed on server)
 You have: Private key (keep secret in GitHub)
 
@@ -372,7 +372,7 @@ GitHub shows: SSH key from secrets
 Server checks: &quot;Yes, I recognize this key!&quot;
 Server allows: Deployment to happen!
 </code></pre>
-<h2 id="why-canand39t-you-just-use-passwords">Why Can&#39;t You Just Use Passwords? 🤔</h2>
+<h3 id="why-canand39t-you-just-use-passwords">Why Can&#39;t You Just Use Passwords? 🤔</h3>
 <p>Because:</p>
 <ol>
 <li><strong>Passwords are unsafe</strong> - Can be guessed</li>
@@ -380,8 +380,8 @@ Server allows: Deployment to happen!
 <li><strong>Passwords can expire</strong> - Keys don&#39;t</li>
 <li><strong>Keys are unique</strong> - Hard to duplicate</li>
 </ol>
-<h2 id="where-to-store-secrets-in-github">Where to Store Secrets in GitHub</h2>
-<h3 id="step-by-step">Step-by-Step:</h3>
+<h3 id="where-to-store-secrets-in-github">Where to Store Secrets in GitHub</h3>
+<h4 id="step-by-step">Step-by-Step:</h4>
 <ol>
 <li>Go to your GitHub repository</li>
 <li>Click <strong>Settings</strong> (top right)</li>
@@ -399,33 +399,33 @@ Server allows: Deployment to happen!
                 ├── Name: STAGING_SERVER_HOST
                 └── Value: 1.2.3.4
 </code></pre>
-<h2 id="example-adding-a-secret">Example: Adding a Secret</h2>
-<h3 id="what-you-do">What You Do:</h3>
+<h3 id="example-adding-a-secret">Example: Adding a Secret</h3>
+<h4 id="what-you-do">What You Do:</h4>
 <pre><code>Name: STAGING_SERVER_HOST
 Value: 192.168.1.100
 
 Click: Add secret
 </code></pre>
-<h3 id="what-github-does">What GitHub Does:</h3>
+<h4 id="what-github-does">What GitHub Does:</h4>
 <pre><code>Encrypts: 192.168.1.100
 Locks it: 🔒
 Shows you: ••••••••••••• (hidden)
 Only decrypts: When workflows need it
 </code></pre>
-<h2 id="how-workflows-use-secrets">How Workflows Use Secrets</h2>
-<h3 id="in-your-workflow-file">In Your Workflow File:</h3>
+<h3 id="how-workflows-use-secrets">How Workflows Use Secrets</h3>
+<h4 id="in-your-workflow-file">In Your Workflow File:</h4>
 <pre><code class="language-yaml">- name: Deploy to Server
   run: ssh user@${{ secrets.STAGING_SERVER_HOST }}
 </code></pre>
-<h3 id="what-happens">What Happens:</h3>
+<h4 id="what-happens">What Happens:</h4>
 <pre><code>GitHub reads: ${{ secrets.STAGING_SERVER_HOST }}
 Looks up: STAGING_SERVER_HOST from secrets
 Gets value: 192.168.1.100
 Replaces: ssh user@192.168.1.100
 Runs command: Connects to server!
 </code></pre>
-<h2 id="real-example-for-your-portfolio">Real Example for Your Portfolio</h2>
-<h3 id="your-workflow-needs-this">Your Workflow Needs This:</h3>
+<h3 id="real-example-for-your-portfolio">Real Example for Your Portfolio</h3>
+<h4 id="your-workflow-needs-this">Your Workflow Needs This:</h4>
 <pre><code class="language-yaml">- name: Deploy Portfolio
   uses: appleboy/ssh-action@master
   with:
@@ -433,12 +433,12 @@ Runs command: Connects to server!
     username: ${{ secrets.PRODUCTION_SERVER_USER }}
     key: ${{ secrets.PRODUCTION_SERVER_SSH_KEY }}
 </code></pre>
-<h3 id="you-configured">You Configured:</h3>
+<h4 id="you-configured">You Configured:</h4>
 <pre><code>Secret 1: PRODUCTION_SERVER_HOST = 123.45.67.89
 Secret 2: PRODUCTION_SERVER_USER = deploy
 Secret 3: PRODUCTION_SERVER_SSH_KEY = -----BEGIN OPENSSH...
 </code></pre>
-<h3 id="result">Result:</h3>
+<h4 id="result">Result:</h4>
 <pre><code>GitHub replaces:
 host: 123.45.67.89
 username: deploy
@@ -446,7 +446,7 @@ key: -----BEGIN OPENSSH...
 
 Then connects to your server and deploys!
 </code></pre>
-<h2 id="why-this-is-safe">Why This is Safe? 🛡️</h2>
+<h3 id="why-this-is-safe">Why This is Safe? 🛡️</h3>
 <pre><code>Without Secrets (DANGEROUS ❌):
 - SSH key in workflow file
 - Visible to everyone
@@ -460,7 +460,7 @@ With Secrets (SAFE ✅):
 - Workflows use it safely
 - Your server is protected!
 </code></pre>
-<h2 id="quick-checklist-do-you-need-secrets">Quick Checklist: Do You Need Secrets?</h2>
+<h3 id="quick-checklist-do-you-need-secrets">Quick Checklist: Do You Need Secrets?</h3>
 <table>
 <thead>
 <tr>
@@ -505,82 +505,82 @@ With Secrets (SAFE ✅):
 <td>In repository</td>
 </tr>
 </tbody></table>
-<h2 id="common-mistakes-beginners-make">Common Mistakes Beginners Make ❌</h2>
-<h3 id="mistake-1-putting-secrets-in-code">Mistake 1: Putting secrets in code</h3>
+<h3 id="common-mistakes-beginners-make">Common Mistakes Beginners Make ❌</h3>
+<h4 id="mistake-1-putting-secrets-in-code">Mistake 1: Putting secrets in code</h4>
 <pre><code class="language-yaml"># ❌ WRONG - DON&#39;T DO THIS!
 host: 123.45.67.89
 key: -----BEGIN OPENSSH PRIVATE KEY-----
 </code></pre>
-<h3 id="mistake-2-committing-secrets-to-git">Mistake 2: Committing secrets to Git</h3>
+<h4 id="mistake-2-committing-secrets-to-git">Mistake 2: Committing secrets to Git</h4>
 <pre><code class="language-bash"># ❌ WRONG - DON&#39;T DO THIS!
 git add secrets.json
 git push  # Now everyone sees your passwords!
 </code></pre>
-<h3 id="mistake-3-sharing-ssh-key-publicly">Mistake 3: Sharing SSH key publicly</h3>
+<h4 id="mistake-3-sharing-ssh-key-publicly">Mistake 3: Sharing SSH key publicly</h4>
 <pre><code class="language-bash"># ❌ WRONG - DON&#39;T DO THIS!
 # Posting key in forum or chat
 -----BEGIN OPENSSH PRIVATE KEY-----
 ...
 -----END OPENSSH PRIVATE KEY-----
 </code></pre>
-<h3 id="correct-way">Correct Way ✅</h3>
+<h4 id="correct-way">Correct Way ✅</h4>
 <pre><code class="language-yaml"># ✅ RIGHT - USE SECRETS!
 host: ${{ secrets.PRODUCTION_SERVER_HOST }}
 key: ${{ secrets.PRODUCTION_SERVER_SSH_KEY }}
 </code></pre>
-<h2 id="your-secret-names-for-your-portfolio">Your Secret Names (For Your Portfolio)</h2>
+<h3 id="your-secret-names-for-your-portfolio">Your Secret Names (For Your Portfolio)</h3>
 <p>These are the exact secret names we use:</p>
-<h3 id="staging-secrets">Staging Secrets:</h3>
+<h4 id="staging-secrets">Staging Secrets:</h4>
 <pre><code>1. STAGING_SERVER_HOST
 2. STAGING_SERVER_USER
 3. STAGING_SERVER_SSH_KEY
 4. STAGING_DEPLOYMENT_PATH
 5. STAGING_URL
 </code></pre>
-<h3 id="production-secrets">Production Secrets:</h3>
+<h4 id="production-secrets">Production Secrets:</h4>
 <pre><code>1. PRODUCTION_SERVER_HOST
 2. PRODUCTION_SERVER_USER
 3. PRODUCTION_SERVER_SSH_KEY
 4. PRODUCTION_DEPLOYMENT_PATH
 5. PRODUCTION_URL
 </code></pre>
-<h3 id="optional">Optional:</h3>
+<h4 id="optional">Optional:</h4>
 <pre><code>1. SNYK_TOKEN (for security scanning)
 </code></pre>
-<h2 id="where-do-values-come-from">Where Do Values Come From?</h2>
-<h3 id="stagingserverhost">STAGING_SERVER_HOST</h3>
+<h3 id="where-do-values-come-from">Where Do Values Come From?</h3>
+<h4 id="stagingserverhost">STAGING_SERVER_HOST</h4>
 <pre><code>Get from: Your server provider (Linode, DigitalOcean, etc.)
 Example: 185.234.218.45
 How: ssh user@185.234.218.45
 </code></pre>
-<h3 id="stagingserveruser">STAGING_SERVER_USER</h3>
+<h4 id="stagingserveruser">STAGING_SERVER_USER</h4>
 <pre><code>Get from: Server setup
 Example: deploy
 How: whoami (on server)
 </code></pre>
-<h3 id="stagingserversshkey">STAGING_SERVER_SSH_KEY</h3>
+<h4 id="stagingserversshkey">STAGING_SERVER_SSH_KEY</h4>
 <pre><code>Get from: Generate locally
 Example: ssh-keygen -t ed25519
 How: cat ~/.ssh/id_ed25519
 What: Entire file content (starts with -----BEGIN...)
 </code></pre>
-<h2 id="step-by-step-add-your-first-secret">Step-by-Step: Add Your First Secret</h2>
-<h3 id="1-go-to-github">1. Go to GitHub</h3>
+<h3 id="step-by-step-add-your-first-secret">Step-by-Step: Add Your First Secret</h3>
+<h4 id="1-go-to-github">1. Go to GitHub</h4>
 <pre><code>https://github.com/your-account/your_repostory
 </code></pre>
-<h3 id="2-click-settings">2. Click Settings</h3>
+<h4 id="2-click-settings">2. Click Settings</h4>
 <pre><code>Repository → Settings (top right)
 </code></pre>
-<h3 id="3-go-to-secrets">3. Go to Secrets</h3>
+<h4 id="3-go-to-secrets">3. Go to Secrets</h4>
 <pre><code>Left menu → Secrets and variables → Actions
 </code></pre>
-<h3 id="4-add-secret">4. Add Secret</h3>
+<h4 id="4-add-secret">4. Add Secret</h4>
 <pre><code>Click: New repository secret
 Name: STAGING_SERVER_HOST
 Value: YOUR_SERVER_IP_HERE
 Click: Add secret
 </code></pre>
-<h3 id="5-repeat-for-all-secrets">5. Repeat for All Secrets</h3>
+<h4 id="5-repeat-for-all-secrets">5. Repeat for All Secrets</h4>
 <pre><code>Do this 5 more times for:
 - STAGING_SERVER_USER
 - STAGING_SERVER_SSH_KEY
@@ -588,8 +588,8 @@ Click: Add secret
 - STAGING_URL
 - (And same for PRODUCTION_)
 </code></pre>
-<h2 id="how-to-get-your-secret-values">How to Get Your Secret Values</h2>
-<h3 id="for-stagingserverhost-server-ip">For STAGING_SERVER_HOST (Server IP):</h3>
+<h3 id="how-to-get-your-secret-values">How to Get Your Secret Values</h3>
+<h4 id="for-stagingserverhost-server-ip">For STAGING_SERVER_HOST (Server IP):</h4>
 <pre><code>If you have a server:
 $ ip addr
 or
@@ -600,12 +600,12 @@ If using cloud provider:
 - AWS: EC2 → Instances → Public IPv4 address
 - Linode: Linodes → Server → IP Addresses
 </code></pre>
-<h3 id="for-stagingserveruser">For STAGING_SERVER_USER:</h3>
+<h4 id="for-stagingserveruser">For STAGING_SERVER_USER:</h4>
 <pre><code>Default usually: root or deploy
 Check with:
 $ whoami
 </code></pre>
-<h3 id="for-stagingserversshkey">For STAGING_SERVER_SSH_KEY:</h3>
+<h4 id="for-stagingserversshkey">For STAGING_SERVER_SSH_KEY:</h4>
 <pre><code>Generate:
 $ ssh-keygen -t ed25519 -f deploy_key -N &quot;&quot;
 
@@ -615,7 +615,7 @@ $ cat deploy_key
 Copy ENTIRE content (from -----BEGIN to -----END)
 Paste into GitHub Secret
 </code></pre>
-<h3 id="for-stagingdeploymentpath">For STAGING_DEPLOYMENT_PATH:</h3>
+<h4 id="for-stagingdeploymentpath">For STAGING_DEPLOYMENT_PATH:</h4>
 <pre><code>Folder on your server:
 Example: /home/deploy/app
 
@@ -623,15 +623,15 @@ Where is your app?
 $ pwd
 (shows current path)
 </code></pre>
-<h3 id="for-stagingurl">For STAGING_URL:</h3>
+<h4 id="for-stagingurl">For STAGING_URL:</h4>
 <pre><code>Your website URL:
 Example: https://staging.yourdomain.com
 
 Or for IP:
 Example: http://123.45.67.89
 </code></pre>
-<h2 id="verification-did-you-add-secrets-correctly">Verification: Did You Add Secrets Correctly?</h2>
-<h3 id="check-github">Check GitHub:</h3>
+<h3 id="verification-did-you-add-secrets-correctly">Verification: Did You Add Secrets Correctly?</h3>
+<h4 id="check-github">Check GitHub:</h4>
 <pre><code>1. Go to Settings &gt; Secrets and variables &gt; Actions
 2. You should see all 5 secrets listed:
    ✅ STAGING_SERVER_HOST
@@ -641,36 +641,36 @@ Example: http://123.45.67.89
    ✅ STAGING_URL
 3. Click each to verify (shows: •••••••••••)
 </code></pre>
-<h3 id="check-workflows">Check Workflows:</h3>
+<h4 id="check-workflows">Check Workflows:</h4>
 <pre><code>1. Make a push to GitHub
 2. Go to Actions tab
 3. Wait for workflow to run
 4. If secrets work: ✅ Deployment succeeds
 5. If secrets wrong: ❌ Connection fails
 </code></pre>
-<h2 id="troubleshooting-secrets-not-working">Troubleshooting: Secrets Not Working</h2>
-<h3 id="error-andquotauthentication-failedandquot">Error: &quot;Authentication failed&quot;</h3>
+<h3 id="troubleshooting-secrets-not-working">Troubleshooting: Secrets Not Working</h3>
+<h4 id="error-andquotauthentication-failedandquot">Error: &quot;Authentication failed&quot;</h4>
 <pre><code>Means: SSH key is wrong
 Fix:
 1. Copy private key again
 2. Make sure no extra spaces
 3. Use full key (-----BEGIN to -----END)
 </code></pre>
-<h3 id="error-andquotconnection-refusedandquot">Error: &quot;Connection refused&quot;</h3>
+<h4 id="error-andquotconnection-refusedandquot">Error: &quot;Connection refused&quot;</h4>
 <pre><code>Means: Server IP is wrong
 Fix:
 1. Check IP is correct
 2. Try ping: ping STAGING_SERVER_HOST
 3. Make sure server is running
 </code></pre>
-<h3 id="error-andquotpermission-deniedandquot">Error: &quot;Permission denied&quot;</h3>
+<h4 id="error-andquotpermission-deniedandquot">Error: &quot;Permission denied&quot;</h4>
 <pre><code>Means: User or SSH key wrong
 Fix:
 1. SSH manually first: ssh user@ip
 2. Check user exists
 3. Check SSH key works
 </code></pre>
-<h2 id="summary">Summary 🎯</h2>
+<h3 id="summary">Summary 🎯</h3>
 <table>
 <thead>
 <tr>
@@ -707,7 +707,7 @@ Fix:
 <td>Only you and workflows</td>
 </tr>
 </tbody></table>
-<h2 id="next-steps">Next Steps</h2>
+<h3 id="next-steps">Next Steps</h3>
 <ol>
 <li><strong>Read</strong>: <code>FOLDER_STRUCTURE.md</code> (understand files)</li>
 <li><strong>Get</strong>: Server IP, SSH key, etc.</li>

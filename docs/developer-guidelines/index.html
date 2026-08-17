@@ -247,9 +247,9 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="developer-guidelines-for-smartgen">Developer Guidelines for SmartGen</h1>
+                        <h2 id="developer-guidelines-for-smartgen">Developer Guidelines for SmartGen</h2>
 <p>This document outlines the coding guidelines and best practices for contributing to the SmartGenQR.oi project. Adhering to these guidelines ensures code consistency, maintainability, and collaboration efficiency.</p>
-<h2 id="1-general-principles">1. General Principles</h2>
+<h3 id="1-general-principles">1. General Principles</h3>
 <ul>
 <li><strong>Readability:</strong> Write code that is easy to understand for other developers and your future self.</li>
 <li><strong>Maintainability:</strong> Design and implement solutions that are easy to modify, debug, and extend.</li>
@@ -257,8 +257,8 @@
 <li><strong>Performance:</strong> Optimize code for efficiency without sacrificing readability or maintainability.</li>
 <li><strong>Security:</strong> Always consider security implications when writing code, especially when handling user input or external data.</li>
 </ul>
-<h2 id="2-code-formatting">2. Code Formatting</h2>
-<h3 id="javascriptnodejs">JavaScript/Node.js</h3>
+<h3 id="2-code-formatting">2. Code Formatting</h3>
+<h4 id="javascriptnodejs">JavaScript/Node.js</h4>
 <ul>
 <li>Use <code>prettier</code> and <code>eslint</code> for automatic formatting and linting. Ensure your IDE is configured to use them on save.</li>
 <li><strong>Indentation:</strong> Use 2 spaces for indentation.</li>
@@ -282,21 +282,21 @@ function anotherFunction()
   }
 }
 </code></pre>
-<h3 id="html">HTML</h3>
+<h4 id="html">HTML</h4>
 <ul>
 <li>Use <code>prettier</code> for HTML formatting.</li>
 <li><strong>Indentation:</strong> Use 2 spaces for indentation.</li>
 <li><strong>Self-closing tags:</strong> Self-close tags where appropriate (e.g., <code>&lt;img /&gt;</code>, <code>&lt;input /&gt;</code>).</li>
 <li><strong>Attribute order:</strong> Maintain a consistent order for attributes (e.g., <code>id</code>, <code>class</code>, <code>src</code>, <code>alt</code>).</li>
 </ul>
-<h3 id="css">CSS</h3>
+<h4 id="css">CSS</h4>
 <ul>
 <li>Use <code>prettier</code> for CSS formatting.</li>
 <li><strong>Indentation:</strong> Use 2 spaces for indentation.</li>
 <li><strong>Selectors:</strong> Group related properties together.</li>
 <li><strong>Units:</strong> Use <code>rem</code> or <code>em</code> for most sizing, <code>px</code> for borders or small adjustments.</li>
 </ul>
-<h2 id="3-naming-conventions">3. Naming Conventions</h2>
+<h3 id="3-naming-conventions">3. Naming Conventions</h3>
 <ul>
 <li><strong>Variables and Functions:</strong> Use <code>camelCase</code>.<pre><code class="language-javascript">const myVariableName = &#39;value&#39;;
 function calculateTotalAmount() { /* ... */ }
@@ -312,7 +312,7 @@ function calculateTotalAmount() { /* ... */ }
 </li>
 <li><strong>Files:</strong> Use <code>kebab-case</code> for file names (e.g., <code>my-component.js</code>, <code>my-style.css</code>).</li>
 </ul>
-<h2 id="4-comments">4. Comments</h2>
+<h3 id="4-comments">4. Comments</h3>
 <ul>
 <li><strong>Purpose:</strong> Explain <em>why</em> the code does something, not <em>what</em> it does (unless the<br>code is complex and not self-explanatory).</li>
 <li><strong>TODOs:</strong> Use <code>// TODO: [description]</code> for temporary notes or future improvements.</li>
@@ -328,7 +328,7 @@ function add(a, b) {
   return a + b;
 }
 </code></pre>
-<h2 id="5-version-control-git">5. Version Control (Git)</h2>
+<h3 id="5-version-control-git">5. Version Control (Git)</h3>
 <ul>
 <li><p><strong>Branching:</strong> Use feature branches for new features or bug fixes. Branch names should be descriptive (e.g., <code>feature/add-new-tool</code>, <code>bugfix/sitemap-issue</code>).</p>
 </li>
@@ -361,14 +361,14 @@ This resolves the issue where new blog posts were not discoverable by search eng
 
 </li>
 </ul>
-<h2 id="6-security-best-practices">6. Security Best Practices</h2>
+<h3 id="6-security-best-practices">6. Security Best Practices</h3>
 <ul>
 <li><strong>Input Validation:</strong> Always validate and sanitize user input on both client and server sides to prevent XSS, SQL injection, and other vulnerabilities.</li>
 <li><strong>Dependencies:</strong> Regularly update dependencies to patch known security vulnerabilities. Use <code>npm audit</code>.</li>
 <li><strong>Environment Variables:</strong> Never hardcode sensitive information (API keys, credentials). Use environment variables.</li>
 <li><strong>Error Handling:</strong> Implement robust error handling to prevent information leakage through error messages.</li>
 </ul>
-<h2 id="7-project-structure">7. Project Structure</h2>
+<h3 id="7-project-structure">7. Project Structure</h3>
 <p>Maintain a logical and consistent project structure. For this project, follow the existing patterns:</p>
 <ul>
 <li><code>assets/</code>: Static assets (images, CSS, JS).</li>
@@ -378,21 +378,21 @@ This resolves the issue where new blog posts were not discoverable by search eng
 <li><code>templates/</code>: HTML templates for dynamic content generation.</li>
 <li>Root directory for main HTML pages and tools.</li>
 </ul>
-<h2 id="8-performance-optimization">8. Performance Optimization</h2>
+<h3 id="8-performance-optimization">8. Performance Optimization</h3>
 <ul>
 <li><strong>Lazy Loading:</strong> Implement lazy loading for images and other non-critical assets.</li>
 <li><strong>Minification:</strong> Ensure CSS and JavaScript files are minified in production builds.</li>
 <li><strong>Image Optimization:</strong> Optimize images for web (compression, appropriate formats).</li>
 <li><strong>Caching:</strong> Utilize browser caching effectively.</li>
 </ul>
-<h2 id="9-accessibility-a11y">9. Accessibility (A11y)</h2>
+<h3 id="9-accessibility-a11y">9. Accessibility (A11y)</h3>
 <ul>
 <li><strong>Semantic HTML:</strong> Use semantic HTML elements to improve accessibility and SEO.</li>
 <li><strong>ARIA Attributes:</strong> Use ARIA attributes where necessary to enhance accessibility for dynamic content or custom controls.</li>
 <li><strong>Keyboard Navigation:</strong> Ensure all interactive elements are keyboard accessible.</li>
 <li><strong>Color Contrast:</strong> Maintain sufficient color contrast for text and interactive elements.</li>
 </ul>
-<h2 id="10-testing">10. Testing</h2>
+<h3 id="10-testing">10. Testing</h3>
 <ul>
 <li><strong>Unit Tests:</strong> Write unit tests for critical functions and modules.</li>
 <li><strong>Integration Tests:</strong> Implement integration tests for key features.</li>

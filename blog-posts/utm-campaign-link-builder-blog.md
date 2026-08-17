@@ -1,14 +1,12 @@
 ---
 title: "Master Your Marketing: The Ultimate Guide to the UTM Campaign Link Builder"
+seo_title: "UTM Campaign Link Builder: Complete Guide"
 description: "Learn how to use a UTM link builder to track your marketing campaigns in Google Analytics. Generate error-free URLs instantly with our free tool."
 image: "https://i.ibb.co/WqNHgyw/IMG-4319.jpg"
 date: "2026-07-14"
 tags: ["SmartGen", "UTM Parameters", "Campaign Tracking", "Digital Marketing", "Google Analytics"]
 slug: "master-your-marketing-the-ultimate-guide-to-the-utm-campaign-link-builder"
 ---
-
-
-
 ![UTM Campaign Link Builder](https://i.ibb.co/WqNHgyw/IMG-4319.jpg)
 
 # Master Your Marketing: The Ultimate Guide to the [UTM](https://smartgentools.com/utm-builder/) Campaign Link Builder

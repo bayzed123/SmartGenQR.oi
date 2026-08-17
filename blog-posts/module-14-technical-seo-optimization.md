@@ -1,5 +1,6 @@
 ---
-title: "Technical SEO Optimization — The Complete A to Z Mega Guide for Beginners - SmartGen Blog"
+title: "Technical SEO Optimization — The Complete A to Z Mega Guide for Beginners"
+seo_title: "Technical SEO Guide for Beginners"
 description: "A complete, deeply detailed, beginner-friendly A to Z guide to technical SEO — how to run a full technical SEO audit, how to optimize website speed and Core Web Vitals (LCP, INP, CLS), how mobile-first indexing and responsive design actually work, how to structure a website for maximum crawlability, and exactly how to implement schema markup and structured data correctly in 2026."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 14, Technical SEO, Technical SEO Audit, Website Speed Optimization, Core Web Vitals, Mobile-Friendly SEO, Mobile-First Indexing, Site Architecture, Crawlability, Schema Markup, Structured Data, E-E-A-T"
 date: 2026-07-04

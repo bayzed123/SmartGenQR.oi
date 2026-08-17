@@ -1,5 +1,6 @@
 ---
-title: "Local SEO & Google Business Profile — The Complete A to Z Mega Guide for Beginners - SmartGen Blog"
+title: "Local SEO & Google Business Profile — The Complete A to Z Mega Guide for Beginners"
+seo_title: "Local SEO & Google Business Profile Guide"
 description: "A complete, practical A to Z guide to Local SEO and Google Business Profile optimization for beginners — creating and claiming your GMB listing, optimizing every profile field, using GBP Posts to win more clicks, reading Insights and Analytics to grow your local search rankings in 2026."
 keywords: "Local SEO, Google Business Profile, Google My Business optimization, GMB listing, how to rank on Google Maps, local SEO for small business, google business profile optimization tips 2026, local SEO guide beginners, how to claim google business profile, GBP insights analytics, SmartGen"
 date: 2026-07-03

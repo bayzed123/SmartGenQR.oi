@@ -1,5 +1,6 @@
 ---
-title: "Mobile, Cross-Device & Campaign Analytics — The Complete A to Z Mega Guide for Beginners - SmartGen Blog"
+title: "Mobile, Cross-Device & Campaign Analytics — The Complete A to Z Mega Guide for Beginners"
+seo_title: "Mobile & Cross-Device Analytics Guide"
 description: "A complete, practical A to Z guide to mobile and cross-device analytics for beginners — responsive tracking, User-ID cross-device measurement, UTM parameters and campaign tracking, social media analytics, GA4 and Google Ads integration, and measuring real ad performance."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 18, Cross-Device Tracking, Google Analytics User-ID, UTM Parameters, UTM Builder, Campaign Tracking, GA4 Google Ads Integration, Social Media Analytics, Ad Performance Measurement, Mobile Analytics"
 date: 2026-07-05

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Loop Exercises and String Basics Guide - SmartGen Blog</title>
+    <title>Python Loop Exercises and String Basics Guide</title>
     <meta name="description" content="Practice real loop-based problems and learn Python strings step by step -- indexing, slicing, and the core string methods you will use every day.">
     <meta name="author" content="Sayad Md Bayezid Hosan">
     <meta name="keywords" content="SmartGen, Python Course, Class 06, Python, Loops, Strings">
@@ -251,13 +251,15 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
 
 <p>July 15, 2026 • General • By <a href="https://www.sayadbayezid.com/">Sayad Md Bayezid Hosan</a></p>
-<p>A complete, step-by-step guide to solving real problems with Python loops and mastering strings — hands-on loop exercises including FizzBuzz and reversing a string by hand, plus everything you need to know about string indexing, slicing, immutability, and the core methods you&#39;ll use in almost every program you write.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -271,6 +273,7 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<p>A complete, step-by-step guide to solving real problems with Python loops and mastering strings — hands-on loop exercises including FizzBuzz and reversing a string by hand, plus everything you need to know about string indexing, slicing, immutability, and the core methods you&#39;ll use in almost every program you write.</p>
 <p> <img src="https://smartgentools.com/blog-posts/images/python-course-class-06-cover.svg" alt="Python Loop Exercises and String Basics Guide — cover image"></p>
 <hr>
 <h2>Table of Contents</h2>
@@ -295,15 +298,6 @@
 <h2>Hands-On Loop-Based Problem-Solving</h2>
 <h3>The Problem</h3>
 <p>Knowing the syntax for a <code>for</code> loop and actually being able to look at a blank screen and solve a real problem with one are two completely different skills — and most beginners stall out right at that gap.</p>
-<h3>The Solution: Four Classic Exercises, Solved Step by Step</h3>
-<h3>Exercise 1: Sum the Numbers From 1 to 100</h3>
-<pre><code class="language-python">total = 0
-for number in range(1, 101):
-    total += number
-
-print(total)   # 5050
-</code></pre>
-<p>Walk through the logic: start a running total at zero, then let the loop add each number from 1 through 100 (remember, <code>range(1, 101)</code> stops <em>before</em> 101) one at a time.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -317,6 +311,15 @@ print(total)   # 5050
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<h3>The Solution: Four Classic Exercises, Solved Step by Step</h3>
+<h3>Exercise 1: Sum the Numbers From 1 to 100</h3>
+<pre><code class="language-python">total = 0
+for number in range(1, 101):
+    total += number
+
+print(total)   # 5050
+</code></pre>
+<p>Walk through the logic: start a running total at zero, then let the loop add each number from 1 through 100 (remember, <code>range(1, 101)</code> stops <em>before</em> 101) one at a time.</p>
 <h3>Exercise 2: FizzBuzz</h3>
 <p>A genuine classic for a reason — it combines loops, conditionals from <a href="https://smartgentools.com/blog/python-loops-and-conditionals-step-by-step/">Loops and Conditionals</a>, and the modulo operator from <a href="https://smartgentools.com/blog/master-python-operators-step-by-step-guide/">Python Operators</a> in one small problem:</p>
 <pre><code class="language-python">for number in range(1, 21):

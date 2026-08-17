@@ -1,5 +1,6 @@
 ---
-title: "LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners - SmartGen Blog"
+title: "LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners"
+seo_title: "LinkedIn Marketing Guide for Beginners"
 description: "A complete, practical guide to LinkedIn marketing and profile optimization: choosing between an individual profile and a Company Page, building a profile that actually gets found, creating content the algorithm wants to spread, growing a real professional network, running an effective Company Page, using LinkedIn Ads, and reading your analytics."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 7, LinkedIn Marketing, LinkedIn Optimization, LinkedIn Ads, B2B Marketing"
 date: 2026-07-01
@@ -14,7 +15,6 @@ tags:
   - B2B Marketing
 slug: "linkedin-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog"
 ---
-
 July 01, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com/)
 
 ---
