@@ -1,0 +1,70 @@
+name: Localise Remote Blog Images
+
+# Mirrors the article images still served from i.ibb.co onto this repo and
+# rewrites the markdown/HTML that points at them, then rebuilds the generated
+# pages so the change reaches /blog/ and /docs/.
+#
+# This runs in CI rather than locally because the development container has no
+# outbound route to the image host. It is manual-only on purpose: it commits
+# binary assets, so it should be run deliberately and its diff reviewed.
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: 'Commit the mirrored images and rewritten sources'
+        type: boolean
+        default: true
+
+concurrency:
+  group: localise-images
+  cancel-in-progress: false
+
+jobs:
+  localise:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Mirror remote images and rewrite sources
+        id: mirror
+        run: node scripts/localise-remote-images.js
+
+      - name: Rebuild generated pages
+        run: |
+          node scripts/build-blog.js
+          node scripts/docs-build.js
+
+      # The chatbot index embeds page content, so a rebuild can move it. The
+      # deploy-worker workflow fails hard on a stale index, so keep it in step.
+      - name: Refresh the chatbot knowledge index
+        run: node scripts/build-chatbot-knowledge.js
+
+      - name: Show what changed
+        run: git --no-pager diff --stat
+
+      - name: Commit
+        if: ${{ inputs.commit }}
+        run: |
+          if git diff --quiet; then
+            echo "Nothing changed -- every image is already local."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "assets: self-host the article images that were loaded from i.ibb.co"
+          git push
