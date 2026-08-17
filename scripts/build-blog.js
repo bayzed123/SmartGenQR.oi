@@ -253,32 +253,36 @@ function pageTitle(post) {
  * Generate HTML for a single blog post
  */
 /**
- * The page template already supplies the article's <h1>. Markdown that also
- * opens sections with `# ` therefore produced a second (and third, and
- * ninth) h1, and left those sections sitting at the same level as the
- * subsections beneath them -- 47 posts had multiple h1s and the outline
- * skipped levels.
+ * Renumber the rendered body's headings so the document outline is continuous.
  *
- * Where the rendered body contains an h1, every heading in it is shifted down
- * one level so the document reads h1 (title) > h2 (section) > h3 (subsection).
- * Posts already starting at `## ` are left exactly as they are.
+ * Two problems this solves. The template already supplies the article's <h1>,
+ * so markdown that also opens with `# ` produced a second one -- 47 posts had
+ * between two and nine h1s. And markdown authors jump levels freely (`##`
+ * followed by `####` reads fine but leaves a hole in the outline).
+ *
+ * The walk is seeded with the template's h1, so the first body heading always
+ * becomes an h2 and relative depth is preserved from there: siblings stay
+ * siblings, nested stays nested, and no level is ever skipped.
  */
-function demoteContentHeadings(htmlContent) {
-  if (!/<h1[\s>]/i.test(htmlContent)) return htmlContent;
-  // Highest level first would cascade (h1->h2 then that h2->h3), so walk
-  // from the deepest heading upwards.
-  for (let level = 5; level >= 1; level--) {
-    const open = new RegExp(`<h${level}(\\s[^>]*)?>`, 'gi');
-    const close = new RegExp(`</h${level}>`, 'gi');
-    htmlContent = htmlContent
-      .replace(open, (m, attrs) => `<h${level + 1}${attrs || ''}>`)
-      .replace(close, `</h${level + 1}>`);
-  }
-  return htmlContent;
+function normaliseOutline(htmlContent) {
+  const depth = [{ original: 0, emitted: 1 }];   // the template <h1>
+  const openTags = [];
+  return htmlContent.replace(/<(\/)?h([1-6])\b/gi, (match, closing, lvl) => {
+    const level = Number(lvl);
+    if (closing) {
+      const emitted = openTags.length ? openTags.pop() : level;
+      return `</h${emitted}`;
+    }
+    while (depth.length > 1 && depth[depth.length - 1].original >= level) depth.pop();
+    const emitted = Math.min(depth[depth.length - 1].emitted + 1, 6);
+    depth.push({ original: level, emitted });
+    openTags.push(emitted);
+    return `<h${emitted}`;
+  });
 }
 
 function generatePostHTML(post) {
-  let htmlContent = demoteContentHeadings(marked(post.content));
+  let htmlContent = normaliseOutline(marked(post.content));
   const authorProfileBox = loadAuthorProfileBox();
   const authorFooterBox = loadAuthorFooterBox();
   

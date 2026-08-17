@@ -69,7 +69,7 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
                 <!-- BMI Calculator -->
                 <div class="form-group">
-                    <h3>BMI Calculator</h3>
+                    <h2>BMI Calculator</h2>
                     <div>
                         <label class="form-label">Height (cm)</label>
                         <input type="number" id="bmi-height" class="form-input" placeholder="170" oninput="calculateBMI()">
@@ -87,7 +87,7 @@
 
                 <!-- BMR Calculator -->
                 <div class="form-group">
-                    <h3>BMR Calculator</h3>
+                    <h2>BMR Calculator</h2>
                     <div>
                         <label class="form-label">Gender</label>
                         <select id="bmr-gender" class="form-input" oninput="calculateBMR()">
@@ -116,7 +116,7 @@
             </div>
 
             <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px;">
-                <h3 style="margin-top: 0;">BMI Categories</h3>
+                <h2 style="margin-top: 0;">BMI Categories</h2>
                 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; font-size: 0.9rem;">
                     <div>
                         <p style="margin: 0; font-weight: bold; color: #28a745;">Underweight</p>
@@ -149,22 +149,22 @@
     
 
 <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px; border-left: 5px solid #2563eb; padding-left: 20px;">What Do BMI and BMR Actually Measure?</h3>
+            <h2 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px; border-left: 5px solid #2563eb; padding-left: 20px;">What Do BMI and BMR Actually Measure?</h2>
             <p><strong>BMI (Body Mass Index)</strong> is your weight relative to your height, used as a rough screening indicator for the underweight/normal/overweight/obese ranges. <strong>BMR (Basal Metabolic Rate)</strong> is how many calories your body burns at complete rest just to keep you alive — breathing, circulation, cell repair — before any activity is added on top.</p>
             <p style="margin-top: 15px;">Enter your height, weight, age, and gender, and this calculator returns both instantly, entirely in your browser.</p>
         </section>
 
         <section style="margin-bottom: 50px; background: #f8fafc; padding: 30px; border-radius: 20px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Why Use This BMI & BMR Calculator</h3>
+            <h2 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Why Use This BMI & BMR Calculator</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 20px;">
-                <div style="padding: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">📊 Both Metrics Together</h4><p style="font-size: 0.95rem;">BMI and BMR from the same inputs — no need for two separate calculators.</p></div>
-                <div style="padding: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">⚡ Instant Results</h4><p style="font-size: 0.95rem;">Results update live as you adjust height, weight, age, or gender.</p></div>
-                <div style="padding: 15px;"><h4 style="color: #2563eb; margin-bottom: 10px;">🔒 Private Health Data</h4><p style="font-size: 0.95rem;">Calculations run locally — your health details are never sent anywhere.</p></div>
+                <div style="padding: 15px;"><h3 style="color: #2563eb; margin-bottom: 10px;">📊 Both Metrics Together</h3><p style="font-size: 0.95rem;">BMI and BMR from the same inputs — no need for two separate calculators.</p></div>
+                <div style="padding: 15px;"><h3 style="color: #2563eb; margin-bottom: 10px;">⚡ Instant Results</h3><p style="font-size: 0.95rem;">Results update live as you adjust height, weight, age, or gender.</p></div>
+                <div style="padding: 15px;"><h3 style="color: #2563eb; margin-bottom: 10px;">🔒 Private Health Data</h3><p style="font-size: 0.95rem;">Calculations run locally — your health details are never sent anywhere.</p></div>
             </div>
         </section>
 
         <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">How to Calculate Your BMI and BMR</h3>
+            <h2 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">How to Calculate Your BMI and BMR</h2>
             <ol style="margin-top: 20px; padding-left: 25px;">
                 <li style="margin-bottom: 15px;"><strong>Enter your height (cm) and weight (kg)</strong> for the BMI result.</li>
                 <li style="margin-bottom: 15px;"><strong>Add your gender and age</strong> in the BMR section — both factor into the Mifflin-St Jeor formula this tool uses.</li>
@@ -173,16 +173,16 @@
         </section>
 
         <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Using Your Results Correctly</h3>
+            <h2 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Using Your Results Correctly</h2>
             <div style="margin-top: 25px;">
-                <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;"><h4 style="color: #1a202c; margin-bottom: 10px;">1. BMI doesn't account for muscle mass</h4><p>A muscular, athletic person can show a high BMI despite low body fat — BMI is a population-level screening tool, not a precise individual diagnosis.</p></div>
-                <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;"><h4 style="color: #1a202c; margin-bottom: 10px;">2. Your BMR isn't your total daily calorie need</h4><p>BMR is calories at complete rest. To find your actual daily need (TDEE), multiply BMR by an activity factor (roughly 1.2 for sedentary, up to 1.9 for very active) to account for movement and exercise.</p></div>
-                <div style="margin-bottom: 20px;"><h4 style="color: #1a202c; margin-bottom: 10px;">3. Use it as a starting point, not medical advice</h4><p>Both numbers are useful general guides for nutrition and fitness planning — for anything involving a specific health condition, talk to a doctor or dietitian.</p></div>
+                <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;"><h3 style="color: #1a202c; margin-bottom: 10px;">1. BMI doesn't account for muscle mass</h3><p>A muscular, athletic person can show a high BMI despite low body fat — BMI is a population-level screening tool, not a precise individual diagnosis.</p></div>
+                <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;"><h3 style="color: #1a202c; margin-bottom: 10px;">2. Your BMR isn't your total daily calorie need</h3><p>BMR is calories at complete rest. To find your actual daily need (TDEE), multiply BMR by an activity factor (roughly 1.2 for sedentary, up to 1.9 for very active) to account for movement and exercise.</p></div>
+                <div style="margin-bottom: 20px;"><h3 style="color: #1a202c; margin-bottom: 10px;">3. Use it as a starting point, not medical advice</h3><p>Both numbers are useful general guides for nutrition and fitness planning — for anything involving a specific health condition, talk to a doctor or dietitian.</p></div>
             </div>
         </section>
 
         <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Frequently Asked Questions (FAQ)</h3>
+            <h2 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Frequently Asked Questions (FAQ)</h2>
             <div style="margin-top: 20px;">
                 <div style="margin-bottom: 25px;"><p style="font-weight: 700; color: #1a202c;">Q: What BMI range is considered "normal"?</p><p style="color: #4a5568;">A: The commonly used WHO ranges are: under 18.5 underweight, 18.5-24.9 normal, 25-29.9 overweight, and 30+ obese — though these bands don't account for muscle mass or body composition.</p></div>
                 <div style="margin-bottom: 25px;"><p style="font-weight: 700; color: #1a202c;">Q: What formula does this tool use for BMR?</p><p style="color: #4a5568;">A: The Mifflin-St Jeor equation — widely regarded as more accurate than the older Harris-Benedict formula for most adults.</p></div>
@@ -198,12 +198,12 @@
     </article>
 
 <section class="related-tools-smart" style="margin: 3rem 0; padding: 2rem; background: #f8fafc; border-radius: 20px; border: 1px solid #e2e8f0;">
-    <h3 style="font-size: 1.5rem; color: #1e293b; margin-bottom: 1.5rem;">🛠️ Related Professional Tools</h3>
+    <h2 style="font-size: 1.5rem; color: #1e293b; margin-bottom: 1.5rem;">🛠️ Related Professional Tools</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 1.5rem;">
         <a href="/age-calculator/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
             <div style="font-size: 1.8rem;">📅</div>
             <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">Age Calculator</h4>
+                <h3 style="margin: 0; font-size: 1rem; color: #0f172a;">Age Calculator</h3>
                 <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Daily Utilities & Calculators</p>
             </div>
         </a>
@@ -211,7 +211,7 @@
         <a href="/cpm-roi-calculator/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
             <div style="font-size: 1.8rem;">💰</div>
             <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">CPM ROI Calculator</h4>
+                <h3 style="margin: 0; font-size: 1rem; color: #0f172a;">CPM ROI Calculator</h3>
                 <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Daily Utilities & Calculators</p>
             </div>
         </a>
@@ -219,7 +219,7 @@
         <a href="/emi-calculator/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
             <div style="font-size: 1.8rem;">🏦</div>
             <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">EMI Calculator</h4>
+                <h3 style="margin: 0; font-size: 1rem; color: #0f172a;">EMI Calculator</h3>
                 <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Daily Utilities & Calculators</p>
             </div>
         </a>
@@ -228,28 +228,28 @@
 
 <section class="recommended-blogs-smart" style="margin: 3rem 0; padding: 2rem; background: #0f172a; border-radius: 20px; color: white;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <h3 style="font-size: 1.5rem; margin: 0;">📖 Recommended Reading</h3>
+        <h2 style="font-size: 1.5rem; margin: 0;">📖 Recommended Reading</h2>
         <a href="/blog/" style="color: #3b82f6; text-decoration: none; font-size: 0.9rem; font-weight: 600;">View All →</a>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.5rem;">
         
         <a href="/blog/the-ultimate-guide-to-smartgen-tools-40-free-utilities-for-developers-marketers-and-creators/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
             <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">SmartGen Tools Master Guide</h4>
+                <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">SmartGen Tools Master Guide</h3>
                 <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">A comprehensive A-Z guide for all SmartGen utilities and how to use them.</p>
             </div>
         </a>
 
         <a href="/qr-generator/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
             <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">QR Code Generator</h4>
+                <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">QR Code Generator</h3>
                 <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">Generate secure, customizable QR codes instantly — free, client-side, no sign-up.</p>
             </div>
         </a>
 
         <a href="/blog/how-to-optimize-your-website-for-google-adsense-approval-in-2026/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
             <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">AdSense Approval Guide</h4>
+                <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">AdSense Approval Guide</h3>
                 <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">The definitive roadmap to getting your website approved for Google AdSense in 2026.</p>
             </div>
         </a>

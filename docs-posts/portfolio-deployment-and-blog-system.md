@@ -1,6 +1,7 @@
 ---
 slug: "portfolio-website-deployment-and-blog-system-guide"
 title: "Portfolio Website: Deployment & Blog System Guide"
+seo_title: "Portfolio Deployment & Blog System"
 description: "Deploy the portfolio site and run its blog: the deployment pipeline, how markdown becomes published pages, and troubleshooting."
 order: 2
 category: "Portfolio Website"

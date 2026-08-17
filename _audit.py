@@ -2,6 +2,9 @@ import re, glob, html, collections, json
 def txt(s): return re.sub(r'\s+',' ',html.unescape(re.sub(r'<[^>]+>','',s))).strip()
 def strip_chrome(c):
     c=re.sub(r'<!--[\s\S]*?-->','',c)
+    # textarea/template hold markup as TEXT, not DOM
+    c=re.sub(r'<textarea[\s\S]*?</textarea>','',c,flags=re.I)
+    c=re.sub(r'<template[\s\S]*?</template>','',c,flags=re.I)
     c=re.sub(r'<script[\s\S]*?</script>','',c,flags=re.I)
     c=re.sub(r'<style[\s\S]*?</style>','',c,flags=re.I)
     c=re.sub(r'<header[^>]*id="main-header"[\s\S]*?</header>','',c,flags=re.I)

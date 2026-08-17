@@ -1,6 +1,7 @@
 ---
 slug: "building-a-fast-client-side-search-feature-without-a-backend"
 title: "Building a Fast Client-Side Search Feature Without a Backend"
+seo_title: "Client-Side Search Without a Backend"
 description: "How to implement instant, responsive search on a static site using nothing but JavaScript, a JSON index, and debouncing."
 order: 5
 category: "Open Source Projects"

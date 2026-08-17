@@ -231,37 +231,37 @@
 
     <div class="finding verified">
       <span class="stamp stamp--verified">Confirmed</span>
-      <h3>All 130+ tools are 100% client-side — there's no REST API behind them</h3>
+      <h2>All 130+ tools are 100% client-side — there's no REST API behind them</h2>
       <p>Checked the QR Generator directly: it states plainly that nothing typed is sent to a server, and builds the code on-device with the <code>qrcodejs</code> library. Same pattern on every tool page checked. There's no request/response cycle here to document as a traditional API.</p>
     </div>
 
     <div class="finding stale">
       <span class="stamp stamp--stale">Stale, exactly as you flagged</span>
-      <h3>The repo's own "Link Status Report" is out of date</h3>
+      <h2>The repo's own "Link Status Report" is out of date</h2>
       <p>README.md lists 80 <code>/html-code-library/</code> URLs as 404, dated 2026-07-14. I opened <code>/html-code-library/html-bold/</code> directly — it loads fine, with a live tool, a browser-compatibility table, and related-page links. That report is nearly a month stale. I'm treating live pages as ground truth, not that file, for the rest of this project.</p>
     </div>
 
     <div class="finding flag">
       <span class="stamp stamp--flag">Needs a decision</span>
-      <h3>The Code Library's live pages point at a different repo</h3>
+      <h2>The Code Library's live pages point at a different repo</h2>
       <p><code>/html-code-library/html-bold/</code> links to <code>github.com/bayzed123/smartgen-horizon</code> as its source — not <code>SmartGenQR.oi</code>, the repo you sent. Before I document the Code Library specifically, I need to know which repo is actually deployed, so the docs point at real source.</p>
     </div>
 
     <div class="finding flag">
       <span class="stamp stamp--flag">Worth fixing</span>
-      <h3>Three tool counts, three answers</h3>
+      <h2>Three tool counts, three answers</h2>
       <p>Homepage: 131+. <code>/tools/</code> page meta: 57+. Footer: "HTML Code Library (80+)". Adding the 49 standalone tools I found on <code>/tools/</code> to the library's ~80 snippet pages lands close to 131 — so that's likely the real number — but worth standardizing on one figure across the site.</p>
     </div>
 
     <div class="finding stale">
       <span class="stamp stamp--stale">Scaffold, not real content</span>
-      <h3>docs.smartgentools.com reads like unfilled template</h3>
+      <h2>docs.smartgentools.com reads like unfilled template</h2>
       <p>It's live — 68 pages — but its "API Reference" and "SDKs" sections (JavaScript, Python, PHP, Java, Go) look like the default starter content that ships with your SmartGen Docs generator, not documentation of your actual client-side tools. I won't carry that structure into the real docs — see the Approach tab.</p>
     </div>
 
     <div class="finding flag">
       <span class="stamp stamp--flag">Resolved</span>
-      <h3>URL pattern is uniform</h3>
+      <h2>URL pattern is uniform</h2>
       <p>Every tool lives at <code>smartgentools.com/tool-name/</code>. CPM ROI Calculator, Color Palette Extractor and EMI Calculator were previously documented here as using a <code>/tools/</code> prefix, but no such pages exist — the <code>/tools/</code> index linked to them relatively, which resolved to <code>/tools/tool-name/</code> and 404'd. The links now point at the root URLs, so the pattern is uniform.</p>
     </div>
   </section>
@@ -321,7 +321,7 @@
 
     <div class="doc-card">
       <div class="doc-card-head">
-        <h3>QR Code Generator</h3>
+        <h2>QR Code Generator</h2>
         <div class="url">smartgentools.com/qr-generator/ · Developer &amp; Technical</div>
       </div>
       <div class="doc-card-body">
@@ -366,7 +366,7 @@
 
     <div class="finding flag">
       <span class="stamp stamp--flag">Practical alternative</span>
-      <h3>A script that fits your existing setup</h3>
+      <h2>A script that fits your existing setup</h2>
       <p>You're already running GitHub Actions for the changelog and Pages deploy, and using pnpm. This drops into the same pattern: a Playwright script plus a scheduled workflow that screenshots every live tool page and commits the images automatically — no manual screenshotting, and it stays current as pages change.</p>
     </div>
 
@@ -662,7 +662,7 @@ jobs:
 <div id="cookie-consent-banner" role="region" aria-label="Cookie consent">
     <span class="cc-icon" aria-hidden="true">🍪</span>
     <div class="cc-body">
-        <h3>We value your privacy</h3>
+        <h2>We value your privacy</h2>
         <p>
             We use cookies to keep the site running smoothly, understand how it's used, and — with
             your consent — show relevant ads. Read our <a href="/privacy/">Privacy Policy</a> to learn more.
