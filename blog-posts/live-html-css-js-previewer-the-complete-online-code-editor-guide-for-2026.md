@@ -3,7 +3,7 @@ title: "Live HTML CSS JS Previewer: The Complete Online Code Editor Guide for 20
 seo_title: "Live HTML CSS JS Previewer & Code Editor"
 date: "2026-06-27"
 author: "Sayad Md Bayezid Hosan"
-description: "Write, test, and preview HTML, CSS, and JavaScript code instantly in your browser — no install, no signup. The complete guide to using SmartGen's free Live HTML/CSS/JS Previewer for beginners, developers, and designers in 2026."
+description: "Write HTML, CSS and JavaScript and see the result instantly. A free in-browser code editor with live preview and no setup."
 image: "https://i.ibb.co/whJY0dWN/IMG-5652.jpg"
 tags: ["HTML Editor Online", "Live HTML Preview", "CSS JS Editor", "Online Code Editor", "HTML CSS JavaScript", "Web Development Tools", "Free Coding Tool", "Browser IDE"]
 category: "Developer Tools"

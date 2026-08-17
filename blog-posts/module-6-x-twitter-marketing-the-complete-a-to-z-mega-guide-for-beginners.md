@@ -1,7 +1,7 @@
 ---
 title: "MODULE 6: X (Formerly Twitter) Marketing — The Complete A to Z Mega Guide for Beginners"
 seo_title: "X (Twitter) Marketing Guide for Beginners"
-description: "A complete, practical guide to marketing on X (formerly Twitter): creating and curating your profile, understanding followers, retweets, clicks, and conversions, using hashtags effectively, finding and following niche users, writing posts that drive engagement, and running X ad campaigns."
+description: "Grow on X (Twitter): profile setup, what actually gets reach, posting cadence, threads and turning followers into traffic."
 keywords: "x marketing, twitter marketing, x profile setup, x followers retweets, x hashtags, x engagement strategy, x ads campaign, twitter ads, how to grow on x, smartgen"
 date: 2026-06-30
 image: "https://smartgentools.com/blog-posts/images/module6-x-twitter-marketing-infographic.svg"

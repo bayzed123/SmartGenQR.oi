@@ -1,10 +1,9 @@
 ---
 slug: "about-the-team-and-contribution"
 title: "About the Team & Contribution"
-description: "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions"
+description: "Who builds SmartGen, how the project is run, and how to contribute: contribution guidelines, licensing and where to start."
 order: 4
 ---
-
 # 🧑‍💻 About the Team & Contribution
 
 SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions.

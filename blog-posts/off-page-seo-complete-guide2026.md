@@ -1,7 +1,7 @@
 ---
 title: "Off-Page Optimization — The Complete A to Z Mega Guide for Beginners"
 seo_title: "Off-Page SEO Guide: Links and Authority"
-description: "A complete, practical A to Z guide to Off-Page SEO for beginners — what off-page optimization actually is, the fundamentals of link building, proven link building strategies, the real difference between white hat and black hat SEO, and the link acquisition techniques that build lasting search authority."
+description: "Earn authority off your own site: link building that survives updates, digital PR, brand mentions and what to avoid."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 11, Off-Page SEO, Off-Page Optimization, Link Building, White Hat SEO, Black Hat SEO, Link Acquisition"
 date: 2026-07-02
 image: "https://smartgentools.com/blog-posts/images/off-page-seo-framework.svg"

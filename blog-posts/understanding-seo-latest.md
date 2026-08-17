@@ -1,7 +1,7 @@
 ---
 title: "Dynamic Sitemap Generation with Real-Time Updates: The Complete Programmatic SEO Blueprint"
 seo_title: "Dynamic Sitemap Generation for Programmatic SEO"
-description: "Learn how to build automated XML sitemaps with real-time updates, faster indexing, Search Console integration, and advanced optimization strategies for scalable SEO growth."
+description: "Generate a sitemap that updates itself: the programmatic SEO blueprint behind real-time sitemaps, plus submission and auditing."
 image: "https://i.ibb.co/cKCS74vJ/auto-sitemap-xml-generator.jpg"
 tags:
   - Dynamic Sitemap

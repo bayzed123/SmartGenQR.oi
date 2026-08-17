@@ -3,7 +3,7 @@ title: "SmartGen Tools Release v3.3.1 - HTML Code Library Integration"
 seo_title: "SmartGen v3.3.1: HTML Code Library"
 date: 2026-06-22
 time: "02:12 AM +06"
-description: "Release notes for SmartGen Tools v3.3.1. Explore the newly integrated HTML Code Library featuring 80+ modular utilities, generators, and templates for front-end web development."
+description: "Release v3.3.1 adds the HTML Code Library: 79 visual-to-code tools for generating HTML and CSS without writing it by hand."
 e_eta: "Immediate Deployment / Live"
 image: "https://i.ibb.co/hJrgn52m/IMG-5451.jpg"
 slug: "smartgen-tools-release-v331-html-code-library-integration"

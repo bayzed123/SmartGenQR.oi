@@ -1,7 +1,7 @@
 ---
 title: "MODULE 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide for Beginners"
 seo_title: "Facebook Marketing Guide for Beginners"
-description: "The complete beginner-to-advanced guide to Meta (Facebook) Marketing: Page vs Profile vs Group, Facebook Marketplace and product catalogue, creating a Business Page, Business Manager and Ads Manager, every type of Facebook advertising explained, and how to create your first ad campaign step by step."
+description: "Market on Facebook without wasting budget: Page setup, organic reach, audience targeting and reading your ad results."
 keywords: "facebook marketing, meta marketing, facebook page vs profile vs group, facebook marketplace, facebook product catalogue, how to create facebook business page, business manager facebook, business suite facebook, ads manager facebook, facebook advertising types, facebook ad campaign, facebook ads for beginners, smartgen"
 date: 2026-06-30
 image: "https://smartgentools.com/blog-posts/images/module4-meta-facebook-marketing-infographic.svg"

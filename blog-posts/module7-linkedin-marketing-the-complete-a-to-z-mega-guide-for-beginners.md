@@ -1,7 +1,7 @@
 ---
 title: "LinkedIn Marketing — The Complete A to Z Mega Guide for Beginners"
 seo_title: "LinkedIn Marketing Guide for Beginners"
-description: "A complete, practical guide to LinkedIn marketing and profile optimization: choosing between an individual profile and a Company Page, building a profile that actually gets found, creating content the algorithm wants to spread, growing a real professional network, running an effective Company Page, using LinkedIn Ads, and reading your analytics."
+description: "Build authority on LinkedIn: profile optimization, content that gets reach, engagement habits and turning views into leads."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 7, LinkedIn Marketing, LinkedIn Optimization, LinkedIn Ads, B2B Marketing"
 date: 2026-07-01
 image: "https://smartgentools.com/blog-posts/images/module7-linkedin-marketing-infographic.svg"

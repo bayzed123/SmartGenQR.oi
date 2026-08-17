@@ -1,7 +1,7 @@
 ---
 slug: "developer-guidelines"
 title: "Developer Guidelines"
-description: "Learn how to quickly set up SmartGen tools."
+description: "The coding standards used across SmartGen: general principles, formatting rules, naming, comments and what reviewers look for."
 category: "Guides"
 order: 3
 ---

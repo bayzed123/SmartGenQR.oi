@@ -1,9 +1,7 @@
 ---
 title: "Facebook Post Share Automation system is built on a browser extension"
 seo_title: "Facebook Post Share Automation Extension"
-description: "User interface for creating automation tasks
-- Sends task requests to backend API
-Tracks execution status in real-time,No dependency on browser extensions anymore"
+description: "A browser extension that shares new posts to Facebook automatically: how the task UI, backend API and real-time status tracking fit together."
 keywords: "Facebook automatiom share"
 date: "2026-05-28"
 image: "https://i.ibb.co/svS3qbVG/IMG-4784.jpg"

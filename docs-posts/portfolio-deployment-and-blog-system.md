@@ -1,7 +1,7 @@
 ---
 slug: "portfolio-website-deployment-and-blog-system-guide"
 title: "Portfolio Website: Deployment & Blog System Guide"
-description: "Complete guide to deploying your portfolio to GitHub Pages, Netlify, or Vercel, plus a deep technical dive into the automated Markdown-to-blog publishing pipeline."
+description: "Deploy the portfolio site and run its blog: the deployment pipeline, how markdown becomes published pages, and troubleshooting."
 order: 2
 category: "Portfolio Website"
 ---

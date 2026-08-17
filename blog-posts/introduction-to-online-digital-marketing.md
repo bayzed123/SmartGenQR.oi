@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Online Digital Marketing: A Beginner's Guide"
-description: "Learn the fundamentals of online digital marketing — what it is, why it matters, and the key channels every beginner should know. Start your digital marketing journey with SmartGen."
+description: "A plain-English introduction to digital marketing: the main channels, how they fit together and where a beginner should start."
 keywords: "digital marketing, online marketing, what is digital marketing, digital marketing for beginners, SEO, content marketing, social media marketing, smartgen"
 date: 2026-06-30
 image: "https://smartgentools.com/blog-posts/images/smartgendigitalmarketing.svg"

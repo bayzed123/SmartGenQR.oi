@@ -1,7 +1,7 @@
 ---
 slug: "portfolio-website-api-and-script-reference"
 title: "Portfolio Website: API & Script Reference"
-description: "Complete technical reference for every script, function, and data structure powering the open-source developer portfolio — setup.sh, convert_blogs.py, and all JavaScript modules."
+description: "API and script reference for the portfolio website: the available endpoints, the build scripts, and the parameters each one accepts."
 order: 4
 category: "Portfolio Website"
 ---

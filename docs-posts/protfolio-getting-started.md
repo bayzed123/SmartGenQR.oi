@@ -1,7 +1,7 @@
 ---
 slug: "portfolio-website-getting-started-guide"
 title: "Portfolio Website: Getting Started Guide"
-description: "Complete guide to forking, setting up, and running the open-source developer portfolio website locally — prerequisites, installation, configuration, and troubleshooting."
+description: "Fork, install and run the open-source developer portfolio locally: prerequisites, configuration and fixes for common setup errors."
 order: 1
 category: "Portfolio Website"
 ---

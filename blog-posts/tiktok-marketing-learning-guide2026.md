@@ -1,7 +1,7 @@
 ---
 title: "TikTok Marketing — The Complete A to Z Mega Guide for Beginners"
 seo_title: "TikTok Marketing Guide for Beginners"
-description: "A complete, practical guide to TikTok marketing for beginners — account setup, content creation, TikTok SEO, marketing tools, community engagement, analytics, and legal considerations"
+description: "Grow on TikTok deliberately: hooks that hold attention, posting cadence, sounds and trends, and reading your analytics."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 10, TikTok Marketing, TikTok SEO, TikTok Ads, Video Marketing, Short-Form Content, TikTok for Business, smartgen"
 date: 2026-07-01
 image: "https://smartgentools.com/blog-posts/images/module10-tiktok-marketing-cover.svg"

@@ -2,7 +2,7 @@
 slug: "quickstart-guide"
 title: "Quickstart Guide"
 date: "2026-07-07"
-description: "Get from zero to a merged PR in under 10 minutes."
+description: "Go from a fresh clone to a merged pull request in under ten minutes: setup, the build commands, and how to submit your first change."
 author: "SmartGen Team"
 ---
 ![Contributor Flowchart](/assets/images/docs/contributor-flowchart.svg)

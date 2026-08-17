@@ -1,7 +1,7 @@
 ---
 title: "MODULE 3: Social Media Marketing (SMM) — Social Media Advertising Concepts and Choosing the Right Platform for Your Audience"
 seo_title: "Social Media Advertising: Pick the Right Platform"
-description: "A complete guide to Social Media Marketing (SMM): how social media advertising works, key ad concepts and targeting options, and a step-by-step framework for selecting the perfect social media platform based on your target audience."
+description: "Choose the right social platform for your audience, then advertise on it well: targeting, budgets, creative and measurement."
 keywords: "social media marketing, SMM, social media advertising, what is social media advertising, social media ad targeting, choosing social media platform, target audience social media, facebook ads, instagram ads, linkedin ads, smartgen"
 date: 2026-06-30
 image: "https://smartgentools.com/blog-posts/images/module3-smm-overview-infographic.svg"

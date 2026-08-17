@@ -2,10 +2,9 @@
 slug: "contributor-guide"
 title: "Contributor Guide"
 date: "2026-07-07"
-description: "Full architecture and API reference for SmartGen contributors."
+description: "Everything you need to contribute to SmartGen: local setup, branching, coding standards, testing and how to get a pull request merged."
 author: "SmartGen Team"
 ---
-
   # SmartGen — Contributor & API Reference Guide
 
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)

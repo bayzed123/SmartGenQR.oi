@@ -3,7 +3,7 @@ title: "BMI & BMR Calculator: The Complete Guide to Body Mass Index and Basal Me
 seo_title: "BMI & BMR Calculator: Complete 2026 Guide"
 date: "2026-06-27"
 author: "Sayad Md Bayezid Hosan"
-description: "Calculate your BMI and BMR instantly with SmartGen's free online calculator. Learn what your numbers mean, how to use them for weight loss or muscle gain, and how to reach your ideal body weight in 2026."
+description: "Work out your BMI and BMR, understand what the numbers mean, and use them to set realistic calorie and fitness targets."
 image: "https://i.ibb.co/ksgMbpZj/IMG-5653.jpg"
 tags: ["BMI Calculator", "BMR Calculator", "Body Mass Index", "Basal Metabolic Rate", "Calorie Calculator", "Weight Loss", "Health & Fitness", "Free Health Tool"]
 category: "Health & Fitness Tools"
