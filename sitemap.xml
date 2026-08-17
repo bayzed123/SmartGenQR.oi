@@ -589,21 +589,21 @@
     </image:image>
   </url>
   <url>
-    <loc>https://smartgentools.com/blog/ui-ux-design-course-class-03-the-ux-design-process/</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-03-cover.svg</image:loc>
-    </image:image>
-  </url>
-  <url>
     <loc>https://smartgentools.com/blog/uiux-design-course-class-02-figma-essentials/</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-02-cover.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/blog/uiux-design-course-class-03-the-ux-design-process/</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-03-cover.svg</image:loc>
     </image:image>
   </url>
   <url>
