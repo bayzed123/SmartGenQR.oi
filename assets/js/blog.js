@@ -58,9 +58,13 @@ function handleNewsletterSubmit(e) {
   const section = form.closest('.newsletter-section');
   const feedback = section ? section.querySelector('.newsletter-feedback') : null;
   const emailInput = form.querySelector('input[type="email"]');
+  // Optional -- the Worker substitutes "Newsletter Subscriber" when it is
+  // blank, so leaving it empty must never block a subscription.
+  const nameInput = form.querySelector('input[name="name"]');
   const honeypot = form.querySelector('.newsletter-hp');
   const button = form.querySelector('button[type="submit"]');
   const email = (emailInput ? emailInput.value : '').trim();
+  const fullName = (nameInput ? nameInput.value : '').trim();
 
   const setFeedback = (message, kind) => {
     if (!feedback) return;
@@ -81,6 +85,7 @@ function handleNewsletterSubmit(e) {
     button.textContent = 'Subscribing…';
   }
   if (emailInput) emailInput.disabled = true;
+  if (nameInput) nameInput.disabled = true;
   setFeedback('', null);
 
   fetch(BLOG_API_BASE + '/api/lead', {
@@ -89,6 +94,7 @@ function handleNewsletterSubmit(e) {
     body: JSON.stringify({
       lead: {
         leadType: 'newsletter_subscribe',
+        fullName: fullName,
         email: email,
         company_website: honeypot ? honeypot.value : '',
         source: 'blog_newsletter',
@@ -118,6 +124,7 @@ function handleNewsletterSubmit(e) {
         button.textContent = originalButtonText;
       }
       if (emailInput) emailInput.disabled = false;
+      if (nameInput) nameInput.disabled = false;
     });
 }
 
@@ -505,7 +512,7 @@ function initReviews() {
           <div class="blog-reviews-count" id="reviewsCount">No reviews yet</div>
         </div>
       </div>
-      <form class="blog-review-form" id="reviewForm">
+      <form class="blog-review-form" id="reviewForm" novalidate>
         <h4>Share your thoughts</h4>
         <div class="blog-review-star-input" id="reviewStarInput">
           ${[1, 2, 3, 4, 5]
@@ -556,6 +563,11 @@ function wireReviewForm(slug) {
     if (kind) feedback.classList.add(kind);
   };
 
+  // The form is `novalidate` on purpose. The textarea is still marked
+  // `required` for assistive tech, but native validation would abort the
+  // submit before this handler runs -- so a reader who forgot the star rating
+  // got a browser tooltip pointing at the comment box instead of the message
+  // explaining what is actually missing. Validation lives here, in one place.
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('reviewName').value.trim();

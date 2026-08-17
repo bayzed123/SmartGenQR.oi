@@ -1131,3 +1131,15 @@ input.form-input[type="range"] {
    while dark surfaces keep the original (7.46:1 on #0f172a). */
 .sg-wordmark-accent { color: #c2410c; }
 [data-theme="dark"] .sg-wordmark-accent { color: #ff8800; }
+
+/* Visually-hidden label text. Kept in the accessibility tree so each form
+   field has a programmatic name, without changing the visual layout. */
+.sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
