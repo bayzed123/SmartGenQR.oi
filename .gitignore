@@ -22,3 +22,7 @@ gcp-key*.json
 .dev.vars
 .dev.vars.*
 secrets/
+
+# Python helper artifacts
+__pycache__/
+*.pyc

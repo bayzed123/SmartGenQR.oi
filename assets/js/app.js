@@ -538,6 +538,7 @@ function injectCookieConsent() {
     style.id = 'cookie-consent-styles';
     style.textContent = `
         #cookie-consent-banner {
+            box-sizing: border-box;
             position: fixed; left: 50%; bottom: 1.25rem; transform: translate(-50%, 140%);
             width: min(680px, calc(100% - 2rem)); z-index: 10000;
             background: var(--card-bg, #12141a); color: var(--text-primary, #e8eaf0);
@@ -547,6 +548,7 @@ function injectCookieConsent() {
             font-family: inherit; opacity: 0;
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
         }
+        #cookie-consent-banner *, #cookie-consent-banner *::before, #cookie-consent-banner *::after { box-sizing: border-box; }
         #cookie-consent-banner.is-visible { transform: translate(-50%, 0); opacity: 1; }
         #cookie-consent-banner .cc-icon { font-size: 1.9rem; line-height: 1; flex-shrink: 0; }
         #cookie-consent-banner .cc-body { flex: 1; min-width: 0; }

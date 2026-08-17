@@ -1,7 +1,7 @@
 ---
 slug: "vite-config-quick-reference"
 title: "Vite Config Quick Reference"
-description: "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions"
+description: "A quick reference for this project's Vite setup: the config at a glance, key build facts, and the options you are most likely to change."
 order: 4
 ---
 # ⚡ Vite Config Quick Reference

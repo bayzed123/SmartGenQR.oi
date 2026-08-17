@@ -1,7 +1,7 @@
 ---
 slug: "github-secrets-explained"
 title: "GitHub Secrets Explained"
-description: Learn about secrets as they are used in GitHub Actions workflows.
+description: "What GitHub Secrets are, why never to commit a key, and how to add and use them safely in Actions workflows. Written for beginners."
 order: 1
 category: "Guides"
 ---

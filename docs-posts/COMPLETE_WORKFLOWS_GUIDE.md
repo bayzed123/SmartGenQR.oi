@@ -1,7 +1,7 @@
 ---
 slug: "custom-environment-variables"
 title: "Custom Environment Variables"
-description: "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions"
+description: "Set custom environment variables in GitHub Actions and Docker, wire up health checks, and send build notifications to Slack, Discord or email."
 order: 7
 ---
 # 🔧 Advanced Workflow Configuration

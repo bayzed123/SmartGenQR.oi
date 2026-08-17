@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workflow Customization Summary - SmartGen Docs</title>
-    <meta name="description" content="SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions">
+    <meta name="description" content="A summary of the workflow customizations in this project: what was changed in each GitHub Actions file, and why, with the Vite config it targets.">
     <link rel="canonical" href="https://smartgentools.com/docs/workflow-customization-summary/">
     
     <!-- HTTPS Redirect Script -->
@@ -247,8 +247,8 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="workflow-customization-summary-for-your-vite-config">✅ Workflow Customization Summary for Your Vite Config</h1>
-<h2 id="your-viteconfigts-analysis">📄 Your vite.config.ts Analysis</h2>
+                        <h2 id="workflow-customization-summary-for-your-vite-config">✅ Workflow Customization Summary for Your Vite Config</h2>
+<h3 id="your-viteconfigts-analysis">📄 Your vite.config.ts Analysis</h3>
 <p>Your configuration file includes these key features:</p>
 <pre><code class="language-typescript">✅ React 19 + Vite 7
 ✅ TailwindCSS 4 (Vite plugin)
@@ -259,8 +259,8 @@
 ✅ Build output: dist/public/
 ✅ Allowed hosts configured
 </code></pre>
-<h2 id="customizations-made-to-workflows">🔧 Customizations Made to Workflows</h2>
-<h3 id="1-build-output-path">1. Build Output Path</h3>
+<h3 id="customizations-made-to-workflows">🔧 Customizations Made to Workflows</h3>
+<h4 id="1-build-output-path">1. Build Output Path</h4>
 <p><strong>Detected</strong>: Your Vite outputs to <code>dist/public/</code></p>
 <p><strong>Customized</strong>: </p>
 <ul>
@@ -271,7 +271,7 @@
 <pre><code class="language-dockerfile"># In Dockerfile
 COPY --from=builder /app/dist ./dist
 </code></pre>
-<h3 id="2-build-environment-variables">2. Build Environment Variables</h3>
+<h4 id="2-build-environment-variables">2. Build Environment Variables</h4>
 <p><strong>Detected</strong>: Vite needs production mode flag</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -292,7 +292,7 @@ env:
   NODE_ENV: production
   VITE_BUILD_TARGET: es2020
 </code></pre>
-<h3 id="3-build-verification">3. Build Verification</h3>
+<h4 id="3-build-verification">3. Build Verification</h4>
 <p><strong>Detected</strong>: Need to verify Vite output structure</p>
 <p><strong>Customized in code-quality.yml</strong>:</p>
 <pre><code class="language-yaml">- name: Verify Vite output
@@ -301,7 +301,7 @@ env:
     find dist -type f | wc -l
     du -sh dist
 </code></pre>
-<h3 id="4-bundle-analysis">4. Bundle Analysis</h3>
+<h4 id="4-bundle-analysis">4. Bundle Analysis</h4>
 <p><strong>Detected</strong>: Your project has many dependencies (100+)</p>
 <p><strong>Customized</strong>:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
@@ -326,7 +326,7 @@ env:
     # Check source maps
     find dist -name &#39;*.map&#39; | wc -l
 </code></pre>
-<h3 id="5-docker-configuration">5. Docker Configuration</h3>
+<h4 id="5-docker-configuration">5. Docker Configuration</h4>
 <p><strong>Detected</strong>: Vite build + Express server</p>
 <p><strong>Customized in Dockerfile</strong>:</p>
 <pre><code class="language-dockerfile"># Multi-stage build
@@ -336,7 +336,7 @@ FROM node:20-alpine
   COPY --from=builder /app/dist ./dist
   CMD [&quot;node&quot;, &quot;dist/index.js&quot;]
 </code></pre>
-<h2 id="what-changed-from-template">📊 What Changed from Template</h2>
+<h3 id="what-changed-from-template">📊 What Changed from Template</h3>
 <table>
 <thead>
 <tr>
@@ -376,28 +376,28 @@ FROM node:20-alpine
 <td>Vite-aware</td>
 </tr>
 </tbody></table>
-<h2 id="files-you-have-now">🎯 Files You Have Now</h2>
-<h3 id="workflows-ready-to-use">Workflows (Ready to Use)</h3>
+<h3 id="files-you-have-now">🎯 Files You Have Now</h3>
+<h4 id="workflows-ready-to-use">Workflows (Ready to Use)</h4>
 <ul>
 <li>✅ <code>.github/workflows/ci-cd.yml</code> - <strong>Vite-optimized</strong></li>
 <li>✅ <code>.github/workflows/code-quality.yml</code> - <strong>Vite-optimized</strong></li>
 <li>✅ <code>.github/workflows/deploy.yml</code> - Generic (works with Vite)</li>
 </ul>
-<h3 id="configuration-ready-to-use">Configuration (Ready to Use)</h3>
+<h4 id="configuration-ready-to-use">Configuration (Ready to Use)</h4>
 <ul>
 <li>✅ <code>Dockerfile</code> - <strong>Vite-optimized</strong></li>
 <li>✅ <code>docker-compose.yml</code> - Generic</li>
 <li>✅ <code>nginx.conf</code> - Generic</li>
 <li>✅ <code>.dockerignore</code> - Generic</li>
 </ul>
-<h3 id="documentation-new">Documentation (New!)</h3>
+<h4 id="documentation-new">Documentation (New!)</h4>
 <ul>
 <li>✅ <code>VITE_QUICK_REFERENCE.md</code> - Quick reference for your setup</li>
 <li>✅ <code>VITE_OPTIMIZATION.md</code> - Deep dive into Vite optimization</li>
 <li>✅ Plus the original 8 docs</li>
 </ul>
-<h2 id="how-it-works-now">🚀 How It Works Now</h2>
-<h3 id="development-flow">Development Flow</h3>
+<h3 id="how-it-works-now">🚀 How It Works Now</h3>
+<h4 id="development-flow">Development Flow</h4>
 <pre><code>pnpm dev
   ↓
 Vite dev server on port 3000
@@ -405,7 +405,7 @@ Vite dev server on port 3000
   ├─ Debug collector enabled
   └─ Storage proxy active
 </code></pre>
-<h3 id="cicd-flow">CI/CD Flow</h3>
+<h4 id="cicd-flow">CI/CD Flow</h4>
 <pre><code>Push to GitHub
   ↓
 Type Check (pnpm check)
@@ -432,7 +432,7 @@ Deploy (if main branch)
   └─ ~10 seconds
 </code></pre>
 <p><strong>Total time</strong>: ~40-50 seconds (first run), ~30-40 seconds (cached)</p>
-<h2 id="deployment-checklist">📋 Deployment Checklist</h2>
+<h3 id="deployment-checklist">📋 Deployment Checklist</h3>
 <p>Before deploying, verify:</p>
 <ul>
 <li><p><input disabled="" type="checkbox"> <strong>Local build works</strong></p>
@@ -471,71 +471,71 @@ git clone your-repo .
 </ul>
 </li>
 </ul>
-<h2 id="typical-workflow">🔄 Typical Workflow</h2>
-<h3 id="1-feature-development">1. Feature Development</h3>
+<h3 id="typical-workflow">🔄 Typical Workflow</h3>
+<h4 id="1-feature-development">1. Feature Development</h4>
 <pre><code class="language-bash">git checkout -b feature/new-feature
 # Make changes
 git add .
 git commit -m &quot;feat: add new feature&quot;
 git push origin feature/new-feature
 </code></pre>
-<h3 id="2-create-pull-request">2. Create Pull Request</h3>
+<h4 id="2-create-pull-request">2. Create Pull Request</h4>
 <pre><code>GitHub: Click &quot;New Pull Request&quot;
 Select: feature/new-feature → develop
 </code></pre>
-<h3 id="3-automated-checks-run">3. Automated Checks Run</h3>
+<h4 id="3-automated-checks-run">3. Automated Checks Run</h4>
 <pre><code>✅ Type check
 ✅ Code formatting
 ✅ Build verification
 ✅ Security scan
 </code></pre>
-<h3 id="4-code-review">4. Code Review</h3>
+<h4 id="4-code-review">4. Code Review</h4>
 <pre><code>Team reviews PR
 Approves changes
 </code></pre>
-<h3 id="5-merge-to-develop">5. Merge to Develop</h3>
+<h4 id="5-merge-to-develop">5. Merge to Develop</h4>
 <pre><code class="language-bash">GitHub: Click &quot;Merge Pull Request&quot;
 Result: Auto-deploys to STAGING
 </code></pre>
-<h3 id="6-test-in-staging">6. Test in Staging</h3>
+<h4 id="6-test-in-staging">6. Test in Staging</h4>
 <pre><code>Visit: staging.your-domain.com
 Test features
 </code></pre>
-<h3 id="7-merge-to-main">7. Merge to Main</h3>
+<h4 id="7-merge-to-main">7. Merge to Main</h4>
 <pre><code class="language-bash">git checkout main
 git merge develop
 git push origin main
 Result: Auto-deploys to PRODUCTION
 </code></pre>
-<h2 id="bonus-features-included">🎁 Bonus Features Included</h2>
-<h3 id="automatic-pr-comments">Automatic PR Comments</h3>
+<h3 id="bonus-features-included">🎁 Bonus Features Included</h3>
+<h4 id="automatic-pr-comments">Automatic PR Comments</h4>
 <ul>
 <li>❌ Build failures → Comment with error</li>
 <li>⚠️ Formatting needed → Auto-format suggestion</li>
 <li>📊 Bundle analysis → Size report in PR</li>
 </ul>
-<h3 id="automatic-deployments">Automatic Deployments</h3>
+<h4 id="automatic-deployments">Automatic Deployments</h4>
 <ul>
 <li>✅ Develop branch → Staging</li>
 <li>✅ Main branch → Production</li>
 <li>✅ Automatic rollback on failure</li>
 <li>✅ Health checks after deploy</li>
 </ul>
-<h3 id="security">Security</h3>
+<h4 id="security">Security</h4>
 <ul>
 <li>✅ Dependency audits</li>
 <li>✅ Vulnerability scanning</li>
 <li>✅ SSH key authentication</li>
 <li>✅ Secret encryption</li>
 </ul>
-<h3 id="monitoring">Monitoring</h3>
+<h4 id="monitoring">Monitoring</h4>
 <ul>
 <li>✅ Build time tracking</li>
 <li>✅ Bundle size metrics</li>
 <li>✅ File count reports</li>
 <li>✅ Source map detection</li>
 </ul>
-<h2 id="documentation-you-have">📚 Documentation You Have</h2>
+<h3 id="documentation-you-have">📚 Documentation You Have</h3>
 <table>
 <thead>
 <tr>
@@ -575,7 +575,7 @@ Result: Auto-deploys to PRODUCTION
 <td>15 min</td>
 </tr>
 </tbody></table>
-<h2 id="next-steps-in-order">🎯 Next Steps (In Order)</h2>
+<h3 id="next-steps-in-order">🎯 Next Steps (In Order)</h3>
 <ol>
 <li><p><strong>Read</strong>: <code>VITE_QUICK_REFERENCE.md</code> (10 min)</p>
 <ul>
@@ -608,7 +608,7 @@ git push origin main
 </ul>
 </li>
 </ol>
-<h2 id="quick-commands-reference">⚡ Quick Commands Reference</h2>
+<h3 id="quick-commands-reference">⚡ Quick Commands Reference</h3>
 <pre><code class="language-bash"># Local development
 pnpm dev                          # Start Vite dev server
 
@@ -631,7 +631,7 @@ docker-compose down              # Stop containers
 git push origin develop          # Deploy to staging
 git push origin main             # Deploy to production
 </code></pre>
-<h2 id="quick-troubleshooting">🆘 Quick Troubleshooting</h2>
+<h3 id="quick-troubleshooting">🆘 Quick Troubleshooting</h3>
 <table>
 <thead>
 <tr>
@@ -660,7 +660,7 @@ git push origin main             # Deploy to production
 <td>See <code>VITE_OPTIMIZATION.md</code></td>
 </tr>
 </tbody></table>
-<h2 id="youand39re-ready">🎉 You&#39;re Ready!</h2>
+<h3 id="youand39re-ready">🎉 You&#39;re Ready!</h3>
 <p>All files are customized for your Vite configuration. Everything should work out of the box:</p>
 <p>✅ Workflows are Vite-aware<br>✅ Build outputs are handled correctly<br>✅ Docker is optimized for Vite<br>✅ Deployment is automated<br>✅ Monitoring is included</p>
 <hr>

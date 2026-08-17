@@ -1,6 +1,7 @@
 ---
-title: "Content Marketing — The Complete A to Z Mega Guide for Beginners - SmartGen Blog"
-description: "A complete, practical A to Z guide to content marketing for beginners — what content marketing actually is and how it differs from advertising, how to build a real content marketing strategy, the proven strategies and formulas that structure genuinely effective content, how to write content that is both optimized and actually engaging, how to organize your content using content bucketing, and how to measure whether any of it is truly working."
+title: "Content Marketing — The Complete A to Z Mega Guide for Beginners"
+seo_title: "Content Marketing Guide for Beginners"
+description: "Plan, write and distribute content that earns traffic: topic research, formats, publishing cadence and how to measure what worked."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 12, Content Marketing, Content Strategy, Content Bucketing, Content Performance, Content Writing, SEO Content"
 date: 2026-07-02
 image: "https://smartgentools.com/blog-posts/images/module12-content-marketing-cover.svg"

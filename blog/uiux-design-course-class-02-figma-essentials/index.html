@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UI/UX Design Course Class 02: Figma Essentials - SmartGen Blog</title>
+    <title>UI/UX Design Course Class 02: Figma Essentials</title>
     <meta name="description" content="Class 02 of the UI/UX Design Course covers Figma essentials — the interface, must-know tools and plugins, components, and Auto Layout for real design work.">
     <meta name="author" content="Sayad Md Bayezid Hosan">
     <meta name="keywords" content="SmartGen, UI UX Design, UI UX Course, Figma, Figma Basics, Figma Plugins, Auto Layout, Components">
@@ -12,6 +12,9 @@
     <meta property="og:title" content="UI/UX Design Course Class 02: Figma Essentials">
     <meta property="og:description" content="Class 02 of the UI/UX Design Course covers Figma essentials — the interface, must-know tools and plugins, components, and Auto Layout for real design work.">
     <meta property="og:image" content="https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-02-cover.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:url" content="https://smartgentools.com/blog/uiux-design-course-class-02-figma-essentials/">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="Fri Aug 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)">
@@ -248,14 +251,15 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
 
 <p>August 14, 2026 • General • By <a href="https://www.sayadbayezid.com">Sayad Md Bayezid Hosan</a></p>
-<h1>UI/UX Design Course Class 02: Figma Essentials</h1>
-<p>In <a href="https://smartgentools.com/blog/uiux-design-course-fundamentals/">Class 01</a> we covered the theory every design decision rests on — color, psychology, typography, and the principles that tie them together. Today we open the tool almost every one of those decisions actually gets built in.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -269,16 +273,17 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<h2>UI/UX Design Course Class 02: Figma Essentials</h2>
+<p>In <a href="https://smartgentools.com/blog/uiux-design-course-fundamentals/">Class 01</a> we covered the theory every design decision rests on — color, psychology, typography, and the principles that tie them together. Today we open the tool almost every one of those decisions actually gets built in.</p>
 <p>Figma remains the industry-standard interface design tool in 2026 — browser-based, real-time collaborative, and used across companies of every size for everything from quick wireframes to full production design systems. This class covers three things: the core interface and tools you need to move around confidently, the plugin ecosystem that extends what Figma can do out of the box, and components with Auto Layout — the single most important workflow shift between &quot;designing a picture of a button&quot; and &quot;designing a button that actually behaves like one.&quot;</p>
 <p><img src="https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-02-cover.svg" alt="UI/UX Design Course Class 02: Figma Essentials"></p>
 <hr>
-<h2>Welcome to Class 02</h2>
+<h3>Welcome to Class 02</h3>
 <p>This class is deliberately hands-on. Open Figma in a browser tab as you read — you don&#39;t need to install anything, and the free Starter plan covers everything in this class. By the end, you&#39;ll be able to navigate the interface without hunting for tools, install and use a plugin, and build a component that resizes itself automatically instead of breaking every time its content changes.</p>
 <hr>
-<h2>1. Figma Basics</h2>
-<h3>What Figma Is, and Why It Still Leads</h3>
+<h3>1. Figma Basics</h3>
+<h4>What Figma Is, and Why It Still Leads</h4>
 <p>Figma is a browser-based interface design tool that lets multiple people design inside the same file at the same time — no exporting, no version conflicts, no &quot;final_v3_ACTUALLY_final.fig&quot; file names. That real-time collaboration model is a large part of why it became the default design tool across the industry: a designer, a product manager, and a developer can all be looking at — and commenting on — the exact same file simultaneously.</p>
-<p>Figma organizes work into a few distinct file types inside one account:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -292,13 +297,14 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<p>Figma organizes work into a few distinct file types inside one account:</p>
 <ul>
 <li><strong>Design files</strong> — where UI/UX design happens; this is where this entire class lives.</li>
 <li><strong>FigJam</strong> — a digital whiteboard for early brainstorming, user flow sketching, and workshops, before anything gets designed in detail.</li>
 <li><strong>Slides</strong> — presentation decks, useful for case study presentations later in this course.</li>
 <li><strong>Sites</strong> — for publishing simple, design-driven websites directly from Figma.</li>
 </ul>
-<h3>Accounts and Seats: What You Actually Need to Sign Up For</h3>
+<h4>Accounts and Seats: What You Actually Need to Sign Up For</h4>
 <p>As of 2026, Figma organizes access around three seat types, and understanding this now will save you confusion later:</p>
 <ul>
 <li><strong>Full seat</strong> — complete design editing access. This is what you need for everything in this course.</li>
@@ -306,7 +312,7 @@
 <li><strong>Collab seat</strong> — for teammates who only need to comment and view, not design or inspect code.</li>
 </ul>
 <p>The free <strong>Starter plan</strong> gives you a Full seat with everything you need to learn on, plus basic design inspection. You won&#39;t need a paid plan for this course.</p>
-<h3>The Core Interface Areas</h3>
+<h4>The Core Interface Areas</h4>
 <p>When you open a design file, four areas matter most:</p>
 <ul>
 <li><strong>Toolbar (top)</strong> — where you select tools: move, frame, shape, text, pen, comment.</li>
@@ -315,7 +321,7 @@
 <li><strong>Design panel (right)</strong> — properties for whatever&#39;s currently selected: position, size, fill, stroke, effects, and (once you get to Section 3) Auto Layout settings.</li>
 </ul>
 <p>A fifth panel, <strong>Assets</strong>, sits alongside Layers and stores your components and styles so you can drag them onto the canvas without hunting through other files.</p>
-<h3>Essential Tools and Their Shortcuts</h3>
+<h4>Essential Tools and Their Shortcuts</h4>
 <p>Every one of these has a single-key shortcut worth memorizing before anything else — they turn hours of menu-hunting into muscle memory within a week.</p>
 <table>
 <thead>
@@ -371,16 +377,16 @@
 <td>Fit your whole design in view</td>
 </tr>
 </tbody></table>
-<h3>Frames vs. Groups — The Mistake Almost Every Beginner Makes</h3>
+<h4>Frames vs. Groups — The Mistake Almost Every Beginner Makes</h4>
 <p>This single distinction causes more early confusion than anything else in Figma. A <strong>Group</strong> is just a bounding box around selected layers — convenient for organizing, but it has no independent size logic of its own. A <strong>Frame</strong> behaves more like a real container: it can be resized independently, it supports constraints (how child elements behave when the frame resizes), and — critically for Section 3 — only frames can have Auto Layout applied to them.</p>
 <p>The practical rule: if you&#39;re building an actual screen, a card, a button, or anything you expect to resize or reuse, use a <strong>Frame</strong>, not a Group, from the very first click.</p>
 <hr>
-<h2>2. Figma Plugins &amp; Tools</h2>
-<h3>What Plugins Actually Do</h3>
+<h3>2. Figma Plugins &amp; Tools</h3>
+<h4>What Plugins Actually Do</h4>
 <p>Plugins are community-built or officially published mini-applications that run inside Figma and extend what it can do beyond its native features — automating repetitive tasks, generating assets, checking accessibility, or connecting your file to outside systems like a codebase.</p>
-<h3>How to Install and Use One</h3>
+<h4>How to Install and Use One</h4>
 <p>Open the <strong>Resources</strong> panel (the puzzle-piece icon in the top toolbar), search the <strong>Community</strong> tab for what you need, click a plugin, and select <strong>Install</strong>. Once installed, run it either from that same Resources panel or by right-clicking the canvas → Plugins. Most plugins act on whatever layer or frame you currently have selected, so select first, then run the plugin.</p>
-<h3>Plugins Worth Installing First</h3>
+<h4>Plugins Worth Installing First</h4>
 <p>Rather than browsing thousands of options, these categories cover most of what a beginner actually needs:</p>
 <ul>
 <li><strong>Stark</strong> — the most complete accessibility plugin available for Figma: checks contrast ratios against WCAG 2.1 and 2.2 (the exact standard covered in Class 01), simulates how a design looks with deuteranopia, protanopia, or low vision, and flags touch-target sizing issues. Given how much of Class 01 was about color contrast and color blindness, this is the single highest-value plugin to install first.</li>
@@ -388,7 +394,7 @@
 <li><strong>Autoflow</strong> — draws clean, automatically routed connector arrows between frames, which is genuinely useful once you start mapping user flows later in this course.</li>
 <li><strong>Iconify</strong> or <strong>Unsplash</strong> — bring icon libraries or stock photography directly into the canvas without leaving Figma to search elsewhere.</li>
 </ul>
-<h3>Native Tools That Used to Require Plugins</h3>
+<h4>Native Tools That Used to Require Plugins</h4>
 <p>Figma has steadily absorbed some of the most common plugin use cases directly into the product, so it&#39;s worth knowing what&#39;s now built in before installing a redundant plugin:</p>
 <ul>
 <li><strong>Dev Mode</strong> — a dedicated inspection view (accessed via the seat types covered in Section 1) that shows exact spacing, colors, and ready-to-copy code snippets for developers.</li>
@@ -396,14 +402,14 @@
 <li><strong>Figma AI features</strong>, including a <strong>Rename Layers</strong> tool that cleans up messy layer names in bulk, and <strong>Visual Search</strong>, which scans your existing components for anything visually similar before you build a duplicate from scratch.</li>
 </ul>
 <hr>
-<h2>3. Figma Components &amp; Auto Layout</h2>
+<h3>3. Figma Components &amp; Auto Layout</h3>
 <p>This is where the first two sections come together into an actual professional workflow — and it&#39;s the single biggest shift in how you should think about designing anything you intend to reuse or hand off.</p>
-<h3>Components: Design Once, Update Everywhere</h3>
+<h4>Components: Design Once, Update Everywhere</h4>
 <p>A <strong>Main Component</strong> is a reusable master version of an element — a button, a card, a nav bar. Every copy you place elsewhere is an <strong>Instance</strong> — a linked copy that automatically updates whenever you edit the main component, while still allowing individual overrides (like changing just the text on one instance) without breaking the link.</p>
 <p>To create one: design the element normally, select it, and either press the component icon in the toolbar or use the right-click menu → <strong>Create Component</strong>. It now appears in your Assets panel, ready to drag onto any frame.</p>
-<h3>Variants: One Component, Multiple States</h3>
+<h4>Variants: One Component, Multiple States</h4>
 <p>Instead of building four separate &quot;Button&quot; components for default, hover, pressed, and disabled states, <strong>Variants</strong> let you group all four into a single component with a property you can switch between — keeping every state visually consistent and updating together when the base design changes. This single feature is why professional component libraries stay manageable even as a product grows to hundreds of screens.</p>
-<h3>Auto Layout: Figma&#39;s Answer to Flexbox (and Now Grid)</h3>
+<h4>Auto Layout: Figma&#39;s Answer to Flexbox (and Now Grid)</h4>
 <p><strong>Auto Layout</strong> is what makes a component actually <em>behave</em> like a real interface element instead of a static picture of one — spacing, padding, and sizing adjust automatically as content changes, the same way a real button in code would resize itself around longer or shorter text.</p>
 <p>Select a frame (or a group of layers) and press <strong>Shift + A</strong> to add Auto Layout instantly. As of 2025–2026, Auto Layout supports three distinct flow types:</p>
 <ul>
@@ -418,10 +424,10 @@
 <li><strong>Wrap</strong> — available on Horizontal frames, pushes overflowing items onto a new line instead of forcing them to shrink or spill outside the frame — genuine flexbox-style wrapping behavior.</li>
 <li><strong>Resizing (Hug / Fill / Fixed)</strong> — controls how an element responds to its content and parent: <strong>Hug</strong> shrinks the frame to fit its content exactly, <strong>Fill</strong> stretches it to take up all available space in its parent, and <strong>Fixed</strong> locks it to a specific size regardless of content.</li>
 </ul>
-<h3>Putting It Together: A Button That Actually Behaves Like One</h3>
+<h4>Putting It Together: A Button That Actually Behaves Like One</h4>
 <p>Here&#39;s the workflow that separates a beginner&#39;s static button from a production-ready one: create a Frame, add a Text layer inside it, apply Auto Layout (<code>Shift + A</code>), set the frame&#39;s resizing to <strong>Hug</strong> on both axes so it shrinks to fit the text exactly, add consistent padding (say, 12px vertical, 24px horizontal), then turn it into a Component. Now, when you or a teammate edits the button&#39;s text anywhere it&#39;s used, the padding and sizing adjust automatically — nothing manually re-measured, nothing quietly breaking two screens away.</p>
 <hr>
-<h2>Common Mistakes Beginners Make in Figma</h2>
+<h3>Common Mistakes Beginners Make in Figma</h3>
 <ul>
 <li><strong>Using Groups where a Frame belongs.</strong> Groups can&#39;t take Auto Layout, and this single choice, made early, causes the most rework later.</li>
 <li><strong>Detaching component instances unnecessarily.</strong> Once detached, that copy stops receiving updates from the main component — only detach when you genuinely need a one-off exception.</li>
@@ -431,7 +437,7 @@
 <li><strong>Ignoring accessibility until the end.</strong> Running Stark&#39;s contrast check as you build, not after, catches Class 01&#39;s WCAG issues while they&#39;re still a one-click fix.</li>
 </ul>
 <hr>
-<h2>Practice: Build Your First Auto Layout Component</h2>
+<h3>Practice: Build Your First Auto Layout Component</h3>
 <p>You don&#39;t need a real project to practice this — just fifteen focused minutes in a blank Figma file.</p>
 <ol>
 <li>Create a Frame, add a Text layer inside it saying &quot;Get Started.&quot;</li>
@@ -444,18 +450,18 @@
 </ol>
 <p>If you have Stark installed, run a contrast check on your button&#39;s text against its background before moving on — a genuine habit worth building from your very first component.</p>
 <hr>
-<h2>Knowledge Check</h2>
+<h3>Knowledge Check</h3>
 <p><strong>1. What&#39;s the key functional difference between a Frame and a Group?</strong><br>Frames can be resized independently, support constraints, and are required for Auto Layout. Groups are just a bounding box with none of that behavior.</p>
 <p><strong>2. What shortcut adds Auto Layout to a selected frame?</strong><br><code>Shift + A</code>.</p>
 <p><strong>3. Name the three Auto Layout flow types available in 2026.</strong><br>Horizontal, Vertical, and Grid.</p>
 <p><strong>4. What&#39;s the difference between a Main Component and an Instance?</strong><br>A Main Component is the single source of truth; an Instance is a linked copy that updates automatically when the main component changes, while still allowing individual overrides.</p>
 <p><strong>5. What does &quot;Hug&quot; resizing do, compared to &quot;Fill&quot; and &quot;Fixed&quot;?</strong><br>Hug shrinks a frame to fit its content exactly. Fill stretches it to take up all available space in its parent. Fixed locks it to a set size regardless of content.</p>
 <hr>
-<h2>Visual Summary</h2>
+<h3>Visual Summary</h3>
 <p>The infographic below maps Figma&#39;s core interface, the plugin categories worth installing first, and all three Auto Layout flow types side by side.</p>
 <p><img src="https://smartgentools.com/blog-posts/images/ui-ux-design-course-class-02-infographic.svg" alt="Figma Essentials infographic — interface, plugins, components, and the three Auto Layout flow types"></p>
 <hr>
-<h2>Where This Course Is Headed</h2>
+<h3>Where This Course Is Headed</h3>
 <table>
 <thead>
 <tr>
@@ -489,7 +495,7 @@
 </tr>
 </tbody></table>
 <hr>
-<h2>Frequently Asked Questions</h2>
+<h3>Frequently Asked Questions</h3>
 <p><strong>Do I need to pay for Figma to follow this course?</strong><br>No. The free Starter plan includes a Full seat with everything covered in this class — the interface, plugins, components, and Auto Layout. Paid seats become relevant for teams needing full Dev Mode access or working at larger scale.</p>
 <p><strong>What&#39;s the difference between a plugin and a native Figma feature?</strong><br>Plugins are built by the community or third parties and installed separately through the Resources panel. Native features — like Variables, Dev Mode, and AI tools — ship built into Figma itself. Several things that used to require plugins are now native, which is worth checking before installing something redundant.</p>
 <p><strong>Why should I use Auto Layout instead of just placing elements manually?</strong><br>Manual placement is static — it breaks the moment content changes length, a screen gets translated into another language, or a teammate edits text. Auto Layout keeps spacing and sizing correct automatically, the same way a real coded interface would behave.</p>
@@ -609,7 +615,10 @@
             <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
             <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
             <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
-                <input type="email" name="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-name">Your name</label>
+                <input type="text" id="newsletter-name" name="name" placeholder="Your name" autocomplete="given-name" maxlength="60" style="flex: 1; min-width: 180px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-email">Your email address</label>
+                <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
                 <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
             </form>

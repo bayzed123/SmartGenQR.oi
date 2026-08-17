@@ -1,7 +1,7 @@
 ---
 slug: "getting-started"
 title: "Getting Started"
-description: "Get SmartGen running on your local machine in under 5 minutes."
+description: "Get SmartGen running locally in under five minutes: install the dependencies, start the dev server and make your first change."
 order: 1
 category: "Guides"
 ---

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vite Optimization Guide for CI/CD - SmartGen Docs</title>
-    <meta name="description" content="SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions">
+    <meta name="description" content="Make Vite builds faster and smaller in CI/CD: configuration walkthrough, the build process explained, and the optimizations worth applying.">
     <link rel="canonical" href="https://smartgentools.com/docs/vite-optimization-guide-for-cicd/">
     
     <!-- HTTPS Redirect Script -->
@@ -247,9 +247,9 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="vite-optimization-guide-for-cicd">🔧 Vite Optimization Guide for CI/CD</h1>
+                        <h2 id="vite-optimization-guide-for-cicd">🔧 Vite Optimization Guide for CI/CD</h2>
 <p>Based on your <code>vite.config.ts</code>, here&#39;s how to optimize builds and deployments.</p>
-<h2 id="your-vite-configuration-overview">📋 Your Vite Configuration Overview</h2>
+<h3 id="your-vite-configuration-overview">📋 Your Vite Configuration Overview</h3>
 <p>Your <code>vite.config.ts</code> includes:</p>
 <ul>
 <li>✅ React 19 with Vite</li>
@@ -259,8 +259,8 @@
 <li>✅ Storage proxy for development</li>
 <li>✅ Build output to <code>dist/</code> directory</li>
 </ul>
-<h2 id="build-process">🏗️ Build Process</h2>
-<h3 id="what-happens-when-you-run-pnpm-build">What Happens When You Run <code>pnpm build</code></h3>
+<h3 id="build-process">🏗️ Build Process</h3>
+<h4 id="what-happens-when-you-run-pnpm-build">What Happens When You Run <code>pnpm build</code></h4>
 <pre><code>vite build
   ├─ Compiles TypeScript
   ├─ Bundles React components
@@ -271,15 +271,15 @@
   │  └─ dist/...
   └─ Generates source maps (dev by default)
 </code></pre>
-<h3 id="build-configuration">Build Configuration</h3>
+<h4 id="build-configuration">Build Configuration</h4>
 <pre><code class="language-typescript">build: {
   outDir: path.resolve(import.meta.dirname, &quot;dist/public&quot;),
   emptyOutDir: true,
 }
 </code></pre>
 <p><strong>Output Path</strong>: <code>dist/public/</code></p>
-<h2 id="production-build-optimization">⚡ Production Build Optimization</h2>
-<h3 id="1-enable-production-mode">1. Enable Production Mode</h3>
+<h3 id="production-build-optimization">⚡ Production Build Optimization</h3>
+<h4 id="1-enable-production-mode">1. Enable Production Mode</h4>
 <pre><code class="language-bash">NODE_ENV=production pnpm build
 </code></pre>
 <p>The workflows already do this automatically.</p>
@@ -296,7 +296,7 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
-<h3 id="2-disable-source-maps-in-production">2. Disable Source Maps in Production</h3>
+<h4 id="2-disable-source-maps-in-production">2. Disable Source Maps in Production</h4>
 <p>Add to <code>vite.config.ts</code>:</p>
 <pre><code class="language-typescript">build: {
   sourcemap: false,  // Disable source maps in production
@@ -313,14 +313,14 @@
   },
 }
 </code></pre>
-<h3 id="3-css-optimization">3. CSS Optimization</h3>
+<h4 id="3-css-optimization">3. CSS Optimization</h4>
 <pre><code class="language-typescript">build: {
   cssCodeSplit: true,  // Split CSS into separate files
   cssTarget: &#39;chrome88&#39;,  // Target modern browsers
   cssMinify: &#39;lightningcss&#39;,  // Faster CSS minification
 }
 </code></pre>
-<h3 id="4-asset-optimization">4. Asset Optimization</h3>
+<h4 id="4-asset-optimization">4. Asset Optimization</h4>
 <pre><code class="language-typescript">build: {
   assetsInlineLimit: 4096,  // Inline assets smaller than 4KB
   rollupOptions: {
@@ -330,8 +330,8 @@
   },
 }
 </code></pre>
-<h2 id="build-optimization-tips">📊 Build Optimization Tips</h2>
-<h3 id="current-bundle-analysis">Current Bundle Analysis</h3>
+<h3 id="build-optimization-tips">📊 Build Optimization Tips</h3>
+<h4 id="current-bundle-analysis">Current Bundle Analysis</h4>
 <p>To analyze your bundle, add to your workflow:</p>
 <pre><code class="language-yaml">- name: Bundle Analysis
   run: |
@@ -350,7 +350,7 @@ plugins: [
   }),
 ]
 </code></pre>
-<h3 id="code-splitting-strategy">Code Splitting Strategy</h3>
+<h4 id="code-splitting-strategy">Code Splitting Strategy</h4>
 <pre><code class="language-typescript">build: {
   rollupOptions: {
     output: {
@@ -371,7 +371,7 @@ plugins: [
   },
 }
 </code></pre>
-<h3 id="lazy-loading-strategy">Lazy Loading Strategy</h3>
+<h4 id="lazy-loading-strategy">Lazy Loading Strategy</h4>
 <pre><code class="language-typescript">// In your React components
 import { lazy, Suspense } from &#39;react&#39;;
 
@@ -385,8 +385,8 @@ export function App() {
   );
 }
 </code></pre>
-<h2 id="vite-specific-workflow-enhancements">🔍 Vite-Specific Workflow Enhancements</h2>
-<h3 id="1-add-vite-build-analysis">1. Add Vite Build Analysis</h3>
+<h3 id="vite-specific-workflow-enhancements">🔍 Vite-Specific Workflow Enhancements</h3>
+<h4 id="1-add-vite-build-analysis">1. Add Vite Build Analysis</h4>
 <pre><code class="language-yaml">- name: Vite Build Analysis
   run: |
     echo &quot;## 🔨 Vite Build Report&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
@@ -405,7 +405,7 @@ export function App() {
     echo &quot;- CSS files: $(find dist -name &#39;*.css&#39; | wc -l)&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
     echo &quot;- Images: $(find dist -type f \( -name &#39;*.png&#39; -o -name &#39;*.jpg&#39; -o -name &#39;*.svg&#39; \) | wc -l)&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
 </code></pre>
-<h3 id="2-pre-build-checks">2. Pre-build Checks</h3>
+<h4 id="2-pre-build-checks">2. Pre-build Checks</h4>
 <pre><code class="language-yaml">- name: Validate Vite Config
   run: |
     node -e &quot;
@@ -414,7 +414,7 @@ export function App() {
     console.log(&#39;Build output:&#39;, config.build?.outDir || &#39;dist/&#39;);
     &quot;
 </code></pre>
-<h3 id="3-cache-optimization">3. Cache Optimization</h3>
+<h4 id="3-cache-optimization">3. Cache Optimization</h4>
 <pre><code class="language-yaml">- name: Cache Node Modules
   uses: actions/cache@v3
   with:
@@ -433,7 +433,7 @@ export function App() {
     restore-keys: |
       ${{ runner.os }}-vite-
 </code></pre>
-<h2 id="environment-variables-for-build">🌍 Environment Variables for Build</h2>
+<h3 id="environment-variables-for-build">🌍 Environment Variables for Build</h3>
 <p>Add these to your <code>.env</code> for different build scenarios:</p>
 <pre><code class="language-env"># Production Build
 VITE_API_URL=https://api.your-domain.com
@@ -465,8 +465,8 @@ VITE_SOURCEMAP=true
     VITE_API_URL: ${{ secrets.API_URL }}
     VITE_BUILD_TARGET: es2020
 </code></pre>
-<h2 id="docker-build-optimization-for-vite">📦 Docker Build Optimization for Vite</h2>
-<h3 id="multi-stage-dockerfile-for-vite">Multi-stage Dockerfile for Vite</h3>
+<h3 id="docker-build-optimization-for-vite">📦 Docker Build Optimization for Vite</h3>
+<h4 id="multi-stage-dockerfile-for-vite">Multi-stage Dockerfile for Vite</h4>
 <pre><code class="language-dockerfile"># Stage 1: Build
 FROM node:20-alpine AS builder
 
@@ -505,14 +505,14 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 
 CMD [&quot;node&quot;, &quot;dist/index.js&quot;]
 </code></pre>
-<h2 id="performance-benchmarks">🚀 Performance Benchmarks</h2>
-<h3 id="expected-build-times">Expected Build Times</h3>
+<h3 id="performance-benchmarks">🚀 Performance Benchmarks</h3>
+<h4 id="expected-build-times">Expected Build Times</h4>
 <ul>
 <li><strong>Type Check</strong>: ~2-3 seconds</li>
 <li><strong>Vite Build</strong>: ~15-20 seconds</li>
 <li><strong>Total</strong>: ~30-40 seconds (with dependencies cached)</li>
 </ul>
-<h3 id="expected-bundle-sizes">Expected Bundle Sizes</h3>
+<h4 id="expected-bundle-sizes">Expected Bundle Sizes</h4>
 <p>Your project with all Radix components and Framer Motion:</p>
 <ul>
 <li><strong>JavaScript</strong>: ~300-500 KB (uncompressed)</li>
@@ -520,8 +520,8 @@ CMD [&quot;node&quot;, &quot;dist/index.js&quot;]
 <li><strong>Gzipped Total</strong>: ~80-150 KB</li>
 </ul>
 <p><strong>Goal</strong>: Keep main bundle under 200KB gzipped.</p>
-<h2 id="cicd-integration-with-vite">🔄 CI/CD Integration with Vite</h2>
-<h3 id="optimal-workflow-structure">Optimal Workflow Structure</h3>
+<h3 id="cicd-integration-with-vite">🔄 CI/CD Integration with Vite</h3>
+<h4 id="optimal-workflow-structure">Optimal Workflow Structure</h4>
 <pre><code class="language-yaml">jobs:
   type-check:
     # TypeScript checking (no build)
@@ -543,22 +543,22 @@ CMD [&quot;node&quot;, &quot;dist/index.js&quot;]
     needs: [build, test]
     # Deploy dist/ folder
 </code></pre>
-<h2 id="common-vite-issues-andamp-solutions">🐛 Common Vite Issues &amp; Solutions</h2>
-<h3 id="issue-build-takes-too-long">Issue: Build takes too long</h3>
+<h3 id="common-vite-issues-andamp-solutions">🐛 Common Vite Issues &amp; Solutions</h3>
+<h4 id="issue-build-takes-too-long">Issue: Build takes too long</h4>
 <p><strong>Solution:</strong></p>
 <pre><code class="language-yaml">- name: Faster Build
   run: NODE_ENV=production pnpm build --clearScreen
   env:
     VITE_BUILD_TARGET: es2020
 </code></pre>
-<h3 id="issue-source-maps-too-large">Issue: Source maps too large</h3>
+<h4 id="issue-source-maps-too-large">Issue: Source maps too large</h4>
 <p><strong>Solution:</strong></p>
 <pre><code class="language-typescript">// vite.config.ts
 build: {
   sourcemap: process.env.NODE_ENV === &#39;production&#39; ? false : &#39;inline&#39;,
 }
 </code></pre>
-<h3 id="issue-asset-paths-wrong-in-production">Issue: Asset paths wrong in production</h3>
+<h4 id="issue-asset-paths-wrong-in-production">Issue: Asset paths wrong in production</h4>
 <p><strong>Solution:</strong></p>
 <pre><code class="language-typescript">// vite.config.ts
 build: {
@@ -566,7 +566,7 @@ build: {
   assetsDir: &#39;assets&#39;,
 }
 </code></pre>
-<h3 id="issue-css-not-loading">Issue: CSS not loading</h3>
+<h4 id="issue-css-not-loading">Issue: CSS not loading</h4>
 <p><strong>Solution:</strong></p>
 <pre><code class="language-typescript">// vite.config.ts
 build: {
@@ -580,8 +580,8 @@ build: {
   },
 }
 </code></pre>
-<h2 id="monitoring-build-performance">📈 Monitoring Build Performance</h2>
-<h3 id="add-performance-metrics-to-workflow">Add Performance Metrics to Workflow</h3>
+<h3 id="monitoring-build-performance">📈 Monitoring Build Performance</h3>
+<h4 id="add-performance-metrics-to-workflow">Add Performance Metrics to Workflow</h4>
 <pre><code class="language-yaml">- name: Build Time Report
   if: always()
   run: |
@@ -590,7 +590,7 @@ build: {
     echo &quot;- Bundle size: ~300KB&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
     echo &quot;- Gzipped: ~80KB&quot; &gt;&gt; $GITHUB_STEP_SUMMARY
 </code></pre>
-<h2 id="vite-workflow-checklist">✅ Vite Workflow Checklist</h2>
+<h3 id="vite-workflow-checklist">✅ Vite Workflow Checklist</h3>
 <ul>
 <li><input disabled="" type="checkbox"> <code>NODE_ENV=production</code> set during build</li>
 <li><input disabled="" type="checkbox"> Source maps disabled in production</li>

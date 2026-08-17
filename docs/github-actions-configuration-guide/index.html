@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Workflow Configuration - SmartGen Docs</title>
-    <meta name="description" content="SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions">
+    <meta name="description" content="Configure GitHub Actions workflows beyond the defaults: custom environment variables, health checks, notifications and database migrations.">
     <link rel="canonical" href="https://smartgentools.com/docs/github-actions-configuration-guide/">
     
     <!-- HTTPS Redirect Script -->
@@ -247,9 +247,9 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="advanced-workflow-configuration">🔧 Advanced Workflow Configuration</h1>
-<h2 id="custom-environment-variables">Custom Environment Variables</h2>
-<h3 id="add-to-workflow">Add to Workflow</h3>
+                        <h2 id="advanced-workflow-configuration">🔧 Advanced Workflow Configuration</h2>
+<h3 id="custom-environment-variables">Custom Environment Variables</h3>
+<h4 id="add-to-workflow">Add to Workflow</h4>
 <pre><code class="language-yaml">env:
   NODE_VERSION: 20
   PNPM_VERSION: 10.4.1
@@ -260,15 +260,15 @@ jobs:
     env:
       VITE_BUILD_TARGET: es2020
 </code></pre>
-<h3 id="add-to-docker">Add to Docker</h3>
+<h4 id="add-to-docker">Add to Docker</h4>
 <pre><code class="language-yaml">services:
   app:
     environment:
       NODE_ENV: production
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
 </code></pre>
-<h2 id="custom-health-checks">Custom Health Checks</h2>
-<h3 id="simple-http-check">Simple HTTP Check</h3>
+<h3 id="custom-health-checks">Custom Health Checks</h3>
+<h4 id="simple-http-check">Simple HTTP Check</h4>
 <pre><code class="language-yaml">- name: Health Check
   run: |
     for i in {1..10}; do
@@ -276,7 +276,7 @@ jobs:
       sleep 1
     done
 </code></pre>
-<h3 id="advanced-health-check">Advanced Health Check</h3>
+<h4 id="advanced-health-check">Advanced Health Check</h4>
 <pre><code class="language-yaml">- name: Advanced Health Check
   run: |
     node -e &quot;
@@ -298,8 +298,8 @@ jobs:
     checkHealth();
     &quot;
 </code></pre>
-<h2 id="notifications">Notifications</h2>
-<h3 id="slack-notification">Slack Notification</h3>
+<h3 id="notifications">Notifications</h3>
+<h4 id="slack-notification">Slack Notification</h4>
 <pre><code class="language-yaml">- name: Notify Slack
   uses: slackapi/slack-github-action@v1
   with:
@@ -319,7 +319,7 @@ jobs:
   env:
     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
 </code></pre>
-<h3 id="discord-notification">Discord Notification</h3>
+<h4 id="discord-notification">Discord Notification</h4>
 <pre><code class="language-yaml">- name: Notify Discord
   uses: sarisia/actions-status-discord@v1
   if: always()
@@ -329,7 +329,7 @@ jobs:
     title: &quot;Deployment to Production&quot;
     description: &quot;Commit: ${{ github.sha }}&quot;
 </code></pre>
-<h3 id="email-notification">Email Notification</h3>
+<h4 id="email-notification">Email Notification</h4>
 <pre><code class="language-yaml">- name: Send Email
   uses: dawidd6/action-send-mail@v3
   with:
@@ -342,15 +342,15 @@ jobs:
     from: noreply@your-domain.com
     body: &quot;Deployment completed with status: ${{ job.status }}&quot;
 </code></pre>
-<h2 id="database-migrations">Database Migrations</h2>
-<h3 id="pre-deployment">Pre-Deployment</h3>
+<h3 id="database-migrations">Database Migrations</h3>
+<h4 id="pre-deployment">Pre-Deployment</h4>
 <pre><code class="language-yaml">- name: Run Migrations
   run: |
     npm run migrate:up
   env:
     DATABASE_URL: ${{ secrets.DATABASE_URL }}
 </code></pre>
-<h3 id="rollback-on-failure">Rollback on Failure</h3>
+<h4 id="rollback-on-failure">Rollback on Failure</h4>
 <pre><code class="language-yaml">- name: Rollback Migrations
   if: failure()
   run: |
@@ -358,8 +358,8 @@ jobs:
   env:
     DATABASE_URL: ${{ secrets.DATABASE_URL }}
 </code></pre>
-<h2 id="testing-integration">Testing Integration</h2>
-<h3 id="unit-tests">Unit Tests</h3>
+<h3 id="testing-integration">Testing Integration</h3>
+<h4 id="unit-tests">Unit Tests</h4>
 <pre><code class="language-yaml">- name: Run Tests
   run: pnpm test --coverage
   
@@ -369,7 +369,7 @@ jobs:
     files: ./coverage/lcov.info
     flags: unittests
 </code></pre>
-<h3 id="e2e-tests">E2E Tests</h3>
+<h4 id="e2e-tests">E2E Tests</h4>
 <pre><code class="language-yaml">- name: Run E2E Tests
   run: |
     npm install -g playwright
@@ -382,7 +382,7 @@ jobs:
     name: playwright-report
     path: playwright-report/
 </code></pre>
-<h3 id="performance-tests">Performance Tests</h3>
+<h4 id="performance-tests">Performance Tests</h4>
 <pre><code class="language-yaml">- name: Performance Testing
   run: |
     npm run test:performance
@@ -391,8 +391,8 @@ jobs:
   run: |
     node scripts/compare-performance.js
 </code></pre>
-<h2 id="database-services">Database Services</h2>
-<h3 id="postgresql">PostgreSQL</h3>
+<h3 id="database-services">Database Services</h3>
+<h4 id="postgresql">PostgreSQL</h4>
 <pre><code class="language-yaml">services:
   postgres:
     image: postgres:15
@@ -417,7 +417,7 @@ jobs:
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/test_db
 </code></pre>
-<h3 id="redis">Redis</h3>
+<h4 id="redis">Redis</h4>
 <pre><code class="language-yaml">services:
   redis:
     image: redis:7-alpine
@@ -429,8 +429,8 @@ jobs:
     ports:
       - 6379:6379
 </code></pre>
-<h2 id="caching-strategies">Caching Strategies</h2>
-<h3 id="npm-cache">npm Cache</h3>
+<h3 id="caching-strategies">Caching Strategies</h3>
+<h4 id="npm-cache">npm Cache</h4>
 <pre><code class="language-yaml">- name: Cache npm
   uses: actions/cache@v3
   with:
@@ -439,14 +439,14 @@ jobs:
     restore-keys: |
       ${{ runner.os }}-npm-
 </code></pre>
-<h3 id="docker-layer-cache">Docker Layer Cache</h3>
+<h4 id="docker-layer-cache">Docker Layer Cache</h4>
 <pre><code class="language-yaml">- name: Build and push
   uses: docker/build-push-action@v5
   with:
     cache-from: type=gha
     cache-to: type=gha,mode=max
 </code></pre>
-<h3 id="build-artifacts-cache">Build Artifacts Cache</h3>
+<h4 id="build-artifacts-cache">Build Artifacts Cache</h4>
 <pre><code class="language-yaml">- name: Cache Build
   uses: actions/cache@v3
   with:
@@ -455,26 +455,26 @@ jobs:
     restore-keys: |
       ${{ runner.os }}-build-
 </code></pre>
-<h2 id="conditional-jobs">Conditional Jobs</h2>
-<h3 id="only-on-main-branch">Only on Main Branch</h3>
+<h3 id="conditional-jobs">Conditional Jobs</h3>
+<h4 id="only-on-main-branch">Only on Main Branch</h4>
 <pre><code class="language-yaml">if: github.ref == &#39;refs/heads/main&#39;
 </code></pre>
-<h3 id="only-on-pr">Only on PR</h3>
+<h4 id="only-on-pr">Only on PR</h4>
 <pre><code class="language-yaml">if: github.event_name == &#39;pull_request&#39;
 </code></pre>
-<h3 id="only-on-tags">Only on Tags</h3>
+<h4 id="only-on-tags">Only on Tags</h4>
 <pre><code class="language-yaml">if: startsWith(github.ref, &#39;refs/tags/&#39;)
 </code></pre>
-<h3 id="on-manual-trigger">On Manual Trigger</h3>
+<h4 id="on-manual-trigger">On Manual Trigger</h4>
 <pre><code class="language-yaml">if: github.event_name == &#39;workflow_dispatch&#39;
 </code></pre>
-<h3 id="conditional-steps">Conditional Steps</h3>
+<h4 id="conditional-steps">Conditional Steps</h4>
 <pre><code class="language-yaml">- name: Deploy
   if: success() &amp;&amp; github.ref == &#39;refs/heads/main&#39;
   run: npm run deploy
 </code></pre>
-<h2 id="scheduled-tasks">Scheduled Tasks</h2>
-<h3 id="daily-backup">Daily Backup</h3>
+<h3 id="scheduled-tasks">Scheduled Tasks</h3>
+<h4 id="daily-backup">Daily Backup</h4>
 <pre><code class="language-yaml">name: Daily Backup
 
 on:
@@ -490,7 +490,7 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 </code></pre>
-<h3 id="weekly-security-scan">Weekly Security Scan</h3>
+<h4 id="weekly-security-scan">Weekly Security Scan</h4>
 <pre><code class="language-yaml">on:
   schedule:
     - cron: &#39;0 0 * * 1&#39;  # Monday at midnight
@@ -502,8 +502,8 @@ jobs:
       - uses: actions/checkout@v4
       - run: npm audit
 </code></pre>
-<h2 id="matrix-strategy">Matrix Strategy</h2>
-<h3 id="multiple-node-versions">Multiple Node Versions</h3>
+<h3 id="matrix-strategy">Matrix Strategy</h3>
+<h4 id="multiple-node-versions">Multiple Node Versions</h4>
 <pre><code class="language-yaml">strategy:
   matrix:
     node-version: [18, 20, 22]
@@ -513,14 +513,14 @@ steps:
     with:
       node-version: ${{ matrix.node-version }}
 </code></pre>
-<h3 id="multiple-os">Multiple OS</h3>
+<h4 id="multiple-os">Multiple OS</h4>
 <pre><code class="language-yaml">strategy:
   matrix:
     os: [ubuntu-latest, windows-latest, macos-latest]
 
 runs-on: ${{ matrix.os }}
 </code></pre>
-<h3 id="multiple-environments">Multiple Environments</h3>
+<h4 id="multiple-environments">Multiple Environments</h4>
 <pre><code class="language-yaml">strategy:
   matrix:
     environment: [staging, production]
@@ -528,8 +528,8 @@ runs-on: ${{ matrix.os }}
 environment:
   name: ${{ matrix.environment }}
 </code></pre>
-<h2 id="artifact-management">Artifact Management</h2>
-<h3 id="upload-artifacts">Upload Artifacts</h3>
+<h3 id="artifact-management">Artifact Management</h3>
+<h4 id="upload-artifacts">Upload Artifacts</h4>
 <pre><code class="language-yaml">- name: Upload Artifacts
   uses: actions/upload-artifact@v4
   if: always()
@@ -538,21 +538,21 @@ environment:
     path: dist/
     retention-days: 30
 </code></pre>
-<h3 id="download-artifacts">Download Artifacts</h3>
+<h4 id="download-artifacts">Download Artifacts</h4>
 <pre><code class="language-yaml">- name: Download Artifacts
   uses: actions/download-artifact@v4
   with:
     name: build-${{ matrix.node-version }}
     path: dist/
 </code></pre>
-<h3 id="cleanup-old-artifacts">Cleanup Old Artifacts</h3>
+<h4 id="cleanup-old-artifacts">Cleanup Old Artifacts</h4>
 <pre><code class="language-yaml">- name: Delete Old Artifacts
   uses: geekyeggo/delete-artifact@v2
   with:
     name: build-*
 </code></pre>
-<h2 id="container-registry">Container Registry</h2>
-<h3 id="github-container-registry">GitHub Container Registry</h3>
+<h3 id="container-registry">Container Registry</h3>
+<h4 id="github-container-registry">GitHub Container Registry</h4>
 <pre><code class="language-yaml">- name: Login to GHCR
   uses: docker/login-action@v3
   with:
@@ -567,7 +567,7 @@ environment:
     image: ${{ github.repository }}
     tags: latest,${{ github.sha }}
 </code></pre>
-<h3 id="docker-hub">Docker Hub</h3>
+<h4 id="docker-hub">Docker Hub</h4>
 <pre><code class="language-yaml">- name: Login to Docker Hub
   uses: docker/login-action@v3
   with:
@@ -580,15 +580,15 @@ environment:
     image: ${{ secrets.DOCKER_USERNAME }}/bayezid-portfolio
     tags: latest,${{ github.sha }}
 </code></pre>
-<h2 id="security-scanning">Security Scanning</h2>
-<h3 id="sast-static-analysis">SAST (Static Analysis)</h3>
+<h3 id="security-scanning">Security Scanning</h3>
+<h4 id="sast-static-analysis">SAST (Static Analysis)</h4>
 <pre><code class="language-yaml">- name: SonarQube Scan
   uses: sonarsource/sonarcloud-github-action@master
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 </code></pre>
-<h3 id="dependency-check">Dependency Check</h3>
+<h4 id="dependency-check">Dependency Check</h4>
 <pre><code class="language-yaml">- name: Run Dependency Check
   uses: dependency-check/Dependency-Check_Action@main
   with:
@@ -596,7 +596,7 @@ environment:
     path: &#39;.&#39;
     format: &#39;XML&#39;
 </code></pre>
-<h3 id="codeql">CodeQL</h3>
+<h4 id="codeql">CodeQL</h4>
 <pre><code class="language-yaml">- name: Initialize CodeQL
   uses: github/codeql-action/init@v2
   with:
@@ -608,8 +608,8 @@ environment:
 - name: Perform CodeQL Analysis
   uses: github/codeql-action/analyze@v2
 </code></pre>
-<h2 id="release-management">Release Management</h2>
-<h3 id="create-release">Create Release</h3>
+<h3 id="release-management">Release Management</h3>
+<h4 id="create-release">Create Release</h4>
 <pre><code class="language-yaml">- name: Create Release
   uses: actions/create-release@v1
   env:
@@ -621,15 +621,15 @@ environment:
     draft: false
     prerelease: false
 </code></pre>
-<h3 id="semantic-versioning">Semantic Versioning</h3>
+<h4 id="semantic-versioning">Semantic Versioning</h4>
 <pre><code class="language-yaml">- name: Bump Version
   uses: anothrNick/github-tag-action@1.70.0
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     WITH_V: true
 </code></pre>
-<h2 id="performance-optimization">Performance Optimization</h2>
-<h3 id="parallel-jobs">Parallel Jobs</h3>
+<h3 id="performance-optimization">Performance Optimization</h3>
+<h4 id="parallel-jobs">Parallel Jobs</h4>
 <pre><code class="language-yaml">jobs:
   test:
     runs-on: ubuntu-latest
@@ -644,7 +644,7 @@ environment:
     steps:
       - run: npm run build
 </code></pre>
-<h3 id="job-dependencies">Job Dependencies</h3>
+<h4 id="job-dependencies">Job Dependencies</h4>
 <pre><code class="language-yaml">jobs:
   test:
     runs-on: ubuntu-latest
@@ -652,18 +652,18 @@ environment:
     needs: test
     runs-on: ubuntu-latest
 </code></pre>
-<h3 id="continue-on-error">Continue on Error</h3>
+<h4 id="continue-on-error">Continue on Error</h4>
 <pre><code class="language-yaml">- name: Optional Step
   continue-on-error: true
   run: npm run optional-script
 </code></pre>
-<h2 id="debugging">Debugging</h2>
-<h3 id="enable-debug-logging">Enable Debug Logging</h3>
+<h3 id="debugging">Debugging</h3>
+<h4 id="enable-debug-logging">Enable Debug Logging</h4>
 <pre><code class="language-bash"># Set in repository or organization secrets
 ACTIONS_STEP_DEBUG=true
 ACTIONS_RUNNER_DEBUG=true
 </code></pre>
-<h3 id="print-debug-info">Print Debug Info</h3>
+<h4 id="print-debug-info">Print Debug Info</h4>
 <pre><code class="language-yaml">- name: Debug
   run: |
     echo &quot;Ref: ${{ github.ref }}&quot;
@@ -671,7 +671,7 @@ ACTIONS_RUNNER_DEBUG=true
     echo &quot;Actor: ${{ github.actor }}&quot;
     echo &quot;Event: ${{ github.event_name }}&quot;
 </code></pre>
-<h3 id="use-act-for-local-testing">Use Act for Local Testing</h3>
+<h4 id="use-act-for-local-testing">Use Act for Local Testing</h4>
 <pre><code class="language-bash"># Install act
 brew install act
 

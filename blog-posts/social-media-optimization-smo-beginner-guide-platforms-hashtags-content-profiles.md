@@ -1,6 +1,7 @@
 ---
 title: "MODULE 2: Social Media Optimization (SMO) — Complete Beginner's Guide to Platforms, Hashtags, Content, and Strong Profiles"
-description: "A complete, in-depth guide to Social Media Optimization (SMO): social media networks explained, major platform types, core SMO concepts, hashtag strategy, content creation, and how to build a strong profile on Facebook, Instagram, X, LinkedIn, and Pinterest."
+seo_title: "Social Media Optimization (SMO): Beginner's Guide"
+description: "Social media optimization for beginners: choosing platforms, writing strong profiles, hashtag strategy and content that travels."
 keywords: "social media optimization, SMO, what is SMO, social media networks, types of social media, hashtag strategy, social media content creation, how to create a strong social media profile, facebook profile tips, instagram profile tips, linkedin profile tips, twitter profile tips, pinterest profile tips, smartgen"
 date: 2026-06-30
 image: "https://smartgentools.com/blog-posts/images/module2-smo-overview-infographic.svg"
@@ -18,7 +19,6 @@ tags:
   - Pinterest
 slug: "module-2-social-media-optimization-smo-complete-beginners-guide-to-platforms-hashtags-content-and-strong-profiles"
 ---
-
 ## Welcome to Module 2
 
 In Module 1, you learned how to create basic visual content using Filmora and Canva. Now that you can produce images and videos, it's time to learn where and how to share them effectively. This brings us to Module 2: **Social Media Optimization (SMO)**.

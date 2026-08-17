@@ -1,7 +1,7 @@
 ---
 slug: "workflow-customization-summary"
 title: "Workflow Customization Summary"
-description: "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions"
+description: "A summary of the workflow customizations in this project: what was changed in each GitHub Actions file, and why, with the Vite config it targets."
 order: 8
 ---
 # ✅ Workflow Customization Summary for Your Vite Config

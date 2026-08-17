@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Directory Structure for Portfolio - SmartGen Docs</title>
-    <meta name="description" content="SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions">
+    <meta name="description" content="The portfolio project's directory layout, plus how to copy the workflow files into your own repository and get the first build running.">
     <link rel="canonical" href="https://smartgentools.com/docs/directory-structure-for-portfolio/">
     
     <!-- HTTPS Redirect Script -->
@@ -247,8 +247,8 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="quick-start-guide-bayezid-portfolio-workflows">🚀 Quick Start Guide - Bayezid Portfolio Workflows</h1>
-<h2 id="directory-structure">Directory Structure</h2>
+                        <h2 id="quick-start-guide-bayezid-portfolio-workflows">🚀 Quick Start Guide - Bayezid Portfolio Workflows</h2>
+<h3 id="directory-structure">Directory Structure</h3>
 <p>Add these files to your repository:</p>
 <pre><code>bayezid_portfolio/
 ├── .github/
@@ -263,7 +263,7 @@
 ├── GITHUB_ACTIONS_SETUP.md         ✅ Setup instructions
 └── WORKFLOWS_README.md             ✅ This file
 </code></pre>
-<h2 id="step-1-copy-workflow-files">Step 1: Copy Workflow Files</h2>
+<h3 id="step-1-copy-workflow-files">Step 1: Copy Workflow Files</h3>
 <pre><code class="language-bash">mkdir -p .github/workflows
 </code></pre>
 <p>Copy these files:</p>
@@ -279,7 +279,7 @@
 <li><code>nginx.conf</code></li>
 <li><code>.dockerignore</code></li>
 </ul>
-<h2 id="step-2-configure-secrets">Step 2: Configure Secrets</h2>
+<h3 id="step-2-configure-secrets">Step 2: Configure Secrets</h3>
 <p>Follow the detailed guide in <code>GITHUB_ACTIONS_SETUP.md</code>:</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -300,57 +300,57 @@
 <li>Add GitHub secrets</li>
 <li>Set up environments</li>
 </ol>
-<h2 id="step-3-verify-installation">Step 3: Verify Installation</h2>
+<h3 id="step-3-verify-installation">Step 3: Verify Installation</h3>
 <pre><code class="language-bash"># Test locally
 docker-compose up --build
 
 # Visit: http://localhost:3000
 curl http://localhost:3000
 </code></pre>
-<h2 id="step-4-push-to-github">Step 4: Push to GitHub</h2>
+<h3 id="step-4-push-to-github">Step 4: Push to GitHub</h3>
 <pre><code class="language-bash">git add .github/ Dockerfile docker-compose.yml nginx.conf .dockerignore
 git commit -m &quot;ci: add GitHub Actions workflows&quot;
 git push origin main
 </code></pre>
-<h2 id="workflow-status">📊 Workflow Status</h2>
+<h3 id="workflow-status">📊 Workflow Status</h3>
 <p>Check status at: <code>https://github.com/your-username/bayezid_portfolio/actions</code></p>
-<h2 id="what-each-workflow-does">🔄 What Each Workflow Does</h2>
-<h3 id="cicd-pipeline-ci-cdyml">CI/CD Pipeline (<code>ci-cd.yml</code>)</h3>
+<h3 id="what-each-workflow-does">🔄 What Each Workflow Does</h3>
+<h4 id="cicd-pipeline-ci-cdyml">CI/CD Pipeline (<code>ci-cd.yml</code>)</h4>
 <p>✅ Runs on every push and PR<br>✅ Type checking (TypeScript)<br>✅ Code formatting validation<br>✅ Security scanning<br>✅ Build verification<br>✅ Auto-deploy to staging/production<br>✅ Health checks<br>✅ Performance reporting</p>
-<h3 id="code-quality-code-qualityyml">Code Quality (<code>code-quality.yml</code>)</h3>
+<h4 id="code-quality-code-qualityyml">Code Quality (<code>code-quality.yml</code>)</h4>
 <p>✅ Prettier formatting<br>✅ TypeScript strict checks<br>✅ Dependency audits<br>✅ Build verification<br>✅ Lighthouse performance</p>
-<h3 id="deploy-deployyml">Deploy (<code>deploy.yml</code>)</h3>
+<h4 id="deploy-deployyml">Deploy (<code>deploy.yml</code>)</h4>
 <p>✅ Docker image building<br>✅ SSH deployment<br>✅ Health checks<br>✅ Smoke tests<br>✅ Automatic rollback on failure<br>✅ Deployment notifications</p>
-<h2 id="key-features">🎯 Key Features</h2>
-<h3 id="automated-testing">Automated Testing</h3>
+<h3 id="key-features">🎯 Key Features</h3>
+<h4 id="automated-testing">Automated Testing</h4>
 <ul>
 <li>Type checking</li>
 <li>Code formatting</li>
 <li>Dependency scanning</li>
 <li>Build verification</li>
 </ul>
-<h3 id="automated-deployment">Automated Deployment</h3>
+<h4 id="automated-deployment">Automated Deployment</h4>
 <ul>
 <li>Staging (on develop branch)</li>
 <li>Production (on main branch)</li>
 <li>Manual deployment option</li>
 <li>Automatic rollback</li>
 </ul>
-<h3 id="quality-gates">Quality Gates</h3>
+<h4 id="quality-gates">Quality Gates</h4>
 <ul>
 <li>All checks must pass before merge</li>
 <li>PR comments with feedback</li>
 <li>Performance reports</li>
 <li>Security scanning</li>
 </ul>
-<h3 id="notifications">Notifications</h3>
+<h4 id="notifications">Notifications</h4>
 <ul>
 <li>PR comments on failures</li>
 <li>Deployment status</li>
 <li>Build artifacts</li>
 <li>Performance metrics</li>
 </ul>
-<h2 id="environment-variables">🔐 Environment Variables</h2>
+<h3 id="environment-variables">🔐 Environment Variables</h3>
 <p>Add to <code>.env</code> file (never commit):</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -369,30 +369,30 @@ git push origin main
 PORT=3000
 # Add your API keys and configs here
 </code></pre>
-<h2 id="branch-protection-rules">📝 Branch Protection Rules</h2>
+<h3 id="branch-protection-rules">📝 Branch Protection Rules</h3>
 <p>Go to: <code>Settings &gt; Branches &gt; Branch protection rules</code></p>
 <p>For <code>main</code> branch:<br>✅ Require status checks to pass<br>✅ Require code reviews before merge<br>✅ Include administrators<br>✅ Dismiss stale PR approvals</p>
-<h2 id="troubleshooting">🚨 Troubleshooting</h2>
-<h3 id="workflows-not-running">Workflows not running?</h3>
+<h3 id="troubleshooting">🚨 Troubleshooting</h3>
+<h4 id="workflows-not-running">Workflows not running?</h4>
 <ul>
 <li>Check <code>.github/workflows/</code> directory exists</li>
 <li>Verify file names match exactly</li>
 <li>Check YAML syntax (use <a href="https://www.yamllint.com/">https://www.yamllint.com/</a>)</li>
 </ul>
-<h3 id="deployment-failing">Deployment failing?</h3>
+<h4 id="deployment-failing">Deployment failing?</h4>
 <ul>
 <li>Check SSH keys in secrets</li>
 <li>Verify server is accessible</li>
 <li>Check deployment path exists</li>
 <li>Review server logs</li>
 </ul>
-<h3 id="build-failing">Build failing?</h3>
+<h4 id="build-failing">Build failing?</h4>
 <ul>
 <li>Run locally: <code>pnpm install &amp;&amp; pnpm build</code></li>
 <li>Check Node version: <code>node -v</code> (should be 20+)</li>
 <li>Check pnpm version: <code>pnpm -v</code> (should be 10.4.1+)</li>
 </ul>
-<h2 id="next-steps">📚 Next Steps</h2>
+<h3 id="next-steps">📚 Next Steps</h3>
 <ol>
 <li>✅ Copy workflow files</li>
 <li>✅ Configure secrets</li>
@@ -402,14 +402,14 @@ PORT=3000
 <li>✅ Set up branch protection</li>
 <li>✅ Document deployment process</li>
 </ol>
-<h2 id="useful-links">🔗 Useful Links</h2>
+<h3 id="useful-links">🔗 Useful Links</h3>
 <ul>
 <li><a href="https://docs.github.com/actions">GitHub Actions Docs</a></li>
 <li><a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions">Workflow Syntax</a></li>
 <li><a href="https://docs.github.com/en/actions/security-guides">Security Hardening</a></li>
 <li><a href="https://docs.docker.com/develop/dev-best-practices/">Docker Best Practices</a></li>
 </ul>
-<h2 id="pro-tips">✨ Pro Tips</h2>
+<h3 id="pro-tips">✨ Pro Tips</h3>
 <ol>
 <li><p><strong>Local Testing</strong>: Use <code>act</code> to test workflows locally</p>
 <pre><code class="language-bash">npm install -g act

@@ -1,6 +1,7 @@
 ---
 title: "pyproject toml Guide Write Configure and Fix Common pypi Errors2026"
-description: "A complete pyproject.toml tutorial: every field explained with examples, step-by-step setup, the 2026 license format change, and fixes for the errors that trip people up most."
+seo_title: "pyproject.toml Guide: Setup and Error Fixes"
+description: "Every pyproject.toml field explained with examples, the 2026 license format change, and fixes for the errors that trip people up."
 keyword: "pyproject.toml,pypi, python"
 date: 2026-07-22
 image: "https://smartgentools.com/blog-posts/images/pyproject-toml-guide-cover.svg"
@@ -611,7 +612,7 @@ Read related :
 - [Vite Optimization Guide for CI/CD](https://smartgentools.com/docs/vite-optimization-guide-for-cicd/)
 ---
 Bunas
-### What is SmartGen
+## What is SmartGen
 SmartGen Docs is an open-source Python static site generator built specifically for project documentation. It's a pip install-able alternative in the same space as MkDocs and Sphinx, with three deliberate differences:
 Zero third-party front-end dependency. No icon fonts, no UI framework, no CDN calls. Every pixel in the default theme is hand-authored CSS and inline SVG. Code syntax highlighting runs server-side through Pygments at build time — highlighted code even with JavaScript disabled.
 One toolchain, one config file. smartgen-docs init / serve / build covers scaffolding, a live-reload dev server, and static output. Navigation, theme palette, and site metadata all live in a single smartgen.yml.

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website: Getting Started Guide - SmartGen Docs</title>
-    <meta name="description" content="Complete guide to forking, setting up, and running the open-source developer portfolio website locally — prerequisites, installation, configuration, and troubleshooting.">
+    <meta name="description" content="Fork, install and run the open-source developer portfolio locally: prerequisites, configuration and fixes for common setup errors.">
     <link rel="canonical" href="https://smartgentools.com/docs/portfolio-website-getting-started-guide/">
     
     <!-- HTTPS Redirect Script -->
@@ -247,12 +247,12 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="portfolio-website-getting-started-guide">Portfolio Website: Getting Started Guide</h1>
+                        <h2 id="portfolio-website-getting-started-guide">Portfolio Website: Getting Started Guide</h2>
 <p>  This guide walks you through everything you need to get the <strong>open-source developer portfolio</strong> running on your local machine — from prerequisites to your first successful preview in the browser.</p>
 <blockquote>
 <p><strong>Repository:</strong> <a href="https://github.com/bayzed123/sayadbayezid-portfolio-">github.com/bayzed123/sayadbayezid-portfolio-</a></p>
 </blockquote>
-<h2 id="in-this-guide">In this guide</h2>
+<h3 id="in-this-guide">In this guide</h3>
 <ul>
 <li><a href="#about-this-project">About this project</a></li>
 <li><a href="#prerequisites">Prerequisites</a></li>
@@ -268,7 +268,7 @@
 <li><a href="#next-steps">Next steps</a></li>
 </ul>
 <hr>
-<h2 id="about-this-project">About this project</h2>
+<h3 id="about-this-project">About this project</h3>
 <p>  This is a <strong>free, open-source developer portfolio template</strong> built as a fully static website — meaning it requires no backend server, no database, and no paid hosting to run. It includes:</p>
 <ul>
 <li>A complete personal portfolio homepage (hero, about, projects, services, contact sections)</li>
@@ -293,7 +293,7 @@
 </div>
 
 </blockquote>
-<h3 id="who-this-guide-is-for">Who this guide is for</h3>
+<h4 id="who-this-guide-is-for">Who this guide is for</h4>
 <p>  This guide assumes:</p>
 <ul>
 <li>You are comfortable running basic terminal/command-line commands</li>
@@ -302,9 +302,9 @@
 </ul>
 <p>  You do <strong>not</strong> need prior experience with Python or GitHub Actions — the setup script and automation handle those parts for you.</p>
 <hr>
-<h2 id="prerequisites">Prerequisites</h2>
+<h3 id="prerequisites">Prerequisites</h3>
 <p>  Before you begin, install and verify the following tools.</p>
-<h3 id="1-git">1. Git</h3>
+<h4 id="1-git">1. Git</h4>
 <p>  Git is required to clone the repository and push changes.</p>
 <p>  <strong>Check if it&#39;s already installed:</strong></p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
@@ -346,7 +346,7 @@
 <td><code>sudo apt install git</code></td>
 </tr>
 </tbody></table>
-<h3 id="2-python-3x">2. Python 3.x</h3>
+<h4 id="2-python-3x">2. Python 3.x</h4>
 <p>  Required for the automated blog conversion script.</p>
 <p>  <strong>Check if it&#39;s already installed:</strong></p>
 <pre><code class="language-bash">python3 --version
@@ -358,19 +358,19 @@
 <p><strong>Warning</strong><br>On Windows, the command may be <code>python</code> instead of <code>python3</code>. Run <code>python --version</code> if <code>python3</code> is not recognized.</p>
 </blockquote>
 <p>  <strong>If not installed:</strong> Download from <a href="https://www.python.org/downloads/">python.org/downloads</a></p>
-<h3 id="3-a-text-editor">3. A text editor</h3>
+<h4 id="3-a-text-editor">3. A text editor</h4>
 <p>  Any code editor works. Recommended options:</p>
 <ul>
 <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> (free, most popular)</li>
 <li><a href="https://www.sublimetext.com/">Sublime Text</a></li>
 <li><a href="https://zed.dev/">Zed</a></li>
 </ul>
-<h3 id="4-a-github-account">4. A GitHub account</h3>
+<h4 id="4-a-github-account">4. A GitHub account</h4>
 <p>  Required to fork the repository and deploy via GitHub Pages. <a href="https://github.com/join">Sign up here</a> if you don&#39;t have one.</p>
-<h3 id="5-optional-a-local-static-server">5. (Optional) A local static server</h3>
+<h4 id="5-optional-a-local-static-server">5. (Optional) A local static server</h4>
 <p>  Not required to install ahead of time — this guide uses <code>npx serve</code>, which runs without permanent installation. If you prefer a permanent tool, <code>python -m http.server</code> also works and ships with Python by default.</p>
 <hr>
-<h2 id="step-1-fork-the-repository">Step 1: Fork the repository</h2>
+<h3 id="step-1-fork-the-repository">Step 1: Fork the repository</h3>
 <p>  Forking creates your own copy of the project under your GitHub account, which you can freely modify.</p>
 <ol>
 <li>Go to the repository: <a href="https://github.com/bayzed123/sayadbayezid-portfolio-">github.com/bayzed123/sayadbayezid-portfolio-</a></li>
@@ -384,7 +384,7 @@
 <pre><code class="language-text">https://github.com/YOUR_USERNAME/sayadbayezid-portfolio-
 </code></pre>
 <hr>
-<h2 id="step-2-clone-your-fork">Step 2: Clone your fork</h2>
+<h3 id="step-2-clone-your-fork">Step 2: Clone your fork</h3>
 <p>  Now download your forked copy to your local machine.</p>
 <pre><code class="language-bash">git clone https://github.com/YOUR_USERNAME/sayadbayezid-portfolio-.git
 cd sayadbayezid-portfolio-
@@ -402,7 +402,7 @@ cd sayadbayezid-portfolio-
 <hr>
 <p><img src="/assets/images/docs/protfolio-coustomization.JPEG" alt="project diagram" title="" class="doc-image">
 </p>
-<h2 id="step-3-review-the-project-structure">Step 3: Review the project structure</h2>
+<h3 id="step-3-review-the-project-structure">Step 3: Review the project structure</h3>
 <p>  Before making changes, it helps to understand what each part of the repository does.</p>
 <pre><code class="language-text">sayadbayezid-portfolio-/
 ├── .github/workflows/
@@ -460,7 +460,7 @@ cd sayadbayezid-portfolio-
 </tr>
 </tbody></table>
 <hr>
-<h2 id="step-4-run-the-setup-script">Step 4: Run the setup script</h2>
+<h3 id="step-4-run-the-setup-script">Step 4: Run the setup script</h3>
 <p>  The repository includes an interactive script that personalizes every file automatically — no manual find-and-replace required.</p>
 <pre><code class="language-bash">bash setup.sh
 </code></pre>
@@ -472,7 +472,7 @@ Enter your LinkedIn profile URL (e.g., linkedin.com/in/yourprofile):
 Enter your email address: 
 Enter your blog URL (e.g., yourblog.blogspot.com): 
 </code></pre>
-<h3 id="what-this-script-updates">What this script updates</h3>
+<h4 id="what-this-script-updates">What this script updates</h4>
 <table>
 <thead>
 <tr>
@@ -522,7 +522,7 @@ Your portfolio has been personalized with the following information:
   Blog: yourblog.blogspot.com
 </code></pre>
 <hr>
-<h2 id="step-5-install-blog-system-dependencies">Step 5: Install blog system dependencies</h2>
+<h3 id="step-5-install-blog-system-dependencies">Step 5: Install blog system dependencies</h3>
 <p>  The automated blog conversion script requires two Python packages:</p>
 <pre><code class="language-bash">pip install beautifulsoup4 markdown
 </code></pre>
@@ -538,9 +538,9 @@ Your portfolio has been personalized with the following information:
 <pre><code class="language-text">Dependencies OK
 </code></pre>
 <hr>
-<h2 id="step-6-preview-locally">Step 6: Preview locally</h2>
+<h3 id="step-6-preview-locally">Step 6: Preview locally</h3>
 <p>  Since this is a fully static site, you can preview it using any simple HTTP server. No build step is required for the homepage — only the blog system involves a processing step, and that&#39;s already handled by <code>setup.sh</code> verification below.</p>
-<h3 id="option-a-using-npx-serve-recommended-no-install-needed">Option A — Using <code>npx serve</code> (recommended, no install needed)</h3>
+<h4 id="option-a-using-npx-serve-recommended-no-install-needed">Option A — Using <code>npx serve</code> (recommended, no install needed)</h4>
 <pre><code class="language-bash">npx serve .
 </code></pre>
 <p>  Output will look like:</p>
@@ -553,7 +553,7 @@ Your portfolio has been personalized with the following information:
 └────────────────────────────────────────────────┘
 </code></pre>
 <p>  Open <code>http://localhost:3000</code> in your browser.</p>
-<h3 id="option-b-using-pythonand39s-built-in-server">Option B — Using Python&#39;s built-in server</h3>
+<h4 id="option-b-using-pythonand39s-built-in-server">Option B — Using Python&#39;s built-in server</h4>
 <pre><code class="language-bash">python3 -m http.server 8000
 </code></pre>
 <p>  Open <code>http://localhost:8000</code> in your browser.</p>
@@ -561,7 +561,7 @@ Your portfolio has been personalized with the following information:
 <p><strong>Tip</strong><br>Keep this terminal window open while you work — the server needs to keep running for the preview to stay accessible. Press <code>Ctrl+C</code> to stop it when you&#39;re done.</p>
 </blockquote>
 <hr>
-<h2 id="step-7-verify-everything-works">Step 7: Verify everything works</h2>
+<h3 id="step-7-verify-everything-works">Step 7: Verify everything works</h3>
 <p>  Before moving on to customization, confirm the following checklist:</p>
 <ul>
 <li><input disabled="" type="checkbox"> Homepage loads at <code>http://localhost:3000</code> with your name/info showing (not the placeholder &quot;Sayad Md Bayezid Hosan&quot;)</li>
@@ -569,7 +569,7 @@ Your portfolio has been personalized with the following information:
 <li><input disabled="" type="checkbox"> Blog page (<code>blog.html</code>) loads without errors</li>
 <li><input disabled="" type="checkbox"> No broken image icons on the homepage</li>
 </ul>
-<h3 id="testing-the-blog-system-end-to-end">Testing the blog system end-to-end</h3>
+<h4 id="testing-the-blog-system-end-to-end">Testing the blog system end-to-end</h4>
 <p>  Create a test post to confirm the automation pipeline works correctly:</p>
 <ol>
 <li><p>Create a new file: <code>blog_uploads/test-post.md</code></p>
@@ -600,18 +600,18 @@ Testing content for section 2.
 </blockquote>
 <p>  If all four checklist items pass, your local environment is fully working. 🎉</p>
 <hr>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<h3 id="bash-setupsh-permission-denied"><code>bash: setup.sh: Permission denied</code></h3>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<h4 id="bash-setupsh-permission-denied"><code>bash: setup.sh: Permission denied</code></h4>
 <p>  The script needs execute permission. Run:</p>
 <pre><code class="language-bash">chmod +x setup.sh
 bash setup.sh
 </code></pre>
-<h3 id="python3-command-not-found"><code>python3: command not found</code></h3>
+<h4 id="python3-command-not-found"><code>python3: command not found</code></h4>
 <p>  Your system may only recognize <code>python</code> (without the <code>3</code>). Try:</p>
 <pre><code class="language-bash">python --version
 </code></pre>
 <p>  If that shows a <code>3.x</code> version, use <code>python</code> in place of <code>python3</code> throughout this guide.</p>
-<h3 id="modulenotfounderror-no-module-named-and39bs4and39"><code>ModuleNotFoundError: No module named &#39;bs4&#39;</code></h3>
+<h4 id="modulenotfounderror-no-module-named-and39bs4and39"><code>ModuleNotFoundError: No module named &#39;bs4&#39;</code></h4>
 <p>  The BeautifulSoup dependency didn&#39;t install correctly, or you&#39;re using a different Python environment than expected. Try:</p>
 <pre><code class="language-bash">pip3 install --upgrade beautifulsoup4 markdown
 </code></pre>
@@ -621,13 +621,13 @@ source venv/bin/activate   # macOS/Linux
 venv\Scripts\activate      # Windows
 pip install beautifulsoup4 markdown
 </code></pre>
-<h3 id="setup-script-ran-but-indexhtml-still-shows-placeholder-name">Setup script ran, but <code>index.html</code> still shows placeholder name</h3>
+<h4 id="setup-script-ran-but-indexhtml-still-shows-placeholder-name">Setup script ran, but <code>index.html</code> still shows placeholder name</h4>
 <p>  Double-check you ran the script from the <strong>repository root directory</strong> (where <code>index.html</code> lives), not from inside a subfolder:</p>
 <pre><code class="language-bash">pwd
 # Should output something ending in .../sayadbayezid-portfolio-
 </code></pre>
 <p>  If you ran it from the wrong directory, <code>cd</code> into the correct root and re-run <code>bash setup.sh</code>.</p>
-<h3 id="test-blog-post-doesnand39t-appear-after-running-the-conversion-script">Test blog post doesn&#39;t appear after running the conversion script</h3>
+<h4 id="test-blog-post-doesnand39t-appear-after-running-the-conversion-script">Test blog post doesn&#39;t appear after running the conversion script</h4>
 <p>  Confirm the file:</p>
 <ul>
 <li>Is saved with a <code>.md</code> extension (not <code>.txt</code> or <code>.markdown</code>)</li>
@@ -638,13 +638,13 @@ pip install beautifulsoup4 markdown
 <pre><code class="language-bash">python3 scripts/convert_blogs.py
 </code></pre>
 <p>  Check the terminal output for any Python errors — they will indicate exactly which file failed to parse.</p>
-<h3 id="local-server-shows-a-blank-page-or-404">Local server shows a blank page or 404</h3>
+<h4 id="local-server-shows-a-blank-page-or-404">Local server shows a blank page or 404</h4>
 <p>  Confirm you&#39;re running the server command from the repository root, and that <code>index.html</code> exists in that same directory:</p>
 <pre><code class="language-bash">ls index.html
 </code></pre>
 <p>  If this returns &quot;No such file or directory,&quot; you&#39;re in the wrong folder.</p>
 <hr>
-<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="frequently-asked-questions">Frequently asked questions</h3>
   <details>
   <summary><strong>Do I need to know Python to use this project?</strong></summary><p>  No. You only need Python installed to run the blog conversion script — you never need to write or edit Python code unless you want to customize the blog system&#39;s internal logic.<br>  </details></p>
   <details>
@@ -656,7 +656,7 @@ pip install beautifulsoup4 markdown
   <details>
   <summary><strong>What license is this project under?</strong></summary><p>  Check the <code>LICENSE</code> file in the repository root for exact terms. Most forks require keeping a small attribution credit in the footer — the setup script does not remove this automatically.<br>  </details></p>
 <hr>
-<h2 id="next-steps">Next steps</h2>
+<h3 id="next-steps">Next steps</h3>
 <p>  Now that your local environment is running, continue with:</p>
 <ul>
 <li>** <a href="/docs/portfolio-website-getting-started-guide/">Deployment getting started</a> ** — deploy your personalized portfolio to GitHub Pages, Netlify, or Vercel</li>
@@ -664,7 +664,7 @@ pip install beautifulsoup4 markdown
 <li>** <a href="/docs/portfolio-website-customization-guide/">Customization Guide</a> ** — detailed walkthrough of editing sections, colors, and adding new pages</li>
 </ul>
 <hr>
-<h2 id="further-reading">Further reading</h2>
+<h3 id="further-reading">Further reading</h3>
 <ul>
 <li><a href="https://github.com/bayzed123/sayadbayezid-portfolio-/blob/main/QUICK_START.md">QUICK_START.md</a> — condensed version of this guide, directly in the repo</li>
 <li><a href="https://github.com/bayzed123/sayadbayezid-portfolio-/blob/main/WIKI.md">WIKI.md</a> — full technical reference for the blog system architecture</li>
@@ -684,7 +684,7 @@ pip install beautifulsoup4 markdown
     </tr>
   </table>
 </div><hr>
-<h3 id="help-and-support">Help and support</h3>
+<h4 id="help-and-support">Help and support</h4>
 <p><strong>Did you find what you needed?</strong><br>Thank you! We received your feedback.<br><br><br><a href="https://smartgentools.com/privacy/">Privacy policy</a></p>
 <br><p><strong>Help us make these docs great!</strong><br>All GitHub docs are open source. See something that&#39;s wrong or unclear? Submit a pull request.<br><br><br><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md"><kbd>⑂ Make a contribution</kbd></a><br><br><br><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md">Learn how to contribute</a></p>
 <br><p><strong>Still need help?</strong><br>👥 <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions">Ask the SmartGen community</a><br>💬 <a href="https://smartgentools.com/contact/">Contact support</a>  </p>

@@ -1,6 +1,7 @@
 ---
 title: "MODULE 4: Meta (Facebook) Marketing — The Complete A to Z Mega Guide for Beginners"
-description: "The complete beginner-to-advanced guide to Meta (Facebook) Marketing: Page vs Profile vs Group, Facebook Marketplace and product catalogue, creating a Business Page, Business Manager and Ads Manager, every type of Facebook advertising explained, and how to create your first ad campaign step by step."
+seo_title: "Facebook Marketing Guide for Beginners"
+description: "Market on Facebook without wasting budget: Page setup, organic reach, audience targeting and reading your ad results."
 keywords: "facebook marketing, meta marketing, facebook page vs profile vs group, facebook marketplace, facebook product catalogue, how to create facebook business page, business manager facebook, business suite facebook, ads manager facebook, facebook advertising types, facebook ad campaign, facebook ads for beginners, smartgen"
 date: 2026-06-30
 image: "https://smartgentools.com/blog-posts/images/module4-meta-facebook-marketing-infographic.svg"
@@ -17,7 +18,6 @@ tags:
   - Ads Manager
 slug: "module-4-meta-facebook-marketing-the-complete-a-to-z-mega-guide-for-beginners"
 ---
-
 ## Welcome to Module 4: Meta (Facebook) Marketing
 
 If you've been following this digital marketing course from the beginning, you already understand why digital marketing matters, how social media networks work, how to optimize your profiles, and how social media advertising functions in general. Now it's time to go deep into the single largest advertising platform in the world: **Meta**, the company behind Facebook, Instagram, Messenger, and WhatsApp.

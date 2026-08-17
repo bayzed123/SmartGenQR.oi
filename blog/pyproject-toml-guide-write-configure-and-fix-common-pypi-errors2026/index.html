@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pyproject toml Guide Write Configure and Fix Common pypi Errors2026 - SmartGen Blog</title>
-    <meta name="description" content="A complete pyproject.toml tutorial: every field explained with examples, step-by-step setup, the 2026 license format change, and fixes for the errors that trip people up most.">
+    <title>pyproject.toml Guide: Setup and Error Fixes - SmartGen Blog</title>
+    <meta name="description" content="Every pyproject.toml field explained with examples, the 2026 license format change, and fixes for the errors that trip people up.">
     <meta name="author" content="Sayad Md Bayezid Hosan">
     <meta name="keywords" content="pyproject.toml, Python Packaging, PyPI, Python, Developer Tools">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="pyproject toml Guide Write Configure and Fix Common pypi Errors2026">
-    <meta property="og:description" content="A complete pyproject.toml tutorial: every field explained with examples, step-by-step setup, the 2026 license format change, and fixes for the errors that trip people up most.">
+    <meta property="og:description" content="Every pyproject.toml field explained with examples, the 2026 license format change, and fixes for the errors that trip people up.">
     <meta property="og:image" content="https://smartgentools.com/blog-posts/images/pyproject-toml-guide-cover.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:url" content="https://smartgentools.com/blog/pyproject-toml-guide-write-configure-and-fix-common-pypi-errors2026/">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="Wed Jul 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)">
@@ -20,7 +23,7 @@
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="pyproject toml Guide Write Configure and Fix Common pypi Errors2026">
-    <meta name="twitter:description" content="A complete pyproject.toml tutorial: every field explained with examples, step-by-step setup, the 2026 license format change, and fixes for the errors that trip people up most.">
+    <meta name="twitter:description" content="Every pyproject.toml field explained with examples, the 2026 license format change, and fixes for the errors that trip people up.">
     <meta name="twitter:image" content="https://smartgentools.com/blog-posts/images/pyproject-toml-guide-cover.svg">
     
     <!-- Canonical URL -->
@@ -39,7 +42,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "pyproject toml Guide Write Configure and Fix Common pypi Errors2026",
-        "description": "A complete pyproject.toml tutorial: every field explained with examples, step-by-step setup, the 2026 license format change, and fixes for the errors that trip people up most.",
+        "description": "Every pyproject.toml field explained with examples, the 2026 license format change, and fixes for the errors that trip people up.",
         "image": "https://smartgentools.com/blog-posts/images/pyproject-toml-guide-cover.svg",
         "datePublished": "Wed Jul 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "author": {
@@ -230,7 +233,7 @@
 <script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>
 </div></div>
 </div>
-                <p class="blog-post-excerpt">A complete pyproject.toml tutorial: every field explained with examples, step-by-step setup, the 2026 license format change, and fixes for the errors that trip people up most.</p>
+                <p class="blog-post-excerpt">Every pyproject.toml field explained with examples, the 2026 license format change, and fixes for the errors that trip people up.</p>
             </header>
 
             <!-- Author Profile Section - Right after title (Auto-inserted if not manually placed) -->
@@ -248,14 +251,16 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
 <hr>
-<h1>pyproject.toml Guide: Write, Configure &amp; Fix Common Errors (2026)</h1>
+<h2>pyproject.toml Guide: Write, Configure &amp; Fix Common Errors (2026)</h2>
 <p>If you have ever opened a Python repository and found <code>setup.py</code>, <code>setup.cfg</code>, <code>requirements.txt</code>, and a half-finished <code>MANIFEST.in</code> all fighting for control of the same project, you already know why <code>pyproject.toml</code> exists. It replaces that pile of files with a single, readable configuration file that every modern Python tool — pip, build, Hatch, Poetry, uv, linters, type checkers — knows how to read.</p>
-<p>This guide walks through the whole thing end to end: what each field actually does, a full working example you can copy, a step-by-step walkthrough for starting from zero, a migration path from <code>setup.py</code>, and — because this is where almost everyone gets stuck — a dedicated troubleshooting section that explains <em>why</em> the most common errors happen and exactly how to fix them. It also covers something a lot of 2024- and 2025-era tutorials still get wrong: the <code>license</code> field&#39;s format changed under <strong>PEP 639</strong>, and the old syntax now throws a build error on current tooling. That gets its own section below.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -269,7 +274,8 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
-<h2>Quick Answer</h2>
+<p>This guide walks through the whole thing end to end: what each field actually does, a full working example you can copy, a step-by-step walkthrough for starting from zero, a migration path from <code>setup.py</code>, and — because this is where almost everyone gets stuck — a dedicated troubleshooting section that explains <em>why</em> the most common errors happen and exactly how to fix them. It also covers something a lot of 2024- and 2025-era tutorials still get wrong: the <code>license</code> field&#39;s format changed under <strong>PEP 639</strong>, and the old syntax now throws a build error on current tooling. That gets its own section below.</p>
+<h3>Quick Answer</h3>
 <p>The smallest working <code>pyproject.toml</code> needs just two tables:</p>
 <pre><code class="language-toml">[build-system]
 requires = [&quot;hatchling&quot;]
@@ -280,10 +286,9 @@ name = &quot;your-package-name&quot;
 version = &quot;0.1.0&quot;
 </code></pre>
 <p><code>[build-system]</code> tells installers <em>which tool</em> turns your source code into an installable package. <code>[project]</code> holds the metadata — name, version, dependencies, and so on — that almost every tool reads the same way. A third table, <code>[tool]</code>, holds settings specific to individual tools like Ruff, Black, or pytest, and isn&#39;t standardized at all. Everything below explains how to fill these in properly, field by field, plus the mistakes that break each one.</p>
-<h2>What Is pyproject.toml, and Why Did It Replace setup.py?</h2>
+<h3>What Is pyproject.toml, and Why Did It Replace setup.py?</h3>
 <p>For most of Python&#39;s packaging history, project metadata lived inside <code>setup.py</code> — a file that had to be <em>executed</em> before a tool could even find out your package&#39;s name or dependencies. That created a real problem: to learn what your project needed to build itself, pip first had to run arbitrary Python code, which meant the build environment already had to have the right dependencies installed just to discover what dependencies it needed. It was slow, inconsistent across machines, and quietly insecure, since installing a package could mean running someone else&#39;s code before you&#39;d agreed to anything.</p>
 <p>Two Python Enhancement Proposals fixed this in stages. <strong>PEP 518</strong> (2017) introduced <code>pyproject.toml</code> itself, solving the immediate problem by giving tools a static, declarative place — the <code>[build-system]</code> table — to list what&#39;s needed <em>before</em> any code runs. <strong>PEP 621</strong> (2020) went further and standardized general project metadata (name, dependencies, authors, and so on) into the <code>[project]</code> table, so that metadata could finally be read the same way regardless of which build tool a project used.</p>
-<p><code>setup.py</code> isn&#39;t strictly forbidden today — it&#39;s still valid, and some projects keep a slimmed-down version around for genuinely programmatic needs, like compiling a C extension with logic that can&#39;t be expressed declaratively. But for a new project, there&#39;s no longer a reason to start there. The <code>[project]</code> table covers the vast majority of what <code>setup()</code> used to do, without needing to execute anything.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -297,8 +302,9 @@ version = &quot;0.1.0&quot;
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<p><code>setup.py</code> isn&#39;t strictly forbidden today — it&#39;s still valid, and some projects keep a slimmed-down version around for genuinely programmatic needs, like compiling a C extension with logic that can&#39;t be expressed declaratively. But for a new project, there&#39;s no longer a reason to start there. The <code>[project]</code> table covers the vast majority of what <code>setup()</code> used to do, without needing to execute anything.</p>
 <p>TOML itself (Tom&#39;s Obvious, Minimal Language) is the format doing the heavy lifting here. It reads like a slightly stricter INI file — sections in square brackets, <code>key = value</code> pairs, native support for strings, arrays, and nested tables — and it&#39;s the same format Rust&#39;s Cargo uses for <code>Cargo.toml</code>, which is part of why it was chosen: predictable, boring, and easy to parse without ambiguity.</p>
-<h2>The Three Tables Inside Every pyproject.toml</h2>
+<h3>The Three Tables Inside Every pyproject.toml</h3>
 <table>
 <thead>
 <tr>
@@ -324,7 +330,7 @@ version = &quot;0.1.0&quot;
 </tr>
 </tbody></table>
 <p>One exception worth knowing about: <strong>Poetry</strong>, before version 2.0 (released January 2025), didn&#39;t use <code>[project]</code> at all — it kept everything under <code>[tool.poetry]</code> instead. Poetry 2.0+ supports both, but if you&#39;re reading an older Poetry project, that&#39;s why the metadata looks like it&#39;s in the &quot;wrong&quot; place.</p>
-<h2>Step 1: Choose and Declare Your Build Backend — <code>[build-system]</code></h2>
+<h3>Step 1: Choose and Declare Your Build Backend — <code>[build-system]</code></h3>
 <p>The build backend is the program that actually turns your source files into a distributable package (a wheel and/or source distribution). <code>[build-system]</code> has two keys: <code>build-backend</code>, which names it, and <code>requires</code>, a list of what needs to be installed to run it — typically just the backend itself, sometimes with a version floor.</p>
 <p>You&#39;ll generally copy this straight from whichever backend&#39;s documentation, but here&#39;s what the current versions look like for the most common options:</p>
 <table>
@@ -379,27 +385,27 @@ requires = [&quot;hatchling&gt;=1.26&quot;]
 build-backend = &quot;hatchling.build&quot;
 </code></pre>
 <p>None of these are objectively &quot;correct&quot; — they all produce a standard wheel that pip can install. If you don&#39;t already have a preference, Hatchling is a reasonable default for a new pure-Python project: minimal configuration, sensible defaults, and current SPDX license support (more on why that matters shortly).</p>
-<h2>Step 2: Static vs. Dynamic Metadata</h2>
+<h3>Step 2: Static vs. Dynamic Metadata</h3>
 <p>Most <code>[project]</code> fields are just written directly: <code>requires-python = &quot;&gt;=3.9&quot;</code>, <code>version = &quot;1.2.0&quot;</code>. But sometimes you don&#39;t want to hardcode a value — the most common case is version numbers, which people often want to read from a <code>__version__</code> variable in their code or from a Git tag, rather than typing the number twice.</p>
 <p>For that, mark the field as <code>dynamic</code>, and let the build backend fill it in at build time:</p>
 <pre><code class="language-toml">[project]
 dynamic = [&quot;version&quot;]
 </code></pre>
 <p>The exact mechanism for <em>how</em> a dynamic field gets its value depends entirely on your backend&#39;s own configuration — for Hatchling, for example, you&#39;d add a <code>[tool.hatch.version]</code> table pointing at the source. The one field that can never be dynamic is <code>name</code>, since tools need it to even know what project they&#39;re looking at.</p>
-<h2>Step 3: The Required Basics — <code>name</code> and <code>version</code></h2>
+<h3>Step 3: The Required Basics — <code>name</code> and <code>version</code></h3>
 <pre><code class="language-toml">[project]
 name = &quot;quickcache&quot;
 version = &quot;0.1.0&quot;
 </code></pre>
 <p><code>name</code> is the only field that&#39;s both required and can never be dynamic. It&#39;s also more restrictive than it looks: it must be made of ASCII letters, digits, underscores, hyphens, and periods, and it can&#39;t start or end with an underscore, hyphen, or period. Comparisons are case-insensitive, and runs of <code>_</code>, <code>-</code>, and <code>.</code> are treated as interchangeable — so <code>Quick-Cache</code>, <code>quick.cache</code>, and <code>QUICK__cache</code> all resolve to the same registered project on PyPI. This is exactly the rule that trips people up when a name has spaces or symbols in it (more in the mistakes section below).</p>
 <p><code>version</code> is technically required too, but in practice it&#39;s one of the most commonly <em>dynamic</em> fields, for the reason above — most people don&#39;t want to hand-edit a version number in two places every release.</p>
-<h2>Step 4: Declare Your Dependencies</h2>
-<h3>requires-python</h3>
+<h3>Step 4: Declare Your Dependencies</h3>
+<h4>requires-python</h4>
 <pre><code class="language-toml">[project]
 requires-python = &quot;&gt;=3.9&quot;
 </code></pre>
 <p>This declares the minimum Python version your project supports. One thing worth knowing: resist the urge to add an <em>upper</em> bound here, like <code>requires-python = &quot;&gt;=3.9,&lt;3.13&quot;</code>. It feels safe, but it tends to actively break things — it prevents your package from being installed at all on Python versions that come out after you publish, even if your code would have worked fine on them. Pin upper bounds on individual dependencies if you must, not on Python itself.</p>
-<h3>dependencies</h3>
+<h4>dependencies</h4>
 <pre><code class="language-toml">[project]
 dependencies = [
     &quot;httpx&gt;=0.27&quot;,
@@ -408,14 +414,14 @@ dependencies = [
 ]
 </code></pre>
 <p>Each string is a standard dependency specifier: package name, optional version constraints, and optionally an environment marker after a semicolon — the <code>colorama</code> line above only installs on Windows, for example. Everything in this list gets installed automatically whenever someone runs <code>pip install quickcache</code>, so this is only for things every user of your package genuinely needs.</p>
-<h3>optional-dependencies (extras)</h3>
+<h4>optional-dependencies (extras)</h4>
 <pre><code class="language-toml">[project.optional-dependencies]
 redis = [&quot;redis&gt;=5.0&quot;]
 cli = [&quot;rich&gt;=13.0&quot;, &quot;click&gt;=8.1&quot;]
 dev = [&quot;pytest&gt;=8.0&quot;, &quot;mypy&gt;=1.10&quot;]
 </code></pre>
 <p>Each key here defines a named &quot;extra.&quot; Someone who only needs the Redis backend installs it with <code>pip install quickcache[redis]</code>, which pulls in the base package plus whatever&#39;s listed under that key. This is the right tool when a dependency is only needed for <em>one feature</em> of your package — not for general development tooling, which brings us to the next section.</p>
-<h2>Step 5: Separate Dev Dependencies With <code>[dependency-groups]</code></h2>
+<h3>Step 5: Separate Dev Dependencies With <code>[dependency-groups]</code></h3>
 <p>This is the newest piece of the standard, and it&#39;s worth understanding even though it&#39;s optional, because it solves a real, long-standing mess.</p>
 <p>Before this existed, every tool invented its own private spot for &quot;dependencies you need to develop the project, but that shouldn&#39;t ship to your users&quot; — pytest, mypy, sphinx, and so on. Poetry used <code>[tool.poetry.group.dev.dependencies]</code>. PDM used <code>[tool.pdm.dev-dependencies]</code>. Early uv used <code>[tool.uv.dev-dependencies]</code>. None of them could read each other&#39;s tables, so switching tools meant rewriting your dev dependencies from scratch.</p>
 <p><strong>PEP 735</strong> standardizes this with a new <strong>top-level</strong> table — not nested inside <code>[project]</code> — called <code>[dependency-groups]</code>:</p>
@@ -427,7 +433,7 @@ dev = [{include-group = &quot;test&quot;}, {include-group = &quot;typing&quot;}]
 </code></pre>
 <p>Groups can reference other groups with <code>{include-group = &quot;name&quot;}</code> instead of duplicating entries, which is how the <code>dev</code> group above pulls in both <code>test</code> and <code>typing</code> without repeating anything.</p>
 <p>Tool support as of 2026: uv has full support (<code>uv sync --group test</code>, <code>uv add --group test pytest</code>), pip added a <code>--group</code> flag for installing from these tables starting in version 25.1, and Poetry reads <code>[dependency-groups]</code> from version 2.2.0 onward, with 2.3.0+ recommended for reliable lockfile behavior. The field that trips people up most: this table sits at the <em>top level</em> of the file, as its own <code>[dependency-groups]</code> heading — not as <code>[project.dependency-groups]</code>. Getting that indentation/nesting wrong is a quiet, common mistake.</p>
-<h2>Step 6: Describe Your Project for Humans and for PyPI</h2>
+<h3>Step 6: Describe Your Project for Humans and for PyPI</h3>
 <pre><code class="language-toml">[project]
 description = &quot;A lightweight, pluggable caching library for Python.&quot;
 readme = &quot;README.md&quot;
@@ -459,7 +465,7 @@ Changelog = &quot;https://github.com/example/quickcache/blob/main/CHANGELOG.md&q
 <li><strong><code>classifiers</code></strong> come from a fixed list (browsable at PyPI&#39;s classifier list) and are used for <em>browsing and search</em> on PyPI — they don&#39;t actually restrict installation. If you list <code>Programming Language :: Python :: 3.9</code>, that&#39;s informational only; <code>requires-python</code> is what actually enforces a minimum version.</li>
 <li><strong><code>urls</code></strong> populates the sidebar links on your PyPI project page. Stick to recognizable labels like <code>Homepage</code>, <code>Repository</code>, <code>Issues</code>, <code>Documentation</code>, and <code>Changelog</code> where you can — PyPI recognizes a specific set of &quot;well-known&quot; labels and displays them with matching icons; anything else still works, just renders as plain text instead.</li>
 </ul>
-<h2>Step 7: License and License Files — What Changed in 2026</h2>
+<h3>Step 7: License and License Files — What Changed in 2026</h3>
 <p>This is the section most existing tutorials get wrong, because the standard changed underneath them. If you&#39;ve copied a <code>license</code> example from an article written before mid-2025, there&#39;s a good chance it&#39;s now using a deprecated syntax that current build backends reject outright.</p>
 <p><strong>The old, deprecated format</strong> wrote <code>license</code> as a table:</p>
 <pre><code class="language-toml"># Deprecated (option A) — many build backends now reject this
@@ -504,7 +510,7 @@ license-files = [&quot;LICENSE*&quot;]
 </tr>
 </tbody></table>
 <p>If you&#39;re on an older pin, bumping the version in <code>[build-system] requires</code> is usually the entire fix.</p>
-<h2>Step 8: Add Console Scripts, GUI Scripts, and Plugins</h2>
+<h3>Step 8: Add Console Scripts, GUI Scripts, and Plugins</h3>
 <p>If you want <code>pip install quickcache</code> to also drop a command into the user&#39;s terminal, declare it under <code>[project.scripts]</code>:</p>
 <pre><code class="language-toml">[project.scripts]
 quickcache-cli = &quot;quickcache.cli:main&quot;
@@ -516,7 +522,7 @@ memory = &quot;quickcache.backends.memory:MemoryBackend&quot;
 redis = &quot;quickcache.backends.redis:RedisBackend&quot;
 </code></pre>
 <p>Your own code can then discover whatever&#39;s registered under <code>&quot;quickcache.backends&quot;</code> at runtime via <code>importlib.metadata.entry_points()</code>, without needing to know in advance what plugins exist.</p>
-<h2>Full Example: Every Field Working Together</h2>
+<h3>Full Example: Every Field Working Together</h3>
 <p>Here&#39;s everything above combined into one coherent, copyable file:</p>
 <pre><code class="language-toml">[build-system]
 requires = [&quot;hatchling&gt;=1.26&quot;]
@@ -572,7 +578,7 @@ redis = &quot;quickcache.backends.redis:RedisBackend&quot;
 [tool.hatch.version]
 path = &quot;src/quickcache/__init__.py&quot;
 </code></pre>
-<h2>Build Your First pyproject.toml From Scratch (Step-by-Step)</h2>
+<h3>Build Your First pyproject.toml From Scratch (Step-by-Step)</h3>
 <p>If you&#39;re starting a brand-new project, here&#39;s the whole path from an empty folder to an installable package.</p>
 <ol>
 <li><p><strong>Create the project structure.</strong> A &quot;src layout&quot; — putting your package inside a <code>src/</code> folder — is worth adopting even for small projects, because it prevents Python from accidentally importing your uninstalled source code instead of the properly installed package during testing:</p>
@@ -622,7 +628,7 @@ source .venv/bin/activate   # On Windows: .venv\Scripts\activate
 </li>
 </ol>
 <p>From here, everything else — dependencies, entry points, classifiers — is just adding more fields to the <code>[project]</code> table you already have.</p>
-<h2>Migrating an Existing setup.py Project (Step-by-Step)</h2>
+<h3>Migrating an Existing setup.py Project (Step-by-Step)</h3>
 <p>If you&#39;re modernizing an older project rather than starting fresh, the mapping from <code>setup()</code> keyword arguments to <code>[project]</code> fields is mostly one-to-one:</p>
 <table>
 <thead>
@@ -684,7 +690,7 @@ build-backend = &quot;setuptools.build_meta&quot;
 <li><strong>Keep <code>MANIFEST.in</code></strong> only if you&#39;re bundling non-Python files into your source distribution that need custom inclusion rules; it still works alongside <code>pyproject.toml</code>.</li>
 <li><strong>Rebuild and compare.</strong> Run <code>python -m build</code> and check that the file listing inside the new wheel/sdist matches what the old setup produced — <code>unzip -l dist/*.whl</code> is a quick way to eyeball it.</li>
 </ol>
-<h2>Validate Your File Before You Publish</h2>
+<h3>Validate Your File Before You Publish</h3>
 <p>Three checks, cheapest first:</p>
 <p><strong>1. Confirm it&#39;s valid TOML at all</strong>, using Python&#39;s built-in parser (3.11+; use the <code>tomli</code> package on older versions):</p>
 <pre><code class="language-bash">python -c &quot;import tomllib; print(tomllib.load(open(&#39;pyproject.toml&#39;, &#39;rb&#39;)))&quot;
@@ -698,62 +704,62 @@ validate-pyproject pyproject.toml
 <p><strong>3. Do a real build as a smoke test.</strong> A broken <code>pyproject.toml</code> will usually fail immediately here, with a much clearer error than pip gives you downstream:</p>
 <pre><code class="language-bash">python -m build --sdist
 </code></pre>
-<h2>12 Common pyproject.toml Mistakes (and Exactly How to Fix Each One)</h2>
+<h3>12 Common pyproject.toml Mistakes (and Exactly How to Fix Each One)</h3>
 <p>These are drawn from real, recurring issues across pip, uv, Poetry, and setuptools — not hypothetical ones.</p>
-<h3>1. Missing the <code>[build-system]</code> table entirely</h3>
+<h4>1. Missing the <code>[build-system]</code> table entirely</h4>
 <p><strong>Symptom:</strong> Inconsistent build behavior, or tools falling back to legacy assumptions you didn&#39;t intend.<br><strong>Fix:</strong> Add it, even if you add nothing else:</p>
 <pre><code class="language-toml">[build-system]
 requires = [&quot;hatchling&gt;=1.26&quot;]
 build-backend = &quot;hatchling.build&quot;
 </code></pre>
-<h3>2. An invalid project name</h3>
+<h4>2. An invalid project name</h4>
 <p><strong>Symptom:</strong> An error like <code>Not a valid package or extra name</code>, often triggered by a name with a space or symbol in it, e.g. <code>name = &quot;my cool package&quot;</code>.<br><strong>Fix:</strong> Use only letters, digits, hyphens, underscores, and periods, and don&#39;t start or end with a separator:</p>
 <pre><code class="language-toml">name = &quot;my-cool-package&quot;
 </code></pre>
-<h3>3. <code>version</code> is missing and not marked dynamic</h3>
+<h4>3. <code>version</code> is missing and not marked dynamic</h4>
 <p><strong>Symptom:</strong> A validation error complaining that required metadata is absent.<br><strong>Fix:</strong> Either set it directly, or explicitly mark it dynamic and configure your backend to supply it:</p>
 <pre><code class="language-toml">version = &quot;0.1.0&quot;
 # or
 dynamic = [&quot;version&quot;]
 </code></pre>
-<h3>4. A field is both static and dynamic at the same time</h3>
+<h4>4. A field is both static and dynamic at the same time</h4>
 <p><strong>Symptom:</strong> A metadata conflict error — this happens when a field like <code>dependencies</code> has a real value <em>and</em> also appears in the <code>dynamic</code> list.<br><strong>Fix:</strong> Pick one. If a build backend is computing it for you, remove the static value and leave only the <code>dynamic</code> entry (or vice versa).</p>
-<h3>5. Using the old <code>license = {file = &quot;...&quot;}</code> table format</h3>
+<h4>5. Using the old <code>license = {file = &quot;...&quot;}</code> table format</h4>
 <p><strong>Symptom:</strong> A build error saying <code>license</code> should be a string, not a table — on any backend version listed in the PEP 639 support table above.<br><strong>Fix:</strong> Switch to the SPDX string format:</p>
 <pre><code class="language-toml">license = &quot;MIT&quot;
 license-files = [&quot;LICENSE*&quot;]
 </code></pre>
-<h3>6. <code>build-backend</code> doesn&#39;t match the package in <code>requires</code></h3>
+<h4>6. <code>build-backend</code> doesn&#39;t match the package in <code>requires</code></h4>
 <p><strong>Symptom:</strong> A build backend import failure — the tool named in <code>build-backend</code> isn&#39;t actually installed, because it wasn&#39;t listed in <code>requires</code>.<br><strong>Fix:</strong> Make sure the two agree. If you use Hatchling, both lines need to say Hatchling:</p>
 <pre><code class="language-toml">[build-system]
 requires = [&quot;hatchling&gt;=1.26&quot;]
 build-backend = &quot;hatchling.build&quot;
 </code></pre>
-<h3>7. Dependency specifiers with bad syntax</h3>
+<h4>7. Dependency specifiers with bad syntax</h4>
 <p><strong>Symptom:</strong> A parse error on your dependency list, often from missing quotes around a version constraint or a malformed environment marker.<br><strong>Fix:</strong> Every dependency is a quoted string, constraint and all:</p>
 <pre><code class="language-toml">dependencies = [
     &quot;requests&gt;=2.31&quot;,
     &quot;colorama&gt;=0.4; sys_platform == &#39;win32&#39;&quot;,
 ]
 </code></pre>
-<h3>8. An overly strict <code>requires-python</code> upper bound</h3>
+<h4>8. An overly strict <code>requires-python</code> upper bound</h4>
 <p><strong>Symptom:</strong> Your package becomes uninstallable on newer Python releases the moment they come out, even though nothing about your code actually breaks.<br><strong>Fix:</strong> Avoid upper bounds on <code>requires-python</code> specifically — use a lower bound only, and pin upper bounds on individual dependencies instead if one of <em>them</em> has a known incompatibility.</p>
-<h3>9. A <code>[project.scripts]</code> entry pointing at the wrong path</h3>
+<h4>9. A <code>[project.scripts]</code> entry pointing at the wrong path</h4>
 <p><strong>Symptom:</strong> The installed command exists but crashes immediately with an import error.<br><strong>Fix:</strong> The value must be <code>&quot;module.path:function_name&quot;</code>, matching your actual source layout — with a src layout, that&#39;s relative to <code>src/</code>, not the repo root:</p>
 <pre><code class="language-toml">[project.scripts]
 quickcache-cli = &quot;quickcache.cli:main&quot;
 </code></pre>
-<h3>10. Duplicate table headers</h3>
+<h4>10. Duplicate table headers</h4>
 <p><strong>Symptom:</strong> A TOML parse error, or metadata silently overwriting itself — usually the result of copy-pasting a second <code>[project]</code> block from another file during a merge.<br><strong>Fix:</strong> Each table header can appear once. Merge the contents under a single <code>[project]</code> heading.</p>
-<h3>11. A <code>readme</code> path that doesn&#39;t match the real file</h3>
+<h4>11. A <code>readme</code> path that doesn&#39;t match the real file</h4>
 <p><strong>Symptom:</strong> <code>twine check</code> fails on your long description, even though the package still uploads — the check is separate from the upload step.<br><strong>Fix:</strong> Confirm the exact filename and extension:</p>
 <pre><code class="language-toml">readme = &quot;README.md&quot;
 </code></pre>
-<h3>12. Forgetting <code>license-files</code></h3>
+<h4>12. Forgetting <code>license-files</code></h4>
 <p><strong>Symptom:</strong> Nothing crashes, but your actual <code>LICENSE</code> file never ships inside the built package, which is a real compliance gap for anyone redistributing your code.<br><strong>Fix:</strong> Add the glob explicitly — it doesn&#39;t happen automatically just because a <code>LICENSE</code> file exists in your repo:</p>
 <pre><code class="language-toml">license-files = [&quot;LICENSE*&quot;]
 </code></pre>
-<h2>Building and Publishing Your Package (Quick Path)</h2>
+<h3>Building and Publishing Your Package (Quick Path)</h3>
 <p>Once your file validates and builds cleanly:</p>
 <ol>
 <li><strong>Build both distributions:</strong><pre><code class="language-bash">python -m build
@@ -774,14 +780,14 @@ You&#39;ll authenticate with username <code>__token__</code> and a TestPyPI API 
 </li>
 </ol>
 <p>If you&#39;d rather automate this on every tagged release, GitHub Actions CI/CD workflows are the standard next step — worth setting up once you&#39;re publishing more than a couple of times.</p>
-<h2>Frequently Asked Questions</h2>
+<h3>Frequently Asked Questions</h3>
 <p><strong>Do I still need setup.py?</strong><br>Not for a new project. It remains valid for cases needing genuinely programmatic build logic, like compiling C extensions, but the <code>[project]</code> table covers standard metadata without it.</p>
 <p><strong>What&#39;s the actual difference between <code>dependencies</code> and <code>[dependency-groups]</code>?</strong><br><code>dependencies</code> (and <code>optional-dependencies</code>) describe what your <em>published package</em> needs to run, and they ship with it. <code>[dependency-groups]</code> describes what <em>you</em> need to develop it — test runners, linters, docs builders — and none of it is included when someone installs your package from PyPI.</p>
 <p><strong>Why does pip suddenly build my project in an isolated environment?</strong><br>Simply having a <code>pyproject.toml</code> file — even a mostly empty one — changes pip&#39;s default behavior to use build isolation, which is generally a good thing for reproducibility.</p>
 <p><strong>Can <code>[project]</code> and <code>[tool.poetry]</code> coexist?</strong><br>Yes, as of Poetry 2.0+. Older Poetry projects (pre-January 2025) only used <code>[tool.poetry]</code>, which is why you&#39;ll still see that pattern in older repositories.</p>
 <p><strong>Is TOML case-sensitive?</strong><br>Table and key names are case-sensitive, but the <code>name</code> field specifically is compared case-insensitively for PyPI registration purposes, along with treating runs of <code>-</code>, <code>_</code>, and <code>.</code> as equivalent.</p>
 <p><strong>What Python version do I need just to read a pyproject.toml myself?</strong><br>Python 3.11+ includes <code>tomllib</code> in the standard library. For anything earlier, install the <code>tomli</code> package, which implements the same interface.</p>
-<h2>Key Takeaways</h2>
+<h3>Key Takeaways</h3>
 <ul>
 <li>Every project should have a <code>[build-system]</code> table, even a minimal one — its mere presence changes how pip builds your project for the better.</li>
 <li><code>[project]</code> is the standardized home for metadata; only <code>name</code> can never be dynamic.</li>
@@ -790,7 +796,7 @@ You&#39;ll authenticate with username <code>__token__</code> and a TestPyPI API 
 <li>Validate before you publish: <code>tomllib</code> for syntax, <code>validate-pyproject</code> for spec compliance, and a real <code>python -m build</code> as a final smoke test.</li>
 <li>Always push to TestPyPI before the real index — it exists specifically so a mistake doesn&#39;t cost you a package name or version number on the real one.</li>
 </ul>
-<h2>Further Reading</h2>
+<h3>Further Reading</h3>
 <ul>
 <li><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/">PyPA: Writing your pyproject.toml</a> — the canonical technical reference this guide is built on top of</li>
 <li><a href="https://packaging.python.org/en/latest/guides/modernize-setup-py-project/">PyPA: How to modernize a setup.py based project</a></li>
@@ -928,7 +934,10 @@ You&#39;ll authenticate with username <code>__token__</code> and a TestPyPI API 
             <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
             <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
             <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
-                <input type="email" name="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-name">Your name</label>
+                <input type="text" id="newsletter-name" name="name" placeholder="Your name" autocomplete="given-name" maxlength="60" style="flex: 1; min-width: 180px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-email">Your email address</label>
+                <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
                 <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
             </form>

@@ -2,162 +2,162 @@
   {
     "slug": "github-secrets-explained",
     "title": "GitHub Secrets Explained",
-    "description": "Learn about secrets as they are used in GitHub Actions workflows.",
+    "description": "What GitHub Secrets are, why never to commit a key, and how to add and use them safely in Actions workflows. Written for beginners.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "development-setup-guide",
     "title": "Development Setup Guide",
-    "description": "Learn how to set up and start contributing to SmartGen.",
+    "description": "Set up a local development environment for SmartGen: prerequisites, install steps, the day-to-day workflow and pull request guidelines.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "directory-structure-for-portfolio",
     "title": "Directory Structure for Portfolio",
-    "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
+    "description": "The portfolio project's directory layout, plus how to copy the workflow files into your own repository and get the first build running.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "api-reference",
     "title": "API Reference",
     "description": "Reference documentation for SmartGen's internal JavaScript functions and data structures.",
     "category": "API Reference",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "getting-started",
     "title": "Getting Started",
-    "description": "Get SmartGen running on your local machine in under 5 minutes.",
+    "description": "Get SmartGen running locally in under five minutes: install the dependencies, start the dev server and make your first change.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "portfolio-website-getting-started-guide",
     "title": "Portfolio Website: Getting Started Guide",
-    "description": "Complete guide to forking, setting up, and running the open-source developer portfolio website locally — prerequisites, installation, configuration, and troubleshooting.",
+    "description": "Fork, install and run the open-source developer portfolio locally: prerequisites, configuration and fixes for common setup errors.",
     "category": "Portfolio Website",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "architecture-and-tech-stack",
     "title": "Architecture & Tech Stack",
     "description": "How SmartGen is put together: core architectural principles, the technical stack, and the file structure.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "installation",
     "title": "Installation",
     "description": "Detailed installation and environment setup instructions for SmartGen.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "portfolio-website-deployment-and-blog-system-guide",
     "title": "Portfolio Website: Deployment & Blog System Guide",
-    "description": "Complete guide to deploying your portfolio to GitHub Pages, Netlify, or Vercel, plus a deep technical dive into the automated Markdown-to-blog publishing pipeline.",
+    "description": "Deploy the portfolio site and run its blog: the deployment pipeline, how markdown becomes published pages, and troubleshooting.",
     "category": "Portfolio Website",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "quick-setup-guide",
     "title": "Quick Setup Guide",
-    "description": "Learn how to quickly set up SmartGen tools.",
+    "description": "A quick setup guide and overview of SmartGen: what the platform includes, how the pieces fit together, and where to begin.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "vite-optimization-guide-for-cicd",
     "title": "Vite Optimization Guide for CI/CD",
-    "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
+    "description": "Make Vite builds faster and smaller in CI/CD: configuration walkthrough, the build process explained, and the optimizations worth applying.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "developer-guidelines",
     "title": "Developer Guidelines",
-    "description": "Learn how to quickly set up SmartGen tools.",
+    "description": "The coding standards used across SmartGen: general principles, formatting rules, naming, comments and what reviewers look for.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "portfolio-website-customization-guide",
     "title": "Portfolio Website: Customization Guide",
     "description": "Complete guide to customizing colors, typography, sections, navigation, and adding new pages to your open-source developer portfolio.",
     "category": "Portfolio Website",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "github-actions-configuration-guide",
     "title": "Advanced Workflow Configuration",
-    "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
+    "description": "Configure GitHub Actions workflows beyond the defaults: custom environment variables, health checks, notifications and database migrations.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "vite-config-quick-reference",
     "title": "Vite Config Quick Reference",
-    "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
+    "description": "A quick reference for this project's Vite setup: the config at a glance, key build facts, and the options you are most likely to change.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "about-the-team-and-contribution",
     "title": "About the Team & Contribution",
-    "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
+    "description": "Who builds SmartGen, how the project is run, and how to contribute: contribution guidelines, licensing and where to start.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "portfolio-website-api-and-script-reference",
     "title": "Portfolio Website: API & Script Reference",
-    "description": "Complete technical reference for every script, function, and data structure powering the open-source developer portfolio — setup.sh, convert_blogs.py, and all JavaScript modules.",
+    "description": "API and script reference for the portfolio website: the available endpoints, the build scripts, and the parameters each one accepts.",
     "category": "Portfolio Website",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "railway-deployment-guide",
     "title": "Railway Deployment Guide",
-    "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
+    "description": "Deploy to Railway as an alternative to SSH: what Railway is, how it compares, and a step-by-step setup with environment variables.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "building-a-fast-client-side-search-feature-without-a-backend",
     "title": "Building a Fast Client-Side Search Feature Without a Backend",
     "description": "How to implement instant, responsive search on a static site using nothing but JavaScript, a JSON index, and debouncing.",
     "category": "Open Source Projects",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "custom-environment-variables",
     "title": "Custom Environment Variables",
-    "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
+    "description": "Set custom environment variables in GitHub Actions and Docker, wire up health checks, and send build notifications to Slack, Discord or email.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "workflow-customization-summary",
     "title": "Workflow Customization Summary",
-    "description": "SmartGen is an open-source project driven by a commitment to providing free, privacy-first web utilities. The project was founded by Sayad Md Bayezid Hosan, and its continued development is supported by community contributions",
+    "description": "A summary of the workflow customizations in this project: what was changed in each GitHub Actions file, and why, with the Vite config it targets.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "contributor-guide",
     "title": "Contributor Guide",
-    "description": "Full architecture and API reference for SmartGen contributors.",
+    "description": "Everything you need to contribute to SmartGen: local setup, branching, coding standards, testing and how to get a pull request merged.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   },
   {
     "slug": "quickstart-guide",
     "title": "Quickstart Guide",
-    "description": "Get from zero to a merged PR in under 10 minutes.",
+    "description": "Go from a fresh clone to a merged pull request in under ten minutes: setup, the build commands, and how to submit your first change.",
     "category": "Guides",
-    "date": "2026-08-16"
+    "date": "2026-08-17"
   }
 ]

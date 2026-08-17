@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Data Structures Explained: Lists to Dicts - SmartGen Blog</title>
+    <title>Python Data Structures Explained: Lists to Dicts</title>
     <meta name="description" content="Master lists, tuples, sets, and dictionaries in Python -- what each one actually does, real operations, and exactly when to use which one for the job.">
     <meta name="author" content="Sayad Md Bayezid Hosan">
     <meta name="keywords" content="SmartGen, Python Course, Class 07, Python, Data Structures">
@@ -12,6 +12,9 @@
     <meta property="og:title" content="Python Data Structures Explained: Lists to Dicts">
     <meta property="og:description" content="Master lists, tuples, sets, and dictionaries in Python -- what each one actually does, real operations, and exactly when to use which one for the job.">
     <meta property="og:image" content="https://smartgentools.com/blog-posts/images/python-course-class-07-cover.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:url" content="https://smartgentools.com/blog/python-data-structures-explained-lists-to-dicts/">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="Wed Jul 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)">
@@ -248,13 +251,15 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
 
 <p>July 15, 2026 • General • By <a href="https://www.sayadbayezid.com/">Sayad Md Bayezid Hosan</a></p>
-<p>A complete, step-by-step guide to Python&#39;s four core data structures — what lists, tuples, sets, and dictionaries actually do, the real operations you&#39;ll use on each, and a clear, practical way to decide which one fits a given job, with copy-paste code throughout.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -268,6 +273,7 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<p>A complete, step-by-step guide to Python&#39;s four core data structures — what lists, tuples, sets, and dictionaries actually do, the real operations you&#39;ll use on each, and a clear, practical way to decide which one fits a given job, with copy-paste code throughout.</p>
 <p> <img src="https://smartgentools.com/blog-posts/images/python-course-class-07-cover.svg" alt="Python Data Structures Explained: Lists to Dicts — cover image"></p>
 <hr>
 <h2>Table of Contents</h2>
@@ -293,8 +299,6 @@
 <h2>Understanding Lists, Tuples, Sets, and Dictionaries</h2>
 <h3>The Problem</h3>
 <p>Real data is almost never a single value — it&#39;s a collection: a shopping list, a set of unique tags, a user&#39;s full profile. Picking the wrong structure for the job makes simple tasks unnecessarily hard later.</p>
-<h3>The Solution: What Each One Actually Is</h3>
-<p>A <strong>list</strong> is an ordered, changeable collection — items keep their position, and you can add, remove, or edit them freely. A <strong>tuple</strong> is ordered but <em>unchangeable</em> once created. A <strong>set</strong> holds only unique values with no guaranteed order. A <strong>dictionary</strong> stores <strong>key-value pairs</strong>, letting you look up a value by a meaningful name instead of a numeric position.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -308,6 +312,8 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<h3>The Solution: What Each One Actually Is</h3>
+<p>A <strong>list</strong> is an ordered, changeable collection — items keep their position, and you can add, remove, or edit them freely. A <strong>tuple</strong> is ordered but <em>unchangeable</em> once created. A <strong>set</strong> holds only unique values with no guaranteed order. A <strong>dictionary</strong> stores <strong>key-value pairs</strong>, letting you look up a value by a meaningful name instead of a numeric position.</p>
 <pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]          # list
 coordinates = (23.8103, 90.4125)                 # tuple
 skills = {&quot;Python&quot;, &quot;SEO&quot;, &quot;WordPress&quot;}          # set
@@ -514,7 +520,10 @@ for key, value in profile.items():
             <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
             <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
             <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
-                <input type="email" name="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-name">Your name</label>
+                <input type="text" id="newsletter-name" name="name" placeholder="Your name" autocomplete="given-name" maxlength="60" style="flex: 1; min-width: 180px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-email">Your email address</label>
+                <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
                 <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
             </form>

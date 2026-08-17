@@ -116,31 +116,31 @@
     
 
 <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px; border-left: 5px solid #2563eb; padding-left: 20px;">What Is a UUID and When Do You Need One?</h3>
+            <h2 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px; border-left: 5px solid #2563eb; padding-left: 20px;">What Is a UUID and When Do You Need One?</h2>
             <p>A <strong>UUID</strong> (Universally Unique Identifier) is a 128-bit value, usually written as 32 hex characters in five dashed groups (like <code>f47ac10b-58cc-4372-a567-0e02b2c3d479</code>), designed to be unique across every system, every time, without a central authority coordinating who gets which ID. That's what makes it the standard choice for database primary keys, API request IDs, and distributed-system record identifiers.</p>
             <p style="margin-top: 15px;">SmartGen generates version 4 (random) UUIDs using <code>crypto.randomUUID()</code> — the browser's built-in cryptographically secure UUID generator — entirely client-side.</p>
         </section>
 
         <section style="margin-bottom: 50px; background: #f8fafc; padding: 30px; border-radius: 20px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Why Use This Online UUID Generator</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <h2 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Why Use This Online UUID Generator</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 20px;">
                 <div style="padding: 15px;">
-                    <h4 style="color: #2563eb; margin-bottom: 10px;">🎲 True UUID v4</h4>
+                    <h3 style="color: #2563eb; margin-bottom: 10px;">🎲 True UUID v4</h3>
                     <p style="font-size: 0.95rem;">Generated with the browser's native <code>crypto.randomUUID()</code> — spec-compliant, cryptographically random.</p>
                 </div>
                 <div style="padding: 15px;">
-                    <h4 style="color: #2563eb; margin-bottom: 10px;">⚡ Generate in One Click</h4>
+                    <h3 style="color: #2563eb; margin-bottom: 10px;">⚡ Generate in One Click</h3>
                     <p style="font-size: 0.95rem;">No signup, no rate limit — generate one UUID or a batch, instantly.</p>
                 </div>
                 <div style="padding: 15px;">
-                    <h4 style="color: #2563eb; margin-bottom: 10px;">🔒 Nothing Logged</h4>
+                    <h3 style="color: #2563eb; margin-bottom: 10px;">🔒 Nothing Logged</h3>
                     <p style="font-size: 0.95rem;">Generation happens locally — SmartGen never sees or stores the IDs you generate.</p>
                 </div>
             </div>
         </section>
 
         <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">How to Generate a UUID Online</h3>
+            <h2 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">How to Generate a UUID Online</h2>
             <ol style="margin-top: 20px; padding-left: 25px;">
                 <li style="margin-bottom: 15px;"><strong>Click Generate</strong> to produce a new random UUID v4.</li>
                 <li style="margin-bottom: 15px;"><strong>Copy it</strong> using the Copy button — it's ready to paste directly into a database seed script, a config file, or test data.</li>
@@ -149,26 +149,26 @@
         </section>
 
         <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Where UUIDs Are Actually Used</h3>
+            <h2 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Where UUIDs Are Actually Used</h2>
             <p>UUIDs solve a specific problem: uniqueness without coordination. Common places you'll run into them:</p>
             <div style="margin-top: 25px;">
                 <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
-                    <h4 style="color: #1a202c; margin-bottom: 10px;">1. Database primary keys</h4>
+                    <h3 style="color: #1a202c; margin-bottom: 10px;">1. Database primary keys</h3>
                     <p>Unlike auto-incrementing integers, UUIDs can be generated on the client or across multiple database shards without any risk of two records colliding on the same ID.</p>
                 </div>
                 <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
-                    <h4 style="color: #1a202c; margin-bottom: 10px;">2. API request and trace IDs</h4>
+                    <h3 style="color: #1a202c; margin-bottom: 10px;">2. API request and trace IDs</h3>
                     <p>Attaching a UUID to each API request makes it possible to trace that exact request through logs across multiple services, without ambiguity.</p>
                 </div>
                 <div style="margin-bottom: 20px;">
-                    <h4 style="color: #1a202c; margin-bottom: 10px;">3. Session and idempotency keys</h4>
+                    <h3 style="color: #1a202c; margin-bottom: 10px;">3. Session and idempotency keys</h3>
                     <p>A UUID generated client-side and sent with a request (e.g. a payment) lets a server safely detect and reject an accidental duplicate submission.</p>
                 </div>
             </div>
         </section>
 
         <section style="margin-bottom: 50px;">
-            <h3 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Frequently Asked Questions (FAQ)</h3>
+            <h2 style="font-size: 1.8rem; color: #2d3748; margin-bottom: 20px;">Frequently Asked Questions (FAQ)</h2>
             <div style="margin-top: 20px;">
                 <div style="margin-bottom: 25px;">
                     <p style="font-weight: 700; color: #1a202c;">Q: What's the chance of two UUIDs colliding?</p>
@@ -193,12 +193,12 @@
     </article>
 
 <section class="related-tools-smart" style="margin: 3rem 0; padding: 2rem; background: #f8fafc; border-radius: 20px; border: 1px solid #e2e8f0;">
-    <h3 style="font-size: 1.5rem; color: #1e293b; margin-bottom: 1.5rem;">🛠️ Related Professional Tools</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+    <h2 style="font-size: 1.5rem; color: #1e293b; margin-bottom: 1.5rem;">🛠️ Related Professional Tools</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 1.5rem;">
         <a href="/random-choice-picker/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
             <div style="font-size: 1.8rem;">🎲</div>
             <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">Random Choice Picker</h4>
+                <h3 style="margin: 0; font-size: 1rem; color: #0f172a;">Random Choice Picker</h3>
                 <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Developer & Technical</p>
             </div>
         </a>
@@ -206,7 +206,7 @@
         <a href="/password-generator/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
             <div style="font-size: 1.8rem;">🔒</div>
             <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">Password Generator</h4>
+                <h3 style="margin: 0; font-size: 1rem; color: #0f172a;">Password Generator</h3>
                 <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Daily Utilities & Calculators</p>
             </div>
         </a>
@@ -214,7 +214,7 @@
         <a href="/hash-generator/" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: white; padding: 1rem; border-radius: 12px; border: 1px solid #edf2f7; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#2563eb';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#edf2f7';">
             <div style="font-size: 1.8rem;">🔒</div>
             <div>
-                <h4 style="margin: 0; font-size: 1rem; color: #0f172a;">MD5/SHA Hash Generator</h4>
+                <h3 style="margin: 0; font-size: 1rem; color: #0f172a;">MD5/SHA Hash Generator</h3>
                 <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #64748b;">Developer & Technical</p>
             </div>
         </a>
@@ -223,28 +223,28 @@
 
 <section class="recommended-blogs-smart" style="margin: 3rem 0; padding: 2rem; background: #0f172a; border-radius: 20px; color: white;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <h3 style="font-size: 1.5rem; margin: 0;">📖 Recommended Reading</h3>
+        <h2 style="font-size: 1.5rem; margin: 0;">📖 Recommended Reading</h2>
         <a href="/blog/" style="color: #3b82f6; text-decoration: none; font-size: 0.9rem; font-weight: 600;">View All →</a>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.5rem;">
         
         <a href="/blog/the-ultimate-guide-to-smartgen-tools-40-free-utilities-for-developers-marketers-and-creators/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
             <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">SmartGen Tools Master Guide</h4>
+                <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">SmartGen Tools Master Guide</h3>
                 <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">A comprehensive A-Z guide for all SmartGen utilities and how to use them.</p>
             </div>
         </a>
 
         <a href="/blog/how-to-optimize-your-website-for-google-adsense-approval-in-2026/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
             <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">AdSense Approval Guide</h4>
+                <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">AdSense Approval Guide</h3>
                 <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">The definitive roadmap to getting your website approved for Google AdSense in 2026.</p>
             </div>
         </a>
 
         <a href="/qr-generator/" style="text-decoration: none; color: inherit; display: block; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.08)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">
             <div style="padding: 1rem;">
-                <h4 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">QR Code Generator</h4>
+                <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; color: #f8fafc;">QR Code Generator</h3>
                 <p style="margin: 0; font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">Generate secure, customizable QR codes instantly — free, client-side, no sign-up.</p>
             </div>
         </a>

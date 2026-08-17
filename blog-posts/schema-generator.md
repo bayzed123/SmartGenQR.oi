@@ -1,5 +1,6 @@
 ---
 title: "Free Schema Markup Generator: Create JSON-LD Structured Data Instantly"
+seo_title: "Free Schema Markup Generator (JSON-LD)"
 description: "Easily generate valid JSON-LD schema markup for your website. A complete guide to using the SmartGen online schema creator for SEO rich snippets."
 date: 2026-06-16
 image: "https://smartgentools.com/blog-posts/images/schema-generator-cover.svg"
@@ -8,7 +9,6 @@ canonical_url: "https://smartgentools.com/schema-generator/"
 tags: ["schema generator", "json-ld creator", "seo tools", "structured data", "rich snippets"]
 slug: "free-schema-markup-generator-create-json-ld-structured-data-instantly"
 ---
-
 ## The Problem: The Complexity of Manual Structured Data
 
 In the evolving landscape of search engine optimization, implementing structured data using schema markup is essential for improving your website’s visibility and click-through rates. However, manually creating accurate and compliant schema code can be complex and time-consuming, especially for non-developers. 

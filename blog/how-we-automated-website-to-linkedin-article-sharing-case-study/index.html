@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How We Automated Website-to-LinkedIn Article Sharing: A GitHub Actions Case Study - SmartGen Blog</title>
-    <meta name="description" content="A first-party case study showing how SmartGen automated blog-to-LinkedIn article sharing with GitHub Actions, the LinkedIn API, canonical URLs, Open Graph images, and safe SEO controls.">
+    <title>Automating LinkedIn Posts with GitHub Actions</title>
+    <meta name="description" content="How we auto-post new articles to LinkedIn with GitHub Actions: the workflow, the API setup and the problems we hit.">
     <meta name="author" content="Sayad Md Bayezid Hosan">
     <meta name="keywords" content="SmartGen, LinkedIn Automation, GitHub Actions, LinkedIn API, SEO Automation, Content Distribution, Case Study">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="How We Automated Website-to-LinkedIn Article Sharing: A GitHub Actions Case Study">
-    <meta property="og:description" content="A first-party case study showing how SmartGen automated blog-to-LinkedIn article sharing with GitHub Actions, the LinkedIn API, canonical URLs, Open Graph images, and safe SEO controls.">
-    <meta property="og:image" content="https://smartgentools.com/blog-posts/images/how-we-automated-website-to-linkedin-article-sharing-case-study.svg">
+    <meta property="og:description" content="How we auto-post new articles to LinkedIn with GitHub Actions: the workflow, the API setup and the problems we hit.">
+    <meta property="og:image" content="https://smartgentools.com/blog-posts/images/how-we-automated-website-to-linkedin-article-sharing-case-study-linkedin.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:url" content="https://smartgentools.com/blog/how-we-automated-website-to-linkedin-article-sharing-case-study/">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="Sun Aug 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)">
@@ -20,8 +23,8 @@
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="How We Automated Website-to-LinkedIn Article Sharing: A GitHub Actions Case Study">
-    <meta name="twitter:description" content="A first-party case study showing how SmartGen automated blog-to-LinkedIn article sharing with GitHub Actions, the LinkedIn API, canonical URLs, Open Graph images, and safe SEO controls.">
-    <meta name="twitter:image" content="https://smartgentools.com/blog-posts/images/how-we-automated-website-to-linkedin-article-sharing-case-study.svg">
+    <meta name="twitter:description" content="How we auto-post new articles to LinkedIn with GitHub Actions: the workflow, the API setup and the problems we hit.">
+    <meta name="twitter:image" content="https://smartgentools.com/blog-posts/images/how-we-automated-website-to-linkedin-article-sharing-case-study-linkedin.jpg">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://smartgentools.com/blog/how-we-automated-website-to-linkedin-article-sharing-case-study/">
@@ -39,7 +42,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "How We Automated Website-to-LinkedIn Article Sharing: A GitHub Actions Case Study",
-        "description": "A first-party case study showing how SmartGen automated blog-to-LinkedIn article sharing with GitHub Actions, the LinkedIn API, canonical URLs, Open Graph images, and safe SEO controls.",
+        "description": "How we auto-post new articles to LinkedIn with GitHub Actions: the workflow, the API setup and the problems we hit.",
         "image": "https://smartgentools.com/blog-posts/images/how-we-automated-website-to-linkedin-article-sharing-case-study.svg",
         "datePublished": "Sun Aug 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "author": {
@@ -230,7 +233,7 @@
 <script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>
 </div></div>
 </div>
-                <p class="blog-post-excerpt">A first-party case study showing how SmartGen automated blog-to-LinkedIn article sharing with GitHub Actions, the LinkedIn API, canonical URLs, Open Graph images, and safe SEO controls.</p>
+                <p class="blog-post-excerpt">How we auto-post new articles to LinkedIn with GitHub Actions: the workflow, the API setup and the problems we hit.</p>
             </header>
 
             <!-- Author Profile Section - Right after title (Auto-inserted if not manually placed) -->
@@ -248,14 +251,15 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
 
 <p>August 16, 2026 • Automation &amp; SEO • By <a href="https://www.sayadbayezid.com">Sayad Md Bayezid Hosan</a></p>
-<h1>How We Automated Website-to-LinkedIn Article Sharing: A GitHub Actions Case Study</h1>
-<p>Publishing a useful article is only half of a content distribution system. The other half is making sure the article reaches the right audience without creating repetitive manual work, leaking credentials, or damaging the URLs that search engines already know. At SmartGen, we built a small but disciplined website-to-LinkedIn automation system that turns a new Markdown article in GitHub into a published LinkedIn article share.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -269,20 +273,13 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<h2>How We Automated Website-to-LinkedIn Article Sharing: A GitHub Actions Case Study</h2>
+<p>Publishing a useful article is only half of a content distribution system. The other half is making sure the article reaches the right audience without creating repetitive manual work, leaking credentials, or damaging the URLs that search engines already know. At SmartGen, we built a small but disciplined website-to-LinkedIn automation system that turns a new Markdown article in GitHub into a published LinkedIn article share.</p>
 <p>This is a first-party case study of that implementation. It explains the architecture, the SEO decisions, the LinkedIn API request, the image-preview problem we encountered, the canonical URL failure that caused a 404 in a LinkedIn post, and the controls we added to prevent the same error from happening again. The approach is intentionally practical: a static website, GitHub Actions, a Node.js script, LinkedIn credentials stored as repository secrets, and no change to the working Cloudflare backend.</p>
-<h2>The Objective: Automate Distribution Without Sacrificing SEO</h2>
+<h3>The Objective: Automate Distribution Without Sacrificing SEO</h3>
 <p>The original publishing process was straightforward but fragile. A new post was added to the <code>blog-posts/</code> directory, the static builder generated an HTML page, the deployment workflow published the site, and a separate LinkedIn workflow attempted to share the article. The risky part was that the website builder and the LinkedIn script did not initially use the same source of truth for the article URL.</p>
 <p>That distinction matters when a title contains punctuation. For example, the title <code>UI/UX Design Course Class 02: Figma Essentials</code> can become <code>ui-ux-design-course-class-02-figma-essentials</code> when a script derives a slug from the title. The already published page, however, used <code>uiux-design-course-class-02-figma-essentials</code>. LinkedIn received the title-derived URL and readers saw a 404 page even though the article existed at the valid route.</p>
 <p>The target system therefore had five requirements:</p>
-<ol>
-<li>A new Markdown file should trigger the sharing workflow.</li>
-<li>The LinkedIn script should use the exact canonical URL generated by the blog builder.</li>
-<li>The LinkedIn post should contain a useful article preview and a reliable cover image.</li>
-<li>Existing titles, dates, slugs, indexed URLs, and Docs styling must remain unchanged.</li>
-<li>Tokens and backend infrastructure must remain outside the public repository.</li>
-</ol>
-<blockquote>
-<p><strong>Core principle:</strong> content automation should reuse the website’s canonical metadata instead of independently guessing URLs from titles.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -296,8 +293,17 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<ol>
+<li>A new Markdown file should trigger the sharing workflow.</li>
+<li>The LinkedIn script should use the exact canonical URL generated by the blog builder.</li>
+<li>The LinkedIn post should contain a useful article preview and a reliable cover image.</li>
+<li>Existing titles, dates, slugs, indexed URLs, and Docs styling must remain unchanged.</li>
+<li>Tokens and backend infrastructure must remain outside the public repository.</li>
+</ol>
+<blockquote>
+<p><strong>Core principle:</strong> content automation should reuse the website’s canonical metadata instead of independently guessing URLs from titles.</p>
 </blockquote>
-<h2>Keyword Research and Search Intent</h2>
+<h3>Keyword Research and Search Intent</h3>
 <p>The primary target phrase for this case study is <strong>automate blog posts to LinkedIn</strong>. It is a specific, implementation-led long-tail query: someone using it is more likely to want a workflow than a general definition of social media marketing. Supporting phrases include <strong>website to LinkedIn automation</strong>, <strong>LinkedIn API automation</strong>, <strong>GitHub Actions LinkedIn posting</strong>, <strong>automate LinkedIn article sharing</strong>, and <strong>LinkedIn Open Graph image</strong>.</p>
 <p>These phrases represent different stages of the same search journey. The primary phrase captures the end-to-end problem. The API phrase captures developer intent. The GitHub Actions phrase captures implementation intent. The Open Graph phrase captures the failure mode that causes a share card to display the wrong title, no image, or a broken link.</p>
 <p>Keyword Difficulty should be treated as a directional filter, not a promise of ranking. Ahrefs defines KD as an estimate of how difficult it is to reach the organic top 10 on a 0–100 scale, primarily using the referring-domain strength of the current top-ranking pages <a href="https://ahrefs.com/keyword-difficulty" title="Ahrefs Keyword Difficulty Checker">1</a>. The free checker did not return a numeric score for these exact phrases in this research session because its interactive verification layer blocked the lookup. Rather than inventing numbers, this case study uses a transparent qualitative assessment: the broad phrase <code>website to LinkedIn automation</code> is likely more competitive, while the long-tail phrases <code>GitHub Actions LinkedIn posting</code> and <code>LinkedIn Open Graph image</code> are narrower opportunities with clearer intent.</p>
@@ -340,7 +346,7 @@
 <td>Solves preview and social-card failures</td>
 </tr>
 </tbody></table>
-<h2>The Architecture We Implemented</h2>
+<h3>The Architecture We Implemented</h3>
 <p>The system has four layers. The Markdown layer stores the article title, description, publication date, canonical slug, article cover image, LinkedIn thumbnail, author, and tags. The build layer converts the Markdown into a static page and writes canonical, Open Graph, Twitter Card, and JSON-LD metadata. The deployment layer runs the existing GitHub Pages build. The distribution layer detects the new article and sends an authenticated request to LinkedIn’s UGC Post API.</p>
 <p>The architecture is deliberately simple:</p>
 <pre><code class="language-text">New blog-posts/*.md commit
@@ -358,7 +364,7 @@ GitHub Actions detects the push
                                       +--&gt; UGC Post API request
 </code></pre>
 <p>The LinkedIn workflow uses <code>LINKEDIN_PERSON_ID</code> for the OAuth access token and <code>LINKEDIN_MEMBER_ID</code> as the member fallback. These values are stored in GitHub Secrets, not in Markdown, JavaScript, or generated HTML. The client ID and client secret remain available to the workflow configuration where required, but the runtime request uses the protected token and resolved member identity.</p>
-<h2>The Canonical URL Fix</h2>
+<h3>The Canonical URL Fix</h3>
 <p>The most important reliability improvement was adding an explicit <code>slug</code> field to the article front matter:</p>
 <pre><code class="language-yaml">slug: &quot;how-we-automated-website-to-linkedin-article-sharing-case-study&quot;
 </code></pre>
@@ -368,7 +374,7 @@ const postUrl = `${siteUrl}/blog/${slug}/`;
 </code></pre>
 <p>This preserves the existing behavior for older posts while preventing a title edit or punctuation change from silently producing a different LinkedIn URL. A title is editorial content; a slug is an SEO identity. They should not be treated as interchangeable values after publication.</p>
 <p>The same rule also protects future posts. If a title contains <code>/</code>, <code>&amp;</code>, a colon, an emoji, or a branded spelling that does not match automatic slugification, the author can pin the intended route once and every system can reuse it.</p>
-<h2>The LinkedIn Article Request</h2>
+<h3>The LinkedIn Article Request</h3>
 <p>LinkedIn’s UGC Post API models an article as share content with a media object. The request needs an author URN, a published lifecycle state, public visibility, commentary text, and an article URL. LinkedIn’s documentation also describes <code>primaryLandingPageUrl</code>, <code>originalUrl</code>, and article thumbnails <a href="https://learn.microsoft.com/en-us/linkedin/compliance/integrations/shares/ugc-post-api" title="LinkedIn UGC Post API — Microsoft Learn">2</a>.</p>
 <p>The relevant request shape is conceptually:</p>
 <pre><code class="language-json">{
@@ -398,15 +404,15 @@ const postUrl = `${siteUrl}/blog/${slug}/`;
 }
 </code></pre>
 <p>The API request is not a substitute for page metadata. The destination page still needs correct <code>og:title</code>, <code>og:description</code>, <code>og:image</code>, and <code>og:url</code> tags. LinkedIn’s own guidance lists those tags as the required share metadata <a href="https://www.linkedin.com/help/linkedin/answer/a521928" title="LinkedIn Help: Make your website shareable on LinkedIn">3</a>. Sending a correct URL and publishing a page with incorrect metadata creates a different class of preview problem.</p>
-<h2>Solving the Missing Cover Image</h2>
+<h3>Solving the Missing Cover Image</h3>
 <p>The first LinkedIn share displayed a plain text card. The investigation found two contributing risks. First, LinkedIn was trying to fetch the malformed 404 URL, so it could not reliably read the article metadata. Second, the article’s visual cover was an SVG, while LinkedIn’s general sharing guidance emphasizes raster formats and recommends a minimum of 1200 × 627 pixels with an approximately 1.91:1 ratio <a href="https://www.linkedin.com/help/linkedin/answer/a521928" title="LinkedIn Help: Make your website shareable on LinkedIn">3</a>.</p>
 <p>We kept the SVG as the website’s primary article image because it is compact, sharp, and consistent with the site’s SVG-first asset policy. We also generated a dedicated 1200 × 630 JPEG for LinkedIn’s thumbnail field. This is not a replacement for the article image; it is a social-distribution derivative designed for a platform preview.</p>
 <p>The distinction is useful for performance and compatibility. The website receives the optimized vector asset. LinkedIn receives a correctly sized social card that can be fetched directly from a public URL. The generated JPEG is less than 5 MB and uses the recommended landscape ratio.</p>
-<h2>Safety Controls and Failure Recovery</h2>
+<h3>Safety Controls and Failure Recovery</h3>
 <p>The workflow has a dry-run mode. Before a live publish, it can read a selected Markdown file and print the title, resolved article URL, and preview image without sending a LinkedIn request. That makes it possible to test a new article or manually re-share a corrected post without exposing credentials or creating an accidental duplicate.</p>
 <p>The workflow also supports manual dispatch with a specific <code>post_path</code>. This was important for recovery: the first Class 02 share had already been published with the wrong URL, so changing the code could not edit the historical LinkedIn post. We dispatched the corrected Markdown file explicitly, verified the valid URL and thumbnail inputs, and received a successful LinkedIn share ID.</p>
 <p>GitHub Actions logs are part of the verification surface. A successful run means the API request completed; it does not automatically prove that the destination page returns 200 or that LinkedIn’s cached preview is fresh. We therefore verify the destination with an HTTP request, inspect the canonical and Open Graph tags, check the image endpoint, and use LinkedIn’s Post Inspector when a preview appears stale. LinkedIn documents that Post Inspector refreshes preview data for future shares while leaving existing posts unchanged <a href="https://www.linkedin.com/help/linkedin/answer/a6233775" title="LinkedIn Help: Use Post Inspector to refresh URL">4</a>.</p>
-<h2>What We Verify Before Publishing</h2>
+<h3>What We Verify Before Publishing</h3>
 <p>The final checklist is intentionally stricter than “the workflow is green.” We check the exact article URL, the absence of a title-derived duplicate route, the published date, the canonical tag, the Open Graph image, the sitemap entry, the cover-image response, and the dry-run payload. We also confirm that the change does not touch <code>docs.css</code>, Docs templates, Worker files, or Cloudflare configuration.</p>
 <table>
 <thead>
@@ -448,14 +454,14 @@ const postUrl = `${siteUrl}/blog/${slug}/`;
 <td>Prints the same URL and thumbnail that production will send</td>
 </tr>
 </tbody></table>
-<h2>Results and Lessons</h2>
+<h3>Results and Lessons</h3>
 <p>The case study demonstrates that content distribution automation is mostly a metadata-consistency problem. The LinkedIn API call itself is small. The reliability work happens around it: one canonical URL source, explicit slugs for stable identities, public social images, safe secrets, dry-run support, deployment verification, and a recovery path for already published mistakes.</p>
 <p>The most important lesson is not to let a social workflow reinvent the website’s URL rules. When the builder, sitemap, frontend feed, and LinkedIn script all calculate a different slug, a single punctuation mark can produce a broken post. When all of them read the same explicit slug, the article becomes portable across publishing channels without sacrificing SEO.</p>
 <p>For a static site, GitHub Actions is enough to build a dependable first version of this system. It provides event triggers, a clean runner, secret storage, logs, manual dispatch, and a repeatable deployment path. The architecture can later be extended with approval gates, a queue, analytics feedback, or additional social channels, but the foundation should remain the same: canonical metadata first, API automation second.</p>
-<h2>Conclusion</h2>
+<h3>Conclusion</h3>
 <p>SmartGen’s website-to-LinkedIn automation now follows a controlled path from Markdown source to static article to verified LinkedIn share. New posts carry their own stable slug and social thumbnail. The builder produces the canonical page and metadata. GitHub Actions runs the deployment and sharing workflows. The LinkedIn API receives a valid article URL and a compatible preview image. Existing URLs, titles, dates, Docs styling, and Cloudflare backend behavior remain protected.</p>
 <p>If you are implementing a similar system, begin with the URL contract before writing the API call. Decide what file owns the slug, make every workflow consume that value, publish complete Open Graph metadata, use a public social image, and test the entire path with a dry run before sending a real post.</p>
-<h3>References</h3>
+<h4>References</h4>
 <p><strong>Related SmartGen resources:</strong> <a href="https://smartgentools.com/blog/">SmartGen Blog</a>, <a href="https://smartgentools.com/blog/technical-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/">Technical SEO Guide</a>, <a href="https://smartgentools.com/blog/the-ultimate-guide-to-sitemaps-how-to-create-optimize-and-boost-your-seo/">Ultimate Sitemap Guide</a>, and <a href="https://smartgentools.com/utm-builder/">UTM Link Builder</a>.</p>
 
             </div>
@@ -564,7 +570,10 @@ const postUrl = `${siteUrl}/blog/${slug}/`;
             <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
             <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
             <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
-                <input type="email" name="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-name">Your name</label>
+                <input type="text" id="newsletter-name" name="name" placeholder="Your name" autocomplete="given-name" maxlength="60" style="flex: 1; min-width: 180px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-email">Your email address</label>
+                <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
                 <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
             </form>

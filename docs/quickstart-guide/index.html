@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quickstart Guide - SmartGen Docs</title>
-    <meta name="description" content="Get from zero to a merged PR in under 10 minutes.">
+    <meta name="description" content="Go from a fresh clone to a merged pull request in under ten minutes: setup, the build commands, and how to submit your first change.">
     <link rel="canonical" href="https://smartgentools.com/docs/quickstart-guide/">
     
     <!-- HTTPS Redirect Script -->
@@ -250,12 +250,12 @@
                         <p><img src="/assets/images/docs/contributor-flowchart.svg" alt="Contributor Flowchart" title="" class="doc-image">
 </p>
 <hr>
-<h1 id="smartgen-quickstart-guide">SmartGen — Quickstart Guide ⚡</h1>
+<h2 id="smartgen-quickstart-guide">SmartGen — Quickstart Guide ⚡</h2>
 <blockquote>
 <p>🎯 <strong>Goal of this page:</strong> Get you from zero → merged PR in under 10 minutes.<br>For deep technical details, see <a href="/docs/contributor-guide/">`CONTRIBUTOR-GUIDE.md`</a>.</p>
 </blockquote>
 <hr>
-<h2 id="setup-once">🚀 Setup (once)</h2>
+<h3 id="setup-once">🚀 Setup (once)</h3>
 <pre><code class="language-bash">git clone https://github.com/bayzed123/SmartGenQR.oi.git
 cd SmartGenQR.oi
 pnpm install
@@ -263,7 +263,7 @@ npx serve
 </code></pre>
 <p>  Open the local URL shown in your terminal. You&#39;re live. ✅</p>
 <hr>
-<h2 id="path-a-add-a-new-tool">🧩 Path A: Add a New Tool</h2>
+<h3 id="path-a-add-a-new-tool">🧩 Path A: Add a New Tool</h3>
 <p>  <strong>1. Create the folder</strong></p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
@@ -343,7 +343,7 @@ npx serve
 
 </blockquote>
 <hr>
-<h2 id="path-b-add-a-new-faq-chatbot-answer">💬 Path B: Add a New FAQ (Chatbot Answer)</h2>
+<h3 id="path-b-add-a-new-faq-chatbot-answer">💬 Path B: Add a New FAQ (Chatbot Answer)</h3>
 <p>  <strong>1. Open</strong> <code>data/faq.json</code></p>
 <p>  <strong>2. Add a new entry</strong> (use next sequential <code>id</code>):</p>
 <pre><code class="language-json">{
@@ -357,7 +357,7 @@ npx serve
 <p>  <strong>3. Test it:</strong> Open the chatbot → ask your exact question → confirm the answer appears.</p>
 <p>  <strong>4. Commit → PR</strong> ✅</p>
 <hr>
-<h2 id="path-c-write-a-blog-post">✍️ Path C: Write a Blog Post</h2>
+<h3 id="path-c-write-a-blog-post">✍️ Path C: Write a Blog Post</h3>
 <p>  <strong>1. Create</strong> <code>blog-posts/your-post-title.md</code></p>
 <p>  <strong>2. Add front matter + content:</strong></p>
 <pre><code class="language-markdown">---
@@ -374,7 +374,7 @@ Your Markdown content starts here...
 </code></pre>
 <p>  <strong>4. Commit both the <code>.md</code> file and generated output → PR</strong> ✅</p>
 <hr>
-<h2 id="pre-pr-checklist">✅ Pre-PR Checklist</h2>
+<h3 id="pre-pr-checklist">✅ Pre-PR Checklist</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Used <strong>absolute paths</strong> (<code>/assets/...</code>) everywhere</li>
 <li><input disabled="" type="checkbox"> New tool added to <code>TOOLS_INDEX</code> in <code>search-data.js</code></li>
@@ -384,7 +384,7 @@ Your Markdown content starts here...
 <li><input disabled="" type="checkbox"> Did <strong>not</strong> manually edit <code>data/changelog.json</code> (auto-generated)</li>
 </ul>
 <hr>
-<h2 id="something-not-working">🆘 Something Not Working?</h2>
+<h3 id="something-not-working">🆘 Something Not Working?</h3>
 <table>
 <thead>
 <tr>

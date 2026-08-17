@@ -247,7 +247,7 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="portfolio-website-customization-guide">Portfolio Website: Customization Guide</h1>
+                        <h2 id="portfolio-website-customization-guide">Portfolio Website: Customization Guide</h2>
 <p>  Once your portfolio is deployed, the next step is making it truly <em>yours</em> — not just personalized with your name and links, but visually and structurally tailored to how you want to present your work. This guide covers every major customization point: colors, fonts, sections, navigation, and adding entirely new pages.</p>
 <blockquote>
 <p><strong>Repository:</strong> <a href="https://github.com/bayzed123/sayadbayezid-portfolio-">github.com/bayzed123/sayadbayezid-portfolio-</a></p>
@@ -268,7 +268,7 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
-<h2 id="in-this-guide">In this guide</h2>
+<h3 id="in-this-guide">In this guide</h3>
 <ul>
 <li><a href="#before-you-start-recommended-workflow">Before you start: recommended workflow</a></li>
 <li><a href="#customizing-colors-and-theme">Customizing colors and theme</a></li>
@@ -288,7 +288,7 @@
 <li><a href="#next-steps">Next steps</a></li>
 </ul>
 <hr>
-<h2 id="before-you-start-recommended-workflow">Before you start: recommended workflow</h2>
+<h3 id="before-you-start-recommended-workflow">Before you start: recommended workflow</h3>
 <p>  Customization involves editing plain HTML and CSS directly — there&#39;s no visual editor or admin panel. This is intentional: it keeps the project lightweight, fast, and fully under your control with no vendor lock-in.</p>
 <blockquote>
 <p><strong>Tip</strong><br>Before making changes, create a new Git branch so you can experiment freely and revert if needed:</p>
@@ -318,9 +318,9 @@ git push
 </div>
 
 <hr>
-<h2 id="customizing-colors-and-theme">Customizing colors and theme</h2>
+<h3 id="customizing-colors-and-theme">Customizing colors and theme</h3>
 <p>  All color values are centralized as <strong>CSS custom properties (variables)</strong> at the top of the main stylesheet — this is the single most impactful place to start customizing.</p>
-<h3 id="step-1-locate-the-theme-variables">Step 1 — Locate the theme variables</h3>
+<h4 id="step-1-locate-the-theme-variables">Step 1 — Locate the theme variables</h4>
 <p>  Open <code>assets/css/style.css</code> and find the <code>:root</code> block near the top of the file:</p>
 <pre><code class="language-css">:root {
   --primary-color: #2563eb;
@@ -333,7 +333,7 @@ git push
   --card-background: #f9fafb;
 }
 </code></pre>
-<h3 id="step-2-change-the-values">Step 2 — Change the values</h3>
+<h4 id="step-2-change-the-values">Step 2 — Change the values</h4>
 <p>  Every other style rule in the file references these variables, so changing them updates the entire site consistently:</p>
 <pre><code class="language-css">:root {
   --primary-color: #059669;    /* Changed from blue to green */
@@ -349,7 +349,7 @@ git push
 <blockquote>
 <p><strong>Note</strong><br>You never need to search-and-replace colors throughout the file. Because every button, link, and highlight references <code>var(--primary-color)</code> instead of a hardcoded hex value, updating the variable once cascades everywhere automatically.</p>
 </blockquote>
-<h3 id="step-3-enable-dark-mode-optional">Step 3 — Enable dark mode (optional)</h3>
+<h4 id="step-3-enable-dark-mode-optional">Step 3 — Enable dark mode (optional)</h4>
 <p>  If you want to support a dark theme, add a second variable set scoped to a <code>.dark-mode</code> class:</p>
 <pre><code class="language-css">.dark-mode {
   --background-color: #0f172a;
@@ -376,7 +376,7 @@ toggleBtn.addEventListener(&#39;click&#39;, () =&gt; {
 <p>  And a toggle button in <code>index.html</code>:</p>
 <pre><code class="language-html">&lt;button id=&quot;theme-toggle&quot; aria-label=&quot;Toggle dark mode&quot;&gt;🌙&lt;/button&gt;
 </code></pre>
-<h3 id="color-palette-reference-table">Color palette reference table</h3>
+<h4 id="color-palette-reference-table">Color palette reference table</h4>
 <table>
 <thead>
 <tr>
@@ -430,14 +430,14 @@ toggleBtn.addEventListener(&#39;click&#39;, () =&gt; {
 <p><strong>Tip</strong><br>Use a tool like <a href="https://coolors.co/">coolors.co</a> or <a href="https://www.realtimecolors.com/">realtimecolors.com</a> to generate a cohesive palette before editing — pasting your primary color in and exploring complementary shades saves a lot of trial and error.</p>
 </blockquote>
 <hr>
-<h2 id="customizing-typography">Customizing typography</h2>
+<h3 id="customizing-typography">Customizing typography</h3>
 <p>  Font settings live in the same <code>:root</code> block:</p>
 <pre><code class="language-css">:root {
   --font-heading: &#39;Poppins&#39;, sans-serif;
   --font-body: &#39;Inter&#39;, sans-serif;
 }
 </code></pre>
-<h3 id="changing-fonts">Changing fonts</h3>
+<h4 id="changing-fonts">Changing fonts</h4>
 <ol>
 <li><p>Choose fonts from <a href="https://fonts.google.com/">Google Fonts</a></p>
 </li>
@@ -467,7 +467,7 @@ body, p, a, li {
 <p><strong>Warning</strong><br>Limit yourself to 2-3 font weights per typeface (e.g., 400, 600, 700). Loading every available weight significantly increases page load time — each additional weight is a separate file download.</p>
 </blockquote>
 <hr>
-<h2 id="editing-the-hero-section">Editing the hero section</h2>
+<h3 id="editing-the-hero-section">Editing the hero section</h3>
 <p>  The hero section is the first thing visitors see — it lives near the top of <code>index.html</code>.</p>
 <pre><code class="language-html">&lt;section class=&quot;hero&quot;&gt;
   &lt;div class=&quot;hero-content&quot;&gt;
@@ -487,7 +487,7 @@ body, p, a, li {
   &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
-<h3 id="what-to-customize-here">What to customize here</h3>
+<h4 id="what-to-customize-here">What to customize here</h4>
 <table>
 <thead>
 <tr>
@@ -520,7 +520,7 @@ body, p, a, li {
 <p><strong>Tip</strong><br>Keep <code>.hero-description</code> under 200 characters. This section is the highest-visibility text on your entire site — visitors decide whether to keep scrolling within seconds of reading it.</p>
 </blockquote>
 <hr>
-<h2 id="editing-the-about-section">Editing the about section</h2>
+<h3 id="editing-the-about-section">Editing the about section</h3>
 <p>  Found further down in <code>index.html</code>:</p>
 <pre><code class="language-html">&lt;section class=&quot;about&quot; id=&quot;about&quot;&gt;
   &lt;h2&gt;About Me&lt;/h2&gt;
@@ -544,7 +544,7 @@ body, p, a, li {
 </code></pre>
 <p>  Simply edit the paragraph text and update <code>.stat-number</code>/<code>.stat-label</code> pairs to reflect real numbers. You can add or remove <code>.stat</code> blocks freely — the CSS grid layout adjusts automatically to however many you include.</p>
 <hr>
-<h2 id="adding-and-editing-project-cards">Adding and editing project cards</h2>
+<h3 id="adding-and-editing-project-cards">Adding and editing project cards</h3>
 <p>  Projects are the core of any developer portfolio. Each project is a repeatable card block:</p>
 <pre><code class="language-html">&lt;section class=&quot;projects&quot; id=&quot;projects&quot;&gt;
   &lt;h2&gt;Featured Projects&lt;/h2&gt;
@@ -571,7 +571,7 @@ body, p, a, li {
   &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
-<h3 id="adding-a-new-project">Adding a new project</h3>
+<h4 id="adding-a-new-project">Adding a new project</h4>
 <p>  To add another project, copy the entire <code>.project-card</code> block and update:</p>
 <ol>
 <li><code>src</code> — path to a screenshot (recommended size: 1200×675px, <code>.webp</code> format for smaller file size)</li>
@@ -584,10 +584,10 @@ body, p, a, li {
 <blockquote>
 <p><strong>Note</strong><br>The <code>.project-grid</code> uses CSS Grid with <code>auto-fit</code>, so adding more cards automatically reflows the layout — you don&#39;t need to manually manage columns or rows.</p>
 </blockquote>
-<h3 id="removing-the-demoplaceholder-projects">Removing the demo/placeholder projects</h3>
+<h4 id="removing-the-demoplaceholder-projects">Removing the demo/placeholder projects</h4>
 <p>  If the forked repo includes example projects you don&#39;t want, simply delete their entire <code>.project-card</code> block. There&#39;s no minimum number required — the grid works correctly with any number of cards, including just one.</p>
 <hr>
-<h2 id="customizing-the-navigation-menu">Customizing the navigation menu</h2>
+<h3 id="customizing-the-navigation-menu">Customizing the navigation menu</h3>
 <p>  The nav bar appears at the top of every page. Find it near the top of <code>index.html</code>:</p>
 <pre><code class="language-html">&lt;nav class=&quot;navbar&quot;&gt;
   &lt;div class=&quot;nav-logo&quot;&gt;Your Name&lt;/div&gt;
@@ -600,14 +600,14 @@ body, p, a, li {
   &lt;/ul&gt;
 &lt;/nav&gt;
 </code></pre>
-<h3 id="adding-a-new-nav-item">Adding a new nav item</h3>
+<h4 id="adding-a-new-nav-item">Adding a new nav item</h4>
 <p>  Add a new <code>&lt;li&gt;</code> following the same pattern:</p>
 <pre><code class="language-html">&lt;li&gt;&lt;a href=&quot;resume.html&quot;&gt;Resume&lt;/a&gt;&lt;/li&gt;
 </code></pre>
 <blockquote>
 <p><strong>Warning</strong><br>If your new nav link points to a section on the same page (like <code>#about</code>), make sure a matching <code>id=&quot;about&quot;</code> exists on that section. If it points to a separate page (like <code>resume.html</code>), make sure that file actually exists in your project root — otherwise visitors will hit a 404.</p>
 </blockquote>
-<h3 id="making-the-active-page-highlight">Making the active page highlight</h3>
+<h4 id="making-the-active-page-highlight">Making the active page highlight</h4>
 <p>  Add this small script to <code>assets/js/nav-active.js</code> to automatically highlight the current page in the nav:</p>
 <pre><code class="language-javascript">const currentPath = window.location.pathname.split(&#39;/&#39;).pop() || &#39;index.html&#39;;
 document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
@@ -617,7 +617,7 @@ document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
 });
 </code></pre>
 <hr>
-<h2 id="editing-the-servicesskills-section">Editing the services/skills section</h2>
+<h3 id="editing-the-servicesskills-section">Editing the services/skills section</h3>
 <p>  This section typically displays your core skills or service offerings as a card grid:</p>
 <pre><code class="language-html">&lt;section class=&quot;services&quot; id=&quot;services&quot;&gt;
   &lt;h2&gt;What I Do&lt;/h2&gt;
@@ -637,7 +637,7 @@ document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
 </code></pre>
 <p>  Emoji icons work well for quick customization without needing an icon library, but you can also use SVG icons or an icon font — just replace the <code>.service-icon</code> content with an <code>&lt;svg&gt;</code> or <code>&lt;i&gt;</code> tag matching whichever icon system you prefer.</p>
 <hr>
-<h2 id="customizing-the-contact-section">Customizing the contact section</h2>
+<h3 id="customizing-the-contact-section">Customizing the contact section</h3>
 <p>  Located in <code>contact.html</code>:</p>
 <pre><code class="language-html">&lt;section class=&quot;contact&quot;&gt;
   &lt;h2&gt;Get In Touch&lt;/h2&gt;
@@ -659,7 +659,7 @@ document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
 <blockquote>
 <p><strong>Note</strong><br>The <code>setup.sh</code> script (from the Getting Started guide) already populates your email, GitHub, and LinkedIn links here. This section is mainly for adding <strong>additional</strong> contact methods (Twitter/X, Discord, a scheduling link like Calendly, etc.) beyond the defaults.</p>
 </blockquote>
-<h3 id="adding-a-working-contact-form-optional">Adding a working contact form (optional)</h3>
+<h4 id="adding-a-working-contact-form-optional">Adding a working contact form (optional)</h4>
 <p>  Since this is a static site, a traditional form <code>POST</code> won&#39;t work without a backend. Two free options:</p>
 <p>  <strong>Using Netlify Forms</strong> (if hosted on Netlify):</p>
 <pre><code class="language-html">&lt;form name=&quot;contact&quot; method=&quot;POST&quot; data-netlify=&quot;true&quot;&gt;
@@ -679,15 +679,15 @@ document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
 </code></pre>
 <p>  Sign up free at <a href="https://formspree.io/">formspree.io</a> to get your form ID.</p>
 <hr>
-<h2 id="adding-a-completely-new-page">Adding a completely new page</h2>
+<h3 id="adding-a-completely-new-page">Adding a completely new page</h3>
 <p>  Sometimes you need an entirely new page — a resume page, a detailed case study, a testimonials page.</p>
-<h3 id="step-1-duplicate-an-existing-simple-page">Step 1 — Duplicate an existing simple page</h3>
+<h4 id="step-1-duplicate-an-existing-simple-page">Step 1 — Duplicate an existing simple page</h4>
 <p>  Use <code>contact.html</code> as a template since it has a simpler structure than <code>index.html</code>:</p>
 <pre><code class="language-bash">cp contact.html resume.html
 </code></pre>
-<h3 id="step-2-update-the-content">Step 2 — Update the content</h3>
+<h4 id="step-2-update-the-content">Step 2 — Update the content</h4>
 <p>  Open <code>resume.html</code> and replace the <code>&lt;main&gt;</code> content with your new page&#39;s content, keeping the <code>&lt;head&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;footer&gt;</code> sections intact so styling and navigation stay consistent.</p>
-<h3 id="step-3-update-meta-tags">Step 3 — Update meta tags</h3>
+<h4 id="step-3-update-meta-tags">Step 3 — Update meta tags</h4>
 <p>  Every page needs unique meta tags for SEO:</p>
 <pre><code class="language-html">&lt;head&gt;
   &lt;title&gt;Resume - Your Name&lt;/title&gt;
@@ -695,9 +695,9 @@ document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
   &lt;link rel=&quot;canonical&quot; href=&quot;https://yourdomain.com/resume.html&quot;&gt;
 &lt;/head&gt;
 </code></pre>
-<h3 id="step-4-add-it-to-navigation">Step 4 — Add it to navigation</h3>
+<h4 id="step-4-add-it-to-navigation">Step 4 — Add it to navigation</h4>
 <p>  Follow the <a href="#customizing-the-navigation-menu">navigation customization steps above</a> to link to your new page from the nav menu.</p>
-<h3 id="step-5-add-it-to-your-sitemap">Step 5 — Add it to your sitemap</h3>
+<h4 id="step-5-add-it-to-your-sitemap">Step 5 — Add it to your sitemap</h4>
 <p>  Open <code>sitemap.xml</code> and add a new entry:</p>
 <pre><code class="language-xml">&lt;url&gt;
   &lt;loc&gt;https://yourdomain.com/resume.html&lt;/loc&gt;
@@ -710,7 +710,7 @@ document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
 <p><strong>Tip</strong><br>Forgetting to update the sitemap is one of the most common reasons a new page takes longer to get indexed by search engines. It&#39;s a quick step that&#39;s easy to skip.</p>
 </blockquote>
 <hr>
-<h2 id="customizing-the-404-page">Customizing the 404 page</h2>
+<h3 id="customizing-the-404-page">Customizing the 404 page</h3>
 <p>  Found in <code>404.html</code> — this displays when a visitor hits a broken/missing link.</p>
 <pre><code class="language-html">&lt;div class=&quot;error-page&quot;&gt;
   &lt;h1&gt;404&lt;/h1&gt;
@@ -723,7 +723,7 @@ document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
 <p><strong>Note</strong><br>If deploying to <strong>GitHub Pages</strong>, <code>404.html</code> in your repo root is automatically used for any unmatched URL — no extra configuration needed. Netlify and Vercel also detect this file automatically by default.</p>
 </blockquote>
 <hr>
-<h2 id="working-with-multi-language-support">Working with multi-language support</h2>
+<h3 id="working-with-multi-language-support">Working with multi-language support</h3>
 <p>  The <code>i18n/</code> folder contains scaffolding for supporting multiple languages, structured as JSON key-value files:</p>
 <pre><code class="language-json">// i18n/en.json
 {
@@ -759,7 +759,7 @@ document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
 <p><strong>Warning</strong><br>This scaffolding is provided as a starting point, not a complete i18n solution. For production multi-language sites with many pages, consider whether a dedicated i18n library is worth the added complexity versus this lightweight approach.</p>
 </blockquote>
 <hr>
-<h2 id="responsive-design-considerations">Responsive design considerations</h2>
+<h3 id="responsive-design-considerations">Responsive design considerations</h3>
 <p>  The existing CSS uses mobile-first responsive breakpoints. When adding new sections, follow the same pattern:</p>
 <pre><code class="language-css">/* Base styles: mobile first */
 .project-grid {
@@ -786,26 +786,26 @@ document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
 <p><strong>Tip</strong><br>Always test new sections at three widths: <strong>375px</strong> (mobile), <strong>768px</strong> (tablet), and <strong>1440px</strong> (desktop) using your browser&#39;s DevTools device toolbar (<code>Ctrl+Shift+M</code> / <code>Cmd+Shift+M</code>) before considering a change complete.</p>
 </blockquote>
 <hr>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<h3 id="my-css-changes-arenand39t-showing-up">My CSS changes aren&#39;t showing up</h3>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<h4 id="my-css-changes-arenand39t-showing-up">My CSS changes aren&#39;t showing up</h4>
 <p>  Browsers aggressively cache CSS files. Try:</p>
 <ol>
 <li>Hard refresh: <code>Ctrl+Shift+R</code> (Windows/Linux) or <code>Cmd+Shift+R</code> (Mac)</li>
 <li>Or open DevTools → Network tab → check &quot;Disable cache&quot; while DevTools is open</li>
 </ol>
-<h3 id="layout-broke-after-adding-a-new-project-card">Layout broke after adding a new project card</h3>
+<h4 id="layout-broke-after-adding-a-new-project-card">Layout broke after adding a new project card</h4>
 <p>  Almost always caused by an unclosed HTML tag. Check that your new <code>.project-card</code> block has matching opening/closing tags — a missing <code>&lt;/div&gt;</code> will cascade layout issues to everything after it.</p>
-<h3 id="new-page-shows-unstyledplain-html">New page shows unstyled/plain HTML</h3>
+<h4 id="new-page-shows-unstyledplain-html">New page shows unstyled/plain HTML</h4>
 <p>  Confirm the <code>&lt;link&gt;</code> tag to your stylesheet is present and the path is correct:</p>
 <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/style.css&quot;&gt;
 </code></pre>
 <p>  If your new page lives in a subfolder, adjust the relative path accordingly (e.g., <code>../assets/css/style.css</code>).</p>
-<h3 id="fonts-not-loading-after-changing-google-fonts-link">Fonts not loading after changing Google Fonts link</h3>
+<h4 id="fonts-not-loading-after-changing-google-fonts-link">Fonts not loading after changing Google Fonts link</h4>
 <p>  Confirm the <code>&lt;link&gt;</code> tags are inside <code>&lt;head&gt;</code>, not <code>&lt;body&gt;</code>, and that you copied the <strong>exact</strong> URL from Google Fonts (including all requested weights) — a mismatched font-family name between the <code>&lt;link&gt;</code> and your CSS <code>font-family</code> value is the most common cause.</p>
-<h3 id="dark-mode-toggle-doesnand39t-persist-after-page-reload">Dark mode toggle doesn&#39;t persist after page reload</h3>
+<h4 id="dark-mode-toggle-doesnand39t-persist-after-page-reload">Dark mode toggle doesn&#39;t persist after page reload</h4>
 <p>  Confirm <code>localStorage.setItem()</code> is being called correctly and that the restore-on-load check runs <strong>before</strong> the rest of the page renders (placing the script tag near the top of <code>&lt;body&gt;</code>, or using the <code>defer</code> attribute correctly, avoids a visible &quot;flash&quot; of the wrong theme).</p>
 <hr>
-<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="frequently-asked-questions">Frequently asked questions</h3>
   <details>
   <summary><strong>Can I completely redesign the layout instead of just changing colors?</strong></summary><p>  Yes. Since this is plain HTML/CSS, you can restructure sections, change the grid system, or rewrite the CSS entirely. The only requirement is keeping the blog system&#39;s expected HTML structure intact in <code>blog.html</code> and <code>blog-loader.html</code> if you want the automated blog pipeline to keep working.<br>  </details></p>
   <details>
@@ -817,14 +817,14 @@ document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
   <details>
   <summary><strong>Can I use a CSS framework like Tailwind instead of the existing stylesheet?</strong></summary><p>  Yes, but this requires rewriting most HTML class names and setting up a build step (since Tailwind&#39;s utility classes are typically compiled). This is a larger undertaking than incremental customization — only recommended if you&#39;re comfortable maintaining a build pipeline going forward.<br>  </details></p>
 <hr>
-<h2 id="next-steps">Next steps</h2>
+<h3 id="next-steps">Next steps</h3>
 <p>  You&#39;ve now covered the full customization surface of the portfolio. From here:</p>
 <ul>
 <li><strong><a href="/docs/portfolio-website-deployment-and-blog-system-guide/">Deployment & Blog System Guide</a></strong> — if you haven&#39;t deployed yet, or want to start publishing blog posts</li>
 <li><strong><a href="/docs/portfolio-website-getting-started-guide/">Getting Started Guide</a></strong> — for initial setup reference</li>
 <li>Start writing your first blog post using the <a href="/docs/portfolio-website-deployment-and-blog-system-guide/">blog system guide</a> to begin building content regularly</li>
 </ul>
-<h2 id="further-reading">Further reading</h2>
+<h3 id="further-reading">Further reading</h3>
 <ul>
 <li><a href="https://github.com/bayzed123/sayadbayezid-portfolio-/blob/main/WIKI.md">WIKI.md</a> — full technical reference</li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">MDN CSS Custom Properties Guide</a> — deeper reference on CSS variables used throughout this theme</li>
@@ -845,7 +845,7 @@ document.querySelectorAll(&#39;.nav-links a&#39;).forEach(link =&gt; {
     </tr>
   </table>
 </div><hr>
-<h3 id="help-and-support">Help and support</h3>
+<h4 id="help-and-support">Help and support</h4>
 <p><strong>Did you find what you needed?</strong><br>Thank you! We received your feedback.<br><br><br><a href="https://smartgentools.com/privacy/">Privacy policy</a></p>
 <br><p><strong>Help us make these docs great!</strong><br>All GitHub docs are open source. See something that&#39;s wrong or unclear? Submit a pull request.<br><br><br><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md"><kbd>⑂ Make a contribution</kbd></a><br><br><br><a href="https://github.com/bayzed123/SmartGenQR.oi/blob/main/Contributing.md">Learn how to contribute</a></p>
 <br><p><strong>Still need help?</strong><br>👥 <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions">Ask the SmartGen community</a><br>💬 <a href="https://smartgentools.com/contact/">Contact support</a>  </p>

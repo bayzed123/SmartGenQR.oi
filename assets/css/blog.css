@@ -176,9 +176,15 @@
 
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 2.5rem;
   margin: 4rem 0;
+}
+
+/* A 40px gutter is a lot of a phone's width, and it pushed the two-column
+   breakpoint further out than the card floor alone required. */
+@media (max-width: 700px) {
+  .blog-grid { gap: 1.5rem; margin: 2.5rem 0; }
 }
 
 /* ==========================================
@@ -872,7 +878,11 @@
 /* Honeypot -- present in the DOM and tabbable-off for bots, invisible and
    unreachable for real visitors (display:none is skipped by some spam bots
    that only check computed visibility, so this is off-screen instead). */
-.newsletter-hp {
+.newsletter-hp,
+.blog-review-form input.newsletter-hp {
+  /* Specificity has to beat `.blog-review-form input`, which sets width:100%
+     and would otherwise give this hidden field a full-width layout box. */
+  box-sizing: border-box;
   position: absolute;
   width: 1px;
   height: 1px;
@@ -922,8 +932,12 @@
     font-size: 1rem;
   }
 
+  /* No grid-template override here any more. Forcing a single column all the
+     way up to 768px meant a tablet rendered one ~704px-wide card per row,
+     which is the "messy when zoomed" symptom. The base rule's
+     minmax(min(100%, 300px), 1fr) already collapses to one column on a phone
+     without overflowing, and gives two from roughly 640px up. */
   .blog-grid {
-    grid-template-columns: 1fr;
     gap: 2rem;
   }
 

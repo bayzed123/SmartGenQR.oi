@@ -247,11 +247,11 @@
 </div></div>
 </div>
                     <div class="doc-body">
-                        <h1 id="api-reference">API Reference</h1>
+                        <h2 id="api-reference">API Reference</h2>
 <p>This page documents the core JavaScript functions and data structures used across the SmartGen platform. These are internal APIs — not a public REST API — since SmartGen is fully client-side.</p>
-<h2 id="appjs-global-ui-controller"><code>app.js</code> — Global UI Controller</h2>
+<h3 id="appjs-global-ui-controller"><code>app.js</code> — Global UI Controller</h3>
 <p>Located at <code>/assets/js/app.js</code>. Loaded on every page.</p>
-<h3 id="injectnavbar"><code>injectNavbar()</code></h3>
+<h4 id="injectnavbar"><code>injectNavbar()</code></h4>
 <p>Dynamically injects the site&#39;s top navigation bar into the page.</p>
 <pre><code class="language-javascript">injectNavbar();
 </code></pre>
@@ -276,7 +276,7 @@
 </ul>
 <p><strong>When to use:</strong> Call this once on <code>DOMContentLoaded</code> in any new page that needs the standard site header.</p>
 <hr>
-<h3 id="injectfooter"><code>injectFooter()</code></h3>
+<h4 id="injectfooter"><code>injectFooter()</code></h4>
 <p>Injects the shared footer markup (links to Privacy, Terms, About, etc.).</p>
 <pre><code class="language-javascript">injectFooter();
 </code></pre>
@@ -286,7 +286,7 @@
 <li>Inserts it into <code>&lt;footer id=&quot;main-footer&quot;&gt;</code></li>
 </ul>
 <hr>
-<h3 id="inittheme"><code>initTheme()</code></h3>
+<h4 id="inittheme"><code>initTheme()</code></h4>
 <p>Initializes light/dark theme toggling and persists user preference.</p>
 <pre><code class="language-javascript">initTheme();
 </code></pre>
@@ -311,9 +311,9 @@
 </ul>
 <p><strong>Storage key:</strong> <code>smartgen-theme</code></p>
 <hr>
-<h2 id="search-datajs-tool-metadata-source"><code>search-data.js</code> — Tool Metadata Source</h2>
+<h3 id="search-datajs-tool-metadata-source"><code>search-data.js</code> — Tool Metadata Source</h3>
 <p>Located at <code>/assets/js/search-data.js</code>. A static JSON-like array containing metadata for every tool on the platform.</p>
-<h3 id="data-structure">Data Structure</h3>
+<h4 id="data-structure">Data Structure</h4>
 <pre><code class="language-javascript">const toolsData = [
   {
     name: &quot;QR Code Generator&quot;,
@@ -367,9 +367,9 @@
 </tbody></table>
 <p><strong>Used by:</strong> <code>search.js</code> (live search) and <code>related-tools.js</code> (recommendations).</p>
 <hr>
-<h2 id="related-toolsjs-related-tool-suggestions"><code>related-tools.js</code> — Related Tool Suggestions</h2>
+<h3 id="related-toolsjs-related-tool-suggestions"><code>related-tools.js</code> — Related Tool Suggestions</h3>
 <p>Located at <code>/assets/js/related-tools.js</code>. Runs on individual tool pages.</p>
-<h3 id="renderrelatedtoolscurrentslug-limit-4"><code>renderRelatedTools(currentSlug, limit = 4)</code></h3>
+<h4 id="renderrelatedtoolscurrentslug-limit-4"><code>renderRelatedTools(currentSlug, limit = 4)</code></h4>
 <pre><code class="language-javascript">renderRelatedTools(&quot;qr-code-generator&quot;, 4);
 </code></pre>
 <p><strong>Parameters:</strong></p>
@@ -403,9 +403,9 @@
 <li>Renders result cards into <code>#related-tools-container</code></li>
 </ol>
 <hr>
-<h2 id="searchjs-live-search-ui"><code>search.js</code> — Live Search UI</h2>
+<h3 id="searchjs-live-search-ui"><code>search.js</code> — Live Search UI</h3>
 <p>Located at <code>/assets/js/search.js</code>. Powers the homepage search bar.</p>
-<h3 id="initsearchinputselector-resultsselector"><code>initSearch(inputSelector, resultsSelector)</code></h3>
+<h4 id="initsearchinputselector-resultsselector"><code>initSearch(inputSelector, resultsSelector)</code></h4>
 <pre><code class="language-javascript">initSearch(&quot;#search-input&quot;, &quot;#search-results&quot;);
 </code></pre>
 <p><strong>Parameters:</strong></p>
@@ -436,9 +436,9 @@
 <li>Debounced at 150ms to avoid excessive re-renders</li>
 </ul>
 <hr>
-<h2 id="docs-buildjs-documentation-build-script"><code>docs-build.js</code> — Documentation Build Script</h2>
+<h3 id="docs-buildjs-documentation-build-script"><code>docs-build.js</code> — Documentation Build Script</h3>
 <p>Located at <code>/scripts/docs-build.js</code>. A Node.js CLI script (not browser-facing) that compiles <code>docs-posts/*.md</code> into static HTML.</p>
-<h3 id="front-matter-schema">Front-Matter Schema</h3>
+<h4 id="front-matter-schema">Front-Matter Schema</h4>
 <p>Every file in <code>docs-posts/</code> should include:</p>
 <pre><code class="language-yaml">---
 title: &quot;Page Title&quot;        # required
@@ -447,7 +447,7 @@ order: 1                    # optional, default 999
 category: &quot;Guides&quot;          # optional, default &quot;Guides&quot;
 ---
 </code></pre>
-<h3 id="custom-renderer-behavior">Custom Renderer Behavior</h3>
+<h4 id="custom-renderer-behavior">Custom Renderer Behavior</h4>
 <p>The script overrides two <code>marked.Renderer</code> methods:</p>
 <table>
 <thead>
@@ -465,16 +465,16 @@ category: &quot;Guides&quot;          # optional, default &quot;Guides&quot;
 <td>Rewrites relative image paths to absolute <code>/assets/...</code>; auto-fixes pasted GitHub <code>/blob/</code> links</td>
 </tr>
 </tbody></table>
-<h3 id="output">Output</h3>
+<h4 id="output">Output</h4>
 <p>For each <code>docs-posts/example.md</code>, generates:</p>
 <pre><code class="language-text">/docs/example/index.html
 </code></pre>
 <p>Plus a root <code>/docs/index.html</code> that redirects to the first doc (sorted by <code>order</code>).</p>
 <hr>
-<h2 id="build-blogjs-blog-build-script"><code>build-blog.js</code> — Blog Build Script</h2>
+<h3 id="build-blogjs-blog-build-script"><code>build-blog.js</code> — Blog Build Script</h3>
 <p>Located at <code>/scripts/build-blog.js</code>. Same pattern as <code>docs-build.js</code>, but for <code>/blog-posts/</code> → <code>/blog/</code>. Also generates <code>/blog/blog.json</code> (used for blog search/listing) and updates <code>sitemap.xml</code> automatically.</p>
 <hr>
-<h2 id="need-help">Need Help?</h2>
+<h3 id="need-help">Need Help?</h3>
 <p>If you&#39;re integrating with any of these internal functions and something isn&#39;t behaving as documented, open an issue on <a href="https://github.com/bayzed123/SmartGenQR.oi/discussions/1">GitHub Discussions</a>.</p>
 
                     </div>

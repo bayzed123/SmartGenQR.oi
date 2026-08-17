@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Building a Fast Client-Side Search Feature Without a Backend - SmartGen Docs</title>
+    <title>Client-Side Search Without a Backend - SmartGen Docs</title>
     <meta name="description" content="How to implement instant, responsive search on a static site using nothing but JavaScript, a JSON index, and debouncing.">
     <link rel="canonical" href="https://smartgentools.com/docs/building-a-fast-client-side-search-feature-without-a-backend/">
     
@@ -248,9 +248,9 @@
 </div>
                     <div class="doc-body">
                         <!--AUTHOR_PROFILE-->
-<h1 id="building-a-fast-client-side-search-feature-without-a-backend">Building a Fast Client-Side Search Feature Without a Backend</h1>
+<h2 id="building-a-fast-client-side-search-feature-without-a-backend">Building a Fast Client-Side Search Feature Without a Backend</h2>
 <p>  Search bars typically require a backend — Elasticsearch, Algolia, or at minimum a database query endpoint. But for a static site with a bounded, known dataset (like SmartGen&#39;s ~40 tools), a full backend is massive overkill. Here&#39;s how to build genuinely fast, responsive search using nothing but a JSON file and vanilla JavaScript.</p>
-<h2 id="when-this-approach-works-and-when-it-doesnand39t">When This Approach Works (and When It Doesn&#39;t)</h2>
+<h3 id="when-this-approach-works-and-when-it-doesnand39t">When This Approach Works (and When It Doesn&#39;t)</h3>
 <p>  Client-side search is ideal when:</p>
 <ul>
 <li>Your total searchable dataset is small-to-medium (tens to low thousands of items)</li>
@@ -277,7 +277,7 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
-<h2 id="step-1-build-the-search-index">Step 1 — Build the Search Index</h2>
+<h3 id="step-1-build-the-search-index">Step 1 — Build the Search Index</h3>
 <p>  Everything starts with a flat JSON array containing exactly what you want to be searchable:</p>
 <pre><code class="language-javascript">// assets/js/search-data.js
 const toolsData = [
@@ -301,7 +301,7 @@ const toolsData = [
 ];
 </code></pre>
 <p>  This file is generated once (or updated whenever you add a new tool/post) and shipped as a static asset — no API call needed to fetch it.</p>
-<h2 id="step-2-the-search-function">Step 2 — The Search Function</h2>
+<h3 id="step-2-the-search-function">Step 2 — The Search Function</h3>
 <pre><code class="language-javascript">function searchTools(query, data) {
   const normalizedQuery = query.toLowerCase().trim();
   if (!normalizedQuery) return [];
@@ -335,7 +335,7 @@ function computeScore(item, query) {
 }
 </code></pre>
 <p>  This weighted scoring means a search for <code>&quot;qr&quot;</code> ranks <strong>&quot;QR Code Generator&quot;</strong> (exact tag match + name prefix) above a tool that merely mentions &quot;QR&quot; once in its description.</p>
-<h2 id="step-3-debouncing-user-input">Step 3 — Debouncing User Input</h2>
+<h3 id="step-3-debouncing-user-input">Step 3 — Debouncing User Input</h3>
 <p>  Without debouncing, every keystroke triggers a full re-search and re-render — wasteful and can cause visible jank on slower devices.</p>
 <pre><code class="language-javascript">function debounce(fn, delay = 150) {
   let timeoutId;
@@ -368,7 +368,7 @@ document.querySelector(&#39;#search-input&#39;).addEventListener(&#39;input&#39;
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
-<h2 id="step-4-rendering-results-efficiently">Step 4 — Rendering Results Efficiently</h2>
+<h3 id="step-4-rendering-results-efficiently">Step 4 — Rendering Results Efficiently</h3>
 <pre><code class="language-javascript">function renderResults(results) {
   const container = document.querySelector(&#39;#search-results&#39;);
 
@@ -390,7 +390,7 @@ document.querySelector(&#39;#search-input&#39;).addEventListener(&#39;input&#39;
 }
 </code></pre>
 <p>  Batching into a single <code>innerHTML</code> write instead of looping with <code>appendChild()</code> avoids multiple reflows — noticeable on larger result sets.</p>
-<h2 id="step-5-keyboard-navigation-accessibility-ux-polish">Step 5 — Keyboard Navigation (Accessibility + UX Polish)</h2>
+<h3 id="step-5-keyboard-navigation-accessibility-ux-polish">Step 5 — Keyboard Navigation (Accessibility + UX Polish)</h3>
 <p>  A search bar that only works with a mouse feels unfinished. Add arrow key navigation:</p>
 <pre><code class="language-javascript">let activeIndex = -1;
 
@@ -414,7 +414,7 @@ function updateActiveItem(items) {
   items[activeIndex]?.scrollIntoView({ block: &#39;nearest&#39; });
 }
 </code></pre>
-<h2 id="performance-reality-check">Performance Reality Check</h2>
+<h3 id="performance-reality-check">Performance Reality Check</h3>
 <p>  For context, here&#39;s the actual performance profile of this approach at different dataset sizes (tested on mid-range hardware):</p>
 <table>
 <thead>
@@ -441,7 +441,7 @@ function updateActiveItem(items) {
 </tr>
 </tbody></table>
 <p>  At 5,000+ items, the JSON download itself (not the search logic) becomes the bottleneck — that&#39;s the point where a real backend search service starts making sense.</p>
-<h2 id="extending-this-pattern">Extending This Pattern</h2>
+<h3 id="extending-this-pattern">Extending This Pattern</h3>
 <p>  This same architecture scales to:</p>
 <ul>
 <li><strong>Blog post search</strong> — index title, excerpt, and tags instead of tool metadata</li>
@@ -451,7 +451,7 @@ function updateActiveItem(items) {
 <hr>
 <!--AUTHOR_FOOTER-->
 <hr>
-<h2 id="related-reading-blog">Related Reading Blog</h2>
+<h3 id="related-reading-blog">Related Reading Blog</h3>
 <ul>
 <li><a href="https://smartgentools.com/blog/how-to-optimize-your-website-for-google-adsense-approval-in-2026-the-mega-guide/">How to Optimize Your Website for Google AdSense Approval in 2026: The Mega Guide</a></li>
 <li><a href="https://smartgentools.com/blog/building-the-smartgen-html-code-library-79-visual-to-code-tools/">Building the SmartGen HTML Code Library: 79 Visual-to-Code Tools</a></li>

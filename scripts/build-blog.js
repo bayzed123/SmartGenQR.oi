@@ -67,6 +67,10 @@ function readBlogPosts() {
     posts.push({
       slug,
       title: attributes.title || 'Untitled',
+      // Optional shorter <title> for search results. Google truncates around
+      // 60 characters, but a headline on the page can usefully be longer --
+      // these are two different jobs and were sharing one string.
+      seoTitle: (attributes.seo_title || attributes.seoTitle || '').trim(),
       description: attributes.description || '',
       content: body,
       date: attributes.date || new Date().toISOString().split('T')[0],
@@ -231,10 +235,54 @@ function redirectStub(fromSlug, toSlug) {
 }
 
 /**
+ * The <title> shown in search results.
+ *
+ * Prefers an explicit `seo_title:`. The " - SmartGen Blog" suffix is only
+ * appended when the result still fits inside Google's ~60-character display
+ * limit -- on a 100-character headline the suffix was pure waste, guaranteed
+ * to be cut off while pushing the useful words further out of view.
+ */
+const TITLE_LIMIT = 60;
+const TITLE_SUFFIX = ' - SmartGen Blog';
+function pageTitle(post) {
+  const base = (post.seoTitle || post.title || '').trim();
+  return base.length + TITLE_SUFFIX.length <= TITLE_LIMIT ? base + TITLE_SUFFIX : base;
+}
+
+/**
  * Generate HTML for a single blog post
  */
+/**
+ * Renumber the rendered body's headings so the document outline is continuous.
+ *
+ * Two problems this solves. The template already supplies the article's <h1>,
+ * so markdown that also opens with `# ` produced a second one -- 47 posts had
+ * between two and nine h1s. And markdown authors jump levels freely (`##`
+ * followed by `####` reads fine but leaves a hole in the outline).
+ *
+ * The walk is seeded with the template's h1, so the first body heading always
+ * becomes an h2 and relative depth is preserved from there: siblings stay
+ * siblings, nested stays nested, and no level is ever skipped.
+ */
+function normaliseOutline(htmlContent) {
+  const depth = [{ original: 0, emitted: 1 }];   // the template <h1>
+  const openTags = [];
+  return htmlContent.replace(/<(\/)?h([1-6])\b/gi, (match, closing, lvl) => {
+    const level = Number(lvl);
+    if (closing) {
+      const emitted = openTags.length ? openTags.pop() : level;
+      return `</h${emitted}`;
+    }
+    while (depth.length > 1 && depth[depth.length - 1].original >= level) depth.pop();
+    const emitted = Math.min(depth[depth.length - 1].emitted + 1, 6);
+    depth.push({ original: level, emitted });
+    openTags.push(emitted);
+    return `<h${emitted}`;
+  });
+}
+
 function generatePostHTML(post) {
-  let htmlContent = marked(post.content);
+  let htmlContent = normaliseOutline(marked(post.content));
   const authorProfileBox = loadAuthorProfileBox();
   const authorFooterBox = loadAuthorFooterBox();
   
@@ -254,7 +302,7 @@ function generatePostHTML(post) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${post.title} - SmartGen Blog</title>
+    <title>${pageTitle(post)}</title>
     <meta name="description" content="${post.description}">
     <meta name="author" content="${post.author}">
     <meta name="keywords" content="${post.tags.join(', ')}">
@@ -497,7 +545,10 @@ function generatePostHTML(post) {
             <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
             <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
             <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
-                <input type="email" name="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-name">Your name</label>
+                <input type="text" id="newsletter-name" name="name" placeholder="Your name" autocomplete="given-name" maxlength="60" style="flex: 1; min-width: 180px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-email">Your email address</label>
+                <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
                 <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
             </form>
@@ -614,7 +665,7 @@ function generateArchiveHTML() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - SmartGen | Insights, Tutorials & Digital Tool Updates</title>
-    <meta name="description" content="Explore the SmartGen blog for the latest tutorials, digital marketing insights, and web utility updates. Stay ahead with expert advice from Sayad Md Bayezid Hosan.">
+    <meta name="description" content="Tutorials, digital marketing guides and web-tool updates from SmartGen - practical SEO, analytics and developer how-tos.">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="SmartGen Blog - Digital Insights & Web Tools">
@@ -696,7 +747,10 @@ function generateArchiveHTML() {
             <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox every week.</p>
             
             <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
-                <input type="email" name="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-name">Your name</label>
+                <input type="text" id="newsletter-name" name="name" placeholder="Your name" autocomplete="given-name" maxlength="60" style="flex: 1; min-width: 180px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-email">Your email address</label>
+                <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
                 <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe Now</button>
             </form>

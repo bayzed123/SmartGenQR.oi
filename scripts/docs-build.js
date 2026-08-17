@@ -49,6 +49,7 @@ function readDocPosts() {
             slug,
             title,
             sourceFile: file,
+            seoTitle: (attributes.seo_title || attributes.seoTitle || '').trim(),
             description: attributes.description || 'SmartGen Developer Documentation',
             content: body,
             order: attributes.order || 999,
@@ -93,6 +94,46 @@ function createSlugMapping(allDocs) {
         mapping[fileSlug] = doc.slug;
     });
     return mapping;
+}
+
+/**
+ * The <title> shown in search results.
+ *
+ * Prefers an explicit `seo_title:`. The " - SmartGen Docs" suffix is only
+ * appended when the result still fits inside Google's ~60-character display
+ * limit -- on a long heading the suffix was pure waste, guaranteed to be cut
+ * off while pushing the useful words further out of view.
+ */
+const TITLE_LIMIT = 60;
+const TITLE_SUFFIX = ' - SmartGen Docs';
+function pageTitle(doc) {
+    const base = (doc.seoTitle || doc.title || '').trim();
+    return base.length + TITLE_SUFFIX.length <= TITLE_LIMIT ? base + TITLE_SUFFIX : base;
+}
+
+/**
+ * Renumber a doc's body headings so the outline is continuous.
+ *
+ * The template already renders <h1 class="doc-title">, so markdown opening
+ * with `# ` produced a second h1 (24 docs pages had two to nine). Seeded with
+ * that template h1, the first body heading becomes an h2 and relative depth is
+ * preserved from there, with no level skipped.
+ */
+function normaliseOutline(htmlContent) {
+    const depth = [{ original: 0, emitted: 1 }];
+    const openTags = [];
+    return htmlContent.replace(/<(\/)?h([1-6])\b/gi, (match, closing, lvl) => {
+        const level = Number(lvl);
+        if (closing) {
+            const emitted = openTags.length ? openTags.pop() : level;
+            return `</h${emitted}`;
+        }
+        while (depth.length > 1 && depth[depth.length - 1].original >= level) depth.pop();
+        const emitted = Math.min(depth[depth.length - 1].emitted + 1, 6);
+        depth.push({ original: level, emitted });
+        openTags.push(emitted);
+        return `<h${emitted}`;
+    });
 }
 
 function createRenderer(tocList, slugMapping = {}) {
@@ -182,7 +223,12 @@ function generateDocHTML(doc, allDocs) {
     const tocList = [];
     const slugMapping = createSlugMapping(allDocs);
     const renderer = createRenderer(tocList, slugMapping);
-    const htmlContent = marked.parse(doc.content, { renderer });
+    // The page template already renders the doc's <h1 class="doc-title">.
+    // Markdown that also opens with `# ` produced a second h1 (24 docs pages
+    // had between two and nine of them) and flattened sections against their
+    // own subsections. Shift the body down a level where that happens; docs
+    // already starting at `## ` are untouched.
+    const htmlContent = normaliseOutline(marked.parse(doc.content, { renderer }));
 
     // Find current doc index for navigation
     const currentIndex = allDocs.findIndex(d => d.slug === doc.slug);
@@ -269,7 +315,7 @@ function generateDocHTML(doc, allDocs) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${doc.title} - SmartGen Docs</title>
+    <title>${pageTitle(doc)}</title>
     <meta name="description" content="${doc.description}">
     <link rel="canonical" href="${SITE_URL}/docs/${doc.slug}/">
     

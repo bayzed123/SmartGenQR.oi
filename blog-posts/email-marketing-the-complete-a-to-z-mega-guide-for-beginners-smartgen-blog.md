@@ -1,6 +1,7 @@
 ---
-title: "Email Marketing — The Complete A to Z Mega Guide for Beginners - SmartGen Blog"
-description: "A complete, deeply detailed, beginner-friendly A to Z guide to email marketing — building and managing email lists the right way, campaign strategy, crafting content that actually gets opened, email automation and drip flows, the metrics and KPIs that matter in 2026, choosing the right tools, solving the deliverability challenges every sender now faces, and putting it all together into one real email marketing plan."
+title: "Email Marketing — The Complete A to Z Mega Guide for Beginners"
+seo_title: "Email Marketing Guide for Beginners"
+description: "Build a list people open: signup forms, welcome sequences, segmentation, deliverability and the metrics worth watching."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 16, Email Marketing, Email List Building, Email Campaign Strategy, Email Automation, Email Marketing Metrics, Email Marketing KPIs, Email Marketing Software, Email Deliverability, Email Marketing Plan, E-E-A-T"
 date: 2026-07-09
 image: "https://smartgentools.com/blog-posts/images/module-16-email-marketing-cover.svg"

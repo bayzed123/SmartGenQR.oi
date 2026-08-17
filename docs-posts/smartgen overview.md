@@ -1,11 +1,10 @@
 ---
 slug: "quick-setup-guide"
 title: "Quick Setup Guide"
-description: "Learn how to quickly set up SmartGen tools."
+description: "A quick setup guide and overview of SmartGen: what the platform includes, how the pieces fit together, and where to begin."
 category: "Guides"
 order: 2
 ---
-
 # Quick Setup Guide
 
 # SmartGen 

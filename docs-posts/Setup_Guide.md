@@ -1,11 +1,9 @@
 ---
 slug: "development-setup-guide"
 title: "Development Setup Guide"
-description: "Learn how to set up and start contributing to SmartGen."
+description: "Set up a local development environment for SmartGen: prerequisites, install steps, the day-to-day workflow and pull request guidelines."
 order: 1
 ---
-
-
 This guide provides detailed instructions for setting up your development environment and getting started with contributing to SmartGen. Whether you're looking to run the project locally, add new features, or fix bugs, these steps will help you get up and running.
 
 ## Prerequisites

@@ -3,7 +3,7 @@ title: "SmartGen Now Open source project"
 date: 2026-06-15
 image: "https://i.ibb.co/Y7FCcNqP/962-F6-E99-D77-F-4-A13-BC23-B9-F465-ADC8-EA.png"
 author: "SmartGen"
-description: "Announcing the launch of the SmartGen HTML Marquee Generator. Build customizable scrolling text, news tickers, announcements, and promotional banners without writing complex code."
+description: "SmartGen Tools is now open source. What that means, how the repository is organised and how to run or contribute to it."
 keywords:
   - SmartGen
   - open source now
@@ -17,7 +17,6 @@ tags:
   - Product Launch
 slug: "smartgen-now-open-source-project"
 ---
-
 # SmartGen: All-in-One Digital & Web Utility Platform
 
 [![Auto Changelog Status](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/auto-changelog.yml/badge.svg)](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/auto-changelog.yml) [![Pages Build Deployment](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/pages/pages-build-deployment)

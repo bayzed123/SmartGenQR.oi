@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Build a WordPress Website From Scratch - SmartGen Blog</title>
+    <title>How to Build a WordPress Website From Scratch</title>
     <meta name="description" content="Learn how to build a WordPress website from scratch — cPanel, domain setup, WordPress installation, SEO themes, and essential plugins explained step by step.">
     <meta name="author" content="Sayad Md Bayezid Hosan">
     <meta name="keywords" content="SmartGen, WordPress, Web Hosting, cPanel, WordPress Tutorial, SEO Theme, WordPress Plugins">
@@ -12,6 +12,9 @@
     <meta property="og:title" content="How to Build a WordPress Website From Scratch">
     <meta property="og:description" content="Learn how to build a WordPress website from scratch — cPanel, domain setup, WordPress installation, SEO themes, and essential plugins explained step by step.">
     <meta property="og:image" content="https://smartgentools.com/blog-posts/images/how-to-build-a-wordpress-website-cover.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:url" content="https://smartgentools.com/blog/how-to-build-a-wordpress-website-from-scratch/">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="Tue Jul 14 2026 00:00:00 GMT+0000 (Coordinated Universal Time)">
@@ -248,13 +251,15 @@
     
     <!-- Info -->
     <div class="author-info" style="flex: 1;">
-        <h4 style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;">Sayad Md Bayezid Hosan</h4>
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
         <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
     </div>
 </div>
 
 <p>July 14, 2026 • General • By <a href="https://www.sayadbayezid.com/">Sayad Md Bayezid Hosan</a></p>
-<p><img src="https://smartgentools.com/blog-posts/images/how-to-build-a-wordpress-website-cover.svg" alt="How to Build a WordPress Website Cover"></p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -268,10 +273,11 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
-<h1>How to Build a WordPress Website From Scratch</h1>
+<p><img src="https://smartgentools.com/blog-posts/images/how-to-build-a-wordpress-website-cover.svg" alt="How to Build a WordPress Website Cover"></p>
+<h2>How to Build a WordPress Website From Scratch</h2>
 <p>WordPress now runs a larger share of the world&#39;s websites than every other platform combined, and the reason is simple: once you understand six things — cPanel, domain connection, installation, essential setup, theme choice, and plugins — you can build a genuinely professional, SEO-ready website without writing a single line of code. This guide walks through all six, in the exact order you&#39;ll actually do them, from the moment you log into your hosting account for the first time to the moment your site is live, secure, and ready for content.</p>
 <p>No prior technical background is assumed. Every step below tells you exactly which menu to click and exactly what to type, using the standard cPanel hosting environment that the large majority of shared and business hosting providers use today.</p>
-<h2>What You&#39;ll Build</h2>
+<h3>What You&#39;ll Build</h3>
 <p>By the end of this guide, you&#39;ll have a live WordPress website with a working domain, SSL security, an SEO-structured theme, and the core plugins every professional site needs — installed, configured, and ready for content.</p>
 <ul>
 <li><a href="#what-is-cpanel">What Is cPanel?</a></li>
@@ -282,9 +288,8 @@
 <li><a href="#plugins">Useful Plugins: Installation &amp; Setup</a></li>
 </ul>
 <hr>
-<h2>What Is cPanel? {#what-is-cpanel}</h2>
+<h3>What Is cPanel? {#what-is-cpanel}</h3>
 <p><strong>cPanel is a web-based control panel that lets you manage every technical part of your web hosting account — files, databases, email accounts, domains, and software installations — through a visual dashboard instead of typing server commands.</strong> It&#39;s the layer that sits between you and the actual server your website lives on, and for most beginners, it&#39;s the very first screen you&#39;ll see after signing up for hosting.</p>
-<p>You&#39;ll typically reach cPanel one of two ways: through a <strong>&quot;Login to cPanel&quot;</strong> button inside your hosting provider&#39;s client dashboard, or directly by visiting <code>yourdomain.com/cpanel</code> (or <code>yourdomain.com:2083</code> if the domain isn&#39;t connected yet) and logging in with the username and password your host emailed you at signup.</p>
 <div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
   <script>
   atOptions = {
@@ -298,6 +303,7 @@
 <script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
 </div>
 
+<p>You&#39;ll typically reach cPanel one of two ways: through a <strong>&quot;Login to cPanel&quot;</strong> button inside your hosting provider&#39;s client dashboard, or directly by visiting <code>yourdomain.com/cpanel</code> (or <code>yourdomain.com:2083</code> if the domain isn&#39;t connected yet) and logging in with the username and password your host emailed you at signup.</p>
 <p>Once inside, a handful of sections matter far more than the rest, and knowing them now saves a lot of hunting around later:</p>
 <ul>
 <li><strong>File Manager</strong> — a browser-based way to view, edit, and upload the actual files that make up your website, without needing separate FTP software.</li>
@@ -309,10 +315,10 @@
 </ul>
 <p>It&#39;s worth knowing that <strong>not every host uses cPanel by name</strong> — some, particularly newer or budget-focused providers, use their own custom-branded panel (Hostinger&#39;s hPanel and Plesk are the two most common alternatives). The underlying concepts and menu names below map almost one-to-one even if your provider&#39;s interface looks slightly different, so this guide will still get you where you need to go either way.</p>
 <hr>
-<h2>Connect Your Domain to Your Hosting {#connect-domain}</h2>
+<h3>Connect Your Domain to Your Hosting {#connect-domain}</h3>
 <p>Before WordPress can go anywhere, your domain name needs to actually point at your hosting account. <strong>DNS (Domain Name System) is the system that translates a human-readable domain name into the numeric server address where your website files actually live</strong> — and connecting a domain is really just telling DNS which server to send visitors to.</p>
 <p>If you bought your domain through the same company as your hosting, this step is frequently done automatically and you can skip ahead to Section 3. If your domain and hosting are with two different companies — a very common setup — you&#39;ll need one of the two methods below.</p>
-<h3>Method 1: Changing Nameservers (Most Common)</h3>
+<h4>Method 1: Changing Nameservers (Most Common)</h4>
 <p>This is the simplest method and the one most hosting providers recommend by default.</p>
 <ol>
 <li>Find your host&#39;s nameservers. These are listed in your welcome email or inside cPanel&#39;s <strong>General Information</strong> widget, and typically look like <code>ns1.yourhost.com</code> and <code>ns2.yourhost.com</code>.</li>
@@ -321,7 +327,7 @@
 <li>Replace the existing nameservers with the two (sometimes more) provided by your host.</li>
 <li>Save the change.</li>
 </ol>
-<h3>Method 2: Manual DNS (A Record) Pointing</h3>
+<h4>Method 2: Manual DNS (A Record) Pointing</h4>
 <p>Use this method if you want to keep your domain&#39;s existing nameservers — for example, because you&#39;re using a third-party DNS service for extra features.</p>
 <ol>
 <li>In cPanel, find your server&#39;s IP address under <strong>General Information</strong>.</li>
@@ -330,12 +336,12 @@
 <li>Add a second A record (or a CNAME) for <code>www</code> pointing to the same place, so both <code>yourdomain.com</code> and <code>www.yourdomain.com</code> resolve correctly.</li>
 <li>Save the changes.</li>
 </ol>
-<h3>Waiting for Propagation</h3>
+<h4>Waiting for Propagation</h4>
 <p>Either method requires <strong>DNS propagation</strong> — the time it takes for the change to spread across the internet&#39;s various DNS servers. This is typically anywhere from a few minutes to 24–48 hours. You can check progress at any global propagation checker site, or simply try visiting your domain periodically; once it loads (even to a default hosting placeholder page), you&#39;re ready to move on.</p>
 <hr>
-<h2>Install WordPress (Step-by-Step) {#install-wordpress}</h2>
+<h3>Install WordPress (Step-by-Step) {#install-wordpress}</h3>
 <p>With your domain connected, installing WordPress itself is the fastest part of this entire process, thanks to a one-click installer nearly every host includes.</p>
-<h3>Using the Softaculous One-Click Installer</h3>
+<h4>Using the Softaculous One-Click Installer</h4>
 <ol>
 <li>Log in to cPanel and find <strong>Softaculous Apps Installer</strong> (or a dedicated <strong>WordPress</strong> icon — many hosts feature it directly on the dashboard).</li>
 <li>Click <strong>WordPress</strong>, then <strong>Install Now</strong>.</li>
@@ -350,10 +356,10 @@
 <li>Click <strong>Install</strong>, and wait roughly one to three minutes for the installer to finish.</li>
 <li>Once complete, Softaculous displays your site URL and a direct link to your admin dashboard, normally at <code>yourdomain.com/wp-admin</code>. Save both the URL and your login credentials somewhere secure.</li>
 </ol>
-<h3>Manual Installation (For Full Control)</h3>
+<h4>Manual Installation (For Full Control)</h4>
 <p>A small minority of hosts don&#39;t offer Softaculous, or some developers prefer installing manually for full control over file structure. The process is: download the latest WordPress package from wordpress.org, create a MySQL database and a database user through cPanel&#39;s <strong>MySQL Databases</strong> tool, upload the WordPress files to your root directory via <strong>File Manager</strong> or FTP, then visit your domain to run WordPress&#39;s built-in five-minute install script, which asks for your database details and admin account information directly. For the vast majority of beginners, the Softaculous method above accomplishes the exact same result with far less room for error.</p>
 <hr>
-<h2>Essential Setup After WordPress Installation {#essential-setup}</h2>
+<h3>Essential Setup After WordPress Installation {#essential-setup}</h3>
 <p>A freshly installed WordPress site is functional but not yet properly configured. Log in to <code>yourdomain.com/wp-admin</code> and work through this list in order — each step here directly affects either security, SEO, or basic usability.</p>
 <ol>
 <li><p><strong>Force HTTPS.</strong> Go to <strong>Settings → General</strong> and make sure both the <strong>WordPress Address (URL)</strong> and <strong>Site Address (URL)</strong> fields use <code>https://</code>. If your SSL certificate wasn&#39;t active during installation, activate it first in cPanel under <strong>SSL/TLS Status</strong> (most hosts offer this free via AutoSSL or Let&#39;s Encrypt), then update these fields.</p>
@@ -376,7 +382,7 @@
 </li>
 </ol>
 <hr>
-<h2>Install an SEO-Structured Theme {#seo-theme}</h2>
+<h3>Install an SEO-Structured Theme {#seo-theme}</h3>
 <p><strong>An SEO-structured theme is a WordPress theme built with clean, minimal code, fast loading times, and proper semantic HTML — the technical foundation search engines need to crawl, understand, and rank a page efficiently, before a single word of your actual content is even evaluated.</strong> A beautiful theme built on bloated code can actively hurt your rankings; a well-coded theme gives every page a fair starting point.</p>
 <p>A handful of characteristics separate a genuinely SEO-structured theme from an ordinary one: a small CSS and JavaScript footprint that keeps load times low, semantic HTML5 markup (proper <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;footer&gt;</code> tags rather than a wall of generic <code>&lt;div&gt;</code>s), built-in schema markup support, full mobile responsiveness, and active, regular developer updates. How much of this actually matters for your rankings — particularly the load-time piece — comes down to Core Web Vitals, which is covered in full depth in our <a href="https://smartgentools.com/blog/technical-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/">Technical SEO Optimization guide</a> if you want to understand exactly what search engines are measuring.</p>
 <p><strong>Themes that consistently meet this bar:</strong></p>
@@ -414,7 +420,7 @@
 <td>Fast setup wizard for beginners</td>
 </tr>
 </tbody></table>
-<h3>Installing and Setting Up Your Theme</h3>
+<h4>Installing and Setting Up Your Theme</h4>
 <ol>
 <li>In wp-admin, go to <strong>Appearance → Themes → Add New</strong>.</li>
 <li>Search for your chosen theme by name, click <strong>Install</strong>, then <strong>Activate</strong>.</li>
@@ -424,26 +430,26 @@
 <li>Run a baseline speed check using Google PageSpeed Insights so you have a &quot;before&quot; number to compare against once your content and plugins are in place.</li>
 </ol>
 <hr>
-<h2>Useful Plugins: Installation &amp; Setup {#plugins}</h2>
+<h3>Useful Plugins: Installation &amp; Setup {#plugins}</h3>
 <p><strong>A plugin is a software add-on that extends WordPress&#39;s core functionality — adding features like SEO tools, contact forms, security scanning, or caching — without requiring you to write any custom code.</strong> Every plugin below installs the same way: go to <strong>Plugins → Add New</strong>, search for it by name, click <strong>Install Now</strong>, then <strong>Activate</strong>. What differs is the configuration step afterward, which is where most of the actual value gets set up.</p>
-<h3>SEO Plugin — Rank Math or Yoast SEO</h3>
+<h4>SEO Plugin — Rank Math or Yoast SEO</h4>
 <p>Both are strong, free options; Rank Math&#39;s free tier includes a few more built-in features, while Yoast has the longer track record. After activating either one, run through its setup wizard, connect it to Google Search Console, and confirm it&#39;s generating an XML sitemap automatically — you&#39;ll find the sitemap URL inside the plugin&#39;s settings, typically at <code>yourdomain.com/sitemap_index.xml</code>. If you want the complete picture of how to actually use these settings to rank pages — title tags, meta descriptions, internal linking, keyword targeting — that entire process is covered in our <a href="https://smartgentools.com/blog/search-engine-optimization-seo-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/">Search Engine Optimization guide</a>.</p>
-<h3>Caching / Performance Plugin — WP Rocket or LiteSpeed Cache</h3>
+<h4>Caching / Performance Plugin — WP Rocket or LiteSpeed Cache</h4>
 <p>A caching plugin stores a ready-to-serve version of your pages so WordPress doesn&#39;t have to rebuild them from the database on every single visit. WP Rocket is a strong paid option with minimal configuration needed out of the box; <strong>LiteSpeed Cache</strong> (free, and especially effective if your host runs LiteSpeed servers) or <strong>WP Super Cache</strong> are solid free alternatives. After activating, enable page caching and browser caching, and turn on CSS/JS minification if the plugin offers it — then re-run your PageSpeed check to confirm the improvement.</p>
-<h3>Security Plugin — Wordfence or Sucuri</h3>
+<h4>Security Plugin — Wordfence or Sucuri</h4>
 <p>Install one of these, run its initial malware scan, and enable its firewall. Both also offer login attempt limiting, which blocks the repeated automated login guesses that hit every public WordPress site sooner or later.</p>
-<h3>Backup Plugin — UpdraftPlus</h3>
+<h4>Backup Plugin — UpdraftPlus</h4>
 <p>Set up an automatic backup schedule (daily or weekly, depending on how often your content changes) and connect it to a cloud storage destination like Google Drive or Dropbox rather than leaving backups sitting only on the same server they&#39;re protecting. Run one manual backup immediately after setup to confirm the connection actually works before you need it in an emergency.</p>
-<h3>Forms Plugin — WPForms or Contact Form 7</h3>
+<h4>Forms Plugin — WPForms or Contact Form 7</h4>
 <p>Either lets you build a basic contact form through a visual editor and embed it on your Contact page using a short block or shortcode, with submissions arriving directly in your inbox.</p>
-<h3>Image Optimization Plugin — Smush or ShortPixel</h3>
+<h4>Image Optimization Plugin — Smush or ShortPixel</h4>
 <p>Large, unoptimized images are one of the most common causes of a slow WordPress site. These plugins compress images automatically as you upload new ones, and can run a one-time bulk optimization pass across everything already in your media library.</p>
-<h3>Analytics Plugin — Site Kit by Google</h3>
+<h4>Analytics Plugin — Site Kit by Google</h4>
 <p>Site Kit connects Google Analytics, Search Console, and PageSpeed Insights directly into your WordPress dashboard in one setup flow, which is generally the simplest way to get analytics tracking installed correctly on a first build without manually editing any code.</p>
-<h3>A Note on Plugin Count</h3>
+<h4>A Note on Plugin Count</h4>
 <p>Every plugin adds some amount of code that has to load on your site, and a handful of well-chosen, well-maintained plugins covering the categories above will always outperform a dozen overlapping ones covering the same ground. Before installing anything beyond this list, it&#39;s worth asking whether an existing plugin can already do the job.</p>
 <hr>
-<h2>Go-Live Checklist</h2>
+<h3>Go-Live Checklist</h3>
 <ul>
 <li><input disabled="" type="checkbox"> SSL active and both WordPress URLs set to <code>https://</code></li>
 <li><input disabled="" type="checkbox"> Permalinks set to &quot;Post name&quot;</li>
@@ -458,7 +464,7 @@
 <li><input disabled="" type="checkbox"> Baseline PageSpeed score recorded</li>
 </ul>
 <hr>
-<h2>Frequently Asked Questions</h2>
+<h3>Frequently Asked Questions</h3>
 <p><strong>Do I need to know how to code to build a WordPress website?</strong><br>No. Every step in this guide — from installation through theme and plugin setup — happens through visual dashboards. Coding knowledge becomes useful later if you want custom design changes beyond what your theme&#39;s customizer offers, but it isn&#39;t required to launch a complete, professional site.</p>
 <p><strong>How long does domain propagation actually take?</strong><br>It varies by registrar and location, ranging from a few minutes to 48 hours. Most changes are visible within 2–6 hours in practice, with the full 48-hour window being a safety margin rather than the typical case.</p>
 <p><strong>Should I install WordPress in the root domain or a subdirectory?</strong><br>For a primary website, always install at the root (leave the &quot;In Directory&quot; field blank during installation). Subdirectory installs are only useful for specific cases, like testing a new site privately before launch.</p>
@@ -591,7 +597,10 @@
             <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
             <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
             <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
-                <input type="email" name="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-name">Your name</label>
+                <input type="text" id="newsletter-name" name="name" placeholder="Your name" autocomplete="given-name" maxlength="60" style="flex: 1; min-width: 180px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-email">Your email address</label>
+                <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
                 <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
             </form>
