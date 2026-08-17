@@ -300,6 +300,14 @@ input[type=range] { width: 100%; accent-color: var(--brand); }
   .header-actions .gh-link span { display: none; }
 }
 @media (max-width: 620px) {
+  /* .brand is white-space: nowrap, so its tagline block ("Free copy-paste
+     HTML & CSS snippets") could not wrap and set the header's minimum width
+     at roughly 200px. On a 320px screen that pushed the GitHub button past
+     the viewport edge and scrolled the whole document sideways. The wordmark
+     alone identifies the site at this size. */
+  .brand { min-width: 0; }
+  .brand .sub { display: none; }
+
   .tool-grid, .footer-grid { grid-template-columns: 1fr; }
   main.container { padding-top: 22px; }
   .code-panel pre { font-size: 0.78rem; }

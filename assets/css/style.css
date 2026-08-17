@@ -1169,3 +1169,12 @@ pre {
     overflow-x: auto;
     max-width: 100%;
 }
+
+/* Same problem in prose. /terms/ lists a contact link whose anchor text is the
+   bare URL "https://smartgentools.com/contact/" -- 244px with no break
+   opportunity in it, which scrolled the whole page sideways at 320px and
+   360px. break-word only splits a word that genuinely cannot fit, so ordinary
+   copy is unaffected. */
+p, li, dd, td, th, blockquote, figcaption {
+    overflow-wrap: break-word;
+}
