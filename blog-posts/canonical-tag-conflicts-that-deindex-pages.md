@@ -4,7 +4,7 @@ seo_title: "Canonical Tag Conflicts That De-Index Pages"
 date: "2026-08-17"
 author: "Sayad Md Bayezid Hosan"
 description: "Four canonical conflicts found in one real audit, including the noindex trap that can drop a live page from Google's index, and how to detect each one."
-image: "https://smartgentools.com/blog-posts/images/canonical-conflicts-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/canonical-conflicts-cover.jpg"
 tags: ["Technical SEO", "Canonical Tags", "Duplicate Content", "Google Search Console", "Indexing"]
 category: "SEO Blog"
 slug: "canonical-tag-conflicts-that-deindex-pages"

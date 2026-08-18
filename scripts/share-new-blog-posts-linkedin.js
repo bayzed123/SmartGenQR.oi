@@ -103,28 +103,65 @@ async function resolvePersonId() {
   throw new Error('LinkedIn did not return a member identity and LINKEDIN_MEMBER_ID is not configured.');
 }
 
+/**
+ * Formats LinkedIn will actually render as a preview or accept as a native
+ * upload. SVG is deliberately absent -- LinkedIn does not rasterise it, and
+ * neither do the Open Graph previews on Facebook, X or Slack.
+ */
+const LINKEDIN_IMAGE_TYPES = ['image/jpeg', 'image/png'];
+
 async function waitForPublicMetadata(post) {
+  // A cover that LinkedIn cannot read will never become ready, so waiting on
+  // it just burns three minutes before the same failure. Two SVG covers did
+  // exactly that: page=200, image=200, type=image/svg+xml, eighteen times,
+  // then "metadata was not ready" -- a timeout message for what was really a
+  // wrong file format. Fail immediately, and say which format and which file.
+  if (/\.svgz?(?:[?#]|$)/i.test(post.image)) {
+    throw new Error(
+      `${post.image} is an SVG. LinkedIn cannot render SVG previews or accept ` +
+      `them as a native upload. Generate a raster twin with ` +
+      `"node scripts/rasterise-cover.js <cover.svg>" and point the post's ` +
+      `image: front matter at the .jpg.`,
+    );
+  }
+
   const attempts = Number(process.env.LINKEDIN_PUBLIC_CHECK_ATTEMPTS || 18);
   const delayMs = Number(process.env.LINKEDIN_PUBLIC_CHECK_DELAY_MS || 10000);
+  let lastContentType = '';
+
   for (let attempt = 1; attempt <= attempts; attempt += 1) {
     try {
       const pageResponse = await fetch(post.url, { headers: { 'User-Agent': 'SmartGen-LinkedIn-Publisher/1.0' } });
       const pageHtml = await pageResponse.text();
       const imageResponse = await fetch(post.image, { headers: { 'User-Agent': 'SmartGen-LinkedIn-Publisher/1.0' } });
-      const contentType = imageResponse.headers.get('content-type') || '';
+      const contentType = (imageResponse.headers.get('content-type') || '').toLowerCase();
+      lastContentType = contentType;
       const pageReady = pageResponse.ok && pageHtml.includes(post.image) && /<meta[^>]+property=["']og:image["'][^>]+content=["']https:\/\//i.test(pageHtml);
-      const imageReady = imageResponse.ok && contentType.toLowerCase().includes('image/jpeg');
+      const imageReady = imageResponse.ok && LINKEDIN_IMAGE_TYPES.some((t) => contentType.includes(t));
       if (pageReady && imageReady) {
         console.log(`Public article and preview image verified on attempt ${attempt}.`);
         return;
       }
+      // An unsupported type that is already serving 200 is a settled answer,
+      // not a slow deploy. Only genuine propagation is worth retrying.
+      if (imageResponse.ok && contentType.startsWith('image/') && !imageReady) {
+        throw new Error(
+          `${post.image} is served as ${contentType}, which LinkedIn does not accept. ` +
+          `Supported: ${LINKEDIN_IMAGE_TYPES.join(', ')}.`,
+        );
+      }
       console.log(`Waiting for public article deployment (attempt ${attempt}/${attempts}; page=${pageResponse.status}, image=${imageResponse.status}, type=${contentType || 'unknown'}).`);
     } catch (error) {
+      if (/does not accept/.test(error.message)) throw error;
       console.log(`Waiting for public article deployment (attempt ${attempt}/${attempts}; ${error.message}).`);
     }
     if (attempt < attempts) await new Promise((resolve) => setTimeout(resolve, delayMs));
   }
-  throw new Error(`Public article metadata was not ready after ${attempts} checks; LinkedIn publish was skipped to avoid a stale preview.`);
+  throw new Error(
+    `Public article metadata was not ready after ${attempts} checks ` +
+    `(last image content-type: ${lastContentType || 'unknown'}); ` +
+    `LinkedIn publish was skipped to avoid a stale preview.`,
+  );
 }
 
 async function uploadNativeImage(post, personId) {
