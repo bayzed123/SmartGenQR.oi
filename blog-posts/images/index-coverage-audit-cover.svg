@@ -1,0 +1,99 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="icaTitle icaDesc">
+  <title id="icaTitle">Index coverage audit across 314 URLs</title>
+  <desc id="icaDesc">A Search Console coverage breakdown showing 135 pages indexed and 72 discovered but not indexed, beside a URL Inspection API result card.</desc>
+  <defs>
+    <linearGradient id="icaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E2A26"/>
+      <stop offset="55%" stop-color="#0B1F1D"/>
+      <stop offset="100%" stop-color="#071413"/>
+    </linearGradient>
+    <pattern id="icaDots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.4" cy="1.4" r="1.4" fill="#FFFFFF" fill-opacity="0.05"/>
+    </pattern>
+    <radialGradient id="icaGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="icaBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#071413"/>
+      <stop offset="100%" stop-color="#12332E"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#icaBg)"/>
+  <rect width="1200" height="630" fill="url(#icaDots)"/>
+
+  <!-- Eyebrow -->
+  <text x="80" y="112" font-family="'JetBrains Mono','Courier New',monospace" font-size="15" letter-spacing="3" fill="#2DD4BF" font-weight="700">SMARTGEN SEO · FIRST-PARTY AUDIT DATA</text>
+
+  <!-- Title -->
+  <text x="78" y="182" font-family="'Sora','Poppins',sans-serif" font-size="45" font-weight="700" fill="#FFFFFF">Discovered — Currently</text>
+  <text x="78" y="240" font-family="'Sora','Poppins',sans-serif" font-size="45" font-weight="700" fill="#FFFFFF">Not Indexed</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="286" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="18" fill="#9FC3BC">What 314 inspected URLs actually showed</text>
+
+  <!-- Author -->
+  <text x="80" y="326" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="15" fill="#79A099">A SmartGen SEO Audit · By Sayad Md Bayezid Hosan</text>
+
+  <!-- Badge row -->
+  <g font-family="'Inter',Helvetica,Arial,sans-serif" font-size="13" font-weight="600">
+    <rect x="80" y="358" width="168" height="30" rx="15" fill="none" stroke="#2A4F49" stroke-width="1.5"/>
+    <text x="99" y="377" fill="#BFDCD6">URL Inspection API</text>
+
+    <rect x="260" y="358" width="112" height="30" rx="15" fill="none" stroke="#2A4F49" stroke-width="1.5"/>
+    <text x="279" y="377" fill="#BFDCD6">314 URLs</text>
+
+    <rect x="384" y="358" width="136" height="30" rx="15" fill="none" stroke="#2A4F49" stroke-width="1.5"/>
+    <text x="403" y="377" fill="#BFDCD6">Measured, not guessed</text>
+  </g>
+
+  <!-- Right: coverage breakdown card -->
+  <g transform="translate(770,45)">
+    <circle cx="190" cy="150" r="220" fill="url(#icaGlow)"/>
+
+    <rect x="0" y="0" width="380" height="230" rx="16" fill="#102A26" stroke="#2C534C" stroke-width="1.5"/>
+
+    <circle cx="26" cy="26" r="8" fill="#2DD4BF"/>
+    <text x="46" y="31" font-family="'Sora',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Coverage · 235 real pages</text>
+
+    <line x1="20" y1="50" x2="360" y2="50" stroke="#284A44" stroke-width="1"/>
+
+    <!-- Indexed -->
+    <text x="20" y="80" font-family="'Inter',sans-serif" font-size="14" fill="#BFDCD6">Submitted and indexed</text>
+    <text x="360" y="80" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="700" fill="#6EE7B7">135</text>
+    <rect x="20" y="88" width="340" height="7" rx="3.5" fill="#1B3B36"/>
+    <rect x="20" y="88" width="195" height="7" rx="3.5" fill="#6EE7B7"/>
+
+    <!-- Discovered -->
+    <text x="20" y="126" font-family="'Inter',sans-serif" font-size="14" fill="#BFDCD6">Discovered — not indexed</text>
+    <text x="360" y="126" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="700" fill="#FBBF5C">72</text>
+    <rect x="20" y="134" width="340" height="7" rx="3.5" fill="#1B3B36"/>
+    <rect x="20" y="134" width="104" height="7" rx="3.5" fill="#FBBF5C"/>
+
+    <!-- Unknown -->
+    <text x="20" y="172" font-family="'Inter',sans-serif" font-size="14" fill="#BFDCD6">Unknown to Google</text>
+    <text x="360" y="172" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="700" fill="#F0857C">24</text>
+    <rect x="20" y="180" width="340" height="7" rx="3.5" fill="#1B3B36"/>
+    <rect x="20" y="180" width="35" height="7" rx="3.5" fill="#F0857C"/>
+
+    <line x1="20" y1="202" x2="360" y2="202" stroke="#284A44" stroke-width="1"/>
+    <text x="20" y="220" font-family="'Inter',sans-serif" font-size="12.5" font-style="italic" fill="#84A9A2">79 further URLs canonicalise elsewhere by design</text>
+
+    <!-- Finding badge -->
+    <rect x="0" y="250" width="380" height="40" rx="20" fill="#2E2410" stroke="#FBBF5C" stroke-width="1.5"/>
+    <path d="M22,262 L26,266 L34,256" stroke="#FBBF5C" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="46" y="275" font-family="'Inter',sans-serif" font-size="13" font-weight="700" fill="#FBBF5C">All 72 were already in the sitemap</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <g transform="translate(80,500)">
+    <rect x="0" y="0" width="1040" height="68" rx="14" fill="url(#icaBar)" stroke="#28504A" stroke-width="1.5"/>
+    <circle cx="28" cy="22" r="5" fill="#6EE7B7"/>
+    <circle cx="48" cy="22" r="5" fill="#FBBF5C"/>
+    <circle cx="68" cy="22" r="5" fill="#F0857C"/>
+    <text x="28" y="50" font-family="'JetBrains Mono','Courier New',monospace" font-size="16">
+      <tspan fill="#BFDCD6">robots.txt · sitemap · canonical · HTTP 200</tspan><tspan fill="#6B928B">  →  </tspan><tspan fill="#2DD4BF" font-weight="700">all passing, still not crawled</tspan>
+    </text>
+  </g>
+</svg>

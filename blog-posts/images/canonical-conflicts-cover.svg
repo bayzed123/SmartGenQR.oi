@@ -1,0 +1,93 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ccTitle ccDesc">
+  <title id="ccTitle">Canonical tag conflicts that de-index pages</title>
+  <desc id="ccDesc">A redirect stub carrying both a canonical tag and a noindex directive, with an arrow showing the noindex propagating to the live page Google elected it to represent.</desc>
+  <defs>
+    <linearGradient id="ccBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A1620"/>
+      <stop offset="55%" stop-color="#1D1018"/>
+      <stop offset="100%" stop-color="#12090E"/>
+    </linearGradient>
+    <pattern id="ccDots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.4" cy="1.4" r="1.4" fill="#FFFFFF" fill-opacity="0.05"/>
+    </pattern>
+    <radialGradient id="ccGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FB7185" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#FB7185" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ccBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#12090E"/>
+      <stop offset="100%" stop-color="#37202C"/>
+    </linearGradient>
+    <marker id="ccArrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#FB7185"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#ccBg)"/>
+  <rect width="1200" height="630" fill="url(#ccDots)"/>
+
+  <!-- Eyebrow -->
+  <text x="80" y="112" font-family="'JetBrains Mono','Courier New',monospace" font-size="15" letter-spacing="3" fill="#FB7185" font-weight="700">SMARTGEN SEO · FOUND IN A REAL AUDIT</text>
+
+  <!-- Title -->
+  <text x="78" y="182" font-family="'Sora','Poppins',sans-serif" font-size="45" font-weight="700" fill="#FFFFFF">Canonical Tags That</text>
+  <text x="78" y="240" font-family="'Sora','Poppins',sans-serif" font-size="45" font-weight="700" fill="#FFFFFF">Quietly De-Index Pages</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="286" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="18" fill="#D8B4BE">Four conflicts, and the detection script for each</text>
+
+  <!-- Author -->
+  <text x="80" y="326" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="15" fill="#A98492">A SmartGen SEO Audit · By Sayad Md Bayezid Hosan</text>
+
+  <!-- Badge row -->
+  <g font-family="'Inter',Helvetica,Arial,sans-serif" font-size="13" font-weight="600">
+    <rect x="80" y="358" width="176" height="30" rx="15" fill="none" stroke="#5A3644" stroke-width="1.5"/>
+    <text x="99" y="377" fill="#E8CBD3">noindex + canonical</text>
+
+    <rect x="268" y="358" width="128" height="30" rx="15" fill="none" stroke="#5A3644" stroke-width="1.5"/>
+    <text x="287" y="377" fill="#E8CBD3">duplicate h1</text>
+
+    <rect x="408" y="358" width="150" height="30" rx="15" fill="none" stroke="#5A3644" stroke-width="1.5"/>
+    <text x="427" y="377" fill="#E8CBD3">sitemap hygiene</text>
+  </g>
+
+  <!-- Right: the conflict diagram -->
+  <g transform="translate(770,42)">
+    <circle cx="190" cy="150" r="220" fill="url(#ccGlow)"/>
+
+    <!-- Stub card -->
+    <rect x="0" y="0" width="380" height="118" rx="14" fill="#2A1620" stroke="#5E3746" stroke-width="1.5"/>
+    <text x="20" y="30" font-family="'JetBrains Mono',monospace" font-size="13" fill="#A98492">/app-legal/  · redirect stub</text>
+    <text x="20" y="56" font-family="'JetBrains Mono',monospace" font-size="12.5" fill="#E8CBD3">rel=canonical → /smartgen-legal-info/</text>
+    <rect x="18" y="68" width="196" height="28" rx="6" fill="#3D1620" stroke="#FB7185" stroke-width="1.5"/>
+    <text x="30" y="87" font-family="'JetBrains Mono',monospace" font-size="12.5" font-weight="700" fill="#FB7185">robots: noindex</text>
+    <text x="226" y="87" font-family="'Inter',sans-serif" font-size="12" fill="#C2919F">14 lines</text>
+
+    <!-- Elected label + arrow -->
+    <text x="190" y="140" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700" fill="#FB7185">Google elected this as canonical</text>
+    <line x1="190" y1="148" x2="190" y2="176" stroke="#FB7185" stroke-width="2" marker-end="url(#ccArrow)"/>
+
+    <!-- Live page card -->
+    <rect x="0" y="186" width="380" height="104" rx="14" fill="#241A1E" stroke="#5E3746" stroke-width="1.5"/>
+    <text x="20" y="216" font-family="'JetBrains Mono',monospace" font-size="13" fill="#A98492">/smartgen-legal-info/  · live page</text>
+    <text x="20" y="242" font-family="'Inter',sans-serif" font-size="13.5" fill="#E8CBD3">47 KB of real content, self-canonical</text>
+    <rect x="18" y="254" width="252" height="26" rx="6" fill="#3D1620" stroke="#FB7185" stroke-width="1.5"/>
+    <text x="30" y="272" font-family="'Inter',sans-serif" font-size="12.5" font-weight="700" fill="#FB7185">inherits the stub's noindex</text>
+
+    <!-- Fix badge -->
+    <rect x="0" y="308" width="380" height="40" rx="20" fill="#12301F" stroke="#4ADE80" stroke-width="1.5"/>
+    <path d="M22,320 L26,324 L34,314" stroke="#4ADE80" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="46" y="333" font-family="'Inter',sans-serif" font-size="13" font-weight="700" fill="#4ADE80">Fix: drop the noindex, keep the canonical</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <g transform="translate(80,500)">
+    <rect x="0" y="0" width="1040" height="68" rx="14" fill="url(#ccBar)" stroke="#4A2C38" stroke-width="1.5"/>
+    <circle cx="28" cy="22" r="5" fill="#FB7185"/>
+    <circle cx="48" cy="22" r="5" fill="#FBBF5C"/>
+    <circle cx="68" cy="22" r="5" fill="#4ADE80"/>
+    <text x="28" y="50" font-family="'JetBrains Mono','Courier New',monospace" font-size="16">
+      <tspan fill="#E8CBD3">13 stubs carried both signals</tspan><tspan fill="#9A6E7C">  →  </tspan><tspan fill="#FB7185" font-weight="700">one held a live page hostage</tspan>
+    </text>
+  </g>
+</svg>
