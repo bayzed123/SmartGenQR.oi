@@ -129,7 +129,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://smartgentools.com/blog-posts/images/canonical-conflicts-cover.svg</image:loc>
+      <image:loc>https://smartgentools.com/blog-posts/images/canonical-conflicts-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -165,7 +165,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://smartgentools.com/blog-posts/images/index-coverage-audit-cover.svg</image:loc>
+      <image:loc>https://smartgentools.com/blog-posts/images/index-coverage-audit-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -247,6 +247,15 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://smartgentools.com/blog-posts/images/module-google-web-analytics-cover.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/blog/horizontal-scroll-mobile-five-causes-65-viewports/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smartgentools.com/blog-posts/images/horizontal-overflow-audit-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
