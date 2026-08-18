@@ -124,6 +124,15 @@
     </image:image>
   </url>
   <url>
+    <loc>https://smartgentools.com/blog/canonical-tag-conflicts-that-deindex-pages/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smartgentools.com/blog-posts/images/canonical-conflicts-cover.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://smartgentools.com/blog/content-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -148,6 +157,15 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://smartgentools.com/blog-posts/images/module-customization-advanced-features-cover.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/blog/discovered-currently-not-indexed-314-url-audit/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smartgentools.com/blog-posts/images/index-coverage-audit-cover.svg</image:loc>
     </image:image>
   </url>
   <url>
