@@ -4,7 +4,7 @@ seo_title: "Discovered - Currently Not Indexed: A Real Audit"
 date: "2026-08-17"
 author: "Sayad Md Bayezid Hosan"
 description: "We inspected all 314 URLs on our own site through Google's URL Inspection API. Here is the real status breakdown, and which fixes actually mattered."
-image: "https://smartgentools.com/blog-posts/images/index-coverage-audit-cover.svg"
+image: "https://smartgentools.com/blog-posts/images/index-coverage-audit-cover.jpg"
 tags: ["Technical SEO", "Google Search Console", "Indexing", "Crawl Budget", "URL Inspection API"]
 category: "SEO Blog"
 slug: "discovered-currently-not-indexed-314-url-audit"
