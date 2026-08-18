@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canonical Tag Conflicts That De-Index Pages - SmartGen Blog</title>
+    <meta name="description" content="Four canonical conflicts found in one real audit, including the noindex trap that can drop a live page from Google's index, and how to detect each one.">
+    <meta name="author" content="Sayad Md Bayezid Hosan">
+    <meta name="keywords" content="Technical SEO, Canonical Tags, Duplicate Content, Google Search Console, Indexing">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Canonical Tags That Quietly De-Index Your Pages: Four Conflicts From One Audit">
+    <meta property="og:description" content="Four canonical conflicts found in one real audit, including the noindex trap that can drop a live page from Google's index, and how to detect each one.">
+    <meta property="og:image" content="https://smartgentools.com/blog-posts/images/canonical-conflicts-cover.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:url" content="https://smartgentools.com/blog/canonical-tag-conflicts-that-deindex-pages/">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-08-17">
+    <meta property="article:author" content="Sayad Md Bayezid Hosan">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Canonical Tags That Quietly De-Index Your Pages: Four Conflicts From One Audit">
+    <meta name="twitter:description" content="Four canonical conflicts found in one real audit, including the noindex trap that can drop a live page from Google's index, and how to detect each one.">
+    <meta name="twitter:image" content="https://smartgentools.com/blog-posts/images/canonical-conflicts-cover.svg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://smartgentools.com/blog/canonical-tag-conflicts-that-deindex-pages/">
+    
+    <!-- HTTPS Redirect Script -->
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace('https:' + location.href.substring(location.protocol.length));
+        }
+    </script>
+    
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Canonical Tags That Quietly De-Index Your Pages: Four Conflicts From One Audit",
+        "description": "Four canonical conflicts found in one real audit, including the noindex trap that can drop a live page from Google's index, and how to detect each one.",
+        "image": "https://smartgentools.com/blog-posts/images/canonical-conflicts-cover.svg",
+        "datePublished": "2026-08-17",
+        "author": {
+            "@type": "Person",
+            "name": "Sayad Md Bayezid Hosan",
+            "url": "https://smartgentools.com/about/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "SmartGen",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://smartgentools.com/assets/images/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <!-- JSON-LD BreadcrumbList Schema (rich-result breadcrumb trail) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://smartgentools.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://smartgentools.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Canonical Tags That Quietly De-Index Your Pages: Four Conflicts From One Audit", "item": "https://smartgentools.com/blog/canonical-tag-conflicts-that-deindex-pages/" }
+        ]
+    }
+    </script>
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/blog.css">
+    <link rel="stylesheet" href="../../assets/css/ads.css">
+    
+    <!-- Inline Styles for Print and Share Modal -->
+    <style>
+        /* Print Styles */
+        @media print {
+            header, footer, .newsletter-section, .blog-related-posts, #print-button, #share-button, #main-header, #main-footer, .share-modal {
+                display: none !important;
+            }
+            body { background: white; color: black; }
+            .blog-post-container { max-width: 100%; padding: 0; }
+            .blog-post-article { box-shadow: none; border: none; }
+            .blog-post-title { page-break-after: avoid; }
+            .blog-post-content { color: black; }
+            .blog-post-content a { color: #0066cc; text-decoration: underline; }
+            img { max-width: 100%; height: auto; page-break-inside: avoid; }
+            h2, h3, h4 { page-break-after: avoid; page-break-inside: avoid; }
+            p { orphans: 3; widows: 3; }
+            pre { background: #f5f5f5 !important; border: 1px solid #ddd !important; page-break-inside: avoid; }
+        }
+
+        /* Share Modal Styles */
+        .share-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .share-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .share-modal-content {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            max-width: 350px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        .share-modal.show .share-modal-content {
+            transform: translateY(0);
+        }
+        .share-close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 28px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .share-close:hover { color: #000; }
+        .share-modal h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+            font-size: 1.5rem;
+        }
+        .share-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .share-btn {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .share-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+        .share-btn.fb { background: #1877F2; }
+        .share-btn.tw { background: #000000; }
+        .share-btn.li { background: #0A66C2; }
+        .share-btn.wa { background: #25D366; }
+        .share-btn.copy { background: #4b5563; }
+    </style>
+    
+    <!-- Scripts -->
+    <script src="../../assets/js/app.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/blog.js" defer></script>
+
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="blog-post-container">
+        <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span class="blog-breadcrumb-sep">/</span>
+            <a href="/blog/">Blog</a>
+            <span class="blog-breadcrumb-sep">/</span>
+            <span class="blog-breadcrumb-current">Canonical Tags That Quietly De-Index Your Pages: Four Conflicts From One Audit</span>
+        </nav>
+        <article class="blog-post-article reveal-up">
+            <header class="blog-post-header">
+                <div class="blog-post-meta">
+                    <time datetime="2026-08-17">August 17, 2026</time>
+                    <span class="meta-separator">•</span>
+                    <span class="blog-post-category">SEO Blog</span>
+                    <span class="meta-separator">•</span>
+                    <span class="blog-post-author">By Sayad Md Bayezid Hosan</span>
+                </div>
+                <h1 class="blog-post-title">Canonical Tags That Quietly De-Index Your Pages: Four Conflicts From One Audit</h1>
+
+<div class="header-ads-container">
+  <div class="desktop-only"><div class="ad-cls-wrapper" id="ad-wrapper-leaderboard728x90" style="min-height: 90px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f9d4f2f3a29a9dcfb43dddf1fd33eb88',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f9d4f2f3a29a9dcfb43dddf1fd33eb88/invoke.js"></script>
+</div></div>
+  <div class="mobile-only"><div class="ad-cls-wrapper" id="ad-wrapper-mobile320x50" style="min-height: 50px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : '6af746fdd2244652b728e73b1a70db61',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>
+</div></div>
+</div>
+                <p class="blog-post-excerpt">Four canonical conflicts found in one real audit, including the noindex trap that can drop a live page from Google's index, and how to detect each one.</p>
+            </header>
+
+            <!-- Author Profile Section - Right after title (Auto-inserted if not manually placed) -->
+            <!-- Slim Minimalist Author Profile Box -->
+<div class="author-box" style="display: flex; align-items: center; margin: 2rem 0; padding: 0.75rem 0; gap: 0.75rem;">
+    <!-- Profile Picture -->
+    <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/smartgentools-blog-bayezid-profile.jpg" 
+         alt="Sayad Md Bayezid Hosan" 
+         style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+    
+    <!-- Info -->
+    <div class="author-info" style="flex: 1;">
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
+        <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
+    </div>
+</div>
+
+
+            <img src="https://smartgentools.com/blog-posts/images/canonical-conflicts-cover.svg" alt="Canonical Tags That Quietly De-Index Your Pages: Four Conflicts From One Audit" class="blog-post-featured-image reveal-up delay-100">
+
+            <div class="blog-post-content reveal-up delay-200">
+                <blockquote>
+<p>✅ <strong>Written by Sayad Md Bayezid Hosan</strong> — Founder of SmartGen Tools | Last Updated: August 17, 2026</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+</blockquote>
+<hr>
+<h2>Quick Answer</h2>
+<p><strong>A canonical tag is a hint, not an instruction — and when it conflicts with another signal on the page, Google resolves the conflict in ways that can drop a working page out of the index.</strong> The most dangerous version: a redirect stub carrying both a canonical tag and <code>noindex</code>. If Google elects that stub as the canonical for the cluster, it applies the stub&#39;s <code>noindex</code> to every page in the cluster, including the real one.</p>
+<p>We found four distinct canonical conflicts in a single audit of our own site. One of them had a 47 KB legal page hanging off a fourteen-line redirect stub marked <code>noindex</code>. This article walks through all four — what each looks like in Search Console, why it happens, and the detection query for finding it on your own site.</p>
+<hr>
+<h2>📖 Table of Contents</h2>
+<ol>
+<li><a href="#why-hard-to-notice">Why canonical bugs are so hard to notice</a></li>
+<li><a href="#conflict-noindex">Conflict 1: noindex on the URL Google elected</a></li>
+<li><a href="#conflict-index-html">Conflict 2: a self-canonical pointing at index.html</a></li>
+<li><a href="#conflict-duplicate-h1">Conflict 3: two self-canonical pages, one h1</a></li>
+<li><a href="#conflict-sitemap">Conflict 4: canonicalised pages sitting in the sitemap</a></li>
+<li><a href="#detection-script">The detection script</a></li>
+<li><a href="#regex-trap">The regex trap that cost us a day</a></li>
+<li><a href="#reading-verdicts">Reading Search Console&#39;s canonical verdicts</a></li>
+<li><a href="#next-crawl">A canonical does nothing until the next crawl</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ol>
+<hr>
+<h2 id="why-hard-to-notice">Why canonical bugs are so hard to notice</h2><p>Every other technical SEO fault announces itself. A broken link 404s. A slow page shows up in Core Web Vitals. A missing title is visible in the browser tab.</p>
+<p>A canonical conflict does none of that. The page loads perfectly. It looks right to every visitor. It passes most automated audits, because the tag is <em>present</em> and <em>syntactically valid</em> — the audit has no opinion on whether the URL inside it is the right one, or whether it contradicts a <code>noindex</code> three lines above.</p>
+<p>You find out when traffic to a page quietly stops, or when you inspect the URL and Google tells you it picked something else. Which is exactly what happened to us.</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+<hr>
+<h2 id="conflict-noindex">Conflict 1: noindex on the URL Google elected</h2><p><strong>Search Console reports:</strong> <em>Duplicate, Google chose different canonical than user</em></p>
+<p>Our page <code>/smartgen-legal-info/</code> is a real 47 KB legal and trust page. It declares itself canonical. Straightforward.</p>
+<p>Then the URL Inspection API said this:</p>
+<pre><code>url:                /smartgen-legal-info/
+coverage:           Duplicate, Google chose different canonical than user
+Google&#39;s canonical: /app-legal/
+User canonical:     /smartgen-legal-info/
+last crawled:       2026-08-17
+</code></pre>
+<p>Google picked <code>/app-legal/</code> — the <em>old</em> address. And here is what <code>/app-legal/</code> contained:</p>
+<pre><code class="language-html">&lt;title&gt;Page moved | SmartGen&lt;/title&gt;
+&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=https://smartgentools.com/smartgen-legal-info/&quot;&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;https://smartgentools.com/smartgen-legal-info/&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;noindex, follow&quot;&gt;
+&lt;script&gt;location.replace(&quot;https://smartgentools.com/smartgen-legal-info/&quot;);&lt;/script&gt;
+</code></pre>
+<p>Read that carefully. The stub is textbook-correct on its own terms — meta refresh, canonical pointing forward, JS redirect. Every signal says &quot;the real page is over there.&quot;</p>
+<p><strong>But it also says <code>noindex</code>. And Google chose <em>this</em> URL as the cluster&#39;s canonical.</strong></p>
+<h3>Why that is dangerous</h3>
+<p>When Google elects a canonical for a group of duplicate URLs, it treats that URL as the representative of the whole group — including its indexing directives. A <code>noindex</code> on the elected canonical is therefore a <code>noindex</code> on the cluster. Google&#39;s own documentation is explicit that <a href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"><code>noindex</code> and <code>rel=canonical</code> are contradictory signals</a> and should not be combined: one says &quot;do not index this,&quot; the other says &quot;consolidate this into that.&quot; You are asking for two incompatible things.</p>
+<p>The realistic worst case is not that the stub gets indexed. It is that a 47 KB page you care about disappears because of a fourteen-line file you forgot existed.</p>
+<h3>The fix</h3>
+<p>Remove the <code>noindex</code>. Keep everything else.</p>
+<pre><code class="language-html">&lt;title&gt;Page moved | SmartGen&lt;/title&gt;
+&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=https://smartgentools.com/smartgen-legal-info/&quot;&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;https://smartgentools.com/smartgen-legal-info/&quot;&gt;
+&lt;script&gt;location.replace(&quot;https://smartgentools.com/smartgen-legal-info/&quot;);&lt;/script&gt;
+</code></pre>
+<p>Three unambiguous &quot;go elsewhere&quot; signals remain, and none of them needed <code>noindex</code> to work. The worst outcome now is Google indexing a stub that says &quot;this page has moved&quot; — mildly untidy, and infinitely better than losing the real page.</p>
+<p>We found <strong>13 stubs</strong> in this exact shape across the site. If you serve from a static host and cannot issue real 301s, you almost certainly have some too.</p>
+<blockquote>
+<p><strong>Rule:</strong> on a redirect stub, use <code>rel=canonical</code> <strong>or</strong> <code>noindex</code> — never both. If the page redirects, the canonical is the right tool, because you want the signals consolidated rather than discarded.</p>
+</blockquote>
+<hr>
+<h2 id="conflict-index-html">Conflict 2: a self-canonical pointing at index.html</h2><p><strong>Search Console reports:</strong> usually nothing — Google silently overrules you</p>
+<p>Our library hub at <code>/html-code-library/</code> declared:</p>
+<pre><code class="language-html">&lt;link rel=&quot;canonical&quot; href=&quot;https://smartgentools.com/html-code-library/index.html&quot;&gt;
+</code></pre>
+<p>Both addresses serve the same file. But they are two different URLs, and the page was telling Google to prefer the uglier one — the one nothing links to, that no visitor ever types, and that appears nowhere in the sitemap.</p>
+<p>Google had already overridden it and picked the clean directory form. The inspection showed the disagreement plainly:</p>
+<pre><code>Google&#39;s canonical: /html-code-library/
+User canonical:     /html-code-library/index.html
+</code></pre>
+<p>No error, no warning. Just Google quietly deciding you were wrong.</p>
+<p><strong>Why it still matters even when Google guesses right:</strong> you are relying on Google to correct you. Consolidation is slower and less certain when the strongest signal on the page contradicts every other signal. And on a page where Google has less context, it may not correct you.</p>
+<p><strong>The fix</strong> is a one-line change to match the URL your links and sitemap actually use:</p>
+<pre><code class="language-html">&lt;link rel=&quot;canonical&quot; href=&quot;https://smartgentools.com/html-code-library/&quot;&gt;
+</code></pre>
+<p>Pick one form site-wide — trailing slash or <code>index.html</code>, <code>www</code> or bare, <code>http</code> or <code>https</code> — and make the canonical, the sitemap, and your internal links all agree.</p>
+<hr>
+<h2 id="conflict-duplicate-h1">Conflict 3: two self-canonical pages sharing one h1</h2><p><strong>Search Console reports:</strong> nothing at all. This one is invisible.</p>
+<p>We ran a duplicate sweep across all 412 HTML files. Titles: zero duplicates. Meta descriptions: zero. Body content: zero. But <code>&lt;h1&gt;</code> turned up one pair:</p>
+<pre><code>&quot;CSS Gradient Generator&quot;
+   /css-gradient-generator/
+   /html-code-library/gradient-generator.html
+</code></pre>
+<p>Two pages, same heading, same job, <strong>both declaring themselves canonical</strong>. Nothing in Search Console flags this, because from Google&#39;s perspective nothing is wrong — you have simply published two pages competing for one query and told Google to treat both as originals.</p>
+<p>The performance data settled which one to keep:</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th align="right">Impressions</th>
+<th align="right">Clicks</th>
+<th align="right">Avg. position</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/css-gradient-generator/</code></td>
+<td align="right">15</td>
+<td align="right">1</td>
+<td align="right">50.3</td>
+</tr>
+<tr>
+<td><code>/html-code-library/gradient-generator.html</code></td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">—</td>
+</tr>
+</tbody></table>
+<p><strong>Let the data pick the winner, not your intuition about which page is &quot;better.&quot;</strong> The library version had the nicer interface. It also had nothing to show for it after 90 days. The library copy now canonicalises to the standalone tool.</p>
+<p>To find these on your own site, compare <code>&lt;h1&gt;</code> text — not titles. Titles are usually written with enough variation to look unique while the pages underneath target the identical query. The <code>&lt;h1&gt;</code> is where cannibalisation shows itself honestly.</p>
+<hr>
+<h2 id="conflict-sitemap">Conflict 4: canonicalised pages sitting in the sitemap</h2><p><strong>Search Console reports:</strong> <em>Alternate page with proper canonical tag</em></p>
+<p>This one is not harmful so much as wasteful, and it inflates your not-indexed count until you cannot see the real problems.</p>
+<p>Your sitemap is a list of URLs you are asking Google to index. A page that canonicalises elsewhere is a URL you have already told Google <em>not</em> to index. Submitting it asks Google to crawl a URL so it can be told to go somewhere else. Google files the result under &quot;Alternate page with proper canonical tag,&quot; and your report fills with entries that look like failures but are working as designed.</p>
+<p>We also found six standalone redirect stubs in our sitemap. Our generator did check for redirects — but only on paths ending in <code>/index.html</code>, so a standalone <code>.html</code> redirect walked straight through:</p>
+<pre><code class="language-python"># The bug: only folder-style URLs were checked
+if relative_path.endswith(&#39;/index.html&#39;) and relative_path != &#39;index.html&#39;:
+    if &#39;http-equiv=&quot;refresh&quot;&#39; in head:
+        continue
+
+# The fix: check every .html file, then check the canonical too
+if &#39;http-equiv=&quot;refresh&quot;&#39; in head:
+    continue
+
+if declared_canonical and declared_canonical.rstrip(&#39;/&#39;) != own_url.rstrip(&#39;/&#39;):
+    continue
+</code></pre>
+<p><strong>Two rules for a clean sitemap:</strong> every URL in it returns 200, and every URL in it is self-canonical. Nothing else belongs there. Removing seven URLs from ours cost nothing — every canonical target was already listed.</p>
+<hr>
+<h2 id="detection-script">The detection script</h2><p>Here is the checker we now run before every deploy. It finds all four conflicts in one pass, needs only Python&#39;s standard library, and runs against your built files.</p>
+<pre><code class="language-python">import re, glob, os
+
+SITE = &#39;https://smartgentools.com&#39;
+
+def canonical_of(html):
+    &quot;&quot;&quot;Find rel=canonical without assuming attribute order.&quot;&quot;&quot;
+    for tag in re.findall(r&#39;&lt;link\b[^&gt;]*&gt;&#39;, html):
+        if re.search(r&#39;rel\s*=\s*[&quot;\&#39;]canonical[&quot;\&#39;]&#39;, tag, re.I):
+            href = re.search(r&#39;href\s*=\s*[&quot;\&#39;]([^&quot;\&#39;]+)[&quot;\&#39;]&#39;, tag)
+            return href.group(1) if href else None
+    return None
+
+problems, h1_map = [], {}
+
+for path in sorted(glob.glob(&#39;**/*.html&#39;, recursive=True)):
+    if &#39;node_modules&#39; in path:
+        continue
+    html = open(path, encoding=&#39;utf-8&#39;, errors=&#39;ignore&#39;).read()
+
+    own = f&quot;{SITE}/&quot; + path.replace(&#39;index.html&#39;, &#39;&#39;)
+    canon      = canonical_of(html)
+    is_noindex = bool(re.search(r&#39;name=&quot;robots&quot;[^&gt;]*noindex&#39;, html, re.I))
+    redirects  = &#39;http-equiv=&quot;refresh&quot;&#39; in html[:3000]
+
+    # 1. noindex + canonical on the same page
+    if is_noindex and canon:
+        problems.append((&#39;noindex + canonical&#39;, path, canon))
+
+    # 2. self-canonical naming a different spelling of itself
+    if canon and canon.rstrip(&#39;/&#39;).endswith(&#39;/index.html&#39;):
+        if canon.rstrip(&#39;/&#39;)[:-len(&#39;/index.html&#39;)] == own.rstrip(&#39;/&#39;):
+            problems.append((&#39;canonical points at own index.html&#39;, path, canon))
+
+    # 3. duplicate h1 among self-canonical pages
+    if not redirects and not is_noindex and (not canon or canon.rstrip(&#39;/&#39;) == own.rstrip(&#39;/&#39;)):
+        h1 = re.search(r&#39;&lt;h1[^&gt;]*&gt;(.*?)&lt;/h1&gt;&#39;, html, re.S)
+        if h1:
+            text = re.sub(r&#39;\s+&#39;, &#39; &#39;, re.sub(r&#39;&lt;[^&gt;]+&gt;&#39;, &#39;&#39;, h1.group(1))).strip()
+            h1_map.setdefault(text, []).append(own)
+
+    # 4. in the sitemap but canonicalising elsewhere
+    if canon and canon.rstrip(&#39;/&#39;) != own.rstrip(&#39;/&#39;) and os.path.exists(&#39;sitemap.xml&#39;):
+        if own.rstrip(&#39;/&#39;) in open(&#39;sitemap.xml&#39;, encoding=&#39;utf-8&#39;).read():
+            problems.append((&#39;in sitemap but canonicalises away&#39;, path, canon))
+
+for kind, path, canon in problems:
+    print(f&#39;{kind:&lt;38} {path}\n{&quot;&quot;:&lt;38} -&gt; {canon}&#39;)
+
+for text, urls in h1_map.items():
+    if len(urls) &gt; 1:
+        print(f&#39;duplicate h1: &quot;{text}&quot;&#39;)
+        for u in urls:
+            print(f&#39;{&quot;&quot;:&lt;38} {u}&#39;)
+</code></pre>
+<p>Run it from your project root after a build. On a clean site it prints nothing.</p>
+<hr>
+<h2 id="regex-trap">The regex trap that cost us a day</h2><p>This deserves its own section, because it is the single most likely reason your canonical audit is lying to you.</p>
+<p>Our first version of the checker reported <strong>78 pages with no canonical tag at all.</strong> We nearly spent a day adding tags to all of them. Every one of those pages already had a correct canonical.</p>
+<p>The bug was in the pattern:</p>
+<pre><code class="language-python"># WRONG — assumes rel comes before href
+re.search(r&#39;&lt;link[^&gt;]*rel=&quot;canonical&quot;[^&gt;]*href=&quot;([^&quot;]+)&quot;&#39;, html)
+</code></pre>
+<p>That matches only when <code>rel</code> appears <em>before</em> <code>href</code>. Many build tools, formatters and CMS templates emit attributes alphabetised, which puts <code>href</code> first:</p>
+<pre><code class="language-html">&lt;link href=&quot;https://example.com/page/&quot; rel=&quot;canonical&quot;&gt;
+</code></pre>
+<p>Both forms are equally valid HTML. Attribute order carries no meaning. But the regex above matches the first and silently misses the second — and &quot;silently&quot; is the problem, because a zero result reads like a clean bill of health.</p>
+<p><strong>Parse the tag first, then read its attributes</strong>, exactly as <code>canonical_of()</code> above does. Any checker that assumes attribute order will eventually lie to you, and it will lie in the direction that looks like good news.</p>
+<hr>
+<h2 id="reading-verdicts">Reading Search Console's canonical verdicts</h2><p>Four coverage states relate to canonicals. They mean genuinely different things:</p>
+<table>
+<thead>
+<tr>
+<th>Search Console says</th>
+<th>What it means</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Duplicate, Google chose different canonical than user</strong></td>
+<td>Google saw your canonical and overruled it</td>
+<td>Check the elected URL for <code>noindex</code> first, then work out why Google prefers it</td>
+</tr>
+<tr>
+<td><strong>Alternate page with proper canonical tag</strong></td>
+<td>Working correctly — this is a duplicate consolidating properly</td>
+<td>None. Remove it from your sitemap if it is in there</td>
+</tr>
+<tr>
+<td><strong>Duplicate without user-selected canonical</strong></td>
+<td>You never declared one, so Google picked</td>
+<td>Add a self-referencing canonical</td>
+</tr>
+<tr>
+<td><strong>Duplicate, submitted URL not selected as canonical</strong></td>
+<td>You put it in the sitemap and Google chose another</td>
+<td>Either fix the sitemap or accept Google&#39;s choice</td>
+</tr>
+</tbody></table>
+<p>The first and the last are the ones to investigate. The second is a healthy state that people routinely &quot;fix&quot; into a problem.</p>
+<p>When Google overrules you, it is often right. Before forcing your preference, ask whether the URL Google chose has more internal links, more external links, or an older history. Sometimes the correct fix is to adopt Google&#39;s choice as your declared canonical.</p>
+<hr>
+<h2 id="next-crawl">A canonical does nothing until the next crawl</h2><p>The last thing worth understanding, because it explains why your fixes appear not to work.</p>
+<p>One of our pages had a canonical added on <strong>7 August</strong>. Google&#39;s inspection of it, run on <strong>17 August</strong>, reported:</p>
+<pre><code>Google&#39;s canonical: itself
+User canonical:     (empty)
+Last crawled:       2026-07-02
+</code></pre>
+<p>Google reports no user canonical because at the last crawl there was none. The tag is correct in the HTML and completely invisible to Google until it fetches the page again.</p>
+<p>There is a nasty second-order effect here. That page is excluded from the sitemap — correctly, because it canonicalises elsewhere. But being out of the sitemap means Google has <em>less</em> reason to re-crawl it, so the canonical takes <em>longer</em> to register. <strong>Deliberately de-prioritising a page slows down every future change you make to it.</strong></p>
+<p>Practical consequences:</p>
+<ul>
+<li>Fix canonicals <strong>before</strong> you remove pages from the sitemap, not after.</li>
+<li>After a canonical change, check <code>lastCrawlTime</code> before concluding the fix failed.</li>
+<li>On a low-authority site, expect weeks. Ours had gone six weeks without a re-crawl on some URLs.</li>
+</ul>
+<hr>
+<h2 id="faq">FAQ</h2><h3>Is a canonical tag a directive or a hint?</h3>
+<p>A hint. Google weighs it against internal links, external links, sitemap membership, redirects and content similarity, then picks. <code>noindex</code> and <code>robots.txt</code>, by contrast, are directives. That difference is why a canonical can be overruled and a <code>noindex</code> cannot.</p>
+<h3>Can I use noindex and canonical together?</h3>
+<p>You should not. They ask for contradictory outcomes — one says do not index this page, the other says fold this page&#39;s signals into another. Google&#39;s documentation advises against combining them, and the failure mode is exactly the one in Conflict 1: if Google elects the <code>noindex</code> URL as canonical, the whole cluster can be suppressed.</p>
+<h3>Should every page have a self-referencing canonical?</h3>
+<p>Yes, as a default. It costs nothing and removes ambiguity when a page is reachable through tracking parameters, alternate casing, or both slash forms. Every page on our site is either self-canonical or deliberately canonicalised elsewhere; none is left undeclared.</p>
+<h3>Trailing slash or index.html?</h3>
+<p>Whichever you pick, be consistent. <code>/page/</code> and <code>/page/index.html</code> are different URLs to Google even though the server returns identical bytes. The trailing-slash form is the more common convention and the one visitors and links actually use.</p>
+<h3>Does a canonical pass link equity?</h3>
+<p>Yes — consolidating signals is the whole point. A canonicalised duplicate passes its accumulated signals to the target, which is precisely why canonical beats <code>noindex</code> for duplicate handling: <code>noindex</code> discards those signals instead.</p>
+<h3>How long until a canonical change takes effect?</h3>
+<p>Until the next crawl of the <em>source</em> page, then a further re-evaluation. On a well-crawled site, days. On a low-authority site, weeks — one of ours went six weeks between crawls. Check <code>lastCrawlTime</code> before assuming the change did not work.</p>
+<h3>Can two pages both canonicalise to each other?</h3>
+<p>They can be written that way, and Google will disregard the loop and choose one itself. Cross-canonicals are a bug, not a strategy. Pick a single target and point everything at it.</p>
+<hr>
+<h2>Key Takeaways</h2>
+<ul>
+<li><strong>Never combine <code>noindex</code> with <code>rel=canonical</code>.</strong> If Google elects the <code>noindex</code> URL as the cluster canonical, it can suppress the live page. We found 13 stubs in this shape.</li>
+<li><strong>Canonicalise to the URL your links actually use.</strong> A self-canonical naming your own <code>index.html</code> variant invites Google to treat two spellings as two URLs.</li>
+<li><strong>Compare <code>&lt;h1&gt;</code> text, not titles, to find cannibalisation.</strong> Titles get varied enough to look unique while the pages underneath fight for one query.</li>
+<li><strong>A sitemap holds self-canonical, 200-returning URLs only.</strong> Anything else fills your coverage report with entries that look like failures.</li>
+<li><strong>Parse the tag before reading its attributes.</strong> A regex assuming <code>rel</code> precedes <code>href</code> reports a clean site that is not clean.</li>
+<li><strong>Nothing takes effect until the next crawl</strong>, and pages you hide from the sitemap get re-crawled last.</li>
+</ul>
+<hr>
+<h2>Further Reading</h2>
+<ul>
+<li><a href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls">Google: Consolidate duplicate URLs</a></li>
+<li><a href="https://developers.google.com/search/docs/crawling-indexing/block-indexing">Google: Block indexing with noindex</a></li>
+<li><a href="https://support.google.com/webmasters/answer/7440203">Google Search Central: Page indexing report</a></li>
+<li><a href="https://smartgentools.com/seo-audit-tool/">SmartGen SEO Audit Tool</a> — checks canonicals, titles and headings free, no signup</li>
+<li><a href="https://smartgentools.com/serp-preview-tool/">SmartGen SERP Preview Tool</a> — see the snippet Google will actually show for the URL you kept</li>
+</ul>
+<hr>
+<!-- Premium Author Footer Box - SEO & E-E-A-T Optimized -->
+<div style="margin-top: 4rem; border-top: 2px solid #e2e8f0; padding-top: 3rem;">
+  <p style="text-align: center; color: #64748b; font-size: 0.95rem; margin-bottom: 2rem; font-style: italic; font-weight: 500;">
+    — Written by <strong style="color: #1e293b;">Sayad Md Bayezid Hosan</strong> for the SmartGen blog
+  </p>
+
+  <div style="max-width: 700px; margin: 0 auto; padding: 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); text-align: center; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+    
+    <!-- Profile Image with Verification Badge -->
+    <div style="position: relative; display: inline-block; margin-bottom: 1.5rem;">
+      <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/smartgen-founder.jpg" 
+           alt="Sayad Md Bayezid Hosan - Tech Entrepreneur & Full-Stack Developer" 
+           style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid #2563eb; object-fit: cover; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);">
+      <span style="position: absolute; bottom: 0; right: 0; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 18px; border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" title="Verified Author">✓</span>
+    </div>
+    
+    <!-- Author Name & Title -->
+    <h2 style="margin: 1rem 0 0.5rem 0; font-size: 1.8rem; color: #1e293b; font-weight: 800; font-family: 'Poppins', sans-serif;">Sayad Md Bayezid Hosan</h2>
+    <p style="margin: 0 0 1.5rem 0; color: #2563eb; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px;">Founder & Tech Entrepreneur | Full-Stack Developer</p>
+    
+    <!-- Expertise Tags -->
+    <div style="margin: 1.5rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+      <span style="background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 100%); color: #166534; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #a7f3d0;">Full-stack Developer</span>
+      <span style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); color: #1e40af; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #93c5fd;">Digital Marketer</span>
+      <span style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #92400e; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #fcd34d;">SEO Expert</span>
+      <span style="background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); color: #5b21b6; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #c4b5fd;">Tech Writer</span>
+    </div>
+    
+    <!-- Bio -->
+    <p style="color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; padding: 0 0.5rem;">
+      Full-stack Web Developer, Digital Marketing Strategist, and Tech Entrepreneur with 5+ years of experience delivering innovative digital solutions. Specializing in web development, AI integration, strategic digital marketing, and tech entrepreneurship. As a leading Tech Provider, I help audiences navigate digital platforms safely through permission-based technical solutions and digital business asset management.
+    </p>
+
+    <!-- Credentials & Achievements -->
+    <div style="background: #f0f9ff; border-left: 3px solid #0284c7; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: left;">
+      <p style="margin: 0; color: #0c4a6e; font-size: 0.9rem; font-weight: 600;">Credentials & Expertise:</p>
+      <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0; color: #475569; font-size: 0.9rem; line-height: 1.6;">
+        <li>Founder of CWB Agency & GenZFrontier</li>
+        <li>Final-year English Student at Northern University Bangladesh</li>
+        <li>Specialized in AI-powered web development & content strategy</li>
+        <li>Published author on tech, digital marketing & entrepreneurship</li>
+      </ul>
+    </div>
+    
+    <!-- Social Links & External Profiles -->
+    <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem;">
+      <a href="https://github.com/Sayadbayezid" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1f2937; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="GitHub Profile" onmouseover="this.style.background='#111827'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#1f2937'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0 1 12 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/bayezidhosan" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1877f2; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="Facebook Profile" onmouseover="this.style.background='#0a66c2'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#1877f2'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.988h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.891h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/sayadbayezid" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0077b5; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="LinkedIn Profile" onmouseover="this.style.background='#005885'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#0077b5'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      </a>
+      <a href="https://www.sayadbayezid.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #10b981; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="Personal Website" onmouseover="this.style.background='#059669'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#10b981'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      </a>
+      <a href="https://smartgentools.com/about/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #f59e0b; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="SmartGen About" onmouseover="this.style.background='#d97706'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#f59e0b'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </a>
+      <a href="https://orcid.org/0009-0003-6568-6648" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #a6ce39; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="ORCID Profile" onmouseover="this.style.background='#8ab81f'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#a6ce39'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/></svg>
+      </a>
+    </div>
+
+    <!-- CTA Button -->
+    <a href="https://smartgentools.com/about/" style="display: inline-block; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37, 99, 235, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(37, 99, 235, 0.3)';">
+      Learn More About Me
+    </a>
+  </div>
+</div>
+<hr>
+<p>Read related :</p>
+<ul>
+<li><a href="https://smartgentools.com/blog/discovered-currently-not-indexed-314-url-audit/">Discovered — Currently Not Indexed: What 314 Inspected URLs Showed</a></li>
+<li><a href="https://smartgentools.com/blog/technical-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/">Technical SEO Optimization: The Complete Guide</a></li>
+<li><a href="https://smartgentools.com/blog/on-page-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/">On-Page SEO Optimization: The Complete Guide</a></li>
+<li><a href="https://smartgentools.com/blog/advanced-sitemap-management-submission-auditing-and-error-fixing/">The Ultimate Guide to Sitemaps</a></li>
+</ul>
+<p><em>Every conflict in this article was found on smartgentools.com and fixed in <a href="https://github.com/bayzed123/SmartGenQR.oi/pull/20">this pull request</a>. Part of the <a href="https://smartgentools.com/blog/">SmartGen SEO series</a>.</em></p>
+
+            </div>
+
+            <!-- Adsterra In-Content Ads (Auto-injected) -->
+            <div id="adsterra-in-content-container"></div>
+
+            <div class="ad-cls-wrapper" id="ad-wrapper-native_banner" style="min-height: auto; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
+<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>
+</div>
+<footer class="blog-post-footer reveal-up delay-300">
+                <div class="blog-post-tags">
+                    <span class="blog-tag">Technical SEO</span><span class="blog-tag">Canonical Tags</span><span class="blog-tag">Duplicate Content</span><span class="blog-tag">Google Search Console</span><span class="blog-tag">Indexing</span>
+                </div>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button id="print-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #2563eb; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" title="Print or download this article as PDF">
+                        <span>🖨️</span>
+                        <span>Print / Download</span>
+                    </button>
+                    <button id="share-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #6b7280; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" title="Share this article">
+                        <span>📤</span>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </footer>
+        </article>
+
+        <!-- Author Footer Section - E-E-A-T Signal (After Article, Auto-inserted if not manually placed) -->
+        
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section reveal-up" style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 5rem 2rem; border-radius: 30px; margin: 4rem auto; max-width: 900px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
+            <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
+            <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
+            <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                <label class="sr-only" for="newsletter-name">Your name</label>
+                <input type="text" id="newsletter-name" name="name" placeholder="Your name" autocomplete="given-name" maxlength="60" style="flex: 1; min-width: 180px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-email">Your email address</label>
+                <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
+            </form>
+            <p class="newsletter-feedback" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Related Posts Section -->
+        <section class="blog-related-posts reveal-up" data-post-slug="canonical-tag-conflicts-that-deindex-pages" data-post-tags="Technical SEO,Canonical Tags,Duplicate Content,Google Search Console,Indexing">
+            <h2 class="related-posts-title">📚 Related Posts</h2>
+            <div id="related-posts-grid" class="blog-grid">
+                <!-- Related posts will be injected by JS -->
+            </div>
+        </section>
+    </main>
+
+<aside class="sidebar desktop-only">
+  <div class="ad-cls-wrapper sticky" style="min-height: 600px; position: sticky; top: 20px;"><script>
+  atOptions = {
+    'key' : '96e8bb0db46b2c8ef669fa310ed45f8b',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script></div>
+</aside>
+
+
+    <footer id="main-footer"></footer>
+
+    <!-- Custom Share Modal -->
+    <div id="shareModal" class="share-modal">
+        <div class="share-modal-content">
+            <span class="share-close">&times;</span>
+            <h3>Share this article</h3>
+            <div class="share-buttons">
+                <button onclick="shareTo('facebook')" class="share-btn fb">📘 Facebook</button>
+                <button onclick="shareTo('twitter')" class="share-btn tw">𝕏 Twitter</button>
+                <button onclick="shareTo('linkedin')" class="share-btn li">💼 LinkedIn</button>
+                <button onclick="shareTo('whatsapp')" class="share-btn wa">💬 WhatsApp</button>
+                <button onclick="shareTo('copy')" class="share-btn copy">🔗 Copy Link</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Print & Download Functionality
+            const printBtn = document.getElementById('print-button');
+            if (printBtn) {
+                printBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.print();
+                });
+            }
+            
+            // Share Modal Functionality
+            const shareBtn = document.getElementById('share-button');
+            const modal = document.getElementById('shareModal');
+            const closeBtn = document.querySelector('.share-close');
+            
+            if (shareBtn && modal) {
+                shareBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.classList.add('show');
+                });
+                
+                closeBtn.addEventListener('click', function() {
+                    modal.classList.remove('show');
+                });
+                
+                // Close modal when clicking outside
+                window.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.classList.remove('show');
+                    }
+                });
+            }
+        });
+
+        // Social Sharing Logic
+        function shareTo(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'facebook':
+                    shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+                    break;
+                case 'twitter':
+                    shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+                    break;
+                case 'linkedin':
+                    shareUrl = 'https://www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + title;
+                    break;
+                case 'whatsapp':
+                    shareUrl = 'https://api.whatsapp.com/send?text=' + title + ' ' + url;
+                    break;
+                case 'copy':
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        alert('✅ Link copied to clipboard!');
+                    }).catch(err => {
+                        console.error('Failed to copy: ', err);
+                    });
+                    return; // Exit early for copy
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=500,scrollbars=no,resizable=no');
+            }
+        }
+    </script>
+</body>
+</html>
