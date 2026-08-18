@@ -37,7 +37,7 @@ The generator works intuitively by guiding users through selectable schema types
     *   **Website URL:** `https://smartgentools.com`
     *   **Logo:** *(Leave blank if optional)*
 
-    ![SmartGen Schema Markup Generator Interface](https://i.ibb.co/S4QwpLtB/IMG-5155.jpg)
+    ![SmartGen Schema Markup Generator Interface](/assets/images/blog-mirror/img-5155-c5b1c1a4.jpg)
   </Step>
   <Step title="Review the Generated Output">
     The tool instantly writes the clean, error-free JSON-LD code in the results panel based on your exact inputs. 

@@ -266,7 +266,7 @@ Whichever techniques you apply, treat link building as a measured, ongoing pract
 
 Below is an original infographic built specifically for this guide, mapping the full off-page SEO system — from the fundamentals of what a backlink represents, through legitimate link building strategies, the white hat versus black hat divide, and the practical acquisition techniques covered in this module.
 
-![Off-Page SEO Framework — link building fundamentals, strategies, white hat vs black hat SEO, and link acquisition techniques for beginners 2026](https://i.ibb.co/93vNBxMP/IMG-6104.jpg)
+![Off-Page SEO Framework — link building fundamentals, strategies, white hat vs black hat SEO, and link acquisition techniques for beginners 2026](/assets/images/blog-mirror/img-6104-37d2a59b.jpg)
 
 ---
 
