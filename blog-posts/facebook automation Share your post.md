@@ -4,7 +4,7 @@ seo_title: "Facebook Post Share Automation Extension"
 description: "A browser extension that shares new posts to Facebook automatically: how the task UI, backend API and real-time status tracking fit together."
 keywords: "Facebook automatiom share"
 date: "2026-05-28"
-image: "https://i.ibb.co/svS3qbVG/IMG-4784.jpg"
+image: "/assets/images/blog-mirror/img-4784-3ba4be1c.jpg"
 author: "SmartGen Editorial Team"
 tags: ["Facebook Automation'',AI Tools", "SmartGen"]
 slug: "facebook-post-share-automation-system-is-built-on-a-browser-extension"

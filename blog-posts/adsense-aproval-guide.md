@@ -228,7 +228,7 @@ Every article must have a detailed **author bio at the bottom**. This is non-neg
 
 > **About the Author**
 >
-> ![Sayad Md Bayezid Hosan](https://i.ibb.co/Ngm2PThM/IMG-5650.jpg)
+> ![Sayad Md Bayezid Hosan](/assets/images/blog-mirror/img-5650-ced633f1.jpg)
 >
 > **Sayad Md Bayezid Hosan** is a Digital Marketing Specialist and content strategist with over 5 years of experience in SEO, website monetization, and AdSense optimization. He is the founder of SmartGen Tools (www.smartgentools.com), a platform dedicated to helping bloggers and marketers grow their online income. Sayad has helped dozens of websites achieve AdSense approval and has personally managed ad-monetized sites generating consistent monthly revenue.
 >

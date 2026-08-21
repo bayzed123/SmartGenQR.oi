@@ -4,7 +4,7 @@ seo_title: "AI Vocal Remover: Free, Private Stem Splitting"
 description: "Split any song into vocals, drums, bass and instrumental free in your browser. Powered by Demucs v4, with no upload required."
 keywords: "AI Vocal Remover, Free Audio Stem Splitter, Separate Music and Voice Online, Extract Acapella Free, Best Vocal Remover for Karaoke, SmartGen Tools, Demucs v4 online, no sign up vocal remover"
 date: "2026-05-28"
-image: "https://i.ibb.co/vv4wXW0C/IMG-4064.jpg"
+image: "/assets/images/blog-mirror/img-4064-7a8d3edc.jpg"
 author: "SmartGen Editorial Team"
 tags: ["AI Tools", "SmartGen"]
 slug: "smartgen-ai-vocal-remover-the-vision-behind-100percent-free-private-audio-stem-splitting"

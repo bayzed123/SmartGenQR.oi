@@ -185,14 +185,54 @@ jobs:
                       # page). A sitemap should only ever list the final
                       # destination URL, never a page whose whole job is to
                       # redirect away from itself.
-                      if relative_path.endswith('/index.html') and relative_path != 'index.html':
-                          try:
-                              with open(full_path, 'r', encoding='utf-8') as rf:
-                                  head = rf.read(2048)
-                              if 'http-equiv="refresh"' in head:
+                      #
+                      # This used to test only paths ending in /index.html, so
+                      # six standalone redirect files slipped through --
+                      # api/authentication.html and the five getting-started/
+                      # stubs. Google crawls a submitted URL, finds a redirect,
+                      # and files it under "Page with redirect" in the
+                      # not-indexed report. Check every .html file instead.
+                      try:
+                          with open(full_path, 'r', encoding='utf-8') as rf:
+                              head = rf.read(2048)
+                          if 'http-equiv="refresh"' in head:
+                              continue
+                      except Exception:
+                          pass
+
+                      # Skip any page that names a different URL as its
+                      # canonical. Submitting one of these tells Google to
+                      # crawl a URL that then says "index that other one
+                      # instead", and Google files it under "Alternate page
+                      # with proper canonical tag" in the not-indexed report.
+                      # The canonical target is itself in the sitemap, so
+                      # nothing is lost by leaving the duplicate out.
+                      #
+                      # Note the attribute order: these files are written with
+                      # attributes alphabetised, so href comes before rel. A
+                      # regex assuming rel="canonical" appears first silently
+                      # matches nothing.
+                      try:
+                          with open(full_path, 'r', encoding='utf-8') as rf:
+                              page_html = rf.read()
+                          declared = ''
+                          for link_tag in re.findall(r'<link\b[^>]*>', page_html):
+                              if re.search(r'rel\s*=\s*["\']canonical["\']', link_tag, re.I):
+                                  href_match = re.search(r'href\s*=\s*["\']([^"\']+)["\']', link_tag)
+                                  if href_match:
+                                      declared = href_match.group(1)
+                                  break
+                          if declared:
+                              if relative_path == 'index.html':
+                                  own_url = f'{BASE_URL}/'
+                              elif relative_path.endswith('/index.html'):
+                                  own_url = f'{BASE_URL}/{relative_path[:-11]}/'
+                              else:
+                                  own_url = f'{BASE_URL}/{relative_path}'
+                              if declared.rstrip('/') != own_url.rstrip('/'):
                                   continue
-                          except Exception:
-                              pass
+                      except Exception:
+                          pass
 
                       # Skip legacy nested html-code-library pages that
                       # duplicate a flat html-code-library/<slug>.html page's

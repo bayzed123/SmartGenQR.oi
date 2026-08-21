@@ -4,7 +4,7 @@ seo_title: "SERP Snippet Optimization: Titles and CTR"
 date: "2026-06-27"
 author: "Sayad Md Bayezid Hosan"
 description: "Write titles and meta descriptions that earn clicks: pixel-width limits, proven formulas and the mistakes that cost you CTR."
-image: "https://i.ibb.co/wFrZP3bt/IMG-5651.jpg"
+image: "/assets/images/blog-mirror/img-5651-d2910413.jpg"
 tags: ["SERP", "SEO", "Meta Tags", "CTR Optimization", "Google Search", "SmartGen Tools"]
 category: "SEO Tools & Tips"
 slug: "google-serp-snippet-preview-tool-the-complete-guide-to-optimizing-your-search-appearance-in-2026"

@@ -4,7 +4,7 @@ seo_title: "BMI & BMR Calculator: Complete 2026 Guide"
 date: "2026-06-27"
 author: "Sayad Md Bayezid Hosan"
 description: "Work out your BMI and BMR, understand what the numbers mean, and use them to set realistic calorie and fitness targets."
-image: "https://i.ibb.co/ksgMbpZj/IMG-5653.jpg"
+image: "/assets/images/blog-mirror/img-5653-f2b1108e.jpg"
 tags: ["BMI Calculator", "BMR Calculator", "Body Mass Index", "Basal Metabolic Rate", "Calorie Calculator", "Weight Loss", "Health & Fitness", "Free Health Tool"]
 category: "Health & Fitness Tools"
 slug: "bmi-and-bmr-calculator-the-complete-guide-to-body-mass-index-and-basal-metabolic-rate-in-2026"

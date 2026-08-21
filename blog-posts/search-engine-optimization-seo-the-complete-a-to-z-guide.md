@@ -4,7 +4,7 @@ seo_title: "SEO for Beginners: The Complete A-to-Z Guide"
 description: "A beginner-friendly path through SEO: how search works, keyword research, on-page basics, links, and measuring real progress."
 keywords: "SmartGen, Digital Marketing, Digital Marketing Course, Module 10, SEO, Search Engine Optimization, How Search Engines Work, SERP, Crawling, Indexing"
 date: 2026-07-01
-image: "https://i.ibb.co/pBZ22gqY/IMG-6100.jpg"
+image: "/assets/images/blog-mirror/img-6100-469421d9.jpg"
 author: "Sayad Md Bayezid Hosan"
 tags:
   - SmartGen
@@ -21,7 +21,7 @@ July 01, 2026 • General • By [Sayad Md Bayezid Hosan](https://www.sayadbayez
 
 A complete, practical A to Z guide to Search Engine Optimization for beginners — what SEO actually is and why it underlies everything else in this course, how search engines really work behind the scenes, how to read and understand the SERP the way a search engine sees it, and how crawling and indexing determine whether your content can ever be found at all.
 
-![MODULE 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide for Beginners](https://i.ibb.co/LX0jqQbF/IMG-6102.jpg)
+![MODULE 10: Search Engine Optimization (SEO) — The Complete A to Z Mega Guide for Beginners](/assets/images/blog-mirror/img-6102-daf0a279.jpg)
 
 ---
 
@@ -206,7 +206,7 @@ It's worth being direct about why this module ends with crawling and indexing ra
 
 Below is an original infographic built specifically for this guide, mapping out how search engines discover, store, and rank web content — from crawling and indexing through the modern SERP.
 
-![SEO Fundamentals System — from crawling and indexing through search engine ranking and the modern SERP](https://i.ibb.co/1tk5BfLR/IMG-6101.png)
+![SEO Fundamentals System — from crawling and indexing through search engine ranking and the modern SERP](/assets/images/blog-mirror/img-6101-d464b351.png)
 
 ---
 

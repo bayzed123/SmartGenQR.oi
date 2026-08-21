@@ -3,7 +3,7 @@ title: "SmartGen Launches HTML Marquee Generator"
 description: "Create beautiful scrolling text effects instantly with the new SmartGen HTML Marquee Generator. Fast, customizable, and developer-friendly."
 keywords: "html marquee, css marquee, marquee generator, scrolling text, html tools, smartgen"
 date: 2026-06-15
-image: "https://i.ibb.co/PvXYGqph/IMG-5088.jpg"
+image: "/assets/images/blog-mirror/img-5088-0059acaa.jpg"
 author: "SmartGen"
 tags:
   - SmartGen

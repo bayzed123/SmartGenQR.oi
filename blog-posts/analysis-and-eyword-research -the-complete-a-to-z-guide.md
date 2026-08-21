@@ -214,7 +214,7 @@ The goal of competitor keyword analysis is not to copy a competitor's content di
 
 Below is an original infographic built specifically for this guide, mapping out the keyword research process from understanding keyword types through tool-based research, selection, and competitor analysis.
 
-![Keyword Research System — from keyword types through Google Keyword Planner, keyword selection, and competitor analysis](https://i.ibb.co/jk5V0CVN/IMG-6099.jpg)
+![Keyword Research System — from keyword types through Google Keyword Planner, keyword selection, and competitor analysis](/assets/images/blog-mirror/img-6099-8dc3bdb0.jpg)
 
 ---
 

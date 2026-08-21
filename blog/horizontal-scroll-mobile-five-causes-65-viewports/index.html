@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll on Mobile: 5 Real Causes - SmartGen Blog</title>
+    <meta name="description" content="We measured 13 page templates at five widths and found five distinct causes of horizontal scroll. Here is how to locate the element and fix each one.">
+    <meta name="author" content="Sayad Md Bayezid Hosan">
+    <meta name="keywords" content="CSS, Responsive Design, Mobile Usability, Technical SEO, Core Web Vitals">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Horizontal Scroll on Mobile: Five Real Causes Found Across 65 Measured Viewports">
+    <meta property="og:description" content="We measured 13 page templates at five widths and found five distinct causes of horizontal scroll. Here is how to locate the element and fix each one.">
+    <meta property="og:image" content="https://smartgentools.com/blog-posts/images/horizontal-overflow-audit-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:url" content="https://smartgentools.com/blog/horizontal-scroll-mobile-five-causes-65-viewports/">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-08-18">
+    <meta property="article:author" content="Sayad Md Bayezid Hosan">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Horizontal Scroll on Mobile: Five Real Causes Found Across 65 Measured Viewports">
+    <meta name="twitter:description" content="We measured 13 page templates at five widths and found five distinct causes of horizontal scroll. Here is how to locate the element and fix each one.">
+    <meta name="twitter:image" content="https://smartgentools.com/blog-posts/images/horizontal-overflow-audit-cover.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://smartgentools.com/blog/horizontal-scroll-mobile-five-causes-65-viewports/">
+    
+    <!-- HTTPS Redirect Script -->
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace('https:' + location.href.substring(location.protocol.length));
+        }
+    </script>
+    
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Horizontal Scroll on Mobile: Five Real Causes Found Across 65 Measured Viewports",
+        "description": "We measured 13 page templates at five widths and found five distinct causes of horizontal scroll. Here is how to locate the element and fix each one.",
+        "image": "https://smartgentools.com/blog-posts/images/horizontal-overflow-audit-cover.jpg",
+        "datePublished": "2026-08-18",
+        "author": {
+            "@type": "Person",
+            "name": "Sayad Md Bayezid Hosan",
+            "url": "https://smartgentools.com/about/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "SmartGen",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://smartgentools.com/assets/images/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <!-- JSON-LD BreadcrumbList Schema (rich-result breadcrumb trail) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://smartgentools.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://smartgentools.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Horizontal Scroll on Mobile: Five Real Causes Found Across 65 Measured Viewports", "item": "https://smartgentools.com/blog/horizontal-scroll-mobile-five-causes-65-viewports/" }
+        ]
+    }
+    </script>
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/blog.css">
+    <link rel="stylesheet" href="../../assets/css/ads.css">
+    
+    <!-- Inline Styles for Print and Share Modal -->
+    <style>
+        /* Print Styles */
+        @media print {
+            header, footer, .newsletter-section, .blog-related-posts, #print-button, #share-button, #main-header, #main-footer, .share-modal {
+                display: none !important;
+            }
+            body { background: white; color: black; }
+            .blog-post-container { max-width: 100%; padding: 0; }
+            .blog-post-article { box-shadow: none; border: none; }
+            .blog-post-title { page-break-after: avoid; }
+            .blog-post-content { color: black; }
+            .blog-post-content a { color: #0066cc; text-decoration: underline; }
+            img { max-width: 100%; height: auto; page-break-inside: avoid; }
+            h2, h3, h4 { page-break-after: avoid; page-break-inside: avoid; }
+            p { orphans: 3; widows: 3; }
+            pre { background: #f5f5f5 !important; border: 1px solid #ddd !important; page-break-inside: avoid; }
+        }
+
+        /* Share Modal Styles */
+        .share-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .share-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .share-modal-content {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            max-width: 350px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        .share-modal.show .share-modal-content {
+            transform: translateY(0);
+        }
+        .share-close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 28px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .share-close:hover { color: #000; }
+        .share-modal h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+            font-size: 1.5rem;
+        }
+        .share-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .share-btn {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .share-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+        .share-btn.fb { background: #1877F2; }
+        .share-btn.tw { background: #000000; }
+        .share-btn.li { background: #0A66C2; }
+        .share-btn.wa { background: #25D366; }
+        .share-btn.copy { background: #4b5563; }
+    </style>
+    
+    <!-- Scripts -->
+    <script src="../../assets/js/app.js" defer></script>
+    <script src="../../assets/js/search-data.js" defer></script>
+    <script src="../../assets/js/blog.js" defer></script>
+
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="blog-post-container">
+        <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span class="blog-breadcrumb-sep">/</span>
+            <a href="/blog/">Blog</a>
+            <span class="blog-breadcrumb-sep">/</span>
+            <span class="blog-breadcrumb-current">Horizontal Scroll on Mobile: Five Real Causes Found Across 65 Measured Viewports</span>
+        </nav>
+        <article class="blog-post-article reveal-up">
+            <header class="blog-post-header">
+                <div class="blog-post-meta">
+                    <time datetime="2026-08-18">August 18, 2026</time>
+                    <span class="meta-separator">•</span>
+                    <span class="blog-post-category">SEO Blog</span>
+                    <span class="meta-separator">•</span>
+                    <span class="blog-post-author">By Sayad Md Bayezid Hosan</span>
+                </div>
+                <h1 class="blog-post-title">Horizontal Scroll on Mobile: Five Real Causes Found Across 65 Measured Viewports</h1>
+
+<div class="header-ads-container">
+  <div class="desktop-only"><div class="ad-cls-wrapper" id="ad-wrapper-leaderboard728x90" style="min-height: 90px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f9d4f2f3a29a9dcfb43dddf1fd33eb88',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f9d4f2f3a29a9dcfb43dddf1fd33eb88/invoke.js"></script>
+</div></div>
+  <div class="mobile-only"><div class="ad-cls-wrapper" id="ad-wrapper-mobile320x50" style="min-height: 50px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : '6af746fdd2244652b728e73b1a70db61',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>
+</div></div>
+</div>
+                <p class="blog-post-excerpt">We measured 13 page templates at five widths and found five distinct causes of horizontal scroll. Here is how to locate the element and fix each one.</p>
+            </header>
+
+            <!-- Author Profile Section - Right after title (Auto-inserted if not manually placed) -->
+            <!-- Slim Minimalist Author Profile Box -->
+<div class="author-box" style="display: flex; align-items: center; margin: 2rem 0; padding: 0.75rem 0; gap: 0.75rem;">
+    <!-- Profile Picture -->
+    <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/smartgentools-blog-bayezid-profile.jpg" 
+         alt="Sayad Md Bayezid Hosan" 
+         style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+    
+    <!-- Info -->
+    <div class="author-info" style="flex: 1;">
+        <!-- Byline, not a section heading. Marked up as a heading it sat directly
+         after the post title and jumped two levels in the outline on every
+         post, listing the author as though it were a chapter. -->
+        <p class="author-name" style="margin: 0; color: #1e293b; font-size: 0.95rem; font-weight: 600;"><span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sayad Md Bayezid Hosan</span></span></p>
+        <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">Tech Entrepreneur & Full-stack Developer</p>
+    </div>
+</div>
+
+
+            <img src="https://smartgentools.com/blog-posts/images/horizontal-overflow-audit-cover.jpg" alt="Horizontal Scroll on Mobile: Five Real Causes Found Across 65 Measured Viewports" class="blog-post-featured-image reveal-up delay-100">
+
+            <div class="blog-post-content reveal-up delay-200">
+                <blockquote>
+<p>✅ <strong>Written by Sayad Md Bayezid Hosan</strong> — Founder of SmartGen Tools | Last Updated: August 18, 2026</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+</blockquote>
+<hr>
+<h2>Quick Answer</h2>
+<p><strong>Horizontal scroll on mobile is almost never caused by the element you are looking at.</strong> It is caused by something further up the tree that cannot shrink — a grid column with a fixed floor, a flex child at its default <code>min-width: auto</code>, or a single unbreakable string of text.</p>
+<p>We measured 13 page templates at five widths — 65 combinations — and found <strong>five distinct causes</strong>. Not one of them was visible by eyeballing the page. Every one was found by measuring <code>scrollWidth - clientWidth</code> and then asking the browser which element sat past the right edge.</p>
+<p>The one-line diagnostic, paste into any console:</p>
+<pre><code class="language-js">document.documentElement.scrollWidth - document.documentElement.clientWidth
+</code></pre>
+<p>Anything above <code>0</code> means the page scrolls sideways. This article shows how to find the culprit and fix each of the five causes.</p>
+<hr>
+<h2>📖 Table of Contents</h2>
+<ol>
+<li><a href="#not-a-test">Why &quot;it looks fine on my phone&quot; is not a test</a></li>
+<li><a href="#measurement-setup">The measurement setup</a></li>
+<li><a href="#finding-the-element">Finding the element that actually causes it</a></li>
+<li><a href="#cause-grid">Cause 1: a grid column with a fixed floor</a></li>
+<li><a href="#cause-flex">Cause 2: a flex child that will not shrink</a></li>
+<li><a href="#cause-unbreakable">Cause 3: an unbreakable string</a></li>
+<li><a href="#cause-nowrap">Cause 4: nowrap on a block that contains a second line</a></li>
+<li><a href="#cause-boxsizing">Cause 5: percentage width plus padding</a></li>
+<li><a href="#why-320">Why 320px and not 375px</a></li>
+<li><a href="#ci-check">Putting the check in CI</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ol>
+<hr>
+<h2 id="not-a-test">Why "it looks fine on my phone" is not a test</h2><p>Three reasons opening the site on your own phone will miss this.</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+<p><strong>Your phone is probably wide.</strong> A modern flagship reports 390–430 CSS pixels. Plenty of real traffic arrives at 360, and the narrowest device still in meaningful circulation reports 320. A layout can be perfect at 412 and broken at 320.</p>
+<p><strong>Overflow is often invisible.</strong> If the element hanging past the right edge has no background and no border — a transparent wrapper, an off-canvas menu, an absolutely positioned decoration — you see nothing. The page just feels slightly loose, and swiping left reveals a strip of empty background.</p>
+<p><strong>Your eye is not a measuring instrument.</strong> A 5px overflow is real, breaks the page, and is impossible to spot by looking. Our worst offender was 487px, but the ones that survived longest were 5px and 16px, precisely because nobody could see them.</p>
+<p>Google&#39;s mobile usability signals treat content wider than the screen as a defect, and it is a genuine usability failure regardless: horizontal scroll fights the reader&#39;s thumb on every vertical swipe.</p>
+<hr>
+<h2 id="measurement-setup">The measurement setup</h2><p>The whole test is one number per page per width. If <code>scrollWidth</code> exceeds <code>clientWidth</code> on the root element, the document is wider than the viewport.</p>
+<pre><code class="language-js">const { chromium } = require(&#39;playwright-core&#39;);
+
+(async () =&gt; {
+  const browser = await chromium.launch();
+  const context = await browser.newContext();
+
+  // Third-party requests -- fonts, ads, analytics -- contribute nothing to
+  // layout width, and in a sandboxed environment each one stalls until it
+  // times out. Blocking them took our run from twenty minutes to two.
+  await context.route(&#39;**/*&#39;, (route) =&gt; {
+    const host = new URL(route.request().url()).hostname;
+    return host === &#39;127.0.0.1&#39; ? route.continue() : route.abort();
+  });
+
+  const pages  = [&#39;/&#39;, &#39;/blog/&#39;, &#39;/about/&#39;, &#39;/contact/&#39;, &#39;/terms/&#39;];
+  const widths = [320, 360, 412, 768, 1024];
+  let failures = 0;
+
+  for (const path of pages) {
+    const row = [];
+    for (const width of widths) {
+      const page = await context.newPage();
+      await page.setViewportSize({ width, height: 800 });
+      await page.goto(&#39;http://127.0.0.1:8099&#39; + path, { waitUntil: &#39;load&#39; });
+      await page.waitForTimeout(900);          // let late layout settle
+
+      const overflow = await page.evaluate(() =&gt;
+        document.documentElement.scrollWidth -
+        document.documentElement.clientWidth,
+      );
+
+      row.push(overflow &gt; 1 ? `+${overflow}` : &#39;ok&#39;);
+      if (overflow &gt; 1) failures++;
+      await page.close();
+    }
+    console.log(path.padEnd(28) + row.map((v) =&gt; v.padStart(7)).join(&#39;&#39;));
+  }
+
+  console.log(`\noverflow: ${failures} / ${pages.length * widths.length}`);
+  await browser.close();
+})();
+</code></pre>
+<p><strong>Test one page per template, not every page.</strong> Thirteen templates covered our whole site — homepage, blog index, an article, three tool layouts, docs, and the static pages. Pages sharing a template share their bugs.</p>
+<p>Our first run came back like this:</p>
+<pre><code>page                    320    360    412    768   1024
+/                        ok     ok     ok     ok     ok
+/docs/quickstart/      +487   +447   +395    +39    +93
+/terms/                 +45     +5     ok     ok     ok
+/html-code-library/     +36     ok     ok     ok     ok
+</code></pre>
+<p>Note <code>/terms/</code> at 360: <strong>+5 pixels</strong>. That is a real defect and there is no chance of seeing it by looking.</p>
+<hr>
+<h2 id="finding-the-element">Finding the element that actually causes it</h2><p>Knowing the page overflows is half the job. This walks every element and reports the ones whose right edge is past the viewport:</p>
+<pre><code class="language-js">const culprits = await page.evaluate((viewportWidth) =&gt; {
+  const found = [];
+  document.querySelectorAll(&#39;*&#39;).forEach((el) =&gt; {
+    const r = el.getBoundingClientRect();
+    if (r.width === 0) return;
+    if (r.right &gt; viewportWidth + 1) {
+      const cs = getComputedStyle(el);
+      found.push({
+        tag:   el.tagName.toLowerCase(),
+        id:    el.id,
+        cls:   String(el.className || &#39;&#39;).slice(0, 40),
+        right: Math.round(r.right),
+        width: Math.round(r.width),
+        position: cs.position,
+        overflowX: cs.overflowX,
+        text: (el.textContent || &#39;&#39;).trim().slice(0, 40),
+      });
+    }
+  });
+  return found;
+}, width);
+</code></pre>
+<p><strong>Two things to know when reading its output.</strong></p>
+<p>Filter to <code>r.right &gt; viewportWidth</code>, not <code>r.left &lt; 0</code>. In a left-to-right document, an element hanging off the <em>left</em> edge does not create scrollable width. Our first version flagged the off-canvas mobile menu sitting at <code>left: -281px</code> — noise, every time.</p>
+<p>An element inside a scroll container is a false positive. If an ancestor has <code>overflow-x: auto</code>, its children legitimately extend beyond the viewport; they scroll inside their own box and the document stays put. Check the ancestors before chasing a child.</p>
+<hr>
+<h2 id="cause-grid">Cause 1: a grid column with a fixed floor</h2><p><strong>Our count: 139 rules.</strong> This was by far the most common, and the most invisible.</p>
+<pre><code class="language-css">/* Looks responsive. Is not. */
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+</code></pre>
+<p><code>auto-fit</code> handles the <em>number</em> of columns beautifully. But <code>minmax(300px, 1fr)</code> sets a hard floor: each column is at least 300px wide no matter what. Inside a 320px viewport with 16px of padding either side you have 288px of usable space, so a 300px column overflows by 12px plus the gap. The grid collapses to one column exactly as designed — and that single column is still too wide.</p>
+<p><strong>The fix</strong> is to make the floor conditional:</p>
+<pre><code class="language-css">grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+</code></pre>
+<p><code>min(100%, 300px)</code> resolves to 300px when there is room and to 100% of the container when there is not. Above 300px nothing changes; below it, the column shrinks instead of overflowing. It is a drop-in replacement.</p>
+<p>You can find every instance with one search:</p>
+<pre><code class="language-bash">grep -rn &quot;minmax([0-9]&quot; assets/css/
+</code></pre>
+<p><strong>Do not fix this by forcing one column at a breakpoint.</strong> We had <code>grid-template-columns: 1fr</code> at <code>max-width: 768px</code> in places, which hides the overflow at 768 and leaves it at 320 — and throws away the two-column layout on a 700px tablet that could easily hold it. <code>min()</code> fixes the actual bug at every width.</p>
+<hr>
+<h2 id="cause-flex">Cause 2: a flex child that will not shrink</h2><p><strong>Our worst case: +487px on the docs template.</strong></p>
+<p>This is the least intuitive rule in flexbox. A flex item&#39;s default is <code>min-width: auto</code>, which means <em>do not shrink below my content&#39;s intrinsic minimum size</em>. So <code>flex: 1</code> does not guarantee the item will shrink — if it contains a wide table, a long code block, or an ad slot with a fixed width, the item refuses to go below that and pushes the container open.</p>
+<pre><code class="language-css">/* The item still overflows */
+.main-content { flex: 1; }
+
+/* Now it can actually shrink */
+.main-content { flex: 1; min-width: 0; }
+</code></pre>
+<p><code>min-width: 0</code> overrides the intrinsic floor and lets the item shrink to its share of the container. Its own children then handle their own overflow — which is why the second half matters:</p>
+<pre><code class="language-css">/* Wide children scroll inside their own box, not the document */
+.main-content pre,
+.main-content table { overflow-x: auto; max-width: 100%; }
+.main-content img   { max-width: 100%; height: auto; }
+.main-content .ad-slot { max-width: 100%; overflow: hidden; }
+</code></pre>
+<p>The docs template had three compounding causes: the flex child at <code>min-width: auto</code>, an uncapped 728px ad slot, and a table-of-contents sidebar that stayed visible far below the width it needed. The TOC now hides under 1100px, where it stopped being usable anyway.</p>
+<blockquote>
+<p><strong>Rule of thumb:</strong> any flex or grid child that contains user-generated or variable-width content wants <code>min-width: 0</code>. It costs nothing when there is room.</p>
+</blockquote>
+<hr>
+<h2 id="cause-unbreakable">Cause 3: an unbreakable string</h2><p><strong>Our case: +45px at 320, +5px at 360.</strong></p>
+<p>Our terms page listed its contact link with the bare URL as the anchor text:</p>
+<pre><code class="language-html">&lt;a href=&quot;/contact/&quot;&gt;https://smartgentools.com/contact/&lt;/a&gt;
+</code></pre>
+<p>That string is 244px wide and contains no space, hyphen or other break opportunity. Text wrapping needs somewhere to break; with none available, the word sets the paragraph&#39;s minimum width, and the paragraph sets the page&#39;s.</p>
+<p>The same thing happens with long code tokens, API keys, hashes, file paths and — very often — German compound nouns.</p>
+<pre><code class="language-css">p, li, dd, td, th, blockquote, figcaption {
+  overflow-wrap: break-word;
+}
+</code></pre>
+<p><strong>Use <code>break-word</code>, not <code>anywhere</code>.</strong> <code>break-word</code> only splits a word that genuinely cannot fit on a line of its own, so ordinary prose is untouched. <code>overflow-wrap: anywhere</code> also affects the intrinsic minimum size calculation and will break words in flex and grid contexts where you did not want it.</p>
+<p>For code specifically, choose per element:</p>
+<pre><code class="language-css">code, kbd, samp { overflow-wrap: break-word; }   /* inline: wrap it   */
+pre { overflow-x: auto; max-width: 100%; }       /* block: scroll it  */
+</code></pre>
+<p>Inline code inside a sentence should wrap. A block of code should scroll inside its own box — breaking lines mid-token makes it unreadable and unusable to copy.</p>
+<hr>
+<h2 id="cause-nowrap">Cause 4: nowrap on a block that contains a second line</h2><p><strong>Our case: +36px at 320.</strong></p>
+<p>Our code library header had a brand block written like this:</p>
+<pre><code class="language-html">&lt;a class=&quot;brand&quot; href=&quot;/&quot;&gt;
+  &lt;span class=&quot;mark&quot;&gt;…&lt;/span&gt;
+  &lt;span&gt;SmartGen&lt;span class=&quot;sub&quot;&gt;Free copy-paste HTML &amp;amp; CSS snippets&lt;/span&gt;&lt;/span&gt;
+&lt;/a&gt;
+</code></pre>
+<pre><code class="language-css">.brand { white-space: nowrap; }
+.brand .sub { display: block; font-size: 0.68rem; }
+</code></pre>
+<p><code>white-space: nowrap</code> on the brand keeps the wordmark and icon on one line — sensible. But it inherits, and <code>.sub</code> is a <code>display: block</code> child <em>inside</em> it. So the tagline could not wrap either. A 35-character tagline that must render on one line put a ~200px floor under the header, and at 320px the GitHub button was pushed off the edge.</p>
+<p>The fix is to decide what the small screen actually needs:</p>
+<pre><code class="language-css">@media (max-width: 620px) {
+  .brand { min-width: 0; }
+  .brand .sub { display: none; }   /* the wordmark identifies the site */
+}
+</code></pre>
+<p><strong>The general lesson:</strong> <code>white-space: nowrap</code> on a container affects every descendant. Put it on the specific element that must not wrap — usually a single <code>&lt;span&gt;</code> — never on a wrapper that contains other text.</p>
+<p>The same page taught us a related one earlier. A header had to fit a 169px logo, a 32px gap and 99px of actions — 300px of content inside 272px of usable width, with the logo at <code>nowrap</code> so flex could not shrink it. Reclaiming the gutters and gaps got it back under, without hiding anything:</p>
+<pre><code class="language-css">@media (max-width: 480px) {
+  .container      { padding: 0 1rem; }
+  .header-content { gap: 0.75rem; }
+  .header-actions { gap: 0.5rem; }
+  .logo           { font-size: 1.05rem; min-width: 0; }
+  .logo span      { overflow: hidden; text-overflow: ellipsis; }
+}
+</code></pre>
+<hr>
+<h2 id="cause-boxsizing">Cause 5: percentage width plus padding</h2><p>The oldest bug in CSS, and it still appears in anything injected by JavaScript that does not inherit the page&#39;s reset.</p>
+<pre><code class="language-css">/* 100% + 40px of padding = 100% + 40px */
+.cookie-banner { width: 100%; padding: 20px; }
+</code></pre>
+<p>Under the default <code>box-sizing: content-box</code>, padding is added <em>outside</em> the declared width. Our cookie banner and chatbot panel were both built in JS and both missed the global reset, so each was 40px wider than the viewport.</p>
+<pre><code class="language-css">.cookie-banner { box-sizing: border-box; }
+</code></pre>
+<p>If you inject DOM from JavaScript, set <code>box-sizing</code> explicitly on it. A global <code>*, *::before, *::after { box-sizing: border-box; }</code> in your stylesheet covers markup that exists at parse time, but anything appended later still gets it — <em>unless</em> the component ships its own scoped styles, which is exactly when people forget.</p>
+<hr>
+<h2 id="why-320">Why 320px and not 375px</h2><p>We test at <strong>320, 360, 412, 768 and 1024</strong>, and each earns its place:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Width</th>
+<th>Why it is in the set</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"><strong>320</strong></td>
+<td>The narrowest viewport still in real circulation. Also what you get on a 640px screen zoomed to 200%, which is an accessibility requirement, not an edge case.</td>
+</tr>
+<tr>
+<td align="right"><strong>360</strong></td>
+<td>Extremely common on mid-range Android. Our <code>/terms/</code> bug showed up here at just 5px.</td>
+</tr>
+<tr>
+<td align="right"><strong>412</strong></td>
+<td>Typical large Android. Catches layouts tuned only for iPhone widths.</td>
+</tr>
+<tr>
+<td align="right"><strong>768</strong></td>
+<td>The tablet boundary where two-column layouts start. Bugs cluster right at breakpoints.</td>
+</tr>
+<tr>
+<td align="right"><strong>1024</strong></td>
+<td>Small laptop. Catches the sidebar that needs more room than it admits.</td>
+</tr>
+</tbody></table>
+<p><strong>320 is the one people skip and the one that finds the most.</strong> Testing at 375 because that is your phone means every bug between 320 and 374 ships. And the zoom case makes 320 a genuine accessibility requirement — WCAG expects content to reflow at 400% zoom on a 1280px screen, which is 320 CSS pixels.</p>
+<hr>
+<h2 id="ci-check">Putting the check in CI</h2><p>Fixing 65 viewports once is worth little if the next stylesheet edit reintroduces it. The measurement script exits non-zero when anything overflows, so it drops straight into a workflow:</p>
+<pre><code class="language-yaml">- name: Check for horizontal overflow
+  run: |
+    python3 -m http.server 8099 &amp;
+    sleep 2
+    node scripts/checks/responsive-sweep.js
+</code></pre>
+<p>Two practical notes from running this in anger.</p>
+<p><strong>Block third-party requests.</strong> Fonts, ad scripts and analytics do not affect layout width, and on a restricted runner each one stalls until it times out. Blocking them took our run from twenty minutes to two.</p>
+<p><strong>Allow a 1px tolerance.</strong> Sub-pixel rounding produces a spurious 1px on some layouts. <code>overflow &gt; 1</code> avoids a permanently red build over nothing real.</p>
+<p>Our sweep now reports:</p>
+<pre><code>viewports with horizontal overflow: 0 / 65
+</code></pre>
+<hr>
+<h2 id="faq">FAQ</h2><h3>Why not just add <code>overflow-x: hidden</code> to the body?</h3>
+<p>Because it hides the symptom and leaves the bug. The element is still too wide — now the content is clipped and unreachable instead of scrollable, which is worse for the reader. It also silently breaks <code>position: sticky</code> in many browsers, since <code>overflow-x: hidden</code> makes the element a scroll container. Use it as a deliberate clip on a specific decorative element, never as a page-level fix.</p>
+<h3>How do I find horizontal overflow without writing a script?</h3>
+<p>Paste this in the console to outline every element past the right edge:</p>
+<pre><code class="language-js">document.querySelectorAll(&#39;*&#39;).forEach(el =&gt; {
+  if (el.getBoundingClientRect().right &gt; document.documentElement.clientWidth + 1) {
+    el.style.outline = &#39;2px solid red&#39;;
+    console.log(el);
+  }
+});
+</code></pre>
+<p>Chrome DevTools device toolbar with a custom 320px width will also show the scrollbar appear.</p>
+<h3>Does horizontal scroll affect SEO?</h3>
+<p>Indirectly but really. Google evaluates mobile usability, and content wider than the screen is a recognised defect. More importantly it is a genuine usability problem — a page that slides sideways under the thumb on every vertical swipe gets abandoned, and the engagement signals follow.</p>
+<h3>Is <code>min-width: 0</code> safe to apply everywhere?</h3>
+<p>On flex and grid children that hold variable-width content, yes — it only removes a floor that was rarely wanted. Be deliberate where an item genuinely must not shrink below a size, such as a fixed-width icon column; there, set an explicit <code>min-width</code> rather than leaving <code>auto</code> to guess.</p>
+<h3>What about <code>100vw</code>?</h3>
+<p><code>100vw</code> includes the vertical scrollbar&#39;s width on desktop browsers that reserve space for it, so <code>width: 100vw</code> on a page with a scrollbar is 15–17px wider than the viewport. Use <code>100%</code> for block-level width, or <code>100dvw</code> where support allows.</p>
+<h3>My page only overflows after images load. Why?</h3>
+<p>An image with no <code>width</code> and <code>height</code> attributes has no intrinsic size until it loads, so the layout is computed twice — and the second computation can overflow. Set the attributes (which also prevents layout shift) and give images <code>max-width: 100%; height: auto;</code>.</p>
+<hr>
+<h2>Key Takeaways</h2>
+<ul>
+<li><strong>Measure, do not look.</strong> <code>scrollWidth - clientWidth</code> is the whole test. Our smallest real bug was 5px and no human would have caught it.</li>
+<li><strong><code>minmax(300px, 1fr)</code> is not responsive.</strong> Use <code>minmax(min(100%, 300px), 1fr)</code>. This was 139 of our rules — by far the most common cause.</li>
+<li><strong>Flex children default to <code>min-width: auto</code></strong> and will not shrink below their content. Add <code>min-width: 0</code> to any that hold variable-width content.</li>
+<li><strong><code>white-space: nowrap</code> inherits.</strong> Put it on the element that must not wrap, never on a wrapper containing other text.</li>
+<li><strong>Test 320px.</strong> It is the narrowest real device <em>and</em> the 200%-zoom accessibility case, and it finds bugs that 375 never will.</li>
+<li><strong>Never paper over it with <code>overflow-x: hidden</code></strong> — you trade a scrollable page for an unreachable one, and break <code>position: sticky</code> doing it.</li>
+</ul>
+<hr>
+<h2>Further Reading</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/minmax">MDN: <code>minmax()</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Mastering_wrapping_of_flex_items#the_min-width_and_min-height_of_flex_items">MDN: <code>min-width</code> and the automatic minimum size of flex items</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap">MDN: <code>overflow-wrap</code></a></li>
+<li><a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG 2.1: Reflow (1.4.10)</a></li>
+<li><a href="https://smartgentools.com/html-code-preview/">SmartGen Live HTML/CSS Previewer</a> — paste a layout and resize the preview to reproduce this in seconds</li>
+<li><a href="https://smartgentools.com/seo-audit-tool/">SmartGen SEO Audit Tool</a> — free on-page audit, no signup</li>
+</ul>
+<hr>
+<!-- Premium Author Footer Box - SEO & E-E-A-T Optimized -->
+<div style="margin-top: 4rem; border-top: 2px solid #e2e8f0; padding-top: 3rem;">
+  <p style="text-align: center; color: #64748b; font-size: 0.95rem; margin-bottom: 2rem; font-style: italic; font-weight: 500;">
+    — Written by <strong style="color: #1e293b;">Sayad Md Bayezid Hosan</strong> for the SmartGen blog
+  </p>
+
+  <div style="max-width: 700px; margin: 0 auto; padding: 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); text-align: center; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+    
+    <!-- Profile Image with Verification Badge -->
+    <div style="position: relative; display: inline-block; margin-bottom: 1.5rem;">
+      <img src="https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/smartgen-founder.jpg" 
+           alt="Sayad Md Bayezid Hosan - Tech Entrepreneur & Full-Stack Developer" 
+           style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid #2563eb; object-fit: cover; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);">
+      <span style="position: absolute; bottom: 0; right: 0; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 18px; border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" title="Verified Author">✓</span>
+    </div>
+    
+    <!-- Author Name & Title -->
+    <h2 style="margin: 1rem 0 0.5rem 0; font-size: 1.8rem; color: #1e293b; font-weight: 800; font-family: 'Poppins', sans-serif;">Sayad Md Bayezid Hosan</h2>
+    <p style="margin: 0 0 1.5rem 0; color: #2563eb; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px;">Founder & Tech Entrepreneur | Full-Stack Developer</p>
+    
+    <!-- Expertise Tags -->
+    <div style="margin: 1.5rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+      <span style="background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 100%); color: #166534; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #a7f3d0;">Full-stack Developer</span>
+      <span style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); color: #1e40af; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #93c5fd;">Digital Marketer</span>
+      <span style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #92400e; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #fcd34d;">SEO Expert</span>
+      <span style="background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); color: #5b21b6; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid #c4b5fd;">Tech Writer</span>
+    </div>
+    
+    <!-- Bio -->
+    <p style="color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; padding: 0 0.5rem;">
+      Full-stack Web Developer, Digital Marketing Strategist, and Tech Entrepreneur with 5+ years of experience delivering innovative digital solutions. Specializing in web development, AI integration, strategic digital marketing, and tech entrepreneurship. As a leading Tech Provider, I help audiences navigate digital platforms safely through permission-based technical solutions and digital business asset management.
+    </p>
+
+    <!-- Credentials & Achievements -->
+    <div style="background: #f0f9ff; border-left: 3px solid #0284c7; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: left;">
+      <p style="margin: 0; color: #0c4a6e; font-size: 0.9rem; font-weight: 600;">Credentials & Expertise:</p>
+      <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0; color: #475569; font-size: 0.9rem; line-height: 1.6;">
+        <li>Founder of CWB Agency & GenZFrontier</li>
+        <li>Final-year English Student at Northern University Bangladesh</li>
+        <li>Specialized in AI-powered web development & content strategy</li>
+        <li>Published author on tech, digital marketing & entrepreneurship</li>
+      </ul>
+    </div>
+    
+    <!-- Social Links & External Profiles -->
+    <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem;">
+      <a href="https://github.com/Sayadbayezid" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1f2937; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="GitHub Profile" onmouseover="this.style.background='#111827'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#1f2937'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0 1 12 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/bayezidhosan" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1877f2; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="Facebook Profile" onmouseover="this.style.background='#0a66c2'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#1877f2'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.988h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.891h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/sayadbayezid" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0077b5; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="LinkedIn Profile" onmouseover="this.style.background='#005885'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#0077b5'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      </a>
+      <a href="https://www.sayadbayezid.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #10b981; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="Personal Website" onmouseover="this.style.background='#059669'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#10b981'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      </a>
+      <a href="https://smartgentools.com/about/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #f59e0b; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="SmartGen About" onmouseover="this.style.background='#d97706'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#f59e0b'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </a>
+      <a href="https://orcid.org/0009-0003-6568-6648" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #a6ce39; color: white; border-radius: 50%; transition: all 0.3s ease; text-decoration: none;" title="ORCID Profile" onmouseover="this.style.background='#8ab81f'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#a6ce39'; this.style.transform='translateY(0)';">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/></svg>
+      </a>
+    </div>
+
+    <!-- CTA Button -->
+    <a href="https://smartgentools.com/about/" style="display: inline-block; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37, 99, 235, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(37, 99, 235, 0.3)';">
+      Learn More About Me
+    </a>
+  </div>
+</div>
+<hr>
+<p>Read related :</p>
+<ul>
+<li><a href="https://smartgentools.com/blog/discovered-currently-not-indexed-314-url-audit/">Discovered — Currently Not Indexed: What 314 Inspected URLs Showed</a></li>
+<li><a href="https://smartgentools.com/blog/canonical-tag-conflicts-that-deindex-pages/">Canonical Tags That Quietly De-Index Your Pages</a></li>
+<li><a href="https://smartgentools.com/blog/technical-seo-optimization-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/">Technical SEO Optimization: The Complete Guide</a></li>
+<li><a href="https://smartgentools.com/blog/live-html-css-js-previewer-the-complete-online-code-editor-guide-for-2026/">The Complete Online Code Editor Guide</a></li>
+</ul>
+<p><em>Every number here came from measuring smartgentools.com. The sweep script lives in <a href="https://github.com/bayzed123/SmartGenQR.oi/tree/main/scripts/checks">scripts/checks/</a> — part of the <a href="https://smartgentools.com/blog/">SmartGen SEO series</a>.</em></p>
+
+            </div>
+
+            <!-- Adsterra In-Content Ads (Auto-injected) -->
+            <div id="adsterra-in-content-container"></div>
+
+            <div class="ad-cls-wrapper" id="ad-wrapper-native_banner" style="min-height: auto; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
+<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>
+</div>
+<footer class="blog-post-footer reveal-up delay-300">
+                <div class="blog-post-tags">
+                    <span class="blog-tag">CSS</span><span class="blog-tag">Responsive Design</span><span class="blog-tag">Mobile Usability</span><span class="blog-tag">Technical SEO</span><span class="blog-tag">Core Web Vitals</span>
+                </div>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button id="print-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #2563eb; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" title="Print or download this article as PDF">
+                        <span>🖨️</span>
+                        <span>Print / Download</span>
+                    </button>
+                    <button id="share-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #6b7280; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" title="Share this article">
+                        <span>📤</span>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </footer>
+        </article>
+
+        <!-- Author Footer Section - E-E-A-T Signal (After Article, Auto-inserted if not manually placed) -->
+        
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section reveal-up" style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 5rem 2rem; border-radius: 30px; margin: 4rem auto; max-width: 900px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
+            <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
+            <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
+            <form class="newsletter-form" action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                <label class="sr-only" for="newsletter-name">Your name</label>
+                <input type="text" id="newsletter-name" name="name" placeholder="Your name" autocomplete="given-name" maxlength="60" style="flex: 1; min-width: 180px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <label class="sr-only" for="newsletter-email">Your email address</label>
+                <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <input type="text" name="company_website" class="newsletter-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button type="submit" class="newsletter-submit-btn" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
+            </form>
+            <p class="newsletter-feedback" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Related Posts Section -->
+        <section class="blog-related-posts reveal-up" data-post-slug="horizontal-scroll-mobile-five-causes-65-viewports" data-post-tags="CSS,Responsive Design,Mobile Usability,Technical SEO,Core Web Vitals">
+            <h2 class="related-posts-title">📚 Related Posts</h2>
+            <div id="related-posts-grid" class="blog-grid">
+                <!-- Related posts will be injected by JS -->
+            </div>
+        </section>
+    </main>
+
+<aside class="sidebar desktop-only">
+  <div class="ad-cls-wrapper sticky" style="min-height: 600px; position: sticky; top: 20px;"><script>
+  atOptions = {
+    'key' : '96e8bb0db46b2c8ef669fa310ed45f8b',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script></div>
+</aside>
+
+
+    <footer id="main-footer"></footer>
+
+    <!-- Custom Share Modal -->
+    <div id="shareModal" class="share-modal">
+        <div class="share-modal-content">
+            <span class="share-close">&times;</span>
+            <h3>Share this article</h3>
+            <div class="share-buttons">
+                <button onclick="shareTo('facebook')" class="share-btn fb">📘 Facebook</button>
+                <button onclick="shareTo('twitter')" class="share-btn tw">𝕏 Twitter</button>
+                <button onclick="shareTo('linkedin')" class="share-btn li">💼 LinkedIn</button>
+                <button onclick="shareTo('whatsapp')" class="share-btn wa">💬 WhatsApp</button>
+                <button onclick="shareTo('copy')" class="share-btn copy">🔗 Copy Link</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Print & Download Functionality
+            const printBtn = document.getElementById('print-button');
+            if (printBtn) {
+                printBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.print();
+                });
+            }
+            
+            // Share Modal Functionality
+            const shareBtn = document.getElementById('share-button');
+            const modal = document.getElementById('shareModal');
+            const closeBtn = document.querySelector('.share-close');
+            
+            if (shareBtn && modal) {
+                shareBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.classList.add('show');
+                });
+                
+                closeBtn.addEventListener('click', function() {
+                    modal.classList.remove('show');
+                });
+                
+                // Close modal when clicking outside
+                window.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.classList.remove('show');
+                    }
+                });
+            }
+        });
+
+        // Social Sharing Logic
+        function shareTo(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'facebook':
+                    shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+                    break;
+                case 'twitter':
+                    shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+                    break;
+                case 'linkedin':
+                    shareUrl = 'https://www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + title;
+                    break;
+                case 'whatsapp':
+                    shareUrl = 'https://api.whatsapp.com/send?text=' + title + ' ' + url;
+                    break;
+                case 'copy':
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        alert('✅ Link copied to clipboard!');
+                    }).catch(err => {
+                        console.error('Failed to copy: ', err);
+                    });
+                    return; // Exit early for copy
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=500,scrollbars=no,resizable=no');
+            }
+        }
+    </script>
+</body>
+</html>
