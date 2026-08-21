@@ -25,12 +25,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smartgentools.com/api/authentication.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://smartgentools.com/base64-to-image/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,7 +32,7 @@
   </url>
   <url>
     <loc>https://smartgentools.com/blog-title-generator/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -63,7 +57,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/3ySKg5D4/IMG-4287.webp</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-4287-87ec07c9.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -117,7 +111,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/ksgMbpZj/IMG-5653.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-5653-f2b1108e.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -126,7 +120,16 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/qMqwVFWv/IMG-5260.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-5260-c73c2d87.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/blog/canonical-tag-conflicts-that-deindex-pages/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smartgentools.com/blog-posts/images/canonical-conflicts-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -157,6 +160,15 @@
     </image:image>
   </url>
   <url>
+    <loc>https://smartgentools.com/blog/discovered-currently-not-indexed-314-url-audit/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smartgentools.com/blog-posts/images/index-coverage-audit-cover.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://smartgentools.com/blog/display-advertising-and-remarketing-guide-smartgen/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -171,7 +183,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/cKCS74vJ/auto-sitemap-xml-generator.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/auto-sitemap-xml-generator-2adc944e.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -189,7 +201,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/svS3qbVG/IMG-4784.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-4784-3ba4be1c.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -225,7 +237,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/wFrZP3bt/IMG-5651.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-5651-d2910413.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -235,6 +247,15 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://smartgentools.com/blog-posts/images/module-google-web-analytics-cover.svg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://smartgentools.com/blog/horizontal-scroll-mobile-five-causes-65-viewports/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smartgentools.com/blog-posts/images/horizontal-overflow-audit-cover.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -270,7 +291,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/HTZdyPzF/IMG-4320.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-4320-13754aad.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -315,7 +336,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/whJY0dWN/IMG-5652.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-5652-fe97c596.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -342,7 +363,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/WqNHgyw/IMG-4319.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-4319-20d7d8cb.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -504,7 +525,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/pBZ22gqY/IMG-6100.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-6100-469421d9.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -513,7 +534,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/vv4wXW0C/IMG-4064.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-4064-7a8d3edc.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -522,7 +543,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/PvXYGqph/IMG-5088.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-5088-0059acaa.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -531,7 +552,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/Y7FCcNqP/962-F6-E99-D77-F-4-A13-BC23-B9-F465-ADC8-EA.png</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/962-f6-e99-d77-f-4-a13-bc23-b9-f465-adc8-ea-084b07de.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -540,7 +561,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/hJrgn52m/IMG-5451.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-5451-9eb1cc60.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -567,7 +588,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/NnSFXr37/IMG-4076.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-4076-04ea16ce.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -585,7 +606,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://i.ibb.co/qFmmg0gR/IMG-5648.jpg</image:loc>
+      <image:loc>https://smartgentools.com/assets/images/blog-mirror/img-5648-c0d8abbe.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -883,36 +904,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smartgentools.com/getting-started/deployment.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smartgentools.com/getting-started/faq.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smartgentools.com/getting-started/first-project.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smartgentools.com/getting-started/folder-structure.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smartgentools.com/getting-started/installation.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://smartgentools.com/hash-generator/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -1022,12 +1013,6 @@
   </url>
   <url>
     <loc>https://smartgentools.com/html-code-library/font-code.html</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smartgentools.com/html-code-library/gradient-generator.html</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1538,7 +1523,7 @@
   </url>
   <url>
     <loc>https://smartgentools.com/schema-generator/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

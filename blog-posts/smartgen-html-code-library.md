@@ -10,7 +10,7 @@ tags:
   - "Frontend Development"
   - "Web Tools"
   - "Release Notes"
-image: "https://i.ibb.co/qMqwVFWv/IMG-5260.jpg"
+image: "/assets/images/blog-mirror/img-5260-c73c2d87.jpg"
 author: "SmartGen Editorial Team"
 slug: "building-the-smartgen-html-code-library-79-visual-to-code-tools"
 ---

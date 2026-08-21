@@ -18,7 +18,7 @@ export const SITE = {
   "founder": "Sayad Md Bayezid Hosan",
   "operator": "Connect with Bayezid",
   "toolCount": 128,
-  "blogPostCount": 69,
+  "blogPostCount": 72,
   "categories": [
     "Daily Utilities & Calculators",
     "Developer & Technical",

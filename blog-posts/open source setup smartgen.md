@@ -1,7 +1,7 @@
 ---
 title: "SmartGen Now Open source project"
 date: 2026-06-15
-image: "https://i.ibb.co/Y7FCcNqP/962-F6-E99-D77-F-4-A13-BC23-B9-F465-ADC8-EA.png"
+image: "/assets/images/blog-mirror/962-f6-e99-d77-f-4-a13-bc23-b9-f465-adc8-ea-084b07de.png"
 author: "SmartGen"
 description: "SmartGen Tools is now open source. What that means, how the repository is organised and how to run or contribute to it."
 keywords:

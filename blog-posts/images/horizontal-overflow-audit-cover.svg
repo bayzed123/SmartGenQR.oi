@@ -1,0 +1,108 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hoTitle hoDesc">
+  <title id="hoTitle">Horizontal scroll audit across 65 viewports</title>
+  <desc id="hoDesc">A phone viewport at 320 pixels with content overflowing past its right edge, beside a results grid showing five page templates measured at five widths.</desc>
+  <defs>
+    <linearGradient id="hoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141C33"/>
+      <stop offset="55%" stop-color="#0F1526"/>
+      <stop offset="100%" stop-color="#090D18"/>
+    </linearGradient>
+    <pattern id="hoDots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.4" cy="1.4" r="1.4" fill="#FFFFFF" fill-opacity="0.05"/>
+    </pattern>
+    <radialGradient id="hoGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hoBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#090D18"/>
+      <stop offset="100%" stop-color="#1B2440"/>
+    </linearGradient>
+    <marker id="hoArrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#F87171"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#hoBg)"/>
+  <rect width="1200" height="630" fill="url(#hoDots)"/>
+
+  <!-- Eyebrow -->
+  <text x="80" y="112" font-family="'JetBrains Mono','Courier New',monospace" font-size="15" letter-spacing="3" fill="#38BDF8" font-weight="700">SMARTGEN SEO · MEASURED LAYOUT AUDIT</text>
+
+  <!-- Title -->
+  <text x="78" y="182" font-family="'Sora','Poppins',sans-serif" font-size="45" font-weight="700" fill="#FFFFFF">Horizontal Scroll</text>
+  <text x="78" y="240" font-family="'Sora','Poppins',sans-serif" font-size="45" font-weight="700" fill="#FFFFFF">on Mobile</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="286" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="18" fill="#A9BAD8">Five real causes found across 65 measured viewports</text>
+
+  <!-- Author -->
+  <text x="80" y="326" font-family="'Inter',Helvetica,Arial,sans-serif" font-size="15" fill="#8195B5">A SmartGen Layout Audit · By Sayad Md Bayezid Hosan</text>
+
+  <!-- Badge row -->
+  <g font-family="'Inter',Helvetica,Arial,sans-serif" font-size="13" font-weight="600">
+    <rect x="80" y="358" width="150" height="30" rx="15" fill="none" stroke="#2E3C5C" stroke-width="1.5"/>
+    <text x="99" y="377" fill="#C6D4EC">320 · 360 · 412</text>
+
+    <rect x="242" y="358" width="132" height="30" rx="15" fill="none" stroke="#2E3C5C" stroke-width="1.5"/>
+    <text x="261" y="377" fill="#C6D4EC">13 templates</text>
+
+    <rect x="386" y="358" width="148" height="30" rx="15" fill="none" stroke="#2E3C5C" stroke-width="1.5"/>
+    <text x="405" y="377" fill="#C6D4EC">0 / 65 after fixes</text>
+  </g>
+
+  <!-- Left lower: the diagnostic line -->
+  <g transform="translate(80,424)">
+    <rect x="0" y="0" width="560" height="46" rx="10" fill="#111A2E" stroke="#2A3855" stroke-width="1.5"/>
+    <text x="16" y="29" font-family="'JetBrains Mono','Courier New',monospace" font-size="13.5">
+      <tspan fill="#7F92B4">documentElement.</tspan><tspan fill="#38BDF8">scrollWidth</tspan><tspan fill="#7F92B4"> - </tspan><tspan fill="#38BDF8">clientWidth</tspan>
+    </text>
+  </g>
+
+  <!-- Right: phone overflowing -->
+  <g transform="translate(770,52)">
+    <circle cx="190" cy="150" r="220" fill="url(#hoGlow)"/>
+
+    <!-- viewport frame -->
+    <rect x="20" y="0" width="212" height="300" rx="20" fill="#131D33" stroke="#33445F" stroke-width="2"/>
+    <rect x="98" y="12" width="56" height="7" rx="3.5" fill="#33445F"/>
+
+    <!-- in-bounds content -->
+    <rect x="38" y="36" width="176" height="13" rx="4" fill="#3E5273"/>
+    <rect x="38" y="58" width="140" height="9" rx="4" fill="#2B3A55"/>
+
+    <!-- the overflowing card -->
+    <rect x="38" y="86" width="300" height="86" rx="10" fill="#2A1720" stroke="#F87171" stroke-width="2"/>
+    <text x="52" y="112" font-family="'JetBrains Mono',monospace" font-size="11.5" fill="#F8A9A9">minmax(300px, 1fr)</text>
+    <text x="52" y="134" font-family="'Inter',sans-serif" font-size="11.5" fill="#E7BFC2">column floor &gt; viewport</text>
+    <text x="52" y="156" font-family="'JetBrains Mono',monospace" font-size="11.5" font-weight="700" fill="#F87171">+12px</text>
+
+    <!-- more in-bounds content -->
+    <rect x="38" y="186" width="176" height="9" rx="4" fill="#2B3A55"/>
+    <rect x="38" y="204" width="152" height="9" rx="4" fill="#2B3A55"/>
+    <rect x="38" y="222" width="176" height="9" rx="4" fill="#2B3A55"/>
+
+    <!-- viewport edge marker -->
+    <line x1="232" y1="76" x2="232" y2="250" stroke="#F87171" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="240" y="252" font-family="'JetBrains Mono',monospace" font-size="11" fill="#F87171">viewport edge</text>
+    <line x1="240" y1="129" x2="330" y2="129" stroke="#F87171" stroke-width="1.5" marker-end="url(#hoArrow)"/>
+
+    <text x="20" y="284" font-family="'JetBrains Mono',monospace" font-size="12" fill="#7F92B4">320 px</text>
+
+    <!-- fix badge -->
+    <rect x="20" y="318" width="360" height="40" rx="20" fill="#0F2A22" stroke="#34D399" stroke-width="1.5"/>
+    <path d="M42,330 L46,334 L54,324" stroke="#34D399" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="66" y="343" font-family="'JetBrains Mono',monospace" font-size="12.5" font-weight="700" fill="#34D399">minmax(min(100%, 300px), 1fr)</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <g transform="translate(80,500)">
+    <rect x="0" y="0" width="1040" height="68" rx="14" fill="url(#hoBar)" stroke="#2B3855" stroke-width="1.5"/>
+    <circle cx="28" cy="22" r="5" fill="#F87171"/>
+    <circle cx="48" cy="22" r="5" fill="#FBBF5C"/>
+    <circle cx="68" cy="22" r="5" fill="#34D399"/>
+    <text x="28" y="50" font-family="'JetBrains Mono','Courier New',monospace" font-size="16">
+      <tspan fill="#C6D4EC">grid floor · flex min-width · unbreakable string · nowrap · box-sizing</tspan>
+    </text>
+  </g>
+</svg>

@@ -2,7 +2,7 @@
 title: "Dynamic Sitemap Generation with Real-Time Updates: The Complete Programmatic SEO Blueprint"
 seo_title: "Dynamic Sitemap Generation for Programmatic SEO"
 description: "Generate a sitemap that updates itself: the programmatic SEO blueprint behind real-time sitemaps, plus submission and auditing."
-image: "https://i.ibb.co/cKCS74vJ/auto-sitemap-xml-generator.jpg"
+image: "/assets/images/blog-mirror/auto-sitemap-xml-generator-2adc944e.jpg"
 tags:
   - Dynamic Sitemap
   - Programmatic SEO
@@ -243,5 +243,5 @@ Ready to get started? Visit [Smartgen Utility Platform](https://smartgentools.co
 
 ---
 
-[![Our Sitemap Generator](https://i.ibb.co/cKCS74vJ/auto-sitemap-xml-generator.jpg)](https://smartgentools.com/sitemap-finder-and-downloader/)
+[![Our Sitemap Generator](/assets/images/blog-mirror/auto-sitemap-xml-generator-2adc944e.jpg)](https://smartgentools.com/sitemap-finder-and-downloader/)
 *We do not collect any data. It runs entirely on your browser's local storage. Read our [Privacy Policy](https://smartgentools.com/privacy/).*
