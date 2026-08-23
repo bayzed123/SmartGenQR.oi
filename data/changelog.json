@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix converter suite live paths",
+    "date": "2026-08-23T14:53:36Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Add isolated SmartGen text converter suite",
     "date": "2026-08-23T14:51:16Z",
     "description": "Platform improvement and optimization."
