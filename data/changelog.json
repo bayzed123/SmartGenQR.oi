@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add isolated SmartGen text converter suite",
+    "date": "2026-08-23T14:51:16Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Merge pull request #22 from bayzed123/claude/fix-linkedin-share-svg-covers",
     "date": "2026-08-18T11:44:57Z",
     "description": "Platform improvement and optimization."
