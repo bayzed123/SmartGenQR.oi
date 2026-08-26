@@ -1,5 +1,10 @@
 [
   {
+    "title": "Make Mastercard the active sandbox provider",
+    "date": "2026-08-26T12:31:59Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Improve MPQR sandbox checkout workflow",
     "date": "2026-08-26T12:22:04Z",
     "description": "Platform improvement and optimization."
