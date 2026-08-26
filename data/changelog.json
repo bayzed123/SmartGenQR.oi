@@ -1,5 +1,10 @@
 [
   {
+    "title": "Clarify MPQR roles and QR flow",
+    "date": "2026-08-26T12:38:46Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Document Mastercard MPQR onboarding path",
     "date": "2026-08-26T12:35:34Z",
     "description": "Platform improvement and optimization."
