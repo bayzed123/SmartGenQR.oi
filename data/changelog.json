@@ -1,5 +1,10 @@
 [
   {
+    "title": "docs: record barcode service live verification",
+    "date": "2026-08-26T04:04:19Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: show barcode lifetime service offer",
     "date": "2026-08-26T04:03:17Z",
     "description": "Platform improvement and optimization."
