@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: clarify unavailable payment worker error",
+    "date": "2026-08-26T09:17:39Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "chore: make sandbox worker config deployable",
     "date": "2026-08-26T09:15:26Z",
     "description": "Platform improvement and optimization."
