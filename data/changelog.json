@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: add Mastercard MPQR sandbox adapter",
+    "date": "2026-08-26T08:32:18Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "docs: add payment platform architecture research",
     "date": "2026-08-26T08:23:41Z",
     "description": "Platform improvement and optimization."
