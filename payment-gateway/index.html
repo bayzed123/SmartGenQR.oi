@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
-  <meta name="description" content="SmartGen Mastercard Merchant Presented QR sandbox checkout.">
-  <title>SmartGen Secure Checkout | Mastercard MPQR Sandbox</title>
+  <meta name="description" content="SmartGen Mastercard MPQR Sandbox Integration & Payment Orchestration Prototype.">
+  <title>SmartGen Mastercard MPQR Sandbox Integration & Payment Orchestration Prototype</title>
   <style>
     :root { color-scheme: dark; --bg:#070b13; --panel:#111a29; --line:#2a3b52; --text:#eef5ff; --muted:#9dafc7; --blue:#00a9e0; --blue2:#0063a4; --green:#31d0a0; --yellow:#f4c95d; }
     * { box-sizing: border-box; }
@@ -41,26 +41,26 @@
   <main>
     <section class="panel">
       <div class="brand"><span class="mark">S</span><span>SmartGen Checkout</span></div>
-      <p class="eyebrow">Active payment provider · Mastercard MPQR</p>
-      <h1>Secure sandbox payments for SmartGen.</h1>
-      <p>SmartGen’s Mastercard Merchant Presented QR prototype sends payment requests through a protected Cloudflare Worker. The browser never receives the OAuth signing key or provider credentials.</p>
+      <p class="eyebrow">Developer demo · API lab · Partner onboarding proof</p>
+      <h1>SmartGen Mastercard MPQR Sandbox Integration & Payment Orchestration Prototype.</h1>
+      <p>SmartGen’s Mastercard Merchant Presented QR sandbox integration sends test payment requests through a protected Cloudflare Worker. The browser never receives the OAuth signing key or provider credentials.</p>
       <div class="facts"><span class="fact">Mastercard sandbox</span><span class="fact">Server-side OAuth</span><span class="fact">Transfer retrieval</span><span class="fact">Mobile friendly</span></div>
       <div class="notice"><strong>Sandbox only:</strong> transactions are simulated for development. No real card is charged and no real funds move.</div>
     </section>
 
     <section class="panel">
       <h2>Start Mastercard testing</h2>
-      <p>Open the sandbox lab to create a test transfer, view the approval response, and retrieve the latest status using the returned transfer ID.</p>
+      <p>Open the sandbox lab to create a simulated test transfer and inspect the safe response. Public retrieval is intentionally blocked unless an authenticated internal order is bound to the request.</p>
       <a class="button" href="/payment-gateway/mastercard-mpqr.html">Open Mastercard MPQR Sandbox →</a>
       <div class="status">Worker online · Mastercard sandbox ready</div>
       <div class="steps">
         <div class="step"><span class="number">1</span><div><strong>Enter a test amount</strong><p>Use sandbox values only. The current test configuration approves amounts above 50 USD.</p></div></div>
         <div class="step"><span class="number">2</span><div><strong>Create a transfer</strong><p>SmartGen signs the request on the server and returns a Mastercard transfer ID.</p></div></div>
-        <div class="step"><span class="number">3</span><div><strong>Verify the result</strong><p>Use the retrieval control to confirm the latest provider status before treating a transfer as complete.</p></div></div>
+        <div class="step"><span class="number">3</span><div><strong>Keep Production gated</strong><p>Real fulfillment requires retrieval trust, a durable payment core, and an approved sponsor/acquirer/processor path.</p></div></div>
       </div>
       <div class="security"><strong>Security note.</strong> This prototype uses masked sandbox account fixtures. Never enter a real PAN, CVV, PIN, OTP, or private key into this page.</div>
     </section>
-    <footer>SmartGen payment orchestration prototype · Mastercard sandbox · Production access requires provider approval and compliance review</footer>
+    <footer>SmartGen Mastercard MPQR Sandbox Integration & Payment Orchestration Prototype · No real-money use or live merchant fulfillment</footer>
   </main>
 </body>
 </html>

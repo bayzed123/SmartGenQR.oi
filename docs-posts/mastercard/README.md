@@ -1,17 +1,25 @@
 ---
 slug: "mastercard-mpqr-a-to-z"
-title: "Mastercard Merchant Presented QR: SmartGen A-to-Z Guide"
-description: "Complete SmartGen guide for Mastercard MPQR sandbox integration, OAuth 1.0a, QR roles, partner onboarding, MTF, production readiness, security, reconciliation, and Bangladesh operating considerations."
+title: "SmartGen Mastercard MPQR Sandbox Integration & Payment Orchestration Prototype"
+description: "A-to-Z SmartGen developer demo, API lab, partner-onboarding proof, architecture guide, security controls, MTF path, and Production gates for Mastercard MPQR."
 order: 1
 ---
 
-# Mastercard Merchant Presented QR: SmartGen A-to-Z Guide
+# SmartGen Mastercard MPQR Sandbox Integration & Payment Orchestration Prototype
 
 ## Read this first
 
-This documentation explains how to build and operate SmartGen’s **Mastercard Merchant Presented QR (MPQR)** integration safely. It covers the current sandbox prototype and the steps required before a real-money launch.
+This documentation explains how to build and operate **SmartGen Mastercard MPQR Sandbox Integration & Payment Orchestration Prototype** safely. It covers the current developer demo, API lab, partner-onboarding demonstration, architecture proof, and the steps required before a real-money launch.
 
-> **The current SmartGen integration is a successful sandbox API prototype. It is not a live merchant account, acquiring bank, receiving institution, originating institution, wallet, payment service provider, or independently licensed payment gateway.**
+> **The current SmartGen integration is a successful sandbox API prototype. It is not a live merchant account, acquiring bank, receiving institution, originating institution, wallet, payment service provider, or independently licensed payment gateway. No real-money use or live merchant fulfillment is permitted.**
+
+## Non-negotiable Production gates
+
+Before any live merchant fulfillment, all three gates must be complete:
+
+1. **Retrieval trust fix:** retrieval must be bound to an authenticated internal order and stored payment attempt. An `APPROVED` status alone is never payment proof.
+2. **Durable payment core:** the system must have database-backed order state, durable idempotency, timeout/UNKNOWN recovery, reconciliation, approved refund/reversal operations, and an administrator audit trail.
+3. **Regulated launch path:** SmartGen must have an approved sponsor/acquirer/processor, Mastercard MTF/certification/Partner Reference ID, activated Production keys, settlement arrangements, and written Bangladesh operating approval appropriate to the business model.
 
 Mastercard’s MPQR program uses licensed financial institutions and approved participants. Mastercard provides APIs, processing, and program infrastructure, but a licensed financial institution transmits and settles funds. SmartGen must obtain the appropriate sponsor, bank, processor, program approval, and regulatory clearance before accepting live customer money.[1]
 

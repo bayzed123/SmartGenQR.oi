@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://smartgen-bkash-sandbox.sayadmdbayezidhosan.workers.dev; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
-  <meta name="description" content="SmartGen Mastercard Merchant Presented QR sandbox checkout and transfer retrieval lab.">
-  <title>SmartGen Mastercard MPQR Sandbox</title>
+  <meta name="description" content="SmartGen Mastercard MPQR Sandbox Integration & Payment Orchestration Prototype.">
+  <title>SmartGen Mastercard MPQR Sandbox Integration & Payment Orchestration Prototype</title>
   <style>
     :root {
       color-scheme: dark;
@@ -126,10 +126,10 @@
         <a href="/payment-gateway/">← Back to SmartGen Checkout</a>
         <span id="health" class="health">Checking Worker…</span>
       </div>
-      <p class="eyebrow">Mastercard Merchant Presented QR</p>
-      <h1>Sandbox checkout lab</h1>
-      <p class="intro">This is SmartGen’s server-side Mastercard sandbox prototype. The browser sends only a test amount and reference; OAuth signing keys and provider credentials remain inside the Cloudflare Worker.</p>
-      <div class="notice"><strong>Sandbox only:</strong> this creates simulated transactions and does not charge a real card or move real funds. Do not enter customer card information here.</div>
+      <p class="eyebrow">Developer demo · API lab · Partner onboarding proof</p>
+      <h1>SmartGen Mastercard MPQR Sandbox Integration & Payment Orchestration Prototype.</h1>
+      <p class="intro">This is SmartGen’s server-side Mastercard Merchant Presented QR sandbox integration and payment-orchestration prototype. The browser sends only sandbox test data; OAuth signing keys and provider credentials remain inside the Cloudflare Worker.</p>
+      <div class="notice"><strong>Sandbox only:</strong> this creates simulated transactions and does not charge a real card or move real funds. No result from this public page authorizes live merchant fulfillment.</div>
 
       <section class="qr-status" aria-labelledby="qrStatusTitle">
         <h2 id="qrStatusTitle">QR code status</h2>
@@ -138,7 +138,7 @@
           <li>An approved Receiving Institution or processor issues the merchant’s Mastercard QR payload.</li>
           <li>SmartGen binds that approved static or dynamic QR payload to an internal order and amount.</li>
           <li>The customer scans it with an eligible payment application.</li>
-          <li>The approved payment participant authorizes the transfer; SmartGen retrieves and verifies the final status.</li>
+          <li>The approved payment participant authorizes the transfer; a protected SmartGen order service verifies the final status before fulfillment.</li>
         </ol>
       </section>
 
@@ -164,7 +164,7 @@
         <h2 id="resultTitle">Transfer result</h2>
         <div id="resultGrid" class="result-grid"></div>
         <div class="actions">
-          <button id="retrieveCurrent" class="secondary" type="button">Refresh transfer status</button>
+          <button id="retrieveCurrent" class="secondary" type="button">Protected status check</button>
           <button id="copyTransfer" class="secondary" type="button">Copy transfer ID</button>
         </div>
         <details>
@@ -181,10 +181,10 @@
 
       <section class="result" aria-labelledby="retrieveTitle">
         <h2 id="retrieveTitle">Retrieve an existing sandbox transfer</h2>
-        <p class="hint">Paste a transfer ID returned by a successful sandbox request.</p>
+        <p class="hint">Public arbitrary-ID retrieval is disabled. Production verification requires an authenticated internal order and exact stored transfer binding.</p>
         <div class="retrieve">
           <input id="retrieveId" placeholder="mtrn_…" autocomplete="off">
-          <button id="retrieveButton" type="button">Retrieve status</button>
+          <button id="retrieveButton" type="button">Attempt protected status check</button>
         </div>
         <p id="retrieveStatus" class="status" role="status" aria-live="polite"></p>
       </section>
