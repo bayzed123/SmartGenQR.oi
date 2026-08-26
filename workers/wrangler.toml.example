@@ -1,0 +1,25 @@
+name = "smartgen-bkash-sandbox"
+main = "bkash-payment-gateway.js"
+compatibility_date = "2026-08-26"
+
+[vars]
+# Use the exact base URL supplied during bKash onboarding.
+BKASH_BASE_URL = "https://your-bkash-sandbox-base-url"
+# The sample supplied by SmartGen uses the following v2-style paths.
+BKASH_TOKEN_PATH = "/tokenized-checkout/token/grant"
+BKASH_CREATE_PATH = "/tokenized-checkout/payment/create"
+BKASH_EXECUTE_PATH = "/tokenized-checkout/payment/execute"
+BKASH_QUERY_PATH = "/tokenized-checkout/payment/query"
+# The user-supplied v2 sample uses an authorization token directly.
+# Set BKASH_AUTH_PREFIX = "Bearer" only if your bKash onboarding profile requires it.
+BKASH_AUTH_PREFIX = ""
+ALLOWED_ORIGINS = "https://bayzed123.github.io"
+FRONTEND_URL = "https://bayzed123.github.io/SmartGenQR.oi/payment-gateway/"
+# Optional: set this to the deployed Worker callback URL.
+# BKASH_CALLBACK_URL = "https://smartgen-bkash-sandbox.<subdomain>.workers.dev/api/payments/callback"
+
+# Store these with `wrangler secret put`, never in this file:
+# BKASH_USERNAME
+# BKASH_PASSWORD
+# BKASH_APP_KEY
+# BKASH_APP_SECRET

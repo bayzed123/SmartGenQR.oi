@@ -1,0 +1,8 @@
+{
+  "name": "smartgen-bkash-payment-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node smoke-test.mjs"
+  }
+}

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartGen Secure Checkout | bKash Sandbox</title>
+  <meta name="description" content="Secure SmartGen bKash sandbox checkout powered by a server-side Cloudflare Worker.">
+  <style>
+    :root { color-scheme: dark; --bg: #080b12; --panel: #111827; --line: #283548; --text: #edf2f7; --muted: #9caac0; --pink: #e2136e; --pink2: #ff4b9a; --green: #20c997; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: radial-gradient(circle at 20% 0%, #32122d 0, transparent 38%), radial-gradient(circle at 100% 100%, #101d42 0, transparent 36%), var(--bg); color: var(--text); }
+    main { width: min(100%, 980px); display: grid; grid-template-columns: 1.05fr .95fr; gap: 20px; }
+    .panel { border: 1px solid var(--line); background: color-mix(in srgb, var(--panel) 93%, transparent); border-radius: 24px; padding: clamp(24px, 5vw, 48px); box-shadow: 0 24px 80px #0006; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .02em; }
+    .mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: linear-gradient(135deg, var(--pink), var(--pink2)); color: white; }
+    h1 { font-size: clamp(2rem, 6vw, 4rem); line-height: .98; letter-spacing: -.05em; margin: 42px 0 20px; max-width: 600px; }
+    h2 { margin: 0 0 18px; font-size: 1.35rem; }
+    p { color: var(--muted); line-height: 1.7; }
+    .eyebrow { color: #ff8bbd; text-transform: uppercase; letter-spacing: .15em; font-size: .76rem; font-weight: 800; }
+    .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .fact { border: 1px solid var(--line); border-radius: 999px; padding: 9px 13px; color: #c9d4e6; font-size: .84rem; }
+    label { display: grid; gap: 8px; margin-top: 18px; color: #c9d4e6; font-size: .9rem; font-weight: 700; }
+    input { width: 100%; border: 1px solid var(--line); border-radius: 12px; background: #0b111d; color: var(--text); padding: 14px 15px; font: inherit; outline: none; }
+    input:focus { border-color: var(--pink2); box-shadow: 0 0 0 3px #ff4b9a22; }
+    button { width: 100%; margin-top: 24px; border: 0; border-radius: 12px; padding: 15px 18px; color: white; background: linear-gradient(135deg, var(--pink), #b90c57); font: inherit; font-weight: 800; cursor: pointer; transition: transform .15s ease, filter .15s ease; }
+    button:hover { transform: translateY(-1px); filter: brightness(1.1); }
+    button:disabled { opacity: .65; cursor: wait; transform: none; }
+    .status { min-height: 25px; margin: 16px 0 0; font-size: .9rem; }
+    .status.error { color: #ff9aaa; }
+    .status.ok { color: #72e4bd; }
+    .secure { display: flex; gap: 10px; align-items: flex-start; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; line-height: 1.55; }
+    .secure strong { color: var(--text); }
+    .result { display: none; }
+    .result.visible { display: block; }
+    code { color: #ff9ac3; }
+    @media (max-width: 760px) { main { grid-template-columns: 1fr; } h1 { margin-top: 32px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="panel">
+      <div class="brand"><span class="mark">S</span><span>SmartGen Checkout</span></div>
+      <p class="eyebrow">bKash sandbox gateway</p>
+      <h1>Pay simply. Move forward.</h1>
+      <p>This test checkout sends payment details to a protected server-side Worker. Your bKash credentials never enter this page or the browser.</p>
+      <div class="facts"><span class="fact">BDT payments</span><span class="fact">Hosted bKash page</span><span class="fact">Server-side token flow</span></div>
+    </section>
+
+    <section class="panel">
+      <h2>Start a sandbox payment</h2>
+      <p>Enter a small test amount, then continue to bKash. Use only sandbox credentials and test wallets.</p>
+      <form id="payment-form">
+        <label for="amount">Amount (BDT)
+          <input id="amount" name="amount" inputmode="decimal" type="number" min="1" step="0.01" value="4.53" required>
+        </label>
+        <label for="payerReference">Payer reference
+          <input id="payerReference" name="payerReference" maxlength="255" value="Customer" required>
+        </label>
+        <button id="pay-button" type="submit">Continue to bKash</button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </form>
+      <div id="result" class="result"></div>
+      <div class="secure"><span>◈</span><span><strong>Security note.</strong> The Worker validates the amount, creates a unique invoice, obtains the bKash token server-side, and forwards only the hosted checkout URL to this page.</span></div>
+    </section>
+  </main>
+  <script>
+    // Set this to the deployed Worker URL, for example:
+    // https://smartgen-bkash-sandbox.<your-subdomain>.workers.dev
+    const PAYMENT_WORKER_URL = window.SMARTGEN_PAYMENT_WORKER_URL || "https://smartgen-bkash-sandbox.workers.dev";
+    const form = document.querySelector("#payment-form");
+    const button = document.querySelector("#pay-button");
+    const status = document.querySelector("#status");
+
+    function setStatus(message, type = "") {
+      status.textContent = message;
+      status.className = `status ${type}`;
+    }
+
+    const params = new URLSearchParams(location.search);
+    if (params.get("status")) {
+      const state = params.get("status");
+      setStatus(state === "success" ? `Payment completed${params.get("trxID") ? ` · ${params.get("trxID")}` : ""}` : `Payment status: ${state}${params.get("message") ? ` — ${params.get("message")}` : ""}`, state === "success" ? "ok" : "error");
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      button.disabled = true;
+      setStatus("Creating a secure bKash payment…");
+      const amount = document.querySelector("#amount").value;
+      const payerReference = document.querySelector("#payerReference").value.trim();
+      try {
+        const response = await fetch(`${PAYMENT_WORKER_URL.replace(/\/$/, "")}/api/payments/create`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ amount, payerReference, platform: location.origin })
+        });
+        const data = await response.json();
+        if (!response.ok || !data.bkashURL) throw new Error(data.error || "The Worker did not return a bKash checkout URL");
+        setStatus("Redirecting to the bKash sandbox…", "ok");
+        location.assign(data.bkashURL);
+      } catch (error) {
+        setStatus(error.message, "error");
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
