@@ -1,5 +1,10 @@
 [
   {
+    "title": "docs: record sandbox and Pages verification",
+    "date": "2026-08-26T07:54:05Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: add bKash sandbox payment gateway",
     "date": "2026-08-26T07:52:52Z",
     "description": "Platform improvement and optimization."
