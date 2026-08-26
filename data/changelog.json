@@ -1,5 +1,10 @@
 [
   {
+    "title": "docs: add barcode client integration guide",
+    "date": "2026-08-26T04:01:22Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: add self-hosted privacy-first barcode service",
     "date": "2026-08-26T04:00:15Z",
     "description": "Platform improvement and optimization."
