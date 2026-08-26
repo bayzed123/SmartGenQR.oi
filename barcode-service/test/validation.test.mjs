@@ -22,15 +22,19 @@ assert.equal(barcode.encode("UPC", "03600029145").modules, "10100011010111101010
 assert.equal(barcode.encode("CODE39", "A").modules, "10001011101110101110101000101110100010111011101");
 assert.equal(barcode.encode("CODE128", "A").modules, "1101001000010100011000100010110001100011101011");
 
-const parityExamples = [
-  "012345678901", "112345678901", "212345678901", "312345678901", "412345678901",
-  "512345678901", "612345678901", "712345678901", "812345678901", "912345678901"
-];
-for (const body of parityExamples) {
+const leftDigitPatterns = {
+  L: ["0011001", "0010011", "0111101", "0100011", "0110001", "0101111"],
+  G: ["0110011", "0011011", "0100001", "0011101", "0111001", "0000101"],
+};
+const eanParitySequences = ["LLLLLL", "LLGLGG", "LLGGLG", "LLGGGL", "LGLLGG", "LGGLLG", "LGGGLL", "LGLGLG", "LGLGGL", "LGGLGL"];
+for (const [prefix, parity] of eanParitySequences.entries()) {
+  const body = `${prefix}12345678901`;
   const encoded = barcode.encode("EAN13", body);
   assert.equal(encoded.valid, true);
   assert.equal(encoded.modules.length, 95);
   assert.equal(encoded.modules.startsWith("101"), true);
   assert.equal(encoded.modules.endsWith("101"), true);
+  const expectedLeftModules = parity.split("").map((set, index) => leftDigitPatterns[set][index]).join("");
+  assert.equal(encoded.modules.slice(3, 45), expectedLeftModules);
 }
 console.log("SmartGen Barcode Service validation tests passed.");

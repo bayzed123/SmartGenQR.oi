@@ -12,7 +12,7 @@ The static tool was checked directly from `barcode-service/index.html` without a
 | External-resource check | The browser resource list contains no non-local requests when the static page is opened from the repository. |
 | Corrected EAN-13 browser flow | A 12-digit input (`590123412345`) becomes `5901234123457`, produces SVG bars, and reports valid without external resources. |
 | JavaScript validation tests | Pass with `node barcode-service/test/validation.test.mjs`. |
-| Encoder regression coverage | Exact module strings are asserted for EAN-13, UPC-A, Code 39, and Code 128; all ten EAN-13 prefix parity sequences are exercised. |
+| Encoder regression coverage | Exact module strings are asserted for EAN-13, UPC-A, Code 39, and Code 128; all ten EAN-13 prefix parity sequences assert their expected left-side module output. |
 | Public-domain delivery | `https://smartgentools.com/barcode-service/?v=ae0c3ab` displays the $10 lifetime message and the browser-only integration flow. |
 
 The complete tool remains static. The client integration callback only validates and normalizes product barcode data before the client’s existing product form submits to the client’s own backend.
