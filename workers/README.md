@@ -49,6 +49,35 @@ curl -sS -X POST https://YOUR_WORKER.workers.dev/api/payments/create \
 
 A correctly configured response should include a newly generated `paymentId`, a new `bkashURL`, `amount`, `currency`, and `transactionStatus`. A payment ID is single-use for execution and should not be reused after a completed or failed execution.
 
+## Mastercard MPQR sandbox prototype
+
+The Worker also exposes `POST /api/mastercard/mpqr/payment` and `GET /api/mastercard/mpqr/retrieve`. These routes call Mastercard’s Merchant Presented QR Sandbox API using server-side OAuth 1.0a with an RSA-SHA256 signature and request-body hash. The sandbox base URL is `https://sandbox.api.mastercard.com/send/static`, and the documented sandbox partner ID is `ptnr_BEeCrYJHh2BXTXPy_PEtp-8DBOo`.
+
+Create a Mastercard Developers project for the **Mastercard Merchant Presented QR** service, download the sandbox PKCS12 key, and convert or load the private signing key as PKCS#8 PEM for the Worker. Configure the following secrets with Wrangler:
+
+```bash
+npx wrangler secret put MASTERCARD_CONSUMER_KEY
+npx wrangler secret put MASTERCARD_SIGNING_KEY_PEM
+npx wrangler secret put MASTERCARD_TEST_SENDER_ACCOUNT_URI
+npx wrangler secret put MASTERCARD_TEST_RECIPIENT_ACCOUNT_URI
+```
+
+Create a test transfer:
+
+```bash
+curl -sS -X POST https://YOUR_WORKER.workers.dev/api/mastercard/mpqr/payment \
+  -H 'content-type: application/json' \
+  -d '{"amount":"51.00","transferReference":"SGMPQR_TEST_001"}'
+```
+
+The sandbox documentation uses amounts greater than 50 to simulate an `APPROVED` merchant transfer, while selected cent amounts simulate declines or errors. Save the returned transfer `id`, `transfer_reference`, and `correlation-id`, then retrieve it:
+
+```bash
+curl -sS "https://YOUR_WORKER.workers.dev/api/mastercard/mpqr/retrieve?transferId=YOUR_TRANSFER_ID"
+```
+
+The sandbox is a simulated environment for development and is not evidence that SmartGen is approved to accept live Mastercard payments. Production access requires the appropriate Mastercard program participation, a licensed or sponsored financial institution relationship, and compliance with applicable regulations.
+
 ## Security checklist
 
 Credentials are read only from Worker secrets and are never sent to the browser. CORS is limited to `ALLOWED_ORIGINS`; input is validated before bKash requests; merchant invoice numbers are generated server-side; bKash callback results are followed by server-side execution; and payment status is never accepted from a browser-only field as proof of settlement.

@@ -15,6 +15,14 @@ BKASH_QUERY_PATH = "/tokenized-checkout/payment/query"
 BKASH_AUTH_PREFIX = ""
 ALLOWED_ORIGINS = "https://smartgentools.com,https://bayzed123.github.io"
 FRONTEND_URL = "https://smartgentools.com/payment-gateway/"
+
+# Mastercard Merchant Presented QR sandbox configuration.
+MASTERCARD_BASE_URL = "https://sandbox.api.mastercard.com/send/static"
+MASTERCARD_PARTNER_ID = "ptnr_BEeCrYJHh2BXTXPy_PEtp-8DBOo"
+MASTERCARD_CURRENCY = "USD"
+MASTERCARD_PAYMENT_ORIGINATION_COUNTRY = "BGD"
+MASTERCARD_CARD_ACCEPTOR_NAME = "SmartGen Sandbox"
+
 # Optional: set this to the deployed Worker callback URL.
 # BKASH_CALLBACK_URL = "https://smartgen-bkash-sandbox.<subdomain>.workers.dev/api/payments/callback"
 
@@ -23,3 +31,7 @@ FRONTEND_URL = "https://smartgentools.com/payment-gateway/"
 # BKASH_PASSWORD
 # BKASH_APP_KEY
 # BKASH_APP_SECRET
+# MASTERCARD_CONSUMER_KEY
+# MASTERCARD_SIGNING_KEY_PEM
+# MASTERCARD_TEST_SENDER_ACCOUNT_URI
+# MASTERCARD_TEST_RECIPIENT_ACCOUNT_URI

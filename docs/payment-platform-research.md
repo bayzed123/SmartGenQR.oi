@@ -23,3 +23,11 @@ The Mastercard Merchant Presented QR Payment API exposes a sandbox endpoint and 
 ## Architecture conclusion
 
 The practical near-term product is a secure payment orchestration platform: the user's software owns the checkout UI, order state, idempotency, webhook/event processing, refunds, reporting, and merchant dashboard, while one or more licensed PSP/PSO, bank, MFS, or card-acquiring partners perform regulated payment processing and settlement. A fully independent ShurjoPay-like gateway requires regulated status and direct network, bank, MFS, and card-scheme agreements; it cannot be created solely with a personal bKash account, a Mastercard Developers account, GitHub, or a Cloudflare Worker.
+
+## Mastercard MPQR integration findings
+
+The current Mastercard Merchant Presented QR documentation states that the MPQR APIs use one-legged OAuth 1.0a with an RSA-SHA256 signature and the Google Request Body Hash extension for requests with a body. The Sandbox base URL is `https://sandbox.api.mastercard.com/send/static`, and the sandbox partner ID is `ptnr_BEeCrYJHh2BXTXPy_PEtp-8DBOo`. Sandbox keys are generated after creating a Mastercard Developers project with the Mastercard Merchant Presented QR API service; the downloaded private key is not stored by Mastercard.
+
+The Payment API endpoint is `POST /v1/partners/{partnerId}/merchant/transfers/payment`. Sandbox test responses are simulated: amounts greater than 50 produce APPROVED, 1 produces DECLINE, 2 produces SYSTEM_ERROR, 3 delays and then approves, and other listed cents values simulate decline scenarios. The response includes a system-generated transfer ID and should be followed by Retrieval API verification. Retrieval uses `GET /v1/partners/{partnerId}/merchant/transfers/{transferId}` or the collection endpoint with a `ref` query parameter.
+
+The prototype adapter should sign requests server-side, keep the consumer key and private signing key out of GitHub and browser code, never accept production card data in the public frontend, generate a unique transfer reference, log the correlation-id response header, and treat APPROVED/UNKNOWN/PENDING as distinct states. Sandbox participation is for prototyping; production MPQR access requires an eligible licensed or sponsored participant and program approval.

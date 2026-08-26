@@ -31,7 +31,12 @@ globalThis.fetch = async (url, options) => {
 try {
   const health = await worker.fetch(new Request("https://worker.test/health"), baseEnv);
   assert.equal(health.status, 200);
-  assert.equal((await health.json()).configured, true);
+  const healthData = await health.json();
+  assert.equal(healthData.configured, true);
+  assert.equal(healthData.mastercardConfigured, false);
+
+  const mastercardMissing = await worker.fetch(new Request("https://worker.test/api/mastercard/mpqr/payment", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ amount: "10" }) }), baseEnv);
+  assert.equal(mastercardMissing.status, 503);
 
   const invalid = await worker.fetch(new Request("https://worker.test/api/payments/create", { method: "POST", headers: { Origin: "https://bayzed123.github.io", "content-type": "application/json" }, body: JSON.stringify({ amount: "0" }) }), baseEnv);
   assert.equal(invalid.status, 400);

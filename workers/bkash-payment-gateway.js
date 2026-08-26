@@ -1,3 +1,5 @@
+import { createMastercardPayment, mastercardMissingConfig, retrieveMastercardTransfer } from "./mastercard-mpqr.js";
+
 /**
  * SmartGen bKash Sandbox Payment Gateway
  *
@@ -268,6 +270,42 @@ async function handleCallback(request, env) {
   }
 }
 
+async function handleMastercardPayment(request, env) {
+  const missing = mastercardMissingConfig(env);
+  if (missing.length) return json({ error: "Mastercard MPQR adapter is not configured", missing }, 503);
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: "Request body must be valid JSON" }, 400);
+  }
+  if (!validAmount(body.amount)) return json({ error: "amount must be a positive amount with up to 2 decimals" }, 400);
+  try {
+    const result = await createMastercardPayment(env, {
+      amount: body.amount,
+      transferReference: body.transferReference,
+    });
+    return json({ ok: true, correlationId: result.correlationId, result: result.data });
+  } catch (error) {
+    return json({ error: "Mastercard sandbox payment failed", correlationId: error.correlationId, details: error.data || error.message }, error.status || 502);
+  }
+}
+
+async function handleMastercardRetrieve(request, env) {
+  const missing = mastercardMissingConfig(env);
+  if (missing.length) return json({ error: "Mastercard MPQR adapter is not configured", missing }, 503);
+  const url = new URL(request.url);
+  const transferId = url.searchParams.get("transferId");
+  const transferReference = url.searchParams.get("ref");
+  if (!transferId && !transferReference) return json({ error: "transferId or ref is required" }, 400);
+  try {
+    const result = await retrieveMastercardTransfer(env, { transferId, transferReference });
+    return json({ ok: true, correlationId: result.correlationId, result: result.data });
+  } catch (error) {
+    return json({ error: "Mastercard sandbox retrieval failed", correlationId: error.correlationId, details: error.data || error.message }, error.status || 502);
+  }
+}
+
 async function handleQuery(request, env) {
   const c = config(env);
   const paymentId = new URL(request.url).searchParams.get("paymentId");
@@ -302,9 +340,15 @@ export default {
         missing: missingConfig(c),
         createPath: c.createPath,
         frontendUrl: c.frontendUrl,
+        mastercardConfigured: mastercardMissingConfig(env).length === 0,
+        mastercardMissing: mastercardMissingConfig(env),
       });
     } else if (url.pathname === "/api/payments/create" && request.method === "POST") {
       response = await handleCreate(request, env);
+    } else if (url.pathname === "/api/mastercard/mpqr/payment" && request.method === "POST") {
+      response = await handleMastercardPayment(request, env);
+    } else if (url.pathname === "/api/mastercard/mpqr/retrieve" && request.method === "GET") {
+      response = await handleMastercardRetrieve(request, env);
     } else if (url.pathname === "/api/payments/callback" && request.method === "GET") {
       response = await handleCallback(request, env);
     } else if (url.pathname === "/api/payments/status" && request.method === "GET") {
