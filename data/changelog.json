@@ -1,5 +1,10 @@
 [
   {
+    "title": "Improve MPQR sandbox checkout workflow",
+    "date": "2026-08-26T12:22:04Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Configure Worker CORS bindings",
     "date": "2026-08-26T12:02:37Z",
     "description": "Platform improvement and optimization."
