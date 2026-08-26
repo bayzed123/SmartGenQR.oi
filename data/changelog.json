@@ -1,5 +1,10 @@
 [
   {
+    "title": "test: cover all EAN parity modules",
+    "date": "2026-08-26T04:37:06Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: validate first-party EAN parity patterns",
     "date": "2026-08-26T04:35:48Z",
     "description": "Platform improvement and optimization."
