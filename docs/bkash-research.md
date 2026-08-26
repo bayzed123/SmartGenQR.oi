@@ -16,3 +16,7 @@ The user supplied a sandbox hosted payment URL and a sample Create Payment reque
 ## Sandbox reachability check
 
 The user-supplied hosted sandbox URL was opened in the browser. It returned an empty gray page with no detectable interactive controls or rendered payment form, so reachability of the URL was confirmed but a sandbox customer payment could not be completed from this session. No credentials, wallet PIN, or payment action was submitted.
+
+## Public page verification
+
+The custom-domain URL `https://smartgentools.com/payment-gateway/` first returned a 404 during propagation, then rendered the new SmartGen Secure Checkout page when checked at the repository Pages URL. The custom-domain check also resolved to the same page on the second request, indicating that the GitHub Pages deployment propagated successfully. The page displays amount and payer-reference fields and a Continue to bKash button; no payment was submitted.
