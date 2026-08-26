@@ -1,5 +1,6 @@
 name = "smartgen-bkash-sandbox"
 main = "bkash-payment-gateway.js"
+workers_dev = true
 compatibility_date = "2026-08-26"
 
 [vars]
