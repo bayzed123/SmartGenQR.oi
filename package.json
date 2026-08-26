@@ -7,6 +7,7 @@
     "build": "npm run build-blog && npm run build-docs && npm run build-chatbot",
     "build-docs": "node scripts/docs-build.js",
     "check-docs": "node scripts/docs-build-check.js",
+    "check-docs-redirects": "node scripts/docs-build-redirect-check.js",
     "build-blog": "node scripts/build-blog.js",
     "build-chatbot": "node scripts/build-chatbot-knowledge.js"
   },

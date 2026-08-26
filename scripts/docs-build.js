@@ -6,12 +6,13 @@ const slugify = require('slugify');
 const { BuildTimeAdInjector } = require('../utils/ad-injector.js');
 
 const REPOSITORY_ROOT = path.join(__dirname, '..');
-const DOCS_POSTS_DIR = path.join(REPOSITORY_ROOT, 'docs-posts');
-const DOCS_OUTPUT_DIR = path.join(REPOSITORY_ROOT, 'docs');
+const DOCS_POSTS_DIR = process.env.SMARTGEN_DOCS_POSTS_DIR || path.join(REPOSITORY_ROOT, 'docs-posts');
+const DOCS_OUTPUT_DIR = process.env.SMARTGEN_DOCS_OUTPUT_DIR || path.join(REPOSITORY_ROOT, 'docs');
 const SITE_URL = 'https://smartgentools.com';
 const REPOSITORY_URL = 'https://github.com/bayzed123/SmartGenQR.oi/blob/main';
 const TITLE_SUFFIX = ' - SmartGen Docs';
 const TITLE_LIMIT = 60;
+const HISTORICAL_DOCS_INDEX_ROUTE = 'github-secrets-explained';
 
 marked.setOptions({ breaks: true, gfm: true });
 
@@ -71,6 +72,23 @@ function aliasesFor(attributes) {
         .filter(Boolean)
         .map(value => value.replace(/^\/?docs\//, '').replace(/^\/+|\/+$/g, ''))
         .filter(Boolean);
+}
+
+function normaliseDocRoute(value) {
+    const match = String(value || '').match(/^\/?docs\/(.*?)\/?$/);
+    return match ? match[1].replace(/^\/+|\/+$/g, '') : '';
+}
+
+function readPriorManifest() {
+    const manifestPath = path.join(DOCS_OUTPUT_DIR, 'url-manifest.json');
+    if (!fs.existsSync(manifestPath)) return [];
+    try {
+        const parsed = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+        return Array.isArray(parsed.routes) ? parsed.routes : [];
+    } catch (error) {
+        console.warn('Existing docs URL manifest is invalid; prior aliases cannot be restored for this build.');
+        return [];
+    }
 }
 
 function categoryFor(routeParts, attributes) {
@@ -150,12 +168,41 @@ function createMaps(docs) {
         byRoute.set(doc.route, doc);
         bySource.set(doc.sourceRelative, doc);
     });
-    docs.forEach(doc => doc.aliases.forEach(alias => {
-        if (byRoute.has(alias) || aliases.has(alias)) collisions.push(`legacy alias /docs/${alias}/ conflicts with another documentation route`);
+    const registerAlias = (alias, doc, label = 'legacy alias') => {
+        if (!alias || alias === doc.route) return;
+        const routeOwner = byRoute.get(alias);
+        const aliasOwner = aliases.get(alias);
+        if ((routeOwner && routeOwner.route !== doc.route) || (aliasOwner && aliasOwner.route !== doc.route)) {
+            collisions.push(`${label} /docs/${alias}/ conflicts with another documentation route`);
+            return;
+        }
         aliases.set(alias, doc);
-    }));
-    if (collisions.length) throw new Error(`Documentation URL collision(s):\n${collisions.join('\n')}`);
-    return { byRoute, bySource, aliases };
+    };
+    const assertNoCollisions = () => {
+        if (collisions.length) throw new Error(`Documentation URL collision(s):\n${collisions.join('\n')}`);
+    };
+    docs.forEach(doc => doc.aliases.forEach(alias => registerAlias(alias, doc)));
+    assertNoCollisions();
+    return { byRoute, bySource, aliases, registerAlias, assertNoCollisions };
+}
+
+function restorePriorRoutes(docs, maps) {
+    const docsBySource = new Map(docs.map(doc => [`docs-posts/${doc.sourceRelative}`, doc]));
+    let restored = 0;
+
+    readPriorManifest().forEach(previous => {
+        const doc = docsBySource.get(previous.source);
+        if (!doc) return;
+        const previousRoute = normaliseDocRoute(previous.url);
+        const priorAliases = Array.isArray(previous.legacyUrls) ? previous.legacyUrls : [];
+        [previousRoute, ...priorAliases.map(normaliseDocRoute)].filter(Boolean).forEach(route => {
+            const before = maps.aliases.size;
+            maps.registerAlias(route, doc, 'restored legacy route');
+            if (maps.aliases.size > before) restored += 1;
+        });
+    });
+
+    return restored;
 }
 
 function resolveDocLink(href, doc, maps) {
@@ -307,6 +354,8 @@ function buildDocs() {
     ensureDir(DOCS_OUTPUT_DIR);
     const docs = readDocPosts();
     const maps = createMaps(docs);
+    const restoredAliases = restorePriorRoutes(docs, maps);
+    maps.assertNoCollisions();
     const generatedRoutes = new Set(docs.map(doc => doc.route));
     clearGeneratedFolderOutputs(docs);
 
@@ -323,20 +372,23 @@ function buildDocs() {
     });
 
     // Preserve the established /docs/ landing behavior for existing visitors.
-    const firstLegacyDoc = docs.find(doc => !doc.folder) || docs[0];
-    if (firstLegacyDoc) fs.writeFileSync(path.join(DOCS_OUTPUT_DIR, 'index.html'), redirectHtml(docUrl(firstLegacyDoc)));
+    const indexTarget = maps.byRoute.get(HISTORICAL_DOCS_INDEX_ROUTE) || docs.find(doc => !doc.folder) || docs[0];
+    if (indexTarget) fs.writeFileSync(path.join(DOCS_OUTPUT_DIR, 'index.html'), redirectHtml(docUrl(indexTarget)));
 
     const manifest = docs.map(doc => ({
         title: doc.title,
         url: docUrl(doc),
-        legacyUrls: doc.aliases.map(alias => `/docs/${alias}/`),
+        legacyUrls: [...maps.aliases.entries()]
+            .filter(([, target]) => target.route === doc.route)
+            .map(([alias]) => `/docs/${alias}/`)
+            .sort(),
         source: `docs-posts/${doc.sourceRelative}`,
         category: doc.category,
         description: doc.description
     }));
     fs.writeFileSync(path.join(DOCS_OUTPUT_DIR, 'docs.json'), JSON.stringify(manifest, null, 2));
     fs.writeFileSync(path.join(DOCS_OUTPUT_DIR, 'url-manifest.json'), JSON.stringify({ generatedAt: new Date().toISOString(), routes: manifest }, null, 2));
-    console.log(`Documentation build completed: ${docs.length} pages, legacy URLs preserved, folder routes generated.`);
+    console.log(`Documentation build completed: ${docs.length} pages, ${restoredAliases} prior routes restored, folder routes generated.`);
 }
 
 buildDocs();

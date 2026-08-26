@@ -48,6 +48,16 @@ if (!fs.existsSync(manifestPath)) {
     if (new Set(urls).size !== urls.length) failures.push('Duplicate generated documentation URLs were found in url-manifest.json.');
 }
 
+const docsIndex = path.join(docs, 'index.html');
+if (!fs.existsSync(docsIndex)) {
+    failures.push('Missing generated /docs/ index redirect.');
+} else {
+    const indexHtml = fs.readFileSync(docsIndex, 'utf8');
+    if (!indexHtml.includes('url=/docs/github-secrets-explained/')) {
+        failures.push('The /docs/ fallback redirect no longer preserves its historical GitHub Secrets target.');
+    }
+}
+
 if (failures.length) {
     console.error(failures.join('\n'));
     process.exit(1);
