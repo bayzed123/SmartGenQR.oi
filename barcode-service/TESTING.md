@@ -1,0 +1,14 @@
+# Barcode Service Validation Record
+
+The static tool was checked directly from `barcode-service/index.html` without a SmartGen API, database, analytics request, or external barcode-rendering request.
+
+| Check | Result |
+|---|---|
+| Default Code 128 preview | Renders locally in the browser. |
+| EAN-13 format selection | Replaces the generic input rule with the retail identifier rule. |
+| Twelve-digit EAN-13 input | Accepted locally and marked valid with an automatically calculated check digit. |
+| Invalid EAN-13 check digit | Rejected by the local validation function. |
+| SVG renderer | Loaded from `barcode-service/vendor/JsBarcode.all.min.js` in this repository. |
+| JavaScript validation tests | Pass with `node barcode-service/test/validation.test.mjs`. |
+
+The complete tool remains static. The client integration callback only validates and normalizes product barcode data before the client’s existing product form submits to the client’s own backend.

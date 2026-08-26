@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; base-uri 'self'; form-action 'self'" />
+  <meta name="description" content="A self-hosted SmartGen barcode generator and client-side product form validator. Barcode values stay in your browser." />
+  <link rel="canonical" href="https://smartgentools.com/barcode-service/" />
+  <title>SmartGen Barcode Service — Private, Self-Hosted Product Barcodes</title>
+  <link rel="stylesheet" href="barcode-service.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="https://smartgentools.com/" aria-label="SmartGen home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><strong>Smart<span>Gen</span></strong><small>BARCODE</small></a>
+      <nav aria-label="Primary"><a href="#generator">Generator</a><a href="#integration">Store integration</a><a href="#docs">Setup guide</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow"><span></span> 100% browser-side barcode tool</p>
+          <h1>Reliable barcodes.<br><em>Nothing stored.</em></h1>
+          <p class="hero-copy">Generate and validate product barcodes directly in the browser. This page uses self-hosted code from your SmartGen repository—no database, analytics request, API key, or external barcode service.</p>
+          <div class="trust-row"><span>Runs locally</span><span>Works offline after load</span><span>No client API keys</span></div>
+          <div class="hero-actions"><a class="button button-primary" href="#generator">Open barcode tool <b>→</b></a><a class="button button-secondary" href="#integration">Connect your admin form</a></div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-card"><div class="visual-card-top"><span>LIVE VALIDATION</span><b>CODE 128</b></div><div class="visual-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>SMARTGEN-2026</p><div class="visual-check">✓ Verified in browser</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-section" id="generator">
+      <div class="shell">
+        <div class="section-heading"><div><p class="eyebrow eyebrow-dark"><span></span> Self-hosted generator</p><h2>Create a product-ready barcode.</h2></div><p>Choose a standard, enter the product value, and download a sharp local SVG. Retail identifiers are checksum-validated before the barcode can be generated.</p></div>
+        <div class="tool-card">
+          <div class="tool-controls">
+            <div class="field"><label for="barcode-format">Barcode format</label><select id="barcode-format"><option value="CODE128">Code 128 — flexible product and inventory code</option><option value="EAN13">EAN-13 — 12 digits plus calculated check digit</option><option value="UPC">UPC-A — 11 digits plus calculated check digit</option><option value="CODE39">Code 39 — uppercase inventory code</option></select></div>
+            <div class="field"><div class="label-row"><label for="barcode-value">Product barcode value</label><span id="character-count">0/80</span></div><input id="barcode-value" autocomplete="off" spellcheck="false" value="SMARTGEN-2026" /><p class="field-note" id="format-help">Code 128 accepts readable product, stock, and inventory values.</p></div>
+            <div class="validation-message" id="validation-message" role="status" aria-live="polite"></div>
+            <details class="appearance" open><summary>Appearance controls <span>⌄</span></summary><div class="appearance-grid"><div class="field"><label for="barcode-ink">Barcode ink</label><div class="color-input"><input id="barcode-ink" type="color" value="#123f2b" /><input id="barcode-ink-text" value="#123f2b" aria-label="Barcode ink hex value" /></div></div><div class="field"><label for="barcode-background">Background</label><div class="color-input"><input id="barcode-background" type="color" value="#ffffff" /><input id="barcode-background-text" value="#ffffff" aria-label="Background hex value" /></div></div><div class="field"><label for="barcode-height">Bar height <span id="height-display">108px</span></label><input id="barcode-height" type="range" min="56" max="180" step="4" value="108" /></div><label class="check-row"><input id="show-value" type="checkbox" checked /> Show barcode value</label></div></details>
+          </div>
+          <div class="preview-panel"><div class="preview-top"><span>PRINT PREVIEW</span><span id="preview-format">CODE 128</span></div><div class="preview-stage"><svg id="barcode-preview" aria-label="Barcode preview"></svg></div><button id="download-button" class="button button-primary button-wide" type="button">Download local SVG <b>↓</b></button><button id="reset-button" class="reset-button" type="button">Reset controls</button><p class="privacy-note">This barcode is generated in your browser. The product value does not leave this page.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="integration-section" id="integration">
+      <div class="shell integration-grid">
+        <div>
+          <p class="eyebrow"><span></span> Client-admin dashboard integration</p>
+          <h2>Block invalid product barcodes before save.</h2>
+          <p class="integration-copy">Load one self-hosted JavaScript file in the client’s admin dashboard. The integration normalizes retail check digits, prevents invalid form submission, and raises a local event with the valid barcode. The client’s own backend remains responsible for its product database.</p>
+          <ul class="feature-list"><li><b>01</b> No SmartGen server receives product data.</li><li><b>02</b> No secret key appears in browser code.</li><li><b>03</b> The client’s existing product endpoint owns the final save.</li></ul>
+        </div>
+        <div class="code-card"><div class="code-card-top"><span>CLIENT ADMIN CONFIGURATION</span><button id="copy-snippet" type="button">Copy</button></div><pre id="integration-snippet"><code>&lt;script src="https://smartgentools.com/barcode-service/barcode-service.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+SmartGenBarcode.attachProductForm({
+  form: "#client-product-form",
+  barcodeInput: "#product-barcode",
+  formatInput: "#barcode-format",
+  onValid: ({ barcode, format }) =&gt; {
+    // Send only to the client’s own backend.
+    // Never place a real API key in this browser code.
+    document.querySelector("#product-barcode").value = barcode;
+  }
+});
+&lt;/script&gt;</code></pre></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="docs">
+      <div class="shell docs-grid"><article><span class="doc-number">01</span><h3>Add the self-hosted script</h3><p>Use the SmartGen domain file in the client’s admin dashboard or copy <code>barcode-service.js</code> into the client’s own repository. No external service is called by the tool.</p></article><article><span class="doc-number">02</span><h3>Connect existing form fields</h3><p>Provide selectors for the client’s product form, barcode input, and format input. The integration validates values on entry and prevents the form from saving an invalid barcode.</p></article><article><span class="doc-number">03</span><h3>Keep secrets on the client server</h3><p>Let the client’s backend use its own session, CSRF protection, and server-side credentials when it saves the product. The browser plugin never needs the secret key.</p></article></div>
+      <div class="shell format-table-wrap"><h2>Built-in validation rules</h2><table><thead><tr><th>Format</th><th>Accepted product input</th><th>Browser action</th></tr></thead><tbody><tr><td>EAN-13</td><td>12 digits or valid 13-digit identifier</td><td>Calculates or verifies the check digit</td></tr><tr><td>UPC-A</td><td>11 digits or valid 12-digit identifier</td><td>Calculates or verifies the check digit</td></tr><tr><td>Code 128</td><td>1–80 printable characters</td><td>Generates an inventory barcode locally</td></tr><tr><td>Code 39</td><td>Uppercase letters, numbers, spaces, and approved symbols</td><td>Blocks unsupported characters before save</td></tr></tbody></table></div>
+    </section>
+  </main>
+  <footer><div class="shell footer-row"><span>SmartGen Barcode Service · Self-hosted on your SmartGen domain</span><a href="https://smartgentools.com/">SmartGen Tools</a></div></footer>
+  <script src="vendor/JsBarcode.all.min.js"></script>
+  <script src="barcode-service.js"></script>
+</body>
+</html>
