@@ -73,6 +73,16 @@ Use separate Workers or clearly separated environments for Sandbox, MTF, and Pro
 
 Do not switch only the base URL and assume the project is production-ready. Production also requires the approved partner identifier, merchant relationship, QR payload, limits, testing acknowledgement, key activation, and operational controls.
 
+## Optional client authentication and production order binding
+
+The current public Sandbox page intentionally runs with `authMode: sandbox_public` so the technical demo remains usable. That mode is not suitable for Production. When a protected server-to-server client is ready, set `REQUIRE_CLIENT_AUTH=true` and store `SMARTGEN_CLIENT_API_KEY` as a Worker secret. Requests must then use `X-SmartGen-Api-Key` or `Authorization: Bearer ...`. CORS remains useful for browser-origin control, but it is never authentication.
+
+For Production, set `REQUIRE_ORDER_BINDING=true` and store `SMARTGEN_ORDER_SIGNING_SECRET` as a Worker secret. The payment route then accepts a short-lived HMAC-signed `orderToken` containing the server-created `orderId`, approved amount, and transfer reference. Browser-supplied amount and reference values are ignored for the provider request. In a full deployment, the token should be minted only by an authenticated SmartGen order service after looking up the merchant, currency, recipient, and amount in a durable database.
+
+The Worker includes a short-lived in-memory idempotency guard and per-instance rate limiter for Sandbox protection. These controls are not durable and are not sufficient for a multi-instance Production system. Production must use a durable idempotency record, per-user/merchant/order quotas, Cloudflare WAF/bot controls, abuse monitoring, and a provider-approved retry policy. The current health response reports these modes as `authMode`, `orderBinding`, `idempotency`, and `rateLimitPerMinute` without revealing secret values.
+
+The Worker also supports a fail-safe Production order-binding mode. When enabled, it requires a short-lived HMAC-signed `orderToken` and uses the signed server-side amount and transfer reference instead of browser-supplied values. The signing secret is `SMARTGEN_ORDER_SIGNING_SECRET`; the token must be minted by an authenticated order service after a durable database lookup. The current public Sandbox remains in compatibility mode so the demonstration page continues to work.
+
 ## CORS configuration
 
 The Worker should allow only known frontend origins. The current SmartGen CORS binding is:
@@ -157,6 +167,23 @@ curl -i -X OPTIONS \
 ```
 
 Then run one safe Sandbox payment, retrieve it, inspect logs for secret leakage, and confirm the public page shows the expected result. The response must not contain `authorization`, `consumer_key`, `signing_key`, `private_key`, `secret`, `password`, `account_uri`, `pan`, `cvc`, `cvv`, `pin`, or token fields. Do not run a Production payment as a deployment health check without an approved pilot and explicit operational approval.
+
+## Remediation status
+
+| Finding | Current prototype status | Production requirement |
+|---|---|---|
+| SEC-01 public routes | Sandbox route is rate-limited; optional API-key/Bearer authentication is implemented but disabled for the public demo | Enable authentication, merchant identity, WAF/bot controls, per-user/merchant/order quotas, and abuse monitoring |
+| SEC-02 browser amount/reference | Signed order-token mode is implemented but disabled in Sandbox | Enable it with an authenticated order service and durable merchant/order lookup |
+| SEC-03 duplicate/retry | In-memory idempotency guard is implemented | Replace with durable idempotency and retrieval-before-retry workflow |
+| SEC-04 refund/reversal | Not implemented because the approved provider operation is not available | Implement sponsor/provider refund or reversal endpoint and audit trail |
+| SEC-05 headers/CORS | Worker headers and frontend CSP/referrer metadata are implemented; static-host CDN headers remain platform-dependent | Add HSTS, CSP, no-sniffing, no-referrer, and restrictive framing headers at the static-host/CDN layer |
+| SEC-06 raw JSON/PII | Worker allow-list and browser-safe technical summary are implemented | Keep the allow-list minimal and retain sanitized data only |
+| SEC-07 localStorage | Demo history uses tab-scoped `sessionStorage` with an explicit notice | Remove browser history and use authenticated server history |
+| SEC-08 Math.random | Demo reference generation uses Web Crypto randomness | Use immutable server-side order IDs and provider references |
+| SEC-09 mixed health schema | Mastercard-first service/provider/environment schema is live; bKash is marked `on_hold` | Add deployment/version metadata from the controlled deployment system if operationally required |
+| SEC-10 scans | Secret scan, dependency audit, syntax tests, hardening tests, and full-history high-confidence scan are in CI | Add scheduled dependency review, SAST, Cloudflare audit review, and quarterly key-rotation drills |
+
+The dependency graph now uses maintained `js-yaml` 4.x directly instead of the vulnerable `front-matter`/`gray-matter` wrappers that pulled in `js-yaml` 3.x. The documentation build and payment tests pass after the change.
 
 ## Incident response
 

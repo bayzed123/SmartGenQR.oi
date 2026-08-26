@@ -16,6 +16,13 @@ BKASH_QUERY_PATH = "/tokenized-checkout/payment/query"
 BKASH_AUTH_PREFIX = ""
 ALLOWED_ORIGINS = "https://smartgentools.com,https://bayzed123.github.io"
 FRONTEND_URL = "https://smartgentools.com/payment-gateway/"
+# Sandbox compatibility defaults. Set all three to true in a protected
+# authenticated production environment only after implementing server-side
+# order lookup and a durable idempotency store.
+REQUIRE_CLIENT_AUTH = "false"
+REQUIRE_ORDER_BINDING = "false"
+REQUIRE_IDEMPOTENCY_KEY = "false"
+RATE_LIMIT_PER_MINUTE = "15"
 
 # Mastercard Merchant Presented QR sandbox configuration.
 MASTERCARD_BASE_URL = "https://sandbox.api.mastercard.com/send/static"
@@ -38,4 +45,6 @@ MASTERCARD_TEST_RECIPIENT_ACCOUNT_URI = "pan:5662760010000013;exp=2077-08;cvc=12
 # BKASH_APP_SECRET
 # MASTERCARD_CONSUMER_KEY
 # MASTERCARD_SIGNING_KEY_PEM
+# SMARTGEN_CLIENT_API_KEY
+# SMARTGEN_ORDER_SIGNING_SECRET
 # The two Mastercard test account URI variables above are non-secret sandbox fixtures.

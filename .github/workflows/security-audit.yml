@@ -1,0 +1,74 @@
+name: Security Audit
+
+# This workflow complements secret-scan.yml. It checks the dependency graph,
+# payment Worker syntax/tests, and the complete Git history for high-confidence
+# credential patterns without printing matched content.
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 2 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Dependency, syntax, and history audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout complete history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Audit production dependency graph
+        run: npm audit --audit-level=high --omit=dev
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check utils/front-matter.js
+          node --check workers/bkash-payment-gateway.js
+          node --check workers/mastercard-mpqr.js
+          node --check workers/mastercard-hardening-test.mjs
+
+      - name: Run payment hardening tests
+        run: |
+          node workers/smoke-test.mjs
+          node workers/mastercard-smoke-test.mjs
+          node workers/mastercard-hardening-test.mjs
+
+      - name: Validate documentation build
+        run: |
+          rm -rf /tmp/smartgen-docs-security-build
+          SMARTGEN_DOCS_OUTPUT_DIR=/tmp/smartgen-docs-security-build node scripts/docs-build.js >/tmp/smartgen-docs-security-build.log
+          grep -q 'Documentation build completed' /tmp/smartgen-docs-security-build.log
+
+      - name: Scan complete Git history for high-confidence secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          history_file="$(mktemp)"
+          trap 'rm -f "$history_file"' EXIT
+          git log --all --format= --patch --binary -- . \
+            ':!.github/workflows/secret-scan.yml' \
+            ':!.github/workflows/security-audit.yml' > "$history_file"
+
+          # Do not print matching lines. Exit only on high-confidence patterns.
+          if grep -aEiq \
+            'AKIA[0-9A-Z]{16}|gh[pousr]_[0-9A-Za-z]{36,}|xox[baprs]-[0-9A-Za-z-]{10,}|BEGIN [A-Z ]*PRIVATE KEY-----\\?n?[A-Za-z0-9+/]{40,}' \
+            "$history_file"; then
+            echo "::error::A high-confidence credential pattern exists in Git history. Rotate the credential and remove it from the public repository history."
+            exit 1
+          fi
+          echo "No high-confidence credential pattern found in Git history."

@@ -9,7 +9,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const matter = require('front-matter');
+const matter = require('../utils/front-matter.js');
 const { marked } = require('marked');
 const slugify = require('slugify');
 const { BuildTimeAdInjector } = require('../utils/ad-injector.js');

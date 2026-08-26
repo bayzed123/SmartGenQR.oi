@@ -18,6 +18,11 @@ MASTERCARD_CARD_ACCEPTOR_NAME = "SmartGen Sandbox"
 MASTERCARD_FUNDING_SOURCE = "DEBIT"
 ALLOWED_ORIGINS = "https://smartgentools.com,https://bayzed123.github.io"
 FRONTEND_URL = "https://smartgentools.com/payment-gateway/"
+# Sandbox compatibility only; these must be enabled for protected Production.
+REQUIRE_CLIENT_AUTH = "false"
+REQUIRE_ORDER_BINDING = "false"
+REQUIRE_IDEMPOTENCY_KEY = "false"
+RATE_LIMIT_PER_MINUTE = "15"
 ```
 
 ## Secret commands
@@ -27,6 +32,9 @@ Run these commands from a secure terminal. Wrangler prompts for the value; do no
 ```bash
 npx wrangler secret put MASTERCARD_CONSUMER_KEY
 npx wrangler secret put MASTERCARD_SIGNING_KEY_PEM
+# Production order service controls only:
+# npx wrangler secret put SMARTGEN_CLIENT_API_KEY
+# npx wrangler secret put SMARTGEN_ORDER_SIGNING_SECRET
 ```
 
 ## Production configuration shape
@@ -42,6 +50,10 @@ MASTERCARD_PAYMENT_ORIGINATION_COUNTRY = "<approved-country-code>"
 MASTERCARD_CARD_ACCEPTOR_NAME = "<approved-merchant-or-platform-name>"
 ALLOWED_ORIGINS = "https://smartgentools.com"
 FRONTEND_URL = "https://smartgentools.com/payment-gateway/"
+REQUIRE_CLIENT_AUTH = "true"
+REQUIRE_ORDER_BINDING = "true"
+REQUIRE_IDEMPOTENCY_KEY = "true"
+RATE_LIMIT_PER_MINUTE = "15"
 ```
 
 Production secrets must be added to a separate Production Worker environment. Never copy Sandbox secrets into Production.

@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://smartgen-bkash-sandbox.sayadmdbayezidhosan.workers.dev; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'self'; frame-ancestors 'none'">
   <meta name="description" content="SmartGen Mastercard Merchant Presented QR sandbox checkout and transfer retrieval lab.">
   <title>SmartGen Mastercard MPQR Sandbox</title>
   <style>
@@ -173,7 +175,7 @@
 
       <section class="history" aria-labelledby="historyTitle">
         <h2 id="historyTitle">Recent prototype transactions</h2>
-        <p class="hint">Saved only in this browser for demonstration. This is not server-side order storage.</p>
+        <p class="hint">Saved only in this browser tab for Sandbox demonstration. This is not server-side order storage and must not be used as production payment history.</p>
         <div id="historyList" class="history-list"></div>
       </section>
 
@@ -192,7 +194,7 @@
   </main>
   <script>
     const PAYMENT_WORKER_URL = window.SMARTGEN_PAYMENT_WORKER_URL || "https://smartgen-bkash-sandbox.sayadmdbayezidhosan.workers.dev";
-    const HISTORY_KEY = "smartgen_mpqr_sandbox_transactions_v1";
+    const HISTORY_KEY = "smartgen_mpqr_sandbox_transactions_v2";
     const form = document.querySelector("#form");
     const amountInput = document.querySelector("#amount");
     const referenceInput = document.querySelector("#reference");
@@ -211,7 +213,9 @@
 
     function newReference() {
       const stamp = new Date().toISOString().replace(/\D/g, "").slice(0, 14);
-      const random = Math.random().toString(36).slice(2, 8).toUpperCase();
+      const bytes = new Uint8Array(6);
+      crypto.getRandomValues(bytes);
+      const random = Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("").toUpperCase();
       return `SGMPQR_${stamp}_${random}`.slice(0, 40);
     }
 
@@ -222,7 +226,7 @@
 
     function readHistory() {
       try {
-        const data = JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]");
+        const data = JSON.parse(sessionStorage.getItem(HISTORY_KEY) || "[]");
         return Array.isArray(data) ? data.slice(0, 10) : [];
       } catch { return []; }
     }
@@ -230,7 +234,7 @@
     function saveHistory(item) {
       try {
         const next = [item, ...readHistory().filter((old) => old.transferId !== item.transferId)].slice(0, 10);
-        localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
+        sessionStorage.setItem(HISTORY_KEY, JSON.stringify(next));
       } catch { /* Browser storage is optional in this prototype. */ }
       renderHistory();
     }
@@ -313,6 +317,19 @@
       result.hidden = false;
     }
 
+    function safeTechnicalSummary(data, summary) {
+      return {
+        ok: data?.ok === true,
+        correlationId: data?.correlationId || null,
+        status: summary.status,
+        amount: summary.amount,
+        currency: summary.currency,
+        transferReference: summary.reference,
+        transferId: summary.transferId,
+        transactionId: summary.transactionId,
+      };
+    }
+
     async function requestJson(url, options = {}) {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 30000);
@@ -337,7 +354,7 @@
         const data = await requestJson(`${PAYMENT_WORKER_URL}/api/mastercard/mpqr/retrieve?transferId=${encodeURIComponent(id)}`);
         const summary = summaryFrom(data, { transferId: id });
         renderSummary(summary);
-        output.textContent = JSON.stringify(data, null, 2);
+        output.textContent = JSON.stringify(safeTechnicalSummary(data, summary), null, 2);
         saveHistory(summary);
         setStatus(retrieveStatus, `Latest status: ${summary.status}.`, String(summary.status).toUpperCase() === "APPROVED" ? "ok" : "pending");
       } catch (error) {
@@ -366,12 +383,12 @@
       try {
         const data = await requestJson(`${PAYMENT_WORKER_URL}/api/mastercard/mpqr/payment`, {
           method: "POST",
-          headers: { "content-type": "application/json" },
+          headers: { "content-type": "application/json", "Idempotency-Key": transferReference },
           body: JSON.stringify({ amount, transferReference }),
         });
         const summary = summaryFrom(data, { amount, reference: transferReference });
         renderSummary(summary);
-        output.textContent = JSON.stringify(data, null, 2);
+        output.textContent = JSON.stringify(safeTechnicalSummary(data, summary), null, 2);
         saveHistory(summary);
         setStatus(status, `Sandbox transfer ${summary.status}. You can refresh its status below.`, String(summary.status).toUpperCase() === "APPROVED" ? "ok" : "pending");
       } catch (error) {

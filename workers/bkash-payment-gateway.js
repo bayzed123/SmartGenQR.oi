@@ -19,6 +19,9 @@ const DEFAULTS = {
 };
 
 let tokenCache = { value: null, expiresAt: 0 };
+const rateBuckets = new Map();
+const idempotencyCache = new Map();
+const CACHE_TTL_MS = 10 * 60 * 1000;
 
 function json(data, status = 200, headers = {}) {
   return new Response(JSON.stringify(data, null, 2), {
@@ -28,6 +31,100 @@ function json(data, status = 200, headers = {}) {
       ...headers,
     },
   });
+}
+
+function enabled(value) {
+  return String(value || "").toLowerCase() === "true";
+}
+
+function constantTimeEqual(left, right) {
+  const a = new TextEncoder().encode(String(left || ""));
+  const b = new TextEncoder().encode(String(right || ""));
+  if (a.length !== b.length) return false;
+  let result = 0;
+  for (let i = 0; i < a.length; i += 1) result |= a[i] ^ b[i];
+  return result === 0;
+}
+
+function clientAddress(request) {
+  return request.headers.get("CF-Connecting-IP") || request.headers.get("X-Forwarded-For")?.split(",")[0]?.trim() || "unknown";
+}
+
+function rateLimitResponse(request, env, bucket) {
+  const limit = Math.max(1, Math.min(120, Number(env.RATE_LIMIT_PER_MINUTE || 15)));
+  const now = Date.now();
+  const key = `${bucket}:${clientAddress(request)}`;
+  const previous = rateBuckets.get(key) || { startedAt: now, count: 0 };
+  if (now - previous.startedAt >= 60_000) {
+    previous.startedAt = now;
+    previous.count = 0;
+  }
+  previous.count += 1;
+  rateBuckets.set(key, previous);
+  if (rateBuckets.size > 2000) {
+    for (const [entryKey, entry] of rateBuckets) if (now - entry.startedAt >= 60_000) rateBuckets.delete(entryKey);
+  }
+  if (previous.count > limit) return json({ error: "Rate limit exceeded" }, 429, { "retry-after": "60" });
+  return null;
+}
+
+function authResponse(request, env) {
+  if (!enabled(env.REQUIRE_CLIENT_AUTH)) return null;
+  const expected = env.SMARTGEN_CLIENT_API_KEY || "";
+  const provided = request.headers.get("X-SmartGen-Api-Key") || request.headers.get("Authorization")?.replace(/^Bearer\s+/i, "") || "";
+  if (!expected || !provided || !constantTimeEqual(provided, expected)) {
+    return json({ error: "Authentication required" }, 401, { "www-authenticate": "Bearer" });
+  }
+  return null;
+}
+
+function productionControlResponse(env, body = {}) {
+  if (enabled(env.REQUIRE_IDEMPOTENCY_KEY) && !String(body.orderId || body.idempotencyKey || body.transferReference || body.orderToken || "").trim()) {
+    return json({ error: "Idempotency key, orderToken, or orderId is required" }, 400);
+  }
+  return null;
+}
+
+function base64urlBytes(value) {
+  const normalized = String(value || "").replace(/-/g, "+").replace(/_/g, "/").padEnd(Math.ceil(String(value || "").length / 4) * 4, "=");
+  const binary = atob(normalized);
+  return Uint8Array.from(binary, (character) => character.charCodeAt(0));
+}
+
+async function verifyOrderToken(token, secret) {
+  const [encodedPayload, encodedSignature] = String(token || "").split(".");
+  if (!encodedPayload || !encodedSignature || !secret) throw new Error("Invalid order token");
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["verify"],
+  );
+  const valid = await crypto.subtle.verify(
+    "HMAC",
+    key,
+    base64urlBytes(encodedSignature),
+    new TextEncoder().encode(encodedPayload),
+  );
+  if (!valid) throw new Error("Invalid order token");
+  const payload = JSON.parse(new TextDecoder().decode(base64urlBytes(encodedPayload)));
+  if (!payload || typeof payload !== "object" || !payload.orderId || !validAmount(payload.amount)) throw new Error("Invalid order token payload");
+  if (payload.expiresAt && Date.parse(payload.expiresAt) <= Date.now()) throw new Error("Order token expired");
+  if (payload.exp && Number(payload.exp) <= Math.floor(Date.now() / 1000)) throw new Error("Order token expired");
+  return payload;
+}
+
+async function resolveMastercardPaymentInput(env, body) {
+  if (!enabled(env.REQUIRE_ORDER_BINDING)) return { amount: body.amount, transferReference: body.transferReference };
+  try {
+    const order = await verifyOrderToken(body.orderToken, env.SMARTGEN_ORDER_SIGNING_SECRET);
+    const transferReference = String(order.transferReference || order.orderId);
+    if (!/^[A-Za-z0-9*._~-]{6,40}$/.test(transferReference)) throw new Error("Order token reference is invalid");
+    return { amount: String(order.amount), transferReference, orderId: String(order.orderId) };
+  } catch (error) {
+    return { error: json({ error: "A valid signed order token is required" }, 401) };
+  }
 }
 
 function getAllowedOrigins(env) {
@@ -55,6 +152,11 @@ function withCors(response, request, env) {
   for (const [key, value] of Object.entries(corsHeaders(request, env))) {
     headers.set(key, value);
   }
+  headers.set("strict-transport-security", "max-age=31536000; includeSubDomains");
+  headers.set("x-content-type-options", "nosniff");
+  headers.set("x-frame-options", "DENY");
+  headers.set("referrer-policy", "no-referrer");
+  headers.set("content-security-policy", "default-src 'none'; frame-ancestors 'none'; form-action 'none'");
   return new Response(response.body, { status: response.status, headers });
 }
 
@@ -111,8 +213,20 @@ function sanitizeForClient(value, depth = 0) {
   ]));
 }
 
+function extractMastercardTransfer(data) {
+  const direct = data?.merchant_transfer || data?.merchantTransfer || data?.result?.merchant_transfer || data?.result?.merchantTransfer;
+  if (direct && !Array.isArray(direct)) return direct;
+  const list = data?.merchant_transfers?.data?.merchant_transfer
+    || data?.merchantTransfers?.data?.merchantTransfer
+    || data?.result?.merchant_transfers?.data?.merchant_transfer
+    || data?.result?.merchantTransfers?.data?.merchantTransfer;
+  if (Array.isArray(list)) return list[0] || null;
+  return null;
+}
+
 function publicMastercardData(data) {
-  const transfer = data?.merchant_transfer || data?.merchantTransfer || data?.result?.merchant_transfer || data?.result?.merchantTransfer || {};
+  const transfer = extractMastercardTransfer(data);
+  if (!transfer || typeof transfer !== "object" || !transfer.id) return null;
   const transaction = transfer?.transaction_history?.data?.transaction?.[0] || {};
   const safeTransfer = {
     id: transfer.id || null,
@@ -316,6 +430,10 @@ async function handleCallback(request, env) {
 }
 
 async function handleMastercardPayment(request, env) {
+  const limited = rateLimitResponse(request, env, "mastercard-payment");
+  if (limited) return limited;
+  const authenticated = authResponse(request, env);
+  if (authenticated) return authenticated;
   const missing = mastercardMissingConfig(env);
   if (missing.length) return json({ error: "Mastercard MPQR adapter is not configured" }, 503);
   let body;
@@ -324,19 +442,48 @@ async function handleMastercardPayment(request, env) {
   } catch {
     return json({ error: "Request body must be valid JSON" }, 400);
   }
-  if (!validAmount(body.amount)) return json({ error: "amount must be a positive amount with up to 2 decimals" }, 400);
+  const controlError = productionControlResponse(env, body);
+  if (controlError) return controlError;
+  const resolved = await resolveMastercardPaymentInput(env, body);
+  if (resolved.error) return resolved.error;
+  if (!validAmount(resolved.amount)) return json({ error: "The server-side order amount is invalid" }, 400);
+  const idempotencyKey = String(request.headers.get("Idempotency-Key") || body.idempotencyKey || resolved.orderId || resolved.transferReference || "").trim();
+  const cached = idempotencyCache.get(idempotencyKey);
+  if (cached && cached.expiresAt > Date.now()) return cached.response.clone();
+  if (enabled(env.REQUIRE_ORDER_BINDING) && resolved.transferReference) {
+    try {
+      const existing = await retrieveMastercardTransfer(env, { transferReference: resolved.transferReference });
+      const safeExisting = publicMastercardData(existing.data);
+      if (!safeExisting) {
+        const notFound = new Error("No existing Mastercard transfer found");
+        notFound.status = 404;
+        throw notFound;
+      }
+      const response = json({ ok: true, reused: true, correlationId: existing.correlationId, result: safeExisting });
+      if (idempotencyKey) idempotencyCache.set(idempotencyKey, { expiresAt: Date.now() + CACHE_TTL_MS, response: response.clone() });
+      return response;
+    } catch (error) {
+      if (Number(error.status) !== 404) return json({ error: "Existing Mastercard transfer status is unresolved", correlationId: error.correlationId }, 409);
+    }
+  }
   try {
     const result = await createMastercardPayment(env, {
-      amount: body.amount,
-      transferReference: body.transferReference,
+      amount: resolved.amount,
+      transferReference: resolved.transferReference,
     });
-    return json({ ok: true, correlationId: result.correlationId, result: publicMastercardData(result.data) });
+    const response = json({ ok: true, correlationId: result.correlationId, result: publicMastercardData(result.data) });
+    if (idempotencyKey) idempotencyCache.set(idempotencyKey, { expiresAt: Date.now() + CACHE_TTL_MS, response: response.clone() });
+    return response;
   } catch (error) {
     return json({ error: "Mastercard sandbox payment failed", correlationId: error.correlationId }, error.status || 502);
   }
 }
 
 async function handleMastercardRetrieve(request, env) {
+  const limited = rateLimitResponse(request, env, "mastercard-retrieve");
+  if (limited) return limited;
+  const authenticated = authResponse(request, env);
+  if (authenticated) return authenticated;
   const missing = mastercardMissingConfig(env);
   if (missing.length) return json({ error: "Mastercard MPQR adapter is not configured" }, 503);
   const url = new URL(request.url);
@@ -345,7 +492,9 @@ async function handleMastercardRetrieve(request, env) {
   if (!transferId && !transferReference) return json({ error: "transferId or ref is required" }, 400);
   try {
     const result = await retrieveMastercardTransfer(env, { transferId, transferReference });
-    return json({ ok: true, correlationId: result.correlationId, result: publicMastercardData(result.data) });
+    const safeResult = publicMastercardData(result.data);
+    if (!safeResult) return json({ error: "Mastercard transfer not found", correlationId: result.correlationId }, 404);
+    return json({ ok: true, correlationId: result.correlationId, result: safeResult });
   } catch (error) {
     return json({ error: "Mastercard sandbox retrieval failed", correlationId: error.correlationId }, error.status || 502);
   }
@@ -386,6 +535,10 @@ export default {
         configured: mastercardMissingConfig(env).length === 0,
         mastercardConfigured: mastercardMissingConfig(env).length === 0,
         bkashStatus: missingConfig(c).length === 0 ? "configured_but_inactive" : "on_hold",
+        authMode: enabled(env.REQUIRE_CLIENT_AUTH) ? "required" : "sandbox_public",
+        orderBinding: enabled(env.REQUIRE_ORDER_BINDING) ? "required" : "sandbox_legacy_amount",
+        idempotency: enabled(env.REQUIRE_IDEMPOTENCY_KEY) ? "required_with_memory_guard" : "optional_with_memory_guard",
+        rateLimitPerMinute: Math.max(1, Math.min(120, Number(env.RATE_LIMIT_PER_MINUTE || 15))),
         frontendUrl: c.frontendUrl,
       });
     } else if (url.pathname === "/api/payments/create" && request.method === "POST") {

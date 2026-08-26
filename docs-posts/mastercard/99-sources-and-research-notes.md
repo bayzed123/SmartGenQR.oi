@@ -33,3 +33,14 @@ The A-to-Z docs should clearly separate: (1) the current SmartGen sandbox proof 
 - https://developer.mastercard.com/mastercard-merchant-presented-qr/documentation/server-apis/api-reference/retrieval-api/
 - https://developer.mastercard.com/mastercard-merchant-presented-qr/documentation/device-sdks/
 - https://www.bb.org.bd/en/index.php/financialactivity/paysystems
+
+## Retrieval response and UNKNOWN handling
+
+The official Retrieval API documentation says retrieval by transfer reference returns a `merchant_transfers.data.merchant_transfer` array, while retrieval by transfer ID returns a single `merchant_transfer` object. The Worker’s idempotency recovery must therefore handle both shapes and must not treat an empty list as an existing transfer. An HTTP 200 response with `status=APPROVED` indicates a successful transaction, `PENDING` means processing continues and another GET should be made, and `UNKNOWN` can occur after a timeout. The originating institution or transaction originator should perform a Retrieval API lookup after about one minute for UNKNOWN and must not resubmit the transaction because the original may already have been processed.
+
+The official response/error documentation lists HTTP 402 for a declined financial transaction, 404 for a missing resource, 409 for a resource conflict, 429 for rate limiting, and 500/5XX for server or network infrastructure errors. Mastercard recommends retaining the correlation ID for support.
+
+Additional official source URLs:
+
+- https://developer.mastercard.com/mastercard-merchant-presented-qr/documentation/server-apis/api-reference/retrieval-api/
+- https://developer.mastercard.com/mastercard-merchant-presented-qr/documentation/server-apis/response-error-codes/

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const matter = require('gray-matter');
+const matter = require('../utils/front-matter.js');
 const { marked } = require('marked');
 
 const blogDir = path.join(__dirname, '../blog');
