@@ -1,8 +1,8 @@
 # SmartGen Barcode Service
 
-`barcode-service/` is a static, self-hosted barcode generator and product-form validator. It does not call a SmartGen API, collect product data, save barcode values, or require a client API key. All barcode rendering and validation occur in the browser.
+`barcode-service/` is a static, self-hosted barcode generator and product-form validator. It does not call a SmartGen API, collect product data, save barcode values, require a client API key, or use third-party barcode-rendering code. All barcode rendering and validation occur in the browser through SmartGen-owned code.
 
-For the full client workflow, field contract, secret-handling rules, deployment checks, and limitations, read [CLIENT-INTEGRATION-GUIDE.md](CLIENT-INTEGRATION-GUIDE.md).
+For the full client workflow, field contract, secret-handling rules, deployment checks, and limitations, read [CLIENT-INTEGRATION-GUIDE.md](CLIENT-INTEGRATION-GUIDE.md). The draft SmartGen-owned product license is in [SMARTGEN-PROPRIETARY-LICENSE.txt](SMARTGEN-PROPRIETARY-LICENSE.txt).
 
 ## Client-admin integration
 

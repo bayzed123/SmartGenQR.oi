@@ -17,4 +17,8 @@ assert.equal(barcode.validate("CODE39", "SKU-42").valid, true);
 assert.equal(barcode.validate("CODE39", "sku-42").value, "SKU-42");
 assert.equal(barcode.validate("CODE39", "sku_42").valid, false);
 assert.equal(barcode.prepareProductBarcode({ format: "CODE128", barcode: "INV-001" }).valid, true);
+assert.equal(barcode.encode("CODE128", "INV-001").modules.length > 50, true);
+assert.equal(barcode.encode("CODE39", "SKU-42").modules.length > 50, true);
+assert.equal(barcode.encode("EAN13", "590123412345").modules.length, 95);
+assert.equal(barcode.encode("UPC", "03600029145").modules.length, 95);
 console.log("SmartGen Barcode Service validation tests passed.");

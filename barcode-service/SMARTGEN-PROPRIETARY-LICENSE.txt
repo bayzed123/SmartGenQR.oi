@@ -1,0 +1,9 @@
+SMARTGEN BARCODE SERVICE SOFTWARE LICENSE
+
+Copyright (c) 2026 SmartGen Tools. All rights reserved.
+
+This SmartGen-owned barcode-service source code, including barcode-service.js, is provided as part of the SmartGen Barcode Service product. Subject to a valid SmartGen customer arrangement, the customer may deploy the unmodified client integration file in that customer’s own ecommerce administration environment for the customer’s internal product-management use.
+
+The customer may not resell, sublicense, publish as a competing barcode service, remove SmartGen ownership notices, or distribute a modified version of the source code as a standalone product without prior written permission from SmartGen Tools.
+
+This draft product license should be reviewed and finalized by SmartGen’s qualified legal counsel before it is used as the final customer agreement.
