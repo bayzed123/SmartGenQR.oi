@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: validate first-party EAN parity patterns",
+    "date": "2026-08-26T04:35:48Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "docs: add ecommerce admin architecture script",
     "date": "2026-08-26T04:33:44Z",
     "description": "Platform improvement and optimization."
