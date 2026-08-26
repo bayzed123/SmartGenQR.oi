@@ -42,7 +42,12 @@
         const data = await response.json(); output.textContent = JSON.stringify(data, null, 2); output.hidden = false;
         if (!response.ok) throw new Error(data.error || "Mastercard sandbox request failed");
         status.textContent = "Sandbox transfer created. Save the returned transfer ID for retrieval."; status.className = "ok";
-      } catch (error) { status.textContent = error.message; status.className = "error"; } finally { button.disabled = false; }
+      } catch (error) {
+        status.textContent = error instanceof TypeError
+          ? "Worker unavailable: deploy the SmartGen Worker and update PAYMENT_WORKER_URL before testing."
+          : error.message;
+        status.className = "error";
+      } finally { button.disabled = false; }
     });
   </script>
 </body>
