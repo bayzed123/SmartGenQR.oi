@@ -3,107 +3,62 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SmartGen Secure Checkout | bKash Sandbox</title>
-  <meta name="description" content="Secure SmartGen bKash sandbox checkout powered by a server-side Cloudflare Worker.">
+  <meta name="description" content="SmartGen Mastercard Merchant Presented QR sandbox checkout.">
+  <title>SmartGen Secure Checkout | Mastercard MPQR Sandbox</title>
   <style>
-    :root { color-scheme: dark; --bg: #080b12; --panel: #111827; --line: #283548; --text: #edf2f7; --muted: #9caac0; --pink: #e2136e; --pink2: #ff4b9a; --green: #20c997; }
+    :root { color-scheme: dark; --bg:#070b13; --panel:#111a29; --line:#2a3b52; --text:#eef5ff; --muted:#9dafc7; --blue:#00a9e0; --blue2:#0063a4; --green:#31d0a0; --yellow:#f4c95d; }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: radial-gradient(circle at 20% 0%, #32122d 0, transparent 38%), radial-gradient(circle at 100% 100%, #101d42 0, transparent 36%), var(--bg); color: var(--text); }
-    main { width: min(100%, 980px); display: grid; grid-template-columns: 1.05fr .95fr; gap: 20px; }
-    .panel { border: 1px solid var(--line); background: color-mix(in srgb, var(--panel) 93%, transparent); border-radius: 24px; padding: clamp(24px, 5vw, 48px); box-shadow: 0 24px 80px #0006; }
-    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .02em; }
-    .mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: linear-gradient(135deg, var(--pink), var(--pink2)); color: white; }
-    h1 { font-size: clamp(2rem, 6vw, 4rem); line-height: .98; letter-spacing: -.05em; margin: 42px 0 20px; max-width: 600px; }
-    h2 { margin: 0 0 18px; font-size: 1.35rem; }
-    p { color: var(--muted); line-height: 1.7; }
-    .eyebrow { color: #ff8bbd; text-transform: uppercase; letter-spacing: .15em; font-size: .76rem; font-weight: 800; }
-    .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-    .fact { border: 1px solid var(--line); border-radius: 999px; padding: 9px 13px; color: #c9d4e6; font-size: .84rem; }
-    label { display: grid; gap: 8px; margin-top: 18px; color: #c9d4e6; font-size: .9rem; font-weight: 700; }
-    input { width: 100%; border: 1px solid var(--line); border-radius: 12px; background: #0b111d; color: var(--text); padding: 14px 15px; font: inherit; outline: none; }
-    input:focus { border-color: var(--pink2); box-shadow: 0 0 0 3px #ff4b9a22; }
-    button { width: 100%; margin-top: 24px; border: 0; border-radius: 12px; padding: 15px 18px; color: white; background: linear-gradient(135deg, var(--pink), #b90c57); font: inherit; font-weight: 800; cursor: pointer; transition: transform .15s ease, filter .15s ease; }
-    button:hover { transform: translateY(-1px); filter: brightness(1.1); }
-    button:disabled { opacity: .65; cursor: wait; transform: none; }
-    .status { min-height: 25px; margin: 16px 0 0; font-size: .9rem; }
-    .status.error { color: #ff9aaa; }
-    .status.ok { color: #72e4bd; }
-    .secure { display: flex; gap: 10px; align-items: flex-start; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; line-height: 1.55; }
-    .secure strong { color: var(--text); }
-    .result { display: none; }
-    .result.visible { display: block; }
-    code { color: #ff9ac3; }
-    @media (max-width: 760px) { main { grid-template-columns: 1fr; } h1 { margin-top: 32px; } }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; padding:20px; font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--text); background:radial-gradient(circle at 12% 0%,#123552 0,transparent 42%),radial-gradient(circle at 100% 100%,#101d42 0,transparent 36%),var(--bg); }
+    main { width:min(100%,980px); display:grid; grid-template-columns:1.06fr .94fr; gap:20px; }
+    .panel { border:1px solid var(--line); border-radius:24px; padding:clamp(24px,5vw,48px); background:linear-gradient(160deg,#142237,var(--panel) 50%,#0d1523); box-shadow:0 24px 80px #0008; }
+    .brand { display:inline-flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.02em; }
+    .mark { display:grid; place-items:center; width:40px; height:40px; border-radius:12px; background:linear-gradient(135deg,var(--blue),var(--blue2)); color:white; }
+    a { color:#83ddf8; }
+    .eyebrow { margin:26px 0 0; color:#7ce0f9; text-transform:uppercase; letter-spacing:.14em; font-size:.75rem; font-weight:800; }
+    h1 { margin:14px 0 18px; max-width:620px; font-size:clamp(2.3rem,6vw,4.5rem); line-height:.96; letter-spacing:-.06em; }
+    h2 { margin:0 0 12px; font-size:1.35rem; }
+    p { color:var(--muted); line-height:1.7; }
+    .facts { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+    .fact { padding:9px 13px; border:1px solid var(--line); border-radius:999px; color:#c9d4e6; font-size:.84rem; }
+    .notice { margin-top:25px; padding:14px 16px; border:1px solid #f4c95d55; border-radius:12px; background:#f4c95d0c; color:#f5dfa0; font-size:.9rem; line-height:1.55; }
+    .button { display:inline-flex; justify-content:center; width:100%; margin-top:20px; padding:15px 18px; border-radius:12px; background:linear-gradient(135deg,var(--blue),var(--blue2)); color:white; font-weight:800; text-decoration:none; }
+    .button:hover { filter:brightness(1.1); }
+    .status { display:flex; gap:10px; align-items:center; margin:20px 0 0; padding:13px 14px; border:1px solid #31d0a055; border-radius:12px; color:#a4f1d5; background:#31d0a00d; font-size:.88rem; }
+    .status::before { content:""; width:9px; height:9px; flex:0 0 auto; border-radius:50%; background:var(--green); box-shadow:0 0 0 4px #31d0a01c; }
+    .steps { display:grid; gap:14px; margin:24px 0 0; }
+    .step { display:grid; grid-template-columns:34px 1fr; gap:12px; align-items:start; }
+    .number { display:grid; place-items:center; width:30px; height:30px; border-radius:50%; background:#173653; color:#8ce5fb; font-weight:800; }
+    .step strong { display:block; margin:2px 0 4px; }
+    .step p { margin:0; font-size:.9rem; }
+    .security { margin-top:24px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.82rem; line-height:1.6; }
+    footer { grid-column:1/-1; color:#71859e; font-size:.82rem; text-align:center; }
+    @media (max-width:760px) { main { grid-template-columns:1fr; } footer { grid-column:auto; } }
   </style>
 </head>
 <body>
   <main>
     <section class="panel">
       <div class="brand"><span class="mark">S</span><span>SmartGen Checkout</span></div>
-      <p class="eyebrow">bKash sandbox gateway</p>
-      <h1>Pay simply. Move forward.</h1>
-      <p>This test checkout sends payment details to a protected server-side Worker. Your bKash credentials never enter this page or the browser.</p>
-      <div class="facts"><span class="fact">BDT payments</span><span class="fact">Hosted bKash page</span><span class="fact">Server-side token flow</span></div>
+      <p class="eyebrow">Active payment provider · Mastercard MPQR</p>
+      <h1>Secure sandbox payments for SmartGen.</h1>
+      <p>SmartGen’s Mastercard Merchant Presented QR prototype sends payment requests through a protected Cloudflare Worker. The browser never receives the OAuth signing key or provider credentials.</p>
+      <div class="facts"><span class="fact">Mastercard sandbox</span><span class="fact">Server-side OAuth</span><span class="fact">Transfer retrieval</span><span class="fact">Mobile friendly</span></div>
+      <div class="notice"><strong>Sandbox only:</strong> transactions are simulated for development. No real card is charged and no real funds move.</div>
     </section>
 
     <section class="panel">
-      <h2>Start a sandbox payment</h2>
-      <p>Enter a small test amount, then continue to bKash. Use only sandbox credentials and test wallets.</p>
-      <form id="payment-form">
-        <label for="amount">Amount (BDT)
-          <input id="amount" name="amount" inputmode="decimal" type="number" min="1" step="0.01" value="4.53" required>
-        </label>
-        <label for="payerReference">Payer reference
-          <input id="payerReference" name="payerReference" maxlength="255" value="Customer" required>
-        </label>
-        <button id="pay-button" type="submit">Continue to bKash</button>
-        <p id="status" class="status" role="status" aria-live="polite"></p>
-      </form>
-      <div id="result" class="result"></div>
-      <p><a href="/payment-gateway/mastercard-mpqr.html" style="color:#75d8f7">Open Mastercard MPQR Sandbox Lab →</a></p>
-      <div class="secure"><span>◈</span><span><strong>Security note.</strong> The Worker validates the amount, creates a unique invoice, obtains the bKash token server-side, and forwards only the hosted checkout URL to this page.</span></div>
+      <h2>Start Mastercard testing</h2>
+      <p>Open the sandbox lab to create a test transfer, view the approval response, and retrieve the latest status using the returned transfer ID.</p>
+      <a class="button" href="/payment-gateway/mastercard-mpqr.html">Open Mastercard MPQR Sandbox →</a>
+      <div class="status">Worker online · Mastercard sandbox ready</div>
+      <div class="steps">
+        <div class="step"><span class="number">1</span><div><strong>Enter a test amount</strong><p>Use sandbox values only. The current test configuration approves amounts above 50 USD.</p></div></div>
+        <div class="step"><span class="number">2</span><div><strong>Create a transfer</strong><p>SmartGen signs the request on the server and returns a Mastercard transfer ID.</p></div></div>
+        <div class="step"><span class="number">3</span><div><strong>Verify the result</strong><p>Use the retrieval control to confirm the latest provider status before treating a transfer as complete.</p></div></div>
+      </div>
+      <div class="security"><strong>Security note.</strong> This prototype uses masked sandbox account fixtures. Never enter a real PAN, CVV, PIN, OTP, or private key into this page.</div>
     </section>
+    <footer>SmartGen payment orchestration prototype · Mastercard sandbox · Production access requires provider approval and compliance review</footer>
   </main>
-  <script>
-    // Set this to the deployed Worker URL, for example:
-    // https://smartgen-bkash-sandbox.<your-subdomain>.workers.dev
-    const PAYMENT_WORKER_URL = window.SMARTGEN_PAYMENT_WORKER_URL || "https://smartgen-bkash-sandbox.sayadmdbayezidhosan.workers.dev";
-    const form = document.querySelector("#payment-form");
-    const button = document.querySelector("#pay-button");
-    const status = document.querySelector("#status");
-
-    function setStatus(message, type = "") {
-      status.textContent = message;
-      status.className = `status ${type}`;
-    }
-
-    const params = new URLSearchParams(location.search);
-    if (params.get("status")) {
-      const state = params.get("status");
-      setStatus(state === "success" ? `Payment completed${params.get("trxID") ? ` · ${params.get("trxID")}` : ""}` : `Payment status: ${state}${params.get("message") ? ` — ${params.get("message")}` : ""}`, state === "success" ? "ok" : "error");
-    }
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      button.disabled = true;
-      setStatus("Creating a secure bKash payment…");
-      const amount = document.querySelector("#amount").value;
-      const payerReference = document.querySelector("#payerReference").value.trim();
-      try {
-        const response = await fetch(`${PAYMENT_WORKER_URL.replace(/\/$/, "")}/api/payments/create`, {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ amount, payerReference, platform: location.origin })
-        });
-        const data = await response.json();
-        if (!response.ok || !data.bkashURL) throw new Error(data.error || "The Worker did not return a bKash checkout URL");
-        setStatus("Redirecting to the bKash sandbox…", "ok");
-        location.assign(data.bkashURL);
-      } catch (error) {
-        setStatus(error.message, "error");
-        button.disabled = false;
-      }
-    });
-  </script>
 </body>
 </html>
