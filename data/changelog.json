@@ -1,5 +1,10 @@
 [
   {
+    "title": "docs: record Mastercard sandbox prototype verification",
+    "date": "2026-08-26T08:33:22Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: add Mastercard MPQR sandbox adapter",
     "date": "2026-08-26T08:32:18Z",
     "description": "Platform improvement and optimization."
