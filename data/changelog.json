@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: show barcode lifetime service offer",
+    "date": "2026-08-26T04:03:17Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "docs: add barcode client integration guide",
     "date": "2026-08-26T04:01:22Z",
     "description": "Platform improvement and optimization."
