@@ -30,7 +30,7 @@
     <pre id="output" hidden></pre>
   </section></main>
   <script>
-    const PAYMENT_WORKER_URL = window.SMARTGEN_PAYMENT_WORKER_URL || "https://smartgen-bkash-sandbox.workers.dev";
+    const PAYMENT_WORKER_URL = window.SMARTGEN_PAYMENT_WORKER_URL || "https://smartgen-bkash-sandbox.sayadmdbayezidhosan.workers.dev";
     const form = document.querySelector("#form");
     const button = document.querySelector("#submit");
     const status = document.querySelector("#status");
@@ -44,7 +44,7 @@
         status.textContent = "Sandbox transfer created. Save the returned transfer ID for retrieval."; status.className = "ok";
       } catch (error) {
         status.textContent = error instanceof TypeError
-          ? "Worker unavailable: deploy the SmartGen Worker and update PAYMENT_WORKER_URL before testing."
+          ? "Worker unavailable: check that the deployed Worker is reachable and its secrets are configured before testing."
           : error.message;
         status.className = "error";
       } finally { button.disabled = false; }
