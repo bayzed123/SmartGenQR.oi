@@ -41,7 +41,7 @@ For a small technology business, the practical first production model is usually
 
 The MPQR documentation describes a flow in which the merchant presents a static or dynamic QR code, the consumer’s payment application scans and verifies the QR, and the originating institution’s server calls the Mastercard Payment API with the QR data and amount. If the transaction is approved, the Payment API returns a successful response with `status` equal to `APPROVED`. If the status is `UNKNOWN` or `PENDING`, the application uses the Retrieval API to obtain an updated status.[2][3][4]
 
-The current SmartGen sandbox page is different from that complete merchant flow. It uses published sandbox account fixtures and does not yet receive a real merchant’s QR payload. The sandbox response may therefore have an empty `qr_data` field. That is not an authentication failure; it means the present test is a direct simulated transfer rather than a production merchant QR acceptance flow.
+The current SmartGen sandbox page is different from that complete merchant flow. It uses published sandbox account fixtures and does not yet receive a real merchant’s QR payload. The sandbox response may therefore have an empty `qr_data` field. That is not an authentication failure; it means the present test is a direct simulated transfer rather than a production merchant QR acceptance flow. The attached Mastercard overview confirms that a receiving institution normally generates the merchant QR, while an originating institution or transaction originator scans, parses, verifies, and submits the QR data to the Payment API.[7] SmartGen’s current sandbox Worker is a technical test client using Mastercard’s published sandbox fixtures; it is not yet a licensed receiving institution, originating institution, wallet provider, or merchant acquirer.
 
 A production-capable flow needs the following provider-issued values and relationships:
 
@@ -55,9 +55,22 @@ A production-capable flow needs the following provider-issued values and relatio
 | Production Consumer Key and signing key | Mastercard project after approval | Cloudflare Worker secrets only |
 | Test and production endpoint selection | Mastercard environment | Worker configuration |
 
-Do not use the current sandbox recipient account as a real merchant settlement account. It is only a test fixture.
+Do not use the current sandbox recipient account as a real merchant settlement account. It is only a test fixture. Mastercard does not transmit funds itself; the licensed financial institution in the program transmits and settles the funds. Therefore SmartGen must obtain an approved receiving-institution or processor relationship before promising merchants that they can receive live money.[7]
 
-## 5. Recommended SmartGen architecture
+## 5. QR roles and the next integration boundary
+
+The attached overview makes the next boundary clear. A **static QR** does not contain the transaction amount; the consumer’s payment application enters the amount after scanning. A **dynamic QR** contains transaction-specific information such as the amount and is generated for each purchase. Merchant QR generation belongs to the receiving institution or its approved merchant software, while scanning, parsing, and verification belong to the consumer-facing payment application or its originating institution/transaction originator.[7]
+
+For SmartGen, the next production integration should therefore be one of these two approved models:
+
+| Model | SmartGen responsibility | Required partner capability |
+|---|---|---|
+| Merchant checkout/orchestration | Create the internal order, display an approved QR payload, call the partner’s payment service, and reconcile the result | Receiving institution or processor supplies merchant onboarding, QR data, settlement, and payment authorization |
+| Consumer wallet/originating app | Scan or accept QR data, verify the payload, initiate Payment API calls, and notify the consumer | Mastercard-approved originating institution or transaction-originator status, app certification, and funding-account controls |
+
+SmartGen should not claim that the current sandbox page generates a usable merchant QR. It currently demonstrates the server-side Payment and Retrieval APIs. A real QR flow requires an approved participant to supply the merchant QR payload and the contractual role, settlement account, and certification process.
+
+## 6. Recommended SmartGen architecture
 
 The browser should communicate only with SmartGen’s backend. It should send an internal order ID, amount, currency, provider selection, and a generated reference. It must not send a PAN, CVV, PIN, OTP, private signing key, or Mastercard Consumer Key.
 
@@ -80,7 +93,7 @@ A production order record should contain at least:
 
 The status rule must be strict: only a verified server-side `APPROVED` result may move an order to paid. A browser message, screenshot, redirect, or client-supplied status must never mark an order as paid.
 
-## 6. Required production controls before real money
+## 7. Required production controls before real money
 
 SmartGen should add server-side order persistence before production. Browser `localStorage` is acceptable for the current demonstration history but is not an order database and can be deleted or altered by the user.
 
@@ -92,7 +105,7 @@ Logging should record timestamps, order IDs, provider references, status, HTTP s
 
 An administrator dashboard should show pending payments, approved payments, failed payments, retrieval results, and reconciliation exceptions. Access should require administrator authentication and audit logging. Customers should receive a receipt only after the server verifies the final status.
 
-## 7. Exact onboarding path for SmartGen
+## 8. Onboarding path for SmartGen
 
 ### Step 1: Choose the business model
 
@@ -124,7 +137,7 @@ Replace sandbox fixtures only after the receiving institution or approved proces
 
 Start with one approved merchant, low limits, manual reconciliation, enhanced monitoring, and a documented rollback procedure. Compare SmartGen order records with provider reports and settlement statements. Expand only after successful reconciliation and support handling.
 
-## 8. Bangladesh regulatory and provider considerations
+## 9. Bangladesh regulatory and provider considerations
 
 Bangladesh Bank’s Payment Systems Department states that it issues licenses in the broad categories of Payment Service Provider (PSP) and Payment System Operator (PSO). Its description distinguishes a PSP that facilitates payments directly to customers and settles through a scheduled bank or financial institution from a PSO that operates a settlement system among participants, including examples such as payment gateways and aggregators. Bangladesh Bank also refers to business rationale, risk management, settlement systems, eligibility, and other requirements when considering applications.[5]
 
@@ -132,7 +145,7 @@ That description is a strong reason not to launch SmartGen as an independent pub
 
 If SmartGen later pursues bKash, bKash’s official business pages distinguish merchant services from online-business solutions and state that online business can include payment gateway, tokenized checkout, subscription payments, instant refunds, direct charges, B2C payout, and APIs. The merchant onboarding page asks for business information including NID, a valid trade license, and a bank account.[6] This remains separate from the currently active Mastercard path.
 
-## 9. What you should do now
+## 10. What you should do now
 
 1. Keep using the current Mastercard sandbox page only for technical tests. Use a new transfer reference for every payment attempt.
 2. Test the Retrieval control with the transfer ID returned by the page and confirm that the status remains consistent with the Payment API response.
@@ -141,7 +154,7 @@ If SmartGen later pursues bKash, bKash’s official business pages distinguish m
 5. Decide whether SmartGen will begin as a software/orchestration provider for an approved participant. This is the recommended path for the current small-business stage.
 6. Before any live transaction, add server-side order persistence, idempotency, administrator access control, reconciliation, refunds/cancellations, audit logs, privacy/terms pages, and provider-specific settlement controls.
 
-## 10. Final answer about the attached file
+## 11. Final answer about the attached file
 
 The attached OAuth 2.0 guide is useful background documentation, but it does not require an update to the current SmartGen MPQR code. The current MPQR integration is correctly using OAuth 1.0a. Keep the implementation unchanged unless Mastercard confirms that OAuth 2.0 is supported and required for this specific MPQR project and environment.
 
@@ -153,3 +166,4 @@ The attached OAuth 2.0 guide is useful background documentation, but it does not
 [4]: https://developer.mastercard.com/mastercard-merchant-presented-qr/documentation/server-apis/use-cases/ "Mastercard Merchant Presented QR — Use Cases"
 [5]: https://www.bb.org.bd/en/index.php/financialactivity/paysystems "Bangladesh Bank — Payment and Settlement Systems"
 [6]: https://www.bkash.com/en/business/merchant "bKash — Merchant onboarding"
+[7]: https://developer.mastercard.com/mastercard-merchant-presented-qr/documentation/ "Mastercard Merchant Presented QR — Overview"
