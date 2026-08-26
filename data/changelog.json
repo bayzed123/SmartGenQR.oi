@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: support folder docs without breaking URLs",
+    "date": "2026-08-26T05:15:44Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "docs: add barcode system guide set",
     "date": "2026-08-26T05:02:13Z",
     "description": "Platform improvement and optimization."
