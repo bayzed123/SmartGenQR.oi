@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: connect payment pages to deployed worker",
+    "date": "2026-08-26T09:35:21Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: clarify unavailable payment worker error",
     "date": "2026-08-26T09:17:39Z",
     "description": "Platform improvement and optimization."
