@@ -2,6 +2,8 @@
 
 `barcode-service/` is a static, self-hosted barcode generator and product-form validator. It does not call a SmartGen API, collect product data, save barcode values, or require a client API key. All barcode rendering and validation occur in the browser.
 
+For the full client workflow, field contract, secret-handling rules, deployment checks, and limitations, read [CLIENT-INTEGRATION-GUIDE.md](CLIENT-INTEGRATION-GUIDE.md).
+
 ## Client-admin integration
 
 Load `barcode-service.js` from the SmartGen domain or copy it to the client’s own repository. Then connect their existing product form. The integration prevents a form submission when a barcode is not valid for the selected format. For EAN-13 and UPC-A, it calculates a missing check digit and verifies an existing check digit before allowing the product to save.
