@@ -15,7 +15,15 @@ const files = [
 
 const code = `async () => {
   const boundary = \`----SmartGen\${Date.now()}\`;
-  const metadata = { main_module: "bkash-payment-gateway.js", compatibility_date: "2026-08-26", keep_bindings: ["secret_text"] };
+  const metadata = {
+    main_module: "bkash-payment-gateway.js",
+    compatibility_date: "2026-08-26",
+    keep_bindings: ["secret_text"],
+    bindings: [
+      { name: "ALLOWED_ORIGINS", type: "plain_text", text: "https://smartgentools.com,https://bayzed123.github.io" },
+      { name: "FRONTEND_URL", type: "plain_text", text: "https://smartgentools.com/payment-gateway/" },
+    ],
+  };
   const files = ${JSON.stringify(files)};
   const parts = [
     \`--\${boundary}\`,
