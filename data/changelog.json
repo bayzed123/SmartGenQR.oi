@@ -1,5 +1,10 @@
 [
   {
+    "title": "chore: make sandbox worker config deployable",
+    "date": "2026-08-26T09:15:26Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "docs: record Mastercard sandbox prototype verification",
     "date": "2026-08-26T08:33:22Z",
     "description": "Platform improvement and optimization."
