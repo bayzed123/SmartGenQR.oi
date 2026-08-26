@@ -10,5 +10,6 @@ The static tool was checked directly from `barcode-service/index.html` without a
 | Invalid EAN-13 check digit | Rejected by the local validation function. |
 | SVG renderer | Loaded from `barcode-service/vendor/JsBarcode.all.min.js` in this repository. |
 | JavaScript validation tests | Pass with `node barcode-service/test/validation.test.mjs`. |
+| Public-domain delivery | `https://smartgentools.com/barcode-service/?v=ae0c3ab` displays the $10 lifetime message and the browser-only integration flow. |
 
 The complete tool remains static. The client integration callback only validates and normalizes product barcode data before the client’s existing product form submits to the client’s own backend.
