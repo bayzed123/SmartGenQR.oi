@@ -1,5 +1,10 @@
 [
   {
+    "title": "Configure Worker CORS bindings",
+    "date": "2026-08-26T12:02:37Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Preserve Worker secret bindings on deploy",
     "date": "2026-08-26T11:57:57Z",
     "description": "Platform improvement and optimization."
