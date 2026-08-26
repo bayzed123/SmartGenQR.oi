@@ -120,17 +120,20 @@ response_received_at
 retry_count
 ```
 
-Never log:
+Never log or return to the browser:
 
 ```text
 private signing key
 keystore password
 OAuth Authorization header
+Consumer Key
 full PAN or account URI
 CVV or PIN
 OTP
 unredacted personal data
 ```
+
+The SmartGen Worker uses an explicit public-response allow-list for Mastercard Payment and Retrieval responses. It returns only safe identifiers, status, amount/currency, timestamps, and masked transaction metadata. It does not forward the raw Mastercard provider payload to the public page. Error responses likewise return a generic safe message and correlation ID without forwarding provider credential/account fields.
 
 If provider responses contain masked account URIs or personal data, store only a sanitized subset. Encrypt sensitive operational records and limit access to authorized administrators.
 
@@ -153,7 +156,7 @@ curl -i -X OPTIONS \
   -H 'Access-Control-Request-Headers: content-type'
 ```
 
-Then run one safe Sandbox payment, retrieve it, inspect logs for secret leakage, and confirm the public page shows the expected result. Do not run a Production payment as a deployment health check without an approved pilot and explicit operational approval.
+Then run one safe Sandbox payment, retrieve it, inspect logs for secret leakage, and confirm the public page shows the expected result. The response must not contain `authorization`, `consumer_key`, `signing_key`, `private_key`, `secret`, `password`, `account_uri`, `pan`, `cvc`, `cvv`, `pin`, or token fields. Do not run a Production payment as a deployment health check without an approved pilot and explicit operational approval.
 
 ## Incident response
 

@@ -98,6 +98,50 @@ async function readJson(response) {
   }
 }
 
+const CLIENT_SENSITIVE_KEY = /(authorization|consumer|signing|private|secret|password|token|pan|cvc|cvv|pin|account.?uri|app.?key|app.?secret)/i;
+
+function sanitizeForClient(value, depth = 0) {
+  if (depth > 8) return "[omitted]";
+  if (Array.isArray(value)) return value.map((item) => sanitizeForClient(item, depth + 1));
+  if (!value || typeof value !== "object") return value;
+  return Object.fromEntries(Object.entries(value).map(([key, item]) => [
+    key,
+    CLIENT_SENSITIVE_KEY.test(key) ? "[redacted]" : sanitizeForClient(item, depth + 1),
+  ]));
+}
+
+function publicMastercardData(data) {
+  const transfer = data?.merchant_transfer || data?.merchantTransfer || data?.result?.merchant_transfer || data?.result?.merchantTransfer || {};
+  const transaction = transfer?.transaction_history?.data?.transaction?.[0] || {};
+  const safeTransfer = {
+    id: transfer.id || null,
+    transfer_reference: transfer.transfer_reference || null,
+    status: transfer.status || null,
+    original_status: transfer.original_status || null,
+    transfer_amount: transfer.transfer_amount && {
+      value: transfer.transfer_amount.value || null,
+      currency: transfer.transfer_amount.currency || null,
+    },
+    created: transfer.created || transfer.transaction_local_date_time || null,
+  };
+  if (transaction.id || transaction.status || transaction.unique_reference_number) {
+    safeTransfer.transaction_history = {
+      data: {
+        transaction: [{
+          id: transaction.id || null,
+          status: transaction.status || null,
+          unique_reference_number: transaction.unique_reference_number || null,
+          transaction_amount: transaction.transaction_amount && {
+            value: transaction.transaction_amount.value || null,
+            currency: transaction.transaction_amount.currency || null,
+          },
+        }],
+      },
+    };
+  }
+  return { merchant_transfer: safeTransfer };
+}
+
 async function bkashRequest(path, options, c) {
   const response = await fetch(`${c.baseUrl}${path}`, {
     ...options,
@@ -187,7 +231,7 @@ function redirectToResult(c, params) {
 async function handleCreate(request, env) {
   const c = config(env);
   const missing = missingConfig(c);
-  if (missing.length) return json({ error: "Worker is not configured", missing }, 503);
+  if (missing.length) return json({ error: "Worker is not configured" }, 503);
 
   let body;
   try {
@@ -225,7 +269,7 @@ async function handleCreate(request, env) {
       callbackURL: result.callbackURL,
     });
   } catch (error) {
-    return json({ error: "bKash payment creation failed", details: error.data || error.message }, error.status || 502);
+    return json({ error: "bKash payment creation failed", details: sanitizeForClient(error.data || error.message) }, error.status || 502);
   }
 }
 
@@ -272,7 +316,7 @@ async function handleCallback(request, env) {
 
 async function handleMastercardPayment(request, env) {
   const missing = mastercardMissingConfig(env);
-  if (missing.length) return json({ error: "Mastercard MPQR adapter is not configured", missing }, 503);
+  if (missing.length) return json({ error: "Mastercard MPQR adapter is not configured" }, 503);
   let body;
   try {
     body = await request.json();
@@ -285,24 +329,24 @@ async function handleMastercardPayment(request, env) {
       amount: body.amount,
       transferReference: body.transferReference,
     });
-    return json({ ok: true, correlationId: result.correlationId, result: result.data });
+    return json({ ok: true, correlationId: result.correlationId, result: publicMastercardData(result.data) });
   } catch (error) {
-    return json({ error: "Mastercard sandbox payment failed", correlationId: error.correlationId, details: error.data || error.message }, error.status || 502);
+    return json({ error: "Mastercard sandbox payment failed", correlationId: error.correlationId }, error.status || 502);
   }
 }
 
 async function handleMastercardRetrieve(request, env) {
   const missing = mastercardMissingConfig(env);
-  if (missing.length) return json({ error: "Mastercard MPQR adapter is not configured", missing }, 503);
+  if (missing.length) return json({ error: "Mastercard MPQR adapter is not configured" }, 503);
   const url = new URL(request.url);
   const transferId = url.searchParams.get("transferId");
   const transferReference = url.searchParams.get("ref");
   if (!transferId && !transferReference) return json({ error: "transferId or ref is required" }, 400);
   try {
     const result = await retrieveMastercardTransfer(env, { transferId, transferReference });
-    return json({ ok: true, correlationId: result.correlationId, result: result.data });
+    return json({ ok: true, correlationId: result.correlationId, result: publicMastercardData(result.data) });
   } catch (error) {
-    return json({ error: "Mastercard sandbox retrieval failed", correlationId: error.correlationId, details: error.data || error.message }, error.status || 502);
+    return json({ error: "Mastercard sandbox retrieval failed", correlationId: error.correlationId }, error.status || 502);
   }
 }
 
@@ -318,9 +362,9 @@ async function handleQuery(request, env) {
       headers: { authorization: authorizationHeader(token, c), "x-app-key": c.appKey },
       body: JSON.stringify({ paymentID: paymentId, paymentId }),
     }, c);
-    return json({ ok: true, result });
+    return json({ ok: true, result: sanitizeForClient(result) });
   } catch (error) {
-    return json({ error: "bKash payment query failed", details: error.data || error.message }, error.status || 502);
+    return json({ error: "bKash payment query failed", details: sanitizeForClient(error.data || error.message) }, error.status || 502);
   }
 }
 
@@ -337,11 +381,9 @@ export default {
         ok: true,
         service: "smartgen-bkash-sandbox-gateway",
         configured: missingConfig(c).length === 0,
-        missing: missingConfig(c),
         createPath: c.createPath,
         frontendUrl: c.frontendUrl,
         mastercardConfigured: mastercardMissingConfig(env).length === 0,
-        mastercardMissing: mastercardMissingConfig(env),
       });
     } else if (url.pathname === "/api/payments/create" && request.method === "POST") {
       response = await handleCreate(request, env);
