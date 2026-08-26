@@ -14,7 +14,7 @@ BKASH_QUERY_PATH = "/tokenized-checkout/payment/query"
 # Set BKASH_AUTH_PREFIX = "Bearer" only if your bKash onboarding profile requires it.
 BKASH_AUTH_PREFIX = ""
 ALLOWED_ORIGINS = "https://smartgentools.com,https://bayzed123.github.io"
-FRONTEND_URL = "https://bayzed123.github.io/SmartGenQR.oi/payment-gateway/"
+FRONTEND_URL = "https://smartgentools.com/payment-gateway/"
 # Optional: set this to the deployed Worker callback URL.
 # BKASH_CALLBACK_URL = "https://smartgen-bkash-sandbox.<subdomain>.workers.dev/api/payments/callback"
 
