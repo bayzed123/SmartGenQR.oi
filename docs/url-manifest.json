@@ -1,0 +1,397 @@
+{
+  "generatedAt": "2026-08-26T05:15:02.383Z",
+  "routes": [
+    {
+      "title": "API Reference",
+      "url": "/docs/api-reference/",
+      "legacyUrls": [],
+      "source": "docs-posts/api-reference.md",
+      "category": "API Reference",
+      "description": "Reference documentation for SmartGen's internal JavaScript functions and data structures."
+    },
+    {
+      "title": "Architecture & Tech Stack",
+      "url": "/docs/architecture-and-tech-stack/",
+      "legacyUrls": [],
+      "source": "docs-posts/smartgen architecture.md",
+      "category": "Guides",
+      "description": "How SmartGen is put together: core architectural principles, the technical stack, and the file structure."
+    },
+    {
+      "title": "Development Setup Guide",
+      "url": "/docs/development-setup-guide/",
+      "legacyUrls": [],
+      "source": "docs-posts/Setup_Guide.md",
+      "category": "Guides",
+      "description": "Set up a local development environment for SmartGen: prerequisites, install steps, the day-to-day workflow and pull request guidelines."
+    },
+    {
+      "title": "Directory Structure for Portfolio",
+      "url": "/docs/directory-structure-for-portfolio/",
+      "legacyUrls": [],
+      "source": "docs-posts/WORKFLOWS_README.md",
+      "category": "Guides",
+      "description": "The portfolio project's directory layout, plus how to copy the workflow files into your own repository and get the first build running."
+    },
+    {
+      "title": "Getting Started",
+      "url": "/docs/getting-started/",
+      "legacyUrls": [],
+      "source": "docs-posts/getting-started.md",
+      "category": "Guides",
+      "description": "Get SmartGen running locally in under five minutes: install the dependencies, start the dev server and make your first change."
+    },
+    {
+      "title": "GitHub Secrets Explained",
+      "url": "/docs/github-secrets-explained/",
+      "legacyUrls": [],
+      "source": "docs-posts/GITHUB_SECRETS_EXPLAINED.md",
+      "category": "Guides",
+      "description": "What GitHub Secrets are, why never to commit a key, and how to add and use them safely in Actions workflows. Written for beginners."
+    },
+    {
+      "title": "Portfolio Website: Getting Started Guide",
+      "url": "/docs/portfolio-website-getting-started-guide/",
+      "legacyUrls": [],
+      "source": "docs-posts/protfolio-getting-started.md",
+      "category": "Portfolio Website",
+      "description": "Fork, install and run the open-source developer portfolio locally: prerequisites, configuration and fixes for common setup errors."
+    },
+    {
+      "title": "Installation",
+      "url": "/docs/installation/",
+      "legacyUrls": [],
+      "source": "docs-posts/installation.md",
+      "category": "Guides",
+      "description": "Detailed installation and environment setup instructions for SmartGen."
+    },
+    {
+      "title": "Portfolio Website: Deployment & Blog System Guide",
+      "url": "/docs/portfolio-website-deployment-and-blog-system-guide/",
+      "legacyUrls": [],
+      "source": "docs-posts/portfolio-deployment-and-blog-system.md",
+      "category": "Portfolio Website",
+      "description": "Deploy the portfolio site and run its blog: the deployment pipeline, how markdown becomes published pages, and troubleshooting."
+    },
+    {
+      "title": "Quick Setup Guide",
+      "url": "/docs/quick-setup-guide/",
+      "legacyUrls": [],
+      "source": "docs-posts/smartgen overview.md",
+      "category": "Guides",
+      "description": "A quick setup guide and overview of SmartGen: what the platform includes, how the pieces fit together, and where to begin."
+    },
+    {
+      "title": "Developer Guidelines",
+      "url": "/docs/developer-guidelines/",
+      "legacyUrls": [],
+      "source": "docs-posts/coding-guidelines.md",
+      "category": "Guides",
+      "description": "The coding standards used across SmartGen: general principles, formatting rules, naming, comments and what reviewers look for."
+    },
+    {
+      "title": "Portfolio Website: Customization Guide",
+      "url": "/docs/portfolio-website-customization-guide/",
+      "legacyUrls": [],
+      "source": "docs-posts/portfolio-customization.md",
+      "category": "Portfolio Website",
+      "description": "Complete guide to customizing colors, typography, sections, navigation, and adding new pages to your open-source developer portfolio."
+    },
+    {
+      "title": "Vite Optimization Guide for CI/CD",
+      "url": "/docs/vite-optimization-guide-for-cicd/",
+      "legacyUrls": [],
+      "source": "docs-posts/VITE_OPTIMIZATION.md",
+      "category": "Guides",
+      "description": "Make Vite builds faster and smaller in CI/CD: configuration walkthrough, the build process explained, and the optimizations worth applying."
+    },
+    {
+      "title": "About the Team & Contribution",
+      "url": "/docs/about-the-team-and-contribution/",
+      "legacyUrls": [],
+      "source": "docs-posts/about team.md",
+      "category": "Guides",
+      "description": "Who builds SmartGen, how the project is run, and how to contribute: contribution guidelines, licensing and where to start."
+    },
+    {
+      "title": "Advanced Workflow Configuration",
+      "url": "/docs/github-actions-configuration-guide/",
+      "legacyUrls": [],
+      "source": "docs-posts/ADVANCED_CONFIGURATION.md",
+      "category": "Guides",
+      "description": "Configure GitHub Actions workflows beyond the defaults: custom environment variables, health checks, notifications and database migrations."
+    },
+    {
+      "title": "Portfolio Website: API & Script Reference",
+      "url": "/docs/portfolio-website-api-and-script-reference/",
+      "legacyUrls": [],
+      "source": "docs-posts/portfolio-api-reference.md",
+      "category": "Portfolio Website",
+      "description": "API and script reference for the portfolio website: the available endpoints, the build scripts, and the parameters each one accepts."
+    },
+    {
+      "title": "Vite Config Quick Reference",
+      "url": "/docs/vite-config-quick-reference/",
+      "legacyUrls": [],
+      "source": "docs-posts/VITE_QUICK_REFERENCE.md",
+      "category": "Guides",
+      "description": "A quick reference for this project's Vite setup: the config at a glance, key build facts, and the options you are most likely to change."
+    },
+    {
+      "title": "Building a Fast Client-Side Search Feature Without a Backend",
+      "url": "/docs/building-a-fast-client-side-search-feature-without-a-backend/",
+      "legacyUrls": [],
+      "source": "docs-posts/client-side-search.md",
+      "category": "Open Source Projects",
+      "description": "How to implement instant, responsive search on a static site using nothing but JavaScript, a JSON index, and debouncing."
+    },
+    {
+      "title": "Railway Deployment Guide",
+      "url": "/docs/railway-deployment-guide/",
+      "legacyUrls": [],
+      "source": "docs-posts/RAILWAY_DEPLOYMENT_GUIDE.md",
+      "category": "Guides",
+      "description": "Deploy to Railway as an alternative to SSH: what Railway is, how it compares, and a step-by-step setup with environment variables."
+    },
+    {
+      "title": "Custom Environment Variables",
+      "url": "/docs/custom-environment-variables/",
+      "legacyUrls": [],
+      "source": "docs-posts/COMPLETE_WORKFLOWS_GUIDE.md",
+      "category": "Guides",
+      "description": "Set custom environment variables in GitHub Actions and Docker, wire up health checks, and send build notifications to Slack, Discord or email."
+    },
+    {
+      "title": "Workflow Customization Summary",
+      "url": "/docs/workflow-customization-summary/",
+      "legacyUrls": [],
+      "source": "docs-posts/CUSTOMIZATION_SUMMARY.md",
+      "category": "Guides",
+      "description": "A summary of the workflow customizations in this project: what was changed in each GitHub Actions file, and why, with the Vite config it targets."
+    },
+    {
+      "title": "AI System Design",
+      "url": "/docs/ai-systems/01-ai-system-design/",
+      "legacyUrls": [],
+      "source": "docs-posts/ai-systems/01-ai-system-design.md",
+      "category": "Ai Systems",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "ML System Design",
+      "url": "/docs/ai-systems/02-ml-system-design/",
+      "legacyUrls": [],
+      "source": "docs-posts/ai-systems/02-ml-system-design.md",
+      "category": "Ai Systems",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "LLM System Design",
+      "url": "/docs/ai-systems/03-llm-system-design/",
+      "legacyUrls": [],
+      "source": "docs-posts/ai-systems/03-llm-system-design.md",
+      "category": "Ai Systems",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "How ChatGPT System Design Works",
+      "url": "/docs/ai-systems/04-how-chatgpt-system-design-works/",
+      "legacyUrls": [],
+      "source": "docs-posts/ai-systems/04-how-chatgpt-system-design-works.md",
+      "category": "Ai Systems",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Generative AI System Design Interview",
+      "url": "/docs/ai-systems/05-generative-ai-system-design-interview/",
+      "legacyUrls": [],
+      "source": "docs-posts/ai-systems/05-generative-ai-system-design-interview.md",
+      "category": "Ai Systems",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Agentic System Design",
+      "url": "/docs/ai-systems/06-agentic-system-design/",
+      "legacyUrls": [],
+      "source": "docs-posts/ai-systems/06-agentic-system-design.md",
+      "category": "Ai Systems",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "SmartGen Barcode System",
+      "url": "/docs/barcode-system/",
+      "legacyUrls": [],
+      "source": "docs-posts/barcode-system/index.md",
+      "category": "Barcode System",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "About SmartGen Barcode System",
+      "url": "/docs/barcode-system/about/",
+      "legacyUrls": [],
+      "source": "docs-posts/barcode-system/about.md",
+      "category": "Barcode System",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "API and Product-Form Contract",
+      "url": "/docs/barcode-system/api/",
+      "legacyUrls": [],
+      "source": "docs-posts/barcode-system/api.md",
+      "category": "Barcode System",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Get Started With SmartGen Barcode System",
+      "url": "/docs/barcode-system/call-to-action/",
+      "legacyUrls": [],
+      "source": "docs-posts/barcode-system/call-to-action.md",
+      "category": "Barcode System",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Barcode System Documentation",
+      "url": "/docs/barcode-system/docomation/",
+      "legacyUrls": [],
+      "source": "docs-posts/barcode-system/docomation.md",
+      "category": "Barcode System",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "How SmartGen Barcode System Benefits Clients",
+      "url": "/docs/barcode-system/how-benifit/",
+      "legacyUrls": [],
+      "source": "docs-posts/barcode-system/how-benifit.md",
+      "category": "Barcode System",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "How to Use SmartGen Barcode System",
+      "url": "/docs/barcode-system/how-to-use/",
+      "legacyUrls": [],
+      "source": "docs-posts/barcode-system/how-to-use.md",
+      "category": "Barcode System",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Installation",
+      "url": "/docs/barcode-system/installation/",
+      "legacyUrls": [],
+      "source": "docs-posts/barcode-system/installation.md",
+      "category": "Barcode System",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Pricing",
+      "url": "/docs/barcode-system/pricing/",
+      "legacyUrls": [],
+      "source": "docs-posts/barcode-system/Pricing.md",
+      "category": "Barcode System",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Who Uses Barcode Systems",
+      "url": "/docs/barcode-system/who-use-barcode/",
+      "legacyUrls": [],
+      "source": "docs-posts/barcode-system/who-use-barcode.md",
+      "category": "Barcode System",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Contributor Guide",
+      "url": "/docs/contributor-guide/",
+      "legacyUrls": [],
+      "source": "docs-posts/CONTRIBUTOR-GUIDE.md",
+      "category": "Guides",
+      "description": "Everything you need to contribute to SmartGen: local setup, branching, coding standards, testing and how to get a pull request merged."
+    },
+    {
+      "title": "System Design Fundamentals",
+      "url": "/docs/fundamentals/01-system-design-fundamentals/",
+      "legacyUrls": [],
+      "source": "docs-posts/fundamentals/01-system-design-fundamentals.md",
+      "category": "Fundamentals",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "System Design Principles",
+      "url": "/docs/fundamentals/02-system-design-principles/",
+      "legacyUrls": [],
+      "source": "docs-posts/fundamentals/02-system-design-principles.md",
+      "category": "Fundamentals",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "System Design Concepts",
+      "url": "/docs/fundamentals/03-system-design-concepts/",
+      "legacyUrls": [],
+      "source": "docs-posts/fundamentals/03-system-design-concepts.md",
+      "category": "Fundamentals",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Back of the Envelope Calculation",
+      "url": "/docs/fundamentals/04-back-of-the-envelope-calculation/",
+      "legacyUrls": [],
+      "source": "docs-posts/fundamentals/04-back-of-the-envelope-calculation.md",
+      "category": "Fundamentals",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "CAP Theorem in System Design",
+      "url": "/docs/fundamentals/05-cap-theorem-in-system-design/",
+      "legacyUrls": [],
+      "source": "docs-posts/fundamentals/05-cap-theorem-in-system-design.md",
+      "category": "Fundamentals",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "CAP Theorem Explained",
+      "url": "/docs/fundamentals/06-cap-theorem-explained/",
+      "legacyUrls": [],
+      "source": "docs-posts/fundamentals/06-cap-theorem-explained.md",
+      "category": "Fundamentals",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Availability vs Consistency In System Design",
+      "url": "/docs/fundamentals/07-availability-vs-consistency-in-system-design/",
+      "legacyUrls": [],
+      "source": "docs-posts/fundamentals/07-availability-vs-consistency-in-system-design.md",
+      "category": "Fundamentals",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Scalability in System Design",
+      "url": "/docs/fundamentals/08-scalability-in-system-design/",
+      "legacyUrls": [],
+      "source": "docs-posts/fundamentals/08-scalability-in-system-design.md",
+      "category": "Fundamentals",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "High Availability System Design",
+      "url": "/docs/fundamentals/09-high-availability-system-design/",
+      "legacyUrls": [],
+      "source": "docs-posts/fundamentals/09-high-availability-system-design.md",
+      "category": "Fundamentals",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Reliability in System Design",
+      "url": "/docs/fundamentals/10-reliability-in-system-design/",
+      "legacyUrls": [],
+      "source": "docs-posts/fundamentals/10-reliability-in-system-design.md",
+      "category": "Fundamentals",
+      "description": "SmartGen Developer Documentation"
+    },
+    {
+      "title": "Quickstart Guide",
+      "url": "/docs/quickstart-guide/",
+      "legacyUrls": [],
+      "source": "docs-posts/QUICKSTART.md",
+      "category": "Guides",
+      "description": "Go from a fresh clone to a merged pull request in under ten minutes: setup, the build commands, and how to submit your first change."
+    }
+  ]
+}
