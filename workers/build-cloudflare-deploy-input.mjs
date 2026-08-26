@@ -15,7 +15,7 @@ const files = [
 
 const code = `async () => {
   const boundary = \`----SmartGen\${Date.now()}\`;
-  const metadata = { main_module: "bkash-payment-gateway.js", compatibility_date: "2026-08-26", keep_bindings: true };
+  const metadata = { main_module: "bkash-payment-gateway.js", compatibility_date: "2026-08-26", keep_bindings: ["secret_text"] };
   const files = ${JSON.stringify(files)};
   const parts = [
     \`--\${boundary}\`,
