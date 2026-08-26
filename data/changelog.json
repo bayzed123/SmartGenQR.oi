@@ -1,5 +1,10 @@
 [
   {
+    "title": "docs: add Wrangler deployment guide",
+    "date": "2026-08-26T07:59:06Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: allow SmartGen Pages origins in Worker config",
     "date": "2026-08-26T07:58:08Z",
     "description": "Platform improvement and optimization."
