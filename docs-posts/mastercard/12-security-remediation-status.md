@@ -20,6 +20,7 @@ This is not a forensic guarantee about every historical Git object, Cloudflare s
 | SEC-01 | High | Sandbox Mastercard routes now have a per-instance rate limiter. Optional `REQUIRE_CLIENT_AUTH` supports `X-SmartGen-Api-Key` or `Authorization: Bearer ...`. CORS remains origin control only. | Enable authenticated merchant/server-to-server access, durable per-IP/user/merchant/order quotas, Cloudflare WAF/bot controls, abuse monitoring, and provider-approved limits. |
 | SEC-02 | High | `REQUIRE_ORDER_BINDING` mode is implemented. It verifies a short-lived HMAC-signed `orderToken` and uses the signed amount/reference instead of browser values. | Mint tokens only from an authenticated order service after durable database lookup of merchant, currency, recipient, and amount. |
 | SEC-03 | High | A short-lived in-memory idempotency guard and retrieval-before-retry design are documented. | Replace memory with a durable idempotency record and provider-aware retry/retrieval workflow. |
+| SEC-11 | Critical for fulfillment | The public retrieval route now fails closed with `verification_failed` unless protected order-binding mode is enabled. In protected mode, the signed order must match the requested transfer ID/reference and the returned provider transfer ID/reference, amount, currency, and optional recipient. | Keep retrieval behind authenticated order context and durable stored-order matching. Never fulfill from `status=APPROVED` alone. Treat unmatched, empty, or inconsistent results as `verification_failed` or `manual_review`. |
 | SEC-04 | High | No fake refund operation was added. Internal status changes are not treated as refunds. | Connect the sponsor/provider’s approved refund or reversal operation and store an auditable refund reference. |
 | SEC-05 | Medium | Worker responses send HSTS, no-sniffing, no-framing, no-referrer, CSP, and restrictive CORS headers. Public payment HTML has CSP and no-referrer metadata. | Add equivalent HTTP response headers at the static-host/CDN layer; remove wildcard static CORS if the hosting/CDN configuration permits it. |
 | SEC-06 | Medium | Mastercard Payment/Retrieval responses use an explicit server allow-list. Browser technical output is reduced to safe status, amount, reference, IDs, and correlation metadata. | Keep provider data server-side and persist only the minimum sanitized fields. |
@@ -48,7 +49,11 @@ The live health response is intentionally non-sensitive:
 }
 ```
 
-The current `sandbox_public` and `sandbox_legacy_amount` modes are deliberate compatibility settings for the public technical demo. They must not be copied into a live merchant deployment.
+The current `sandbox_public` and `sandbox_legacy_amount` modes are deliberate compatibility settings for the public technical demo. They must not be copied into a live merchant deployment. The public Sandbox retrieval route intentionally returns `403 verification_failed` because an arbitrary transfer ID or reference is not payment proof. The public page can display the sanitized result returned by a create request, but it cannot use an unauthenticated retrieval lookup to authorize fulfillment.
+
+A Sandbox upstream may return a deterministic fixture such as `APPROVED` for syntactically valid or previously used-looking IDs. SmartGen therefore treats every unauthenticated retrieval result as unverified and never changes an internal order to `paid` from that response. Only a protected order token plus exact server-side order matching can produce `state=verified`.
+
+The arbitrary-ID retrieval finding was reproduced during audit and is treated as a provider-fixture limitation or unresolved upstream behavior until Mastercard confirms otherwise. It is not accepted as payment evidence. Regression tests must assert that an uncreated ID cannot move an internal order to `paid`.
 
 ## Production configuration target
 

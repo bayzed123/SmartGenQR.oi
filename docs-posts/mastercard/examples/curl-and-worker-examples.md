@@ -13,21 +13,27 @@ curl -sS -X POST \
 
 Use a new reference every time. The `Idempotency-Key` prevents a repeated request from blindly creating another transfer. The response should contain `ok: true` and a `result.merchant_transfer` object when the simulated payment is accepted. This public request is Sandbox-only compatibility mode; it is not a Production authentication example.
 
-## Retrieve by Transfer ID
+## Retrieval verification (Production pattern)
+
+The public Sandbox retrieval route intentionally rejects unauthenticated lookups with `403` and `state=verification_failed`. This prevents a syntactically acceptable or provider-fixture transfer ID from becoming payment proof. In Production, retrieval must be made by an authenticated order service with a short-lived signed order token containing the server-created order ID and the exact stored provider transfer ID or reference.
 
 ```bash
 curl -sS \
-  "https://smartgen-bkash-sandbox.sayadmdbayezidhosan.workers.dev/api/mastercard/mpqr/retrieve?transferId=mtrn_EXAMPLE" \
+  "https://YOUR_PROTECTED_WORKER/api/mastercard/mpqr/retrieve?transferId=mtrn_EXAMPLE&orderToken=BASE64URL_PAYLOAD.BASE64URL_HMAC_SIGNATURE" \
+  -H "Authorization: Bearer $SMARTGEN_CLIENT_API_KEY" \
   -H "Accept: application/json"
 ```
 
-## Retrieve by Transfer Reference
+For a reference-bound lookup, use the exact stored value and the same signed order token:
 
 ```bash
 curl -sS \
-  "https://smartgen-bkash-sandbox.sayadmdbayezidhosan.workers.dev/api/mastercard/mpqr/retrieve?ref=SGMPQR_EXAMPLE_001" \
+  "https://YOUR_PROTECTED_WORKER/api/mastercard/mpqr/retrieve?ref=SGMPQR_EXAMPLE_001&orderToken=BASE64URL_PAYLOAD.BASE64URL_HMAC_SIGNATURE" \
+  -H "Authorization: Bearer $SMARTGEN_CLIENT_API_KEY" \
   -H "Accept: application/json"
 ```
+
+A `verified` response requires exact matching of the signed order’s transfer ID/reference, provider transfer ID/reference, expected amount, expected currency, and optional recipient. An `APPROVED` value without those matches is never sufficient for fulfillment.
 
 ## Protected server-to-server Production request
 

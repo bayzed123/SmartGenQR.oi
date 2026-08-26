@@ -257,6 +257,17 @@ function publicMastercardData(data) {
   return { merchant_transfer: safeTransfer };
 }
 
+function transferMatchesOrder(data, order) {
+  const transfer = extractMastercardTransfer(data);
+  if (!transfer || !order) return false;
+  if (order.transferId && String(transfer.id || "") !== String(order.transferId)) return false;
+  if (order.transferReference && String(transfer.transfer_reference || "") !== String(order.transferReference)) return false;
+  if (order.amount && String(transfer.transfer_amount?.value || "") !== String(order.amount)) return false;
+  if (order.currency && String(transfer.transfer_amount?.currency || "").toUpperCase() !== String(order.currency).toUpperCase()) return false;
+  if (order.recipientAccountUri && String(transfer.recipient_account_uri || "") !== String(order.recipientAccountUri)) return false;
+  return true;
+}
+
 async function bkashRequest(path, options, c) {
   const response = await fetch(`${c.baseUrl}${path}`, {
     ...options,
@@ -484,17 +495,45 @@ async function handleMastercardRetrieve(request, env) {
   if (limited) return limited;
   const authenticated = authResponse(request, env);
   if (authenticated) return authenticated;
+  // Retrieval is not payment proof by itself. A public caller has no trusted
+  // internal order context, so fail closed instead of returning any provider
+  // status for an arbitrary ID or reference.
+  if (!enabled(env.REQUIRE_ORDER_BINDING)) {
+    return json({ ok: false, state: "verification_failed", error: "Authenticated order binding is required for transfer verification" }, 403);
+  }
+  const url = new URL(request.url);
+  let transferId = url.searchParams.get("transferId");
+  let transferReference = url.searchParams.get("ref");
+  let boundOrder = null;
+  if (enabled(env.REQUIRE_ORDER_BINDING)) {
+    try {
+      boundOrder = await verifyOrderToken(url.searchParams.get("orderToken"), env.SMARTGEN_ORDER_SIGNING_SECRET);
+    } catch {
+      return json({ error: "Authenticated order binding is required for payment verification", state: "verification_failed" }, 403);
+    }
+    if (!boundOrder.orderId || (!boundOrder.transferId && !boundOrder.transferReference)) {
+      return json({ error: "Signed order must contain a provider transfer ID or reference", state: "verification_failed" }, 403);
+    }
+    if (transferId && String(boundOrder.transferId || "") !== transferId) {
+      return json({ error: "Transfer ID does not match the signed order", state: "verification_failed" }, 403);
+    }
+    if (transferReference && String(boundOrder.transferReference || "") !== transferReference) {
+      return json({ error: "Transfer reference does not match the signed order", state: "verification_failed" }, 403);
+    }
+    transferId ||= boundOrder.transferId;
+    transferReference ||= boundOrder.transferReference;
+  }
   const missing = mastercardMissingConfig(env);
   if (missing.length) return json({ error: "Mastercard MPQR adapter is not configured" }, 503);
-  const url = new URL(request.url);
-  const transferId = url.searchParams.get("transferId");
-  const transferReference = url.searchParams.get("ref");
   if (!transferId && !transferReference) return json({ error: "transferId or ref is required" }, 400);
   try {
     const result = await retrieveMastercardTransfer(env, { transferId, transferReference });
     const safeResult = publicMastercardData(result.data);
-    if (!safeResult) return json({ error: "Mastercard transfer not found", correlationId: result.correlationId }, 404);
-    return json({ ok: true, correlationId: result.correlationId, result: safeResult });
+    if (!safeResult) return json({ ok: false, state: "verification_failed", error: "Mastercard transfer could not be matched", correlationId: result.correlationId }, 409);
+    if (!boundOrder || !transferMatchesOrder(result.data, boundOrder)) {
+      return json({ ok: false, state: "verification_failed", error: "Provider transfer does not match the authenticated order", correlationId: result.correlationId }, 409);
+    }
+    return json({ ok: true, state: "verified", correlationId: result.correlationId, result: safeResult });
   } catch (error) {
     return json({ error: "Mastercard sandbox retrieval failed", correlationId: error.correlationId }, error.status || 502);
   }

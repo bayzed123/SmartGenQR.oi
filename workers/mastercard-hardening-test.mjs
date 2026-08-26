@@ -20,8 +20,12 @@ const env = {
 const originalFetch = globalThis.fetch;
 let upstreamCalls = 0;
 let lastUpstreamPayment;
+let retrievalFixture = null;
 globalThis.fetch = async (_url, options = {}) => {
-  if (options.method === "GET") return new Response(JSON.stringify({ Description: "not found" }), { status: 404 });
+  if (options.method === "GET") {
+    if (retrievalFixture) return new Response(JSON.stringify(retrievalFixture), { status: 200, headers: { "correlation-id": "corr_retrieval" } });
+    return new Response(JSON.stringify({ Description: "not found" }), { status: 404 });
+  }
   upstreamCalls += 1;
   if (options.body) {
     const requestBody = JSON.parse(options.body);
@@ -65,6 +69,11 @@ try {
   assert.equal(healthData.orderBinding, "sandbox_legacy_amount");
   assert.equal(healthData.idempotency, "optional_with_memory_guard");
 
+  const arbitraryRetrieval = await worker.fetch(new Request("https://worker.test/api/mastercard/mpqr/retrieve?transferId=mtrn_AUDIT_NOT_CREATED_1787754895"), env);
+  assert.equal(arbitraryRetrieval.status, 403);
+  const arbitraryBody = await arbitraryRetrieval.json();
+  assert.equal(arbitraryBody.state, "verification_failed");
+
   const request = () => new Request("https://worker.test/api/mastercard/mpqr/payment", {
     method: "POST",
     headers: {
@@ -98,6 +107,8 @@ try {
     orderId: "SG_ORDER_001",
     amount: "51.00",
     transferReference: "SGORDER_001",
+    transferId: "mtrn_test",
+    currency: "USD",
     exp: Math.floor(Date.now() / 1000) + 300,
   })).toString("base64url");
   const orderSignature = createHmac("sha256", orderSecret).update(orderPayload).digest("base64url");
@@ -129,6 +140,28 @@ try {
   assert.equal(protectedResponse.status, 200);
   assert.equal(lastUpstreamPayment.amount, "51.00");
   assert.equal(lastUpstreamPayment.transfer_reference, "SGORDER_001");
+
+  retrievalFixture = {
+    merchant_transfer: {
+      id: "mtrn_test",
+      transfer_reference: "SGORDER_001",
+      status: "APPROVED",
+      transfer_amount: { value: "51.00", currency: "USD" },
+    },
+  };
+  const verifiedRetrieval = await worker.fetch(new Request(`https://worker.test/api/mastercard/mpqr/retrieve?transferId=mtrn_test&orderToken=${encodeURIComponent(orderToken)}`, {
+    headers: { Authorization: "Bearer test-client-key" },
+  }), protectedEnv);
+  assert.equal(verifiedRetrieval.status, 200);
+  const verifiedBody = await verifiedRetrieval.json();
+  assert.equal(verifiedBody.state, "verified");
+
+  const mismatchedRetrieval = await worker.fetch(new Request(`https://worker.test/api/mastercard/mpqr/retrieve?transferId=mtrn_not_the_order&orderToken=${encodeURIComponent(orderToken)}`, {
+    headers: { Authorization: "Bearer test-client-key" },
+  }), protectedEnv);
+  assert.equal(mismatchedRetrieval.status, 403);
+  const mismatchedBody = await mismatchedRetrieval.json();
+  assert.equal(mismatchedBody.state, "verification_failed");
 
   console.log("Mastercard hardening tests passed");
 } finally {
