@@ -1,5 +1,10 @@
 [
   {
+    "title": "docs: add ecommerce admin architecture script",
+    "date": "2026-08-26T04:33:44Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "refactor: replace third-party barcode renderer",
     "date": "2026-08-26T04:32:47Z",
     "description": "Platform improvement and optimization."
