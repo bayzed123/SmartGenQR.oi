@@ -31,3 +31,7 @@ The current Mastercard Merchant Presented QR documentation states that the MPQR 
 The Payment API endpoint is `POST /v1/partners/{partnerId}/merchant/transfers/payment`. Sandbox test responses are simulated: amounts greater than 50 produce APPROVED, 1 produces DECLINE, 2 produces SYSTEM_ERROR, 3 delays and then approves, and other listed cents values simulate decline scenarios. The response includes a system-generated transfer ID and should be followed by Retrieval API verification. Retrieval uses `GET /v1/partners/{partnerId}/merchant/transfers/{transferId}` or the collection endpoint with a `ref` query parameter.
 
 The prototype adapter should sign requests server-side, keep the consumer key and private signing key out of GitHub and browser code, never accept production card data in the public frontend, generate a unique transfer reference, log the correlation-id response header, and treat APPROVED/UNKNOWN/PENDING as distinct states. Sandbox participation is for prototyping; production MPQR access requires an eligible licensed or sponsored participant and program approval.
+
+## Prototype UI verification
+
+After the GitHub Pages workflow completed successfully, `https://smartgentools.com/payment-gateway/mastercard-mpqr.html` rendered the new Mastercard Merchant Presented QR sandbox lab. The page exposes only a sandbox amount and transfer-reference field and sends requests to the server-side Worker; it does not collect card numbers or credentials. No Mastercard transaction was submitted during verification.
