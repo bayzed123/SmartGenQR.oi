@@ -1,0 +1,25 @@
+flowchart LR
+    C[Customer payment app] -->|Scan and verify static/dynamic QR| O[Originating Institution or Transaction Originator]
+    M[Merchant] -->|Presents QR and amount| C
+    R[Receiving Institution / Merchant Bank] -->|Generates merchant QR| M
+    O -->|OAuth 1.0a signed Payment API request| MC[Mastercard MPQR API]
+    MC -->|Routes payment transaction| R
+    R -->|Approves/declines and credits merchant account| MC
+    MC -->|Payment response| O
+    O -->|Customer outcome| C
+    O -->|Retrieval when UNKNOWN/PENDING| MC
+
+    S[SmartGen checkout application] -->|Internal order + amount only| W[SmartGen Cloudflare Worker]
+    W -->|Server-side OAuth 1.0a| MC
+    W -->|Normalized status| S
+    W --> DB[(SmartGen order and audit store)]
+    DB --> ADM[Admin dashboard and reconciliation]
+
+    subgraph Environments
+      SB[Sandbox: simulated responses]
+      MTF[MTF: production-like test]
+      PR[Production: approved live processing]
+    end
+    W -. configured per environment .-> SB
+    W -. configured per environment .-> MTF
+    W -. configured per environment .-> PR
