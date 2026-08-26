@@ -8,6 +8,10 @@ on:
       - 'data/changelog.json'
       - '.github/workflows/**'
 
+concurrency:
+  group: changelog
+  cancel-in-progress: true
+
 jobs:
   update-changelog:
     runs-on: ubuntu-latest
@@ -25,7 +29,7 @@ jobs:
         run: |
           echo "TITLE=$(git log -1 --pretty=%s)" >> $GITHUB_OUTPUT
           echo "DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
-          echo "DESC=$(git log-1 --pretty=%b | tr -d '\n' | sed 's/\"/\\\"/g' )" >> $GITHUB_OUTPUT
+          echo "DESC=$(git log -1 --pretty=%b | tr -d '\n' | sed 's/"/\\"/g' )" >> $GITHUB_OUTPUT
 
       - name: Update changelog.json
         run: |
