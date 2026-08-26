@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: add bKash sandbox payment gateway",
+    "date": "2026-08-26T07:52:52Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: retain legacy docs routes on rename",
     "date": "2026-08-26T05:36:53Z",
     "description": "Platform improvement and optimization."
