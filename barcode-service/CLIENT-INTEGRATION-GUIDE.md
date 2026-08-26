@@ -80,6 +80,6 @@ node barcode-service/test/validation.test.mjs
 node barcode-service/test/product-form-contract.test.mjs
 ```
 
-## Payment status
+## Current service offer and payment status
 
-Payment, PayPal, local payments, checkout, license activation, and automatic billing are intentionally not included in this first working version. The barcode tool runs without them. They can be designed after the static product flow has been tested on the live SmartGen domain.
+The public product message is **$10 lifetime service**. The first published version is intentionally payment-free so its browser-only generator and client-admin validation flow can be tested without a checkout dependency. PayPal, local payments, checkout, license activation, and automatic billing are not included yet. They can be designed after the static product flow has been tested on the live SmartGen domain.
