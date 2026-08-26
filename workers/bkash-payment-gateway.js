@@ -1,9 +1,10 @@
 import { createMastercardPayment, mastercardMissingConfig, retrieveMastercardTransfer } from "./mastercard-mpqr.js";
 
 /**
- * SmartGen bKash Sandbox Payment Gateway
+ * SmartGen Mastercard MPQR Sandbox Payment Gateway
  *
- * Cloudflare Worker API for a GitHub Pages frontend.
+ * Cloudflare Worker API for a GitHub Pages frontend. bKash routes remain
+ * disabled until approved merchant/API onboarding is available.
  * All bKash credentials must be configured as Worker secrets or environment
  * variables; never place them in this repository or in browser JavaScript.
  */
@@ -379,11 +380,13 @@ export default {
       const c = config(env);
       response = json({
         ok: true,
-        service: "smartgen-bkash-sandbox-gateway",
-        configured: missingConfig(c).length === 0,
-        createPath: c.createPath,
-        frontendUrl: c.frontendUrl,
+        service: "smartgen-mastercard-mpqr-sandbox-gateway",
+        provider: "mastercard_mpqr",
+        environment: "sandbox",
+        configured: mastercardMissingConfig(env).length === 0,
         mastercardConfigured: mastercardMissingConfig(env).length === 0,
+        bkashStatus: missingConfig(c).length === 0 ? "configured_but_inactive" : "on_hold",
+        frontendUrl: c.frontendUrl,
       });
     } else if (url.pathname === "/api/payments/create" && request.method === "POST") {
       response = await handleCreate(request, env);

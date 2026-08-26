@@ -32,8 +32,12 @@ try {
   const health = await worker.fetch(new Request("https://worker.test/health"), baseEnv);
   assert.equal(health.status, 200);
   const healthData = await health.json();
-  assert.equal(healthData.configured, true);
+  assert.equal(healthData.service, "smartgen-mastercard-mpqr-sandbox-gateway");
+  assert.equal(healthData.provider, "mastercard_mpqr");
+  assert.equal(healthData.environment, "sandbox");
+  assert.equal(healthData.configured, false);
   assert.equal(healthData.mastercardConfigured, false);
+  assert.equal(healthData.bkashStatus, "configured_but_inactive");
 
   const mastercardMissing = await worker.fetch(new Request("https://worker.test/api/mastercard/mpqr/payment", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ amount: "10" }) }), baseEnv);
   assert.equal(mastercardMissing.status, 503);
