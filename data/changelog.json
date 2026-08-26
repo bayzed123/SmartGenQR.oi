@@ -1,5 +1,10 @@
 [
   {
+    "title": "docs: link Mastercard chapters and sandbox lab",
+    "date": "2026-08-26T16:13:36Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Harden Mastercard sandbox payment security",
     "date": "2026-08-26T14:40:01Z",
     "description": "Platform improvement and optimization."
