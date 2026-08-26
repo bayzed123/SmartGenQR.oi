@@ -1,5 +1,10 @@
 [
   {
+    "title": "docs: record live first-party renderer check",
+    "date": "2026-08-26T04:38:05Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "test: cover all EAN parity modules",
     "date": "2026-08-26T04:37:06Z",
     "description": "Platform improvement and optimization."
