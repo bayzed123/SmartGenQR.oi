@@ -1,5 +1,10 @@
 [
   {
+    "title": "Protect public payment responses and explain QR flow",
+    "date": "2026-08-26T13:23:41Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Add Mastercard MPQR A to Z documentation",
     "date": "2026-08-26T13:01:23Z",
     "description": "Platform improvement and optimization."
