@@ -109,6 +109,11 @@
     summary { color: #b5c8df; cursor: pointer; }
     pre { max-height: 320px; overflow: auto; white-space: pre-wrap; word-break: break-word; padding: 14px; border: 1px solid var(--line); border-radius: 11px; background: #060b13; color: #b7e9f8; font-size: .77rem; }
     footer { margin-top: 22px; color: #71859e; font-size: .82rem; }
+    .sandbox-policy { margin-top: 18px; padding: 16px 18px; border: 1px solid rgba(96, 165, 250, .24); border-radius: 14px; background: rgba(15, 23, 42, .58); color: #b9c8db; font-size: .88rem; line-height: 1.6; }
+    .sandbox-policy strong { color: #f4f8ff; }
+    .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; margin-top: 12px; }
+    .footer-nav a { color: #9cc9ff; text-decoration: none; }
+    .footer-nav a:hover, .footer-nav a:focus { color: #fff; text-decoration: underline; }
     @media (max-width: 620px) {
       body { padding: 12px; }
       .panel { padding: 21px 16px; border-radius: 18px; }
@@ -189,7 +194,20 @@
         <p id="retrieveStatus" class="status" role="status" aria-live="polite"></p>
       </section>
 
-      <footer>SmartGen payment orchestration prototype · Mastercard sandbox · No secret, OAuth header, private key, or card credential enters the browser</footer>
+      <section class="sandbox-policy" aria-label="Sandbox use policy">
+        <strong>Sandbox use policy:</strong> This lab is for developer testing and partner demonstrations only. It does not process real money, create a live merchant QR, authorize live fulfillment, or provide a production Mastercard account. Do not enter real card data or private credentials. The browser receives no secret, OAuth header, private key, CVV, PIN, OTP, or full payment credential.
+      </section>
+      <footer>
+        <div>SmartGen Mastercard MPQR Sandbox Integration &amp; Payment Orchestration Prototype</div>
+        <nav class="footer-nav" aria-label="SmartGen links">
+          <a href="https://smartgentools.com/docs/mastercard/">Mastercard Docs</a>
+          <a href="https://smartgentools.com/docs/mastercard/mastercard-mpqr-security-remediation-status/">Security</a>
+          <a href="https://smartgentools.com/privacy/">Privacy Policy</a>
+          <a href="https://smartgentools.com/terms/">Terms &amp; Use Policy</a>
+          <a href="https://smartgentools.com/contact/">Contact / Support</a>
+          <a href="https://smartgentools.com/">SmartGen Home</a>
+        </nav>
+      </footer>
     </section>
   </main>
   <script>
