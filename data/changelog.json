@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix MPQR sandbox transaction timestamp",
+    "date": "2026-08-26T11:55:38Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: connect payment pages to deployed worker",
     "date": "2026-08-26T09:35:21Z",
     "description": "Platform improvement and optimization."
