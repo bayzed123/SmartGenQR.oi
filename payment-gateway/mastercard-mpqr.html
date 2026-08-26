@@ -3,52 +3,399 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SmartGen Mastercard Merchant Presented QR sandbox checkout and transfer retrieval lab.">
   <title>SmartGen Mastercard MPQR Sandbox</title>
   <style>
-    :root { color-scheme: dark; --bg:#080b12; --panel:#111827; --line:#283548; --text:#edf2f7; --muted:#9caac0; --blue:#00a9e0; --green:#20c997; --red:#ff8796; }
-    * { box-sizing:border-box; } body { margin:0; min-height:100vh; display:grid; place-items:center; padding:24px; font-family:Inter,system-ui,sans-serif; background:radial-gradient(circle at 10% 0%,#102c45 0,transparent 42%),var(--bg); color:var(--text); }
-    main { width:min(100%,720px); } .panel { border:1px solid var(--line); background:var(--panel); border-radius:22px; padding:clamp(24px,5vw,44px); box-shadow:0 24px 80px #0007; }
-    a { color:#75d8f7; } h1 { margin:12px 0; font-size:clamp(2rem,6vw,3.4rem); letter-spacing:-.05em; line-height:1; } p { color:var(--muted); line-height:1.65; } label { display:grid; gap:8px; margin-top:18px; font-weight:700; color:#c9d4e6; } input { width:100%; padding:13px 14px; border:1px solid var(--line); border-radius:11px; background:#0b111d; color:var(--text); font:inherit; } button { width:100%; margin-top:22px; padding:14px; border:0; border-radius:11px; background:linear-gradient(135deg,var(--blue),#0063a4); color:white; font:inherit; font-weight:800; cursor:pointer; } button:disabled { opacity:.6; cursor:wait; } pre { overflow:auto; white-space:pre-wrap; padding:16px; border:1px solid var(--line); border-radius:11px; background:#080d16; color:#b7e9f8; } .ok { color:#75e0bb; } .error { color:var(--red); } .eyebrow { color:#75d8f7; text-transform:uppercase; letter-spacing:.14em; font-size:.75rem; font-weight:800; }
+    :root {
+      color-scheme: dark;
+      --bg: #070b13;
+      --panel: #111a29;
+      --panel-2: #0b1220;
+      --line: #2a3b52;
+      --text: #eef5ff;
+      --muted: #9dafc7;
+      --blue: #00a9e0;
+      --blue-2: #0063a4;
+      --green: #31d0a0;
+      --yellow: #f4c95d;
+      --red: #ff8796;
+      --shadow: 0 24px 80px #0008;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 10% 0%, #123552 0, transparent 42%), var(--bg);
+    }
+    main { width: min(100%, 820px); margin: 0 auto; }
+    .panel {
+      padding: clamp(22px, 5vw, 46px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(160deg, #142237, var(--panel) 45%, #0d1523);
+      box-shadow: var(--shadow);
+    }
+    a { color: #83ddf8; }
+    .topline { display: flex; justify-content: space-between; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .eyebrow { margin: 0; color: #7ce0f9; text-transform: uppercase; letter-spacing: .14em; font-size: .73rem; font-weight: 800; }
+    .health { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: .83rem; }
+    .health::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 0 4px #f4c95d1c; }
+    .health.online::before { background: var(--green); box-shadow: 0 0 0 4px #31d0a01c; }
+    .health.offline::before { background: var(--red); box-shadow: 0 0 0 4px #ff87961c; }
+    h1 { margin: 14px 0 12px; font-size: clamp(2rem, 6vw, 3.65rem); line-height: .98; letter-spacing: -.055em; }
+    h2 { margin: 0 0 8px; font-size: 1.18rem; }
+    p { color: var(--muted); line-height: 1.65; }
+    .intro { max-width: 680px; margin: 0 0 26px; }
+    .notice { padding: 13px 15px; border: 1px solid #f4c95d55; border-radius: 12px; background: #f4c95d0c; color: #f5dfa0; font-size: .9rem; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    label { display: grid; gap: 8px; color: #cfdbeb; font-weight: 750; }
+    input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      outline: none;
+      background: var(--panel-2);
+      color: var(--text);
+      font: inherit;
+    }
+    input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px #00a9e026; }
+    .hint { margin: -8px 0 0; font-size: .78rem; }
+    .actions { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+    button {
+      min-height: 46px;
+      padding: 12px 16px;
+      border: 0;
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: white;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    button.secondary { border: 1px solid var(--line); background: #17263a; color: #dbe8f8; }
+    button:disabled { opacity: .58; cursor: wait; }
+    #submit { flex: 1 1 260px; }
+    .status { min-height: 28px; margin: 20px 0 0; font-weight: 750; }
+    .status.ok { color: var(--green); }
+    .status.error { color: var(--red); }
+    .status.pending { color: var(--yellow); }
+    .result, .history { margin-top: 24px; padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: #0b1321aa; }
+    .result[hidden], .history[hidden] { display: none; }
+    .result-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px 20px; margin: 16px 0 0; }
+    .metric { min-width: 0; }
+    .metric small { display: block; margin-bottom: 4px; color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; }
+    .metric strong { display: block; overflow-wrap: anywhere; color: var(--text); }
+    .approved { color: var(--green) !important; }
+    .failed { color: var(--red) !important; }
+    .pending-text { color: var(--yellow) !important; }
+    .retrieve { display: grid; grid-template-columns: 1fr auto; gap: 10px; margin-top: 20px; }
+    .history-list { display: grid; gap: 10px; margin-top: 14px; }
+    .history-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 11px; background: #0e1929; }
+    .history-item strong, .history-item span { display: block; overflow-wrap: anywhere; }
+    .history-item span { color: var(--muted); font-size: .82rem; margin-top: 3px; }
+    .history-item button { min-height: 36px; padding: 8px 11px; font-size: .82rem; white-space: nowrap; }
+    details { margin-top: 18px; }
+    summary { color: #b5c8df; cursor: pointer; }
+    pre { max-height: 320px; overflow: auto; white-space: pre-wrap; word-break: break-word; padding: 14px; border: 1px solid var(--line); border-radius: 11px; background: #060b13; color: #b7e9f8; font-size: .77rem; }
+    footer { margin-top: 22px; color: #71859e; font-size: .82rem; }
+    @media (max-width: 620px) {
+      body { padding: 12px; }
+      .panel { padding: 21px 16px; border-radius: 18px; }
+      .grid, .result-grid { grid-template-columns: 1fr; }
+      .retrieve { grid-template-columns: 1fr; }
+      .history-item { align-items: flex-start; flex-direction: column; }
+      .history-item button { width: 100%; }
+    }
   </style>
 </head>
 <body>
-  <main><section class="panel">
-    <a href="/payment-gateway/">← Back to SmartGen Checkout</a>
-    <p class="eyebrow">Mastercard Merchant Presented QR</p>
-    <h1>MPQR sandbox lab</h1>
-    <p>This prototype calls SmartGen’s server-side Worker. It sends only a test amount and transfer reference from the browser. Mastercard OAuth signing keys remain on the Worker.</p>
-    <form id="form">
-      <label>Sandbox amount
-        <input id="amount" type="number" min="0.01" step="0.01" value="51.00" required>
-      </label>
-      <label>Transfer reference
-        <input id="reference" maxlength="40" value="SGMPQR_TEST_001" pattern="[A-Za-z0-9*._~-]{6,40}" required>
-      </label>
-      <button id="submit" type="submit">Create Mastercard sandbox transfer</button>
-    </form>
-    <p id="status" role="status"></p>
-    <pre id="output" hidden></pre>
-  </section></main>
+  <main>
+    <section class="panel">
+      <div class="topline">
+        <a href="/payment-gateway/">← Back to SmartGen Checkout</a>
+        <span id="health" class="health">Checking Worker…</span>
+      </div>
+      <p class="eyebrow">Mastercard Merchant Presented QR</p>
+      <h1>Sandbox checkout lab</h1>
+      <p class="intro">This is SmartGen’s server-side Mastercard sandbox prototype. The browser sends only a test amount and reference; OAuth signing keys and provider credentials remain inside the Cloudflare Worker.</p>
+      <div class="notice"><strong>Sandbox only:</strong> this creates simulated transactions and does not charge a real card or move real funds. Do not enter customer card information here.</div>
+
+      <form id="form" novalidate>
+        <div class="grid">
+          <label>Sandbox amount (USD)
+            <input id="amount" type="number" min="0.01" max="999999999" step="0.01" value="51.00" required inputmode="decimal">
+          </label>
+          <label>Transfer reference
+            <input id="reference" maxlength="40" pattern="[A-Za-z0-9*._~-]{6,40}" required autocomplete="off">
+          </label>
+        </div>
+        <p class="hint">Use a new reference for every sandbox attempt. Amounts above 50 are configured to simulate approval in the Mastercard sandbox.</p>
+        <div class="actions">
+          <button id="submit" type="submit">Create Mastercard sandbox transfer</button>
+          <button id="newReference" class="secondary" type="button">New reference</button>
+        </div>
+      </form>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <section id="result" class="result" hidden aria-labelledby="resultTitle">
+        <h2 id="resultTitle">Transfer result</h2>
+        <div id="resultGrid" class="result-grid"></div>
+        <div class="actions">
+          <button id="retrieveCurrent" class="secondary" type="button">Refresh transfer status</button>
+          <button id="copyTransfer" class="secondary" type="button">Copy transfer ID</button>
+        </div>
+        <details>
+          <summary>Show technical sandbox response</summary>
+          <pre id="output"></pre>
+        </details>
+      </section>
+
+      <section class="history" aria-labelledby="historyTitle">
+        <h2 id="historyTitle">Recent prototype transactions</h2>
+        <p class="hint">Saved only in this browser for demonstration. This is not server-side order storage.</p>
+        <div id="historyList" class="history-list"></div>
+      </section>
+
+      <section class="result" aria-labelledby="retrieveTitle">
+        <h2 id="retrieveTitle">Retrieve an existing sandbox transfer</h2>
+        <p class="hint">Paste a transfer ID returned by a successful sandbox request.</p>
+        <div class="retrieve">
+          <input id="retrieveId" placeholder="mtrn_…" autocomplete="off">
+          <button id="retrieveButton" type="button">Retrieve status</button>
+        </div>
+        <p id="retrieveStatus" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <footer>SmartGen payment orchestration prototype · Mastercard sandbox · Provider credentials never enter the browser</footer>
+    </section>
+  </main>
   <script>
     const PAYMENT_WORKER_URL = window.SMARTGEN_PAYMENT_WORKER_URL || "https://smartgen-bkash-sandbox.sayadmdbayezidhosan.workers.dev";
+    const HISTORY_KEY = "smartgen_mpqr_sandbox_transactions_v1";
     const form = document.querySelector("#form");
-    const button = document.querySelector("#submit");
+    const amountInput = document.querySelector("#amount");
+    const referenceInput = document.querySelector("#reference");
+    const submitButton = document.querySelector("#submit");
     const status = document.querySelector("#status");
+    const health = document.querySelector("#health");
+    const result = document.querySelector("#result");
+    const resultGrid = document.querySelector("#resultGrid");
     const output = document.querySelector("#output");
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault(); button.disabled = true; status.textContent = "Signing and sending sandbox request…"; status.className = ""; output.hidden = true;
+    const retrieveCurrentButton = document.querySelector("#retrieveCurrent");
+    const copyTransferButton = document.querySelector("#copyTransfer");
+    const retrieveIdInput = document.querySelector("#retrieveId");
+    const retrieveButton = document.querySelector("#retrieveButton");
+    const retrieveStatus = document.querySelector("#retrieveStatus");
+    let currentTransfer = null;
+
+    function newReference() {
+      const stamp = new Date().toISOString().replace(/\D/g, "").slice(0, 14);
+      const random = Math.random().toString(36).slice(2, 8).toUpperCase();
+      return `SGMPQR_${stamp}_${random}`.slice(0, 40);
+    }
+
+    function setStatus(element, message, kind = "") {
+      element.textContent = message;
+      element.className = `status ${kind}`.trim();
+    }
+
+    function readHistory() {
       try {
-        const response = await fetch(`${PAYMENT_WORKER_URL}/api/mastercard/mpqr/payment`, { method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify({ amount:document.querySelector("#amount").value, transferReference:document.querySelector("#reference").value }) });
-        const data = await response.json(); output.textContent = JSON.stringify(data, null, 2); output.hidden = false;
-        if (!response.ok) throw new Error(data.error || "Mastercard sandbox request failed");
-        status.textContent = "Sandbox transfer created. Save the returned transfer ID for retrieval."; status.className = "ok";
+        const data = JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]");
+        return Array.isArray(data) ? data.slice(0, 10) : [];
+      } catch { return []; }
+    }
+
+    function saveHistory(item) {
+      try {
+        const next = [item, ...readHistory().filter((old) => old.transferId !== item.transferId)].slice(0, 10);
+        localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
+      } catch { /* Browser storage is optional in this prototype. */ }
+      renderHistory();
+    }
+
+    function renderHistory() {
+      const list = document.querySelector("#historyList");
+      const items = readHistory();
+      list.replaceChildren();
+      if (!items.length) {
+        const empty = document.createElement("p");
+        empty.className = "hint";
+        empty.textContent = "No sandbox transactions saved in this browser yet.";
+        list.append(empty);
+        return;
+      }
+      items.forEach((item) => {
+        const row = document.createElement("div");
+        row.className = "history-item";
+        const text = document.createElement("div");
+        const title = document.createElement("strong");
+        title.textContent = `${item.status || "UNKNOWN"} · ${item.amount || "—"} ${item.currency || "USD"}`;
+        const meta = document.createElement("span");
+        meta.textContent = `${item.reference || "No reference"} · ${item.transferId || "No transfer ID"}`;
+        text.append(title, meta);
+        const button = document.createElement("button");
+        button.className = "secondary";
+        button.type = "button";
+        button.textContent = "Retrieve";
+        button.addEventListener("click", () => {
+          retrieveIdInput.value = item.transferId || "";
+          retrieveTransfer(item.transferId);
+        });
+        row.append(text, button);
+        list.append(row);
+      });
+    }
+
+    function findTransfer(data) {
+      return data?.result?.merchant_transfer || data?.result?.merchantTransfer || data?.merchant_transfer || data?.result || {};
+    }
+
+    function summaryFrom(data, fallback = {}) {
+      const transfer = findTransfer(data);
+      const transaction = transfer?.transaction_history?.data?.transaction?.[0] || {};
+      return {
+        status: transfer.status || transfer.original_status || transaction.status || fallback.status || "UNKNOWN",
+        amount: transfer.transfer_amount?.value || transaction.transaction_amount?.value || fallback.amount || "—",
+        currency: transfer.transfer_amount?.currency || transaction.transaction_amount?.currency || fallback.currency || "USD",
+        reference: transfer.transfer_reference || fallback.reference || "—",
+        transferId: transfer.id || fallback.transferId || "—",
+        transactionId: transaction.id || fallback.transactionId || "—",
+        providerReference: transaction.unique_reference_number || fallback.providerReference || "—",
+        created: transfer.created || transfer.transaction_local_date_time || fallback.created || new Date().toISOString(),
+      };
+    }
+
+    function renderSummary(summary) {
+      currentTransfer = summary;
+      retrieveIdInput.value = summary.transferId !== "—" ? summary.transferId : retrieveIdInput.value;
+      resultGrid.replaceChildren();
+      const fields = [
+        ["Status", summary.status, String(summary.status).toUpperCase() === "APPROVED" ? "approved" : String(summary.status).toUpperCase() === "PENDING" ? "pending-text" : String(summary.status).toUpperCase() === "UNKNOWN" ? "" : "failed"],
+        ["Amount", `${summary.amount} ${summary.currency}`, ""],
+        ["Transfer reference", summary.reference, ""],
+        ["Transfer ID", summary.transferId, ""],
+        ["Transaction ID", summary.transactionId, ""],
+        ["Created", summary.created, ""],
+      ];
+      fields.forEach(([label, value, className]) => {
+        const metric = document.createElement("div");
+        metric.className = "metric";
+        const small = document.createElement("small");
+        small.textContent = label;
+        const strong = document.createElement("strong");
+        strong.className = className;
+        strong.textContent = value;
+        metric.append(small, strong);
+        resultGrid.append(metric);
+      });
+      result.hidden = false;
+    }
+
+    async function requestJson(url, options = {}) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 30000);
+      try {
+        const response = await fetch(url, { ...options, signal: controller.signal });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.error || `Worker request failed (HTTP ${response.status})`);
+        return data;
+      } finally { clearTimeout(timeout); }
+    }
+
+    async function retrieveTransfer(transferId) {
+      const id = String(transferId || "").trim();
+      if (!id) {
+        setStatus(retrieveStatus, "Enter a transfer ID first.", "error");
+        return;
+      }
+      retrieveButton.disabled = true;
+      retrieveCurrentButton.disabled = true;
+      setStatus(retrieveStatus, "Retrieving the latest sandbox status…", "pending");
+      try {
+        const data = await requestJson(`${PAYMENT_WORKER_URL}/api/mastercard/mpqr/retrieve?transferId=${encodeURIComponent(id)}`);
+        const summary = summaryFrom(data, { transferId: id });
+        renderSummary(summary);
+        output.textContent = JSON.stringify(data, null, 2);
+        saveHistory(summary);
+        setStatus(retrieveStatus, `Latest status: ${summary.status}.`, String(summary.status).toUpperCase() === "APPROVED" ? "ok" : "pending");
       } catch (error) {
-        status.textContent = error instanceof TypeError
-          ? "Worker unavailable: check that the deployed Worker is reachable and its secrets are configured before testing."
-          : error.message;
-        status.className = "error";
-      } finally { button.disabled = false; }
+        setStatus(retrieveStatus, error.name === "AbortError" ? "The request timed out. Try again." : error.message, "error");
+      } finally {
+        retrieveButton.disabled = false;
+        retrieveCurrentButton.disabled = false;
+      }
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const amount = amountInput.value.trim();
+      const transferReference = referenceInput.value.trim();
+      if (!/^\d{1,9}(\.\d{1,2})?$/.test(amount) || Number(amount) <= 0) {
+        setStatus(status, "Enter a positive amount with up to two decimal places.", "error");
+        return;
+      }
+      if (!/^[A-Za-z0-9*._~-]{6,40}$/.test(transferReference)) {
+        setStatus(status, "Use 6–40 letters, numbers, or safe characters: * . _ ~ -", "error");
+        return;
+      }
+      submitButton.disabled = true;
+      setStatus(status, "Sending the signed sandbox request…", "pending");
+      result.hidden = true;
+      try {
+        const data = await requestJson(`${PAYMENT_WORKER_URL}/api/mastercard/mpqr/payment`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ amount, transferReference }),
+        });
+        const summary = summaryFrom(data, { amount, reference: transferReference });
+        renderSummary(summary);
+        output.textContent = JSON.stringify(data, null, 2);
+        saveHistory(summary);
+        setStatus(status, `Sandbox transfer ${summary.status}. You can refresh its status below.`, String(summary.status).toUpperCase() === "APPROVED" ? "ok" : "pending");
+      } catch (error) {
+        setStatus(status, error.name === "AbortError" ? "The Worker request timed out. Try again." : error.message, "error");
+      } finally { submitButton.disabled = false; }
     });
+
+    document.querySelector("#newReference").addEventListener("click", () => {
+      referenceInput.value = newReference();
+      referenceInput.focus();
+    });
+    retrieveButton.addEventListener("click", () => retrieveTransfer(retrieveIdInput.value));
+    retrieveCurrentButton.addEventListener("click", () => retrieveTransfer(currentTransfer?.transferId));
+    copyTransferButton.addEventListener("click", async () => {
+      if (!currentTransfer?.transferId || currentTransfer.transferId === "—") return;
+      try {
+        await navigator.clipboard.writeText(currentTransfer.transferId);
+        setStatus(status, "Transfer ID copied.", "ok");
+      } catch { setStatus(status, "Copy is unavailable; select the Transfer ID manually.", "error"); }
+    });
+
+    async function checkHealth() {
+      try {
+        const data = await requestJson(`${PAYMENT_WORKER_URL}/health`);
+        if (data.mastercardConfigured) {
+          health.textContent = "Worker online · Mastercard ready";
+          health.className = "health online";
+        } else {
+          health.textContent = "Worker online · Mastercard not configured";
+          health.className = "health offline";
+        }
+      } catch {
+        health.textContent = "Worker unavailable";
+        health.className = "health offline";
+      }
+    }
+
+    referenceInput.value = newReference();
+    renderHistory();
+    checkHealth();
   </script>
 </body>
 </html>
