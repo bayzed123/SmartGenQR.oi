@@ -7,6 +7,8 @@ on:
     paths:
       - '**/*.html'
       - 'blog-posts/**/*.md'
+      - 'docs-posts/**/*.md'
+      - 'scripts/docs-build.js'
 
   schedule:
     # Runs every 12 hours
@@ -369,11 +371,26 @@ jobs:
             exit 0
           fi
 
-          # Commit changes
-          git commit -m "fix(sitemap): implement direct git format extraction for precise dates"
+          git commit -m "chore(sitemap): refresh generated sitemap"
 
-          # Pull latest changes safely
-          git pull --rebase origin main
+          # A documentation or content push can land while this workflow is
+          # generating the sitemap. Retry against the latest main branch rather
+          # than failing the workflow on the first non-fast-forward push.
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Sitemap update published on attempt ${attempt}."
+              exit 0
+            fi
 
-          # Push sitemap update
-          git push origin main
+            echo "Main advanced during sitemap publication; rebasing retry ${attempt}/3."
+            sleep $((attempt * 5))
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Unable to rebase the sitemap update automatically."
+              git rebase --abort || true
+              exit 1
+            fi
+          done
+
+          echo "Sitemap update could not be published after three retries."
+          exit 1
