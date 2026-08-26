@@ -53,14 +53,14 @@ A correctly configured response should include a newly generated `paymentId`, a 
 
 The Worker also exposes `POST /api/mastercard/mpqr/payment` and `GET /api/mastercard/mpqr/retrieve`. These routes call Mastercard’s Merchant Presented QR Sandbox API using server-side OAuth 1.0a with an RSA-SHA256 signature and request-body hash. The sandbox base URL is `https://sandbox.api.mastercard.com/send/static`, and the documented sandbox partner ID is `ptnr_BEeCrYJHh2BXTXPy_PEtp-8DBOo`.
 
-Create a Mastercard Developers project for the **Mastercard Merchant Presented QR** service, download the sandbox PKCS12 key, and convert or load the private signing key as PKCS#8 PEM for the Worker. Configure the following secrets with Wrangler:
+Create a Mastercard Developers project for the **Mastercard Merchant Presented QR** service, download the sandbox PKCS12 key, and convert or load the private signing key as PKCS#8 PEM for the Worker. Configure the following two secrets with Wrangler:
 
 ```bash
 npx wrangler secret put MASTERCARD_CONSUMER_KEY
 npx wrangler secret put MASTERCARD_SIGNING_KEY_PEM
-npx wrangler secret put MASTERCARD_TEST_SENDER_ACCOUNT_URI
-npx wrangler secret put MASTERCARD_TEST_RECIPIENT_ACCOUNT_URI
 ```
+
+The adapter uses Mastercard’s published Bangladesh sandbox test cards by default. These are non-secret test fixtures; override them only with other official sandbox values through `MASTERCARD_TEST_SENDER_ACCOUNT_URI` and `MASTERCARD_TEST_RECIPIENT_ACCOUNT_URI` variables.
 
 Create a test transfer:
 
@@ -82,7 +82,8 @@ The sandbox is a simulated environment for development and is not evidence that 
 
 Credentials are read only from Worker secrets and are never sent to the browser. CORS is limited to `ALLOWED_ORIGINS`; input is validated before bKash requests; merchant invoice numbers are generated server-side; bKash callback results are followed by server-side execution; and payment status is never accepted from a browser-only field as proof of settlement.
 
-The Worker currently uses an in-memory token cache, which is appropriate for a simple sandbox deployment. For high-volume production use, use a durable token store or a carefully designed cache strategy, add idempotency and order persistence, and complete bKash's production onboarding and webhook verification requirements before accepting real money.
+The Worker currently uses an in-memory token cache, which is appropriate for a simple sandbox deployment. The Mastercard sandbox adapter uses published test account URIs and must never be configured with real card data.
+ For high-volume production use, use a durable token store or a carefully designed cache strategy, add idempotency and order persistence, and complete bKash's production onboarding and webhook verification requirements before accepting real money.
 
 ## Official references
 

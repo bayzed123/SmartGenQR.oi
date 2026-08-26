@@ -23,6 +23,10 @@ MASTERCARD_PARTNER_ID = "ptnr_BEeCrYJHh2BXTXPy_PEtp-8DBOo"
 MASTERCARD_CURRENCY = "USD"
 MASTERCARD_PAYMENT_ORIGINATION_COUNTRY = "BGD"
 MASTERCARD_CARD_ACCEPTOR_NAME = "SmartGen Sandbox"
+MASTERCARD_FUNDING_SOURCE = "DEBIT"
+# Published Mastercard Bangladesh sandbox test cards; override only with test values.
+MASTERCARD_TEST_SENDER_ACCOUNT_URI = "pan:5555500830030331;exp=2077-08;cvc=123"
+MASTERCARD_TEST_RECIPIENT_ACCOUNT_URI = "pan:5662760010000013;exp=2077-08;cvc=123"
 
 # Optional: set this to the deployed Worker callback URL.
 # BKASH_CALLBACK_URL = "https://smartgen-bkash-sandbox.<subdomain>.workers.dev/api/payments/callback"
@@ -34,5 +38,4 @@ MASTERCARD_CARD_ACCEPTOR_NAME = "SmartGen Sandbox"
 # BKASH_APP_SECRET
 # MASTERCARD_CONSUMER_KEY
 # MASTERCARD_SIGNING_KEY_PEM
-# MASTERCARD_TEST_SENDER_ACCOUNT_URI
-# MASTERCARD_TEST_RECIPIENT_ACCOUNT_URI
+# The two Mastercard test account URI variables above are non-secret sandbox fixtures.

@@ -112,22 +112,21 @@ function mastercardConfig(env) {
     partnerId: env.MASTERCARD_PARTNER_ID || DEFAULT_PARTNER_ID,
     consumerKey: env.MASTERCARD_CONSUMER_KEY,
     signingKeyPem: env.MASTERCARD_SIGNING_KEY_PEM,
-    senderAccountUri: env.MASTERCARD_TEST_SENDER_ACCOUNT_URI,
-    recipientAccountUri: env.MASTERCARD_TEST_RECIPIENT_ACCOUNT_URI,
+    senderAccountUri: env.MASTERCARD_TEST_SENDER_ACCOUNT_URI || "pan:5555500830030331;exp=2077-08;cvc=123",
+    recipientAccountUri: env.MASTERCARD_TEST_RECIPIENT_ACCOUNT_URI || "pan:5662760010000013;exp=2077-08;cvc=123",
     currency: env.MASTERCARD_CURRENCY || "USD",
     paymentOriginationCountry: env.MASTERCARD_PAYMENT_ORIGINATION_COUNTRY || "BGD",
     cardAcceptorName: env.MASTERCARD_CARD_ACCEPTOR_NAME || "SmartGen Sandbox",
+    fundingSource: env.MASTERCARD_FUNDING_SOURCE || "DEBIT",
   };
 }
 
 export function mastercardMissingConfig(env) {
   const config = mastercardConfig(env);
-  return [
-    ["MASTERCARD_CONSUMER_KEY", config.consumerKey],
-    ["MASTERCARD_SIGNING_KEY_PEM", config.signingKeyPem],
-    ["MASTERCARD_TEST_SENDER_ACCOUNT_URI", config.senderAccountUri],
-    ["MASTERCARD_TEST_RECIPIENT_ACCOUNT_URI", config.recipientAccountUri],
-  ].filter(([, value]) => !value).map(([name]) => name);
+  const missing = [];
+  if (!/^[^!]{48}![^!]{48}$/.test(String(config.consumerKey || ""))) missing.push("MASTERCARD_CONSUMER_KEY");
+  if (!config.signingKeyPem) missing.push("MASTERCARD_SIGNING_KEY_PEM");
+  return missing;
 }
 
 export async function createMastercardPayment(env, { amount, transferReference }) {
@@ -139,12 +138,30 @@ export async function createMastercardPayment(env, { amount, transferReference }
       payment_type: "P2M",
       amount: String(amount),
       currency: config.currency,
+      transaction_local_date_time: new Date().toISOString(),
       payment_origination_country: config.paymentOriginationCountry,
       sender_account_uri: config.senderAccountUri,
       recipient_account_uri: config.recipientAccountUri,
+            funding_source: config.fundingSource,
+
+      sender: {
+        first_name: "Sandbox",
+        last_name: "Sender",
+        address: { line1: "Sandbox Test", city: "Dhaka", country: "BGD" },
+      },
+      recipient: {
+        first_name: "SmartGen",
+        last_name: "Sandbox",
+        merchant_category_code: "5734",
+        address: { line1: "SmartGen Test", city: "Dhaka", country: "BGD" },
+      },
       participant: { card_acceptor_name: config.cardAcceptorName },
-      funding_source: "CASH",
       channel: "KIOSK",
+      device_id: "SMARTGEN-SANDBOX",
+      location: "state:BD",
+      mastercard_assigned_id: "111111",
+      participation_id: "SmartGenSandbox",
+      additional_message: "000000",
       transfer_reference: safeTransferReference(transferReference),
     },
   };
