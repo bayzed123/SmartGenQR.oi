@@ -1,23 +1,37 @@
-![logo](assets/img/logo.svg)
-# SmartGen: All-in-One Digital & Web Utility Platform
+![SmartGen logo](assets/img/logo.svg)
 
-[![Auto Changelog Status](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/changelog.yml/badge.svg)](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/changelog.yml) [![Pages Build Deployment](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/pages/pages-build-deployment)
+# SmartGen — Privacy-first, Client-side Web Utility Platform
+
+Welcome to SmartGen. This repository contains the full sources for the SmartGen client-side utilities website and the supporting build and deployment tooling. SmartGen is a privacy-first collection of 130+ browser-based utilities (QR generators, SEO & meta tools, JSON/XML formatters, developer helpers, and more). Everything runs in the browser — no server-side processing of user data.
+
+Live site: https://smartgentools.com
+
+Badges
+
+[![Auto Changelog Status](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/changelog.yml/badge.svg)](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/changelog.yml)
+[![Pages Build Deployment](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/pages/pages-build-deployment)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/bayzed123/SmartGenQR.oi)
 
-**SmartGen** is a premier, open-source web utility ecosystem featuring over **131+ high-performance tools**. Designed for developers, marketers, and SEO experts, it operates on a **100% Client-Side** architecture, ensuring absolute privacy and lightning-fast execution without any server-side data storage.
+Overview
 
----
+This repository contains the website source and automation for SmartGen.
 
-## 🌐 Quick Access & Legal
-| Resource | Link |
-| :--- | :--- |
-| **Live Platform** | [![Website](https://img.shields.io/badge/Website-smartgentools.com-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://smartgentools.com) |
-| **Official Wiki** | [![Wiki](https://img.shields.io/badge/Documentation-Wiki-success?style=for-the-badge&logo=wikipedia&logoColor=white)](WIKI.md) |
-| **Trust Center** | [![Trust Center](https://img.shields.io/badge/Legal-Trust_Center-informational?style=for-the-badge&logo=shield-halved&logoColor=white)](WIKI_Trust_Center.md) |
-| **Founder** | [![Founder](https://img.shields.io/badge/Founder-Sayad_Bayezid-orange?style=for-the-badge&logo=person&logoColor=white)](https://www.sayadbayezid.com) |
+Key contents
 
----
+- `index.html` — site root and canonical homepage (REQUIRED at repo root for Pages deploy).
+- `assets/` — images, css, icons, fonts and client resources.
+- `scripts/` — build & generation scripts referenced by `package.json`.
+- `backend/` — worker code, Cloudflare or other backend pieces (deploy via workflow).
+- `.github/workflows/` — CI and automation pipelines (build, sitemap, link-checker, changelog, secret scans, worker deploy).
+- `data/` — generated data (e.g., `data/changelog.json`).
+
+Security reminder
+
+Do NOT commit secrets, API keys, service account JSON, or private keys into this repository. The repo contains automated checks (`secret-scan.yml`, `security-audit.yml`) that will fail on high-confidence secrets. Use GitHub Secrets for CI-only credentials and never echo them into files served from the site.
+
+Why README markers matter — DO NOT REMOVE
+
+The automated link-checker workflow replaces only the content between the following exact markers. If you change them the automation will fail to update the README with live link status.
 
 <!-- START_LINK_CHECKER -->
 
@@ -27,159 +41,104 @@
 
 <!-- END_LINK_CHECKER -->
 
----
+Link-checker sitemap endpoint (must remain reachable)
 
-<!-- pagespeed_start -->
-### 📊 Site Health Report (Updated: 2026-07-14)
-- **Performance Score:** 99/100
-<!-- pagespeed_end -->
+- The link-checker workflow reads the public sitemap at: `https://smartgentools.com/sitemap.xml`.
+- That exact endpoint must be reachable publicly for the workflow to operate correctly. Do not change this URL unless you also update `.github/workflows/link-checker.yml` to point to a new sitemap.
+- The workflow replaces README content only between the `<!-- START_LINK_CHECKER -->` and `<!-- END_LINK_CHECKER -->` markers.
 
----
-## 🏗️ Master Tool Directory
+If you operate a preview site or staging instance, either:
+- update the workflow to target your alternate sitemap URL, OR
+- publish a separate sitemap at the same URL under a DNS that the workflow can access.
 
-### 💻 Developer & Technical
-[![QR Generator](https://img.shields.io/badge/QR_Generator-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/qr-generator/)
-[![JSON Formatter](https://img.shields.io/badge/JSON_Formatter-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/json-formatter-validator/)
-[![Meta Tag Generator](https://img.shields.io/badge/Meta_Tag_Generator-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/meta-tag-generator/)
-[![UUID Generator](https://img.shields.io/badge/UUID_Generator-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/uuid-generator/)
-[![Sitemap Finder](https://img.shields.io/badge/Sitemap_Finder-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/sitemap-finder-and-downloader/)
-[![Base64 Image](https://img.shields.io/badge/Base64_to_Image-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/base64-to-image/)
+Developer quickstart (local)
 
-### 📈 Marketing & Social Media
-[![UTM Builder](https://img.shields.io/badge/UTM_Builder-FF5722?style=for-the-badge&logo=meta&logoColor=white)](https://smartgentools.com/utm-builder/)
-[![WhatsApp Link](https://img.shields.io/badge/WhatsApp_Link-FF5722?style=for-the-badge&logo=whatsapp&logoColor=white)](https://smartgentools.com/whatsapp-link/)
-[![Blog Title Gen](https://img.shields.io/badge/Blog_Title_Generator-FF5722?style=for-the-badge&logo=meta&logoColor=white)](https://smartgentools.com/blog-title-generator/)
-[![YT Downloader](https://img.shields.io/badge/YT_Thumbnail-FF5722?style=for-the-badge&logo=youtube&logoColor=white)](https://smartgentools.com/youtube-thumbnail-downloader/)
+Prerequisites
 
-### 🔍 SEO & Content
-[![Keyword Density](https://img.shields.io/badge/Keyword_Density-4CAF50?style=for-the-badge&logo=google&logoColor=white)](https://smartgentools.com/keyword-density-checker/)
-[![SERP Preview](https://img.shields.io/badge/SERP_Preview-4CAF50?style=for-the-badge&logo=google&logoColor=white)](https://smartgentools.com/serp-preview-tool/)
-[![Word Counter](https://img.shields.io/badge/Word_Counter-4CAF50?style=for-the-badge&logo=google&logoColor=white)](https://smartgentools.com/word-counter/)
-[![Lorem Ipsum](https://img.shields.io/badge/Lorem_Ipsum-4CAF50?style=for-the-badge&logo=google&logoColor=white)](https://smartgentools.com/lorem-ipsum-generator/)
+- Node.js 20.x (recommended). Some backend workflows use Node 22 — Node 20 or 22 is safe.
+- npm (bundled with Node)
+- Optional: Python 3.x for sitemap/link-check scripts if you run them locally.
 
-> 💡 **View the Full Catalog:** For a complete list of all 45+ utilities, visit the [**Master Tool Directory**](WIKI_Master_Tool_Directory.md).
-[**Master HTML Code library Tool Directory80+**](https://smartgentools.com/html-code-library/)
+Install & build
 
----
+1. Clone the repository:
 
-## ⚙️ Developer Guidelines & Maintenance
-*Follow these rules to maintain the integrity and performance of the SmartGen ecosystem.*
+   git clone https://github.com/bayzed123/SmartGenQR.oi.git
+   cd SmartGenQR.oi
 
-### 1. Tool Creation Standard
-- **Directory Structure:** Each tool must reside in its own folder (e.g., `/new-tool/index.html`).
-- **Client-Side Only:** No server-side processing. Use JavaScript for all logic.
-- **SEO Skyscraper:** Every `index.html` must include 1200+ words of SEO content, FAQ schema, and optimized meta tags.
+2. Install node dependencies:
 
-### 2. Global Logic Updates
-- **`assets/js/app.js`**: Update this for navbar/footer changes or theme logic.
-- **`assets/js/search-data.js`**: **Crucial!** Every new tool must be added to the `TOOLS_INDEX` array to appear in search and related tool recommendations.
-- **`assets/js/related-tools.js`**: Manages the dynamic recommendation engine.
+   npm ci
 
-### 3. Blog Management
-- **Writing Posts:** Add Markdown files to `/blog-posts/`.
-- **Building:** Run `node scripts/build-blog.js` to regenerate the blog static pages and `blog.json`.
-- **Metadata:** Use YAML front matter for titles, dates, and descriptions.
+3. Full build (blog, docs, and chatbot index):
 
-### 4. CI/CD & Automation
-- **Changelog:** Automatically updated via GitHub Actions on push to `main`. Do not edit `data/changelog.json` manually.
-- **Deployment:** GitHub Pages automatically builds and deploys from the `main` branch.
+   npm run build
 
----
+   Scripts in `package.json`:
+   - `build`: runs `build-blog`, `build-docs`, and `build-chatbot`
+   - `build-blog`: `node scripts/build-blog.js`
+   - `build-docs`: `node scripts/docs-build.js`
+   - `build-chatbot`: `node scripts/build-chatbot-knowledge.js`
 
-## 🚀 Setup & Local Development
+4. Serve locally for testing (ensure generated files exist at repo root):
 
-1.  **Clone:** `git clone https://github.com/bayzed123/SmartGenQR.oi.git`
-2.  **Install:** `pnpm install` (Required for blog build and linting).
-3.  **Local Preview:** Open any `index.html` or use `npx serve` for the full environment.
-4.  **Build Blog:** `pnpm build` (Runs `scripts/build-blog.js`).
----
+   npx serve . -p 8080
+   # or
+   python -m http.server 8080
 
-### how Manage Automated Smartgen Chatbot Read [CHATBOT_README.md](CHATBOT_README.md)
+Important: GitHub Pages workflow uploads the repository root (`.`). Ensure your final generated site files (HTML, sitemap.xml, assets) are present at the repo root at build completion or adjust the workflow upload path.
 
----
-# SmartGen Blog: Manual Author Card Placement Guidelines
+Repository layout & important files (quick links)
 
-This document outlines how to manually control the placement of the **Author Profile Card** and **Author Footer Card** within your SmartGen blog posts. By default, these cards are automatically injected into your generated HTML. However, if you require specific positioning for design or content flow, you can use special Markdown tags within your `.md` files.
+- [index.html](./index.html)
+- [assets/](./assets/)
+- [scripts/](./scripts/)
+- [package.json](./package.json)
+- [data/changelog.json](./data/changelog.json)
+- [.github/workflows/main.yml](./.github/workflows/main.yml)
+- [.github/workflows/link-checker.yml](./.github/workflows/link-checker.yml)
+- [.github/workflows/auto-sitemap.yml](./.github/workflows/auto-sitemap.yml)
+- [.github/workflows/changelog.yml](./.github/workflows/changelog.yml)
+- [.github/workflows/secret-scan.yml](./.github/workflows/secret-scan.yml)
+- [backend/](./backend/)
+- [WIKI.md](./WIKI.md) (if present)
+- [WIKI_Trust_Center.md](./WIKI_Trust_Center.md) (if present)
 
-## 1. Understanding Automatic vs. Manual Placement
+If any of those files are missing, please create them or adjust these links.
 
-By default, the `build-blog.js` script automatically places:
+Build orchestration notes
 
-*   **Author Profile Card:** Immediately after the blog post's title and description.
-*   **Author Footer Card:** At the very end of the blog post article, before the newsletter and related posts sections.
+- `package.json` coordinates the local build. The GitHub Actions workflows expect those scripts to exist and to produce final HTML and data files.
+- The `auto-sitemap.yml` workflow gathers URLs from the repo and writes `sitemap.xml`. It prefers git commit dates and will fail if the repository files aren't checkable; ensure workflows have full git history (`fetch-depth: 0`) where required.
 
-If you use the manual placement tags described below, the automatic injection for that specific card will be **disabled** for that post, giving you full control over its position.
+Adding or updating tools
 
-## 2. Manual Placement Tags
+- Each tool should be a self-contained folder with its own `index.html` and local assets (e.g., `/my-tool/index.html`).
+- Use relative links inside tools (e.g., `./assets/img.png`) so the site is portable between domain root and subpath deployments.
+- Add new tool entries to `assets/js/search-data.js` (the `TOOLS_INDEX` registry) so the search and related-tool features pick them up.
 
-To manually place the author cards, insert the following HTML comment tags directly into your Markdown (`.md`) files where you want the cards to appear:
+Changelog & automatic updates
 
-### 2.1. Author Profile Card
+- `data/changelog.json` is updated via `.github/workflows/changelog.yml`. The workflow prepends the last commit as a new entry. Avoid manual edits to this file unless you intend to bypass automation.
 
-Use this tag to place the slim author profile box. It is recommended to place this near the beginning of your content, typically after the introductory paragraphs or immediately following the post's metadata.
+Contributing
 
-```markdown
-<!--AUTHOR_PROFILE-->
-```
+- Fork and create a feature branch.
+- Run `npm run build` and verify `index.html` and generated pages are correct locally.
+- Submit a PR targeting `main`. CI will run security, sitemap, and link-check workflows.
+- Address any failures reported by the workflows before merging.
 
-**Example Usage in `your-blog-post.md`:**
+Recommended additional docs to add (I can create these for you)
 
-```markdown
----
-title: "My Awesome Blog Post"
-description: "A detailed look into an interesting topic."
----
+- `CONTRIBUTING.md` — contribution process & checklist.
+- `DEV_NOTES.md` or `WIKI.md` — explain the scripts, where generated files go, and how to rebuild the chatbot index.
+- `.github/ISSUE_TEMPLATE/` and `.github/PULL_REQUEST_TEMPLATE/` — templates to help maintainers.
 
-# My Awesome Blog Post Title
+Maintainer / contact
 
-This is the introductory paragraph of my blog post. It sets the stage for the content that follows.
+- Repository owner: `bayzed123` (maintainer contact via Issues or PR comments).
+- Founder & public profile references are included in `index.html`.
 
-<!--AUTHOR_PROFILE-->
+License
 
-Here begins the main content of my article...
-```
-
-### 2.2. Author Footer Card
-
-Use this tag to place the detailed author footer box. This should typically be placed at the logical end of your main blog content, before any concluding remarks or calls to action that are part of the main article body.
-
-```markdown
-<!--AUTHOR_FOOTER-->
-```
-
-**Example Usage in `your-blog-post.md`:**
-
-```markdown
-...
-This is the concluding section of my blog post. Thank you for reading!
-
-<!--AUTHOR_FOOTER-->
-
-## Further Reading
-
-*   [Related Article 1](/blog/related-article-1)
-*   [Related Article 2](/blog/related-article-2)
-```
-
-## 3. Important Considerations
-
-*   **Case Sensitivity:** The tags `<!--AUTHOR_PROFILE-->` and `<!--AUTHOR_FOOTER-->` are case-sensitive and must be used exactly as shown.
-*   **Single Use:** Each tag should only be used once per blog post. Using them multiple times will result in only the first occurrence being replaced.
-*   **No Duplication:** The `build-blog.js` script is designed to prevent duplication. If you use a manual tag, the automatic injection for that specific card will be skipped. If you don't use a manual tag, the card will be automatically placed in its default position.
-*   **HTML Comments:** These tags are HTML comments, so they will not be visible in your raw Markdown content on GitHub or other platforms that render Markdown directly without processing by `build-blog.js`.
-
-By following these guidelines, you can achieve precise control over the presentation of author information in your SmartGen blog, enhancing both user experience and E-E-A-T signals.
-
-* SmartGen Blog Post Writing Guidelines & Template [blog-post-guideline.md](blog-post-guideline.md)
-## 🤝 Contribution & Support
-
-We welcome contributors! See the [**Contribution Guide**](WIKI_About_Team_Contribution.md) for detailed workflows.
-
-### Support the Project
-*   **PayPal:** [![Support](https://img.shields.io/badge/PayPal-Donate-blue?style=flat&logo=paypal)](https://www.paypal.me/connectwithbayezid)
-*   **Project Support:** [![projects Support](https://img.shields.io/badge/Agency-Connect_With_Bayezid-blue)](https://gravatar.com/sayadbayezid/wallet)
-
----
-
-## 📄 License
-Licensed under the MIT License. **Copyright (c) 2026 [Sayad Md Bayezid Hosan](https://me.developers.google.com/u/103733595068802840118)**.
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
