@@ -1,5 +1,10 @@
 [
   {
+    "title": "chore: update README.md — redesign, add internal links, preserve link-checker markers, clarify sitemap endpoint",
+    "date": "2026-08-27T22:48:21Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: add sandbox policy and docs footer",
     "date": "2026-08-26T22:39:57Z",
     "description": "Platform improvement and optimization."
