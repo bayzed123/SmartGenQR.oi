@@ -1820,7 +1820,7 @@ export const TOOLS = [
       "html en dash code",
       "en dash"
     ],
-    "icon": "➖"
+    "icon": "🖥️"
   },
   {
     "id": "html-euro-code",
