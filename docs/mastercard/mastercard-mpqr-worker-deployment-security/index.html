@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartGen Cloudflare Worker Deployment and MPQR Security</title>
+  <meta name="description" content="Deploy Mastercard MPQR securely in a Cloudflare Worker with secret bindings, CORS, environment separation, validation, logging, and incident response.">
+  <link rel="canonical" href="https://smartgentools.com/docs/mastercard/mastercard-mpqr-worker-deployment-security/">
+  <link rel="stylesheet" href="../../../assets/css/docs.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+  <style>.toc-sidebar{min-width:200px;padding-left:1.5rem;border-left:1px solid #e5e7eb}.toc-heading{font-weight:600;font-size:.85rem;text-transform:uppercase;color:#888;margin-bottom:.75rem}.toc-list{list-style:none;padding:0;margin:0}.toc-list li{margin-bottom:.5rem}.toc-main a{font-size:.9rem;color:#444;text-decoration:none}.toc-sub a{font-size:.85rem;color:#777;padding-left:1rem;display:block}.toc-link:hover,.toc-link.active{color:#3b82f6;font-weight:500}.doc-layout-with-toc{display:flex;gap:2rem}.nav-link-subpage{padding-left:1.4rem!important;font-size:.92em}@media(max-width:900px){.toc-sidebar{display:none}}.doc-footer{margin-top:3rem;padding-top:2rem;border-top:1px solid #e5e7eb}.nav-table{display:table;width:100%;margin-bottom:2rem}.nav-row{display:table-row}.nav-cell{display:table-cell;padding:1rem;width:50%}.nav-next{text-align:right;border-left:1px solid #e5e7eb}.nav-label{font-size:.85rem;color:#666;margin-bottom:.5rem;font-weight:500}.nav-link-footer,.link-secondary{color:#0969da;text-decoration:none;font-weight:600}.nav-link-footer:hover,.link-secondary:hover{text-decoration:underline}.nav-empty{height:2.5rem}.footer-divider{margin:2rem 0;border:none;border-top:1px solid #e5e7eb}.help-section{margin:2rem 0}.help-box{margin-bottom:1.5rem}.help-box h3{font-size:1rem;margin:0 0 .5rem}.help-box p{margin:.5rem 0;color:#555;line-height:1.5}.footer-legal{text-align:center;color:#666}@media(max-width:768px){.nav-cell{display:block;width:100%;padding:1rem 0}.nav-next{text-align:left;border-left:0;border-top:1px solid #e5e7eb}}</style>
+</head>
+<body>
+  <header class="docs-header"><div class="header-left"><button id="mobile-menu-btn" class="icon-btn mobile-only" aria-label="Menu"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><a href="/" class="logo">SmartGen Docs</a></div><div class="header-right"><button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">Theme</button></div></header>
+  <div class="docs-layout"><div id="sidebar-overlay" class="sidebar-overlay"></div><aside id="sidebar" class="sidebar"><nav class="sidebar-nav">
+        <div class="nav-section-title">API Reference</div>
+        <a href="/docs/api-reference/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                API Reference
+            </a>
+        <div class="nav-section-title">Guides</div>
+        <a href="/docs/architecture-and-tech-stack/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Architecture &amp; Tech Stack
+            </a><a href="/docs/development-setup-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Development Setup Guide
+            </a><a href="/docs/directory-structure-for-portfolio/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Directory Structure for Portfolio
+            </a><a href="/docs/getting-started/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Getting Started
+            </a><a href="/docs/github-secrets-explained/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                GitHub Secrets Explained
+            </a><a href="/docs/installation/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Installation
+            </a><a href="/docs/quick-setup-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Quick Setup Guide
+            </a><a href="/docs/developer-guidelines/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Developer Guidelines
+            </a><a href="/docs/vite-optimization-guide-for-cicd/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Vite Optimization Guide for CI/CD
+            </a><a href="/docs/about-the-team-and-contribution/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                About the Team &amp; Contribution
+            </a><a href="/docs/github-actions-configuration-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Advanced Workflow Configuration
+            </a><a href="/docs/vite-config-quick-reference/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Vite Config Quick Reference
+            </a><a href="/docs/railway-deployment-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Railway Deployment Guide
+            </a><a href="/docs/custom-environment-variables/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Custom Environment Variables
+            </a><a href="/docs/workflow-customization-summary/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Workflow Customization Summary
+            </a><a href="/docs/contributor-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Contributor Guide
+            </a><a href="/docs/quickstart-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Quickstart Guide
+            </a>
+        <div class="nav-section-title">Ecommerce</div>
+        <a href="/docs/ecommerce/readme/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Rinova BD Ecommerce Full-Stack Documentation
+            </a><a href="/docs/ecommerce/01-product-and-system-overview/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                01. Product and System Overview
+            </a><a href="/docs/ecommerce/02-architecture/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                02. Architecture
+            </a><a href="/docs/ecommerce/03-end-to-end-pipeline/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                03. End-to-End Pipeline
+            </a><a href="/docs/ecommerce/04-data-model-and-migrations/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                04. Data Model and Migrations
+            </a><a href="/docs/ecommerce/05-api-and-route-reference/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                05. API and Route Reference
+            </a><a href="/docs/ecommerce/06-admin-dashboard/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                06. Admin Dashboard
+            </a><a href="/docs/ecommerce/07-customer-storefront/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                07. Customer Storefront
+            </a><a href="/docs/ecommerce/08-cloudflare-ai-chatbot-system/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                08. Cloudflare AI Chatbot System
+            </a><a href="/docs/ecommerce/09-security-and-privacy/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                09. Security and Privacy
+            </a><a href="/docs/ecommerce/10-local-development-and-deployment/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                10. Local Development and Deployment
+            </a><a href="/docs/ecommerce/11-playwright-testing-and-screenshot-proof/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                11. Playwright Testing and Screenshot Proof
+            </a><a href="/docs/ecommerce/12-operations-and-observability/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                12. Operations and Observability
+            </a><a href="/docs/ecommerce/13-troubleshooting/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                13. Troubleshooting
+            </a><a href="/docs/ecommerce/14-contributing-and-release-workflow/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                14. Contributing and Release Workflow
+            </a><a href="/docs/ecommerce/checklists/go-live/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Ecommerce Go-Live Checklist
+            </a><a href="/docs/ecommerce/checklists/security/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Ecommerce Security Checklist
+            </a><a href="/docs/ecommerce/examples/configuration-template/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Configuration Template
+            </a><a href="/docs/ecommerce/screenshots/readme/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Screenshot and Mapping Evidence
+            </a><a href="/docs/ecommerce/diagrams/readme/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Ecommerce Architecture Diagrams
+            </a>
+        <div class="nav-section-title">Mastercard</div>
+        <a href="/docs/mastercard/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard Merchant Presented QR: SmartGen A-to-Z Guide
+            </a><a href="/docs/mastercard/mastercard-mpqr-a-to-z/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Sandbox Integration &amp; Payment Orchestration Prototype
+            </a><a href="/docs/mastercard/mastercard-mpqr-overview-and-roles/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR Overview, Participants, and Money Flow
+            </a><a href="/docs/mastercard/mastercard-mpqr-account-setup-and-keys/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR Account, Project, and Key Setup
+            </a><a href="/docs/mastercard/mastercard-mpqr-oauth1-signing/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR OAuth 1.0a RSA-SHA256 Authentication
+            </a><a href="/docs/mastercard/mastercard-mpqr-api-reference-smartgen/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR Payment and Retrieval API Reference for SmartGen
+            </a><a href="/docs/mastercard/mastercard-mpqr-qr-static-dynamic-device-sdks/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR QR Codes, Device SDKs, and Merchant Flow
+            </a><a href="/docs/mastercard/mastercard-mpqr-sandbox-testing/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR Sandbox Testing and Evidence Guide
+            </a><a href="/docs/mastercard/mastercard-mpqr-worker-deployment-security/" class="nav-link nav-link-subpage active" aria-current="page" data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Cloudflare Worker Deployment and MPQR Security
+            </a><a href="/docs/mastercard/mastercard-mpqr-partnership-and-production-onboarding/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR Partnership, Sponsorship, MTF, and Production Onboarding
+            </a><a href="/docs/mastercard/mastercard-mpqr-orders-status-reconciliation-refunds/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen MPQR Orders, Status, Reconciliation, Refunds, and Disputes
+            </a><a href="/docs/mastercard/mastercard-mpqr-bangladesh-operating-checklist/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Bangladesh Operating and Compliance Checklist
+            </a><a href="/docs/mastercard/mastercard-mpqr-troubleshooting/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Troubleshooting and Support Runbook
+            </a><a href="/docs/mastercard/mastercard-mpqr-security-remediation-status/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Security Remediation Status
+            </a><a href="/docs/mastercard/checklists/mtf-readiness/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR MTF Readiness Checklist
+            </a><a href="/docs/mastercard/99-sources-and-research-notes/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR Research Notes
+            </a><a href="/docs/mastercard/examples/configuration-template/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Configuration Template
+            </a><a href="/docs/mastercard/examples/curl-and-worker-examples/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Examples
+            </a><a href="/docs/mastercard/checklists/production-go-live/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Production Go-Live Checklist
+            </a>
+        <div class="nav-section-title">Portfolio Website</div>
+        <a href="/docs/portfolio-website-getting-started-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Portfolio Website: Getting Started Guide
+            </a><a href="/docs/portfolio-website-deployment-and-blog-system-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Portfolio Website: Deployment &amp; Blog System Guide
+            </a><a href="/docs/portfolio-website-customization-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Portfolio Website: Customization Guide
+            </a><a href="/docs/portfolio-website-api-and-script-reference/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Portfolio Website: API &amp; Script Reference
+            </a>
+        <div class="nav-section-title">Open Source Projects</div>
+        <a href="/docs/building-a-fast-client-side-search-feature-without-a-backend/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Building a Fast Client-Side Search Feature Without a Backend
+            </a>
+        <div class="nav-section-title">Ai Systems</div>
+        <a href="/docs/ai-systems/06-agentic-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Agentic System Design
+            </a><a href="/docs/ai-systems/01-ai-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                AI System Design
+            </a><a href="/docs/ai-systems/05-generative-ai-system-design-interview/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Generative AI System Design Interview
+            </a><a href="/docs/ai-systems/04-how-chatgpt-system-design-works/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                How ChatGPT System Design Works
+            </a><a href="/docs/ai-systems/03-llm-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                LLM System Design
+            </a><a href="/docs/ai-systems/02-ml-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                ML System Design
+            </a>
+        <div class="nav-section-title">Barcode System</div>
+        <a href="/docs/barcode-system/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Barcode System
+            </a><a href="/docs/barcode-system/about/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                About SmartGen Barcode System
+            </a><a href="/docs/barcode-system/api/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                API and Product-Form Contract
+            </a><a href="/docs/barcode-system/docomation/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Barcode System Documentation
+            </a><a href="/docs/barcode-system/call-to-action/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Get Started With SmartGen Barcode System
+            </a><a href="/docs/barcode-system/how-benifit/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                How SmartGen Barcode System Benefits Clients
+            </a><a href="/docs/barcode-system/how-to-use/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                How to Use SmartGen Barcode System
+            </a><a href="/docs/barcode-system/installation/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Installation
+            </a><a href="/docs/barcode-system/pricing/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Pricing
+            </a><a href="/docs/barcode-system/who-use-barcode/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Who Uses Barcode Systems
+            </a>
+        <div class="nav-section-title">Fundamentals</div>
+        <a href="/docs/fundamentals/07-availability-vs-consistency-in-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Availability vs Consistency In System Design
+            </a><a href="/docs/fundamentals/04-back-of-the-envelope-calculation/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Back of the Envelope Calculation
+            </a><a href="/docs/fundamentals/06-cap-theorem-explained/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                CAP Theorem Explained
+            </a><a href="/docs/fundamentals/05-cap-theorem-in-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                CAP Theorem in System Design
+            </a><a href="/docs/fundamentals/09-high-availability-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                High Availability System Design
+            </a><a href="/docs/fundamentals/10-reliability-in-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Reliability in System Design
+            </a><a href="/docs/fundamentals/08-scalability-in-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Scalability in System Design
+            </a><a href="/docs/fundamentals/03-system-design-concepts/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                System Design Concepts
+            </a><a href="/docs/fundamentals/01-system-design-fundamentals/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                System Design Fundamentals
+            </a><a href="/docs/fundamentals/02-system-design-principles/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                System Design Principles
+            </a></nav><div class="sidebar-footer"><a href="https://smartgentools.com" class="footer-link">Home</a><a href="https://smartgentools.com/blog" class="footer-link">Blog</a></div></aside><main class="main-content"><div class="doc-layout-with-toc"><article class="doc-article"><div class="breadcrumb"><a href="/docs/">Docs</a> <span class="separator">/</span> <span>Mastercard</span></div><h1 class="doc-title">SmartGen Cloudflare Worker Deployment and MPQR Security</h1>
+
+<div class="header-ads-container">
+  <div class="desktop-only"><div class="ad-cls-wrapper" id="ad-wrapper-leaderboard728x90" style="min-height: 90px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f9d4f2f3a29a9dcfb43dddf1fd33eb88',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f9d4f2f3a29a9dcfb43dddf1fd33eb88/invoke.js"></script>
+</div></div>
+  <div class="mobile-only"><div class="ad-cls-wrapper" id="ad-wrapper-mobile320x50" style="min-height: 50px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : '6af746fdd2244652b728e73b1a70db61',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>
+</div></div>
+</div><div class="doc-body"><!-- smartgen-mastercard-navigation --><h2 id="smartgen-mastercard-navigation">SmartGen Mastercard navigation</h2>
+<p>Use the links below to move between the SmartGen Mastercard documentation chapters and the live Sandbox Lab. The Lab is for simulated technical testing only; it does not authorize real-money use or live merchant fulfillment.</p>
+<ul>
+<li><a href="/docs/mastercard/">A-to-Z index</a></li>
+<li><a href="/payment-gateway/mastercard-mpqr.html">Sandbox Lab</a></li>
+<li><a href="/docs/mastercard/mastercard-mpqr-overview-and-roles/">Overview and roles</a></li>
+<li><a href="/docs/mastercard/mastercard-mpqr-account-setup-and-keys/">Account and keys</a></li>
+<li><a href="/docs/mastercard/mastercard-mpqr-oauth1-signing/">OAuth 1.0a signing</a></li>
+<li><a href="/docs/mastercard/mastercard-mpqr-api-reference-smartgen/">Payment and Retrieval API</a></li>
+<li><a href="/docs/mastercard/mastercard-mpqr-qr-static-dynamic-device-sdks/">QR/static/dynamic flow</a></li>
+<li><a href="/docs/mastercard/mastercard-mpqr-sandbox-testing/">Sandbox testing</a></li>
+<li><a href="/docs/mastercard/mastercard-mpqr-worker-deployment-security/">Worker security</a></li>
+<li><a href="/docs/mastercard/mastercard-mpqr-partnership-and-production-onboarding/">Partner and Production onboarding</a></li>
+<li><a href="/docs/mastercard/mastercard-mpqr-orders-status-reconciliation-refunds/">Orders and reconciliation</a></li>
+<li><a href="/docs/mastercard/mastercard-mpqr-bangladesh-operating-checklist/">Bangladesh checklist</a></li>
+<li><a href="/docs/mastercard/mastercard-mpqr-troubleshooting/">Troubleshooting</a></li>
+<li><a href="/docs/mastercard/mastercard-mpqr-security-remediation-status/">Security remediation</a></li>
+<li><a href="/docs/mastercard/checklists/mtf-readiness/">MTF checklist</a></li>
+<li><a href="/docs/mastercard/checklists/production-go-live/">Production checklist</a></li>
+<li><a href="/docs/mastercard/examples/curl-and-worker-examples/">Safe examples</a></li>
+<li><a href="/docs/mastercard/examples/configuration-template/">Configuration template</a></li>
+<li><a href="https://developer.mastercard.com/mastercard-merchant-presented-qr/documentation/">Official Mastercard MPQR docs</a></li>
+</ul>
+<h2 id="smartgen-cloudflare-worker-deployment-and-mpqr-security">SmartGen Cloudflare Worker Deployment and MPQR Security</h2>
+<h3 id="deployment-architecture">Deployment architecture</h3>
+<p>The public GitHub Pages frontend calls the SmartGen Cloudflare Worker. The Worker calls Mastercard over HTTPS and stores the private signing key in Cloudflare Worker secrets. The browser never calls Mastercard directly and never receives the Consumer Key or private key.</p>
+<pre><code class="language-text">Customer browser
+      |
+      | HTTPS: amount + internal reference only
+      v
+SmartGen Cloudflare Worker
+      |
+      | OAuth 1.0a signed HTTPS request
+      v
+Mastercard MPQR API
+      |
+      v
+Approved originating/receiving institution and settlement system
+</code></pre>
+<h3 id="worker-secrets">Worker secrets</h3>
+<p>The current Worker expects:</p>
+<pre><code class="language-text">MASTERCARD_CONSUMER_KEY
+MASTERCARD_SIGNING_KEY_PEM
+</code></pre>
+<p>Store them as Worker secrets:</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+<pre><code class="language-bash">npx wrangler secret put MASTERCARD_CONSUMER_KEY
+npx wrangler secret put MASTERCARD_SIGNING_KEY_PEM
+</code></pre>
+<p>Never put secrets in <code>wrangler.toml</code>, <code>.env</code> committed to GitHub, HTML, browser JavaScript, issue comments, screenshots, or CI logs. Use a password manager or approved company vault for the original keystore password and backup material.</p>
+<h3 id="non-secret-configuration">Non-secret configuration</h3>
+<p>These values can be declared as non-secret Worker configuration only when they do not contain credentials:</p>
+<pre><code class="language-toml">[vars]
+MASTERCARD_BASE_URL = &quot;https://sandbox.api.mastercard.com/send/static&quot;
+MASTERCARD_PARTNER_ID = &quot;ptnr_BEeCrYJHh2BXTXPy_PEtp-8DBOo&quot;
+MASTERCARD_CURRENCY = &quot;USD&quot;
+MASTERCARD_PAYMENT_ORIGINATION_COUNTRY = &quot;BGD&quot;
+MASTERCARD_CARD_ACCEPTOR_NAME = &quot;SmartGen Sandbox&quot;
+ALLOWED_ORIGINS = &quot;https://smartgentools.com,https://bayzed123.github.io&quot;
+FRONTEND_URL = &quot;https://smartgentools.com/payment-gateway/&quot;
+</code></pre>
+<p>The published sandbox partner ID is for Sandbox only. MTF and Production use Mastercard-issued participant identifiers and environment configuration.</p>
+<h3 id="environment-separation">Environment separation</h3>
+<p>Use separate Workers or clearly separated environments for Sandbox, MTF, and Production. Each environment should have its own endpoint, partner identifier, account fixtures, Consumer Key, signing key, logs, and alerting policy.</p>
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>Credentials</th>
+<th>Endpoint</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sandbox</td>
+<td>Sandbox key pair</td>
+<td><code>sandbox.api.mastercard.com/send/static</code></td>
+<td>Published test fixtures</td>
+</tr>
+<tr>
+<td>MTF</td>
+<td>Mastercard-configured test access</td>
+<td><code>sandbox.api.mastercard.com/send</code></td>
+<td>Mastercard-provided test cases</td>
+</tr>
+<tr>
+<td>Production</td>
+<td>Activated Production key pair</td>
+<td><code>api.mastercard.com/send</code></td>
+<td>Approved merchant and settlement data</td>
+</tr>
+</tbody></table>
+<p>Do not switch only the base URL and assume the project is production-ready. Production also requires the approved partner identifier, merchant relationship, QR payload, limits, testing acknowledgement, key activation, and operational controls.</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-8" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+<h3 id="optional-client-authentication-and-production-order-binding">Optional client authentication and production order binding</h3>
+<p>The current public Sandbox page intentionally runs with <code>authMode: sandbox_public</code> so the technical demo remains usable. That mode is not suitable for Production. When a protected server-to-server client is ready, set <code>REQUIRE_CLIENT_AUTH=true</code> and store <code>SMARTGEN_CLIENT_API_KEY</code> as a Worker secret. Requests must then use <code>X-SmartGen-Api-Key</code> or <code>Authorization: Bearer ...</code>. CORS remains useful for browser-origin control, but it is never authentication.</p>
+<p>For Production, set <code>REQUIRE_ORDER_BINDING=true</code> and store <code>SMARTGEN_ORDER_SIGNING_SECRET</code> as a Worker secret. The payment route then accepts a short-lived HMAC-signed <code>orderToken</code> containing the server-created <code>orderId</code>, approved amount, and transfer reference. Browser-supplied amount and reference values are ignored for the provider request. In a full deployment, the token should be minted only by an authenticated SmartGen order service after looking up the merchant, currency, recipient, and amount in a durable database.</p>
+<p>The Worker includes a short-lived in-memory idempotency guard and per-instance rate limiter for Sandbox protection. These controls are not durable and are not sufficient for a multi-instance Production system. Production must use a durable idempotency record, per-user/merchant/order quotas, Cloudflare WAF/bot controls, abuse monitoring, and a provider-approved retry policy. The current health response reports these modes as <code>authMode</code>, <code>orderBinding</code>, <code>idempotency</code>, and <code>rateLimitPerMinute</code> without revealing secret values.</p>
+<p>The Worker also supports a fail-safe Production order-binding mode. When enabled, it requires a short-lived HMAC-signed <code>orderToken</code> and uses the signed server-side amount and transfer reference instead of browser-supplied values. The signing secret is <code>SMARTGEN_ORDER_SIGNING_SECRET</code>; the token must be minted by an authenticated order service after a durable database lookup. The current public Sandbox remains in compatibility mode so the demonstration page continues to work.</p>
+<h3 id="cors-configuration">CORS configuration</h3>
+<p>The Worker should allow only known frontend origins. The current SmartGen CORS binding is:</p>
+<pre><code class="language-text">https://smartgentools.com,https://bayzed123.github.io
+</code></pre>
+<p>The Worker responds to <code>OPTIONS</code> preflight requests and echoes only an origin in the allow-list. For production, remove development origins that are not needed. Keep <code>Vary: Origin</code> on responses.</p>
+<p>CORS is not authentication. It only controls browser-origin access. The Worker must still validate the request, enforce rate limits, protect credentials, and verify payment status server-side.</p>
+<h3 id="request-validation">Request validation</h3>
+<p>The Worker should validate at least:</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Validation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Amount</td>
+<td>Positive decimal, approved precision, server-side order total match</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>Allow-list configured for the merchant/provider</td>
+</tr>
+<tr>
+<td>Transfer reference</td>
+<td>Unique, safe characters, provider length limit</td>
+</tr>
+<tr>
+<td>Order ID</td>
+<td>Server-generated or authenticated internal ID</td>
+</tr>
+<tr>
+<td>Merchant ID</td>
+<td>Looked up server-side; never trusted from browser</td>
+</tr>
+<tr>
+<td>QR data</td>
+<td>Length, format, checksum, merchant binding, amount/currency match</td>
+</tr>
+<tr>
+<td>Origin</td>
+<td>Allow-list for browser CORS; not a substitute for user authentication</td>
+</tr>
+</tbody></table>
+<p>Never accept sender/recipient account URIs, PANs, CVVs, or private signing keys from the public checkout page.</p>
+<h3 id="logging-policy">Logging policy</h3>
+<p>Log only what is necessary to trace and reconcile a payment:</p>
+<pre><code class="language-text">internal_order_id
+provider
+environment
+transfer_reference
+provider_transfer_id
+provider_transaction_id
+status
+HTTP_status
+correlation_id
+request_started_at
+response_received_at
+retry_count
+</code></pre>
+<p>Never log or return to the browser:</p>
+<pre><code class="language-text">private signing key
+keystore password
+OAuth Authorization header
+Consumer Key
+full PAN or account URI
+CVV or PIN
+OTP
+unredacted personal data
+</code></pre>
+<p>The SmartGen Worker uses an explicit public-response allow-list for Mastercard Payment and Retrieval responses. It returns only safe identifiers, status, amount/currency, timestamps, and masked transaction metadata. It does not forward the raw Mastercard provider payload to the public page. Error responses likewise return a generic safe message and correlation ID without forwarding provider credential/account fields.</p>
+<p>If provider responses contain masked account URIs or personal data, store only a sanitized subset. Encrypt sensitive operational records and limit access to authorized administrators.</p>
+<h3 id="rate-limiting-and-abuse-controls">Rate limiting and abuse controls</h3>
+<p>Add per-IP, per-user, per-merchant, and per-order rate limits before production. Reject excessive attempts, invalid references, repeated failures, and suspicious amount patterns. Use a queue or controlled retry path for provider calls rather than allowing arbitrary client retries.</p>
+<p>For real merchants, add authentication, merchant-specific API keys or signed requests, webhook verification if supported by the provider, replay protection, and an allow-list of registered merchant origins.</p>
+<h3 id="deployment-verification">Deployment verification</h3>
+<p>After deployment, verify:</p>
+<pre><code class="language-bash">curl -sS https://YOUR_WORKER.workers.dev/health
+curl -i -X OPTIONS \
+  https://YOUR_WORKER.workers.dev/api/mastercard/mpqr/payment \
+  -H &#39;Origin: https://smartgentools.com&#39; \
+  -H &#39;Access-Control-Request-Method: POST&#39; \
+  -H &#39;Access-Control-Request-Headers: content-type&#39;
+</code></pre>
+<p>Then run one safe Sandbox payment, retrieve it, inspect logs for secret leakage, and confirm the public page shows the expected result. The response must not contain <code>authorization</code>, <code>consumer_key</code>, <code>signing_key</code>, <code>private_key</code>, <code>secret</code>, <code>password</code>, <code>account_uri</code>, <code>pan</code>, <code>cvc</code>, <code>cvv</code>, <code>pin</code>, or token fields. Do not run a Production payment as a deployment health check without an approved pilot and explicit operational approval.</p>
+<h3 id="remediation-status">Remediation status</h3>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Current prototype status</th>
+<th>Production requirement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SEC-01 public routes</td>
+<td>Sandbox route is rate-limited; optional API-key/Bearer authentication is implemented but disabled for the public demo</td>
+<td>Enable authentication, merchant identity, WAF/bot controls, per-user/merchant/order quotas, and abuse monitoring</td>
+</tr>
+<tr>
+<td>SEC-02 browser amount/reference</td>
+<td>Signed order-token mode is implemented but disabled in Sandbox</td>
+<td>Enable it with an authenticated order service and durable merchant/order lookup</td>
+</tr>
+<tr>
+<td>SEC-03 duplicate/retry</td>
+<td>In-memory idempotency guard is implemented</td>
+<td>Replace with durable idempotency and retrieval-before-retry workflow</td>
+</tr>
+<tr>
+<td>SEC-04 refund/reversal</td>
+<td>Not implemented because the approved provider operation is not available</td>
+<td>Implement sponsor/provider refund or reversal endpoint and audit trail</td>
+</tr>
+<tr>
+<td>SEC-05 headers/CORS</td>
+<td>Worker headers and frontend CSP/referrer metadata are implemented; static-host CDN headers remain platform-dependent</td>
+<td>Add HSTS, CSP, no-sniffing, no-referrer, and restrictive framing headers at the static-host/CDN layer</td>
+</tr>
+<tr>
+<td>SEC-06 raw JSON/PII</td>
+<td>Worker allow-list and browser-safe technical summary are implemented</td>
+<td>Keep the allow-list minimal and retain sanitized data only</td>
+</tr>
+<tr>
+<td>SEC-07 localStorage</td>
+<td>Demo history uses tab-scoped <code>sessionStorage</code> with an explicit notice</td>
+<td>Remove browser history and use authenticated server history</td>
+</tr>
+<tr>
+<td>SEC-08 Math.random</td>
+<td>Demo reference generation uses Web Crypto randomness</td>
+<td>Use immutable server-side order IDs and provider references</td>
+</tr>
+<tr>
+<td>SEC-09 mixed health schema</td>
+<td>Mastercard-first service/provider/environment schema is live; bKash is marked <code>on_hold</code></td>
+<td>Add deployment/version metadata from the controlled deployment system if operationally required</td>
+</tr>
+<tr>
+<td>SEC-10 scans</td>
+<td>Secret scan, dependency audit, syntax tests, hardening tests, and full-history high-confidence scan are in CI</td>
+<td>Add scheduled dependency review, SAST, Cloudflare audit review, and quarterly key-rotation drills</td>
+</tr>
+</tbody></table>
+<p>The dependency graph now uses maintained <code>js-yaml</code> 4.x directly instead of the vulnerable <code>front-matter</code>/<code>gray-matter</code> wrappers that pulled in <code>js-yaml</code> 3.x. The documentation build and payment tests pass after the change.</p>
+<h3 id="incident-response">Incident response</h3>
+<p>If a credential is exposed, immediately revoke or rotate it in Mastercard Developers, create a replacement key pair, update the Worker secret, deploy to a test environment, verify a signed request, and then promote the replacement. Preserve only non-sensitive incident evidence. If an order may have been duplicated or status is uncertain, retrieve by the known reference before initiating another payment.</p>
+<h3 id="references">References</h3>
+</div><div class="doc-footer"><div class="nav-table"><div class="nav-row"><div class="nav-cell nav-prev"><div class="nav-label">← Previous</div><a href="/docs/mastercard/mastercard-mpqr-sandbox-testing/" class="nav-link-footer">Mastercard MPQR Sandbox Testing and Evidence Guide</a></div><div class="nav-cell nav-next"><div class="nav-label">Next →</div><a href="/docs/mastercard/mastercard-mpqr-partnership-and-production-onboarding/" class="nav-link-footer">Mastercard MPQR Partnership, Sponsorship, MTF, and Production Onboarding</a></div></div></div><hr class="footer-divider"><div class="help-section"><div class="help-box"><h3>Did you find what you needed?</h3><p>SmartGen documentation is open source. You can report unclear content or submit an improvement through GitHub.</p></div><div class="help-box"><h3>Still need help?</h3><p><a href="https://github.com/bayzed123/SmartGenQR.oi/discussions" class="link-secondary">Ask the SmartGen community</a> or <a href="https://smartgentools.com/contact/" class="link-secondary">contact support</a>.</p></div></div><div class="footer-legal"><p><small>© 2026 SmartGen. <a href="https://smartgentools.com/terms/">Terms</a> · <a href="https://smartgentools.com/privacy/">Privacy</a></small></p></div></div></article><aside class="toc-sidebar desktop-only"><div class="toc-heading">On This Page</div><ul class="toc-list"><li class="toc-item toc-main"><a href="#smartgen-mastercard-navigation" class="toc-link">SmartGen Mastercard navigation</a></li><li class="toc-item toc-main"><a href="#deployment-architecture" class="toc-link">Deployment architecture</a></li><li class="toc-item toc-main"><a href="#worker-secrets" class="toc-link">Worker secrets</a></li><li class="toc-item toc-main"><a href="#non-secret-configuration" class="toc-link">Non-secret configuration</a></li><li class="toc-item toc-main"><a href="#environment-separation" class="toc-link">Environment separation</a></li><li class="toc-item toc-main"><a href="#optional-client-authentication-and-production-order-binding" class="toc-link">Optional client authentication and production order binding</a></li><li class="toc-item toc-main"><a href="#cors-configuration" class="toc-link">CORS configuration</a></li><li class="toc-item toc-main"><a href="#request-validation" class="toc-link">Request validation</a></li><li class="toc-item toc-main"><a href="#logging-policy" class="toc-link">Logging policy</a></li><li class="toc-item toc-main"><a href="#rate-limiting-and-abuse-controls" class="toc-link">Rate limiting and abuse controls</a></li><li class="toc-item toc-main"><a href="#deployment-verification" class="toc-link">Deployment verification</a></li><li class="toc-item toc-main"><a href="#remediation-status" class="toc-link">Remediation status</a></li><li class="toc-item toc-main"><a href="#incident-response" class="toc-link">Incident response</a></li><li class="toc-item toc-main"><a href="#references" class="toc-link">References</a></li></ul></aside></div></main>
+
+<aside class="sidebar desktop-only">
+  <div class="ad-cls-wrapper sticky" style="min-height: 600px; position: sticky; top: 20px;"><script>
+  atOptions = {
+    'key' : '96e8bb0db46b2c8ef669fa310ed45f8b',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script></div>
+</aside>
+</div>
+  <script src="../../../assets/js/docs.js"></script>
+  <script>document.querySelectorAll('.toc-link').forEach(link=>link.addEventListener('click',event=>{const target=document.querySelector(link.getAttribute('href'));if(target){event.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}}));</script>
+</body>
+</html>
+<div class="ad-cls-wrapper" id="ad-wrapper-native_banner" style="min-height: auto; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
+<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>
+</div>

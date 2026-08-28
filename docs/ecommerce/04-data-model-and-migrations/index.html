@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04. Data Model and Migrations - SmartGen Docs</title>
+  <meta name="description" content="Rinova BD D1 schema concepts, relationships, lifecycle states, migration workflow, and data safety.">
+  <link rel="canonical" href="https://smartgentools.com/docs/ecommerce/04-data-model-and-migrations/">
+  <link rel="stylesheet" href="../../../assets/css/docs.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+  <style>.toc-sidebar{min-width:200px;padding-left:1.5rem;border-left:1px solid #e5e7eb}.toc-heading{font-weight:600;font-size:.85rem;text-transform:uppercase;color:#888;margin-bottom:.75rem}.toc-list{list-style:none;padding:0;margin:0}.toc-list li{margin-bottom:.5rem}.toc-main a{font-size:.9rem;color:#444;text-decoration:none}.toc-sub a{font-size:.85rem;color:#777;padding-left:1rem;display:block}.toc-link:hover,.toc-link.active{color:#3b82f6;font-weight:500}.doc-layout-with-toc{display:flex;gap:2rem}.nav-link-subpage{padding-left:1.4rem!important;font-size:.92em}@media(max-width:900px){.toc-sidebar{display:none}}.doc-footer{margin-top:3rem;padding-top:2rem;border-top:1px solid #e5e7eb}.nav-table{display:table;width:100%;margin-bottom:2rem}.nav-row{display:table-row}.nav-cell{display:table-cell;padding:1rem;width:50%}.nav-next{text-align:right;border-left:1px solid #e5e7eb}.nav-label{font-size:.85rem;color:#666;margin-bottom:.5rem;font-weight:500}.nav-link-footer,.link-secondary{color:#0969da;text-decoration:none;font-weight:600}.nav-link-footer:hover,.link-secondary:hover{text-decoration:underline}.nav-empty{height:2.5rem}.footer-divider{margin:2rem 0;border:none;border-top:1px solid #e5e7eb}.help-section{margin:2rem 0}.help-box{margin-bottom:1.5rem}.help-box h3{font-size:1rem;margin:0 0 .5rem}.help-box p{margin:.5rem 0;color:#555;line-height:1.5}.footer-legal{text-align:center;color:#666}@media(max-width:768px){.nav-cell{display:block;width:100%;padding:1rem 0}.nav-next{text-align:left;border-left:0;border-top:1px solid #e5e7eb}}</style>
+</head>
+<body>
+  <header class="docs-header"><div class="header-left"><button id="mobile-menu-btn" class="icon-btn mobile-only" aria-label="Menu"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><a href="/" class="logo">SmartGen Docs</a></div><div class="header-right"><button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">Theme</button></div></header>
+  <div class="docs-layout"><div id="sidebar-overlay" class="sidebar-overlay"></div><aside id="sidebar" class="sidebar"><nav class="sidebar-nav">
+        <div class="nav-section-title">API Reference</div>
+        <a href="/docs/api-reference/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                API Reference
+            </a>
+        <div class="nav-section-title">Guides</div>
+        <a href="/docs/architecture-and-tech-stack/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Architecture &amp; Tech Stack
+            </a><a href="/docs/development-setup-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Development Setup Guide
+            </a><a href="/docs/directory-structure-for-portfolio/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Directory Structure for Portfolio
+            </a><a href="/docs/getting-started/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Getting Started
+            </a><a href="/docs/github-secrets-explained/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                GitHub Secrets Explained
+            </a><a href="/docs/installation/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Installation
+            </a><a href="/docs/quick-setup-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Quick Setup Guide
+            </a><a href="/docs/developer-guidelines/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Developer Guidelines
+            </a><a href="/docs/vite-optimization-guide-for-cicd/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Vite Optimization Guide for CI/CD
+            </a><a href="/docs/about-the-team-and-contribution/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                About the Team &amp; Contribution
+            </a><a href="/docs/github-actions-configuration-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Advanced Workflow Configuration
+            </a><a href="/docs/vite-config-quick-reference/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Vite Config Quick Reference
+            </a><a href="/docs/railway-deployment-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Railway Deployment Guide
+            </a><a href="/docs/custom-environment-variables/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Custom Environment Variables
+            </a><a href="/docs/workflow-customization-summary/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Workflow Customization Summary
+            </a><a href="/docs/contributor-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Contributor Guide
+            </a><a href="/docs/quickstart-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Quickstart Guide
+            </a>
+        <div class="nav-section-title">Ecommerce</div>
+        <a href="/docs/ecommerce/readme/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Rinova BD Ecommerce Full-Stack Documentation
+            </a><a href="/docs/ecommerce/01-product-and-system-overview/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                01. Product and System Overview
+            </a><a href="/docs/ecommerce/02-architecture/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                02. Architecture
+            </a><a href="/docs/ecommerce/03-end-to-end-pipeline/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                03. End-to-End Pipeline
+            </a><a href="/docs/ecommerce/04-data-model-and-migrations/" class="nav-link nav-link-subpage active" aria-current="page" data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                04. Data Model and Migrations
+            </a><a href="/docs/ecommerce/05-api-and-route-reference/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                05. API and Route Reference
+            </a><a href="/docs/ecommerce/06-admin-dashboard/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                06. Admin Dashboard
+            </a><a href="/docs/ecommerce/07-customer-storefront/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                07. Customer Storefront
+            </a><a href="/docs/ecommerce/08-cloudflare-ai-chatbot-system/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                08. Cloudflare AI Chatbot System
+            </a><a href="/docs/ecommerce/09-security-and-privacy/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                09. Security and Privacy
+            </a><a href="/docs/ecommerce/10-local-development-and-deployment/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                10. Local Development and Deployment
+            </a><a href="/docs/ecommerce/11-playwright-testing-and-screenshot-proof/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                11. Playwright Testing and Screenshot Proof
+            </a><a href="/docs/ecommerce/12-operations-and-observability/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                12. Operations and Observability
+            </a><a href="/docs/ecommerce/13-troubleshooting/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                13. Troubleshooting
+            </a><a href="/docs/ecommerce/14-contributing-and-release-workflow/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                14. Contributing and Release Workflow
+            </a><a href="/docs/ecommerce/checklists/go-live/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Ecommerce Go-Live Checklist
+            </a><a href="/docs/ecommerce/checklists/security/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Ecommerce Security Checklist
+            </a><a href="/docs/ecommerce/examples/configuration-template/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Configuration Template
+            </a><a href="/docs/ecommerce/screenshots/readme/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Screenshot and Mapping Evidence
+            </a><a href="/docs/ecommerce/diagrams/readme/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Ecommerce Architecture Diagrams
+            </a>
+        <div class="nav-section-title">Mastercard</div>
+        <a href="/docs/mastercard/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard Merchant Presented QR: SmartGen A-to-Z Guide
+            </a><a href="/docs/mastercard/mastercard-mpqr-a-to-z/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Sandbox Integration &amp; Payment Orchestration Prototype
+            </a><a href="/docs/mastercard/mastercard-mpqr-overview-and-roles/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR Overview, Participants, and Money Flow
+            </a><a href="/docs/mastercard/mastercard-mpqr-account-setup-and-keys/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR Account, Project, and Key Setup
+            </a><a href="/docs/mastercard/mastercard-mpqr-oauth1-signing/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR OAuth 1.0a RSA-SHA256 Authentication
+            </a><a href="/docs/mastercard/mastercard-mpqr-api-reference-smartgen/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR Payment and Retrieval API Reference for SmartGen
+            </a><a href="/docs/mastercard/mastercard-mpqr-qr-static-dynamic-device-sdks/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR QR Codes, Device SDKs, and Merchant Flow
+            </a><a href="/docs/mastercard/mastercard-mpqr-sandbox-testing/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR Sandbox Testing and Evidence Guide
+            </a><a href="/docs/mastercard/mastercard-mpqr-worker-deployment-security/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Cloudflare Worker Deployment and MPQR Security
+            </a><a href="/docs/mastercard/mastercard-mpqr-partnership-and-production-onboarding/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR Partnership, Sponsorship, MTF, and Production Onboarding
+            </a><a href="/docs/mastercard/mastercard-mpqr-orders-status-reconciliation-refunds/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen MPQR Orders, Status, Reconciliation, Refunds, and Disputes
+            </a><a href="/docs/mastercard/mastercard-mpqr-bangladesh-operating-checklist/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Bangladesh Operating and Compliance Checklist
+            </a><a href="/docs/mastercard/mastercard-mpqr-troubleshooting/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Troubleshooting and Support Runbook
+            </a><a href="/docs/mastercard/mastercard-mpqr-security-remediation-status/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Security Remediation Status
+            </a><a href="/docs/mastercard/checklists/mtf-readiness/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR MTF Readiness Checklist
+            </a><a href="/docs/mastercard/99-sources-and-research-notes/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Mastercard MPQR Research Notes
+            </a><a href="/docs/mastercard/examples/configuration-template/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Configuration Template
+            </a><a href="/docs/mastercard/examples/curl-and-worker-examples/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Examples
+            </a><a href="/docs/mastercard/checklists/production-go-live/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Mastercard MPQR Production Go-Live Checklist
+            </a>
+        <div class="nav-section-title">Portfolio Website</div>
+        <a href="/docs/portfolio-website-getting-started-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Portfolio Website: Getting Started Guide
+            </a><a href="/docs/portfolio-website-deployment-and-blog-system-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Portfolio Website: Deployment &amp; Blog System Guide
+            </a><a href="/docs/portfolio-website-customization-guide/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Portfolio Website: Customization Guide
+            </a><a href="/docs/portfolio-website-api-and-script-reference/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Portfolio Website: API &amp; Script Reference
+            </a>
+        <div class="nav-section-title">Open Source Projects</div>
+        <a href="/docs/building-a-fast-client-side-search-feature-without-a-backend/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Building a Fast Client-Side Search Feature Without a Backend
+            </a>
+        <div class="nav-section-title">Ai Systems</div>
+        <a href="/docs/ai-systems/06-agentic-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Agentic System Design
+            </a><a href="/docs/ai-systems/01-ai-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                AI System Design
+            </a><a href="/docs/ai-systems/05-generative-ai-system-design-interview/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Generative AI System Design Interview
+            </a><a href="/docs/ai-systems/04-how-chatgpt-system-design-works/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                How ChatGPT System Design Works
+            </a><a href="/docs/ai-systems/03-llm-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                LLM System Design
+            </a><a href="/docs/ai-systems/02-ml-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                ML System Design
+            </a>
+        <div class="nav-section-title">Barcode System</div>
+        <a href="/docs/barcode-system/" class="nav-link  "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                SmartGen Barcode System
+            </a><a href="/docs/barcode-system/about/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                About SmartGen Barcode System
+            </a><a href="/docs/barcode-system/api/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                API and Product-Form Contract
+            </a><a href="/docs/barcode-system/docomation/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Barcode System Documentation
+            </a><a href="/docs/barcode-system/call-to-action/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Get Started With SmartGen Barcode System
+            </a><a href="/docs/barcode-system/how-benifit/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                How SmartGen Barcode System Benefits Clients
+            </a><a href="/docs/barcode-system/how-to-use/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                How to Use SmartGen Barcode System
+            </a><a href="/docs/barcode-system/installation/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Installation
+            </a><a href="/docs/barcode-system/pricing/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Pricing
+            </a><a href="/docs/barcode-system/who-use-barcode/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Who Uses Barcode Systems
+            </a>
+        <div class="nav-section-title">Fundamentals</div>
+        <a href="/docs/fundamentals/07-availability-vs-consistency-in-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Availability vs Consistency In System Design
+            </a><a href="/docs/fundamentals/04-back-of-the-envelope-calculation/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Back of the Envelope Calculation
+            </a><a href="/docs/fundamentals/06-cap-theorem-explained/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                CAP Theorem Explained
+            </a><a href="/docs/fundamentals/05-cap-theorem-in-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                CAP Theorem in System Design
+            </a><a href="/docs/fundamentals/09-high-availability-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                High Availability System Design
+            </a><a href="/docs/fundamentals/10-reliability-in-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Reliability in System Design
+            </a><a href="/docs/fundamentals/08-scalability-in-system-design/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                Scalability in System Design
+            </a><a href="/docs/fundamentals/03-system-design-concepts/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                System Design Concepts
+            </a><a href="/docs/fundamentals/01-system-design-fundamentals/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                System Design Fundamentals
+            </a><a href="/docs/fundamentals/02-system-design-principles/" class="nav-link nav-link-subpage "  data-doc-nav-link>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                System Design Principles
+            </a></nav><div class="sidebar-footer"><a href="https://smartgentools.com" class="footer-link">Home</a><a href="https://smartgentools.com/blog" class="footer-link">Blog</a></div></aside><main class="main-content"><div class="doc-layout-with-toc"><article class="doc-article"><div class="breadcrumb"><a href="/docs/">Docs</a> <span class="separator">/</span> <span>Ecommerce</span></div><h1 class="doc-title">04. Data Model and Migrations</h1>
+
+<div class="header-ads-container">
+  <div class="desktop-only"><div class="ad-cls-wrapper" id="ad-wrapper-leaderboard728x90" style="min-height: 90px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f9d4f2f3a29a9dcfb43dddf1fd33eb88',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f9d4f2f3a29a9dcfb43dddf1fd33eb88/invoke.js"></script>
+</div></div>
+  <div class="mobile-only"><div class="ad-cls-wrapper" id="ad-wrapper-mobile320x50" style="min-height: 50px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : '6af746fdd2244652b728e73b1a70db61',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/6af746fdd2244652b728e73b1a70db61/invoke.js"></script>
+</div></div>
+</div><div class="doc-body"><h2 id="04-data-model-and-migrations">04. Data Model and Migrations</h2>
+<h3 id="core-domains">Core domains</h3>
+<p>The schema is organized around identity, catalogue, commerce, content, support, integrations, and audit. The source repository uses additive numbered migrations under <code>worker/migrations/</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Core records</th>
+<th>Ownership</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Identity</td>
+<td>admin users, customers, sessions, roles</td>
+<td>Worker/auth layer</td>
+</tr>
+<tr>
+<td>Catalogue</td>
+<td>categories, products, media, badges, reviews</td>
+<td>Admin + D1</td>
+</tr>
+<tr>
+<td>Commerce</td>
+<td>orders, order items, offers, payment attempts, returns</td>
+<td>Worker + D1</td>
+</tr>
+<tr>
+<td>Operations</td>
+<td>POS sales, inventory adjustments, notifications, audit</td>
+<td>Admin + D1</td>
+</tr>
+<tr>
+<td>Content</td>
+<td>site pages, blog posts, CMS content, banners, newsletter leads</td>
+<td>Admin + D1/media</td>
+</tr>
+<tr>
+<td>Support</td>
+<td>chat conversations, chat messages, feedback, knowledge documents</td>
+<td>Worker + admin</td>
+</tr>
+<tr>
+<td>Integrations</td>
+<td>provider references, courier state, analytics sync events</td>
+<td>Server adapters</td>
+</tr>
+</tbody></table>
+<h3 id="important-relationships">Important relationships</h3>
+<pre><code class="language-text">customers 1──* orders 1──* order_items *──1 products
+products *──1 categories
+products 1──* product_media
+orders 1──* payment_attempts
+orders 1──* returns
+chat_conversations 1──* chat_messages
+knowledge_documents 1──* knowledge_chunks
+admin_users 1──* audit_events
+</code></pre>
+<h3 id="commerce-invariants">Commerce invariants</h3>
+<p>The Worker must enforce these invariants before writing data:</p>
+<table>
+<thead>
+<tr>
+<th>Invariant</th>
+<th>Enforcement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Order total equals server calculation</td>
+<td>Recalculate from current D1 product/offer/delivery rows</td>
+</tr>
+<tr>
+<td>Order item price is historical</td>
+<td>Store the unit price used at order creation</td>
+</tr>
+<tr>
+<td>Stock cannot become negative</td>
+<td>Transactional check/update or serialized adjustment</td>
+</tr>
+<tr>
+<td>Payment attempt is tied to order</td>
+<td>Foreign key/reference plus idempotency key</td>
+</tr>
+<tr>
+<td>Provider status is not internal status</td>
+<td>Normalize and map explicitly</td>
+</tr>
+<tr>
+<td>Return belongs to order/customer</td>
+<td>Check relationship before reading or writing</td>
+</tr>
+<tr>
+<td>Admin mutation is attributable</td>
+<td>Store actor, timestamp, reason, and affected entity</td>
+</tr>
+</tbody></table>
+<h3 id="chat-and-knowledge-additions">Chat and knowledge additions</h3>
+<p>Add these tables through additive migrations when implementing semantic knowledge:</p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Minimum columns</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>knowledge_documents</code></td>
+<td><code>id</code>, <code>slug</code>, <code>title</code>, <code>body</code>, <code>audience</code>, <code>locale</code>, <code>content_type</code>, <code>status</code>, <code>version</code>, <code>published_at</code>, <code>updated_by</code>, <code>updated_at</code></td>
+</tr>
+<tr>
+<td><code>knowledge_chunks</code></td>
+<td><code>id</code>, <code>document_id</code>, <code>chunk_index</code>, <code>text</code>, <code>vector_id</code>, <code>checksum</code>, <code>status</code></td>
+</tr>
+<tr>
+<td><code>knowledge_sync_events</code></td>
+<td><code>id</code>, <code>document_id</code>, <code>action</code>, <code>status</code>, <code>error_message</code>, <code>created_at</code></td>
+</tr>
+<tr>
+<td><code>chat_feedback</code></td>
+<td><code>id</code>, <code>conversation_id</code>, <code>message_id</code>, <code>rating</code>, <code>reason</code>, <code>created_at</code></td>
+</tr>
+<tr>
+<td><code>chat_rate_limits</code></td>
+<td><code>id</code>, <code>key_hash</code>, <code>window_start</code>, <code>request_count</code></td>
+</tr>
+<tr>
+<td><code>admin_audit_events</code></td>
+<td><code>id</code>, <code>actor</code>, <code>action</code>, <code>entity_type</code>, <code>entity_id</code>, <code>before_hash</code>, <code>after_hash</code>, <code>created_at</code></td>
+</tr>
+</tbody></table>
+<p>Do not store embeddings as a large D1 blob. D1 stores the source document and vector ID; Vectorize stores the searchable vector and safe metadata. Do not put private customer records, payment secrets, or raw session tokens into a vector index.</p>
+<div class="ad-cls-wrapper" id="ad-wrapper-rect_300x250-4" style="min-height: 250px; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script>
+  atOptions = {
+    'key' : 'f7aab91a9a0a262448277c24ba0763d1',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/f7aab91a9a0a262448277c24ba0763d1/invoke.js"></script>
+</div>
+
+<h3 id="migration-workflow">Migration workflow</h3>
+<ol>
+<li>Modify the schema source or write a reviewed SQL migration.</li>
+<li>Use a new sequential migration number; never rewrite an applied migration.</li>
+<li>Test the migration against a disposable local or staging database.</li>
+<li>Verify indexes, foreign keys, default values, and backfill behavior.</li>
+<li>Run a pre-deployment backup or confirm D1 Time Travel coverage.</li>
+<li>Apply the migration to staging and run the full test suite.</li>
+<li>Apply to production during an approved release window.</li>
+<li>Record the migration identifier and rollback/recovery plan.</li>
+</ol>
+<h3 id="seed-data">Seed data</h3>
+<p>Seed data must be synthetic, minimal, and clearly labelled. Never commit real customer names, phone numbers, addresses, payment references, provider tokens, or private chat transcripts. Use fixtures to cover active, inactive, out-of-stock, low-stock, discounted, returned, and ambiguous-payment states.</p>
+<h3 id="references">References</h3>
+</div><div class="doc-footer"><div class="nav-table"><div class="nav-row"><div class="nav-cell nav-prev"><div class="nav-label">← Previous</div><a href="/docs/ecommerce/03-end-to-end-pipeline/" class="nav-link-footer">03. End-to-End Pipeline</a></div><div class="nav-cell nav-next"><div class="nav-label">Next →</div><a href="/docs/ecommerce/05-api-and-route-reference/" class="nav-link-footer">05. API and Route Reference</a></div></div></div><hr class="footer-divider"><div class="help-section"><div class="help-box"><h3>Did you find what you needed?</h3><p>SmartGen documentation is open source. You can report unclear content or submit an improvement through GitHub.</p></div><div class="help-box"><h3>Still need help?</h3><p><a href="https://github.com/bayzed123/SmartGenQR.oi/discussions" class="link-secondary">Ask the SmartGen community</a> or <a href="https://smartgentools.com/contact/" class="link-secondary">contact support</a>.</p></div></div><div class="footer-legal"><p><small>© 2026 SmartGen. <a href="https://smartgentools.com/terms/">Terms</a> · <a href="https://smartgentools.com/privacy/">Privacy</a></small></p></div></div></article><aside class="toc-sidebar desktop-only"><div class="toc-heading">On This Page</div><ul class="toc-list"><li class="toc-item toc-main"><a href="#core-domains" class="toc-link">Core domains</a></li><li class="toc-item toc-main"><a href="#important-relationships" class="toc-link">Important relationships</a></li><li class="toc-item toc-main"><a href="#commerce-invariants" class="toc-link">Commerce invariants</a></li><li class="toc-item toc-main"><a href="#chat-and-knowledge-additions" class="toc-link">Chat and knowledge additions</a></li><li class="toc-item toc-main"><a href="#migration-workflow" class="toc-link">Migration workflow</a></li><li class="toc-item toc-main"><a href="#seed-data" class="toc-link">Seed data</a></li><li class="toc-item toc-main"><a href="#references" class="toc-link">References</a></li></ul></aside></div></main>
+
+<aside class="sidebar desktop-only">
+  <div class="ad-cls-wrapper sticky" style="min-height: 600px; position: sticky; top: 20px;"><script>
+  atOptions = {
+    'key' : '96e8bb0db46b2c8ef669fa310ed45f8b',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/96e8bb0db46b2c8ef669fa310ed45f8b/invoke.js"></script></div>
+</aside>
+</div>
+  <script src="../../../assets/js/docs.js"></script>
+  <script>document.querySelectorAll('.toc-link').forEach(link=>link.addEventListener('click',event=>{const target=document.querySelector(link.getAttribute('href'));if(target){event.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}}));</script>
+</body>
+</html>
+<div class="ad-cls-wrapper" id="ad-wrapper-native_banner" style="min-height: auto; display: flex; justify-content: center; align-items: center; margin: 20px 0; overflow: hidden; flex-shrink: 0;">
+  <script async="async" data-cfasync="false" src="https://pl30322059.effectivecpmnetwork.com/333d7660ba0ab1f7a20095918a984f02/invoke.js"></script>
+<div id="container-333d7660ba0ab1f7a20095918a984f02"></div>
+</div>

@@ -32,6 +32,14 @@
     "description": "The portfolio project's directory layout, plus how to copy the workflow files into your own repository and get the first build running."
   },
   {
+    "title": "Rinova BD Ecommerce Full-Stack Documentation",
+    "url": "/docs/ecommerce/readme/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/README.md",
+    "category": "Ecommerce",
+    "description": "Complete developer, operator, security, deployment, Cloudflare AI, admin dashboard, customer storefront, and Playwright proof documentation for Rinova BD."
+  },
+  {
     "title": "Getting Started",
     "url": "/docs/getting-started/",
     "legacyUrls": [],
@@ -48,6 +56,22 @@
     "description": "What GitHub Secrets are, why never to commit a key, and how to add and use them safely in Actions workflows. Written for beginners."
   },
   {
+    "title": "Mastercard Merchant Presented QR: SmartGen A-to-Z Guide",
+    "url": "/docs/mastercard/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/index.md",
+    "category": "Guides",
+    "description": "Complete SmartGen guide for Mastercard MPQR sandbox integration, OAuth 1.0a, QR roles, partner onboarding, MTF, production readiness, security, reconciliation, and Bangladesh operating considerations."
+  },
+  {
+    "title": "SmartGen Mastercard MPQR Sandbox Integration & Payment Orchestration Prototype",
+    "url": "/docs/mastercard/mastercard-mpqr-a-to-z/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/README.md",
+    "category": "Mastercard",
+    "description": "A-to-Z SmartGen developer demo, API lab, partner-onboarding proof, architecture guide, security controls, MTF path, and Production gates for Mastercard MPQR."
+  },
+  {
     "title": "Portfolio Website: Getting Started Guide",
     "url": "/docs/portfolio-website-getting-started-guide/",
     "legacyUrls": [],
@@ -56,12 +80,28 @@
     "description": "Fork, install and run the open-source developer portfolio locally: prerequisites, configuration and fixes for common setup errors."
   },
   {
+    "title": "01. Product and System Overview",
+    "url": "/docs/ecommerce/01-product-and-system-overview/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/01-product-and-system-overview.md",
+    "category": "Ecommerce",
+    "description": "Rinova BD ecommerce scope, actors, capabilities, environments, and engineering principles."
+  },
+  {
     "title": "Installation",
     "url": "/docs/installation/",
     "legacyUrls": [],
     "source": "docs-posts/installation.md",
     "category": "Guides",
     "description": "Detailed installation and environment setup instructions for SmartGen."
+  },
+  {
+    "title": "Mastercard MPQR Overview, Participants, and Money Flow",
+    "url": "/docs/mastercard/mastercard-mpqr-overview-and-roles/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/01-overview-and-roles.md",
+    "category": "Mastercard",
+    "description": "Understand Mastercard Merchant Presented QR, participant roles, QR types, payment flow, and SmartGen’s correct sandbox and production position."
   },
   {
     "title": "Portfolio Website: Deployment & Blog System Guide",
@@ -88,6 +128,22 @@
     "description": "The coding standards used across SmartGen: general principles, formatting rules, naming, comments and what reviewers look for."
   },
   {
+    "title": "02. Architecture",
+    "url": "/docs/ecommerce/02-architecture/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/02-architecture.md",
+    "category": "Ecommerce",
+    "description": "Rinova BD Cloudflare edge architecture, service boundaries, bindings, trust zones, and integration rules."
+  },
+  {
+    "title": "Mastercard MPQR Account, Project, and Key Setup",
+    "url": "/docs/mastercard/mastercard-mpqr-account-setup-and-keys/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/02-account-setup-and-keys.md",
+    "category": "Mastercard",
+    "description": "Set up a Mastercard Developers MPQR project, understand Consumer Keys and signing keys, convert a PKCS#12 archive safely, and store secrets correctly."
+  },
+  {
     "title": "Portfolio Website: Customization Guide",
     "url": "/docs/portfolio-website-customization-guide/",
     "legacyUrls": [],
@@ -112,12 +168,28 @@
     "description": "Who builds SmartGen, how the project is run, and how to contribute: contribution guidelines, licensing and where to start."
   },
   {
+    "title": "03. End-to-End Pipeline",
+    "url": "/docs/ecommerce/03-end-to-end-pipeline/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/03-end-to-end-pipeline.md",
+    "category": "Ecommerce",
+    "description": "Detailed request and data pipelines for catalogue, checkout, orders, fulfillment, support, and admin operations."
+  },
+  {
     "title": "Advanced Workflow Configuration",
     "url": "/docs/github-actions-configuration-guide/",
     "legacyUrls": [],
     "source": "docs-posts/ADVANCED_CONFIGURATION.md",
     "category": "Guides",
     "description": "Configure GitHub Actions workflows beyond the defaults: custom environment variables, health checks, notifications and database migrations."
+  },
+  {
+    "title": "Mastercard MPQR OAuth 1.0a RSA-SHA256 Authentication",
+    "url": "/docs/mastercard/mastercard-mpqr-oauth1-signing/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/03-oauth1-signing.md",
+    "category": "Mastercard",
+    "description": "Understand and implement Mastercard MPQR OAuth 1.0a request signing, body hashes, nonce, timestamps, and Cloudflare Web Crypto safely."
   },
   {
     "title": "Portfolio Website: API & Script Reference",
@@ -144,12 +216,44 @@
     "description": "How to implement instant, responsive search on a static site using nothing but JavaScript, a JSON index, and debouncing."
   },
   {
+    "title": "04. Data Model and Migrations",
+    "url": "/docs/ecommerce/04-data-model-and-migrations/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/04-data-model-and-migrations.md",
+    "category": "Ecommerce",
+    "description": "Rinova BD D1 schema concepts, relationships, lifecycle states, migration workflow, and data safety."
+  },
+  {
+    "title": "Mastercard MPQR Payment and Retrieval API Reference for SmartGen",
+    "url": "/docs/mastercard/mastercard-mpqr-api-reference-smartgen/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/04-api-reference-and-smartgen.md",
+    "category": "Mastercard",
+    "description": "Map Mastercard MPQR Payment and Retrieval APIs to SmartGen Worker routes with request fields, environments, status rules, and examples."
+  },
+  {
     "title": "Railway Deployment Guide",
     "url": "/docs/railway-deployment-guide/",
     "legacyUrls": [],
     "source": "docs-posts/RAILWAY_DEPLOYMENT_GUIDE.md",
     "category": "Guides",
     "description": "Deploy to Railway as an alternative to SSH: what Railway is, how it compares, and a step-by-step setup with environment variables."
+  },
+  {
+    "title": "05. API and Route Reference",
+    "url": "/docs/ecommerce/05-api-and-route-reference/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/05-api-and-route-reference.md",
+    "category": "Ecommerce",
+    "description": "Rinova BD public, customer, admin, media, checkout, CMS, analytics, and chatbot route contract."
+  },
+  {
+    "title": "Mastercard MPQR QR Codes, Device SDKs, and Merchant Flow",
+    "url": "/docs/mastercard/mastercard-mpqr-qr-static-dynamic-device-sdks/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/05-qr-static-dynamic-device-sdks.md",
+    "category": "Mastercard",
+    "description": "Understand static and dynamic Mastercard QR codes, Device SDK responsibilities, merchant QR generation, scanning, parsing, and verification."
   },
   {
     "title": "Custom Environment Variables",
@@ -160,12 +264,180 @@
     "description": "Set custom environment variables in GitHub Actions and Docker, wire up health checks, and send build notifications to Slack, Discord or email."
   },
   {
+    "title": "06. Admin Dashboard",
+    "url": "/docs/ecommerce/06-admin-dashboard/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/06-admin-dashboard.md",
+    "category": "Ecommerce",
+    "description": "Rinova BD admin control room, module responsibilities, role permissions, workflow behavior, and operator safety."
+  },
+  {
+    "title": "Mastercard MPQR Sandbox Testing and Evidence Guide",
+    "url": "/docs/mastercard/mastercard-mpqr-sandbox-testing/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/06-sandbox-testing.md",
+    "category": "Mastercard",
+    "description": "Run safe Mastercard MPQR sandbox tests, simulate approvals and declines, verify retrieval, and collect evidence without using real card data."
+  },
+  {
+    "title": "07. Customer Storefront",
+    "url": "/docs/ecommerce/07-customer-storefront/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/07-customer-storefront.md",
+    "category": "Ecommerce",
+    "description": "Rinova BD customer-facing ecommerce experience, page behavior, checkout rules, accessibility, and support entry points."
+  },
+  {
+    "title": "SmartGen Cloudflare Worker Deployment and MPQR Security",
+    "url": "/docs/mastercard/mastercard-mpqr-worker-deployment-security/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/07-worker-deployment-security.md",
+    "category": "Mastercard",
+    "description": "Deploy Mastercard MPQR securely in a Cloudflare Worker with secret bindings, CORS, environment separation, validation, logging, and incident response."
+  },
+  {
     "title": "Workflow Customization Summary",
     "url": "/docs/workflow-customization-summary/",
     "legacyUrls": [],
     "source": "docs-posts/CUSTOMIZATION_SUMMARY.md",
     "category": "Guides",
     "description": "A summary of the workflow customizations in this project: what was changed in each GitHub Actions file, and why, with the Vite config it targets."
+  },
+  {
+    "title": "08. Cloudflare AI Chatbot System",
+    "url": "/docs/ecommerce/08-cloudflare-ai-chatbot-system/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/08-cloudflare-ai-chatbot-system.md",
+    "category": "Ecommerce",
+    "description": "Grounded customer and admin assistants for Rinova BD using Workers AI, D1, Vectorize, KV, and secure Worker routes."
+  },
+  {
+    "title": "Mastercard MPQR Partnership, Sponsorship, MTF, and Production Onboarding",
+    "url": "/docs/mastercard/mastercard-mpqr-partnership-and-production-onboarding/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/08-partnership-and-production-onboarding.md",
+    "category": "Mastercard",
+    "description": "Follow the real Mastercard MPQR path from Sandbox to approved partner, Mastercard Test Facility, certification, Production access, and controlled go-live."
+  },
+  {
+    "title": "09. Security and Privacy",
+    "url": "/docs/ecommerce/09-security-and-privacy/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/09-security-and-privacy.md",
+    "category": "Ecommerce",
+    "description": "Rinova BD security controls for secrets, sessions, roles, customer privacy, payments, media, AI, and auditability."
+  },
+  {
+    "title": "SmartGen MPQR Orders, Status, Reconciliation, Refunds, and Disputes",
+    "url": "/docs/mastercard/mastercard-mpqr-orders-status-reconciliation-refunds/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/09-orders-status-reconciliation-refunds.md",
+    "category": "Mastercard",
+    "description": "Build the production payment lifecycle around Mastercard MPQR with server-side orders, idempotency, retrieval, reconciliation, refunds, disputes, and admin review."
+  },
+  {
+    "title": "10. Local Development and Deployment",
+    "url": "/docs/ecommerce/10-local-development-and-deployment/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/10-local-development-and-deployment.md",
+    "category": "Ecommerce",
+    "description": "Safe Rinova BD setup, local Worker development, D1 migrations, media configuration, environment separation, and release procedure."
+  },
+  {
+    "title": "SmartGen Mastercard MPQR Bangladesh Operating and Compliance Checklist",
+    "url": "/docs/mastercard/mastercard-mpqr-bangladesh-operating-checklist/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/10-bangladesh-operating-checklist.md",
+    "category": "Mastercard",
+    "description": "Prepare SmartGen’s Bangladesh business, partner, settlement, compliance, and operating file before offering Mastercard MPQR payments."
+  },
+  {
+    "title": "11. Playwright Testing and Screenshot Proof",
+    "url": "/docs/ecommerce/11-playwright-testing-and-screenshot-proof/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/11-playwright-testing-and-screenshot-proof.md",
+    "category": "Ecommerce",
+    "description": "Rinova BD browser testing, visual regression, screenshot mapping, evidence naming, and secret-safe proof workflow."
+  },
+  {
+    "title": "SmartGen Mastercard MPQR Troubleshooting and Support Runbook",
+    "url": "/docs/mastercard/mastercard-mpqr-troubleshooting/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/11-troubleshooting.md",
+    "category": "Mastercard",
+    "description": "Diagnose Mastercard MPQR OAuth, HTTP, field, CORS, status, retrieval, and deployment failures without exposing credentials."
+  },
+  {
+    "title": "12. Operations and Observability",
+    "url": "/docs/ecommerce/12-operations-and-observability/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/12-operations-and-observability.md",
+    "category": "Ecommerce",
+    "description": "Rinova BD production operations, Cloudflare observability, health checks, backups, reconciliation, support, and incident response."
+  },
+  {
+    "title": "SmartGen Mastercard MPQR Security Remediation Status",
+    "url": "/docs/mastercard/mastercard-mpqr-security-remediation-status/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/12-security-remediation-status.md",
+    "category": "Mastercard",
+    "description": "Track SEC-01 through SEC-10 remediation for the SmartGen Mastercard MPQR sandbox prototype and the remaining Production controls."
+  },
+  {
+    "title": "13. Troubleshooting",
+    "url": "/docs/ecommerce/13-troubleshooting/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/13-troubleshooting.md",
+    "category": "Ecommerce",
+    "description": "Safe diagnosis and recovery for Rinova BD development, deployment, checkout, admin, media, AI, and browser-test failures."
+  },
+  {
+    "title": "14. Contributing and Release Workflow",
+    "url": "/docs/ecommerce/14-contributing-and-release-workflow/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/14-contributing-and-release-workflow.md",
+    "category": "Ecommerce",
+    "description": "How developers safely change Rinova BD ecommerce code, schema, integrations, docs, and visual proof."
+  },
+  {
+    "title": "Ecommerce Go-Live Checklist",
+    "url": "/docs/ecommerce/checklists/go-live/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/checklists/go-live.md",
+    "category": "Ecommerce",
+    "description": "Rinova BD production release gates and evidence checklist."
+  },
+  {
+    "title": "Ecommerce Security Checklist",
+    "url": "/docs/ecommerce/checklists/security/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/checklists/security.md",
+    "category": "Ecommerce",
+    "description": "Rinova BD security verification for every release and incident review."
+  },
+  {
+    "title": "Configuration Template",
+    "url": "/docs/ecommerce/examples/configuration-template/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/examples/configuration-template.md",
+    "category": "Ecommerce",
+    "description": "Non-secret environment and binding template for Rinova BD ecommerce development and deployment."
+  },
+  {
+    "title": "Screenshot and Mapping Evidence",
+    "url": "/docs/ecommerce/screenshots/readme/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/screenshots/README.md",
+    "category": "Ecommerce",
+    "description": "Secret-safe Playwright screenshots and requirement-to-proof mapping for Rinova BD ecommerce."
+  },
+  {
+    "title": "Ecommerce Architecture Diagrams",
+    "url": "/docs/ecommerce/diagrams/readme/",
+    "legacyUrls": [],
+    "source": "docs-posts/Ecommerce/diagrams/README.md",
+    "category": "Ecommerce",
+    "description": "Mermaid source and rendered maps for the Rinova BD ecommerce system."
   },
   {
     "title": "AI System Design",
@@ -381,6 +653,46 @@
     "legacyUrls": [],
     "source": "docs-posts/fundamentals/10-reliability-in-system-design.md",
     "category": "Fundamentals",
+    "description": "SmartGen Developer Documentation"
+  },
+  {
+    "title": "Mastercard MPQR Research Notes",
+    "url": "/docs/mastercard/99-sources-and-research-notes/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/99-sources-and-research-notes.md",
+    "category": "Mastercard",
+    "description": "SmartGen Developer Documentation"
+  },
+  {
+    "title": "Mastercard MPQR MTF Readiness Checklist",
+    "url": "/docs/mastercard/checklists/mtf-readiness/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/checklists/mtf-readiness.md",
+    "category": "Mastercard",
+    "description": "SmartGen Developer Documentation"
+  },
+  {
+    "title": "SmartGen Mastercard MPQR Production Go-Live Checklist",
+    "url": "/docs/mastercard/checklists/production-go-live/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/checklists/production-go-live.md",
+    "category": "Mastercard",
+    "description": "SmartGen Developer Documentation"
+  },
+  {
+    "title": "SmartGen Mastercard MPQR Configuration Template",
+    "url": "/docs/mastercard/examples/configuration-template/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/examples/configuration-template.md",
+    "category": "Mastercard",
+    "description": "SmartGen Developer Documentation"
+  },
+  {
+    "title": "SmartGen Mastercard MPQR Examples",
+    "url": "/docs/mastercard/examples/curl-and-worker-examples/",
+    "legacyUrls": [],
+    "source": "docs-posts/mastercard/examples/curl-and-worker-examples.md",
+    "category": "Mastercard",
     "description": "SmartGen Developer Documentation"
   },
   {

@@ -27,7 +27,7 @@ export const SITE = {
     "Resources",
     "SEO & Content"
   ],
-  "sourceHash": "209ee7b2210d"
+  "sourceHash": "7c57741b7211"
 };
 
 export const TOOLS = [
@@ -1820,7 +1820,7 @@ export const TOOLS = [
       "html en dash code",
       "en dash"
     ],
-    "icon": "🖥️"
+    "icon": "➖"
   },
   {
     "id": "html-euro-code",
@@ -2451,6 +2451,42 @@ export const KEY_PAGES = [
     "title": "About The Team And Contribution"
   },
   {
+    "url": "https://smartgentools.com/docs/ai-systems/01-ai-system-design/",
+    "path": "/docs/ai-systems/01-ai-system-design/",
+    "section": "docs",
+    "title": "01 Ai System Design"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ai-systems/02-ml-system-design/",
+    "path": "/docs/ai-systems/02-ml-system-design/",
+    "section": "docs",
+    "title": "02 Ml System Design"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ai-systems/03-llm-system-design/",
+    "path": "/docs/ai-systems/03-llm-system-design/",
+    "section": "docs",
+    "title": "03 Llm System Design"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ai-systems/04-how-chatgpt-system-design-works/",
+    "path": "/docs/ai-systems/04-how-chatgpt-system-design-works/",
+    "section": "docs",
+    "title": "04 How Chatgpt System Design Works"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ai-systems/05-generative-ai-system-design-interview/",
+    "path": "/docs/ai-systems/05-generative-ai-system-design-interview/",
+    "section": "docs",
+    "title": "05 Generative Ai System Design Interview"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ai-systems/06-agentic-system-design/",
+    "path": "/docs/ai-systems/06-agentic-system-design/",
+    "section": "docs",
+    "title": "06 Agentic System Design"
+  },
+  {
     "url": "https://smartgentools.com/docs/api-reference/",
     "path": "/docs/api-reference/",
     "section": "docs",
@@ -2461,6 +2497,66 @@ export const KEY_PAGES = [
     "path": "/docs/architecture-and-tech-stack/",
     "section": "docs",
     "title": "Architecture And Tech Stack"
+  },
+  {
+    "url": "https://smartgentools.com/docs/barcode-system/",
+    "path": "/docs/barcode-system/",
+    "section": "docs",
+    "title": "Barcode System"
+  },
+  {
+    "url": "https://smartgentools.com/docs/barcode-system/about/",
+    "path": "/docs/barcode-system/about/",
+    "section": "docs",
+    "title": "About"
+  },
+  {
+    "url": "https://smartgentools.com/docs/barcode-system/api/",
+    "path": "/docs/barcode-system/api/",
+    "section": "docs",
+    "title": "Api"
+  },
+  {
+    "url": "https://smartgentools.com/docs/barcode-system/call-to-action/",
+    "path": "/docs/barcode-system/call-to-action/",
+    "section": "docs",
+    "title": "Call To Action"
+  },
+  {
+    "url": "https://smartgentools.com/docs/barcode-system/docomation/",
+    "path": "/docs/barcode-system/docomation/",
+    "section": "docs",
+    "title": "Docomation"
+  },
+  {
+    "url": "https://smartgentools.com/docs/barcode-system/how-benifit/",
+    "path": "/docs/barcode-system/how-benifit/",
+    "section": "docs",
+    "title": "How Benifit"
+  },
+  {
+    "url": "https://smartgentools.com/docs/barcode-system/how-to-use/",
+    "path": "/docs/barcode-system/how-to-use/",
+    "section": "docs",
+    "title": "How To Use"
+  },
+  {
+    "url": "https://smartgentools.com/docs/barcode-system/installation/",
+    "path": "/docs/barcode-system/installation/",
+    "section": "docs",
+    "title": "Installation"
+  },
+  {
+    "url": "https://smartgentools.com/docs/barcode-system/pricing/",
+    "path": "/docs/barcode-system/pricing/",
+    "section": "docs",
+    "title": "Pricing"
+  },
+  {
+    "url": "https://smartgentools.com/docs/barcode-system/who-use-barcode/",
+    "path": "/docs/barcode-system/who-use-barcode/",
+    "section": "docs",
+    "title": "Who Use Barcode"
   },
   {
     "url": "https://smartgentools.com/docs/building-a-fast-client-side-search-feature-without-a-backend/",
@@ -2503,6 +2599,66 @@ export const KEY_PAGES = [
     "path": "/docs/directory-structure-for-portfolio/",
     "section": "docs",
     "title": "Directory Structure For Portfolio"
+  },
+  {
+    "url": "https://smartgentools.com/docs/fundamentals/01-system-design-fundamentals/",
+    "path": "/docs/fundamentals/01-system-design-fundamentals/",
+    "section": "docs",
+    "title": "01 System Design Fundamentals"
+  },
+  {
+    "url": "https://smartgentools.com/docs/fundamentals/02-system-design-principles/",
+    "path": "/docs/fundamentals/02-system-design-principles/",
+    "section": "docs",
+    "title": "02 System Design Principles"
+  },
+  {
+    "url": "https://smartgentools.com/docs/fundamentals/03-system-design-concepts/",
+    "path": "/docs/fundamentals/03-system-design-concepts/",
+    "section": "docs",
+    "title": "03 System Design Concepts"
+  },
+  {
+    "url": "https://smartgentools.com/docs/fundamentals/04-back-of-the-envelope-calculation/",
+    "path": "/docs/fundamentals/04-back-of-the-envelope-calculation/",
+    "section": "docs",
+    "title": "04 Back Of The Envelope Calculation"
+  },
+  {
+    "url": "https://smartgentools.com/docs/fundamentals/05-cap-theorem-in-system-design/",
+    "path": "/docs/fundamentals/05-cap-theorem-in-system-design/",
+    "section": "docs",
+    "title": "05 Cap Theorem In System Design"
+  },
+  {
+    "url": "https://smartgentools.com/docs/fundamentals/06-cap-theorem-explained/",
+    "path": "/docs/fundamentals/06-cap-theorem-explained/",
+    "section": "docs",
+    "title": "06 Cap Theorem Explained"
+  },
+  {
+    "url": "https://smartgentools.com/docs/fundamentals/07-availability-vs-consistency-in-system-design/",
+    "path": "/docs/fundamentals/07-availability-vs-consistency-in-system-design/",
+    "section": "docs",
+    "title": "07 Availability Vs Consistency In System Design"
+  },
+  {
+    "url": "https://smartgentools.com/docs/fundamentals/08-scalability-in-system-design/",
+    "path": "/docs/fundamentals/08-scalability-in-system-design/",
+    "section": "docs",
+    "title": "08 Scalability In System Design"
+  },
+  {
+    "url": "https://smartgentools.com/docs/fundamentals/09-high-availability-system-design/",
+    "path": "/docs/fundamentals/09-high-availability-system-design/",
+    "section": "docs",
+    "title": "09 High Availability System Design"
+  },
+  {
+    "url": "https://smartgentools.com/docs/fundamentals/10-reliability-in-system-design/",
+    "path": "/docs/fundamentals/10-reliability-in-system-design/",
+    "section": "docs",
+    "title": "10 Reliability In System Design"
   },
   {
     "url": "https://smartgentools.com/docs/getting-started/",
