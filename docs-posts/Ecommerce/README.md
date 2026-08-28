@@ -33,6 +33,16 @@ This documentation explains how to build, run, secure, test, deploy, and operate
 | [Customer order pipeline map](diagrams/customer-order-pipeline.mmd) | Mermaid source for checkout and order transitions |
 | [AI chatbot retrieval map](diagrams/ai-chatbot-retrieval.mmd) | Mermaid source for grounded customer/admin chat |
 
+## Visual proof
+
+The documentation builder should use absolute image URLs for binary assets. The public screenshot proof is available here:
+
+![Rinova BD storefront home — desktop Playwright capture](https://smartgentools.com/docs-posts/Ecommerce/screenshots/rinova-storefront-home.png)
+
+![Rinova BD storefront home — mobile Playwright capture](https://smartgentools.com/docs-posts/Ecommerce/screenshots/rinova-storefront-mobile.png)
+
+The editable architecture sources and rendered maps are linked in the navigation above and in the [screenshot and mapping evidence](screenshots/README.md) chapter.
+
 ## Public references
 
 | Resource | Link |

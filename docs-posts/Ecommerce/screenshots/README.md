@@ -10,18 +10,40 @@ These artifacts document the current public storefront and the intended system m
 
 ## Captured screenshots
 
+Use absolute URLs for images because the live documentation builder serves Markdown pages from a generated route rather than the repository directory.
+
 | Artifact | Viewport | Proof |
 |---|---:|---|
-| [rinova-storefront-home.png](rinova-storefront-home.png) | 1366px full page | Public home structure, hero/banner, product merchandising, editorial sections, footer, and customer chat entry |
-| [rinova-storefront-mobile.png](rinova-storefront-mobile.png) | 390×844 viewport | Mobile responsive header, spacing, content crop, and initial storefront behavior |
+| [Desktop PNG](https://smartgentools.com/docs-posts/Ecommerce/screenshots/rinova-storefront-home.png) | 1366px full page | Public home structure, hero/banner, product merchandising, editorial sections, footer, and customer chat entry |
+| [Mobile PNG](https://smartgentools.com/docs-posts/Ecommerce/screenshots/rinova-storefront-mobile.png) | 390×844 viewport | Mobile responsive header, spacing, content crop, and initial storefront behavior |
+
+### Desktop storefront
+
+![Rinova BD storefront home — desktop Playwright capture](https://smartgentools.com/docs-posts/Ecommerce/screenshots/rinova-storefront-home.png)
+
+### Mobile storefront
+
+![Rinova BD storefront home — mobile Playwright capture](https://smartgentools.com/docs-posts/Ecommerce/screenshots/rinova-storefront-mobile.png)
 
 ## Architecture and behavior maps
 
 | Map | Source | Rendered proof |
 |---|---|---|
-| System architecture | [architecture.mmd](../diagrams/architecture.mmd) | [architecture.png](../diagrams/architecture.png) |
-| Customer order pipeline | [customer-order-pipeline.mmd](../diagrams/customer-order-pipeline.mmd) | [customer-order-pipeline.png](../diagrams/customer-order-pipeline.png) |
-| AI chatbot retrieval | [ai-chatbot-retrieval.mmd](../diagrams/ai-chatbot-retrieval.mmd) | [ai-chatbot-retrieval.png](../diagrams/ai-chatbot-retrieval.png) |
+| System architecture | [architecture.mmd](../diagrams/architecture.mmd) | [architecture PNG](https://smartgentools.com/docs-posts/Ecommerce/diagrams/architecture.png) |
+| Customer order pipeline | [customer-order-pipeline.mmd](../diagrams/customer-order-pipeline.mmd) | [order pipeline PNG](https://smartgentools.com/docs-posts/Ecommerce/diagrams/customer-order-pipeline.png) |
+| AI chatbot retrieval | [ai-chatbot-retrieval.mmd](../diagrams/ai-chatbot-retrieval.mmd) | [AI retrieval PNG](https://smartgentools.com/docs-posts/Ecommerce/diagrams/ai-chatbot-retrieval.png) |
+
+### Architecture map
+
+![Rinova BD ecommerce architecture map](https://smartgentools.com/docs-posts/Ecommerce/diagrams/architecture.png)
+
+### Customer order pipeline map
+
+![Rinova BD customer order pipeline map](https://smartgentools.com/docs-posts/Ecommerce/diagrams/customer-order-pipeline.png)
+
+### AI chatbot retrieval map
+
+![Rinova BD AI chatbot retrieval map](https://smartgentools.com/docs-posts/Ecommerce/diagrams/ai-chatbot-retrieval.png)
 
 ## Requirement mapping
 
