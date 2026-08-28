@@ -45,7 +45,13 @@ Link-checker sitemap endpoint (must remain reachable)
 
 - The link-checker workflow reads the public sitemap at: `https://smartgentools.com/sitemap.xml`.
 - That exact endpoint must be reachable publicly for the workflow to operate correctly. Do not change this URL unless you also update `.github/workflows/link-checker.yml` to point to a new sitemap.
-- The workflow replaces README content only between the `<!-- START_LINK_CHECKER -->` and `<!-- END_LINK_CHECKER -->` markers.
+- The workflow replaces README content only between the `<!-- START_LINK_CHECKER -->
+
+### ✅ All Systems Operational
+
+**Status:** All tools and pages in the sitemap are working perfectly! No broken links found.
+
+<!-- END_LINK_CHECKER -->` markers.
 
 If you operate a preview site or staging instance, either:
 - update the workflow to target your alternate sitemap URL, OR
