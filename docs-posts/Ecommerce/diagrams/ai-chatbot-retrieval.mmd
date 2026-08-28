@@ -1,0 +1,25 @@
+flowchart TD
+  M[Chat message] --> G[Channel + language + intent gate]
+  G -->|customer| CP[Published customer retrieval policy]
+  G -->|admin| AP[Session + role retrieval policy]
+  CP --> DX[Exact public D1 facts]
+  AP --> DA[Exact authorized admin D1 tools]
+  CP --> VS[Vectorize filter: audience=customer, published=true]
+  AP --> VT[Vectorize filter: role + audience + published=true]
+  VS --> K[Approved knowledge chunks]
+  VT --> K
+  DX --> C[Grounded context builder]
+  DA --> C
+  K --> C
+  C --> W[Workers AI generation]
+  W --> X[Output validator + redaction]
+  X --> PC[Verified product cards/citations]
+  X --> R[Safe response]
+  PC --> R
+  R --> L[(Chat log + feedback + audit)]
+  classDef public fill:#fff9f6,stroke:#d77fd9,color:#2f2130,stroke-width:2px
+  classDef private fill:#281c27,stroke:#f0a9c7,color:#fff,stroke-width:2px
+  classDef core fill:#fbe8f1,stroke:#9a3b9f,color:#2f2130,stroke-width:2px
+  class M,CP,DX,VS,PC public
+  class AP,DA,VT private
+  class G,K,C,W,X,R,L core

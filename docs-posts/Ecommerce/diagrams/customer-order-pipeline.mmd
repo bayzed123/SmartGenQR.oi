@@ -1,0 +1,22 @@
+flowchart TD
+  B[Browser bag] --> Q[POST checkout quote]
+  Q --> V[Validate IDs, quantities, customer input]
+  V --> P[Read current D1 prices, stock, offers, delivery]
+  P --> T[Server-calculated totals]
+  T --> O[Persist order + items + idempotency key]
+  O --> PA[Payment/COD attempt]
+  PA -->|confirmed| C[Order confirmed]
+  PA -->|pending| PP[Pending payment]
+  PA -->|ambiguous| U[Payment unknown]
+  U --> R[Reconciliation]
+  C --> PR[Processing]
+  PR --> S[Shipped via courier adapter]
+  S --> D[Delivered]
+  D --> RR[Return requested]
+  RR --> RT[Returned/approved]
+  RT --> RF[Refunded through authorized flow]
+  PA -->|failed| F[Failed/cancelled]
+  classDef browser fill:#fff9f6,stroke:#d77fd9,color:#2f2130,stroke-width:2px
+  classDef core fill:#fbe8f1,stroke:#9a3b9f,color:#2f2130,stroke-width:2px
+  class B browser
+  class Q,V,P,T,O,PA,C,PP,U,R,PR,S,D,RR,RT,RF,F core

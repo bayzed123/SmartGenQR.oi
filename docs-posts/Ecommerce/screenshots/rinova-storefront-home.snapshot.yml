@@ -1,0 +1,862 @@
+- generic [active] [ref=e1] [box=0,0,390,14472]:
+  - generic [ref=e2] [box=0,0,390,47]:
+    - text: Free delivery over ৳1,500 · Authentic beauty essentials ·
+    - link "Chat on WhatsApp" [ref=e3] [cursor=pointer] [box=169,11,188,26]:
+      - /url: https://wa.me/8801738745949
+  - banner [ref=e4] [box=0,47,390,68]:
+    - button "Open menu" [ref=e174] [cursor=pointer] [box=20,67,31,28]: ☰
+    - link "Rinova BD home" [ref=e5] [cursor=pointer] [box=51,57,141,48]:
+      - /url: "#top"
+      - generic [ref=e6] [box=51,57,141,25]: rinova
+      - generic [ref=e7] [box=51,89,141,16]: beauty, thoughtfully chosen
+    - generic [ref=e13] [box=193,60,177,41]:
+      - link "Open your Rinova account" [ref=e14] [cursor=pointer] [box=193,64,93,34]:
+        - /url: /account.html
+        - generic [ref=e18] [box=225,76,50,9]: Account
+      - button "Search" [ref=e19] [cursor=pointer] [box=296,67,24,28]: ⌕
+      - button "Bag 0" [ref=e20] [cursor=pointer] [box=330,60,40,41]:
+        - text: Bag
+        - generic [ref=e21] [box=343,79,21,21]: "0"
+  - complementary [ref=e175] [box=-346,0,330,844]:
+    - generic [ref=e176] [box=-324,28,286,49]:
+      - generic [ref=e177] [box=-324,28,153,30]: Explore Rinova
+      - button [ref=e178] [cursor=pointer] [box=-59,29,21,28]: ×
+    - navigation [ref=e179] [box=-324,77,286,365]:
+      - link [ref=e180] [cursor=pointer] [box=-324,102,286,63]:
+        - /url: "#shop"
+        - text: Shop
+        - generic [ref=e181] [box=-56,119,18,28]: ↗
+      - link [ref=e182] [cursor=pointer] [box=-324,165,286,63]:
+        - /url: "#categories"
+        - text: Categories
+        - generic [ref=e183] [box=-56,182,18,28]: ↗
+      - link [ref=e184] [cursor=pointer] [box=-324,228,286,63]:
+        - /url: "#story"
+        - text: Our ritual
+        - generic [ref=e185] [box=-56,245,18,28]: ↗
+      - link [ref=e186] [cursor=pointer] [box=-324,291,286,63]:
+        - /url: /blog.html
+        - text: Journal
+        - generic [ref=e187] [box=-56,308,18,28]: ↗
+      - link [ref=e188] [cursor=pointer] [box=-324,354,286,63]:
+        - /url: /account.html
+        - text: Account
+        - generic [ref=e189] [box=-56,371,18,28]: ↗
+    - link [ref=e190] [cursor=pointer] [box=-324,442,286,50]:
+      - /url: https://wa.me/8801738745949
+      - text: Chat on WhatsApp
+      - generic [ref=e191] [box=-67,458,11,18]: ↗
+  - main [ref=e22] [box=0,115,390,13375]:
+    - generic [ref=e23] [box=17,115,356,1025]:
+      - generic [ref=e24] [box=17,160,356,445]:
+        - paragraph [ref=e25] [box=17,160,356,15]: RINOVA EDIT · EVERYDAY RITUALS
+        - heading [level=1] [ref=e26] [box=17,193,356,98]:
+          - text: Feel good in
+          - emphasis [ref=e27] [box=17,232,295,69]: your own skin.
+        - paragraph [ref=e28] [box=17,316,356,79]: Thoughtfully selected skincare, makeup and personal-care essentials for the way you live in Bangladesh.
+        - generic [ref=e29] [box=17,428,356,87]:
+          - link "Shop Top Collection ↗" [ref=e30] [cursor=pointer] [box=17,428,218,46]:
+            - /url: "#shop"
+            - text: Shop Top Collection
+            - generic [ref=e31] [box=203,444,10,14]: ↗
+          - link "Discover our approach →" [ref=e32] [cursor=pointer] [box=17,492,139,23]:
+            - /url: "#story"
+        - generic [ref=e35] [box=37,570,162,35]:
+          - text: Fast delivery across Bangladesh
+          - strong [ref=e36] [box=37,589,151,14]: COD, bKash, Nagad & Rocket
+      - generic [ref=e37] [box=17,645,356,420]:
+        - img "Rinova skincare ritual" [ref=e38] [box=17,645,356,420]
+        - generic [ref=e39] [box=29,883,170,160]:
+          - text: "01"
+          - strong [ref=e40] [box=54,941,120,44]: Soft glow,real routines.
+          - link "Explore the edit →" [ref=e41] [cursor=pointer] [box=54,1004,84,13]:
+            - /url: "#shop"
+        - generic [ref=e42] [box=281,659,86,86]:
+          - text: R
+          - generic [ref=e43] [box=313,717,14,12]: BD
+    - generic [ref=e44] [box=17,1140,356,919]:
+      - generic [ref=e45] [box=17,1205,356,104]:
+        - generic [ref=e46] [box=17,1205,356,63]:
+          - paragraph [ref=e47] [box=17,1205,356,15]: SHOP BY MOOD
+          - heading "Your everyday, elevated." [level=2] [ref=e48] [box=17,1238,356,30]
+        - link "View all categories →" [ref=e49] [cursor=pointer] [box=17,1286,116,23]:
+          - /url: "#shop"
+      - generic [ref=e192] [box=17,1339,356,645]:
+        - link "Skin Care Skin Care ↗" [ref=e193] [cursor=pointer] [box=17,1339,171,150]:
+          - /url: "#shop"
+          - img "Skin Care" [ref=e194] [box=17,1339,171,150]
+          - generic [ref=e195] [box=35,1438,89,34]: Skin Care ↗
+        - link "Face Care Face Care ↗" [ref=e196] [cursor=pointer] [box=203,1339,171,150]:
+          - /url: "#shop"
+          - img "Face Care" [ref=e197] [box=203,1339,171,150]
+          - generic [ref=e198] [box=221,1438,93,34]: Face Care ↗
+        - link "Face Makeup Face Makeup ↗" [ref=e199] [cursor=pointer] [box=17,1504,171,150]:
+          - /url: "#shop"
+          - img "Face Makeup" [ref=e200] [box=17,1504,171,150]
+          - generic [ref=e201] [box=35,1603,110,34]: Face Makeup ↗
+        - link "Eyes Makeup Eyes Makeup ↗" [ref=e202] [cursor=pointer] [box=203,1504,171,150]:
+          - /url: "#shop"
+          - img "Eyes Makeup" [ref=e203] [box=203,1504,171,150]
+          - generic [ref=e204] [box=221,1603,110,34]: Eyes Makeup ↗
+        - link "Makeup Makeup ↗" [ref=e205] [cursor=pointer] [box=17,1669,171,150]:
+          - /url: "#shop"
+          - img "Makeup" [ref=e206] [box=17,1669,171,150]
+          - generic [ref=e207] [box=35,1768,81,34]: Makeup ↗
+        - link "Hair Care Hair Care ↗" [ref=e208] [cursor=pointer] [box=203,1669,171,150]:
+          - /url: "#shop"
+          - img "Hair Care" [ref=e209] [box=203,1669,171,150]
+          - generic [ref=e210] [box=221,1768,89,34]: Hair Care ↗
+        - link "Perfume Perfume ↗" [ref=e211] [cursor=pointer] [box=17,1834,171,150]:
+          - /url: "#shop"
+          - img "Perfume" [ref=e212] [box=17,1834,171,150]
+          - generic [ref=e213] [box=35,1933,84,34]: Perfume ↗
+        - link "Kids Kids ↗" [ref=e214] [cursor=pointer] [box=203,1834,171,150]:
+          - /url: "#shop"
+          - img "Kids" [ref=e215] [box=203,1834,171,150]
+          - generic [ref=e216] [box=221,1933,61,34]: Kids ↗
+    - generic [ref=e50] [box=17,2059,356,8848]:
+      - generic [ref=e51] [box=17,2124,356,125]:
+        - generic [ref=e52] [box=17,2124,356,63]:
+          - paragraph [ref=e53] [box=17,2124,356,15]: THE RINOVA EDIT
+          - heading "Small rituals. Big difference." [level=2] [ref=e54] [box=17,2157,356,30]
+        - generic [ref=e55] [box=17,2212,356,37]:
+          - button "All" [ref=e56] [cursor=pointer] [box=17,2212,12,33]
+          - button "Top Collection" [ref=e57] [cursor=pointer] [box=45,2212,52,33]
+          - button "Skin care" [ref=e58] [cursor=pointer] [box=113,2212,33,33]
+          - button "Makeup" [ref=e59] [cursor=pointer] [box=162,2212,40,33]
+          - button "Hair care" [ref=e60] [cursor=pointer] [box=218,2212,33,33]
+          - button "Eyes makeup" [ref=e61] [cursor=pointer] [box=267,2212,48,33]
+          - button "Perfume" [ref=e62] [cursor=pointer] [box=331,2212,42,33]
+      - generic [ref=e63] [box=17,2279,356,8553]:
+        - article [ref=e217] [box=17,2279,173,490]:
+          - link [ref=e218] [box=17,2279,173,194]:
+            - /url: /products/himalaya-purifying-neem-face-wash-150ml-green
+            - img "Himalaya Purifying Neem Face Wash 150ml Green" [ref=e219] [box=17,2279,173,194]
+          - generic [ref=e220] [box=17,2472,173,297]:
+            - text: Face Care
+            - heading [level=3] [ref=e221] [box=19,2516,169,56]:
+              - link "Himalaya Purifying Neem Face Wash 150ml Green" [ref=e222] [cursor=pointer] [box=19,2516,169,56]:
+                - /url: /products/himalaya-purifying-neem-face-wash-150ml-green
+            - paragraph [ref=e223] [box=19,2579,169,45]: Himalaya Purifying Neem Face Wash in a 150ml green tube for a refreshing daily cleanse.
+            - generic [ref=e224] [box=19,2636,169,20]:
+              - strong [ref=e225] [box=19,2636,33,20]: ৳390
+              - deletion [ref=e226] [box=61,2637,28,17]: ৳450
+            - generic [ref=e227] [box=19,2669,169,86]:
+              - button "Add to Cart +" [ref=e228] [cursor=pointer] [box=19,2669,169,40]
+              - button "Shop Now →" [ref=e229] [cursor=pointer] [box=19,2715,169,40]
+        - article [ref=e230] [box=200,2279,173,490]:
+          - link [ref=e231] [box=200,2279,173,194]:
+            - /url: /products/himalaya-purifying-neem-face-wash-150ml-white
+            - img "Himalaya Purifying Neem Face Wash 150ml White" [ref=e232] [box=200,2279,173,194]
+          - generic [ref=e233] [box=200,2472,173,297]:
+            - text: Face Care
+            - heading [level=3] [ref=e234] [box=202,2516,169,56]:
+              - link "Himalaya Purifying Neem Face Wash 150ml White" [ref=e235] [cursor=pointer] [box=202,2516,169,56]:
+                - /url: /products/himalaya-purifying-neem-face-wash-150ml-white
+            - paragraph [ref=e236] [box=202,2579,169,45]: Himalaya Purifying Neem Face Wash in a 150ml tube with neem and turmeric cleansing care.
+            - generic [ref=e237] [box=202,2636,169,20]:
+              - strong [ref=e238] [box=202,2636,34,20]: ৳350
+              - deletion [ref=e239] [box=245,2637,27,17]: ৳420
+            - generic [ref=e240] [box=202,2669,169,86]:
+              - button "Add to Cart +" [ref=e241] [cursor=pointer] [box=202,2669,169,40]
+              - button "Shop Now →" [ref=e242] [cursor=pointer] [box=202,2715,169,40]
+        - article [ref=e243] [box=17,2779,173,472]:
+          - link [ref=e244] [box=17,2779,173,194]:
+            - /url: /products/himalaya-face-wash-collection
+            - img "Himalaya Face Wash Collection" [ref=e245] [box=17,2779,173,194]
+          - generic [ref=e246] [box=17,2973,173,278]:
+            - text: Face Care
+            - heading [level=3] [ref=e247] [box=19,3017,169,37]:
+              - link "Himalaya Face Wash Collection" [ref=e248] [cursor=pointer] [box=19,3017,169,37]:
+                - /url: /products/himalaya-face-wash-collection
+            - paragraph [ref=e249] [box=19,3060,169,45]: A six-piece Himalaya face-wash collection for shoppers comparing gentle daily cleansing options.
+            - generic [ref=e250] [box=19,3117,169,20]:
+              - strong [ref=e251] [box=19,3117,43,20]: ৳1,090
+              - deletion [ref=e252] [box=71,3119,33,17]: ৳1,290
+            - generic [ref=e253] [box=19,3151,169,86]:
+              - button "Add to Cart +" [ref=e254] [cursor=pointer] [box=19,3151,169,40]
+              - button "Shop Now →" [ref=e255] [cursor=pointer] [box=19,3197,169,40]
+        - article [ref=e256] [box=200,2779,173,472]:
+          - link "Coral Crush Blush Duo In Stock" [ref=e257] [box=200,2779,173,194]:
+            - /url: /products/coral-crush-blush-duo
+            - img "Coral Crush Blush Duo" [ref=e258] [box=200,2779,173,194]
+            - generic [ref=e259] [box=212,2791,60,22]: In Stock
+          - generic [ref=e261] [box=200,2973,173,259]:
+            - text: Face Makeup
+            - heading [level=3] [ref=e262] [box=202,3017,169,19]:
+              - link "Coral Crush Blush Duo" [ref=e263] [cursor=pointer] [box=202,3017,169,19]:
+                - /url: /products/coral-crush-blush-duo
+            - paragraph [ref=e264] [box=202,3042,169,45]: A vibrant coral blush duo in sleek compact packaging for buildable everyday colour.
+            - generic [ref=e265] [box=202,3099,169,20]:
+              - strong [ref=e266] [box=202,3099,32,20]: ৳750
+              - deletion [ref=e267] [box=243,3100,28,17]: ৳890
+            - generic [ref=e268] [box=202,3132,169,86]:
+              - button "Add to Cart +" [ref=e269] [cursor=pointer] [box=202,3132,169,40]
+              - button "Shop Now →" [ref=e270] [cursor=pointer] [box=202,3178,169,40]
+        - article [ref=e271] [box=17,3261,173,472]:
+          - link [ref=e272] [box=17,3261,173,194]:
+            - /url: /products/coral-glow-makeup-edit
+            - img "Coral Glow Makeup Edit" [ref=e273] [box=17,3261,173,194]
+          - generic [ref=e274] [box=17,3455,173,278]:
+            - text: Face Makeup
+            - heading [level=3] [ref=e275] [box=19,3499,169,37]:
+              - link "Coral Glow Makeup Edit" [ref=e276] [cursor=pointer] [box=19,3499,169,37]:
+                - /url: /products/coral-glow-makeup-edit
+            - paragraph [ref=e277] [box=19,3542,169,45]: A warm coral makeup edit featuring blush and lip colour for an easy, sunlit look.
+            - generic [ref=e278] [box=19,3599,169,20]:
+              - strong [ref=e279] [box=19,3599,41,20]: ৳1,290
+              - deletion [ref=e280] [box=69,3600,34,17]: ৳1,490
+            - generic [ref=e281] [box=19,3632,169,86]:
+              - button "Add to Cart +" [ref=e282] [cursor=pointer] [box=19,3632,169,40]
+              - button "Shop Now →" [ref=e283] [cursor=pointer] [box=19,3678,169,40]
+        - article [ref=e284] [box=200,3261,173,472]:
+          - link [ref=e285] [box=200,3261,173,194]:
+            - /url: /products/rose-gold-blush-duo
+            - img "Rose Gold Blush Duo" [ref=e286] [box=200,3261,173,194]
+          - generic [ref=e287] [box=200,3455,173,248]:
+            - text: Makeup · ★ 4.7
+            - heading [level=3] [ref=e288] [box=202,3499,169,19]:
+              - link "Rose Gold Blush Duo" [ref=e289] [cursor=pointer] [box=202,3499,169,19]:
+                - /url: /products/rose-gold-blush-duo
+            - paragraph [ref=e290] [box=202,3523,169,34]: A luminous blush duo with soft rosy tones for buildable colour.
+            - generic [ref=e291] [box=202,3569,169,20]:
+              - strong [ref=e292] [box=202,3569,34,20]: ৳690
+              - deletion [ref=e293] [box=245,3571,27,17]: ৳790
+            - generic [ref=e294] [box=202,3603,169,86]:
+              - button "Add to Cart +" [ref=e295] [cursor=pointer] [box=202,3603,169,40]
+              - button "Shop Now →" [ref=e296] [cursor=pointer] [box=202,3649,169,40]
+        - article [ref=e297] [box=17,3742,173,461]:
+          - link [ref=e298] [box=17,3742,173,194]:
+            - /url: /products/pink-petal-pressed-blush
+            - img "Pink Petal Pressed Blush" [ref=e299] [box=17,3742,173,194]
+          - generic [ref=e300] [box=17,3936,173,267]:
+            - text: Makeup · ★ 4.8
+            - heading [level=3] [ref=e301] [box=19,3980,169,37]:
+              - link "Pink Petal Pressed Blush" [ref=e302] [cursor=pointer] [box=19,3980,169,37]:
+                - /url: /products/pink-petal-pressed-blush
+            - paragraph [ref=e303] [box=19,4024,169,34]: A soft pressed blush for a fresh, naturally flushed finish.
+            - generic [ref=e304] [box=19,4070,169,20]:
+              - strong [ref=e305] [box=19,4070,34,20]: ৳590
+              - deletion [ref=e306] [box=62,4071,28,17]: ৳690
+            - generic [ref=e307] [box=19,4103,169,86]:
+              - button "Add to Cart +" [ref=e308] [cursor=pointer] [box=19,4103,169,40]
+              - button "Shop Now →" [ref=e309] [cursor=pointer] [box=19,4149,169,40]
+        - article [ref=e310] [box=200,3742,173,461]:
+          - link [ref=e311] [box=200,3742,173,194]:
+            - /url: /products/blush-and-bloom-gift-set
+            - img "Blush & Bloom Gift Set" [ref=e312] [box=200,3742,173,194]
+          - generic [ref=e313] [box=200,3936,173,248]:
+            - text: Skin Care · ★ 4.8
+            - heading [level=3] [ref=e314] [box=202,3980,169,19]:
+              - link "Blush & Bloom Gift Set" [ref=e315] [cursor=pointer] [box=202,3980,169,19]:
+                - /url: /products/blush-and-bloom-gift-set
+            - paragraph [ref=e316] [box=202,4005,169,34]: A thoughtful multi-piece self-care set for gifting or your own ritual.
+            - generic [ref=e317] [box=202,4051,169,20]:
+              - strong [ref=e318] [box=202,4051,42,20]: ৳1,690
+              - deletion [ref=e319] [box=253,4052,34,17]: ৳1,990
+            - generic [ref=e320] [box=202,4084,169,86]:
+              - button "Add to Cart +" [ref=e321] [cursor=pointer] [box=202,4084,169,40]
+              - button "Shop Now →" [ref=e322] [cursor=pointer] [box=202,4130,169,40]
+        - article [ref=e323] [box=17,4213,173,461]:
+          - link [ref=e324] [box=17,4213,173,194]:
+            - /url: /products/glow-bloom-skincare-duo
+            - img "Glow Bloom Skincare Duo" [ref=e325] [box=17,4213,173,194]
+          - generic [ref=e326] [box=17,4407,173,267]:
+            - text: Skin Care · ★ 4.9
+            - heading [level=3] [ref=e327] [box=19,4451,169,37]:
+              - link "Glow Bloom Skincare Duo" [ref=e328] [cursor=pointer] [box=19,4451,169,37]:
+                - /url: /products/glow-bloom-skincare-duo
+            - paragraph [ref=e329] [box=19,4494,169,34]: A radiant skincare pairing for a soft, hydrated-looking finish.
+            - generic [ref=e330] [box=19,4540,169,20]:
+              - strong [ref=e331] [box=19,4540,39,20]: ৳1,190
+              - deletion [ref=e332] [box=67,4542,34,17]: ৳1,490
+            - generic [ref=e333] [box=19,4574,169,86]:
+              - button "Add to Cart +" [ref=e334] [cursor=pointer] [box=19,4574,169,40]
+              - button "Shop Now →" [ref=e335] [cursor=pointer] [box=19,4620,169,40]
+        - article [ref=e336] [box=200,4213,173,461]:
+          - link [ref=e337] [box=200,4213,173,194]:
+            - /url: /products/pink-glow-lip-blush-edit
+            - img "Pink Glow Lip & Blush Edit" [ref=e338] [box=200,4213,173,194]
+          - generic [ref=e339] [box=200,4407,173,267]:
+            - text: Makeup · ★ 4.8
+            - heading [level=3] [ref=e340] [box=202,4451,169,37]:
+              - link "Pink Glow Lip & Blush Edit" [ref=e341] [cursor=pointer] [box=202,4451,169,37]:
+                - /url: /products/pink-glow-lip-blush-edit
+            - paragraph [ref=e342] [box=202,4494,169,34]: A soft pink edit of lip colour, gloss and luminous blush.
+            - generic [ref=e343] [box=202,4540,169,20]:
+              - strong [ref=e344] [box=202,4540,34,20]: ৳990
+              - deletion [ref=e345] [box=245,4542,30,17]: ৳1,190
+            - generic [ref=e346] [box=202,4574,169,86]:
+              - button "Add to Cart +" [ref=e347] [cursor=pointer] [box=202,4574,169,40]
+              - button "Shop Now →" [ref=e348] [cursor=pointer] [box=202,4620,169,40]
+        - article [ref=e349] [box=17,4684,173,461]:
+          - link [ref=e350] [box=17,4684,173,194]:
+            - /url: /products/everyday-makeup-essentials
+            - img "Everyday Makeup Essentials" [ref=e351] [box=17,4684,173,194]
+          - generic [ref=e352] [box=17,4878,173,267]:
+            - text: Makeup · ★ 4.7
+            - heading [level=3] [ref=e353] [box=19,4922,169,37]:
+              - link "Everyday Makeup Essentials" [ref=e354] [cursor=pointer] [box=19,4922,169,37]:
+                - /url: /products/everyday-makeup-essentials
+            - paragraph [ref=e355] [box=19,4965,169,34]: A versatile studio-inspired selection for your daily routine.
+            - generic [ref=e356] [box=19,5011,169,20]:
+              - strong [ref=e357] [box=19,5011,42,20]: ৳1,490
+              - deletion [ref=e358] [box=70,5012,32,17]: ৳1,790
+            - generic [ref=e359] [box=19,5044,169,86]:
+              - button "Add to Cart +" [ref=e360] [cursor=pointer] [box=19,5044,169,40]
+              - button "Shop Now →" [ref=e361] [cursor=pointer] [box=19,5090,169,40]
+        - article [ref=e362] [box=200,4684,173,461]:
+          - link [ref=e363] [box=200,4684,173,194]:
+            - /url: /products/complete-makeup-collection
+            - img "The Complete Makeup Collection" [ref=e364] [box=200,4684,173,194]
+          - generic [ref=e365] [box=200,4878,173,267]:
+            - text: Makeup · ★ 4.9
+            - heading [level=3] [ref=e366] [box=202,4922,169,37]:
+              - link "The Complete Makeup Collection" [ref=e367] [cursor=pointer] [box=202,4922,169,37]:
+                - /url: /products/complete-makeup-collection
+            - paragraph [ref=e368] [box=202,4965,169,34]: A curated collection of complexion, eye and lip essentials.
+            - generic [ref=e369] [box=202,5011,169,20]:
+              - strong [ref=e370] [box=202,5011,42,20]: ৳1,890
+              - deletion [ref=e371] [box=253,5012,36,17]: ৳2,290
+            - generic [ref=e372] [box=202,5044,169,86]:
+              - button "Add to Cart +" [ref=e373] [cursor=pointer] [box=202,5044,169,40]
+              - button "Shop Now →" [ref=e374] [cursor=pointer] [box=202,5090,169,40]
+        - article [ref=e375] [box=17,5154,173,461]:
+          - link [ref=e376] [box=17,5154,173,194]:
+            - /url: /products/radiant-glow-makeup-edit
+            - img "Radiant Glow Makeup Edit" [ref=e377] [box=17,5154,173,194]
+          - generic [ref=e378] [box=17,5348,173,267]:
+            - text: Makeup · ★ 4.8
+            - heading [level=3] [ref=e379] [box=19,5392,169,37]:
+              - link "Radiant Glow Makeup Edit" [ref=e380] [cursor=pointer] [box=19,5392,169,37]:
+                - /url: /products/radiant-glow-makeup-edit
+            - paragraph [ref=e381] [box=19,5436,169,34]: A polished makeup edit for radiant everyday looks.
+            - generic [ref=e382] [box=19,5482,169,20]:
+              - strong [ref=e383] [box=19,5482,41,20]: ৳1,290
+              - deletion [ref=e384] [box=69,5483,33,17]: ৳1,590
+            - generic [ref=e385] [box=19,5515,169,86]:
+              - button "Add to Cart +" [ref=e386] [cursor=pointer] [box=19,5515,169,40]
+              - button "Shop Now →" [ref=e387] [cursor=pointer] [box=19,5561,169,40]
+        - article [ref=e388] [box=200,5154,173,461]:
+          - link [ref=e389] [box=200,5154,173,194]:
+            - /url: /products/soft-glow-spf-50-sunscreen
+            - img "Soft Glow SPF 50 Sunscreen" [ref=e390] [box=200,5154,173,194]
+          - generic [ref=e391] [box=200,5348,173,267]:
+            - text: Skin Care · ★ 4.9
+            - heading [level=3] [ref=e392] [box=202,5392,169,37]:
+              - link "Soft Glow SPF 50 Sunscreen" [ref=e393] [cursor=pointer] [box=202,5392,169,37]:
+                - /url: /products/soft-glow-spf-50-sunscreen
+            - paragraph [ref=e394] [box=202,5436,169,34]: A smooth daily sunscreen with a comfortable, non-heavy finish.
+            - generic [ref=e395] [box=202,5482,169,20]:
+              - strong [ref=e396] [box=202,5482,33,20]: ৳780
+              - deletion [ref=e397] [box=244,5483,28,17]: ৳950
+            - generic [ref=e398] [box=202,5515,169,86]:
+              - button "Add to Cart +" [ref=e399] [cursor=pointer] [box=202,5515,169,40]
+              - button "Shop Now →" [ref=e400] [cursor=pointer] [box=202,5561,169,40]
+        - article [ref=e401] [box=17,5625,173,461]:
+          - link [ref=e402] [box=17,5625,173,194]:
+            - /url: /products/cloud-cleanse-gentle-face-wash
+            - img "Cloud Cleanse Gentle Face Wash" [ref=e403] [box=17,5625,173,194]
+          - generic [ref=e404] [box=17,5819,173,267]:
+            - text: Face Care · ★ 4.7
+            - heading [level=3] [ref=e405] [box=19,5863,169,37]:
+              - link "Cloud Cleanse Gentle Face Wash" [ref=e406] [cursor=pointer] [box=19,5863,169,37]:
+                - /url: /products/cloud-cleanse-gentle-face-wash
+            - paragraph [ref=e407] [box=19,5906,169,34]: A gentle cleanser for a fresh, comfortable finish.
+            - generic [ref=e408] [box=19,5952,169,20]:
+              - strong [ref=e409] [box=19,5952,34,20]: ৳590
+              - deletion [ref=e410] [box=62,5954,28,17]: ৳690
+            - generic [ref=e411] [box=19,5986,169,86]:
+              - button "Add to Cart +" [ref=e412] [cursor=pointer] [box=19,5986,169,40]
+              - button "Shop Now →" [ref=e413] [cursor=pointer] [box=19,6032,169,40]
+        - article [ref=e414] [box=200,5625,173,461]:
+          - link [ref=e415] [box=200,5625,173,194]:
+            - /url: /products/dew-ritual-hydrating-serum
+            - img "Dew Ritual Hydrating Serum" [ref=e416] [box=200,5625,173,194]
+          - generic [ref=e417] [box=200,5819,173,267]:
+            - text: Skin Care · ★ 4.8
+            - heading [level=3] [ref=e418] [box=202,5863,169,37]:
+              - link "Dew Ritual Hydrating Serum" [ref=e419] [cursor=pointer] [box=202,5863,169,37]:
+                - /url: /products/dew-ritual-hydrating-serum
+            - paragraph [ref=e420] [box=202,5906,169,34]: A lightweight daily serum for soft, hydrated-looking skin.
+            - generic [ref=e421] [box=202,5952,169,20]:
+              - strong [ref=e422] [box=202,5952,34,20]: ৳890
+              - deletion [ref=e423] [box=245,5954,34,17]: ৳1,090
+            - generic [ref=e424] [box=202,5986,169,86]:
+              - button "Add to Cart +" [ref=e425] [cursor=pointer] [box=202,5986,169,40]
+              - button "Shop Now →" [ref=e426] [cursor=pointer] [box=202,6032,169,40]
+        - article [ref=e427] [box=17,6096,173,472]:
+          - link "Coco Blush Fragrance Edit New Product" [ref=e428] [box=17,6096,173,194]:
+            - /url: /products/coco-blush-fragrance-edit
+            - img "Coco Blush Fragrance Edit" [ref=e429] [box=17,6096,173,194]
+            - generic [ref=e430] [box=29,6108,83,22]: New Product
+          - generic [ref=e432] [box=17,6290,173,267]:
+            - text: Perfume
+            - heading [level=3] [ref=e433] [box=19,6334,169,37]:
+              - link "Coco Blush Fragrance Edit" [ref=e434] [cursor=pointer] [box=19,6334,169,37]:
+                - /url: /products/coco-blush-fragrance-edit
+            - paragraph [ref=e435] [box=19,6377,169,34]: A polished fragrance edit with a warm, luminous visual mood.
+            - generic [ref=e436] [box=19,6423,169,20]:
+              - strong [ref=e437] [box=19,6423,43,20]: ৳1,090
+              - deletion [ref=e438] [box=71,6424,33,17]: ৳1,390
+            - generic [ref=e439] [box=19,6456,169,86]:
+              - button "Add to Cart +" [ref=e440] [cursor=pointer] [box=19,6456,169,40]
+              - button "Shop Now →" [ref=e441] [cursor=pointer] [box=19,6502,169,40]
+        - article [ref=e442] [box=200,6096,173,472]:
+          - link "Noir Rose Signature Scent New Product" [ref=e443] [box=200,6096,173,194]:
+            - /url: /products/noir-rose-signature-scent
+            - img "Noir Rose Signature Scent" [ref=e444] [box=200,6096,173,194]
+            - generic [ref=e445] [box=212,6108,83,22]: New Product
+          - generic [ref=e447] [box=200,6290,173,278]:
+            - text: Perfume
+            - heading [level=3] [ref=e448] [box=202,6334,169,37]:
+              - link "Noir Rose Signature Scent" [ref=e449] [cursor=pointer] [box=202,6334,169,37]:
+                - /url: /products/noir-rose-signature-scent
+            - paragraph [ref=e450] [box=202,6377,169,45]: A rich rose fragrance profile for evening rituals and statement moments.
+            - generic [ref=e451] [box=202,6434,169,20]:
+              - strong [ref=e452] [box=202,6434,39,20]: ৳1,190
+              - deletion [ref=e453] [box=250,6435,34,17]: ৳1,490
+            - generic [ref=e454] [box=202,6467,169,86]:
+              - button "Add to Cart +" [ref=e455] [cursor=pointer] [box=202,6467,169,40]
+              - button "Shop Now →" [ref=e456] [cursor=pointer] [box=202,6513,169,40]
+        - article [ref=e457] [box=17,6577,173,472]:
+          - link "Peach Veil Fragrance Mist New Product" [ref=e458] [box=17,6577,173,194]:
+            - /url: /products/peach-veil-fragrance-mist
+            - img "Peach Veil Fragrance Mist" [ref=e459] [box=17,6577,173,194]
+            - generic [ref=e460] [box=29,6589,83,22]: New Product
+          - generic [ref=e462] [box=17,6771,173,267]:
+            - text: Perfume
+            - heading [level=3] [ref=e463] [box=19,6815,169,37]:
+              - link "Peach Veil Fragrance Mist" [ref=e464] [cursor=pointer] [box=19,6815,169,37]:
+                - /url: /products/peach-veil-fragrance-mist
+            - paragraph [ref=e465] [box=19,6859,169,34]: A warm peach-toned fragrance edit for a soft everyday mood.
+            - generic [ref=e466] [box=19,6905,169,20]:
+              - strong [ref=e467] [box=19,6905,33,20]: ৳790
+              - deletion [ref=e468] [box=61,6906,28,17]: ৳990
+            - generic [ref=e469] [box=19,6938,169,86]:
+              - button "Add to Cart +" [ref=e470] [cursor=pointer] [box=19,6938,169,40]
+              - button "Shop Now →" [ref=e471] [cursor=pointer] [box=19,6984,169,40]
+        - article [ref=e472] [box=200,6577,173,472]:
+          - link "Pink Cloud Eau de Parfum New Product" [ref=e473] [box=200,6577,173,194]:
+            - /url: /products/pink-cloud-eau-de-parfum
+            - img "Pink Cloud Eau de Parfum" [ref=e474] [box=200,6577,173,194]
+            - generic [ref=e475] [box=212,6589,83,22]: New Product
+          - generic [ref=e477] [box=200,6771,173,278]:
+            - text: Perfume
+            - heading [level=3] [ref=e478] [box=202,6815,169,37]:
+              - link "Pink Cloud Eau de Parfum" [ref=e479] [cursor=pointer] [box=202,6815,169,37]:
+                - /url: /products/pink-cloud-eau-de-parfum
+            - paragraph [ref=e480] [box=202,6859,169,45]: A soft pink fragrance profile presented as a temporary Rinova demo listing.
+            - generic [ref=e481] [box=202,6916,169,20]:
+              - strong [ref=e482] [box=202,6916,34,20]: ৳990
+              - deletion [ref=e483] [box=245,6917,33,17]: ৳1,290
+            - generic [ref=e484] [box=202,6949,169,86]:
+              - button "Add to Cart +" [ref=e485] [cursor=pointer] [box=202,6949,169,40]
+              - button "Shop Now →" [ref=e486] [cursor=pointer] [box=202,6995,169,40]
+        - article [ref=e487] [box=17,7059,173,461]:
+          - link "Classic Eye Detail Kit New Product" [ref=e488] [box=17,7059,173,194]:
+            - /url: /products/classic-eye-detail-kit
+            - img "Classic Eye Detail Kit" [ref=e489] [box=17,7059,173,194]
+            - generic [ref=e490] [box=29,7071,83,22]: New Product
+          - generic [ref=e492] [box=17,7253,173,248]:
+            - text: Eyes Makeup
+            - heading [level=3] [ref=e493] [box=19,7297,169,19]:
+              - link "Classic Eye Detail Kit" [ref=e494] [cursor=pointer] [box=19,7297,169,19]:
+                - /url: /products/classic-eye-detail-kit
+            - paragraph [ref=e495] [box=19,7322,169,34]: A temporary demo eye-detail kit for shaping and finishing the eye look.
+            - generic [ref=e496] [box=19,7368,169,20]:
+              - strong [ref=e497] [box=19,7368,34,20]: ৳650
+              - deletion [ref=e498] [box=62,7369,27,17]: ৳820
+            - generic [ref=e499] [box=19,7401,169,86]:
+              - button "Add to Cart +" [ref=e500] [cursor=pointer] [box=19,7401,169,40]
+              - button "Shop Now →" [ref=e501] [cursor=pointer] [box=19,7447,169,40]
+        - article [ref=e502] [box=200,7059,173,461]:
+          - link "Soft Focus Eye Essentials New Product" [ref=e503] [box=200,7059,173,194]:
+            - /url: /products/soft-focus-eye-essentials
+            - img "Soft Focus Eye Essentials" [ref=e504] [box=200,7059,173,194]
+            - generic [ref=e505] [box=212,7071,83,22]: New Product
+          - generic [ref=e507] [box=200,7253,173,267]:
+            - text: Eyes Makeup
+            - heading [level=3] [ref=e508] [box=202,7297,169,37]:
+              - link "Soft Focus Eye Essentials" [ref=e509] [cursor=pointer] [box=202,7297,169,37]:
+                - /url: /products/soft-focus-eye-essentials
+            - paragraph [ref=e510] [box=202,7340,169,34]: An easy eye-makeup essentials listing for a clean, soft finish.
+            - generic [ref=e511] [box=202,7386,169,20]:
+              - strong [ref=e512] [box=202,7386,34,20]: ৳590
+              - deletion [ref=e513] [box=245,7388,27,17]: ৳750
+            - generic [ref=e514] [box=202,7420,169,86]:
+              - button "Add to Cart +" [ref=e515] [cursor=pointer] [box=202,7420,169,40]
+              - button "Shop Now →" [ref=e516] [cursor=pointer] [box=202,7466,169,40]
+        - article [ref=e517] [box=17,7530,173,472]:
+          - link "Midnight Eye Glam Edit New Product" [ref=e518] [box=17,7530,173,194]:
+            - /url: /products/midnight-eye-glam-edit
+            - img "Midnight Eye Glam Edit" [ref=e519] [box=17,7530,173,194]
+            - generic [ref=e520] [box=29,7542,83,22]: New Product
+          - generic [ref=e522] [box=17,7724,173,267]:
+            - text: Eyes Makeup
+            - heading [level=3] [ref=e523] [box=19,7768,169,37]:
+              - link "Midnight Eye Glam Edit" [ref=e524] [cursor=pointer] [box=19,7768,169,37]:
+                - /url: /products/midnight-eye-glam-edit
+            - paragraph [ref=e525] [box=19,7811,169,34]: A deeper eye-makeup edit for evening looks and special plans.
+            - generic [ref=e526] [box=19,7857,169,20]:
+              - strong [ref=e527] [box=19,7857,34,20]: ৳890
+              - deletion [ref=e528] [box=62,7858,34,17]: ৳1,090
+            - generic [ref=e529] [box=19,7890,169,86]:
+              - button "Add to Cart +" [ref=e530] [cursor=pointer] [box=19,7890,169,40]
+              - button "Shop Now →" [ref=e531] [cursor=pointer] [box=19,7936,169,40]
+        - article [ref=e532] [box=200,7530,173,472]:
+          - link "Everyday Eye Colour Palette New Product" [ref=e533] [box=200,7530,173,194]:
+            - /url: /products/everyday-eye-colour-palette
+            - img "Everyday Eye Colour Palette" [ref=e534] [box=200,7530,173,194]
+            - generic [ref=e535] [box=212,7542,83,22]: New Product
+          - generic [ref=e537] [box=200,7724,173,278]:
+            - text: Eyes Makeup
+            - heading [level=3] [ref=e538] [box=202,7768,169,37]:
+              - link "Everyday Eye Colour Palette" [ref=e539] [cursor=pointer] [box=202,7768,169,37]:
+                - /url: /products/everyday-eye-colour-palette
+            - paragraph [ref=e540] [box=202,7811,169,45]: A temporary demo eye-colour palette listing for the Rinova catalogue.
+            - generic [ref=e541] [box=202,7868,169,20]:
+              - strong [ref=e542] [box=202,7868,33,20]: ৳790
+              - deletion [ref=e543] [box=244,7869,28,17]: ৳990
+            - generic [ref=e544] [box=202,7901,169,86]:
+              - button "Add to Cart +" [ref=e545] [cursor=pointer] [box=202,7901,169,40]
+              - button "Shop Now →" [ref=e546] [cursor=pointer] [box=202,7947,169,40]
+        - article [ref=e547] [box=17,8011,173,442]:
+          - link "Rose Eye Glow Edit New Product" [ref=e548] [box=17,8011,173,194]:
+            - /url: /products/rose-eye-glow-edit
+            - img "Rose Eye Glow Edit" [ref=e549] [box=17,8011,173,194]
+            - generic [ref=e550] [box=29,8023,83,22]: New Product
+          - generic [ref=e552] [box=17,8205,173,248]:
+            - text: Eyes Makeup
+            - heading [level=3] [ref=e553] [box=19,8249,169,19]:
+              - link "Rose Eye Glow Edit" [ref=e554] [cursor=pointer] [box=19,8249,169,19]:
+                - /url: /products/rose-eye-glow-edit
+            - paragraph [ref=e555] [box=19,8274,169,34]: A soft rose-toned eye-makeup edit for an easy polished finish.
+            - generic [ref=e556] [box=19,8320,169,20]:
+              - strong [ref=e557] [box=19,8320,34,20]: ৳690
+              - deletion [ref=e558] [box=62,8321,28,17]: ৳850
+            - generic [ref=e559] [box=19,8353,169,86]:
+              - button "Add to Cart +" [ref=e560] [cursor=pointer] [box=19,8353,169,40]
+              - button "Shop Now →" [ref=e561] [cursor=pointer] [box=19,8399,169,40]
+        - article [ref=e562] [box=200,8011,173,442]:
+          - link "Soft Line Eye Definer New Product" [ref=e563] [box=200,8011,173,194]:
+            - /url: /products/soft-line-eye-definer
+            - img "Soft Line Eye Definer" [ref=e564] [box=200,8011,173,194]
+            - generic [ref=e565] [box=212,8023,83,22]: New Product
+          - generic [ref=e567] [box=200,8205,173,248]:
+            - text: Eyes Makeup
+            - heading [level=3] [ref=e568] [box=202,8249,169,19]:
+              - link "Soft Line Eye Definer" [ref=e569] [cursor=pointer] [box=202,8249,169,19]:
+                - /url: /products/soft-line-eye-definer
+            - paragraph [ref=e570] [box=202,8274,169,34]: A temporary demo eye-makeup listing for a defined everyday look.
+            - generic [ref=e571] [box=202,8320,169,20]:
+              - strong [ref=e572] [box=202,8320,34,20]: ৳490
+              - deletion [ref=e573] [box=245,8321,28,17]: ৳650
+            - generic [ref=e574] [box=202,8353,169,86]:
+              - button "Add to Cart +" [ref=e575] [cursor=pointer] [box=202,8353,169,40]
+              - button "Shop Now →" [ref=e576] [cursor=pointer] [box=202,8399,169,40]
+        - article [ref=e577] [box=17,8463,173,472]:
+          - link "Everyday Hair Care Essentials New Product" [ref=e578] [box=17,8463,173,194]:
+            - /url: /products/everyday-hair-care-essentials
+            - img "Everyday Hair Care Essentials" [ref=e579] [box=17,8463,173,194]
+            - generic [ref=e580] [box=29,8475,83,22]: New Product
+          - generic [ref=e582] [box=17,8657,173,278]:
+            - text: Hair Care
+            - heading [level=3] [ref=e583] [box=19,8701,169,37]:
+              - link "Everyday Hair Care Essentials" [ref=e584] [cursor=pointer] [box=19,8701,169,37]:
+                - /url: /products/everyday-hair-care-essentials
+            - paragraph [ref=e585] [box=19,8745,169,45]: A soft, everyday hair-care selection presented for the Rinova catalogue preview.
+            - generic [ref=e586] [box=19,8802,169,20]:
+              - strong [ref=e587] [box=19,8802,42,20]: ৳1,490
+              - deletion [ref=e588] [box=70,8803,33,17]: ৳1,890
+            - generic [ref=e589] [box=19,8835,169,86]:
+              - button "Add to Cart +" [ref=e590] [cursor=pointer] [box=19,8835,169,40]
+              - button "Shop Now →" [ref=e591] [cursor=pointer] [box=19,8881,169,40]
+        - article [ref=e592] [box=200,8463,173,472]:
+          - link "Hair Tools and Styling Edit New Product" [ref=e593] [box=200,8463,173,194]:
+            - /url: /products/hair-tools-and-styling-edit
+            - img "Hair Tools and Styling Edit" [ref=e594] [box=200,8463,173,194]
+            - generic [ref=e595] [box=212,8475,83,22]: New Product
+          - generic [ref=e597] [box=200,8657,173,278]:
+            - text: Hair Care
+            - heading [level=3] [ref=e598] [box=202,8701,169,37]:
+              - link "Hair Tools and Styling Edit" [ref=e599] [cursor=pointer] [box=202,8701,169,37]:
+                - /url: /products/hair-tools-and-styling-edit
+            - paragraph [ref=e600] [box=202,8745,169,45]: A practical demo edit of brushes, styling tools and finishing essentials for everyday hair care.
+            - generic [ref=e601] [box=202,8802,169,20]:
+              - strong [ref=e602] [box=202,8802,41,20]: ৳1,290
+              - deletion [ref=e603] [box=252,8803,33,17]: ৳1,590
+            - generic [ref=e604] [box=202,8835,169,86]:
+              - button "Add to Cart +" [ref=e605] [cursor=pointer] [box=202,8835,169,40]
+              - button "Shop Now →" [ref=e606] [cursor=pointer] [box=202,8881,169,40]
+        - article [ref=e607] [box=17,8945,173,472]:
+          - link "Gloss Absolu Hair Ritual New Product" [ref=e608] [box=17,8945,173,194]:
+            - /url: /products/gloss-absolu-hair-ritual
+            - img "Gloss Absolu Hair Ritual" [ref=e609] [box=17,8945,173,194]
+            - generic [ref=e610] [box=29,8957,83,22]: New Product
+          - generic [ref=e612] [box=17,9139,173,278]:
+            - text: Hair Care
+            - heading [level=3] [ref=e613] [box=19,9183,169,37]:
+              - link "Gloss Absolu Hair Ritual" [ref=e614] [cursor=pointer] [box=19,9183,169,37]:
+                - /url: /products/gloss-absolu-hair-ritual
+            - paragraph [ref=e615] [box=19,9226,169,45]: A polished demo hair-care edit featuring cleansing, conditioning and finishing care.
+            - generic [ref=e616] [box=19,9283,169,20]:
+              - strong [ref=e617] [box=19,9283,33,20]: ৳999
+              - deletion [ref=e618] [box=61,9285,33,17]: ৳1,290
+            - generic [ref=e619] [box=19,9317,169,86]:
+              - button "Add to Cart +" [ref=e620] [cursor=pointer] [box=19,9317,169,40]
+              - button "Shop Now →" [ref=e621] [cursor=pointer] [box=19,9363,169,40]
+        - article [ref=e622] [box=200,8945,173,472]:
+          - link [ref=e623] [box=200,8945,173,194]:
+            - /url: /products/himalaya-purifying-neem-face-wash-50ml
+            - img "Himalaya Purifying Neem Face Wash 50ml" [ref=e624] [box=200,8945,173,194]
+          - generic [ref=e625] [box=200,9139,173,278]:
+            - text: Face Care
+            - heading [level=3] [ref=e626] [box=202,9183,169,37]:
+              - link "Himalaya Purifying Neem Face Wash 50ml" [ref=e627] [cursor=pointer] [box=202,9183,169,37]:
+                - /url: /products/himalaya-purifying-neem-face-wash-50ml
+            - paragraph [ref=e628] [box=202,9226,169,45]: A compact 50ml Himalaya Purifying Neem Face Wash for a simple everyday cleansing routine.
+            - generic [ref=e629] [box=202,9283,169,20]:
+              - strong [ref=e630] [box=202,9283,33,20]: ৳220
+              - deletion [ref=e631] [box=244,9285,27,17]: ৳280
+            - generic [ref=e632] [box=202,9317,169,86]:
+              - button "Add to Cart +" [ref=e633] [cursor=pointer] [box=202,9317,169,40]
+              - button "Shop Now →" [ref=e634] [cursor=pointer] [box=202,9363,169,40]
+        - article [ref=e635] [box=17,9427,173,472]:
+          - link [ref=e636] [box=17,9427,173,194]:
+            - /url: /products/rose-gold-baked-blush-compact
+            - img "Rose Gold Baked Blush Compact" [ref=e637] [box=17,9427,173,194]
+          - generic [ref=e638] [box=17,9620,173,278]:
+            - text: Face Makeup
+            - heading [level=3] [ref=e639] [box=19,9664,169,37]:
+              - link "Rose Gold Baked Blush Compact" [ref=e640] [cursor=pointer] [box=19,9664,169,37]:
+                - /url: /products/rose-gold-baked-blush-compact
+            - paragraph [ref=e641] [box=19,9708,169,45]: A soft rose baked blush in a gold compact for a polished, luminous finish.
+            - generic [ref=e642] [box=19,9765,169,20]:
+              - strong [ref=e643] [box=19,9765,34,20]: ৳650
+              - deletion [ref=e644] [box=62,9766,27,17]: ৳790
+            - generic [ref=e645] [box=19,9798,169,86]:
+              - button "Add to Cart +" [ref=e646] [cursor=pointer] [box=19,9798,169,40]
+              - button "Shop Now →" [ref=e647] [cursor=pointer] [box=19,9844,169,40]
+        - article [ref=e648] [box=200,9427,173,472]:
+          - link [ref=e649] [box=200,9427,173,194]:
+            - /url: /products/marble-rose-baked-blush
+            - img "Marble Rose Baked Blush" [ref=e650] [box=200,9427,173,194]
+          - generic [ref=e651] [box=200,9620,173,267]:
+            - text: Makeup · ★ 4.6
+            - heading [level=3] [ref=e652] [box=202,9664,169,37]:
+              - link "Marble Rose Baked Blush" [ref=e653] [cursor=pointer] [box=202,9664,169,37]:
+                - /url: /products/marble-rose-baked-blush
+            - paragraph [ref=e654] [box=202,9708,169,34]: A marbled baked blush for a warm, polished everyday glow.
+            - generic [ref=e655] [box=202,9754,169,20]:
+              - strong [ref=e656] [box=202,9754,33,20]: ৳620
+              - deletion [ref=e657] [box=244,9755,27,17]: ৳750
+            - generic [ref=e658] [box=202,9787,169,86]:
+              - button "Add to Cart +" [ref=e659] [cursor=pointer] [box=202,9787,169,40]
+              - button "Shop Now →" [ref=e660] [cursor=pointer] [box=202,9833,169,40]
+        - article [ref=e661] [box=17,9908,173,472]:
+          - link [ref=e662] [box=17,9908,173,194]:
+            - /url: /products/rose-water-70-glow-serum
+            - img "Rose Water 70% Glow Serum" [ref=e663] [box=17,9908,173,194]
+          - generic [ref=e664] [box=17,10102,173,267]:
+            - text: Skin Care · ★ 4.8
+            - heading [level=3] [ref=e665] [box=19,10146,169,37]:
+              - link "Rose Water 70% Glow Serum" [ref=e666] [cursor=pointer] [box=19,10146,169,37]:
+                - /url: /products/rose-water-70-glow-serum
+            - paragraph [ref=e667] [box=19,10190,169,34]: A light, luminous serum for a dewy everyday skincare ritual.
+            - generic [ref=e668] [box=19,10236,169,20]:
+              - strong [ref=e669] [box=19,10236,34,20]: ৳890
+              - deletion [ref=e670] [box=62,10237,34,17]: ৳1,090
+            - generic [ref=e671] [box=19,10269,169,86]:
+              - button "Add to Cart +" [ref=e672] [cursor=pointer] [box=19,10269,169,40]
+              - button "Shop Now →" [ref=e673] [cursor=pointer] [box=19,10315,169,40]
+        - article [ref=e674] [box=200,9908,173,472]:
+          - link [ref=e675] [box=200,9908,173,194]:
+            - /url: /products/beet-vitamin-a-serum-shot
+            - img "Beet + Vitamin A Serum Shot" [ref=e676] [box=200,9908,173,194]
+          - generic [ref=e677] [box=200,10102,173,278]:
+            - text: Skin Care · ★ 4.7
+            - heading [level=3] [ref=e678] [box=202,10146,169,37]:
+              - link "Beet + Vitamin A Serum Shot" [ref=e679] [cursor=pointer] [box=202,10146,169,37]:
+                - /url: /products/beet-vitamin-a-serum-shot
+            - paragraph [ref=e680] [box=202,10190,169,45]: A targeted serum shot for a smoother, refreshed-looking complexion.
+            - generic [ref=e681] [box=202,10247,169,20]:
+              - strong [ref=e682] [box=202,10247,33,20]: ৳790
+              - deletion [ref=e683] [box=244,10248,28,17]: ৳950
+            - generic [ref=e684] [box=202,10280,169,86]:
+              - button "Add to Cart +" [ref=e685] [cursor=pointer] [box=202,10280,169,40]
+              - button "Shop Now →" [ref=e686] [cursor=pointer] [box=202,10326,169,40]
+        - article [ref=e687] [box=17,10390,173,442]:
+          - link [ref=e688] [box=17,10390,173,194]:
+            - /url: /products/rose-petal-lip-tint
+            - img "Rose Petal Lip Tint" [ref=e689] [box=17,10390,173,194]
+          - generic [ref=e690] [box=17,10584,173,248]:
+            - text: Makeup · ★ 4.6
+            - heading [level=3] [ref=e691] [box=19,10628,169,19]:
+              - link "Rose Petal Lip Tint" [ref=e692] [cursor=pointer] [box=19,10628,169,19]:
+                - /url: /products/rose-petal-lip-tint
+            - paragraph [ref=e693] [box=19,10653,169,34]: A buildable rosy tint for an effortless everyday look.
+            - generic [ref=e694] [box=19,10699,169,20]:
+              - strong [ref=e695] [box=19,10699,34,20]: ৳450
+              - deletion [ref=e696] [box=62,10700,27,17]: ৳520
+            - generic [ref=e697] [box=19,10732,169,86]:
+              - button "Add to Cart +" [ref=e698] [cursor=pointer] [box=19,10732,169,40]
+              - button "Shop Now →" [ref=e699] [cursor=pointer] [box=19,10778,169,40]
+    - generic [ref=e65] [box=17,10907,356,1060]:
+      - img "Rinova skincare essentials arranged for a gentle daily ritual" [ref=e67] [box=17,10972,356,390]
+      - generic [ref=e68] [box=17,11407,356,485]:
+        - paragraph [ref=e69] [box=17,11407,356,25]: WHY RINOVA
+        - heading [level=2] [ref=e70] [box=17,11450,356,77]:
+          - text: Beauty that feels like a little more
+          - emphasis [ref=e71] [box=180,11482,63,51]: you.
+        - paragraph [ref=e72] [box=17,11550,356,101]: We believe the best routine is one you actually look forward to. So we bring together trusted essentials, honest details and the little moments that make a day feel yours.
+        - generic [ref=e73] [box=17,11685,356,207]:
+          - generic [ref=e74] [box=17,11686,356,69]:
+            - generic [ref=e75] [box=17,11701,35,38]: "01"
+            - strong [ref=e76] [box=62,11701,311,18]: Curated, not crowded
+            - generic [ref=e77] [box=62,11722,311,17]: Only useful, feel-good essentials.
+          - generic [ref=e78] [box=17,11755,356,69]:
+            - generic [ref=e79] [box=17,11770,35,38]: "02"
+            - strong [ref=e80] [box=62,11770,311,18]: Details you can trust
+            - generic [ref=e81] [box=62,11791,311,17]: Clear ingredients, usage and delivery info.
+          - generic [ref=e82] [box=17,11823,356,69]:
+            - generic [ref=e83] [box=17,11838,35,38]: "03"
+            - strong [ref=e84] [box=62,11838,311,18]: Made for real life
+            - generic [ref=e85] [box=62,11859,311,17]: Simple rituals for busy Bangladesh days.
+    - generic [ref=e86] [box=17,11967,356,160]:
+      - generic [ref=e87] [box=17,11995,171,33]:
+        - generic [ref=e88] [box=17,11995,32,33]: ✦
+        - strong [ref=e89] [box=59,11995,129,18]: Authentic products
+        - generic [ref=e90] [box=59,12013,129,15]: Chosen with care
+      - generic [ref=e91] [box=203,11995,171,33]:
+        - generic [ref=e92] [box=203,11995,32,33]: ↗
+        - strong [ref=e93] [box=245,11995,129,18]: Easy checkout
+        - generic [ref=e94] [box=245,12013,129,15]: COD & mobile payments
+      - generic [ref=e95] [box=17,12051,171,48]:
+        - generic [ref=e96] [box=17,12051,32,48]: ♡
+        - strong [ref=e97] [box=59,12051,129,18]: Human support
+        - generic [ref=e98] [box=59,12069,129,30]: "WhatsApp: +880 1738-745949"
+      - generic [ref=e99] [box=203,12051,171,48]:
+        - generic [ref=e100] [box=203,12051,32,48]: ⌁
+        - strong [ref=e101] [box=245,12051,129,26]: Delivery clarity
+        - generic [ref=e102] [box=245,12076,129,23]: From ৳90 · auto-calculated
+    - generic [ref=e103] [box=17,12127,356,1363]:
+      - generic [ref=e104] [box=17,12192,356,104]:
+        - generic [ref=e105] [box=17,12192,356,63]:
+          - paragraph [ref=e106] [box=17,12192,356,15]: THE RINOVA JOURNAL
+          - heading "Notes for your ritual." [level=2] [ref=e107] [box=17,12225,356,30]
+        - link "Read the journal →" [ref=e108] [cursor=pointer] [box=17,12273,103,23]:
+          - /url: /blog.html
+      - generic [ref=e109] [box=17,12326,356,1089]:
+        - article [ref=e110] [box=17,12326,356,350]:
+          - paragraph [ref=e112] [box=17,12585,356,15]: Skin Care · Morning Routine
+          - heading [level=3] [ref=e700] [box=17,12618,356,53]:
+            - link "A gentler way to build your morning routine" [ref=e701] [cursor=pointer] [box=17,12615,267,58]:
+              - /url: /blog.html?slug=a-gentler-way-to-build-your-morning-routine
+        - article [ref=e114] [box=17,12696,356,350]:
+          - paragraph [ref=e116] [box=17,12955,356,15]: FACE CARE · Beginner routine · 04 MIN READ
+          - heading [level=3] [ref=e702] [box=17,12988,356,53]:
+            - link "How to Build a Simple Face Care Routine for Everyday Comfort" [ref=e703] [cursor=pointer] [box=17,12985,327,58]:
+              - /url: /blog.html?slug=how-to-build-simple-face-care-routine
+        - article [ref=e118] [box=17,13065,356,350]:
+          - paragraph [ref=e120] [box=17,13324,356,15]: FACE MAKEUP · Beginner application · 05 MIN READ
+          - heading [level=3] [ref=e704] [box=17,13357,356,53]:
+            - 'link "Face Makeup for Beginners: A Soft, Even Base That Still Looks Like You" [ref=e705] [cursor=pointer] [box=17,13355,356,58]':
+              - /url: /blog.html?slug=face-makeup-for-beginners-soft-even-base
+  - contentinfo [ref=e122] [box=0,13490,390,982]:
+    - generic [ref=e123] [box=24,13538,162,170]:
+      - link "rinovabeauty, thoughtfully chosen" [ref=e124] [cursor=pointer] [box=24,13547,162,37]:
+        - /url: "#top"
+      - paragraph [ref=e125] [box=24,13607,162,41]: Thoughtful beauty for real life in Bangladesh.
+      - link "View full sitemap ↗" [ref=e126] [cursor=pointer] [box=24,13669,108,18]:
+        - /url: /sitemap.html
+    - generic [ref=e127] [box=204,13538,162,170]:
+      - paragraph [ref=e128] [box=204,13538,162,15]: Explore
+      - link "Shop all" [ref=e129] [cursor=pointer] [box=204,13573,162,18]:
+        - /url: "#shop"
+      - link "Categories" [ref=e130] [cursor=pointer] [box=204,13600,162,18]:
+        - /url: "#categories"
+      - link "Our ritual" [ref=e131] [cursor=pointer] [box=204,13627,162,18]:
+        - /url: "#story"
+      - link "Journal" [ref=e132] [cursor=pointer] [box=204,13654,162,18]:
+        - /url: /blog.html
+      - link "XML sitemap" [ref=e133] [cursor=pointer] [box=204,13681,162,18]:
+        - /url: /sitemap.xml
+    - generic [ref=e134] [box=24,13735,162,143]:
+      - paragraph [ref=e135] [box=24,13735,162,15]: Your Rinova
+      - link "Customer account" [ref=e136] [cursor=pointer] [box=24,13770,162,18]:
+        - /url: /account.html
+      - link "Track your order" [ref=e137] [cursor=pointer] [box=24,13797,162,18]:
+        - /url: /track.html
+      - link "Checkout" [ref=e138] [cursor=pointer] [box=24,13824,162,18]:
+        - /url: /checkout.html
+      - link "Open an invoice" [ref=e139] [cursor=pointer] [box=24,13851,162,18]:
+        - /url: /invoice.html
+    - generic [ref=e140] [box=204,13735,162,143]:
+      - paragraph [ref=e141] [box=204,13735,162,15]: Need a little help?
+      - link "WhatsApp us" [ref=e142] [cursor=pointer] [box=204,13770,162,18]:
+        - /url: https://wa.me/8801738745949
+      - link "hello@rinovabd.com" [ref=e143] [cursor=pointer] [box=204,13797,162,18]:
+        - /url: mailto:hello@rinovabd.com
+      - link "Call us" [ref=e144] [cursor=pointer] [box=204,13824,162,18]:
+        - /url: tel:+8801738745949
+      - link "Bangla admin guide" [ref=e145] [cursor=pointer] [box=204,13851,162,18]:
+        - /url: /admin/guide
+    - generic [ref=e146] [box=24,13905,342,179]:
+      - paragraph [ref=e147] [box=24,13909,240,17]: A softer inbox
+      - paragraph [ref=e148] [box=24,13946,240,41]: New edits, thoughtful notes and offers—occasionally.
+      - generic [ref=e149] [box=24,14003,342,49]:
+        - generic [ref=e150] [box=24,14003,92,48]: Your email address
+        - textbox "Your email address" [ref=e151] [box=116,14003,225,48]
+        - button "Join newsletter" [ref=e152] [box=340,14003,26,48]: →
+      - status [ref=e153] [box=24,14052,240,16]
+    - generic [ref=e154] [box=24,14115,342,118]:
+      - paragraph [ref=e155] [box=24,14140,342,15]: We accept
+      - generic "Accepted payment methods" [ref=e156] [box=24,14167,342,40]:
+        - img "Mastercard" [ref=e158] [box=52,14183,26,8]
+        - img "bKash" [ref=e160] [box=148,14183,14,8]
+        - img "Nagad" [ref=e162] [box=238,14183,14,8]
+      - paragraph [ref=e163] [box=24,14219,342,14]: Secure checkout · Cash on delivery available
+    - generic [ref=e164] [box=24,14259,342,183]:
+      - generic [ref=e165] [box=24,14280,342,15]: © 2026 Rinova BD
+      - generic [ref=e166] [box=24,14301,342,15]: Rajshahi, Bangladesh · BDT (৳)
+      - generic [ref=e167] [box=24,14322,342,36]:
+        - text: Developed by
+        - link "Sayad Bayezid" [ref=e168] [cursor=pointer] [box=90,14331,84,18]:
+          - /url: https://sayadbayezid.com
+      - link "Sitemap" [ref=e169] [cursor=pointer] [box=24,14373,342,18]:
+        - /url: /sitemap.html
+      - link "Robots" [ref=e170] [cursor=pointer] [box=24,14415,342,18]:
+        - /url: /robots.txt
+  - status [box=177,815,36,24]
+  - generic [box=0,14472,390,0]:
+    - button "Open SmartGen support" [ref=e171] [cursor=pointer] [box=321,775,54,54]:
+      - generic [ref=e172] [box=343,796,11,12]: ✦
+    - generic [box=19,290,351,483]:
+      - generic [box=20,291,349,77]:
+        - generic [box=40,310,181,42]:
+          - generic [box=40,315,33,33]: SG
+          - generic [box=82,310,138,42]:
+            - link [box=82,310,96,25]:
+              - /url: https://smartgentools.com
+              - text: SmartGen
+            - generic [box=82,338,138,15]: Rinova beauty support
+        - button [box=329,315,21,33]: ×
+      - generic [box=20,368,349,58]:
+        - button [box=36,380,96,34]: Ask SmartGen
+        - link [box=140,380,77,34]:
+          - /url: https://wa.me/8801738745949
+          - text: WhatsApp
+      - generic [box=20,426,349,291]: হ্যালো! Product, price, usage, delivery বা order নিয়ে জানতে চাইলে লিখুন।
+      - generic [box=20,717,349,54]:
+        - textbox [box=36,732,196,26]:
+          - /placeholder: আপনার প্রশ্ন লিখুন…
+        - button [box=240,732,42,26]: →
+  - dialog [ref=e706] [box=12,605,366,227]:
+    - generic [ref=e707] [box=31,624,328,127]:
+      - paragraph [ref=e708] [box=31,624,328,15]: A softer, smarter shop
+      - heading "Help us improve Rinova" [level=2] [ref=e709] [box=31,657,328,26]
+      - paragraph [ref=e710] [box=31,692,328,59]: We use privacy-friendly analytics to understand product interest, shopping journeys and site performance. No name, phone or email is sent to Google Analytics.
+    - generic [ref=e711] [box=31,767,328,46]:
+      - button "Not now" [ref=e712] [cursor=pointer] [box=31,767,160,46]
+      - button "Allow analytics" [ref=e713] [cursor=pointer] [box=199,767,160,46]

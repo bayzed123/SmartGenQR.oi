@@ -1,0 +1,24 @@
+flowchart LR
+  C[Customer browser] --> W[Cloudflare Worker / Hono]
+  A[Admin browser] --> W
+  W --> AS[Static assets: web/]
+  W --> AUTH[Session + role gate]
+  W --> API[Public, customer, admin APIs]
+  API --> D1[(D1: commerce + CMS + chat + audit)]
+  API --> KV[(KV: cache + rate limits + flags)]
+  API --> R2[(R2 / media adapter)]
+  API --> AI[Workers AI]
+  API --> V[(Vectorize: approved knowledge)]
+  API --> PAY[Payment adapter]
+  API --> COURIER[Courier adapter]
+  API --> GA[Analytics / Sheets adapters]
+  PAY --> D1
+  COURIER --> D1
+  AI --> V
+  AUTH --> D1
+  classDef client fill:#fff9f6,stroke:#d77fd9,color:#2f2130,stroke-width:2px
+  classDef core fill:#fbe8f1,stroke:#9a3b9f,color:#2f2130,stroke-width:2px
+  classDef private fill:#281c27,stroke:#f0a9c7,color:#fff,stroke-width:2px
+  class C,A client
+  class W,AS,API,D1,KV,R2,AI,V,PAY,COURIER,GA core
+  class AUTH private
