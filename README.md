@@ -4,7 +4,7 @@
 
 Welcome to SmartGen. This repository contains the full sources for the SmartGen client-side utilities website and the supporting build and deployment tooling. SmartGen is a privacy-first collection of 130+ browser-based utilities (QR generators, SEO & meta tools, JSON/XML formatters, developer helpers, and more). Everything runs in the browser — no server-side processing of user data.
 
-Live site: https://smartgentools.com
+Live site: [SmartGen Utility](https://smartgentools.com)
 
 Badges
 
