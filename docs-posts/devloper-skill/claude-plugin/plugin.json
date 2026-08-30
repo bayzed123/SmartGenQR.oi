@@ -1,0 +1,8 @@
+{
+  "name": "noibu",
+  "description": "Connects Claude to the Noibu MCP server",
+  "author": {
+    "name": "Noibu",
+    "url": "https://noibu.com"
+  }
+}
