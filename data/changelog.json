@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add summary of Playwright fixes for admin dashboard",
+    "date": "2026-08-30T16:32:44Z",
+    "description": "Documented the Playwright-reviewed fixes and improvements made to the Rinova admin dashboard, including accessibility enhancements and design adjustments."
+  },
+  {
     "title": "Create traffic-analysis-management-guide.md",
     "date": "2026-08-30T16:30:47Z",
     "description": "Platform improvement and optimization."
