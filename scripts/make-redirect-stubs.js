@@ -112,16 +112,38 @@ for (const [from, to, views] of REDIRECTS) {
   }
 
   const file = from.endsWith('.html') ? from.slice(1) : path.join(from.slice(1), 'index.html');
-  if (fs.existsSync(file)) {
-    console.log(`  exists, left alone   ${from}`);
-    skipped++;
-    continue;
+
+  if (dry) {
+    // Nothing is written, so a plain check is enough here and there is no
+    // window to race against.
+    if (fs.existsSync(file)) {
+      console.log(`  exists, left alone   ${from}`);
+      skipped++;
+      continue;
+    }
+  } else {
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    try {
+      // The 'wx' flag creates the file exclusively and fails with EEXIST if
+      // the path already exists -- one atomic syscall, so the "never
+      // overwrite a real page" rule is actually enforced.
+      //
+      // This replaced an existsSync() check followed by a separate write.
+      // CodeQL flagged it, correctly: between the two calls a real page could
+      // appear and be silently overwritten by a redirect stub. On this repo
+      // that means replacing a live article with a "page has moved" bounce,
+      // which is the one outcome this script must never produce.
+      fs.writeFileSync(file, stub(from, to), { flag: 'wx' });
+    } catch (err) {
+      if (err.code === 'EEXIST') {
+        console.log(`  exists, left alone   ${from}`);
+        skipped++;
+        continue;
+      }
+      throw err;
+    }
   }
 
-  if (!dry) {
-    fs.mkdirSync(path.dirname(file), { recursive: true });
-    fs.writeFileSync(file, stub(from, to));
-  }
   console.log(`  ${String(views).padStart(3)} views  ${from}\n            -> ${to}`);
   written++;
 }
