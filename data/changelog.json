@@ -1,5 +1,10 @@
 [
   {
+    "title": "Merge pull request #30 from bayzed123/claude/fix-dead-urls-with-traffic",
+    "date": "2026-09-03T23:58:34Z",
+    "description": "fix: close the TOCTOU race CodeQL flagged in make-redirect-stubs.js"
+  },
+  {
     "title": "Merge pull request #29 from bayzed123/claude/fix-dead-urls-with-traffic",
     "date": "2026-09-03T23:51:36Z",
     "description": "Platform improvement and optimization."
