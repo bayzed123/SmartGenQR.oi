@@ -1,5 +1,10 @@
 [
   {
+    "title": "Merge pull request #29 from bayzed123/claude/fix-dead-urls-with-traffic",
+    "date": "2026-09-03T23:51:36Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Merge pull request #27 from bayzed123/alert-autofix-193",
     "date": "2026-09-03T20:52:48Z",
     "description": "Platform improvement and optimization."
