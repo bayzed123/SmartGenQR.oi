@@ -27,7 +27,7 @@ export const SITE = {
     "Resources",
     "SEO & Content"
   ],
-  "sourceHash": "7c57741b7211"
+  "sourceHash": "42388ab79baf"
 };
 
 export const TOOLS = [
@@ -2601,6 +2601,126 @@ export const KEY_PAGES = [
     "title": "Directory Structure For Portfolio"
   },
   {
+    "url": "https://smartgentools.com/docs/ecommerce/01-product-and-system-overview/",
+    "path": "/docs/ecommerce/01-product-and-system-overview/",
+    "section": "docs",
+    "title": "01 Product And System Overview"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/02-architecture/",
+    "path": "/docs/ecommerce/02-architecture/",
+    "section": "docs",
+    "title": "02 Architecture"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/03-end-to-end-pipeline/",
+    "path": "/docs/ecommerce/03-end-to-end-pipeline/",
+    "section": "docs",
+    "title": "03 End To End Pipeline"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/04-data-model-and-migrations/",
+    "path": "/docs/ecommerce/04-data-model-and-migrations/",
+    "section": "docs",
+    "title": "04 Data Model And Migrations"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/05-api-and-route-reference/",
+    "path": "/docs/ecommerce/05-api-and-route-reference/",
+    "section": "docs",
+    "title": "05 Api And Route Reference"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/06-admin-dashboard/",
+    "path": "/docs/ecommerce/06-admin-dashboard/",
+    "section": "docs",
+    "title": "06 Admin Dashboard"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/07-customer-storefront/",
+    "path": "/docs/ecommerce/07-customer-storefront/",
+    "section": "docs",
+    "title": "07 Customer Storefront"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/08-cloudflare-ai-chatbot-system/",
+    "path": "/docs/ecommerce/08-cloudflare-ai-chatbot-system/",
+    "section": "docs",
+    "title": "08 Cloudflare Ai Chatbot System"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/09-security-and-privacy/",
+    "path": "/docs/ecommerce/09-security-and-privacy/",
+    "section": "docs",
+    "title": "09 Security And Privacy"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/10-local-development-and-deployment/",
+    "path": "/docs/ecommerce/10-local-development-and-deployment/",
+    "section": "docs",
+    "title": "10 Local Development And Deployment"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/11-playwright-testing-and-screenshot-proof/",
+    "path": "/docs/ecommerce/11-playwright-testing-and-screenshot-proof/",
+    "section": "docs",
+    "title": "11 Playwright Testing And Screenshot Proof"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/12-operations-and-observability/",
+    "path": "/docs/ecommerce/12-operations-and-observability/",
+    "section": "docs",
+    "title": "12 Operations And Observability"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/13-troubleshooting/",
+    "path": "/docs/ecommerce/13-troubleshooting/",
+    "section": "docs",
+    "title": "13 Troubleshooting"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/14-contributing-and-release-workflow/",
+    "path": "/docs/ecommerce/14-contributing-and-release-workflow/",
+    "section": "docs",
+    "title": "14 Contributing And Release Workflow"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/checklists/go-live/",
+    "path": "/docs/ecommerce/checklists/go-live/",
+    "section": "docs",
+    "title": "Go Live"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/checklists/security/",
+    "path": "/docs/ecommerce/checklists/security/",
+    "section": "docs",
+    "title": "Security"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/diagrams/readme/",
+    "path": "/docs/ecommerce/diagrams/readme/",
+    "section": "docs",
+    "title": "Readme"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/examples/configuration-template/",
+    "path": "/docs/ecommerce/examples/configuration-template/",
+    "section": "docs",
+    "title": "Configuration Template"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/readme/",
+    "path": "/docs/ecommerce/readme/",
+    "section": "docs",
+    "title": "Readme"
+  },
+  {
+    "url": "https://smartgentools.com/docs/ecommerce/screenshots/readme/",
+    "path": "/docs/ecommerce/screenshots/readme/",
+    "section": "docs",
+    "title": "Readme"
+  },
+  {
     "url": "https://smartgentools.com/docs/fundamentals/01-system-design-fundamentals/",
     "path": "/docs/fundamentals/01-system-design-fundamentals/",
     "section": "docs",
@@ -2683,6 +2803,120 @@ export const KEY_PAGES = [
     "path": "/docs/installation/",
     "section": "docs",
     "title": "Installation"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/",
+    "path": "/docs/mastercard/",
+    "section": "docs",
+    "title": "Mastercard"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/99-sources-and-research-notes/",
+    "path": "/docs/mastercard/99-sources-and-research-notes/",
+    "section": "docs",
+    "title": "99 Sources And Research Notes"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/checklists/mtf-readiness/",
+    "path": "/docs/mastercard/checklists/mtf-readiness/",
+    "section": "docs",
+    "title": "Mtf Readiness"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/checklists/production-go-live/",
+    "path": "/docs/mastercard/checklists/production-go-live/",
+    "section": "docs",
+    "title": "Production Go Live"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/examples/configuration-template/",
+    "path": "/docs/mastercard/examples/configuration-template/",
+    "section": "docs",
+    "title": "Configuration Template"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/examples/curl-and-worker-examples/",
+    "path": "/docs/mastercard/examples/curl-and-worker-examples/",
+    "section": "docs",
+    "title": "Curl And Worker Examples"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-a-to-z/",
+    "path": "/docs/mastercard/mastercard-mpqr-a-to-z/",
+    "section": "docs",
+    "title": "Mastercard Mpqr A To Z"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-account-setup-and-keys/",
+    "path": "/docs/mastercard/mastercard-mpqr-account-setup-and-keys/",
+    "section": "docs",
+    "title": "Mastercard Mpqr Account Setup And Keys"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-api-reference-smartgen/",
+    "path": "/docs/mastercard/mastercard-mpqr-api-reference-smartgen/",
+    "section": "docs",
+    "title": "Mastercard Mpqr Api Reference Smartgen"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-bangladesh-operating-checklist/",
+    "path": "/docs/mastercard/mastercard-mpqr-bangladesh-operating-checklist/",
+    "section": "docs",
+    "title": "Mastercard Mpqr Bangladesh Operating Checklist"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-oauth1-signing/",
+    "path": "/docs/mastercard/mastercard-mpqr-oauth1-signing/",
+    "section": "docs",
+    "title": "Mastercard Mpqr Oauth1 Signing"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-orders-status-reconciliation-refunds/",
+    "path": "/docs/mastercard/mastercard-mpqr-orders-status-reconciliation-refunds/",
+    "section": "docs",
+    "title": "Mastercard Mpqr Orders Status Reconciliation Refunds"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-overview-and-roles/",
+    "path": "/docs/mastercard/mastercard-mpqr-overview-and-roles/",
+    "section": "docs",
+    "title": "Mastercard Mpqr Overview And Roles"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-partnership-and-production-onboarding/",
+    "path": "/docs/mastercard/mastercard-mpqr-partnership-and-production-onboarding/",
+    "section": "docs",
+    "title": "Mastercard Mpqr Partnership And Production Onboarding"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-qr-static-dynamic-device-sdks/",
+    "path": "/docs/mastercard/mastercard-mpqr-qr-static-dynamic-device-sdks/",
+    "section": "docs",
+    "title": "Mastercard Mpqr Qr Static Dynamic Device Sdks"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-sandbox-testing/",
+    "path": "/docs/mastercard/mastercard-mpqr-sandbox-testing/",
+    "section": "docs",
+    "title": "Mastercard Mpqr Sandbox Testing"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-security-remediation-status/",
+    "path": "/docs/mastercard/mastercard-mpqr-security-remediation-status/",
+    "section": "docs",
+    "title": "Mastercard Mpqr Security Remediation Status"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-troubleshooting/",
+    "path": "/docs/mastercard/mastercard-mpqr-troubleshooting/",
+    "section": "docs",
+    "title": "Mastercard Mpqr Troubleshooting"
+  },
+  {
+    "url": "https://smartgentools.com/docs/mastercard/mastercard-mpqr-worker-deployment-security/",
+    "path": "/docs/mastercard/mastercard-mpqr-worker-deployment-security/",
+    "section": "docs",
+    "title": "Mastercard Mpqr Worker Deployment Security"
   },
   {
     "url": "https://smartgentools.com/docs/portfolio-website-api-and-script-reference/",

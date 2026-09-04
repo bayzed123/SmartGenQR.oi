@@ -107,6 +107,9 @@ jobs:
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
           ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           PREMIUM_UNLOCK_SECRET: ${{ secrets.PREMIUM_UNLOCK_SECRET }}
+          SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
+          SEO_ADMIN_USERNAME: ${{ secrets.SEO_ADMIN_USERNAME }}
+          SEO_ADMIN_PASSWORD: ${{ secrets.SEO_ADMIN_PASSWORD }}
         run: |
           set -euo pipefail
 
@@ -130,6 +133,9 @@ jobs:
           sync GOOGLE_CSE_ID
           sync ADMIN_TOKEN
           sync PREMIUM_UNLOCK_SECRET
+          sync SESSION_SECRET
+          sync SEO_ADMIN_USERNAME
+          sync SEO_ADMIN_PASSWORD
 
       - name: Smoke test the deployment
         env:

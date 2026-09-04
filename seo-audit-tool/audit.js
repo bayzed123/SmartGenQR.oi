@@ -26,6 +26,7 @@
     scanning: false,
     captcha: { a: 0, b: 0 },
     catalogue: null,
+    authMode: 'register',
   };
 
   /* --------------------------------------------------------- utilities */
@@ -50,11 +51,57 @@
     return '#dc2626';
   }
 
+  /* ------------------------------------------------------------- session */
+
+  /**
+   * The session token is a signed payload from the Worker. It is stored in
+   * localStorage rather than a cookie because the API is on a different
+   * origin (workers.dev), so a cookie set there would not be sent with these
+   * requests without third-party cookie access, which browsers increasingly
+   * block. Nothing secret is in the token -- it is signed, not encrypted, and
+   * the server re-checks the signature on every call.
+   */
+  var SESSION_KEY = 'smartgen.audit.session';
+
+  var session = {
+    token: null,
+    account: null,
+
+    load: function () {
+      try {
+        this.token = localStorage.getItem(SESSION_KEY) || null;
+      } catch (e) {
+        // Private mode, or storage blocked. Sign-in still works for this tab.
+        this.token = null;
+      }
+      return this.token;
+    },
+
+    save: function (token, account) {
+      this.token = token || null;
+      this.account = account || null;
+      try {
+        if (token) localStorage.setItem(SESSION_KEY, token);
+        else localStorage.removeItem(SESSION_KEY);
+      } catch (e) {
+        /* not fatal — the token still lives in memory for this page */
+      }
+    },
+
+    clear: function () {
+      this.save(null, null);
+    },
+  };
+
   function api(path, options) {
     var opts = options || {};
+    var headers = {};
+    if (opts.body) headers['Content-Type'] = 'application/json';
+    if (session.token) headers.Authorization = 'Bearer ' + session.token;
+
     return fetch(API_BASE + path, {
       method: opts.method || 'GET',
-      headers: opts.body ? { 'Content-Type': 'application/json' } : undefined,
+      headers: Object.keys(headers).length ? headers : undefined,
       body: opts.body ? JSON.stringify(opts.body) : undefined,
     }).then(function (res) {
       return res
@@ -129,7 +176,12 @@
         stopProgress(res.data && res.data.ok);
 
         if (!res.data || !res.data.ok) {
-          if (res.data && res.data.code === 'quota_exhausted') {
+          if (res.data && res.data.code === 'auth_required') {
+            openAuth('register', 'Create a free account to run your audit — ' +
+              (res.data.freeAudits || 3) + ' full scans, no card needed.');
+            return;
+          }
+          if (res.data && (res.data.code === 'payment_required' || res.data.code === 'quota_exhausted')) {
             renderQuotaWall(res.data);
             return;
           }
@@ -427,16 +479,23 @@
 
   function renderQuotaWall(payload) {
     var root = $('#auditResults');
+    var limit = (payload.quota && payload.quota.limit) || 3;
+    var email = (payload.account && payload.account.email) || '';
     root.hidden = false;
     $('#scorePanel').innerHTML =
       '<div class="score-summary" style="grid-column:1/-1">' +
       '<h2>You have used all ' +
-      esc(payload.quota.limit) +
-      ' free audits for today</h2>' +
-      '<p class="verdict">Your free scans reset in the next 24 hours. If you need results now, ' +
-      'the full 72-check audit has no daily limit and includes Core Web Vitals, a 30-day roadmap ' +
-      'and a competitor benchmark.</p>' +
-      '<a class="tier-cta primary" href="#pricing" style="display:inline-block;margin-top:1rem">See the full audit</a>' +
+      esc(limit) +
+      ' free audits on this account</h2>' +
+      '<p class="verdict">' +
+      (email ? 'Signed in as <strong>' + esc(email) + '</strong>. ' : '') +
+      'Premium removes the limit and unlocks all 72 checks, Core Web Vitals, an AI-written ' +
+      '30-day roadmap, a competitor benchmark and a white-label PDF.</p>' +
+      '<a class="tier-cta primary" href="/contact/?subject=Premium%20SEO%20Audit' +
+      (email ? '&email=' + encodeURIComponent(email) : '') +
+      '" style="display:inline-block;margin-top:1rem">Upgrade to premium</a>' +
+      '<p class="form-note" style="margin-top:.75rem">Already paid? Premium activates on your next ' +
+      'audit once your address is added — no need to sign in again.</p>' +
       '</div>';
     ['#categoryGrid', '#topIssuesSection', '#allChecksBody'].forEach(function (sel) {
       $(sel).innerHTML = '';
@@ -623,6 +682,152 @@
 
   /* -------------------------------------------------------------- init */
 
+  /* ---------------------------------------------------------- auth UI */
+
+  /**
+   * One dialog for both sign-in and registration. It is built here rather
+   * than sitting in the HTML so the page still renders and explains itself
+   * with JavaScript disabled — the audit needs JS regardless.
+   */
+  function buildAuthDialog() {
+    if ($('#authDialog')) return $('#authDialog');
+
+    var d = document.createElement('dialog');
+    d.id = 'authDialog';
+    d.setAttribute('aria-labelledby', 'authTitle');
+    d.style.cssText =
+      'border:0;border-radius:16px;padding:0;max-width:420px;width:calc(100% - 2rem);' +
+      'box-shadow:0 24px 60px rgba(15,23,42,.28)';
+    d.innerHTML =
+      '<form method="dialog" id="authForm" style="padding:28px 26px;display:flex;flex-direction:column;gap:14px">' +
+      '<h2 id="authTitle" style="margin:0;font-size:1.25rem">Create your free account</h2>' +
+      '<p id="authIntro" class="form-note" style="margin:0"></p>' +
+      '<label style="display:flex;flex-direction:column;gap:6px;font-size:.9rem;font-weight:600">Email' +
+      '<input type="email" id="authEmail" required autocomplete="email" ' +
+      'style="padding:11px 12px;border:1px solid #cbd5e1;border-radius:9px;font:inherit;font-weight:400"></label>' +
+      '<label style="display:flex;flex-direction:column;gap:6px;font-size:.9rem;font-weight:600">Password' +
+      '<input type="password" id="authPassword" required minlength="8" autocomplete="current-password" ' +
+      'style="padding:11px 12px;border:1px solid #cbd5e1;border-radius:9px;font:inherit;font-weight:400">' +
+      '<span class="form-note" style="font-weight:400">At least 8 characters.</span></label>' +
+      '<p id="authError" role="alert" style="margin:0;color:#dc2626;font-size:.9rem"></p>' +
+      '<button type="submit" id="authSubmit" class="tier-cta primary" style="width:100%">Create account</button>' +
+      '<p style="margin:0;text-align:center;font-size:.9rem">' +
+      '<button type="button" id="authToggle" style="background:none;border:0;color:#2563eb;cursor:pointer;font:inherit;text-decoration:underline">' +
+      'Already have an account? Sign in</button></p>' +
+      '<button type="button" id="authClose" style="background:none;border:0;color:#64748b;cursor:pointer;font:inherit;font-size:.85rem">Not now</button>' +
+      '</form>';
+    document.body.appendChild(d);
+
+    $('#authToggle').addEventListener('click', function () {
+      openAuth(state.authMode === 'register' ? 'login' : 'register');
+    });
+    $('#authClose').addEventListener('click', function () {
+      d.close();
+    });
+    $('#authForm').addEventListener('submit', submitAuth);
+    return d;
+  }
+
+  function openAuth(mode, intro) {
+    var d = buildAuthDialog();
+    state.authMode = mode === 'login' ? 'login' : 'register';
+    var isRegister = state.authMode === 'register';
+
+    $('#authTitle').textContent = isRegister ? 'Create your free account' : 'Sign in';
+    $('#authIntro').textContent = intro || '';
+    $('#authIntro').hidden = !intro;
+    $('#authSubmit').textContent = isRegister ? 'Create account' : 'Sign in';
+    $('#authToggle').textContent = isRegister
+      ? 'Already have an account? Sign in'
+      : 'Need an account? Create one';
+    $('#authPassword').setAttribute('autocomplete', isRegister ? 'new-password' : 'current-password');
+    $('#authError').textContent = '';
+
+    if (!d.open) d.showModal();
+    $('#authEmail').focus();
+  }
+
+  function submitAuth(event) {
+    event.preventDefault();
+    var submit = $('#authSubmit');
+    var path = state.authMode === 'register' ? '/api/auth/register' : '/api/auth/login';
+    var original = submit.textContent;
+
+    submit.disabled = true;
+    submit.textContent = 'Working…';
+    $('#authError').textContent = '';
+
+    api(path, {
+      method: 'POST',
+      body: { email: $('#authEmail').value.trim(), password: $('#authPassword').value },
+    })
+      .then(function (res) {
+        if (!res.data || !res.data.ok) {
+          $('#authError').textContent =
+            (res.data && res.data.error) || 'That did not work. Please try again.';
+          return;
+        }
+        session.save(res.data.sessionToken, res.data.account);
+        $('#authDialog').close();
+        renderAccount(res.data.account, res.data.quota, res.data.entitlement);
+        // Sign-in usually happens because a scan was blocked; finish that scan.
+        if ($('#siteUrl').value.trim()) runScan();
+      })
+      .catch(function () {
+        $('#authError').textContent = 'We could not reach the server. Check your connection.';
+      })
+      .finally(function () {
+        submit.disabled = false;
+        submit.textContent = original;
+      });
+  }
+
+  /** Show who is signed in, and what they are entitled to, above the form. */
+  function renderAccount(account, quota, entitlement) {
+    var bar = $('#accountBar');
+    if (!bar) {
+      bar = document.createElement('p');
+      bar.id = 'accountBar';
+      bar.className = 'form-note';
+      bar.style.cssText = 'display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px';
+      var form = $('#scanForm');
+      form.parentNode.insertBefore(bar, form);
+    }
+
+    if (!account) {
+      bar.innerHTML =
+        '<span>Sign in to run an audit.</span>' +
+        '<button type="button" id="signInBtn" style="background:none;border:0;color:#2563eb;' +
+        'cursor:pointer;font:inherit;text-decoration:underline">Sign in or create an account</button>';
+      $('#signInBtn').addEventListener('click', function () {
+        openAuth('register');
+      });
+      return;
+    }
+
+    var tier = (entitlement && entitlement.tier) || 'free';
+    var badge =
+      tier === 'owner' ? 'Owner — all features' : tier === 'premium' ? 'Premium' : 'Free plan';
+    var left =
+      quota && quota.unlimited
+        ? 'Unlimited audits'
+        : quota
+          ? quota.remaining + ' of ' + quota.limit + ' free audits left'
+          : '';
+
+    bar.innerHTML =
+      '<span><strong>' + esc(account.email) + '</strong> · ' + esc(badge) + '</span>' +
+      (left ? '<span>· ' + esc(left) + '</span>' : '') +
+      '<button type="button" id="signOutBtn" style="background:none;border:0;color:#64748b;' +
+      'cursor:pointer;font:inherit;text-decoration:underline">Sign out</button>';
+    $('#signOutBtn').addEventListener('click', function () {
+      session.clear();
+      renderAccount(null);
+      var q = $('#quotaLine');
+      if (q) q.textContent = '';
+    });
+  }
+
   function init() {
     $('#scanForm').addEventListener('submit', runScan);
     $('#leadForm').addEventListener('submit', submitLead);
@@ -632,10 +837,20 @@
 
     newCaptcha();
     loadCatalogue();
+    session.load();
 
     api('/api/quota')
       .then(function (res) {
-        if (res.data && res.data.ok) renderQuota(res.data.quota);
+        if (!res.data || !res.data.ok) return;
+        if (res.data.signedIn) {
+          renderAccount(res.data.account, res.data.quota, res.data.entitlement);
+          renderQuota(res.data.quota);
+        } else {
+          // A stored token that no longer verifies (expired, or the signing
+          // secret was rotated) must not linger and silently fail every call.
+          if (session.token) session.clear();
+          renderAccount(null);
+        }
       })
       .catch(function () {});
 
