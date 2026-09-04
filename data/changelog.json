@@ -1,5 +1,10 @@
 [
   {
+    "title": "Merge pull request #31 from bayzed123/claude/premium-seo-audit-access",
+    "date": "2026-09-04T00:12:45Z",
+    "description": "Premium SEO audit access: accounts, per-account quota, owner-granted premium"
+  },
+  {
     "title": "Merge pull request #30 from bayzed123/claude/fix-dead-urls-with-traffic",
     "date": "2026-09-03T23:58:34Z",
     "description": "fix: close the TOCTOU race CodeQL flagged in make-redirect-stubs.js"
