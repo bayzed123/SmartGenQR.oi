@@ -1,5 +1,10 @@
 [
   {
+    "title": "Merge pull request #36 from bayzed123/claude/seo-audit-premium-features-yv9j8y",
+    "date": "2026-09-04T01:33:40Z",
+    "description": "fix(seo-audit): gate the tool on sign-in and stop promising the opposite"
+  },
+  {
     "title": "Delete .github/dependabot.yml",
     "date": "2026-09-04T00:52:46Z",
     "description": "Platform improvement and optimization."
