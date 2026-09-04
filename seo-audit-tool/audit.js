@@ -163,6 +163,15 @@
       return;
     }
 
+    // Signed out, ask before scanning. The server would reject this anyway,
+    // but going through the request first runs a progress bar to completion
+    // and then throws it away -- the gate belongs in front, not behind.
+    // submitAuth re-runs this scan once the account exists.
+    if (!session.token) {
+      openAuth('register', 'Create a free account to run your audit — 3 full scans, no card needed.');
+      return;
+    }
+
     state.scanning = true;
     var button = $('#scanButton');
     button.disabled = true;
@@ -201,7 +210,10 @@
       .finally(function () {
         state.scanning = false;
         button.disabled = false;
-        button.textContent = 'Run Free Audit';
+        // Not a constant: the label depends on whether there is an account,
+        // and a scan that ends in auth_required has just signed the user out
+        // in all but name.
+        button.textContent = session.token ? 'Run Audit' : 'Create account & run audit';
       });
   }
 
@@ -468,13 +480,16 @@
       el.innerHTML = '';
       return;
     }
+    // Not "today", and not a daily limit: auditsUsed is a lifetime counter on
+    // the account, so nothing resets at midnight. Promising a reset that never
+    // arrives is the kind of small lie people notice on day two.
     el.innerHTML =
       '<strong>' +
       quota.remaining +
       '</strong> of ' +
       quota.limit +
-      ' free audits left today' +
-      (quota.remaining === 0 ? ' — the full audit has no daily limit.' : '.');
+      ' free audits left on this account' +
+      (quota.remaining === 0 ? ' — premium removes the limit.' : '.');
   }
 
   function renderQuotaWall(payload) {
@@ -782,26 +797,42 @@
       });
   }
 
-  /** Show who is signed in, and what they are entitled to, above the form. */
+  /**
+   * The signed-out state used to be one grey sentence under a badge that
+   * promised "no signup" -- so the page both hid the requirement and
+   * contradicted it. It now leads with the gate: state the requirement, state
+   * what the account is worth, and give the two buttons that act on it.
+   */
   function renderAccount(account, quota, entitlement) {
-    var bar = $('#accountBar');
-    if (!bar) {
-      bar = document.createElement('p');
-      bar.id = 'accountBar';
-      bar.className = 'form-note';
-      bar.style.cssText = 'display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px';
-      var form = $('#scanForm');
-      form.parentNode.insertBefore(bar, form);
-    }
+    var gate = $('#authGate');
+    var scanBtn = $('#scanButton');
 
     if (!account) {
-      bar.innerHTML =
-        '<span>Sign in to run an audit.</span>' +
-        '<button type="button" id="signInBtn" style="background:none;border:0;color:#2563eb;' +
-        'cursor:pointer;font:inherit;text-decoration:underline">Sign in or create an account</button>';
-      $('#signInBtn').addEventListener('click', function () {
+      gate.hidden = false;
+      gate.className = 'auth-gate';
+      gate.innerHTML =
+        '<p class="gate-eyebrow">Free account required</p>' +
+        '<h2 class="gate-title">Create an account to run your audit</h2>' +
+        '<ul class="gate-points">' +
+        '<li><span aria-hidden="true">✅</span>3 full audits included — 27 checks each</li>' +
+        '<li><span aria-hidden="true">💳</span>No credit card, no trial that expires</li>' +
+        '<li><span aria-hidden="true">⏱️</span>Takes an email and a password, nothing else</li>' +
+        '</ul>' +
+        '<div class="gate-actions">' +
+        '<button type="button" class="tier-cta primary" id="gateRegister">Create free account</button>' +
+        '<button type="button" class="tier-cta ghost" id="gateLogin">I already have one</button>' +
+        '</div>';
+
+      $('#gateRegister').addEventListener('click', function () {
         openAuth('register');
       });
+      $('#gateLogin').addEventListener('click', function () {
+        openAuth('login');
+      });
+
+      // The form stays visible and usable: a URL typed now is carried through
+      // the dialog and scanned the moment the account exists.
+      if (scanBtn) scanBtn.textContent = 'Create account & run audit';
       return;
     }
 
@@ -815,11 +846,16 @@
           ? quota.remaining + ' of ' + quota.limit + ' free audits left'
           : '';
 
-    bar.innerHTML =
-      '<span><strong>' + esc(account.email) + '</strong> · ' + esc(badge) + '</span>' +
-      (left ? '<span>· ' + esc(left) + '</span>' : '') +
-      '<button type="button" id="signOutBtn" style="background:none;border:0;color:#64748b;' +
-      'cursor:pointer;font:inherit;text-decoration:underline">Sign out</button>';
+    gate.hidden = false;
+    gate.className = 'account-strip is-' + (tier === 'free' ? 'free' : 'paid');
+    gate.innerHTML =
+      '<span class="acct-who"><strong>' + esc(account.email) + '</strong></span>' +
+      '<span class="acct-tier">' + esc(badge) + '</span>' +
+      (left ? '<span class="acct-left">' + esc(left) + '</span>' : '') +
+      '<button type="button" class="acct-out" id="signOutBtn">Sign out</button>';
+
+    if (scanBtn) scanBtn.textContent = 'Run Audit';
+
     $('#signOutBtn').addEventListener('click', function () {
       session.clear();
       renderAccount(null);
@@ -838,6 +874,12 @@
     newCaptcha();
     loadCatalogue();
     session.load();
+
+    // Paint the gate from what we already know, before the network answers.
+    // Waiting on /api/quota left the page with no gate at all whenever that
+    // call was slow or failed -- the one state where the user most needs to be
+    // told why the button will not work.
+    if (!session.token) renderAccount(null);
 
     api('/api/quota')
       .then(function (res) {
