@@ -55,7 +55,8 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.6rem;
-  margin-bottom: 1.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
 }
 
 .audit-badge {
@@ -65,6 +66,133 @@
   padding: 0.35rem 0.9rem;
   font-size: 0.82rem;
   font-weight: 600;
+  color: #e2e8f0;
+}
+
+/* --------------------------------------------------- sign-in gate */
+
+/* Sits inside the dark hero, so it is built from light-on-dark values
+   directly rather than the page tokens, which are tuned for the body. */
+.auth-gate {
+  max-width: 34rem;
+  margin: 0 auto 1.5rem;
+  padding: 1.5rem 1.4rem 1.4rem;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(148, 197, 255, 0.32);
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+}
+
+.auth-gate .gate-eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #93c5fd;
+}
+
+.auth-gate .gate-title {
+  margin: 0 0 0.9rem;
+  font-size: clamp(1.1rem, 2.6vw, 1.4rem);
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.auth-gate .gate-points {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.auth-gate .gate-points li {
+  display: grid;
+  grid-template-columns: 1.4rem 1fr;
+  gap: 0.55rem;
+  align-items: start;
+  font-size: 0.92rem;
+  color: #dbeafe;
+}
+
+.auth-gate .gate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.auth-gate .gate-actions .tier-cta {
+  flex: 1 1 12rem;
+  min-width: 0;
+  text-align: center;
+}
+
+/* The ghost button is drawn for a light card; on the hero it needs to be
+   legible against the gradient instead. */
+.auth-gate .gate-actions .tier-cta.ghost {
+  color: #e2e8f0;
+  border-color: rgba(226, 232, 240, 0.45);
+  background: transparent;
+}
+
+.auth-gate .gate-actions .tier-cta.ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ------------------------------------------------- signed-in strip */
+
+.account-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  max-width: 40rem;
+  margin: 0 auto 1.1rem;
+  padding: 0.7rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  font-size: 0.86rem;
+  color: #e2e8f0;
+}
+
+.account-strip .acct-who {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.account-strip .acct-tier {
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.76rem;
+  background: rgba(148, 163, 184, 0.28);
+  white-space: nowrap;
+}
+
+.account-strip.is-paid .acct-tier {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: #1f2937;
+}
+
+.account-strip .acct-left {
+  color: #bfdbfe;
+}
+
+.account-strip .acct-out {
+  margin-left: auto;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #94a3b8;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.account-strip .acct-out:hover {
   color: #e2e8f0;
 }
 
@@ -175,16 +303,38 @@
   scroll-margin-top: 6rem;
 }
 
+/* The report header. This is the first thing anyone reads after a scan, so it
+   is treated as a title card rather than another white box: a dark ground that
+   echoes the hero, with the dial as the focal point. */
 .score-panel {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(200px, 260px) 1fr;
   gap: 2rem;
   align-items: center;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: linear-gradient(150deg, #0f172a 0%, #1e293b 60%, #1e3a8a 100%);
+  border: 1px solid rgba(148, 163, 184, 0.22);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 2.25rem 2rem;
   margin-bottom: 1.5rem;
+  overflow: hidden;
+  color: #f1f5f9;
+}
+
+/* A soft highlight behind the dial so it reads as lit rather than pasted on. */
+.score-panel::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -10%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.22), transparent 68%);
+  pointer-events: none;
+}
+
+.score-panel > * {
+  position: relative;
 }
 
 @media (max-width: 720px) {
@@ -235,14 +385,52 @@
 
 .score-summary h2 {
   margin: 0 0 0.4rem;
-  font-size: 1.5rem;
-  color: var(--ink);
-  word-break: break-word;
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  color: #ffffff;
+  letter-spacing: -0.015em;
+  overflow-wrap: anywhere;
 }
 
 .score-summary .verdict {
-  color: var(--ink-soft);
+  color: #cbd5e1;
   margin-bottom: 1.1rem;
+  max-width: 44rem;
+}
+
+/* Everything below re-states a colour the panel would otherwise inherit from
+   the page tokens, which are tuned for a light card. On this dark ground they
+   would render near-invisible. */
+.score-panel .dial-number {
+  /* the inline colour from the score is kept; only the shadow is added */
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.score-panel .dial-grade {
+  color: #94a3b8;
+}
+
+.score-panel .stat-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #e2e8f0;
+}
+
+.score-panel .stat-pill.is-pass {
+  background: rgba(34, 197, 94, 0.18);
+  border-color: rgba(34, 197, 94, 0.35);
+  color: #86efac;
+}
+
+.score-panel .stat-pill.is-warn {
+  background: rgba(245, 158, 11, 0.18);
+  border-color: rgba(245, 158, 11, 0.35);
+  color: #fcd34d;
+}
+
+.score-panel .stat-pill.is-fail {
+  background: rgba(239, 68, 68, 0.18);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
 }
 
 .stat-row {
@@ -279,11 +467,25 @@
 
 /* ------------------------------------------------------- categories */
 
+/* Fixed three-up rather than auto-fit. There are six categories, so auto-fit
+   at wide widths produced a row of four and an orphan row of two. */
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .category-card {
@@ -291,6 +493,20 @@
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 1.15rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.09);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-card,
+  .category-card:hover {
+    transition: none;
+    transform: none;
+  }
 }
 
 .category-card .cat-top {
@@ -752,11 +968,46 @@
   display: none;
 }
 
+.catalogue summary:hover {
+  background: rgba(148, 163, 184, 0.09);
+}
+
+.catalogue summary:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+}
+
+/* The default marker is suppressed above, which left a collapsed category
+   looking like an inert header rather than something to open. This is the
+   affordance that says it opens. */
 .catalogue summary .counts {
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--ink-soft);
   white-space: nowrap;
+  margin-left: auto;
+}
+
+.catalogue summary::after {
+  content: '';
+  flex: 0 0 auto;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-left: 0.85rem;
+  border-right: 2px solid var(--ink-soft);
+  border-bottom: 2px solid var(--ink-soft);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 0.18s ease;
+}
+
+.catalogue details[open] > summary::after {
+  transform: rotate(-135deg) translate(-2px, -2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalogue summary::after {
+    transition: none;
+  }
 }
 
 .catalogue .cat-body {

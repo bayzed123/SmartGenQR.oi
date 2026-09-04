@@ -14,7 +14,7 @@
     <link rel="canonical" href="https://smartgentools.com/seo-audit-tool/">
 
     <title>Free SEO Audit Tool — Website SEO Checker</title>
-    <meta name="description" content="Run a free SEO audit of any website in seconds. 27 checks cover SSL, schema, E-E-A-T pages and broken links, scored out of 100. No signup.">
+    <meta name="description" content="Run a free SEO audit of any website in seconds. 27 checks cover SSL, schema, E-E-A-T pages and broken links, scored out of 100. Free account, 3 audits included, no card.">
     <meta name="keywords" content="free seo audit tool, seo audit, website seo checker, seo checker, site audit tool, seo analyzer, website audit, e-e-a-t audit, technical seo audit, free website analysis">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 
@@ -31,13 +31,13 @@
     <script src="./audit.js" defer></script>
 
     <meta property="og:title" content="Free SEO Audit Tool — Website SEO Checker">
-    <meta property="og:description" content="Score any website out of 100 in seconds. 27 free SEO and E-E-A-T checks, no signup required.">
+    <meta property="og:description" content="Score any website out of 100 in seconds. 27 SEO and E-E-A-T checks per audit, 3 audits free with an account — no credit card.">
     <meta property="og:url" content="https://smartgentools.com/seo-audit-tool/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://smartgentools.com/assets/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Free SEO Audit Tool — Website SEO Checker">
-    <meta name="twitter:description" content="Score any website out of 100 in seconds. 27 free SEO and E-E-A-T checks, no signup required.">
+    <meta name="twitter:description" content="Score any website out of 100 in seconds. 27 SEO and E-E-A-T checks per audit, 3 audits free with an account — no credit card.">
     <meta name="twitter:image" content="https://smartgentools.com/assets/og-image.png">
 
     <script type="application/ld+json">
@@ -87,15 +87,15 @@
               "name": "Is this SEO audit tool really free?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. You get 3 full free audits every 24 hours with no account, no credit card and no trial period. Each free audit runs 27 checks and gives you a health score out of 100 plus your priority fixes. The 72-check premium audit is a separate paid report."
+                "text": "Yes. Create a free account and you get 3 full audits included — no credit card and no trial period. Each free audit runs 27 checks and gives you a health score out of 100 plus your priority fixes. Once those 3 are used the tool asks you to upgrade; the 72-check premium audit is a separate paid report."
               }
             },
             {
               "@type": "Question",
-              "name": "How many free SEO audits can I run per day?",
+              "name": "How many free SEO audits do I get?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Three per day. That is enough to audit your own site, a competitor and a client site in one session. The limit resets every 24 hours."
+                "text": "Three, included with your free account. That is enough to audit your own site, a competitor and a client site. They are not a daily allowance — once all three are used, running another audit requires premium access."
               }
             },
             {
@@ -147,17 +147,14 @@
         <section class="audit-hero">
             <h1>Free SEO Audit Tool</h1>
             <p class="lede">
-                Paste any URL and get a real SEO health score in about 20 seconds. We test SSL, schema markup,
-                E-E-A-T trust pages, footer signals, broken images and 22 more ranking factors — then tell you
-                exactly what to fix first.
+                Paste any URL and get a real SEO health score in about 20 seconds — SSL, schema markup,
+                E-E-A-T trust pages, broken images and 23 more ranking factors, with the fix for each one.
             </p>
 
-            <div class="badge-row">
-                <span class="audit-badge">⚡ Results in ~20 seconds</span>
-                <span class="audit-badge">🔓 No signup, no credit card</span>
-                <span class="audit-badge">✅ 27 checks free</span>
-                <span class="audit-badge">🏆 72 checks in the full audit</span>
-            </div>
+            <!-- Filled by audit.js: the sign-in gate when signed out, the
+                 account strip when signed in. Empty in the HTML so a stale
+                 cached page never shows the wrong state. -->
+            <div id="authGate" hidden></div>
 
             <form id="scanForm" class="scan-form" novalidate>
                 <label class="sr-only" for="siteUrl">Website URL to audit</label>
@@ -174,6 +171,16 @@
             </form>
 
             <p class="scan-meta" id="quotaLine"></p>
+
+            <!-- Below the form deliberately: on a phone these four pills stack,
+                 and above the form they pushed the only actionable control off
+                 the first screen. -->
+            <div class="badge-row">
+                <span class="audit-badge">⚡ Results in ~20 seconds</span>
+                <span class="audit-badge">✅ 3 free audits, 27 checks each</span>
+                <span class="audit-badge">💳 No credit card</span>
+                <span class="audit-badge">🏆 72 checks in the premium report</span>
+            </div>
 
             <div class="audit-progress" id="auditProgress" hidden>
                 <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
@@ -304,7 +311,7 @@
                         <li><span>✅</span><span>Health score out of 100 and a letter grade</span></li>
                         <li><span>✅</span><span>Your top 5 priority fixes, with instructions</span></li>
                         <li><span>✅</span><span>Full written report by email</span></li>
-                        <li><span>✅</span><span>3 audits every 24 hours</span></li>
+                        <li><span>✅</span><span><strong>3 audits</strong> included with a free account</span></li>
                         <li><span>➖</span><span>Core Web Vitals, AI roadmap, competitor benchmark</span></li>
                     </ul>
                     <a class="tier-cta ghost" href="#siteUrl">Run a free audit</a>
@@ -554,10 +561,13 @@
                 <h2 style="font-size:1.8rem;color:var(--text-primary);margin-bottom:20px;">Why we made 3 audits per day free</h2>
                 <p>Most "free" SEO checkers give you a teasing score and a paywall. We went the other way: the free tier is
                    a complete, usable audit — score, category breakdown, every failing check, and the fix for each one.</p>
-                <p style="margin-top:15px;">Three per day is deliberate. One audit is not enough to prove a tool is worth
-                   trusting. Five or more and there is no reason to ever pay. Three lets you check your own site, size up a
+                <p style="margin-top:15px;">Three is deliberate. One audit is not enough to prove a tool is worth
+                   trusting. Unlimited and there is no reason to ever pay. Three lets you check your own site, size up a
                    competitor, and run a client's domain in a single sitting — which is exactly how people actually use an
-                   audit tool. The counter resets every 24 hours, and no account is required.</p>
+                   audit tool.</p>
+                <p style="margin-top:15px;">They come with a free account, which takes an email and a password and no card.
+                   The account is what the three audits are counted against, so they are yours to spend whenever you like
+                   rather than expiring at midnight. When they are gone, premium is the way to keep going.</p>
             </section>
 
             <section style="margin-bottom:50px;">
@@ -609,9 +619,9 @@
                 <div style="margin-top:20px;">
                     <div style="margin-bottom:25px;">
                         <h3 style="font-weight:700;color:var(--text-primary);font-size:1.05rem;">Is this SEO audit tool really free?</h3>
-                        <p style="color:var(--text-secondary);">Yes. Three full audits every 24 hours, no account, no credit card,
+                        <p style="color:var(--text-secondary);">Yes. Three full audits come with a free account — no credit card and
                            no trial that quietly expires. Each free audit runs 27 checks and returns a score out of 100 plus your
-                           priority fixes.</p>
+                           priority fixes. Creating the account takes an email and a password, nothing more.</p>
                     </div>
                     <div style="margin-bottom:25px;">
                         <h3 style="font-weight:700;color:var(--text-primary);font-size:1.05rem;">Do I need to verify my domain or install a plugin?</h3>
