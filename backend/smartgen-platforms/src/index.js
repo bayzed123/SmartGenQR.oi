@@ -39,9 +39,32 @@ import { checkRanking } from './lib/rank.js';
 import { appendLead, ensureHeaderRow } from './lib/sheets.js';
 import { listReviews, submitReview } from './lib/reviews.js';
 import {
+  normaliseEmail,
+  isValidEmail,
+  passwordProblem,
+  findUser,
+  createUser,
+  verifyPassword,
+  consumeAccountAudit,
+  isOwnerLogin,
+  ownerConfigured,
+  mintSession,
+  verifySession,
+  sessionTokenFrom,
+} from './lib/auth.js';
+import {
+  GRANT_KINDS,
+  normaliseIdentifier,
+  putGrant,
+  deleteGrant,
+  readGrant,
+  listGrants,
+  resolveEntitlement,
+  freeQuotaFor,
+} from './lib/entitlements.js';
+import {
   visitorKey,
   getQuota,
-  consumeQuota,
   burstLimit,
   cacheRateLimit,
   cacheReport,
@@ -144,8 +167,42 @@ async function route(url, request, env, ctx) {
   }
 
   if (path === '/api/quota' && request.method === 'GET') {
+    // Signed in: the quota that actually applies. Signed out: the anonymous
+    // fingerprint quota, kept only so the page can show "3 free" before login.
+    const session = await verifySession(env, sessionTokenFrom(request, null));
+    if (session) {
+      const ent = await resolveEntitlement(env, session, '');
+      const user = session.role === 'owner' ? null : await findUser(env, session.email);
+      return json({
+        ok: true,
+        signedIn: true,
+        account: { email: session.email, role: session.role },
+        entitlement: { tier: ent.tier, unlimited: ent.unlimited, source: ent.source || null },
+        quota: ent.unlimited ? { unlimited: true } : freeQuotaFor(env, user),
+      });
+    }
     const key = await visitorKey(request);
-    return json({ ok: true, quota: await getQuota(env, key) });
+    return json({ ok: true, signedIn: false, quota: await getQuota(env, key) });
+  }
+
+  if (path === '/api/auth/register' && request.method === 'POST') {
+    return handleRegister(request, env);
+  }
+
+  if (path === '/api/auth/login' && request.method === 'POST') {
+    return handleLogin(request, env);
+  }
+
+  if (path === '/api/auth/me' && request.method === 'GET') {
+    return handleMe(request, env);
+  }
+
+  if (path === '/api/admin/premium' && request.method === 'POST') {
+    return handlePremiumGrant(request, env);
+  }
+
+  if (path === '/api/admin/premium' && request.method === 'GET') {
+    return handlePremiumList(request, env);
   }
 
   if (path === '/api/audit' && request.method === 'POST') {
@@ -214,35 +271,69 @@ async function handleFreeAudit(request, env, ctx) {
   const targetUrl = String(body.url || '').trim();
   if (!targetUrl) return json({ ok: false, error: 'A website URL is required.' }, 400);
 
-  const key = await visitorKey(request);
-
-  const burst = await burstLimit(env, key, 4);
-  if (!burst.ok) {
-    return json(
-      { ok: false, error: 'Too many scans in a row. Give it a minute and try again.', code: 'burst_limit' },
-      429
-    );
-  }
-
-  const quota = await getQuota(env, key);
-  if (quota.exhausted) {
+  // Sign-in is now required. The anonymous fingerprint quota it replaces was
+  // resettable with a private window, so it never actually limited anything.
+  const session = await verifySession(env, sessionTokenFrom(request, body));
+  if (!session) {
     return json(
       {
         ok: false,
-        code: 'quota_exhausted',
-        error: `You have used all ${quota.limit} free audits for today.`,
-        quota,
-        upgrade: pricing(env).premium,
+        code: 'auth_required',
+        error: 'Create a free account or sign in to run an audit.',
+        freeAudits: Number(env.FREE_AUDIT_LIMIT || 3),
       },
-      429
+      401
     );
   }
 
   const domain = normalizeDomainKey(targetUrl);
+  const ent = await resolveEntitlement(env, session, domain);
+
+  // Burst protection still keys on the visitor, not the account: it exists to
+  // protect our subrequest budget from a hot loop, which is a per-connection
+  // problem. The owner is exempt so a demo is never throttled mid-call.
+  if (ent.tier !== 'owner') {
+    const burst = await burstLimit(env, await visitorKey(request), 4);
+    if (!burst.ok) {
+      return json(
+        { ok: false, error: 'Too many scans in a row. Give it a minute and try again.', code: 'burst_limit' },
+        429
+      );
+    }
+  }
+
+  // Premium and owner get the full 72-check report from this endpoint too --
+  // there is no reason to make them call a different URL for what they have
+  // already paid for.
+  if (ent.unlimited) {
+    return runUnlimitedAudit(request, env, ctx, { body, targetUrl, domain, session, ent });
+  }
+
+  const user = await findUser(env, session.email);
+  const quota = freeQuotaFor(env, user);
+  if (quota.exhausted) {
+    return json(
+      {
+        ok: false,
+        code: 'payment_required',
+        error: `You have used all ${quota.limit} free audits on this account.`,
+        quota,
+        account: { email: session.email },
+        upgrade: pricing(env).premium,
+      },
+      402
+    );
+  }
+
   const cached = await readCachedReport(env, domain, 'free');
   if (cached) {
-    const after = await consumeQuota(env, key);
-    return json({ ok: true, cached: true, quota: after, report: cached });
+    const after = await consumeAccountAudit(env, session.email);
+    return json({
+      ok: true,
+      cached: true,
+      quota: { ...quota, used: after.used, remaining: Math.max(0, quota.limit - after.used) },
+      report: cached,
+    });
   }
 
   const auditCtx = await buildAuditContext(targetUrl, { deep: false });
@@ -253,10 +344,243 @@ async function handleFreeAudit(request, env, ctx) {
       'Unlock all 72 checks, Core Web Vitals, an AI-written 30-day roadmap, competitor benchmarking and a white-label PDF.',
   };
 
-  const after = await consumeQuota(env, key);
+  const after = await consumeAccountAudit(env, session.email);
   ctx.waitUntil(cacheReport(env, domain, 'free', report));
 
-  return json({ ok: true, cached: false, quota: after, report });
+  return json({
+    ok: true,
+    cached: false,
+    quota: { ...quota, used: after.used, remaining: Math.max(0, quota.limit - after.used) },
+    report,
+  });
+}
+
+/**
+ * The full audit, for the owner and for anyone holding a premium grant.
+ * Same body as handlePremiumAudit, minus the unlock-token check -- the
+ * entitlement has already been resolved by the caller.
+ */
+async function runUnlimitedAudit(request, env, ctx, { body, targetUrl, domain, session, ent }) {
+  const cached = await readCachedReport(env, domain, 'premium');
+  if (cached) {
+    return json({ ok: true, cached: true, quota: { unlimited: true }, report: cached });
+  }
+
+  const auditCtx = await buildAuditContext(targetUrl, { deep: true });
+  const report = buildReport(auditCtx, 'premium');
+  report.access = {
+    mode: ent.tier,
+    source: ent.source || null,
+    account: session.email,
+  };
+
+  const wantPsi = env.ENABLE_PAGESPEED !== 'false';
+  const wantAi = env.ENABLE_AI_ROADMAP !== 'false' && Boolean(env.GEMINI_API_KEY);
+  const competitorUrl = String(body.competitorUrl || '').trim();
+
+  const [psi, competitor] = await Promise.all([
+    wantPsi
+      ? fetchCoreWebVitals(
+          report.site.url,
+          env.PAGESPEED_API_KEY,
+          body.strategy === 'desktop' ? 'desktop' : 'mobile'
+        )
+      : Promise.resolve({ available: false, error: 'Disabled by configuration.' }),
+    competitorUrl
+      ? buildLightContext(competitorUrl)
+          .then((cctx) => buildComparison(report, cctx))
+          .catch((err) => ({ error: err.userMessage || 'Competitor scan failed.' }))
+      : Promise.resolve(null),
+  ]);
+
+  report.coreWebVitals = psi;
+  report.competitor = competitor;
+
+  if (wantAi) {
+    report.roadmap = await generateRoadmap(
+      {
+        domain: report.site.domain,
+        score: report.score.overall,
+        issues: report.topIssues,
+      },
+      env.GEMINI_API_KEY
+    ).catch(() => null);
+  }
+
+  ctx.waitUntil(cacheReport(env, domain, 'premium', report));
+  return json({ ok: true, cached: false, quota: { unlimited: true }, report });
+}
+
+/* -------------------------------------------------------------------------- */
+/* auth endpoints                                                             */
+/* -------------------------------------------------------------------------- */
+
+async function handleRegister(request, env) {
+  if (!env.AUDIT_KV) return json({ ok: false, error: 'Accounts are not available right now.' }, 503);
+  if (!env.SESSION_SECRET) {
+    return json({ ok: false, error: 'Sign-in is not configured on the server yet.' }, 503);
+  }
+
+  const body = await readJson(request);
+  const email = normaliseEmail(body.email);
+  const password = String(body.password || '');
+
+  if (!isValidEmail(email)) return json({ ok: false, error: 'Enter a valid email address.' }, 400);
+  const pwProblem = passwordProblem(password);
+  if (pwProblem) return json({ ok: false, error: pwProblem }, 400);
+
+  // Registration is a write, so brake it harder than a read would be.
+  const brake = await burstLimit(env, `reg:${await visitorKey(request)}`, 5);
+  if (!brake.ok) {
+    return json({ ok: false, error: 'Too many attempts. Try again in a minute.' }, 429);
+  }
+
+  const created = await createUser(env, email, password);
+  if (!created.ok) {
+    return json({ ok: false, error: 'An account with that email already exists. Sign in instead.' }, 409);
+  }
+
+  const token = await mintSession(env, { email, role: 'user' });
+  return json({
+    ok: true,
+    account: { email, role: 'user' },
+    sessionToken: token,
+    quota: freeQuotaFor(env, created.user),
+  });
+}
+
+async function handleLogin(request, env) {
+  if (!env.SESSION_SECRET) {
+    return json({ ok: false, error: 'Sign-in is not configured on the server yet.' }, 503);
+  }
+
+  const body = await readJson(request);
+  const identifier = String(body.email || body.username || '').trim();
+  const password = String(body.password || '');
+
+  const brake = await burstLimit(env, `login:${await visitorKey(request)}`, 8);
+  if (!brake.ok) {
+    return json({ ok: false, error: 'Too many sign-in attempts. Try again in a minute.' }, 429);
+  }
+
+  // Owner first: the admin username is not required to be an email address.
+  if (ownerConfigured(env) && isOwnerLogin(env, identifier, password)) {
+    const token = await mintSession(env, { email: identifier.toLowerCase(), role: 'owner' });
+    return json({
+      ok: true,
+      account: { email: identifier.toLowerCase(), role: 'owner' },
+      sessionToken: token,
+      quota: { unlimited: true },
+    });
+  }
+
+  const email = normaliseEmail(identifier);
+  const user = email ? await findUser(env, email) : null;
+
+  // One message for "no such account" and "wrong password" so the endpoint
+  // cannot be used to enumerate which addresses are registered.
+  const ok = user ? await verifyPassword(password, user.password) : false;
+  if (!ok) return json({ ok: false, error: 'Email or password is incorrect.' }, 401);
+
+  const token = await mintSession(env, { email, role: 'user' });
+  const ent = await resolveEntitlement(env, { email, role: 'user' }, '');
+  return json({
+    ok: true,
+    account: { email, role: 'user' },
+    sessionToken: token,
+    entitlement: { tier: ent.tier, unlimited: ent.unlimited, source: ent.source || null },
+    quota: ent.unlimited ? { unlimited: true } : freeQuotaFor(env, user),
+  });
+}
+
+async function handleMe(request, env) {
+  const session = await verifySession(env, sessionTokenFrom(request, null));
+  if (!session) return json({ ok: false, signedIn: false }, 401);
+
+  const ent = await resolveEntitlement(env, session, '');
+  const user = session.role === 'owner' ? null : await findUser(env, session.email);
+  return json({
+    ok: true,
+    signedIn: true,
+    account: { email: session.email, role: session.role },
+    entitlement: { tier: ent.tier, unlimited: ent.unlimited, source: ent.source || null },
+    quota: ent.unlimited ? { unlimited: true } : freeQuotaFor(env, user),
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* admin: premium grants (driven by the GitHub Action)                         */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Guarded by ADMIN_TOKEN, which lives only in GitHub secrets and Cloudflare.
+ * The owner's browser session is deliberately NOT accepted here: this endpoint
+ * is for the workflow, and keeping it token-only means an XSS on the site
+ * cannot mint premium grants.
+ */
+function adminAuthorised(request, env) {
+  const supplied = (request.headers.get('x-admin-token') || '').trim();
+  const expected = String(env.ADMIN_TOKEN || '');
+  if (!expected || !supplied || supplied.length !== expected.length) return false;
+  let diff = 0;
+  for (let i = 0; i < expected.length; i++) diff |= supplied.charCodeAt(i) ^ expected.charCodeAt(i);
+  return diff === 0;
+}
+
+async function handlePremiumGrant(request, env) {
+  if (!adminAuthorised(request, env)) {
+    return json({ ok: false, error: 'Unauthorised.' }, 401);
+  }
+  if (!env.AUDIT_KV) return json({ ok: false, error: 'Grant storage is not configured.' }, 503);
+
+  const body = await readJson(request);
+  const action = String(body.action || 'grant').toLowerCase();
+  const kind = String(body.kind || 'email').toLowerCase();
+  const value = normaliseIdentifier(kind, body.identifier);
+
+  if (!GRANT_KINDS.includes(kind)) {
+    return json({ ok: false, error: `kind must be one of: ${GRANT_KINDS.join(', ')}` }, 400);
+  }
+  if (!value) return json({ ok: false, error: 'identifier is required.' }, 400);
+  if (kind === 'email' && !isValidEmail(value)) {
+    return json({ ok: false, error: `"${value}" is not a valid email address.` }, 400);
+  }
+  if (kind !== 'email' && !/^[a-z0-9.-]+\.[a-z]{2,}$/.test(value)) {
+    return json({ ok: false, error: `"${value}" is not a valid domain.` }, 400);
+  }
+
+  if (action === 'check') {
+    const grant = await readGrant(env, kind, value);
+    return json({ ok: true, action, kind, identifier: value, premium: Boolean(grant), grant: grant || null });
+  }
+
+  if (action === 'revoke') {
+    const existed = await deleteGrant(env, kind, value);
+    return json({ ok: true, action, kind, identifier: value, removed: existed });
+  }
+
+  if (action !== 'grant') {
+    return json({ ok: false, error: 'action must be grant, revoke or check.' }, 400);
+  }
+
+  const days = Number(body.expiresDays || 0);
+  const expiresAt = days > 0 ? new Date(Date.now() + days * 864e5).toISOString() : null;
+
+  const grant = await putGrant(env, {
+    kind,
+    value,
+    plan: body.plan,
+    expiresAt,
+    note: body.note,
+    grantedBy: body.grantedBy || 'github-action',
+  });
+  return json({ ok: true, action, kind, identifier: value, grant });
+}
+
+async function handlePremiumList(request, env) {
+  if (!adminAuthorised(request, env)) return json({ ok: false, error: 'Unauthorised.' }, 401);
+  const grants = await listGrants(env);
+  return json({ ok: true, count: grants.length, grants });
 }
 
 /* ---------------------------------------------------- premium audit */

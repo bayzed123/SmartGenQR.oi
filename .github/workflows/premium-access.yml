@@ -1,0 +1,164 @@
+name: Premium SEO Access
+
+# Grant, revoke or check premium access to the SEO audit tool.
+#
+# HOW IT WORKS
+# ------------
+# This workflow is the only way to make someone premium. It calls the Worker's
+# /api/admin/premium endpoint with ADMIN_TOKEN, and the Worker writes the grant
+# into Cloudflare KV. Every audit then reads that KV entry. There is no
+# checkout to fake and no client-side flag to edit -- if the owner did not run
+# this workflow, the account is not premium.
+#
+# WHEN SOMEONE PAYS
+# -----------------
+# Run this with their email (or their company domain, or the domain they are
+# buying the audit for) and it takes effect on their very next audit. No
+# deploy, no code change.
+#
+#   Actions -> Premium SEO Access -> Run workflow
+#     action     : grant
+#     kind       : email
+#     identifier : customer@example.com
+#     expires_days: 365          (0 = never expires)
+#
+# THREE KINDS OF GRANT
+# --------------------
+#   email         one person.            customer@example.com
+#   email_domain  everyone at a company. example.com  -> covers *@example.com
+#   site_domain   one website, whoever audits it.  clientsite.com
+#
+# site_domain is the one to use when an agency buys "premium for this client's
+# site" -- anyone signed in who audits that domain gets the full 72 checks.
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'What to do'
+        required: true
+        type: choice
+        default: grant
+        options: [grant, revoke, check]
+      kind:
+        description: 'Match on'
+        required: true
+        type: choice
+        default: email
+        options: [email, email_domain, site_domain]
+      identifier:
+        description: 'Email address or domain (a pasted URL is fine)'
+        required: true
+        type: string
+      expires_days:
+        description: 'Days until the grant expires (0 = never)'
+        required: false
+        type: string
+        default: '0'
+      note:
+        description: 'Note for your own records (invoice no., plan, etc.)'
+        required: false
+        type: string
+        default: ''
+
+# Two runs writing the same key at once would race in KV.
+concurrency:
+  group: premium-access
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  update-access:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Apply the access change
+        env:
+          WORKER_URL: https://smartgen-platforms.sayadmdbayezidhosan.workers.dev
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          ACTION: ${{ inputs.action }}
+          KIND: ${{ inputs.kind }}
+          IDENTIFIER: ${{ inputs.identifier }}
+          EXPIRES_DAYS: ${{ inputs.expires_days }}
+          NOTE: ${{ inputs.note }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${ADMIN_TOKEN:-}" ]; then
+            echo "::error::ADMIN_TOKEN is not set in repository secrets."
+            echo "Add it under Settings -> Secrets and variables -> Actions,"
+            echo "and make sure the same value is deployed to the Worker."
+            exit 1
+          fi
+
+          # jq builds the body so an apostrophe or a space in the note cannot
+          # break out of the JSON.
+          body="$(jq -nc \
+            --arg action "$ACTION" \
+            --arg kind "$KIND" \
+            --arg identifier "$IDENTIFIER" \
+            --arg note "$NOTE" \
+            --argjson expiresDays "${EXPIRES_DAYS:-0}" \
+            '{action:$action, kind:$kind, identifier:$identifier, note:$note, expiresDays:$expiresDays, grantedBy:"github-action"}')"
+
+          echo "→ $ACTION  $KIND  $IDENTIFIER"
+
+          # -o/-w rather than -f: on a 4xx we want to read the Worker's own
+          # error message, which -f would throw away.
+          http_code="$(curl -sS -X POST "$WORKER_URL/api/admin/premium" \
+            -H "content-type: application/json" \
+            -H "x-admin-token: $ADMIN_TOKEN" \
+            -d "$body" \
+            -o response.json -w '%{http_code}')"
+
+          echo "HTTP $http_code"
+          jq . response.json || cat response.json
+
+          if [ "$http_code" != "200" ]; then
+            echo "::error::The Worker rejected the request (HTTP $http_code)."
+            exit 1
+          fi
+
+          # Summary lands on the run page so the audit trail is readable
+          # months later without opening the logs.
+          {
+            echo "### Premium access — \`$ACTION\`"
+            echo
+            echo "| field | value |"
+            echo "|---|---|"
+            echo "| action | \`$ACTION\` |"
+            echo "| kind | \`$KIND\` |"
+            echo "| identifier | \`$(jq -r '.identifier // empty' response.json)\` |"
+            if [ "$ACTION" = "check" ]; then
+              echo "| premium | \`$(jq -r '.premium' response.json)\` |"
+            fi
+            if [ "$ACTION" = "grant" ]; then
+              exp="$(jq -r '.grant.expiresAt // "never"' response.json)"
+              echo "| expires | \`$exp\` |"
+              [ -n "$NOTE" ] && echo "| note | $NOTE |"
+            fi
+            if [ "$ACTION" = "revoke" ]; then
+              echo "| existed | \`$(jq -r '.removed' response.json)\` |"
+            fi
+            echo
+            echo "Takes effect on the next audit — no deploy needed."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: List every active grant
+        if: ${{ inputs.action != 'check' }}
+        env:
+          WORKER_URL: https://smartgen-platforms.sayadmdbayezidhosan.workers.dev
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl -sS "$WORKER_URL/api/admin/premium" -H "x-admin-token: $ADMIN_TOKEN" -o grants.json
+
+          {
+            echo
+            echo "### All active grants ($(jq -r '.count // 0' grants.json))"
+            echo
+            echo "| kind | identifier | expires | note |"
+            echo "|---|---|---|---|"
+            jq -r '.grants[]? | "| \(.kind) | \(.value) | \(.expiresAt // "never") | \(.note // "") |"' grants.json
+          } >> "$GITHUB_STEP_SUMMARY"
