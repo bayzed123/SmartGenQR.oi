@@ -15,7 +15,10 @@ name: Deploy SmartGen Platforms Worker
 #   CLOUDFLARE_API_TOKEN   token with "Edit Cloudflare Workers" permission
 #   CLOUDFLARE_ACCOUNT_ID  your account id
 #
-# Required for accounts and premium access (the deploy fails without them):
+# Required for accounts and premium access. The deploy fails unless Cloudflare
+# holds all four — setting them here is the easy way, but a value you put in
+# Cloudflare directly with `wrangler secret put` counts just as well, and an
+# absence here then only produces a warning:
 #   SESSION_SECRET         signs session tokens; 32+ random bytes, e.g.
 #                          `openssl rand -base64 48`
 #   ADMIN_TOKEN            authorises the Premium Access workflow
@@ -122,42 +125,46 @@ jobs:
           SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
           SEO_ADMIN_USERNAME: ${{ secrets.SEO_ADMIN_USERNAME }}
           SEO_ADMIN_PASSWORD: ${{ secrets.SEO_ADMIN_PASSWORD }}
-          # Same names read from the *variables* store. Nothing is ever synced
-          # from these — they exist only so the step can tell you that you put a
-          # value in the wrong place. See the wrong_store check below.
-          VAR_ADMIN_TOKEN: ${{ vars.ADMIN_TOKEN }}
-          VAR_SESSION_SECRET: ${{ vars.SESSION_SECRET }}
-          VAR_SEO_ADMIN_USERNAME: ${{ vars.SEO_ADMIN_USERNAME }}
-          VAR_SEO_ADMIN_PASSWORD: ${{ vars.SEO_ADMIN_PASSWORD }}
+          # Whether the same name also exists in the *variables* store — the
+          # comparison yields the string "true"/"false", never the value.
+          # Passing ${{ vars.X }} itself would be a leak: the runner prints this
+          # env block into the log, and it masks secrets but not variables.
+          VAR_SET_ADMIN_TOKEN: ${{ vars.ADMIN_TOKEN != '' }}
+          VAR_SET_SESSION_SECRET: ${{ vars.SESSION_SECRET != '' }}
+          VAR_SET_SEO_ADMIN_USERNAME: ${{ vars.SEO_ADMIN_USERNAME != '' }}
+          VAR_SET_SEO_ADMIN_PASSWORD: ${{ vars.SEO_ADMIN_PASSWORD != '' }}
         run: |
           set -euo pipefail
 
-          missing_required=0
+          wrong_store_used=0
 
           # A value put in Settings → Actions → *Variables* is invisible to
           # ${{ secrets.* }}, so the sync below silently skips it and the Worker
           # boots without the feature. Say so instead of shrugging.
           wrong_store() {
             name="$1"
-            if [ -n "$(printenv "VAR_$name" || true)" ]; then
+            if [ "$(printenv "VAR_SET_$name" || true)" = "true" ]; then
               echo "::error::$name exists as an Actions *variable*, not a secret. Variables are stored in plain text and are not readable via secrets.$name, so nothing was synced. Delete the variable, then add $name under Settings → Secrets and variables → Actions → Secrets → New repository secret. Treat the value you used as compromised and generate a fresh one."
               return 1
             fi
             return 0
           }
 
-          # required=yes means the Worker cannot do its job without it, so an
-          # absence is a build error rather than a note.
+          # An absent secret is not by itself a failure: a value can legitimately
+          # have been set straight in Cloudflare with `wrangler secret put`, and
+          # this workflow's contract has always been "unset here, leave Cloudflare
+          # alone". Whether Cloudflare actually holds it is a question only
+          # Cloudflare can answer, so it is asked in the next step rather than
+          # guessed at here. required=yes only changes a note into a warning.
           sync() {
             name="$1"
             required="${2:-no}"
             value="$(printenv "$name" || true)"
 
             if [ -z "$value" ]; then
-              wrong_store "$name" || { missing_required=1; return 0; }
+              wrong_store "$name" || { wrong_store_used=1; return 0; }
               if [ "$required" = "yes" ]; then
-                echo "::error::$name is not set in GitHub secrets. The Worker needs it; without it the feature it powers stays switched off."
-                missing_required=1
+                echo "::warning::$name is not in GitHub secrets, so nothing was synced. Cloudflare must already hold it — the next step checks."
               else
                 echo "· $name — not set in GitHub secrets, leaving Cloudflare as-is"
               fi
@@ -189,15 +196,18 @@ jobs:
           sync SEO_ADMIN_USERNAME yes
           sync SEO_ADMIN_PASSWORD yes
 
-          if [ "$missing_required" -ne 0 ]; then
-            echo "::error::Accounts and premium access will not work until the secrets flagged above are set. Fix them, then re-run this workflow."
+          if [ "$wrong_store_used" -ne 0 ]; then
+            echo "::error::A value was added under Actions → Variables instead of Actions → Secrets. Move it, then re-run this workflow."
             exit 1
           fi
 
       # Names only — `wrangler secret list` never returns values. This is the
       # step that answers "is it actually in Cloudflare?" without guessing from
-      # the sync log.
+      # the sync log, and it is the gate for the required names. It runs even
+      # when the sync step failed, because Cloudflare's actual state is exactly
+      # what you want to see when something above went wrong.
       - name: Verify the Worker's secrets are present in Cloudflare
+        if: '!cancelled()'
         working-directory: backend/smartgen-platforms
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -226,7 +236,11 @@ jobs:
             const absent = required.filter((n) => !held.has(n));
             for (const n of required) console.log(`${held.has(n) ? "✓" : "✗"} ${n}`);
             if (absent.length) {
-              console.log(`::error::Cloudflare is missing: ${absent.join(", ")}`);
+              console.log(
+                `::error::Cloudflare does not hold ${absent.join(", ")}, so accounts and premium access stay switched off. ` +
+                "Add each one under Settings → Secrets and variables → Actions → Secrets → New repository secret " +
+                "(the Variables tab next to it will not work), then re-run this workflow."
+              );
               process.exit(1);
             }
           '
