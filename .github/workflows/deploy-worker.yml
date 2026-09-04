@@ -5,9 +5,22 @@ name: Deploy SmartGen Platforms Worker
 # inside the runner to authenticate `wrangler deploy` and are never written
 # into any file the site serves.
 #
-# Required repository secrets:
+# All of the names below are repository SECRETS, added under
+# Settings → Secrets and variables → Actions → Secrets → New repository secret.
+# A value added under the neighbouring *Variables* tab is stored in plain text
+# and is not readable through ${{ secrets.* }} — the deploy detects that mistake
+# by name and fails rather than skipping quietly.
+#
+# Required to deploy at all:
 #   CLOUDFLARE_API_TOKEN   token with "Edit Cloudflare Workers" permission
 #   CLOUDFLARE_ACCOUNT_ID  your account id
+#
+# Required for accounts and premium access (the deploy fails without them):
+#   SESSION_SECRET         signs session tokens; 32+ random bytes, e.g.
+#                          `openssl rand -base64 48`
+#   ADMIN_TOKEN            authorises the Premium Access workflow
+#   SEO_ADMIN_USERNAME     owner login — unlimited audits
+#   SEO_ADMIN_PASSWORD
 #
 # Optional — set these and the deploy will also push them into Cloudflare's
 # secret store for you, so you never have to install wrangler locally:
@@ -19,7 +32,6 @@ name: Deploy SmartGen Platforms Worker
 #   GOOGLE_CSE_ID                 Programmable Search Engine id ("cx") — create one at
 #                                 https://programmablesearchengine.google.com/
 #                                 with "Search the entire web" turned on
-#   ADMIN_TOKEN
 #   PREMIUM_UNLOCK_SECRET
 #
 # These are safe as GitHub secrets because they are only ever read inside this
@@ -110,19 +122,59 @@ jobs:
           SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
           SEO_ADMIN_USERNAME: ${{ secrets.SEO_ADMIN_USERNAME }}
           SEO_ADMIN_PASSWORD: ${{ secrets.SEO_ADMIN_PASSWORD }}
+          # Same names read from the *variables* store. Nothing is ever synced
+          # from these — they exist only so the step can tell you that you put a
+          # value in the wrong place. See the wrong_store check below.
+          VAR_ADMIN_TOKEN: ${{ vars.ADMIN_TOKEN }}
+          VAR_SESSION_SECRET: ${{ vars.SESSION_SECRET }}
+          VAR_SEO_ADMIN_USERNAME: ${{ vars.SEO_ADMIN_USERNAME }}
+          VAR_SEO_ADMIN_PASSWORD: ${{ vars.SEO_ADMIN_PASSWORD }}
         run: |
           set -euo pipefail
 
+          missing_required=0
+
+          # A value put in Settings → Actions → *Variables* is invisible to
+          # ${{ secrets.* }}, so the sync below silently skips it and the Worker
+          # boots without the feature. Say so instead of shrugging.
+          wrong_store() {
+            name="$1"
+            if [ -n "$(printenv "VAR_$name" || true)" ]; then
+              echo "::error::$name exists as an Actions *variable*, not a secret. Variables are stored in plain text and are not readable via secrets.$name, so nothing was synced. Delete the variable, then add $name under Settings → Secrets and variables → Actions → Secrets → New repository secret. Treat the value you used as compromised and generate a fresh one."
+              return 1
+            fi
+            return 0
+          }
+
+          # required=yes means the Worker cannot do its job without it, so an
+          # absence is a build error rather than a note.
           sync() {
             name="$1"
+            required="${2:-no}"
             value="$(printenv "$name" || true)"
+
             if [ -z "$value" ]; then
-              echo "· $name — not set in GitHub secrets, leaving Cloudflare as-is"
+              wrong_store "$name" || { missing_required=1; return 0; }
+              if [ "$required" = "yes" ]; then
+                echo "::error::$name is not set in GitHub secrets. The Worker needs it; without it the feature it powers stays switched off."
+                missing_required=1
+              else
+                echo "· $name — not set in GitHub secrets, leaving Cloudflare as-is"
+              fi
               return 0
             fi
+
             # printf, not echo: no trailing newline gets stored with the value.
-            printf '%s' "$value" | npx wrangler secret put "$name" >/dev/null 2>&1
-            echo "✓ $name — stored in Cloudflare"
+            # stdout is dropped because wrangler echoes back the name; stderr is
+            # kept so a real failure is readable. The exit status is what counts:
+            # this step used to print a tick unconditionally, which is how four
+            # never-stored secrets sat unnoticed through a dozen green deploys.
+            if printf '%s' "$value" | npx wrangler secret put "$name" >/dev/null; then
+              echo "✓ $name — stored in Cloudflare"
+            else
+              echo "::error::wrangler secret put $name failed. See the error above."
+              return 1
+            fi
           }
 
           sync GEMINI_API_KEY
@@ -131,11 +183,54 @@ jobs:
           sync PAGESPEED_API_KEY
           sync GOOGLE_CSE_API_KEY
           sync GOOGLE_CSE_ID
-          sync ADMIN_TOKEN
+          sync ADMIN_TOKEN yes
           sync PREMIUM_UNLOCK_SECRET
-          sync SESSION_SECRET
-          sync SEO_ADMIN_USERNAME
-          sync SEO_ADMIN_PASSWORD
+          sync SESSION_SECRET yes
+          sync SEO_ADMIN_USERNAME yes
+          sync SEO_ADMIN_PASSWORD yes
+
+          if [ "$missing_required" -ne 0 ]; then
+            echo "::error::Accounts and premium access will not work until the secrets flagged above are set. Fix them, then re-run this workflow."
+            exit 1
+          fi
+
+      # Names only — `wrangler secret list` never returns values. This is the
+      # step that answers "is it actually in Cloudflare?" without guessing from
+      # the sync log.
+      - name: Verify the Worker's secrets are present in Cloudflare
+        working-directory: backend/smartgen-platforms
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          npx wrangler secret list > secrets.json
+          node -e '
+            // Some wrangler versions print a banner above the JSON, so start at
+            // the first bracket rather than assuming the file is pure JSON. An
+            // error line can contain a bracket too ("[code: 10000]"), so the
+            // parse still has to be able to fail without a stack trace.
+            const raw = require("fs").readFileSync("secrets.json", "utf8");
+            let list = null;
+            const start = raw.indexOf("[");
+            if (start !== -1) {
+              try { list = JSON.parse(raw.slice(start)); } catch { /* handled below */ }
+            }
+            if (!Array.isArray(list)) {
+              console.log("::error::Could not read the secret list from wrangler. Its output was:");
+              console.log(raw.trim() || "(empty)");
+              process.exit(1);
+            }
+            const held = new Set(list.map((s) => s.name));
+            const required = ["SESSION_SECRET", "ADMIN_TOKEN", "SEO_ADMIN_USERNAME", "SEO_ADMIN_PASSWORD"];
+            const absent = required.filter((n) => !held.has(n));
+            for (const n of required) console.log(`${held.has(n) ? "✓" : "✗"} ${n}`);
+            if (absent.length) {
+              console.log(`::error::Cloudflare is missing: ${absent.join(", ")}`);
+              process.exit(1);
+            }
+          '
+          rm -f secrets.json
 
       - name: Smoke test the deployment
         env:
