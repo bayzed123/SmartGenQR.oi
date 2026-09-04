@@ -7,8 +7,10 @@
  * • Scanning only. Email delivery is handled by the separate SmartGen mailer,
  *   which reads the leads spreadsheet — so a slow inbox can never stall or
  *   crash an audit.
- * • Stateless and login-free. Free usage is metered per anonymous visitor
- *   fingerprint in KV.
+ * • Audits require an account. The free allowance is metered per account in
+ *   KV, not per visitor fingerprint -- a fingerprint resets with a private
+ *   window, so it never actually limited anything. Premium is granted out of
+ *   band by the owner (see lib/entitlements.js), never bought in-app.
  * • Every premium enrichment (PageSpeed, Gemini, Sheets) degrades gracefully:
  *   if one is unavailable the report still ships, with a note.
  *
@@ -17,8 +19,11 @@
  *   GET  /api/health              uptime + which integrations are configured
  *   GET  /api/checks              public catalogue of all 72 checks
  *   GET  /api/pricing             tier comparison table (server is the source of truth)
- *   GET  /api/quota               how many free audits this visitor has left
- *   POST /api/audit               free audit — 27 checks, instant
+ *   GET  /api/quota               this account's remaining audits + tier
+ *   POST /api/auth/register       create an account
+ *   POST /api/auth/login          sign in (account, or the owner)
+ *   GET  /api/auth/me             who am I, and what am I entitled to
+ *   POST /api/audit               audit — 27 checks free, 72 for premium/owner
  *   POST /api/audit/premium       full audit — 72 checks + CWV + AI + competitor
  *   POST /api/lead                store a lead in Google Sheets
  *   POST /api/chat                SmartGen AI Assistant (grounded, site-scoped)
@@ -28,6 +33,8 @@
  *   GET  /api/reviews             a blog post's reviews + average rating
  *   POST /api/reviews             submit a review for a blog post
  *   POST /api/admin/init-sheet    one-time header row (requires ADMIN_TOKEN)
+ *   POST /api/admin/premium       grant/revoke/check premium (ADMIN_TOKEN)
+ *   GET  /api/admin/premium       list active grants (ADMIN_TOKEN)
  */
 
 import { buildAuditContext, buildLightContext } from './lib/crawl.js';
@@ -117,6 +124,9 @@ async function route(url, request, env, ctx) {
         'GET /api/checks',
         'GET /api/pricing',
         'GET /api/quota',
+        'POST /api/auth/register',
+        'POST /api/auth/login',
+        'GET /api/auth/me',
         'POST /api/audit',
         'POST /api/audit/premium',
         'POST /api/lead',
@@ -145,6 +155,14 @@ async function route(url, request, env, ctx) {
         rankChecker: Boolean(env.GOOGLE_CSE_API_KEY && env.GOOGLE_CSE_ID),
         blogReviews: Boolean(env.AUDIT_KV),
         paymentsEnabled: env.PAYMENTS_ENABLED === 'true',
+
+        // Without these three the premium access model is inert, and the
+        // failure is quiet: sign-in returns 503 and the grant workflow gets a
+        // 401, neither of which is visible from the site. Surfacing them here
+        // makes "is it configured?" answerable with one request.
+        accounts: Boolean(env.AUDIT_KV && env.SESSION_SECRET),
+        ownerLogin: ownerConfigured(env),
+        premiumGrants: Boolean(env.AUDIT_KV && env.ADMIN_TOKEN),
       },
       knowledge: {
         tools: TOOLS.length,
