@@ -65,7 +65,6 @@ import {
 import {
   visitorKey,
   getQuota,
-  consumeQuota,
   burstLimit,
   cacheRateLimit,
   cacheReport,
