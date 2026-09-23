@@ -22,6 +22,7 @@ SmartGen is a modern, fast, and privacy-focused utility platform built for profe
 - **JSON Formatter & Validator**: Clean and validate JSON data.
 - **Base64 to Image / Image to Base64**: Convert between formats instantly.
 - **HTML Code Library**: A collection of 70+ visual-to-code snippets.
+- **Text Converter Suite**: Convert Plain Text, Markdown, and HTML locally, with a browser-based HTML/CSS/JavaScript playground.
 - **Hash Generator**: Create secure MD5, SHA-1, and SHA-256 hashes.
 - **UUID Generator**: Generate unique identifiers for development.
 

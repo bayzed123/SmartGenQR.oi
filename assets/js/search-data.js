@@ -406,6 +406,15 @@ const TOOLS_INDEX = [
 	        icon: '💻'
 	    },
 	    {
+	        id: 'text-converter-suite',
+	        title: 'Text Converter Suite',
+	        category: 'Developer & Technical',
+	        keywords: ['text', 'plain text', 'markdown', 'html', 'converter', 'convert', 'markup', 'developer'],
+	        description: 'Convert Plain Text, Markdown, and HTML in one private browser-local workbench.',
+	        url: './text-converter-suite/',
+	        icon: '📝'
+	    },
+	    {
 	        id: 'voice-remover',
 	        title: 'AI Vocal Remover',
 	        category: 'Daily Utilities & Calculators',

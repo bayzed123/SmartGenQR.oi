@@ -25,6 +25,7 @@ Below is a complete directory of all available SmartGen tools, organized by cate
 | 🌐 | [IP Address Lookup](https://smartgentools.com/ip-address-lookup/) | Find your public IP and network information. |
 | 🗺️ | [Sitemap Finder & Custom XML Downloader](https://smartgentools.com/sitemap-finder-and-downloader/) | Extract URLs, modify lastmod dates, and download custom XML sitemaps. |
 | 💻 | [Live HTML Previewer](https://smartgentools.com/html-code-preview/) | Write HTML/CSS/JS and see live results instantly. |
+| 📝 | [Text Converter Suite](https://smartgentools.com/text-converter-suite/) | Convert Plain Text, Markdown, and HTML, plus build pages in a local HTML/CSS/JavaScript playground. |
 
 ## Marketing & Social Media Tools
 
