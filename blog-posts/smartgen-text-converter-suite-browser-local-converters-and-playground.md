@@ -11,7 +11,7 @@ tags: ["Text Converter", "Markdown", "HTML", "CSS", "JavaScript", "Developer Too
 category: "Developer Tools"
 slug: "smartgen-text-converter-suite-browser-local-converters-and-playground"
 ---
-
+<!--AUTHOR_PROFILE-->
 # SmartGen Text Converter Suite: Five Browser-Local Converters and a Live Code Playground
 
 Moving content between formats should not require a collection of browser tabs, a temporary account, or an upload to an unfamiliar service. SmartGen has added a focused solution: the [Text Converter Suite](https://smartgentools.com/text-converter-suite/), a private workbench for transforming text and testing small web components directly in the browser.
@@ -79,21 +79,3 @@ For more browser-based utilities, browse the [SmartGen Tools directory](https://
 [3]: https://smartgentools.com/html-code-preview/ "SmartGen Live HTML Previewer"
 
 [4]: https://github.com/bayzed123/SmartGenQR.oi "SmartGenQR.oi source repository"
-
----
-
-**About SmartGen:** SmartGen builds browser-based tools for developers, marketers, creators, and everyday users. The platform emphasizes fast workflows, clear interfaces, and client-side privacy where the task allows it.
-
-**Author:** [Sayad Md Bayezid Hosan](https://www.sayadbayezid.com)
-
-**Editorial note:** This announcement describes the current browser-local behavior and visible features of the Text Converter Suite. Users should copy or download work they want to keep because the page does not provide account-based cloud storage.
-
-[1] [2] [3] [4]
-
-<!--AUTHOR_PROFILE-->
-<!--LINKEDIN_SHARE: article-->
-<!--END-->
-
----
-
-**Image credit:** SmartGen Text Converter Suite editorial artwork, created for the SmartGen tool interface.
