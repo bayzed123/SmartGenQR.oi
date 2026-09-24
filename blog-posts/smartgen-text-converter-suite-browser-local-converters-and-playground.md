@@ -5,8 +5,8 @@ description: "Meet SmartGen Text Converter Suite, a private browser-local workbe
 date: "2026-09-24"
 author: "Sayad Md Bayezid Hosan"
 canonical_url: "https://smartgentools.com/blog/smartgen-text-converter-suite-browser-local-converters-and-playground/"
-image: "https://smartgentools.com/assets/images/blog-mirror/text-converter-suite-workbench.jpg"
-linkedin_image: "https://smartgentools.com/assets/images/blog-mirror/text-converter-suite-workbench.jpg"
+image: "https://smartgentools.com/blog-posts/images/text-converter-suite-workbench.jpg"
+linkedin_image: "https://smartgentools.com/blog-posts/images/text-converter-suite-workbench.jpg"
 tags: ["Text Converter", "Markdown", "HTML", "CSS", "JavaScript", "Developer Tools", "Productivity"]
 category: "Developer Tools"
 slug: "smartgen-text-converter-suite-browser-local-converters-and-playground"
@@ -18,7 +18,7 @@ Moving content between formats should not require a collection of browser tabs, 
 
 The new tool brings five practical converters and a local HTML/CSS/JavaScript playground into one page. It is designed for writers, developers, marketers, students, and anyone who needs to move content cleanly between a draft and its next useful format.
 
-![Editorial cover artwork for the SmartGen Text Converter Suite browser-local workbench](https://smartgentools.com/assets/images/blog-mirror/text-converter-suite-workbench.jpg)
+![Editorial cover artwork for the SmartGen Text Converter Suite browser-local workbench](https://smartgentools.com/blog-posts/images/text-converter-suite-workbench.jpg)
 
 ## What the Text Converter Suite does
 
