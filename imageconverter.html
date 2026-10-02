@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Speed WebP Converter</title>
+    <style>
+        .converter-container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            font-family: system-ui, sans-serif;
+            text-align: center;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+        }
+        #imageInput {
+            margin-bottom: 20px;
+        }
+        #downloadBtn {
+            display: none;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        #downloadBtn:hover {
+            background-color: #0056b3;
+        }
+        #preview {
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="converter-container">
+    <h2>Convert to WebP (Lossless & Local)</h2>
+    <input type="file" id="imageInput" accept="image/*">
+    <br>
+    <img id="preview" alt="Image Preview">
+    <br>
+    <a id="downloadBtn">Download WebP</a>
+</div>
+
+<script>
+    const imageInput = document.getElementById('imageInput');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const preview = document.getElementById('preview');
+
+    imageInput.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        // 1. Read the file into local memory
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = new Image();
+            
+            img.onload = function() {
+                // 2. Create an off-screen canvas with the exact original dimensions
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                
+                // 3. Draw the image onto the canvas
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+
+                // 4. Export to WebP at 1.0 (Maximum Quality / Lossless)
+                canvas.toBlob(function(blob) {
+                    const webpUrl = URL.createObjectURL(blob);
+                    
+                    // 5. Configure the Download Button
+                    const originalName = file.name.substring(0, file.name.lastIndexOf('.'));
+                    downloadBtn.download = `${originalName || 'converted'}.webp`;
+                    downloadBtn.href = webpUrl;
+                    downloadBtn.style.display = 'inline-block';
+                    
+                    // Show preview
+                    preview.src = webpUrl;
+                    preview.style.display = 'block';
+                }, 'image/webp', 1.0);
+            };
+            
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    });
+</script>
+
+</body>
+</html>
