@@ -35,9 +35,12 @@ The automated link-checker workflow replaces only the content between the follow
 
 <!-- START_LINK_CHECKER -->
 
-### ✅ All Systems Operational
+### ⚠️ Link Status Report
 
-**Status:** All tools and pages in the sitemap are working perfectly! No broken links found.
+| Broken URL | Error Code |
+|---|---|
+| https://smartgentools.com/blog/content-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/ | 503 |
+| https://smartgentools.com/sitemap-finder-and-downloader/ | 503 |
 
 <!-- END_LINK_CHECKER -->
 
@@ -47,9 +50,12 @@ Link-checker sitemap endpoint (must remain reachable)
 - That exact endpoint must be reachable publicly for the workflow to operate correctly. Do not change this URL unless you also update `.github/workflows/link-checker.yml` to point to a new sitemap.
 - The workflow replaces README content only between the `<!-- START_LINK_CHECKER -->
 
-### ✅ All Systems Operational
+### ⚠️ Link Status Report
 
-**Status:** All tools and pages in the sitemap are working perfectly! No broken links found.
+| Broken URL | Error Code |
+|---|---|
+| https://smartgentools.com/blog/content-marketing-the-complete-a-to-z-mega-guide-for-beginners-smartgen-blog/ | 503 |
+| https://smartgentools.com/sitemap-finder-and-downloader/ | 503 |
 
 <!-- END_LINK_CHECKER -->` markers.
 
